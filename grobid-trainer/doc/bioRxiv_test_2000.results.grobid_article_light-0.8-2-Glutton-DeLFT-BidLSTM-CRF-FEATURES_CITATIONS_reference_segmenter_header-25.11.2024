@@ -1,3 +1,5 @@
+======= Header metadata =======
+
 Evaluation on 1996 random PDF files out of 1998 PDF (ratio 1.0).
 
 ======= Strict Matching ======= (exact matches)
@@ -6,12 +8,12 @@ Evaluation on 1996 random PDF files out of 1998 PDF (ratio 1.0).
 
 label                accuracy     precision    recall       f1           support
 
-authors              93.83        82.92        81.5         82.2         1995
-first_author         98.25        96.33        94.78        95.55        1993
-title                91.23        78.16        73.7         75.86        1996
+authors              93.82        82.99        81.45        82.22        1995
+first_author         98.2         96.32        94.63        95.47        1993
+title                91.21        78.19        73.65        75.85        1996
 
-all (micro avg.)     94.44        85.91        83.32        84.59        5984
-all (macro avg.)     94.44        85.8         83.33        84.54        5984
+all (micro avg.)     94.41        85.94        83.24        84.57        5984
+all (macro avg.)     94.41        85.84        83.24        84.51        5984
 
 
 ======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
@@ -20,12 +22,12 @@ all (macro avg.)     94.44        85.8         83.33        84.54        5984
 
 label                accuracy     precision    recall       f1           support
 
-authors              94.04        83.53        82.11        82.81        1995
-first_author         98.35        96.63        95.08        95.85        1993
-title                92.01        80.66        76.05        78.29        1996
+authors              94           83.55        82.01        82.77        1995
+first_author         98.3         96.63        94.93        95.77        1993
+title                91.98        80.64        75.95        78.22        1996
 
-all (micro avg.)     94.8         87.03        84.41        85.7         5984
-all (macro avg.)     94.8         86.94        84.41        85.65        5984
+all (micro avg.)     94.76        87.03        84.29        85.64        5984
+all (macro avg.)     94.76        86.94        84.3         85.59        5984
 
 
 ==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
@@ -34,12 +36,12 @@ all (macro avg.)     94.8         86.94        84.41        85.65        5984
 
 label                accuracy     precision    recall       f1           support
 
-authors              96.68        91.59        90.03        90.8         1995
-first_author         98.41        96.84        95.28        96.05        1993
-title                95.59        92.03        86.77        89.32        1996
+authors              96.62        91.57        89.87        90.72        1995
+first_author         98.35        96.78        95.08        95.93        1993
+title                95.59        92.13        86.77        89.37        1996
 
-all (micro avg.)     96.89        93.5         90.69        92.08        5984
-all (macro avg.)     96.89        93.48        90.69        92.06        5984
+all (micro avg.)     96.85        93.51        90.57        92.02        5984
+all (macro avg.)     96.85        93.49        90.58        92           5984
 
 
 = Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
@@ -48,64 +50,24 @@ all (macro avg.)     96.89        93.48        90.69        92.06        5984
 
 label                accuracy     precision    recall       f1           support
 
-authors              95.34        87.51        86.02        86.75        1995
-first_author         98.25        96.33        94.78        95.55        1993
-title                94.45        88.42        83.37        85.82        1996
+authors              95.32        87.59        85.96        86.77        1995
+first_author         98.2         96.32        94.63        95.47        1993
+title                94.4         88.35        83.22        85.71        1996
 
-all (micro avg.)     96.01        90.78        88.05        89.4         5984
-all (macro avg.)     96.01        90.75        88.05        89.37        5984
+all (micro avg.)     95.97        90.79        87.93        89.34        5984
+all (macro avg.)     95.97        90.75        87.94        89.32        5984
 
 ===== Instance-level results =====
 
 Total expected instances:       1996
-Total correct instances:        1278 (strict)
-Total correct instances:        1312 (soft)
-Total correct instances:        1613 (Levenshtein)
-Total correct instances:        1496 (ObservedRatcliffObershelp)
+Total correct instances:        1280 (strict)
+Total correct instances:        1313 (soft)
+Total correct instances:        1615 (Levenshtein)
+Total correct instances:        1497 (ObservedRatcliffObershelp)
 
-Instance-level recall:  64.03   (strict)
-Instance-level recall:  65.73   (soft)
-Instance-level recall:  80.81   (Levenshtein)
-Instance-level recall:  74.95   (RatcliffObershelp)
+Instance-level recall:  64.13   (strict)
+Instance-level recall:  65.78   (soft)
+Instance-level recall:  80.91   (Levenshtein)
+Instance-level recall:  75      (RatcliffObershelp)
 
-
-************************************************************************************
-COUNTER: org.grobid.core.engines.counters.FigureCounters
-************************************************************************************
-------------------------------------------------------------------------------------
-  SKIPPED_BAD_STANDALONE_FIGURES:   8337
-  SKIPPED_SMALL_STANDALONE_FIGURES: 4952
-  SKIPPED_BIG_STANDALONE_FIGURES:   3385
-  TOO_MANY_FIGURES_PER_PAGE:        5
-====================================================================================
-
-************************************************************************************
-COUNTER: org.grobid.core.engines.label.TaggingLabelImpl
-************************************************************************************
-------------------------------------------------------------------------------------
-  HEADER_DATE:            184
-  HEADER_OTHER:           23284
-  NAME-HEADER_MIDDLENAME: 5687
-  NAME-HEADER_FORENAME:   14291
-  DATE_YEAR:              146
-  HEADER_AUTHOR:          2906
-  NAME-HEADER_MARKER:     11789
-  DATE_OTHER:             136
-  NAME-HEADER_SURNAME:    13782
-  NAME-HEADER_OTHER:      16787
-  NAME-HEADER_SUFFIX:     10
-  HEADER_TITLE:           1998
-  HEADER_PUBNUM:          203
-  FULLTEXT_PARAGRAPH:     7988
-  NAME-HEADER_TITLE:      512
-  DATE_MONTH:             149
-  DATE_DAY:               141
-====================================================================================
-
-************************************************************************************
-COUNTER: FigureCounters
-************************************************************************************
-------------------------------------------------------------------------------------
-  STANDALONE_FIGURES: 4512
-====================================================================================
 ====================================================================================
