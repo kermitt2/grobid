@@ -11,7 +11,6 @@ import org.apache.commons.io.FileUtils;
 
 import java.nio.charset.StandardCharsets;
 
-import org.apache.lucene.util.CollectionUtil;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
@@ -33,7 +32,6 @@ import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
 import org.grobid.core.lang.Language;
 import org.grobid.core.lexicon.Lexicon;
-import org.grobid.core.lexicon.Lexicon.OrganizationRecord;
 import org.grobid.core.layout.*;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
@@ -154,11 +152,11 @@ public class FullTextParser extends AbstractParser {
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
             // header processing
-            BiblioItem resHeader = new BiblioItem();
+            BiblioItem resultHeader = new BiblioItem();
             Pair<String, LayoutTokenization> featSeg = null;
 
             // using the segmentation model to identify the header zones
-            parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader, false);
+            parsers.getHeaderParser().processingHeaderSection(config, doc, resultHeader, false);
 
             // The commented part below makes use of the PDF embedded metadata (the so-called XMP) if available 
             // as fall back to set author and title if they have not been found. 
@@ -204,9 +202,9 @@ public class FullTextParser extends AbstractParser {
             }*/
 
             // structure the abstract using the fulltext model
-            if (isNotBlank(resHeader.getAbstract())) {
+            if (isNotBlank(resultHeader.getAbstract())) {
                 //List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
-                List<LayoutToken> abstractTokens = resHeader.getAbstractTokensWorkingCopy();
+                List<LayoutToken> abstractTokens = resultHeader.getAbstractTokensWorkingCopy();
                 if (CollectionUtils.isNotEmpty(abstractTokens)) {
                     abstractTokens = BiblioItem.cleanAbstractLayoutTokens(abstractTokens);
                     Pair<String, List<LayoutToken>> abstractProcessed = processShort(abstractTokens, doc);
@@ -214,8 +212,8 @@ public class FullTextParser extends AbstractParser {
                         // neutralize figure and table annotations (will be considered as paragraphs)
                         String labeledAbstract = abstractProcessed.getLeft();
                         labeledAbstract = postProcessFullTextLabeledText(labeledAbstract);
-                        resHeader.setLabeledAbstract(labeledAbstract);
-                        resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
+                        resultHeader.setLabeledAbstract(labeledAbstract);
+                        resultHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
                     }
                 }
             }
@@ -253,47 +251,28 @@ public class FullTextParser extends AbstractParser {
 			// full text processing
 			featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String resultBody = null;
-			LayoutTokenization layoutTokenization = null;
-			List<Figure> figures = null;
-			List<Table> tables = null;
-			List<Equation> equations = null;
+			LayoutTokenization tokenizationBody = null;
+			List<Figure> bodyFigures = null;
+			List<Table> bodyTables = null;
+			List<Equation> bodyEquations = null;
 			if (featSeg != null && isNotBlank(featSeg.getLeft())) {
 				// if featSeg is null, it usually means that no body segment is found in the
 				// document segmentation
 				String bodytext = featSeg.getLeft();
-				layoutTokenization = featSeg.getRight();
+				tokenizationBody = featSeg.getRight();
 				//tokenizationsBody = featSeg.getB().getTokenization();
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
 
                 resultBody = label(bodytext);
 
 				// we apply now the figure and table models based on the fulltext labeled output
-				figures = processFigures(resultBody, layoutTokenization.getTokenization(), doc);
-                // further parse the caption
-                for(Figure figure : figures) {
-                    if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens()) ) {
-                        Pair<String, List<LayoutToken>> captionProcess = processShort(figure.getCaptionLayoutTokens(), doc);
-                        figure.setLabeledCaption(captionProcess.getLeft());
-                        figure.setCaptionLayoutTokens(captionProcess.getRight());
-                    }
-                }
-                
-				tables = processTables(resultBody, layoutTokenization.getTokenization(), doc);
-                // further parse the caption
-                for(Table table : tables) {
-                    if ( CollectionUtils.isNotEmpty(table.getCaptionLayoutTokens()) ) {
-                        Pair<String, List<LayoutToken>> captionProcess = processShort(table.getCaptionLayoutTokens(), doc);
-                        table.setLabeledCaption(captionProcess.getLeft());
-                        table.setCaptionLayoutTokens(captionProcess.getRight());
-                    }
-                    if ( CollectionUtils.isNotEmpty(table.getNoteLayoutTokens())) {
-                        Pair<String, List<LayoutToken>> noteProcess = processShort(table.getNoteLayoutTokens(), doc);
-                        table.setLabeledNote(noteProcess.getLeft());
-                        table.setNoteLayoutTokens(noteProcess.getRight());
-                    }
-                }
+				bodyFigures = processFigures(resultBody, tokenizationBody.getTokenization(), doc);
+				postProcessFigureCaptions(bodyFigures, doc);
 
-				equations = processEquations(resultBody, layoutTokenization.getTokenization(), doc);
+				bodyTables = processTables(resultBody, tokenizationBody.getTokenization(), doc);
+				postProcessTableCaptions(bodyTables, doc);
+
+				bodyEquations = processEquations(resultBody, tokenizationBody.getTokenization(), doc);
 			} else {
 				LOGGER.debug("Fulltext model: The featured body is empty");
 			}
@@ -302,29 +281,42 @@ public class FullTextParser extends AbstractParser {
 			documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
             featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String resultAnnex = null;
-			List<LayoutToken> tokenizationsBody2 = null;
+            List<Figure> annexFigures = null;
+            List<Table> annexTables = null;
+            List<Equation> annexEquations = null;
+			List<LayoutToken> tokenizationAnnex = null;
 			if (featSeg != null && isNotEmpty(trim(featSeg.getLeft()))) {
 				// if featSeg is null, it usually means that no body segment is found in the
 				// document segmentation
 				String bodytext = featSeg.getLeft();
-				tokenizationsBody2 = featSeg.getRight().getTokenization();
+				tokenizationAnnex = featSeg.getRight().getTokenization();
 				resultAnnex = label(bodytext);
 				//System.out.println(rese);
+
+				annexFigures = processFigures(resultAnnex, tokenizationAnnex, doc);
+				postProcessFigureCaptions(annexFigures, doc);
+
+				annexTables = processTables(resultAnnex, tokenizationAnnex, doc);
+				postProcessTableCaptions(annexTables, doc);
+
+				annexEquations = processEquations(resultAnnex, tokenizationAnnex, doc);
 			}
 
             // post-process reference and footnote callout to keep them consistent (e.g. for example avoid that a footnote
             // callout in superscript is by error labeled as a numerical reference callout)
             List<MarkerType> markerTypes = null;
 
-            if (resultBody != null) 
-                markerTypes = postProcessCallout(resultBody, layoutTokenization);
+            if (resultBody != null)
+                markerTypes = postProcessCallout(resultBody, tokenizationBody);
 
             // final combination
             toTEI(doc, // document
 				resultBody, resultAnnex, // labeled data for body and annex
-				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
-				resHeader, // header
-				figures, tables, equations, markerTypes,
+				tokenizationBody, tokenizationAnnex, // tokenization for body and annex
+				resultHeader, // header
+				bodyFigures, bodyTables, bodyEquations,
+                annexFigures, annexTables, annexEquations,
+				markerTypes,
 				config);
             return doc;
         } catch (GrobidException e) {
@@ -1978,17 +1970,17 @@ public class FullTextParser extends AbstractParser {
                 buffer.append("</figure>\n\n");
             } else if (lastTag0.equals("<item>")) {
                 buffer.append("</item>\n\n");
-            } else if (lastTag0.equals("<citation_marker>") || 
-                lastTag0.equals("<figure_marker>") || 
-                lastTag0.equals("<table_marker>") || 
+            } else if (lastTag0.equals("<citation_marker>") ||
+                lastTag0.equals("<figure_marker>") ||
+                lastTag0.equals("<table_marker>") ||
                 lastTag0.equals("<equation_marker>")) {
                 buffer.append("</ref>");
 
                 // Make sure that paragraph is closed when markers are at the end of it
-                if (!currentTag0.equals("<paragraph>") && 
-                    (!currentTag0.equals("<citation_marker>") || 
-                     !currentTag0.equals("<figure_marker>") || 
-                     !currentTag0.equals("<table_marker>") || 
+                if (!currentTag0.equals("<paragraph>") &&
+                    (!currentTag0.equals("<citation_marker>") ||
+                     !currentTag0.equals("<figure_marker>") ||
+                     !currentTag0.equals("<table_marker>") ||
                      !currentTag0.equals("<equation_marker>")
                      )
                     ) {
@@ -2046,6 +2038,19 @@ public class FullTextParser extends AbstractParser {
         return results;
     }
 
+    protected void postProcessFigureCaptions(
+        List<Figure> figures,
+        Document doc
+    ) {
+        // further parse the caption
+        for(Figure figure : figures) {
+            if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens()) ) {
+                Pair<String, List<LayoutToken>> captionProcess = processShort(figure.getCaptionLayoutTokens(), doc);
+                figure.setLabeledCaption(captionProcess.getLeft());
+                figure.setCaptionLayoutTokens(captionProcess.getRight());
+            }
+        }
+    }
 
     /**
      * Create training data for the figures as identified by the full text model.
@@ -2224,6 +2229,24 @@ public class FullTextParser extends AbstractParser {
 		return results;
 	}
 
+    protected void postProcessTableCaptions(
+        List<Table> tables,
+        Document doc
+    ) {
+        // further parse the caption
+        for(Table table : tables) {
+            if ( CollectionUtils.isNotEmpty(table.getCaptionLayoutTokens()) ) {
+                Pair<String, List<LayoutToken>> captionProcess = processShort(table.getCaptionLayoutTokens(), doc);
+                table.setLabeledCaption(captionProcess.getLeft());
+                table.setCaptionLayoutTokens(captionProcess.getRight());
+            }
+            if ( CollectionUtils.isNotEmpty(table.getNoteLayoutTokens())) {
+                Pair<String, List<LayoutToken>> noteProcess = processShort(table.getNoteLayoutTokens(), doc);
+                table.setLabeledNote(noteProcess.getLeft());
+                table.setNoteLayoutTokens(noteProcess.getRight());
+            }
+        }
+    }
 
  	/**
      * Create training data for the table as identified by the full text model.
@@ -2421,7 +2444,7 @@ public class FullTextParser extends AbstractParser {
 	}
 
     /**
-     * Ensure consistent use of callouts in the entire document body  
+     * Ensure consistent use of callouts in the entire document body
      */
     private List<MarkerType> postProcessCallout(String result, LayoutTokenization layoutTokenization) {
         if (layoutTokenization == null)
@@ -2481,7 +2504,7 @@ public class FullTextParser extends AbstractParser {
                     if (figureMarkerSeen.contains(refText)) {
                         // already seen reference marker sequence, we skip it
                         continue;
-                    }                    
+                    }
                     MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
                     if (figureMarkerTypeCounts.get(localMarkerType) == null)
                         figureMarkerTypeCounts.put(localMarkerType, 1);
@@ -2494,7 +2517,7 @@ public class FullTextParser extends AbstractParser {
                     if (tableMarkerSeen.contains(refText)) {
                         // already seen reference marker sequence, we skip it
                         continue;
-                    }  
+                    }
                     MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
                     if (tableMarkerTypeCounts.get(localMarkerType) == null)
                         tableMarkerTypeCounts.put(localMarkerType, 1);
@@ -2507,16 +2530,16 @@ public class FullTextParser extends AbstractParser {
                     if (equationMarkerSeen.contains(refText)) {
                         // already seen reference marker sequence, we skip it
                         continue;
-                    }  
+                    }
                     MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
                     if (equationMarkerTypeCounts.get(localMarkerType) == null)
                         equationMarkerTypeCounts.put(localMarkerType, 1);
                     else
-                        equationMarkerTypeCounts.put(localMarkerType, equationMarkerTypeCounts.get(localMarkerType)+1);  
+                        equationMarkerTypeCounts.put(localMarkerType, equationMarkerTypeCounts.get(localMarkerType)+1);
 
                     if (!equationMarkerSeen.contains(refText))
-                        equationMarkerSeen.add(refText);               
-                } 
+                        equationMarkerSeen.add(refText);
+                }
             }
         }
 
@@ -2555,9 +2578,12 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 					   LayoutTokenization layoutTokenization,
                        List<LayoutToken> tokenizationsAnnex,
                        BiblioItem resHeader,
-                       List<Figure> figures,
-                       List<Table> tables,
-                       List<Equation> equations,
+                       List<Figure> bodyFigures,
+                       List<Table> bodyTables,
+                       List<Equation> bodyEquations,
+                       List<Figure> annexFigures,
+                       List<Table> annexTables,
+                       List<Equation> annexEquations,
                        List<MarkerType> markerTypes,
                        GrobidAnalysisConfig config) {
         if (doc.getBlocks() == null) {
@@ -2577,7 +2603,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 teiFormatter, resCitations, config);
 
             if (acknowledgmentStmt.length() > 0) {
-                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult =
                     parsers.getFundingAcknowledgementParser().processingXmlFragment(acknowledgmentStmt.toString(), config);
 
                 if (localResult != null && localResult.getLeft() != null) {
@@ -2621,7 +2647,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                         config);
                 }
                 if (fundingStmt.length() > 0) {
-                    MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                    MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult =
                     parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
 
                     if (localResult != null && localResult.getLeft() != null) {
@@ -2659,7 +2685,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 resCitations,
                 config);
             if (fundingStmt.length() > 0) {
-                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult =
                     parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
 
                 if (localResult != null && localResult.getLeft() != null){
@@ -2690,7 +2716,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
             tei.append(teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, fundings, config));
 
             tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
-                    layoutTokenization, figures, tables, equations, markerTypes, doc, config);
+                    layoutTokenization, bodyFigures, bodyTables, bodyEquations, markerTypes, doc, config);
 
             tei.append("\t\t<back>\n");
 
@@ -2709,15 +2735,15 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
             }
 
             if (affiliations != null && affiliations.size() >0) {
-                
+
                 // check if we have at least one acknowledged research infrastructure here
                 List<Affiliation> filteredInfrastructures = new ArrayList<>();
                 for(Affiliation affiliation : affiliations) {
-                    if (affiliation.getAffiliationString() != null && affiliation.getAffiliationString().length()>0 && affiliation.isInfrastructure()) 
+                    if (affiliation.getAffiliationString() != null && affiliation.getAffiliationString().length()>0 && affiliation.isInfrastructure())
                         filteredInfrastructures.add(affiliation);
                     else if (affiliation.getAffiliationString() != null && affiliation.getAffiliationString().length()>0) {
                         // check if this organization is a known infrastructure
-                        List<Lexicon.OrganizationRecord> localOrganizationNamings = 
+                        List<Lexicon.OrganizationRecord> localOrganizationNamings =
                             Lexicon.getInstance().getOrganizationNamingInfo(affiliation.getAffiliationString());
                         if (localOrganizationNamings != null && localOrganizationNamings.size()>0) {
                             filteredInfrastructures.add(affiliation);
@@ -2729,7 +2755,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 if (filteredInfrastructures.size() > 0) {
                     tei.append("\n\t\t\t<listOrg type=\"infrastructure\">\n");
                     for(Affiliation affiliation : filteredInfrastructures) {
-                        List<Lexicon.OrganizationRecord> localOrganizationNamings = 
+                        List<Lexicon.OrganizationRecord> localOrganizationNamings =
                             Lexicon.getInstance().getOrganizationNamingInfo(affiliation.getAffiliationString());
                         tei.append("\t\t\t\t<org type=\"infrastructure\">");
                         tei.append("\t\t\t\t\t<orgName type=\"extracted\">");
@@ -2749,7 +2775,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                         }
                         tei.append("\t\t\t\t</org>\n");
                     }
-                    
+
                     tei.append("\t\t\t</listOrg>\n");
                 }
             }
@@ -2761,10 +2787,10 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 Pair<String, List<LayoutToken>> headerAvailabilityProcessed = processShort(headerAvailabilityStatementTokens, doc);
                 if (headerAvailabilityProcessed != null) {
                     availabilityStmt = teiFormatter.processTEIDivSection("availability",
-                        "\t\t\t", 
-                        headerAvailabilityProcessed.getLeft(), 
-                        headerAvailabilityProcessed.getRight(), 
-                        resCitations, 
+                        "\t\t\t",
+                        headerAvailabilityProcessed.getLeft(),
+                        headerAvailabilityProcessed.getRight(),
+                        resCitations,
                         config);
                 }
                 if (availabilityStmt.length() > 0) {
@@ -2774,18 +2800,20 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 
             // availability statements in non-header part
             availabilityStmt = getSectionAsTEI("availability",
-                "\t\t\t", 
-                doc, 
-                SegmentationLabels.AVAILABILITY, 
-                teiFormatter, 
-                resCitations, 
+                "\t\t\t",
+                doc,
+                SegmentationLabels.AVAILABILITY,
+                teiFormatter,
+                resCitations,
                 config);
             if (availabilityStmt.length() > 0) {
                 tei.append(availabilityStmt.toString());
             }
 
-			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
-				tokenizationsAnnex, markerTypes, doc, config);
+			tei = teiFormatter.toTEIAnnex(
+                tei, reseAnnex, resHeader, resCitations,
+				tokenizationsAnnex, annexFigures, annexTables, annexEquations, markerTypes, doc, config
+);
 
 			tei = teiFormatter.toTEIReferences(tei, resCitations, config);
             doc.calculateTeiIdToBibDataSets();
@@ -2829,7 +2857,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 teiFormatter, null, config);
 
             if (acknowledgmentStmt.length() > 0) {
-                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult =
                     parsers.getFundingAcknowledgementParser().processingXmlFragment(acknowledgmentStmt.toString(), config);
 
                 if (localResult != null && localResult.getLeft() != null) {
@@ -2873,7 +2901,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                         config);
                 }
                 if (fundingStmt.length() > 0) {
-                    MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                    MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult =
                     parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
 
                     if (localResult != null && localResult.getLeft() != null) {
@@ -2911,7 +2939,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 null,
                 config);
             if (fundingStmt.length() > 0) {
-                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult =
                     parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
 
                 if (localResult != null && localResult.getLeft() != null){
@@ -2957,15 +2985,15 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
             }
 
             if (affiliations != null && affiliations.size() >0) {
-                
+
                 // check if we have at least one acknowledged research infrastructure here
                 List<Affiliation> filteredInfrastructures = new ArrayList<>();
                 for(Affiliation affiliation : affiliations) {
-                    if (affiliation.getAffiliationString() != null && affiliation.getAffiliationString().length()>0 && affiliation.isInfrastructure()) 
+                    if (affiliation.getAffiliationString() != null && affiliation.getAffiliationString().length()>0 && affiliation.isInfrastructure())
                         filteredInfrastructures.add(affiliation);
                     else if (affiliation.getAffiliationString() != null && affiliation.getAffiliationString().length()>0) {
                         // check if this organization is a known infrastructure
-                        List<Lexicon.OrganizationRecord> localOrganizationNamings = 
+                        List<Lexicon.OrganizationRecord> localOrganizationNamings =
                             Lexicon.getInstance().getOrganizationNamingInfo(affiliation.getAffiliationString());
                         if (localOrganizationNamings != null && localOrganizationNamings.size()>0) {
                             filteredInfrastructures.add(affiliation);
@@ -2977,7 +3005,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 if (filteredInfrastructures.size() > 0) {
                     tei.append("\n\t\t\t<listOrg type=\"infrastructure\">\n");
                     for(Affiliation affiliation : filteredInfrastructures) {
-                        List<Lexicon.OrganizationRecord> localOrganizationNamings = 
+                        List<Lexicon.OrganizationRecord> localOrganizationNamings =
                             Lexicon.getInstance().getOrganizationNamingInfo(affiliation.getAffiliationString());
                         tei.append("\t\t\t\t<org type=\"infrastructure\">");
                         tei.append("\t\t\t\t\t<orgName type=\"extracted\">");
@@ -2997,7 +3025,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                         }
                         tei.append("\t\t\t\t</org>\n");
                     }
-                    
+
                     tei.append("\t\t\t</listOrg>\n");
                 }
             }
