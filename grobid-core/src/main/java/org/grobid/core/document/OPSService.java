@@ -118,8 +118,11 @@ import org.grobid.core.sax.TextSaxParser;
 			spf.setFeature("http://xml.org/sax/features/validation", false);
 			spf.setFeature("http://xml.org/sax/features/external-general-entities", false);
 			spf.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+			spf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
 			//get a new instance of parser
 			XMLReader reader = spf.newSAXParser().getXMLReader();
+			reader.setFeature("http://xml.org/sax/features/external-general-entities", false);
+			reader.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
 			reader.setEntityResolver(new EntityResolver() {
 				public InputSource resolveEntity(String publicId, String systemId) {
 					return new InputSource(
