@@ -1,9 +1,11 @@
 package org.grobid.core.engines
 
-import jnr.posix.BaseIovec.Layout
 import org.apache.commons.lang3.StringUtils
 import org.apache.commons.lang3.tuple.Triple
 import org.grobid.core.analyzers.GrobidAnalyzer
+import org.grobid.core.document.Document
+import org.grobid.core.document.DocumentPiece
+import org.grobid.core.document.DocumentPointer
 import org.grobid.core.engines.label.TaggingLabels.TABLE_LABEL
 import org.grobid.core.factory.GrobidFactory
 import org.grobid.core.layout.LayoutToken
@@ -13,8 +15,8 @@ import org.grobid.core.utilities.GrobidProperties
 import org.grobid.core.utilities.GrobidTestUtils
 import org.hamcrest.CoreMatchers
 import org.hamcrest.CoreMatchers.`is`
-import org.hamcrest.MatcherAssert
 import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.Matchers
 import org.hamcrest.Matchers.hasSize
 import org.hamcrest.collection.IsCollectionWithSize
 import org.junit.AfterClass
@@ -88,8 +90,8 @@ class FullTextParserTest {
                 .map { l: String -> l.split("\t".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0] }
                 .collect(Collectors.joining(" "))
 
-        MatcherAssert.assertThat(reconstructedText, CoreMatchers.`is`("FIG . 1 . λ ( T ) vs . T for YBCO"))
-        MatcherAssert.assertThat(
+        assertThat(reconstructedText, CoreMatchers.`is`("FIG . 1 . λ ( T ) vs . T for YBCO"))
+        assertThat(
             tokenisation.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray().size,
             CoreMatchers.`is`(13)
         )
@@ -134,10 +136,10 @@ class FullTextParserTest {
             }
         }
 
-        MatcherAssert.assertThat<List<String>>(output, IsCollectionWithSize.hasSize(2))
-        MatcherAssert.assertThat(output[0], CoreMatchers.`is`("FIG . 1 . λ ( T )"))
-        MatcherAssert.assertThat(output[1], CoreMatchers.`is`("vs . T for YBCO"))
-        MatcherAssert.assertThat(
+        assertThat<List<String>>(output, IsCollectionWithSize.hasSize(2))
+        assertThat(output[0], CoreMatchers.`is`("FIG . 1 . λ ( T )"))
+        assertThat(output[1], CoreMatchers.`is`("vs . T for YBCO"))
+        assertThat(
             tokenisation.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray().size,
             CoreMatchers.`is`(15)
         )
@@ -177,8 +179,8 @@ class FullTextParserTest {
                 .map { l: String -> l.split("\t".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0] }
                 .collect(Collectors.joining(" "))
 
-        MatcherAssert.assertThat(reconstructedText, CoreMatchers.`is`("FIG . 1 . λ ( T ) vs . T for YBCO"))
-        MatcherAssert.assertThat(
+        assertThat(reconstructedText, CoreMatchers.`is`("FIG . 1 . λ ( T ) vs . T for YBCO"))
+        assertThat(
             tokenisation.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray().size,
             CoreMatchers.`is`(13)
         )
@@ -223,10 +225,10 @@ class FullTextParserTest {
             }
         }
 
-        MatcherAssert.assertThat<List<String>>(output, IsCollectionWithSize.hasSize(2))
-        MatcherAssert.assertThat(output[0], CoreMatchers.`is`("FIG . 1 . λ ( T )"))
-        MatcherAssert.assertThat(output[1], CoreMatchers.`is`("vs . T for YBCO"))
-        MatcherAssert.assertThat(
+        assertThat<List<String>>(output, IsCollectionWithSize.hasSize(2))
+        assertThat(output[0], CoreMatchers.`is`("FIG . 1 . λ ( T )"))
+        assertThat(output[1], CoreMatchers.`is`("vs . T for YBCO"))
+        assertThat(
             tokenisation.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray().size,
             CoreMatchers.`is`(15)
         )
@@ -381,5 +383,59 @@ class FullTextParserTest {
         )
 
         assertThat(consolidatedTable3ResultCandidateThroughSequence, `is`(67))
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun testShouldOutputBlockStartForRegularBlock() {
+        val blockText = "This is a block"
+        val doc = Document.createFromText(blockText)
+        val documentParts = getWholeDocumentParts(doc)
+        val dataAndTokens = FullTextParser.getBodyTextFeatured(doc, documentParts)
+        //        LOGGER.debug("data debug: {}", dataAndTokens.getLeft());
+        val lines = dataAndTokens.left.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        assertThat(
+            "lines[0] fields",
+            Arrays.asList(
+                *lines[0].split("\\s".toRegex())
+                .dropLastWhile { it.isEmpty() }
+                .toTypedArray()), `is`(Matchers.hasItem("BLOCKSTART"))
+        )
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun testShouldOutputBlockStartForBlockStartingWithLineFeed() {
+        val blockText = "\nThis is a block"
+        val doc = Document.createFromText(blockText)
+        assertThat(
+            "doc.block[0].tokens[0].text",
+            doc.blocks[0].getTokens()[0].text,
+            CoreMatchers.`is`("\n")
+        )
+        val documentParts = getWholeDocumentParts(doc)
+        val dataAndTokens = FullTextParser.getBodyTextFeatured(doc, documentParts)
+        //        LOGGER.debug("data debug: {}", dataAndTokens.getLeft());
+        val lines = dataAndTokens.left.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        assertThat(
+            "lines[0] fields",
+            Arrays.asList(*lines[0].split("\\s".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()),
+            `is`(Matchers.hasItem("BLOCKSTART"))
+        )
+    }
+
+    private fun getWholeDocumentPiece(doc: Document): DocumentPiece {
+        return DocumentPiece(
+            DocumentPointer(0, 0, 0),
+            DocumentPointer(0, doc.tokenizations.size - 1, doc.tokenizations.size - 1)
+        )
+    }
+
+    private fun getWholeDocumentParts(doc: Document): SortedSet<DocumentPiece> {
+        return TreeSet(
+            setOf(
+                getWholeDocumentPiece(doc)
+            )
+        )
     }
 }
