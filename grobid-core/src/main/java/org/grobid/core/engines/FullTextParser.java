@@ -269,49 +269,52 @@ public class FullTextParser extends AbstractParser {
 				// we apply now the figure and table models based on the fulltext labeled output
 				bodyFigures = processFigures(bodyResults, bodyTokenization.getTokenization(), doc);
 
+                //We deal with figure/tables considered bad by reverting them as <paragraph>,
+                // to reduce the risk them to be dropped later on.
+
+                //TODO: double check the way the tables are validated
+
+                // Figures
                 long numberFiguresFulltextModel = Arrays.stream(bodyResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + TaggingLabels.FIGURE_LABEL))
                 .count();
 
-                List<Figure> badFigures = bodyFigures.stream()
+                List<Figure> badBodyFigures = bodyFigures.stream()
                     .filter(f -> !f.isCompleteForTEI())
                     .collect(Collectors.toList());
 
-                LOGGER.info("Number of figures badly formatted or incomplete we identified: " + badFigures.size());
-                bodyResults = revertResultsForBadItems(badFigures, bodyResults, TaggingLabels.FIGURE_LABEL,
+                LOGGER.info("Number of figures badly formatted or incomplete we identified in Body: " + badBodyFigures.size());
+                bodyResults = revertResultsForBadItems(badBodyFigures, bodyResults, TaggingLabels.FIGURE_LABEL,
                      !(bodyFigures.size() > numberFiguresFulltextModel));
 
                 bodyFigures = bodyFigures.stream()
-                    .filter(f -> !badFigures.contains(f))
+                    .filter(f -> !badBodyFigures.contains(f))
                     .collect(Collectors.toList());
 
                 postProcessFigureCaptions(bodyFigures, doc);
 
+                // Tables
 				bodyTables = processTables(bodyResults, bodyTokenization.getTokenization(), doc);
 
                 long numberTablesFulltextModel = Arrays.stream(bodyResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + TaggingLabels.TABLE_LABEL))
                 .count();
 
-                //We deal with tables considered bad by reverting them as <paragraph>, to reduce the risk them to be
-                // dropped later on.
-
-                //TODO: double check the way the tables are validated
-
-                List<Table> badTables = bodyTables.stream()
+                List<Table> badBodyTables = bodyTables.stream()
                     .filter(t -> !(t.isCompleteForTEI() && t.validateTable()))
                     .collect(Collectors.toList());
 
-                LOGGER.info("Number of tables badly formatted or incomplete we identified: " + badTables.size());
-                bodyResults = revertResultsForBadItems(badTables, bodyResults, TaggingLabels.TABLE_LABEL,
+                LOGGER.info("Number of tables badly formatted or incomplete we identified in Body: " + badBodyTables.size());
+                bodyResults = revertResultsForBadItems(badBodyTables, bodyResults, TaggingLabels.TABLE_LABEL,
                     !(bodyTables.size() > numberTablesFulltextModel));
 
                 bodyTables = bodyTables.stream()
-                    .filter(t-> !badTables.contains(t))
+                    .filter(t-> !badBodyTables.contains(t))
                     .collect(Collectors.toList());
 
 				postProcessTableCaptions(bodyTables, doc);
 
+                // Processing equations
                 bodyEquations = processEquations(bodyResults, bodyTokenization.getTokenization(), doc);
 			} else {
 				LOGGER.debug("Fulltext model: The featured body is empty");
@@ -328,15 +331,48 @@ public class FullTextParser extends AbstractParser {
 			if (featSeg != null && isNotEmpty(trim(featSeg.getLeft()))) {
 				// if featSeg is null, it usually means that no annex segment is found in the
 				// document segmentation
-				String bodytext = featSeg.getLeft();
+				String annexFeatures = featSeg.getLeft();
 				annexTokenization = featSeg.getRight().getTokenization();
-				annexResults = label(bodytext);
+				annexResults = label(annexFeatures);
 				//System.out.println(rese);
 
 				annexFigures = processFigures(annexResults, annexTokenization, doc);
+
+                long numberFiguresInAnnex = Arrays.stream(annexResults.split("\n"))
+                    .filter(r -> r.endsWith("I-" + TaggingLabels.FIGURE_LABEL))
+                .count();
+
+                List<Figure> badAnnexFigures = annexFigures.stream()
+                    .filter(f -> !f.isCompleteForTEI())
+                    .collect(Collectors.toList());
+
+                LOGGER.info("Number of figures badly formatted or incomplete we identified in Annex: " + badAnnexFigures.size());
+                annexResults = revertResultsForBadItems(badAnnexFigures, annexResults, TaggingLabels.FIGURE_LABEL,
+                     !(annexFigures.size() > numberFiguresInAnnex));
+
+                annexFigures = annexFigures.stream()
+                    .filter(f -> !badAnnexFigures.contains(f))
+                    .collect(Collectors.toList());
 				postProcessFigureCaptions(annexFigures, doc);
 
 				annexTables = processTables(annexResults, annexTokenization, doc);
+
+                long numberTablesInAnnex = Arrays.stream(bodyResults.split("\n"))
+                    .filter(r -> r.endsWith("I-" + TaggingLabels.TABLE_LABEL))
+                .count();
+
+                List<Table> badAnnexTables = annexTables.stream()
+                    .filter(t -> !(t.isCompleteForTEI() && t.validateTable()))
+                    .collect(Collectors.toList());
+
+                LOGGER.info("Number of tables badly formatted or incomplete we identified in Annex: " + badAnnexTables.size());
+                annexResults = revertResultsForBadItems(badAnnexTables, annexResults, TaggingLabels.TABLE_LABEL,
+                    !(annexTables.size() > numberTablesInAnnex));
+
+                annexTables = annexTables.stream()
+                    .filter(t-> !badAnnexTables.contains(t))
+                    .collect(Collectors.toList());
+
 				postProcessTableCaptions(annexTables, doc);
 
 				annexEquations = processEquations(annexResults, annexTokenization, doc);

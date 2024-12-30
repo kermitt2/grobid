@@ -33,7 +33,6 @@ import org.slf4j.LoggerFactory;
 import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Node;
-import nu.xom.Text;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -41,7 +40,6 @@ import java.util.List;
 import java.util.SortedSet;
 import java.util.Collections;
 
-import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
 import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 
