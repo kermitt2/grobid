@@ -336,7 +336,7 @@ public class FullTextParser extends AbstractParser {
 				annexResults = label(annexFeatures);
 				//System.out.println(rese);
 
-				annexFigures = processFigures(annexResults, annexTokenization, doc);
+				annexFigures = processFigures(annexResults, annexTokenization, doc, bodyFigures.size());
 
                 long numberFiguresInAnnex = Arrays.stream(annexResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + TaggingLabels.FIGURE_LABEL))
@@ -355,7 +355,7 @@ public class FullTextParser extends AbstractParser {
                     .collect(Collectors.toList());
 				postProcessFigureCaptions(annexFigures, doc);
 
-				annexTables = processTables(annexResults, annexTokenization, doc);
+				annexTables = processTables(annexResults, annexTokenization, doc, bodyTables.size());
 
                 long numberTablesInAnnex = Arrays.stream(bodyResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + TaggingLabels.TABLE_LABEL))
@@ -2162,8 +2162,13 @@ public class FullTextParser extends AbstractParser {
      * Process figures identified by the full text model
      */
     protected List<Figure> processFigures(String rese, List<LayoutToken> layoutTokens, Document doc) {
+        return processFigures(rese, layoutTokens, doc, 0);
+    }
 
+    protected List<Figure> processFigures(String rese, List<LayoutToken> layoutTokens, Document doc, int startFigureID) {
         List<Figure> results = new ArrayList<>();
+
+        int figureId = startFigureID;
 
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, layoutTokens, true);
 
@@ -2193,7 +2198,8 @@ public class FullTextParser extends AbstractParser {
 			}
 
             results.add(result);
-            result.setId("" + (results.size() - 1));
+            result.setId("" + (figureId));
+            figureId ++;
         }
 
         doc.setFigures(results);
@@ -2349,12 +2355,21 @@ public class FullTextParser extends AbstractParser {
     /**
      * Process tables identified by the full text model
      */
+    protected List<Table> processTables(
+        String rese,
+		List<LayoutToken> tokenizations,
+		Document doc) {
+        return processTables(rese, tokenizations, doc, 0);
+    }
+
     protected List<Table> processTables(String rese,
-									List<LayoutToken> tokenizations,
-									Document doc) {
+									    List<LayoutToken> tokenizations,
+									    Document doc,
+                                        int startTableID) {
 		List<Table> results = new ArrayList<>();
 		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
 
+        int tableId = startTableID;
 		for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
 				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.TABLE))) {
 			List<LayoutToken> tokenizationTable = cluster.concatTokens();
@@ -2384,7 +2399,8 @@ public class FullTextParser extends AbstractParser {
     				}
     			}
     			results.add(result);
-    			result.setId("" + (results.size() - 1));
+    			result.setId("" + tableId);
+                tableId ++;
             }
 		}
 
