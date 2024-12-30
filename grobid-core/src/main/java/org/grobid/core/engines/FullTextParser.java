@@ -336,7 +336,8 @@ public class FullTextParser extends AbstractParser {
 				annexResults = label(annexFeatures);
 				//System.out.println(rese);
 
-				annexFigures = processFigures(annexResults, annexTokenization, doc, bodyFigures.size());
+                int startFigureID = bodyFigures != null ? bodyFigures.size() : 0;
+				annexFigures = processFigures(annexResults, annexTokenization, doc, startFigureID);
 
                 long numberFiguresInAnnex = Arrays.stream(annexResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + TaggingLabels.FIGURE_LABEL))
@@ -355,7 +356,8 @@ public class FullTextParser extends AbstractParser {
                     .collect(Collectors.toList());
 				postProcessFigureCaptions(annexFigures, doc);
 
-				annexTables = processTables(annexResults, annexTokenization, doc, bodyTables.size());
+                int startTableID = bodyTables != null ? bodyTables.size() : 0;
+				annexTables = processTables(annexResults, annexTokenization, doc, startTableID);
 
                 long numberTablesInAnnex = Arrays.stream(bodyResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + TaggingLabels.TABLE_LABEL))
@@ -2399,7 +2401,7 @@ public class FullTextParser extends AbstractParser {
     				}
     			}
     			results.add(result);
-    			result.setId("" + tableId);
+    			result.setId(String.valueOf(tableId));
                 tableId ++;
             }
 		}
