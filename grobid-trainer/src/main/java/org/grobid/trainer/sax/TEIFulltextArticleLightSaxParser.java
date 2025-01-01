@@ -1,6 +1,8 @@
 package org.grobid.trainer.sax;
 
 import org.grobid.core.utilities.TextUtilities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -10,9 +12,6 @@ import java.util.List;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * SAX parser for the TEI format for fulltext data encoded for training. Normally all training data should 
  * be in this unique format for the fulltext model.
@@ -21,23 +20,23 @@ import org.slf4j.LoggerFactory;
  *
  * @author Patrice Lopez
  */
-public class TEIFulltextSaxParser extends DefaultHandler {
-    private static final Logger logger = LoggerFactory.getLogger(TEIFulltextSaxParser.class);
+public class TEIFulltextArticleLightSaxParser extends TEIFulltextSaxParser {
+    private static final Logger logger = LoggerFactory.getLogger(TEIFulltextArticleLightSaxParser.class);
 
     private StringBuffer accumulator = null; // current accumulated text
 
     private String output = null;
     private Stack<String> currentTags = null;
 	private String currentTag = null;
-	
+
     private boolean figureBlock = false;
 	private boolean tableBlock = false;
 
     private ArrayList<String> labeled = null; // store line by line the labeled data
 
-    public TEIFulltextSaxParser() {
-        labeled = new ArrayList<String>();
-        currentTags = new Stack<String>();
+    public TEIFulltextArticleLightSaxParser() {
+        labeled = new ArrayList<>();
+        currentTags = new Stack<>();
         accumulator = new StringBuffer();
     }
 
@@ -58,9 +57,9 @@ public class TEIFulltextSaxParser extends DefaultHandler {
         return labeled;
     }
 
-    public void endElement(java.lang.String uri,
-                           java.lang.String localName,
-                           java.lang.String qName) throws SAXException {
+    public void endElement(String uri,
+                           String localName,
+                           String qName) throws SAXException {
 		if ( (!qName.equals("lb")) && (!qName.equals("pb")) && (!qName.equals("space")) ) {
             writeData(qName, true);
 			if (!currentTags.empty()) {
@@ -118,10 +117,12 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                         }
                     }
                 }
-            } else if (qName.equals("p") ) {
+            } 
+			else if (qName.equals("p") ) {
                 currentTags.push("<paragraph>");
 				currentTag = "<paragraph>";
-            } else if (qName.equals("ref")) {
+            }
+			else if (qName.equals("ref")) {
                 int length = atts.getLength();
 
                 // Process each attribute
@@ -155,7 +156,8 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                         }
                     }
                 }
-            } else if (qName.equals("formula")) {
+            } 
+			else if (qName.equals("formula")) {
                 currentTags.push("<equation>");
 				currentTag = "<equation>";
             } else if (qName.equals("label")) {
@@ -168,8 +170,8 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                 }
             } 
             else if (qName.equals("table")) {
-                currentTags.push("<table>");
-				currentTag = "<table>";
+                currentTags.push("<paragraph>");
+				currentTag = "<paragraph>";
                 tableBlock = true;
                 figureBlock = false;
             } 
@@ -180,37 +182,10 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                 //currentTag = "<item>";
             } 
 			else if (qName.equals("figure")) {
-	            figureBlock = true;
+                currentTags.push("<paragraph>");
+				currentTag = "<paragraph>";
+                figureBlock = true;
                 tableBlock = false;
-	            int length = atts.getLength();
-
-	            // Process each attribute
-	            for (int i = 0; i < length; i++) {
-	                // Get names and values for each attribute
-	                String name = atts.getQName(i);
-	                String value = atts.getValue(i);
-
-	                if (name != null) {
-	                    if (name.equals("type")) {
-	                        if (value.equals("table")) {
-	                            tableBlock = true;
-	                        } else {
-                                logger.error("Invalid attribute value for element figure: " + name + "=" + value);
-                            }
-	                    } else {
-                            logger.error("Invalid attribute name for element figure: " + name);
-                        }
-	                }
-	            }
-				if (tableBlock) {
-					figureBlock = false;
-	                currentTags.push("<table>");
-					currentTag = "<table>";
-				}
-				else {
-	                currentTags.push("<figure>");
-					currentTag = "<figure>";
-				}
 	        } 
 			else if (qName.equals("other")) {
                 currentTags.push("<other>");
