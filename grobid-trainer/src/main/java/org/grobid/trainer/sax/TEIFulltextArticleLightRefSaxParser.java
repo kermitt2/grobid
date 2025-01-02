@@ -224,10 +224,10 @@ public class TEIFulltextArticleLightRefSaxParser extends TEIFulltextSaxParser {
 
 			// adjust tag (conservative)
 			if (tableBlock) {
-				currentTag = "<table>";
+				currentTag = "<paragraph>";
 			}
 			else if (figureBlock) {
-				currentTag = "<figure>";
+				currentTag = "<paragraph>";
 			}
 
             String text = getText();
