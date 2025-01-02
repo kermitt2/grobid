@@ -373,7 +373,7 @@ public class ProcessEngine implements Closeable {
     public void createTraining(final GrobidMainArgs pGbdArgs) {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
-        int result = getEngine().batchCreateTraining(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
+        int result = getEngine().batchCreateTraining(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1, pGbdArgs.getModelFlavor());
         LOGGER.info(result + " files processed.");
     }
 
@@ -622,7 +622,7 @@ public class ProcessEngine implements Closeable {
      * @return List<String> containing the list of the methods.
      */
     public final static List<String> getUsableMethods() {
-        final Class<?> pClass = new ProcessEngine().getClass();
+        final Class<?> pClass = ProcessEngine.class;
         final List<String> availableMethods = new ArrayList<String>();
         for (final Method method : pClass.getMethods()) {
             if (isUsableMethod(method.getName())) {

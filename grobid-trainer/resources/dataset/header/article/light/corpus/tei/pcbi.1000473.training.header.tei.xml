@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="_pcbi.1000473"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Microarray Comparative Genomic Hybridisation Analysis<lb/> Incorporating Genomic Organisation, and Application to<lb/> Enterobacterial Plant Pathogens<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Leighton Pritchard 1 *, Hui Liu 1 , Clare Booth 2 , Emma Douglas 1 , Patrice François 3 , Jacques Schrenzel 3 ,<lb/> Peter E. Hedley 2 , Paul R. J. Birch 1,4 , Ian K. Toth 1 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Plant Pathology Programme, SCRI, </affiliation>
+	</byline>
+
+	<address>Dundee, Scotland, United Kingdom, </address>
+
+	<byline>
+	<affiliation>2 Genetics Programme, SCRI,</affiliation>
+	</byline> 
+
+	<address>Dundee, Scotland, United Kingdom,</address>
+
+	<byline>
+	<affiliation>3 Genomic Research<lb/> Laboratory, Infectious Diseases Service, Geneva University Hospitals and the University of Geneva,</affiliation>
+	</byline>
+
+	<address>Geneva, Switzerland,</address>
+
+	<byline>
+	<affiliation>4 Division of Plant Science, College of Life<lb/> Sciences, University of Dundee at SCRI,</affiliation>
+	</byline>
+
+	<address>Dundee, Scotland, United Kingdom</address>
+
+	Abstract<lb/>
+	<div type="abstract">Microarray comparative genomic hybridisation (aCGH) provides an estimate of the relative abundance of genomic DNA<lb/> (gDNA) taken from comparator and reference organisms by hybridisation to a microarray containing probes that represent<lb/> sequences from the reference organism. The experimental method is used in a number of biological applications, including<lb/> the detection of human chromosomal aberrations, and in comparative genomic analysis of bacterial strains, but<lb/> optimisation of the analysis is desirable in each problem domain. We present a method for analysis of bacterial aCGH data<lb/> that encodes spatial information from the reference genome in a hidden Markov model. This technique is the first such<lb/> method to be validated in comparisons of sequenced bacteria that diverge at the strain and at the genus level:<lb/> Pectobacterium atrosepticum SCRI1043 (Pba1043) and Dickeya dadantii 3937 (Dda3937); and Lactococcus lactis subsp. lactis<lb/> IL1403 and L. lactis subsp. cremoris MG1363. In all cases our method is found to outperform common and widely used aCGH<lb/> analysis methods that do not incorporate spatial information. This analysis is applied to comparisons between commercially<lb/> important plant pathogenic soft-rotting enterobacteria (SRE) Pba1043, P. atrosepticum SCRI1039, P. carotovorum 193, and<lb/> Dda3937. Our analysis indicates that it should not be assumed that hybridisation strength is a reliable proxy for sequence<lb/> identity in aCGH experiments, and robustly extends the applicability of aCGH to bacterial comparisons at the genus level.<lb/> Our results in the SRE further provide evidence for a dynamic, plastic &apos;accessory&apos; genome, revealing major genomic islands<lb/> encoding gene products that provide insight into, and may play a direct role in determining, variation amongst the SRE in<lb/> terms of their environmental survival, host range and aetiology, such as phytotoxin synthesis, multidrug resistance, and<lb/> nitrogen fixation.<lb/></div>
+
+	Citation:
+	<reference>Pritchard L, Liu H, Booth C, Douglas E, François P, et al. (2009) Microarray Comparative Genomic Hybridisation Analysis Incorporating Genomic<lb/> Organisation, and Application to Enterobacterial Plant Pathogens. PLoS Comput Biol 5(8): e1000473.</reference>
+
+	<idno>doi:10.1371/journal.pcbi.1000473<lb/></idno>
+
+	Editor:
+	<editor>Weixiong Zhang,</editor>
+
+	<byline>
+	<affiliation>Washington University in Saint Louis, United States of America<lb/></affiliation>
+	</byline>
+
+	<note type="submission">Received February 5, 2009; Accepted July 16, 2009;</note>
+
+	Published
+	<date>August 21, 2009<lb/></date>
+
+	Copyright:
+	<note type="copyright">ß 2009 Pritchard et al. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits<lb/> unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.<lb/></note>
+
+	Funding: 
+	<note type="funding">This work was supported by the Scottish Government Rural and Environment Research and Analysis Directorate (RERAD) [SCR/908/03, SCR/842/04]. JS<lb/> and PF were also supported by the European Union [COST C05.0103 to JS] and the Swiss National Science Foundation [3100A0-116075/1 to PF, 3100A0-112370/1<lb/> to JS]. The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.<lb/></note> 
+
+	Competing Interests: The authors have declared that no competing interests exist.<lb/>
+
+	* E-mail:
+	<email>lpritc@scri.ac.uk</email>
+
+	(LP);
+	<email>itoth@scri.ac.uk</email>
+
+	(IKT)<lb/> 
+
+	<reference>PLoS Computational Biology | www.ploscompbiol.org<lb/> August 2009 | Volume 5 | Issue 8 | e1000473</reference>
+
+		</front>
+	</text>
+</tei>

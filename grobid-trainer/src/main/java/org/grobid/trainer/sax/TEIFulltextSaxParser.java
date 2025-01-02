@@ -118,16 +118,10 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                         }
                     }
                 }
-            } 
-			else if (qName.equals("p") ) {
+            } else if (qName.equals("p") ) {
                 currentTags.push("<paragraph>");
 				currentTag = "<paragraph>";
-            } 
-			else if (qName.equals("other")) {
-                currentTags.push("<other>");
-				currentTag = "<other>";
-            } 
-			else if (qName.equals("ref")) {
+            } else if (qName.equals("ref")) {
                 int length = atts.getLength();
 
                 // Process each attribute
@@ -161,8 +155,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                         }
                     }
                 }
-            } 
-			else if (qName.equals("formula")) {
+            } else if (qName.equals("formula")) {
                 currentTags.push("<equation>");
 				currentTag = "<equation>";
             } else if (qName.equals("label")) {

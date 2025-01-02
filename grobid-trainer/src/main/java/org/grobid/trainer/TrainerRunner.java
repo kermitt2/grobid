@@ -17,9 +17,25 @@ import java.util.List;
  */
 public class TrainerRunner {
 
-    private static final List<String> models = Arrays.asList("affiliation", "chemical", "date", "citation", 
-        "ebook", "fulltext", "header", "header-ietf", "name-citation", "name-header", "patent", "segmentation",
-        "segmentation-ietf");
+    private static final List<String> models = Arrays.asList(
+        "affiliation",
+        "chemical",
+        "date",
+        "citation",
+        "ebook",
+        "fulltext",
+        "header",
+        "header-light",
+        "header-light-ref",
+        "header-ietf",
+        "name-citation",
+        "name-header",
+        "patent",
+        "segmentation",
+        "segmentation-light",
+        "segmentation-light-ref",
+        "segmentation-ietf"
+    );
     private static final List<String> options = Arrays.asList("0 - train", "1 - evaluate", "2 - split, train and evaluate", "3 - n-fold evaluation");
 
     private enum RunType {
@@ -125,6 +141,10 @@ public class TrainerRunner {
             trainer = new HeaderTrainer();
         } else if (model.equals("header-ietf")) {
             trainer = new HeaderTrainer(Flavor.IETF);
+        } else if (model.equals("header-light")) {
+            trainer = new HeaderTrainer(Flavor.ARTICLE_LIGHT);
+        } else if (model.equals("header-light-ref")) {
+            trainer = new HeaderTrainer(Flavor.ARTICLE_LIGHT_WITH_REFERENCES);
         } else if (model.equals("name-citation")) {
             trainer = new NameCitationTrainer();
         } else if (model.equals("name-header")) {
@@ -133,6 +153,10 @@ public class TrainerRunner {
             trainer = new PatentParserTrainer();
         } else if (model.equals("segmentation")) {
             trainer = new SegmentationTrainer();
+        } else if (model.equals("segmentation-light")) {
+            trainer = new SegmentationTrainer(Flavor.ARTICLE_LIGHT);
+        } else if (model.equals("segmentation-light-ref")) {
+            trainer = new SegmentationTrainer(Flavor.ARTICLE_LIGHT_WITH_REFERENCES);
         } else if (model.equals("segmentation-ietf")) {
             trainer = new SegmentationTrainer(Flavor.IETF);
         } else if (model.equals("reference-segmenter")) {

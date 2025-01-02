@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_0951-7715_24_7_004"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<publisher>IOP PUBLISHING</publisher>
+			
+			<title level="j">NONLINEARITY<lb/></title>
+
+			<reference>Nonlinearity 24 (2011) 1975–1986<lb/></reference>
+
+			<idno>doi:10.1088/0951-7715/24/7/004<lb/></idno>
+			
+			<docTitle>
+			<titlePart>Exact solutions for a family of spin-boson systems<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+			<docAuthor>Yuan-Harng Lee, Jon Links and Yao-Zhong Zhang<lb/></docAuthor>
+			</byline>
+
+			<byline>
+			<affiliation>School of Mathematics and Physics, The University of Queensland,</affiliation>
+			</byline>
+
+			<address>Brisbane, Qld 4072, Australia<lb/></address>
+
+			<note type="submission">Received 15 December 2010<lb/></note>
+
+			Published 
+			<date>24 May 2011<lb/></date>
+
+			Online at 
+			<ptr type="web">stacks.iop.org/Non/24/1975<lb/></ptr>
+
+			Recommended by S Nonnenmacher<lb/>
+
+			Abstract 
+			<div type="abstract">We obtain the exact solutions for a family of spin-boson systems. This<lb/> is achieved through application of the representation theory for polynomial<lb/> deformations of the su(2) Lie algebra. We demonstrate that the family of<lb/> Hamiltonians includes, as special cases, known physical models which are<lb/> the two-site Bose–Hubbard model, the Lipkin–Meshkov–Glick model, the<lb/> molecular asymmetric rigid rotor, the Tavis–Cummings model and a two-mode<lb/> generalization of the Tavis–Cummings model.<lb/></div>
+
+			<keywords>Mathematics Subject Classification: 83C15, 81U15, 81V80, 17B80, 81R12<lb/></keywords> 
+			
+			<keywords type="pacs">PACS numbers: 02.30.Ik, 03.65.Fd Fd<lb/></keywords>
+
+			0951-7715/11/071975+12$33.00
+
+			<note type="copyright">© 2011 IOP Publishing Ltd &amp; London Mathematical Society</note>
+
+			Printed in the UK &amp; the USA<lb/>
+
+		</front>
+	</text>
+</tei>

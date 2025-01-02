@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_0953-2048_24_7_075001"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<lb/>
+			<publisher>IOP PUBLISHING</publisher>
+			
+			<title level="j">SUPERCONDUCTOR SCIENCE AND TECHNOLOGY<lb/></title>
+
+			<reference>Supercond. Sci. Technol. 24 (2011) 075001 (7pp)<lb/></reference>
+			
+			<idno>doi:10.1088/0953-2048/24/7/075001<lb/></idno>
+			
+			<docTitle>
+			<titlePart>Critical current and AC loss analysis of a<lb/> superconducting power transmission cable<lb/> with ferromagnetic diverters<lb/></titlePart>
+			</docTitle>
+
+			<byline>
+			<docAuthor>M Vojenčiak 1,2 , JŠouc 1 and F Gömöry 1<lb/></docAuthor>
+			</byline>
+
+			<byline>
+			<affiliation>1 Institute of Electrical Engineering, Slovak Academy of Sciences,</affiliation>
+			</byline>
+
+			<address>Dubravska cesta 9,<lb/> 841 04 Bratislava, Slovakia<lb/></address>
+
+			<byline>
+			<affiliation>2 Karlsruhe Institute of Technology, Institute for Technical Physics,<lb/></affiliation>
+			</byline>
+
+			<address>Hermann-von-Helmholtz-Platz 1, 76344 Eggenstein-Leopoldshafen, Germany<lb/></address>
+
+			E-mail: 
+			<email>michal.vojenciak@savba.sk<lb/></email>
+
+			<note type="submission">Received 28 January 2011, in final form 22 March 2011<lb/></note>
+
+			Published 
+			<date>12 May 2011<lb/></date>
+
+			Online at 
+			<ptr type="web">stacks.iop.org/SUST/24/075001<lb/></ptr>
+
+			Abstract 
+			<div type="abstract">Superconducting transmission cables are important for increasing the capability of electricity<lb/> networks. We analysed monolayer power transmission cable based on high-temperature<lb/> superconductors, and we propose a new way to improve its performance in this paper. We<lb/> studied two important parameters of this cable-critical current and AC loss. For the former<lb/> parameter, the dependence of the critical current density on the local magnetic field is very<lb/> important. For the latter parameter, the direction of the magnetic field penetration also has a<lb/> substantial influence. We propose placing ferromagnetic diverters above the gaps between<lb/> individual superconducting tapes. Ferromagnetic components placed in this position influenced<lb/> both the critical current density and the AC loss in the superconductor in a positive way. We<lb/> used a numerical model for magnetic field analysis, and we also prepared a 0.5 m long sample<lb/> of the cable for experimentation. Our experimental results confirmed the correctness of the<lb/> basic idea. The critical current of the cable was increased by 14%. However, the AC loss<lb/> measurement showed differences between the experiment and the calculation.<lb/></div>
+
+			(Some figures in this article are in colour only in the electronic version)<lb/>
+
+		</front>
+	</text>
+</tei>

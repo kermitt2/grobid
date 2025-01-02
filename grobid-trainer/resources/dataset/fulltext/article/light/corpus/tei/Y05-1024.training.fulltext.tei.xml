@@ -1,0 +1,179 @@
+<?xml version="1.0" ?>
+<tei>
+	<teiHeader>
+		<fileDesc xml:id="_Y05-1024"/>
+	</teiHeader>	
+	<text xml:lang="en">
+			<head level="1">1. Introduction<lb/></head> 
+			
+			<p>Cellular phones are now widely used and those with Web browsing capability are becoming very<lb/> popular. Users can easily browse information provided on the World Wide Web such as news,<lb/> weather, and traffic report with the cellular phone screen in mobile environment. However,<lb/> obtaining necessary information from large database such as user&apos;s manual or travelers&apos; guide is<lb/> quite a task for users since searching for appropriate information from seas of data requires<lb/> cumbersome key operations. I n m o s t cases, users have to carefully navigate through deep<lb/> hierarchical structures of menus or have to type in complex combination of keys to enter some<lb/> keywords.<lb/></p> 
+			
+			<p>Text retrieval by voice input is one of the solutions for this problem. This paper presents a<lb/> telephone-based voice query retrieval system in Japanese which enables cellular phone users to<lb/> search through the user&apos;s manual. This system accepts spoken queries over the cellular phone with<lb/> large vocabulary continuous speech recognition (LVCSR) and retrieves relevant parts from the<lb/> user&apos;s manual with text retrieval. T h e r e s u l t s a r e p r o v i d e d t o t h e u s e r a s a W e b p a g e b y<lb/> s y n c h r o n o u s l y activating the Web and the voice systems <ref type="biblio">(Yoshida et al., 2002)</ref>. Users can input<lb/> queries without complicated keystrokes and can view the list of results on the cellular phone screen.<lb/></p> 
+			
+			<p>With respect to voice input systems, a large number of interactive voice responses (IVR) systems<lb/> and spoken dialogue systems has been designed and developed over the years <ref type="biblio">(Zue, 1997)</ref>. As for<lb/> user&apos;s manual retrieval systems which accept voice input, <ref type="biblio">Kawahara et al. (2003)</ref> has developed a<lb/> spoken dialogue system for appliance manuals. However, they mainly focus on the dialogue strategy<lb/> to select the appropriate result on screen-less systems such as VTR and FAX. On the other hand,<lb/> retrieval methods for voice input have been examined on a TREC query set <ref type="biblio">(Barnett et al., 1997;<lb/> Crestani, 2000)</ref>.<lb/>.</p>
+			
+			 <p>However, text retrieval in TREC mainly aims to search open domain documents from long<lb/> queries, while our system is required to search closed domain documents such as user&apos;s manuals<lb/> based on short queries spoken over the cellular phone.<lb/></p> 
+			 
+			 <p>In order to apply text retrieval technique to speech-activated user&apos;s manual retrieval, we have<lb/> investigated queries for searching manuals in addition to the text of the manuals from a linguistic<lb/> viewpoint. We found that text retrieval for a user&apos;s manual has the following three difficulties.<lb/></p>
+
+ 			<list>
+ 				<item>1) The difficulty of identifying passages in a user&apos;s manual based on an individual word.<lb/></item> 
+			
+				<item>2) The difficulty of distinguishing affirmative and negative sentences which mean two different<lb/> features in the manual.<lb/></item> 
+			
+				<item>3) The difficulty of retrieving appropriate passages for a query using words not appearing in the<lb/> manual.<lb/></item>
+			</list>
+				
+			<p>This paper presents how we overcome these difficulties using three techniques: 1) utilizing word<lb/> pairs with dependency relations, 2) distinguishing affirmative and negative expressions by auxiliary<lb/> verbs, and 3) converging synonyms with synonym dictionary.<lb/> The rest of the paper is organized as follows. Section 2 describes the system configuration of our<lb/> speech-activated text retrieval system and how it works. Section 3 discusses the difficulties in text<lb/> retrieval in our system and presents our proposed techniques in detail. Section 4 shows the<lb/> developed prototype system and Section 5 reports its evaluation results. Finally Section 6 concludes<lb/> the paper.<lb/></p> 
+			
+			<head level="1">2. Speech-Activated Text Retrieval System<lb/></head> 
+			
+			<p>Our system receives spoken queries on the usage of the cellular phone and provides the list of<lb/> relevant passages in the user&apos;s manual. In this paper, a passage denotes a part of the document<lb/> corresponding to a feature in the user&apos;s manual.<lb/></p>
+
+			<head level="2">2.1. System Configuration<lb/></head> 
+			
+			<p>Figure <ref type="figure">1</ref> shows the configuration of our retrieval system.<lb/> The telephone service module receives a phone call from the user. This module prepares the search<lb/> operation by calling the LVCSR module, which recognizes the query spoken over the phone, and the<lb/> text retrieval module, which provides the search result for the query.<lb/></p>
+
+			<figure>
+				Telephone<lb/> Service<lb/> Module<lb/> Web<lb/> Service<lb/> Module<lb/> LVCSR<lb/> Module<lb/> Text<lb/> Retrieval<lb/> Module<lb/> User&apos;s<lb/> Manual<lb/> Index<lb/> Telephone<lb/> Network<lb/> The Internet<lb/> The Internet<lb/>
+				Figure 1:
+				The configuration of the prototype system.<lb/>
+			</figure>
+
+			<figure>
+				Figure 2:
+				The screen of the<lb/> cellular phone displaying the<lb/> search result.<lb/>
+			</figure>
+
+			<p>The telephone service module sends the list of the relevant passages to the Web service module,<lb/> and then hangs up the phone. The Web service module provides the result to the user according to<lb/> the user&apos;s request via the internet.<lb/> We assume that the cellular phone screen displays about 30 letters per line and 15 lines of text<lb/> according to the specifications of recent popular cellular phones in Japan. We assign top ten<lb/> potential passages as the search result and display the title of them in order for the user to see with<lb/> ease.<lb/> Figure <ref type="figure">2</ref> shows the screen of the cellular phone displaying the search result.<lb/></p>
+
+			<head level="2">2.2. Example of Using the System<lb/></head>
+
+			<p>This section describes how our system works. Our system works in Japanese, but in the following<lb/> section, English translation is provided for the reader&apos;s convenience. In our system, the user obtains<lb/> the relevant passage in the user&apos;s manual with the voice query according to the following steps.<lb/></p> 
+			
+ 			<list>
+ 				<item>Step 1: The user first accesses the system&apos;s main page of our system with the cellular phone (Figure<lb/> <ref type="figure">3</ref>). The page contains two hyperlinks along with brief instructions and query examples.<lb/></item> 
+			
+				<item>Step 2: The user follows the first link labeled &quot; Input query by voice. &quot; It is linked to the telephone<lb/> service module, allowing the user to call the telephone service module.<lb/></item>  
+			
+				<item>Step 3: The user inputs a query following the voice guidance from the system. The LVCSR module<lb/> recognizes it and outputs the result text. The text retrieval module searches the user&apos;s manual<lb/> from recognized text and outputs the top ten results. The user goes back to the main page after<lb/> the telephone service module hangs up the phone.<lb/></item>  
+			
+				<item>Step 4: The user follows the second link labeled &quot; Show search results, &quot; which is linked to our Web<lb/> service module. Then the user views the result page which contains the title list of top ten results<lb/> (each passage consists of a title and a body). Figure <ref type="figure">4</ref> shows the example of the result page<lb/> responding to the voice query &quot; How to change my email address. &quot;<lb/></item>
+			
+				<item>Step 5: By selecting a title of a passage from the result list, the user retrieves the corresponding<lb/> body of the passage (Figure <ref type="figure">5</ref>). If the result list contains no relevant passages, the user can go<lb/> back to the homepage and re-enter a query by speech.<lb/></item>
+			</list>
+
+			<figure>
+				Figure 3:
+				The main page<lb/> of our system.<lb/>
+			</figure>
+
+			<figure>
+				Figure 4:
+				The result page<lb/> displaying the title list of<lb/> top ten results for the<lb/> query.<lb/>
+			</figure>
+
+			<figure>
+				Figure 5:
+				The body of<lb/> the passage displayed<lb/> when the user selects the<lb/> title in Figure <ref type="figure">4</ref>.<lb/>
+			</figure>
+			
+			<head level="1">3. Text Retrieval for a User&apos;s Manual<lb/></head>
+
+			<head level="2">3.1. The Problems on User&apos;s Manual Retrieval<lb/></head>
+
+			<p>In general, user&apos;s manual of equipment explains all functions extensively. Since the phrasing used in<lb/> a user&apos;s manual is often similar, expressions with small difference might appear in completely<lb/> different entries. We have investigated queries for searching manuals in addition to the text of the<lb/> manuals from a linguistic viewpoint and found that text retrieval for user&apos;s manual has the following<lb/> three difficulties.<lb/></p> 
+			
+ 			<list>
+ 				<item>1) It is difficult to identify passages in a user&apos;s manual based on an individual word. For example, a<lb/> word &quot; mail &quot; shows up in passages explaining various functions such as sending mails, receiving<lb/> mails, composing mails, and many others. In order to overcome this difficulty, we need to use<lb/> relations between words.<lb/></item> 
+			
+				<item>2) It is difficult to distinguish affirmative and negative sentences based on independent words.<lb/> Sentences with the same set of content words can mean two different features depending on<lb/> whether the sentence is in the affirmative or in the negative. This is often true in manual writings<lb/> where each function is described in pair: one activating and the other deactivating the function (ex.<lb/> &quot; Sending the caller number &quot; and &quot; Not sending the caller number &quot; ). In order to overcome this<lb/> difficulty, we need to handle polarity indicated by auxiliary verbs.<lb/></item> 
+			
+				<item>3) It is difficult to retrieve appropriate passages for a query using words not appearing in the manual.<lb/> While the expression denoting an object is generally standardized in a user&apos;s manual, users often<lb/> indicate the object with other expressions. In order to overcome this difficulty, we need to<lb/> assimilate difference of various synonymous expressions.<lb/></item>
+			</list>
+					
+			<head level="2">3.2. The Approaches for User&apos;s Manual Retrieval<lb/></head>
+
+			<p>The system retrieves relevant passages from the user&apos;s manual with a word-based text retrieval<lb/> method. The system generates indexes for content words in passages and obtains relevant passages<lb/> from the words in the query based on Okapi BM25 probabilistic retrieval model without relevance<lb/> feedback in principle <ref type="biblio">(Robertson et al., 1993)</ref>. In this model, the weight W of a passage P for a<lb/> query Q is defined as follows:<lb/></p>
+
+			<formula><lb/> <lb/> <lb/> Q<lb/> T<lb/> T<lb/> TW<lb/> W<lb/> )<lb/> (<lb/> qtf<lb/> k<lb/> qtf<lb/> k<lb/> tf<lb/> K<lb/> k<lb/> tf<lb/> k<lb/> w<lb/> T<lb/> TW<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 2<lb/> 2<lb/> 1<lb/> 1<lb/> )<lb/> 1<lb/> (<lb/> )<lb/> 1<lb/> (<lb/> )<lb/> (<lb/> 5<lb/> .<lb/> 0<lb/> 5<lb/> .<lb/> 0<lb/> log<lb/> <lb/> <lb/> <lb/> <lb/> n<lb/> n<lb/> N<lb/> w<lb/> AVPL<lb/> PL<lb/> b<lb/> b<lb/> K<lb/> <lb/> <lb/> <lb/> <lb/> )<lb/> 1<lb/> (<lb/></formula>
+
+			<p>Here T denotes a term in the query Q, N denotes the number of passages in the whole text, n<lb/> denotes the number of passages containing the term T, tf denotes the frequency of occurrence of the<lb/> term T within the passage P, qtf denotes the frequency of occurrence of the term T within the query<lb/> Q, PL denotes the length of the passage P, and AVPL denotes the average length of all passages. k 1 ,<lb/> k 2 , and b are predefined constants.<lb/></p>
+
+			<p>In order to overcome the difficulties stated previously, we have expanded the retrieval model with<lb/> the following three techniques.<lb/></p>
+
+			<head level="3">1) Utilization of word pairs with dependency relations<lb/></head>
+			
+			<p>This technique assigns larger weight for passages including the same word pairs with dependency<lb/> relations as in the query. The system uses the following weight W wp , which is simple extension of W:<lb/></p>
+
+			<formula>W<lb/> k<lb/> W<lb/> NP<lb/> <lb/>  wp<lb/> wp<lb/> </formula>
+
+			<p>where NP denotes the number of word pairs which appear both in the passage P and the query Q<lb/> with dependency relations. k wp is predefined constants.<lb/> We detect the dependency between words by shallow dependency analysis without parsing. The<lb/> system assigns depend-to and depend-from attributes to each word based on its part of speech and<lb/> connects them according to the surrounding relationship <ref type="biblio">(Satoh et al., 2003)</ref>.<lb/></p> 
+			
+			<head level="3">2) Distinction between the negative and the affirmative phrases by auxiliary verbs<lb/></head> 
+			
+			<p>This technique assigns the different weight on the term according to the condition whether an<lb/> auxiliary verb indicating negative polarity follows after the term. The system adds this condition to<lb/> each word after morphological analysis, and distinguishes words with different conditions. The<lb/> system uses the following weight W aux instead of W:<lb/></p>
+
+			<formula><lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> Q<lb/> T<lb/> Q<lb/> T<lb/> T<lb/> TW<lb/> k<lb/> T<lb/> TW<lb/> T<lb/> TW<lb/> k<lb/> T<lb/> TW<lb/> W<lb/> )<lb/> (<lb/> )<lb/> (<lb/> )<lb/> (<lb/> )<lb/> (<lb/>aux<lb/> aux<lb/> aux<lb/> </formula>
+
+			<p>where T + denotes the term T with this condition and T -denotes the term T without this condition.<lb/> k aux is predefined constants.<lb/></p> 
+			
+			<head level="3">3) Converging synonyms<lb/></head> 
+			
+			<p>This technique assumes the occurrence of synonymous expressions for a word as the occurrence of<lb/> the word itself in calculating the weight. The system converges various synonymous expressions<lb/> into the standard expression by using predefined synonym dictionary. The system accepts a set of<lb/> words with dependency relations as a synonymous expression in order to converge complex<lb/> synonymous expressions.<lb/> Table <ref type="table">1</ref> shows an example of a synonym dictionary. An arrow sign denotes a dependency relation<lb/> between words.<lb/></p>
+
+			<figure type="table">
+				Table 1:
+				An example of a synonym dictionary<lb/>
+				Standard Expression<lb/> Synonymous Expressions<lb/> saito<lb/> webu<lb/> hômupêji<lb/> (site)<lb/> (web)<lb/> (homepage)<lb/> chakushin&apos;on<lb/> chakushinmerodî<lb/> yobidashion<lb/> (ringtone)<lb/> (ring melody)<lb/> (phone beep)<lb/> ridaiaru<lb/> môichido  kakeru<lb/> (redial)<lb/> (again  call)<lb/>
+			</figure>
+
+			<head level="1">4. Prototype System<lb/></head> 
+			
+			<p>We have constructed a prototype system to search through the manuals for cellular phone users<lb/> <ref type="biblio">(Ishikawa et al., 2004)</ref>. The user&apos;s manual contains about 14,000 passages and consists of about<lb/> 4,000 unique words. The prototype system works in real time according to the user&apos;s operation.<lb/></p>
+
+			<head level="2">4.1. LVCSR Module<lb/></head> 
+			
+			<head level="3">4.1.1. Language Model<lb/></head>
+
+			<p>A statistical language model (LM) with word and class n-gram estimates is used in our system.<lb/> Word 3-gram is backed off to word 2-gram, and word 2-gram is backed off to class 2-gram. Part-<lb/>of-speech patterns are used as the classes of each word. The LM is trained on a text corpus of query<lb/> samples for our target user&apos;s manual. Nouns in the manual document are added to the recognition<lb/> dictionary apart from the training.<lb/> A total of 15,000 queries were manually constructed and used for training the LM. The final LM<lb/> for the prototype system has about 4,000 words in the recognition vocabulary, about 20,000 word 2-<lb/>gram entries, and about 40,000 word 3-gram entries.<lb/></p>
+
+			<head level="3">4.1.2. Acoustic Model<lb/></head>
+
+			<p>A speech signal is sampled at 8kHz, with MFCC analysis frame rate of 10ms. Spectral subtraction<lb/> (SS) is applied to remove stationary additive noises. The feature set includes MFCC, pitch, and<lb/> energy with their time derivatives. The LVCSR decoder supports triphone HMMs with tree-based<lb/> state clustering on phonetic contexts. The state emission probability is represented by Gaussian<lb/> mixtures with diagonal covariance matrices.<lb/> For the prototype system, Gender-dependent acoustic models were prepared by the training on the<lb/> speech corpus with 200,000 sentences read by 1,385 speakers collected through telephone line.<lb/></p>
+
+			<head level="3">4.1.3. LVCSR Decoder<lb/></head>
+
+			<p>The LVCSR decoder recognizes the query utterances with the triphone acoustic model, the<lb/> statistical language model, and a tree-structured word dictionary. It performs two-stage processing.<lb/> On the first stage, input speech is decoded by frame-synchronous beam search to generate a word<lb/> candidate graph using the acoustic model, 2-gram language model, and the word dictionary. On the<lb/> second stage, the graph is searched to find the optimal word sequence using the 3-gram language<lb/> model.<lb/> Both male and female acoustic models are used and decoding is performed independently for each<lb/> model except for the common beam pruning in every frame. Recognition results by male and female<lb/> acoustic models are compared and the one with better score is used as the result. Gender-dependent<lb/> models improve the recognition accuracy while curbing the increase of the computational amount by<lb/> common beam pruning.<lb/></p>
+
+			<head level="2">4.2. Text Retrieval Module<lb/></head>
+
+			<p>All the techniques described in Section 3.2 are implemented on the text retrieval module in the<lb/> system. We fixed the constants as follows according to the preliminary experiments using query<lb/> samples developed for training the LM:<lb/></p>
+
+			<formula>3<lb/> .<lb/> 0<lb/> ,<lb/> 3<lb/> .<lb/> 1<lb/> ,<lb/> 3<lb/> .<lb/> 0<lb/> ,<lb/> 1000<lb/> ,<lb/> 100<lb/> aux<lb/> wp<lb/> 2<lb/> 1<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> k<lb/> k<lb/> b<lb/> k<lb/> k<lb/></formula>
+
+			<p>We developed the synonym dictionary with about 500 entries to converge synonymous expressions<lb/> used to describe cellular phone functions.<lb/></p> 
+			
+			<head level="1">5. Evaluation<lb/></head> 
+			
+			<p>In order to evaluate the usefulness of our system, we have composed 150 new queries independently<lb/> of the query corpus used for configuring the system. We have used 110 queries for evaluation,<lb/> eliminating 40 queries without relevant passages in the manual. Table <ref type="table">2</ref> shows some examples of the<lb/> queries used for the evaluation. Each query contains 3.8 words in average.<lb/> The retrieval success rate, which we adopted as a criterion, measures how well the system is able to<lb/> provide a relevant passage within the top predefined number of result passages. We have calculated<lb/> the retrieval success rates at 1, 5, and 10 passages for several conditions.<lb/> In order to discuss the effect of each technique presented in Section 3.2, we first present the result<lb/> for transcriptions of the queries among the following text retrieval methods.<lb/></p>
+
+			<p>Method BL: This is the baseline method with no techniques applied.<lb/> Method WP: This method utilizes word pairs with dependency relations.<lb/> Method WP+AUX: This method distinguishes between the negative and the affirmative phrases by<lb/> auxiliary verbs in addition to the method WP.<lb/> Method ALL: This method converges synonyms in addition to the method WP+AUX. This is the<lb/> same condition as the prototype system.<lb/></p>
+
+			<p>Table <ref type="table">3</ref> summarizes the result. The result shows each of the three techniques has contributed to<lb/> the improvement of the retrieval success rate. Especially, converging synonyms enhances the<lb/> performance as derived from the difference between methods WP+AUX and ALL.<lb/></p>
+
+			<figure type="table">Table 2: Examples of queries used for evaluation.<lb/> Shashin-o mêru-de okuritai<lb/> (I want to send a picture via email)<lb/> Aikon-o desukutoppu-ni tôroku shitai<lb/> (I want to register a new icon on the desktop)<lb/> Jushin-shita mêru-o minagara henshin mêru-o sakusei-suru hôhô<lb/> (How to write a reply mail while looking at the incoming mail)<lb/></figure>
+			
+			<figure type="table">Table 3: The retrieval success rate for the transcriptions of queries.<lb/> Retrieval Success Rate for Transcriptions<lb/> Number of<lb/> Result<lb/> Passages<lb/> BL<lb/> WP<lb/> WP+AUX<lb/> ALL<lb/> 1<lb/> 40.0%<lb/> 42.7%<lb/> 44.5%<lb/> 49.1%<lb/> 5<lb/> 65.5%<lb/> 69.1%<lb/> 70.0%<lb/> 77.3%<lb/> 10<lb/> 73.6%<lb/> 73.6%<lb/> 74.5%<lb/> 87.3%<lb/></figure>
+
+			<figure type="table">Table 4: The retrieval success rate for the utterances of queries.<lb/> Number of<lb/> Result Passages<lb/> Retrieval Success Rate<lb/> for Utterances<lb/> 1<lb/> 44.3%<lb/> 5<lb/> 72.5%<lb/> 10<lb/> 81.4%<lb/></figure>
+
+			<p>Next we present the performance of the total system. Table <ref type="table">4</ref> shows the result for 660 utterances<lb/> of the queries by 18 speakers where the LVCSR module and the text retrieval module in the<lb/> prototype system are used. The retrieval success rates for utterances are almost the same as those<lb/> for transcription. Since the cellular phones used in this system can display about 10 lines on the<lb/> average, the 10th retrieval rate represents the rate of successfully delivering the passage requested by<lb/> the user. The result shows that the system designed for cellular phone user&apos;s manual was able to<lb/> direct user to appropriate information at 81.4%, which is sufficient for practical use.<lb/></p>
+
+			<head level="1">6. Conclusions<lb/></head>
+
+			<p>In this paper, we presented a voice query retrieval system in Japanese applied to document search on<lb/> user&apos;s manual for cellular phones with Web access capability. The system recognizes user&apos;s naturally<lb/> spoken queries over the cellular phone by LVCSR and retrieves the relevant passages by text<lb/> retrieval and then provides the output on the cellular phone screen. In order to improve the<lb/> performance for spoken short queries, we apply three techniques into text retrieval: 1) utilizing word<lb/> pairs with dependency relations, 2) distinguishing affirmative and negative expressions, and 3)<lb/> converging synonyms. With respect to LVCSR for speech over the cellular phone, we adopt<lb/> acoustic and language models derived from a query corpus for the target user&apos;s manual. The<lb/> evaluation on the system designed for cellular phone user&apos;s manual shows that the system is able to<lb/> direct users to appropriate data at 81.4% of the time, if the matching passage exists in the manual.<lb/> Our next step is to apply this system to different contents such as travelers&apos; guide and customer<lb/> surveys. We plan to clarify the problems for different contents and to enhance the portability of this<lb/> system.</p>
+
+
+	</text>
+</tei>

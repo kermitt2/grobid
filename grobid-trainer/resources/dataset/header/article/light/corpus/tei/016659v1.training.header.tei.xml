@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="_016659v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	Collado-Torres et al.<lb/>
+
+	<docTitle>
+	<titlePart>regionReport: Interactive reports for region-based analyses<lb/></titlePart>
+	</docTitle>
+
+	Authors:
+	<byline>
+	<docAuthor>Leonardo Collado-Torres 1,2 , Andrew E. Jaffe 1,2,3,4 and Jeffrey T.<lb/> Leek 1,3, *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1. Department of Biostatistics, Johns Hopkins Bloomberg School of Public Health,</affiliation>
+	</byline>
+
+	<address>Baltimore,<lb/> MD 21205 USA.<lb/></address>
+
+	<byline>
+	<affiliation>2. Lieber Institute for Brain Development, Johns Hopkins Medical Campus,</affiliation>
+	</byline>
+
+	<address>Baltimore, MD<lb/> 21205, USA<lb/></address>
+
+	<byline>
+	<affiliation>3. Center for Computational Biology, McKusick-Nathans Institute of Genetic Medicine, Johns<lb/> Hopkins University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Baltimore, MD 21025, USA<lb/></address>
+
+	<byline>
+	<affiliation>4. Department of Mental Health, Johns Hopkins Bloomberg School of Public Health,</affiliation>
+	</byline>
+
+	<address>Baltimore<lb/> MD.<lb/></address>
+
+	* Corresponding authors: AEJ:
+	<email>andrew.jaffe@libd.org</email>
+
+	; JTL:
+	<email>jtleek@gmail.com<lb/></email>
+
+	Summary:<lb/>
+	<div type="abstract">regionReport is a R package for generating detailed interactive reports from regions of the genome.<lb/> The report includes quality-control checks, an overview of the results, an interactive table of the<lb/> genomic regions, and reproducibility information. regionReport can easily be expanded with<lb/> report templates for other specialized analyses. In particular, regionReport has an extensive<lb/> report template for exploring derfinder results from annotation-agnostic RNA-seq differential<lb/> expression analyses.<lb/></div>
+
+	Availability:<lb/> 
+	<note type="availability">regionReport is freely available via Bioconductor at<lb/> bioconductor.org/packages/release/bioc/html/regionReport.html.<lb/></note>
+
+	<page>1<lb/></page>
+
+	<date>2015/03/16<lb/></date> 
+
+	Collado-Torres et al.
+		</front>
+	</text>
+</tei>

@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -90,9 +91,9 @@ public class ProcessRunner extends Thread {
                 IOUtils.closeQuietly(process.getInputStream());
                 IOUtils.closeQuietly(process.getOutputStream());
                 try {
-                    errorStreamContents = IOUtils.toString(process.getErrorStream());
+                    errorStreamContents = IOUtils.toString(process.getErrorStream(), StandardCharsets.UTF_8);
                 } catch (IOException e) {
-                    LOGGER.error("Error retrieving error stream from process: {}", e);
+                    LOGGER.error("Error retrieving error stream from process: ", e);
                 }
                 IOUtils.closeQuietly(process.getErrorStream());
 
