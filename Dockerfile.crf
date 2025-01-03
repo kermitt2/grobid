@@ -13,7 +13,7 @@
 # -------------------
 # build builder image
 # -------------------
-FROM openjdk:17-jdk-slim as builder
+FROM eclipse-temurin:17-jdk-focal as builder
 
 USER root
 
@@ -63,7 +63,7 @@ RUN rm -rf grobid-source
 # -------------------
 # build runtime image
 # -------------------
-FROM openjdk:17-slim
+FROM eclipse-temurin:17-jre-focal
 
 RUN apt-get update && \
     apt-get -y upgrade && \
@@ -80,7 +80,18 @@ WORKDIR /opt/grobid
 
 COPY --from=builder /opt/grobid .
 
-ENV GROBID_SERVICE_OPTS "-Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED"
+ARG TARGETARCH
+ARG PROCESS_MECHANISM
+
+RUN if [ "$TARGETARCH" = "arm64" ]; then \
+        PROCESS_MECHANISM="-Djdk.lang.Process.launchMechanism=vfork "; \
+    else \
+        PROCESS_MECHANISM=""; \
+    fi
+
+RUN echo "Selected process spawning mechanism: $PROCESS_MECHANISM"
+
+ENV GROBID_SERVICE_OPTS "$PROCESS_MECHANISM-Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED"
 
 CMD ["./grobid-service/bin/grobid-service"]
 
