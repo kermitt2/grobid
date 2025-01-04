@@ -102,15 +102,6 @@ public class FullTextParser extends AbstractParser {
         return processing(inputPdf, null, config);
     }
 
-    /*public Document processing(File inputPdf,
-                               String flavor,
-                               GrobidAnalysisConfig config) throws Exception {
-        DocumentSource documentSource =
-            DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
-                config.getPdfAssetPath() != null, true, false);
-        return processing(documentSource, flavor, config);
-    }*/
-
     public Document processing(File inputPdf,
                                String md5Str,
                                GrobidAnalysisConfig config) throws Exception {

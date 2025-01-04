@@ -171,7 +171,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                         String token = null;
                         if (ii != -1) {
                             token = line.substring(0, ii);
-                            // unicode normalisation of the token - it should not be necessary if the training data
+                            // Unicode normalisation of the token - it should not be necessary if the training data
                             // has been gnerated by a recent version of grobid
                             token = UnicodeUtil.normaliseTextAndRemoveSpaces(token);
                         }
