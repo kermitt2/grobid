@@ -30,7 +30,6 @@ import java.util.List;
 import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Node;
-import nu.xom.Text;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
@@ -43,6 +42,7 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 public class Table extends Figure {
 	private List<LayoutToken> contentTokens = new ArrayList<>();
 	private List<LayoutToken> fullDescriptionTokens = new ArrayList<>();
+
 	private boolean goodTable = true;
 
     private StringBuilder note = null;
@@ -64,9 +64,13 @@ public class Table extends Figure {
         note = new StringBuilder();
     }
 
+    public boolean isCompleteForTEI() {
+        return (StringUtils.isNotEmpty(header) && StringUtils.isNotEmpty(caption));
+    }
+
 	@Override
     public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter, List<MarkerType> markerTypes) {
-		if (StringUtils.isEmpty(header) && StringUtils.isEmpty(caption)) {
+		if (!isCompleteForTEI()) {
 			return null;
 		}
 
@@ -106,7 +110,7 @@ public class Table extends Figure {
                 addXmlId(desc, "_" + divID);
             }
 
-            if ( (labeledCaption != null) && (labeledCaption.length() > 0) ) {
+            if (StringUtils.isNotBlank(labeledCaption)) {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledCaption, captionLayoutTokens);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();                
                 for (TaggingTokenCluster cluster : clusters) {
@@ -171,7 +175,7 @@ public class Table extends Figure {
 		}
 
         Element noteNode = null;
-        if (note != null && note.toString().trim().length()>0) {
+        if (StringUtils.isNotBlank(note)) {
 
             noteNode = XmlBuilderUtils.teiElement("note");
             if (config.isGenerateTeiIds()) {
@@ -179,7 +183,7 @@ public class Table extends Figure {
                 addXmlId(noteNode, "_" + divID);
             }
 
-            if ( (labeledNote != null) && (labeledNote.length() > 0) ) {
+            if (StringUtils.isNotBlank(labeledNote)) {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledNote, noteLayoutTokens);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();                
                 for (TaggingTokenCluster cluster : clusters) {
@@ -348,9 +352,14 @@ public class Table extends Figure {
         return this.labeledNote;
     }
 
-	private boolean validateTable() {
+    /** Check if the table:
+     * - has label, header and content
+     * - header starts with "tab"
+     * - label can be parsed
+     */
+	public boolean validateTable() {
 		CntManager cnt = Engine.getCntManager();
-		if (StringUtils.isEmpty(label) || StringUtils.isEmpty(header) || StringUtils.isEmpty(content)) {
+		if (StringUtils.isAnyBlank(label, header, content)) {
 			cnt.i(TableRejectionCounters.EMPTY_LABEL_OR_HEADER_OR_CONTENT);
 			return false;
 		}
@@ -361,7 +370,8 @@ public class Table extends Figure {
 			cnt.i(TableRejectionCounters.CANNOT_PARSE_LABEL_TO_INT);
 			return false;
 		}
-		if (!getHeader().toLowerCase().startsWith("table")) {
+        // tab covers: table, tabelle, tableu, tabella, etc.
+		if (!StringUtils.startsWithIgnoreCase(getHeader(), "tab")) {
 			cnt.i(TableRejectionCounters.HEADER_NOT_STARTS_WITH_TABLE_WORD);
 			return false;
 		}
