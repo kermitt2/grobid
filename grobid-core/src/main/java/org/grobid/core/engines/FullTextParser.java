@@ -268,9 +268,6 @@ public class FullTextParser extends AbstractParser {
                         figure.setLabeledCaption(captionProcess.getLeft());
                         figure.setCaptionLayoutTokens(captionProcess.getRight());
                     }
-                    if (CollectionUtils.isNotEmpty(figure.getDiscardedPiecesTokens())) {
-                        resHeader.getDiscardedPiecesTokens().addAll(figure.getDiscardedPiecesTokens());
-                    }
                 }
 
                 long numberFiguresFulltextModel = Arrays.stream(bodyResults.split("\n"))
@@ -324,9 +321,6 @@ public class FullTextParser extends AbstractParser {
                         table.setLabeledNote(noteProcess.getLeft());
                         table.setNoteLayoutTokens(noteProcess.getRight());
                     }
-                    if (CollectionUtils.isNotEmpty(table.getDiscardedPiecesTokens())) {
-                        resHeader.getDiscardedPiecesTokens().addAll(table.getDiscardedPiecesTokens());
-                    }
                 }
 
 				equations = processEquations(bodyResults, bodyLayoutTokens.getTokenization(), doc);
@@ -352,12 +346,13 @@ public class FullTextParser extends AbstractParser {
             // callout in superscript is by error labeled as a numerical reference callout)
             List<MarkerType> markerTypes = null;
 
-            if (bodyResults != null){
+            if (bodyResults != null) {
                 markerTypes = postProcessCallout(bodyResults, bodyLayoutTokens);
             }
 
             // final combination
-            toTEI(doc, // document
+            toTEI(
+                doc, // document
 				bodyResults,
                 annexResults, // labeled data for body and annex
                 bodyLayoutTokens,
@@ -367,7 +362,8 @@ public class FullTextParser extends AbstractParser {
                 tables,
                 equations,
                 markerTypes,
-				config);
+				config
+            );
             return doc;
         } catch (GrobidException e) {
 			throw e;

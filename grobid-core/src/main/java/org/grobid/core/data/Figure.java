@@ -341,7 +341,7 @@ public class Figure {
         if (config.isGenerateTeiCoordinates("figure")) {
             List<BoundingBox> theBoxes = null;
             // non graphic elements
-            if (getLayoutTokens() != null && getLayoutTokens().size() > 0) {
+            if (CollectionUtils.isNotEmpty(getLayoutTokens())) {
                 theBoxes = BoundingBoxCalculator.calculate(getLayoutTokens());
             }
 
@@ -352,7 +352,7 @@ public class Figure {
             // here we bound all figure graphics in one single box (given that we can have hundred graphics
             // in a single figure)
             BoundingBox theGraphicsBox = null;
-            if ((graphicObjects != null) && (graphicObjects.size() > 0)) {
+            if (CollectionUtils.isNotEmpty(graphicObjects)) {
                 for (GraphicObject graphicObject : graphicObjects) {
                     if (theGraphicsBox == null) {
                         theGraphicsBox = graphicObject.getBoundingBox();
@@ -455,6 +455,16 @@ public class Figure {
 
             figureElement.appendChild(desc);
         }
+
+        if (CollectionUtils.isNotEmpty(discardedPiecesTokens)) {
+            for (List<LayoutToken> discardedPieceTokens : discardedPiecesTokens) {
+                Element note = XmlBuilderUtils.teiElement("note");
+                note.addAttribute(new Attribute("type", "other"));
+                note.appendChild(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(discardedPieceTokens)).trim());
+                figureElement.appendChild(note);
+            }
+        }
+
         if ((graphicObjects != null) && (graphicObjects.size() > 0)) {
             for (GraphicObject graphicObject : graphicObjects) {
                 Element go = XmlBuilderUtils.teiElement("graphic");

@@ -1,5 +1,6 @@
 package org.grobid.core.data;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.grobid.core.GrobidModels;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.data.table.Cell;
@@ -254,8 +255,18 @@ public class Table extends Figure {
     		tableElement.appendChild(desc);
 		tableElement.appendChild(contentEl);
 
-        if (noteNode != null)
+        if (noteNode != null) {
             tableElement.appendChild(noteNode);
+        }
+
+        if (CollectionUtils.isNotEmpty(discardedPiecesTokens)) {
+            for (List<LayoutToken> discardedPieceTokens : discardedPiecesTokens) {
+                Element note = XmlBuilderUtils.teiElement("note");
+                note.addAttribute(new Attribute("type", "other"));
+                note.appendChild(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(discardedPieceTokens)).trim());
+                tableElement.appendChild(note);
+            }
+        }
 
 		return tableElement.toXML();
     }
