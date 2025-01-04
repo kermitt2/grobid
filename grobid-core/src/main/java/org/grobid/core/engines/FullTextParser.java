@@ -64,6 +64,7 @@ import java.util.stream.Stream;
 import nu.xom.Element;
 
 import static org.apache.commons.lang3.StringUtils.*;
+import static org.grobid.core.GrobidModels.FULLTEXT;
 import static org.grobid.core.engines.label.TaggingLabels.PARAGRAPH_LABEL;
 
 public class FullTextParser extends AbstractParser {
@@ -86,10 +87,15 @@ public class FullTextParser extends AbstractParser {
     protected EngineParsers parsers;
 
     public FullTextParser(EngineParsers parsers) {
-        super(GrobidModels.FULLTEXT);
+        this(parsers, null);
+    }
+
+    public FullTextParser(EngineParsers parsers, Flavor flavor) {
+        super(GrobidModels.getModelFlavor(FULLTEXT, flavor));
         this.parsers = parsers;
         tmpPath = GrobidProperties.getTempPath();
     }
+
 
     public Document processing(File inputPdf,
                                GrobidAnalysisConfig config) throws Exception {
@@ -288,6 +294,8 @@ public class FullTextParser extends AbstractParser {
 				//tokenizationsBody = featSeg.getB().getTokenization();
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
 
+                resultBody = label(bodytext);
+
                 if (flavor != null) {
                     // To avoid loosing potential data, we add in the body also the part of the header
                     // that was discarded.
@@ -305,31 +313,16 @@ public class FullTextParser extends AbstractParser {
                         .flatMap(Collection::stream)
                         .collect(Collectors.toList());
 
-                    // For the moment we put everything in a single paragraph
-                    resultBody = Arrays
-                        .stream(bodytext.split("\n"))
-                        .map(r -> r + "\t" + PARAGRAPH_LABEL)
-                        .collect(Collectors.joining("\n"));
-
                     // Add I- prefix on the first label of the discarded pieces from the header
                     String[] resultHeaderAsArray = resultHeader.split("\n");
                     resultHeaderAsArray[0] = resultHeaderAsArray[0].replace(PARAGRAPH_LABEL, "I-" + PARAGRAPH_LABEL);
                     resultHeader = String.join("\n", resultHeaderAsArray);
-
-                    // Add I- prefix on the first label of the body
-                    String[] resultBodyAsArray = resultBody.split("\n");
-                    resultBodyAsArray[0] = resultBodyAsArray[0].replace(PARAGRAPH_LABEL, "I-" + PARAGRAPH_LABEL);
-                    resultBody = String.join("\n", resultBodyAsArray);
 
                     resultBody = StringUtils.strip(resultHeader + "\n" + resultBody);
                     List<LayoutToken> concatenatedTokenization = Stream
                         .concat(tokensHeader.stream(), layoutTokenization.getTokenization().stream())
                         .collect(Collectors.toList());
                     layoutTokenization.setTokenization(concatenatedTokenization);
-
-
-                } else {
-                    resultBody = label(bodytext);
                 }
 
                 // we apply now the figure and table models based on the fulltext labeled output
@@ -1347,7 +1340,7 @@ public class FullTextParser extends AbstractParser {
     	            // we write the full text untagged
     	            outPathFulltext = pathFullText + File.separator
     					+ pdfFileName.replace(".pdf", ".training.fulltext");
-    	            writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), StandardCharsets.UTF_8);
+    	            writer = new OutputStreamWriter(new FileOutputStream(outPathFulltext, false), StandardCharsets.UTF_8);
     	            writer.write(bodytext + "\n");
     	            writer.close();
 
@@ -2085,7 +2078,7 @@ public class FullTextParser extends AbstractParser {
 
         List<Figure> results = new ArrayList<>();
 
-        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, layoutTokens, true);
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(FULLTEXT, rese, layoutTokens, true);
 
         for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
 				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.FIGURE))) {
@@ -2258,7 +2251,7 @@ public class FullTextParser extends AbstractParser {
 									List<LayoutToken> tokenizations,
 									Document doc) {
 		List<Table> results = new ArrayList<>();
-		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
+		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(FULLTEXT, rese, tokenizations, true);
 
 		for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
 				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.TABLE))) {
@@ -2436,7 +2429,7 @@ public class FullTextParser extends AbstractParser {
 									List<LayoutToken> tokenizations,
 									Document doc) {
 		List<Equation> results = new ArrayList<>();
-		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
+		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(FULLTEXT, rese, tokenizations, true);
 		List<TaggingTokenCluster> clusters = clusteror.cluster();
 
 		Equation currentResult = null;
@@ -2504,7 +2497,7 @@ public class FullTextParser extends AbstractParser {
 
         List<LayoutToken> tokenizations = layoutTokenization.getTokenization();
 
-        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, result, tokenizations);
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(FULLTEXT, result, tokenizations);
         String tokenLabel = null;
         List<TaggingTokenCluster> clusters = clusteror.cluster();
 
@@ -3130,7 +3123,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                                 TaggingLabels.FIGURE_MARKER, TaggingLabels.EQUATION_LABEL);
 
     public static List<LayoutTokenization> getDocumentFullTextTokens(List<TaggingLabel> labels, String labeledResult, List<LayoutToken> tokenizations) {
-        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledResult, tokenizations);
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(FULLTEXT, labeledResult, tokenizations);
         List<TaggingTokenCluster> clusters = clusteror.cluster();
         List<LayoutTokenization> labeledTokenSequences = new ArrayList<LayoutTokenization>();
         LayoutTokenization currentTokenization = null;
