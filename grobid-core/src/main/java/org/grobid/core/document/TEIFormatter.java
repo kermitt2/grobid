@@ -923,8 +923,8 @@ public class TEIFormatter {
             tei.append("\t\t\t<abstract>\n");
         }
 
-        if ((abstractText != null) && (abstractText.length() != 0)) {
-            if ( (biblio.getLabeledAbstract() != null) && (biblio.getLabeledAbstract().length() > 0) ) {
+        if (StringUtils.isNotBlank(abstractText)) {
+            if (StringUtils.isNotBlank(biblio.getLabeledAbstract())) {
                 // we have available structured abstract, which can be serialized as a full text "piece"
                 StringBuilder buffer = new StringBuilder();
                 try {
