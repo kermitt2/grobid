@@ -1,5 +1,6 @@
 package org.grobid.core;
 
+import org.grobid.core.utilities.GrobidConfig;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -43,8 +44,13 @@ public class GrobidModelsTest {
         assertThat(splittedPath[splittedPath.length - 4], is("grobid-home"));
     }
 
-    //@Test
-    public void testGrobidModelsEnum_CustomModel() throws Exception {
+    @Test
+    public void testGrobidModelsEnum_CustomModel_shouldBeConfiguredBeforeHand() throws Exception {
+        GrobidConfig.ModelParameters modelParameters = new GrobidConfig.ModelParameters();
+        modelParameters.name = "myDreamModel";
+        modelParameters.engine = "wapiti";
+        GrobidProperties.addModel(modelParameters);
+
         GrobidModel model = GrobidModels.modelFor("myDreamModel");
 
         assertThat(model.getFolderName(), is("myDreamModel"));

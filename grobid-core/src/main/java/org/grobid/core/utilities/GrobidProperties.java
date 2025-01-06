@@ -590,7 +590,7 @@ public class GrobidProperties {
 
     public static ModelParameters getGrobidModelParameters(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
-        // if we have a flvor of the model, we can fall back to the configuration
+        // if we have a flavor of the model, we can fall back to the configuration
         // of the parent model
         String fallBackModelName = modelName;
         while(param == null) {
@@ -633,8 +633,9 @@ public class GrobidProperties {
             //   from the flavor model name 
             // - a normal model not specified in the config, so returning null
 
-            if (getGrobidModelParameters(model.getModelName()) == null)
+            if (getGrobidModelParameters(model.getModelName()) == null) {
                 return null;
+            }
         }
         String extension = getGrobidEngine(model).getExt();
         return new File(getGrobidHome(), FOLDER_NAME_MODELS + File.separator
