@@ -348,12 +348,11 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
         Flavor theFlavor = null;
         if (args.length > 0) {
             String flavor = args[0];
-            if (flavor.toLowerCase().equals("light")) {
-                theFlavor = Flavor.LIGHT;
-            } else if (flavor.toLowerCase().equals("ietf")) {
-                theFlavor = Flavor.IETF;
-            } else {
-                System.out.println("Warning, the flavor is not recognized, must one one of [3gpp,ietf], defaulting training to no collection...");
+            theFlavor = Flavor.fromLabel(flavor);
+            if (theFlavor == null) {
+                System.out.println("Warning, the flavor is not recognized, " +
+                    "must one one of "+ Flavor.getLabels() +", " +
+                    "defaulting training with no flavor...");
             }
         }
 
