@@ -40,7 +40,6 @@ import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.engines.citations.CalloutAnalyzer;
 import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
-import org.grobid.core.GrobidModels.Flavor;
 
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -123,7 +122,7 @@ public class FullTextParser extends AbstractParser {
     }
 
 	public Document processing(File inputPdf,
-                               String flavor,
+                               GrobidModels.Flavor flavor,
                                String md5Str,
 							   GrobidAnalysisConfig config) throws Exception {
 		DocumentSource documentSource =
@@ -164,7 +163,7 @@ public class FullTextParser extends AbstractParser {
      * @return the document object with built TEI
      */
     public Document processing(DocumentSource documentSource,
-                               String flavor,
+                               GrobidModels.Flavor flavor,
                                GrobidAnalysisConfig config) {
         if (tmpPath == null) {
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
@@ -174,12 +173,9 @@ public class FullTextParser extends AbstractParser {
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
 
-        Flavor flavorObject = null;
-        if (flavor != null && flavor.length()>0) 
-            flavorObject = Flavor.fromLabel(flavor); 
         try {
 			// general segmentation
-			Document doc = parsers.getSegmentationParser(flavorObject).processing(documentSource, config);
+			Document doc = parsers.getSegmentationParser(flavor).processing(documentSource, config);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
             // header processing
@@ -187,7 +183,7 @@ public class FullTextParser extends AbstractParser {
             Pair<String, LayoutTokenization> featSeg = null;
 
             // using the segmentation model to identify the header zones
-            parsers.getHeaderParser(flavorObject).processingHeaderSection(config, doc, resHeader, false);
+            parsers.getHeaderParser(flavor).processingHeaderSection(config, doc, resHeader, false);
 
             // The commented part below makes use of the PDF embedded metadata (the so-called XMP) if available 
             // as fall back to set author and title if they have not been found. 

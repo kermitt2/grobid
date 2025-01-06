@@ -4,6 +4,7 @@ import nu.xom.Element;
 import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.MutableTriple;
 import org.apache.commons.lang3.tuple.Pair;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
@@ -364,10 +365,11 @@ public class Engine implements Closeable {
      * @param consolidateHeader the consolidation option allows GROBID to exploit Crossref web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param consolidateFunder the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
+     * @param consolidateFunders the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param result      bib result
+     * @param includeRawAffiliations includes the raw affiliation in the output
+     * @param includeRawCopyrights includes the raw copyright information in the output
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
@@ -427,10 +429,11 @@ public class Engine implements Closeable {
      * @param consolidateHeader the consolidation option allows GROBID to exploit Crossref web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param consolidateFunder the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
+     * @param consolidateFunders the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param result      bib result
+     * @param includeRawAffiliations includes the raw affiliation in the output
+     * @param includeRawCopyrights includes the raw copyright information in the output
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
@@ -561,7 +564,7 @@ public class Engine implements Closeable {
     }
 
     public String fullTextToTEI(File inputFile, 
-                                String flavor,
+                                GrobidModels.Flavor flavor,
                                 GrobidAnalysisConfig config) throws Exception {
         return fullTextToTEIDoc(inputFile, flavor, null, config).getTei();
     }
@@ -579,14 +582,14 @@ public class Engine implements Closeable {
      * @return the resulting structured document as a TEI string.
      */
     public String fullTextToTEI(File inputFile,
-                                String flavor,
+                                GrobidModels.Flavor flavor,
                                 String md5Str,
                                 GrobidAnalysisConfig config) throws Exception {
         return fullTextToTEIDoc(inputFile, flavor, md5Str, config).getTei();
     }
 
     public Document fullTextToTEIDoc(File inputFile,
-                                    String flavor,
+                                    GrobidModels.Flavor flavor,
                                     String md5Str,
                                     GrobidAnalysisConfig config) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
@@ -605,7 +608,7 @@ public class Engine implements Closeable {
     }
 
     public Document fullTextToTEIDoc(DocumentSource documentSource,
-                                    String flavor,
+                                    GrobidModels.Flavor flavor,
                                     GrobidAnalysisConfig config) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
         Document resultDoc;

@@ -3,6 +3,7 @@ package org.grobid.service.process;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.PatentItem;
@@ -239,7 +240,7 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processFulltextDocument(final InputStream inputStream,
-                                        final String flavor,
+                                        final GrobidModels.Flavor flavor,
                                         final int consolidateHeader,
                                         final int consolidateCitations,
                                         final int consolidateFunders,
@@ -343,7 +344,7 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
-                                                        final String flavor,
+                                                        final GrobidModels.Flavor flavor,
                                                         final int consolidateHeader,
                                                         final int consolidateCitations,
                                                         final int consolidateFunders,

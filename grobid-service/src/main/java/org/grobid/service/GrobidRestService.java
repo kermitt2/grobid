@@ -5,6 +5,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataParam;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.grobid.core.utilities.GrobidProperties;
@@ -278,17 +279,20 @@ public class GrobidRestService implements GrobidPaths {
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
         boolean generate = validateGenerateIdParam(generateIDs);
         boolean segment = validateGenerateIdParam(segmentSentences);
-        if (flavor == null || flavor.length() ==0)
-            flavor = null;
+        GrobidModels.Flavor flavorValidated = validateModelFlavor(flavor);
         
         List<String> teiCoordinates = collectCoordinates(coordinates);
 
         return restProcessFiles.processFulltextDocument(
-            inputStream, flavor, consolHeader, consolCitations, consolFunders,
+            inputStream, flavorValidated, consolHeader, consolCitations, consolFunders,
             validateIncludeRawParam(includeRawAffiliations),
             includeRaw, validateIncludeRawParam(includeRawCopyrights),
             startPage, endPage, generate, segment, teiCoordinates
         );
+    }
+
+    private GrobidModels.Flavor validateModelFlavor(String flavor) {
+        return GrobidModels.Flavor.fromLabel(flavor);
     }
 
     private List<String> collectCoordinates(List<FormDataBodyPart> coordinates) {
@@ -395,13 +399,11 @@ public class GrobidRestService implements GrobidPaths {
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
         boolean generate = validateGenerateIdParam(generateIDs);
         boolean segment = validateGenerateIdParam(segmentSentences);
-        if (flavor == null || flavor.length() ==0)
-            flavor = null;
-
         List<String> teiCoordinates = collectCoordinates(coordinates);
+        GrobidModels.Flavor validatedModelFlavor = validateModelFlavor(flavor);
 
         return restProcessFiles.processStatelessFulltextAssetDocument(
-            inputStream, flavor, consolHeader, consolCitations, consolFunders, 
+            inputStream, validatedModelFlavor, consolHeader, consolCitations, consolFunders,
             validateIncludeRawParam(includeRawAffiliations),
             includeRaw, validateIncludeRawParam(includeRawCopyrights),
             startPage, endPage, generate, segment, teiCoordinates
