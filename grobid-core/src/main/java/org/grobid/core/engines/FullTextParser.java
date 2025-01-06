@@ -40,7 +40,6 @@ import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.engines.citations.CalloutAnalyzer;
 import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
-import org.grobid.core.GrobidModels.Flavor;
 
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -107,7 +106,7 @@ public class FullTextParser extends AbstractParser {
     }
 
 	public Document processing(File inputPdf,
-                               Flavor flavor,
+                               GrobidModels.Flavor flavor,
                                String md5Str,
 							   GrobidAnalysisConfig config) throws Exception {
 		DocumentSource documentSource =
@@ -156,7 +155,7 @@ public class FullTextParser extends AbstractParser {
      * @return the document object with built TEI
      */
     public Document processing(DocumentSource documentSource,
-                               Flavor flavor,
+                               GrobidModels.Flavor flavor,
                                GrobidAnalysisConfig config) {
         if (tmpPath == null) {
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");

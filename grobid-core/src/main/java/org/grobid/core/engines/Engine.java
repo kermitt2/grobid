@@ -368,6 +368,8 @@ public class Engine implements Closeable {
      * @param consolidateFunders the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param includeRawAffiliations includes the raw affiliation in the output
+     * @param includeRawCopyrights includes the raw copyright information in the output
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
@@ -430,6 +432,8 @@ public class Engine implements Closeable {
      * @param consolidateFunders the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param includeRawAffiliations includes the raw affiliation in the output
+     * @param includeRawCopyrights includes the raw copyright information in the output
      * @return the TEI representation of the extracted bibliographical
      *         information
      */

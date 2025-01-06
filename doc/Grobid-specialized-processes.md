@@ -11,8 +11,14 @@ If the flavor is indicated, the selected model will use the "flavor" model if it
 Flavor model training data are always located as subdirectories of the standard training data path, e.g. for the flavor "sdo/ietf", the training data of the header model for this flavor will be under `grobid-trainer/resources/dataset/header/article/light-ref`. 
 The training data of the segmentation model for this flavor will be under `grobid-trainer/resources/dataset/segmentation/article/light`, and so on.
 
-For running grobid following a particular flavor, we add the flavor name as additional parameter of the service:
+For running grobid following a particular flavor, we add the flavor name as additional parameter of the service.
 
+Example for processing a SDO/IETF document: 
+```shell
+curl -v --form input=@./XP123456.pdf --form "flavor=sdo/ietf" localhost:8070/api/processFulltextDocument
+```
+
+Example for processing a scientific article using a lightweight model: 
 ```shell
 curl -v --form input=@./nihms834197.pdf --form "flavor=article/light-ref" localhost:8070/api/processFulltextDocument
 ```
@@ -25,10 +31,19 @@ Following, an updated view of the cascade architecture:
 
 At the moment, the flavored processes are available as follows:
 
-| Name                                          | Identifier          | Flavored models          | Description                                                                                                                                                                                                                              | Advantages                                                                                                                                                                                                                                   | Limitations                                                                                                                                                |
-|-----------------------------------------------|---------------------|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Article lightweight structure                 | `article/light`     | `segmentation`, `header` | Simple process that extracts only title, authors, publication date and doi from the header, and put everything else as a fulltext body paragraphs (first paragraph is the header non-classified text, second paragraph is the body text) | Simple model that can work with any document and bring the advantage of pdfalto processing which solves many issue with text ordering and column recognition.                                                                                | All noise not being part of the article, such as references, page numbers, head notes, and footnotes are also included in the body. No fulltext processing |
-| Article lightweight structure with references | `article/light-ref` | `segmentation`, `header` | Simple process that extracts only title, authors, publication date and doi from the header, the references, and put everything else as a fulltext body paragraph   (first paragraph is the header non-classified text, second paragraph is the body text)                                                                       | Variation of the `article/light` that includes the recognition of references. More versatile than `article/light` in the realm of variation of scientific articles, such as corrections, erratums, letters which may contain references.     | Ditto. No fulltext process.                                                                                                                                |
+| Name                                          | Identifier          | Flavored models          | Description                                                                                                                                                                                                                              | Advantages                                                                                                                                                                                                                                     | Limitations                                                                                                                                                |
+|-----------------------------------------------|---------------------|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Article lightweight structure                 | `article/light`     | `segmentation`, `header` | Simple process that extracts only title, authors, publication date and doi from the header, and put everything else as a fulltext body paragraphs (first paragraph is the header non-classified text, second paragraph is the body text) | Simple model that can work with any document and bring the advantage of pdfalto processing which solves many issue with text ordering and column recognition.                                                                                  | All noise not being part of the article, such as references, page numbers, head notes, and footnotes are also included in the body. No fulltext processing |
+| Article lightweight structure with references | `article/light-ref` | `segmentation`, `header` | Simple process that extracts only title, authors, publication date and doi from the header, the references, and put everything else as a fulltext body paragraph   (first paragraph is the header non-classified text, second paragraph is the body text)                                                                       | Variation of the `article/light` that includes the recognition of references. More versatile than `article/light` in the realm of variation of scientific articles, such as corrections, erratums, letters which may contain references.       | Ditto. No fulltext process.                                                                                                                                |
+| Internet Engineering Task Force (IETF) Standard Documents | `sdo/ietf` | `segmentation`, `header` | Processing of the IETF Standard documentation | Supports the procesisng of a different flavor of documents                                                                                                                                                                                     |             | 
+| 3GPP Working Procedures Standard Documents                | `sdo/3gpp` | N/A                      |                                               |
+
+### Standard specification documents (IETF, 3GPP)
+
+The SDO IETF (Internet Engineering Task Force) and 3GPP (3rd Generation Partnership Project) are influential standardization bodies that create technical specifications for the telecommunications and networking industries. 
+These standards describe protocols, architecture, security frameworks, and service models for modern networks, including 5G, IP networking, and related technologies.
+Unlike general scientific papers, which might feature more fluid content and citation formats, IETF and 3GPP documents adhere to a strict template, often including fields such as RFC (Request for Comments) numbers, version identifiers, sections for protocol details, and test specifications. 
+
 
 ### Article lightweight structure (`article/light`), and with references (`article/light-ref`)
 
@@ -56,7 +71,8 @@ The body is not formatted as a structured text, but as a single paragraph.
 
 ## Training the specialised flavor models  
 
-The training data for the flavors modes `article/light` and `article/light-ref` are following the same structure as the standard models. In other words the annotated training data for, e.g., the lightweight segmentation model with references, for articles, are following the guidelines as the standard grobid segmentation model. 
+The training data for the flavors modes `article/light` and `article/light-ref` are following the same structure as the standard models. 
+In other words the annotated training data for, e.g., the lightweight segmentation model with references, for articles, are following the guidelines as the standard grobid segmentation model. 
 The Grobid parser select automatically the right subset of labels to include. 
 However, this can be implemented at discretion of the user, so for example a flavor `sdo/ietf` for parsing standards documents for IETF, can be following their specific guidelines.
 

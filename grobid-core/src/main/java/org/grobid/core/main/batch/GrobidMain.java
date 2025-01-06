@@ -1,16 +1,14 @@
 package org.grobid.core.main.batch;
 
-import java.io.File;
-import java.sql.SQLOutput;
-import java.util.Arrays;
-import java.util.List;
-
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.ProcessEngine;
 import org.grobid.core.main.GrobidHomeFinder;
-import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Utilities;
+
+import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * The entrance point for starting grobid from command line and perform batch processing
