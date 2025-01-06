@@ -3,6 +3,7 @@ package org.grobid.service.process;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.PatentItem;
@@ -239,17 +240,18 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processFulltextDocument(final InputStream inputStream,
-                                          final int consolidateHeader,
-                                          final int consolidateCitations,
-                                          final int consolidateFunders,
-                                          final boolean includeRawAffiliations,
-                                          final boolean includeRawCitations,
-                                          final boolean includeRawCopyrights,
-                                          final int startPage,
-                                          final int endPage,
-                                          final boolean generateIDs,
-                                          final boolean segmentSentences,
-                                          final List<String> teiCoordinates) throws Exception {
+                                        final GrobidModels.Flavor flavor,
+                                        final int consolidateHeader,
+                                        final int consolidateCitations,
+                                        final int consolidateFunders,
+                                        final boolean includeRawAffiliations,
+                                        final boolean includeRawCitations,
+                                        final boolean includeRawCopyrights,
+                                        final int startPage,
+                                        final int endPage,
+                                        final boolean generateIDs,
+                                        final boolean segmentSentences,
+                                        final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
 
         String retVal = null;
@@ -293,7 +295,7 @@ public class GrobidRestProcessFiles {
                     .withSentenceSegmentation(segmentSentences)
                     .build();
 
-            retVal = engine.fullTextToTEI(originFile, md5Str, config);
+            retVal = engine.fullTextToTEI(originFile, flavor, md5Str, config);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Response.Status.NO_CONTENT).build();
@@ -342,17 +344,18 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
-                                                          final int consolidateHeader,
-                                                          final int consolidateCitations,
-                                                          final int consolidateFunders,
-                                                          final boolean includeRawAffiliations,
-                                                          final boolean includeRawCitations,
-                                                          final boolean includeRawCopyrights,
-                                                          final int startPage,
-                                                          final int endPage,
-                                                          final boolean generateIDs,
-                                                          final boolean segmentSentences,
-                                                          final List<String> teiCoordinates) throws Exception {
+                                                        final GrobidModels.Flavor flavor,
+                                                        final int consolidateHeader,
+                                                        final int consolidateCitations,
+                                                        final int consolidateFunders,
+                                                        final boolean includeRawAffiliations,
+                                                        final boolean includeRawCitations,
+                                                        final boolean includeRawCopyrights,
+                                                        final int startPage,
+                                                        final int endPage,
+                                                        final boolean generateIDs,
+                                                        final boolean segmentSentences,
+                                                        final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -400,7 +403,7 @@ public class GrobidRestProcessFiles {
                     .withSentenceSegmentation(segmentSentences)
                     .build();
 
-            retVal = engine.fullTextToTEI(originFile, md5Str, config);
+            retVal = engine.fullTextToTEI(originFile, flavor, md5Str, config);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Status.NO_CONTENT).build();
@@ -949,7 +952,7 @@ public class GrobidRestProcessFiles {
         DocumentSource documentSource = 
             DocumentSource.fromPdf(originFile, config.getStartPage(), config.getEndPage(), true, true, false);
 
-        Document teiDoc = engine.fullTextToTEIDoc(documentSource, config);
+        Document teiDoc = engine.fullTextToTEIDoc(documentSource, null, config);
 
         documentSource = 
             DocumentSource.fromPdf(originFile, config.getStartPage(), config.getEndPage(), true, true, false);

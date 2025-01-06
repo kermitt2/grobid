@@ -99,7 +99,7 @@ public class FigureTableVisualizer {
 
         blacklistedPages = getVectorGraphicPages(pdfaltoDirectory);
 
-        Document teiDoc = engine.fullTextToTEIDoc(documentSource, config);
+        Document teiDoc = engine.fullTextToTEIDoc(documentSource, null, config);
 
         PDDocument out = annotateFigureAndTables(
                 document, copiedFile, teiDoc,
