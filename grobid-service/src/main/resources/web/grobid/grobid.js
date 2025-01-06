@@ -1450,6 +1450,7 @@ var grobid = (function($) {
 			$('#includeRawCitationsBlock').hide();
             $('#segmentSentencesBlock').hide();
             $('#teiCoordinatesBlock').hide();
+            $('#flavorBlock').hide();
 			setBaseUrl('processHeaderDocument');
 		}
 		else if (selected == 'processFulltextDocument') {
@@ -1461,6 +1462,7 @@ var grobid = (function($) {
 			$('#includeRawCitationsBlock').show();
             $('#segmentSentencesBlock').show();
             $('#teiCoordinatesBlock').show();
+            $('#flavorBlock').show();
 			setBaseUrl('processFulltextDocument');
 		}
 		else if (selected == 'processDate') {
@@ -1472,6 +1474,7 @@ var grobid = (function($) {
 			$('#includeRawCitationsBlock').hide();
             $('#segmentSentencesBlock').hide();
             $('#teiCoordinatesBlock').hide();
+            $('#flavorBlock').hide();
 			setBaseUrl('processDate');
 		}
 		else if (selected == 'processHeaderNames') {
@@ -1483,6 +1486,7 @@ var grobid = (function($) {
 			$('#includeRawCitationsBlock').hide();
             $('#segmentSentencesBlock').hide();
             $('#teiCoordinatesBlock').hide();
+            $('#flavorBlock').hide();
 			setBaseUrl('processHeaderNames');
 		}
 		else if (selected == 'processCitationNames') {
@@ -1494,6 +1498,7 @@ var grobid = (function($) {
 			$('#includeRawCitationsBlock').hide();
             $('#segmentSentencesBlock').hide();
             $('#teiCoordinatesBlock').hide();
+            $('#flavorBlock').hide();
 			setBaseUrl('processCitationNames');
 		}
 		else if (selected == 'processReferences') {
@@ -1505,6 +1510,7 @@ var grobid = (function($) {
 			$('#includeRawCitationsBlock').show();
             $('#segmentSentencesBlock').hide();
             $('#teiCoordinatesBlock').hide();
+            $('#flavorBlock').hide();
 			setBaseUrl('processReferences');
 		}
 		else if (selected == 'processAffiliations') {
@@ -1516,6 +1522,7 @@ var grobid = (function($) {
 			$('#includeRawCitationsBlock').hide();
             $('#segmentSentencesBlock').hide();
             $('#teiCoordinatesBlock').hide();
+            $('#flavorBlock').hide();
 			setBaseUrl('processAffiliations');
 		}
 		else if (selected == 'processCitation') {
@@ -1527,6 +1534,7 @@ var grobid = (function($) {
 			$('#includeRawCitationsBlock').hide();
             $('#segmentSentencesBlock').hide();
             $('#teiCoordinatesBlock').hide();
+            $('#flavorBlock').hide();
 			setBaseUrl('processCitation');
 		}
 		/*else if (selected == 'processCitationPatentTEI') {
