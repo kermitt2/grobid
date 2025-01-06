@@ -69,7 +69,6 @@ public enum GrobidModels implements GrobidModel {
     // which have a particular overall zoning and/or header, while the rest of the content 
     // is similar to other general technical and scientific document
     public enum Flavor {
-        LIGHT("light"),
         _3GPP("sdo/3gpp"),
         IETF("sdo/ietf");
 
