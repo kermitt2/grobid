@@ -107,7 +107,7 @@ public enum GrobidModels implements GrobidModel {
         public String toString() {
             return getLabel();
         }
-    }
+
         public static List<String> getLabels() {
             return Arrays.stream(Flavor.values())
                 .map(Flavor::getLabel)

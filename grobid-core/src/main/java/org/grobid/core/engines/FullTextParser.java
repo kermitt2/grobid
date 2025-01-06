@@ -87,7 +87,7 @@ public class FullTextParser extends AbstractParser {
         this(parsers, null);
     }
 
-    public FullTextParser(EngineParsers parsers, Flavor flavor) {
+    public FullTextParser(EngineParsers parsers, GrobidModels.Flavor flavor) {
         super(GrobidModels.getModelFlavor(FULLTEXT, flavor));
         this.parsers = parsers;
         tmpPath = GrobidProperties.getTempPath();
@@ -308,11 +308,11 @@ public class FullTextParser extends AbstractParser {
                     resultHeaderAsArray[0] = resultHeaderAsArray[0].replace(PARAGRAPH_LABEL, "I-" + PARAGRAPH_LABEL);
                     resultHeader = String.join("\n", resultHeaderAsArray);
 
-                    resultBody = StringUtils.strip(resultHeader + "\n" + resultBody);
+                    bodyResults = StringUtils.strip(resultHeader + "\n" + bodyResults);
                     List<LayoutToken> concatenatedTokenization = Stream
-                        .concat(tokensHeader.stream(), layoutTokenization.getTokenization().stream())
+                        .concat(tokensHeader.stream(), bodyLayoutTokens.getTokenization().stream())
                         .collect(Collectors.toList());
-                    layoutTokenization.setTokenization(concatenatedTokenization);
+                    bodyLayoutTokens.setTokenization(concatenatedTokenization);
                 }
 
                 // we apply now the figure and table models based on the fulltext labeled output
@@ -1267,7 +1267,7 @@ public class FullTextParser extends AbstractParser {
                                    String pathFullText,
                                    String pathTEI,
                                    int id,
-                                   Flavor flavor) {
+                                   GrobidModels.Flavor flavor) {
         if (tmpPath == null)
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
         if (!tmpPath.exists()) {
