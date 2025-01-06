@@ -4,8 +4,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.GrobidProperties;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.stream.Collectors;
 
 import static org.grobid.core.engines.EngineParsers.LOGGER;
 
@@ -20,7 +23,6 @@ public enum GrobidModels implements GrobidModel {
 
     AFFILIATION_ADDRESS("affiliation-address"),
     SEGMENTATION("segmentation"),
-    SEGMENTATION_LIGHT("segmentation/light"),
     SEGMENTATION_SDO_IETF("segmentation/sdo/ietf"),
     SEGMENTATION_SDO_3GPP("segmentation/sdo/3gpp"),
     CITATION("citation"),
@@ -36,7 +38,6 @@ public enum GrobidModels implements GrobidModel {
     FIGURE("figure"),
     TABLE("table"),
     HEADER("header"),
-    HEADER_LIGHT("header/light"),
     HEADER_SDO_3GPP("header/sdo/3gpp"),
     HEADER_SDO_IETF("header/sdo/ietf"),
     NAMES_CITATION("name/citation"),
@@ -82,6 +83,10 @@ public enum GrobidModels implements GrobidModel {
             return label;
         }
 
+        public String getPlainLabel() {
+            return label.replace("/", "_");
+        }
+
         public static Flavor fromLabel(String text) {
             for (Flavor f : Flavor.values()) {
                 if (f.label.equalsIgnoreCase(text)) {
@@ -90,8 +95,17 @@ public enum GrobidModels implements GrobidModel {
             }
             return null;
         }
-    };
 
+        public static List<String> getLabels() {
+            return Arrays.stream(Flavor.values())
+                .map(Flavor::getLabel)
+                .collect(Collectors.toList());
+        }
+
+        public String toString() {
+            return getLabel();
+        }
+    }
 
     /**
      * Absolute path to the model.
