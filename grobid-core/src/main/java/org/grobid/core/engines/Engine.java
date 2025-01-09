@@ -408,11 +408,13 @@ public class Engine implements Closeable {
         int consolidate,
         boolean includeRawAffiliations,
         boolean includeRawCopyrights,
+        int startPage,
+        int endPage,
         BiblioItem result
     ) {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
-            .startPage(0)
-            .endPage(2)
+            .startPage(startPage)
+            .endPage(endPage)
             .consolidateHeader(consolidate)
             .includeRawAffiliations(includeRawAffiliations)
             .includeRawCopyrights(includeRawCopyrights)

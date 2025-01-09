@@ -66,6 +66,8 @@ public class GrobidRestProcessFiles {
         final int consolidate,
         final boolean includeRawAffiliations,
         final boolean includeRawCopyrights,
+        int startPage,
+        int endPage,
         ExpectedResponseType expectedResponseType
     ) {
         LOGGER.debug(methodLogIn());
@@ -104,6 +106,8 @@ public class GrobidRestProcessFiles {
                 consolidate,
                 includeRawAffiliations,
                 includeRawCopyrights,
+                startPage,
+                endPage,
                 result
             );
 
