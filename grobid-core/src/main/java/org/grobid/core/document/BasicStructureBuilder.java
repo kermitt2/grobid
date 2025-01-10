@@ -4,6 +4,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.SortedSetMultimap;
 import com.google.common.collect.TreeMultimap;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import org.grobid.core.data.BibDataSet;
@@ -163,7 +164,7 @@ public class BasicStructureBuilder {
 				Block block = docBlocks.get(blockIndex);
 		        List<LayoutToken> tokens = block.getTokens();
 				String localText = block.getText();
-		        if ( (tokens == null) || (localText == null) || (localText.trim().length() == 0) ) {
+		        if ( (tokens == null) || StringUtils.isBlank(localText) ) {
 					blockIndex++;
 					indexLine = 0;
 					if (blockIndex < docBlocks.size()) {
@@ -274,7 +275,7 @@ public class BasicStructureBuilder {
 
 		if (blockIndex == docBlocks.size()) {
 			// the last labelled piece has still to be added
-			if ((!curPlainLabel.equals(lastPlainLabel)) && (lastPlainLabel != null)) {	
+			if (!StringUtils.equals(curPlainLabel, lastPlainLabel) && lastPlainLabel != null) {
 				if ( (pointerA.getTokenDocPos() <= lastPointer.getTokenDocPos()) && 
 					(pointerA.getTokenDocPos() != -1) ) {
 					labeledBlocks.put(lastPlainLabel, new DocumentPiece(pointerA, lastPointer));

@@ -51,14 +51,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -381,11 +374,13 @@ public class FullTextParser extends AbstractParser {
             // callout in superscript is by error labeled as a numerical reference callout)
             List<MarkerType> markerTypes = null;
 
-            if (bodyResults != null)
+            if (bodyResults != null) {
                 markerTypes = postProcessCallout(bodyResults, bodyLayoutTokens);
+            }
 
             // final combination
-            toTEI(doc, // document
+            toTEI(
+                doc, // document
 				bodyResults,
                 annexResults, // labeled data for body and annex
                 bodyLayoutTokens,
@@ -395,7 +390,8 @@ public class FullTextParser extends AbstractParser {
                 tables,
                 equations,
                 markerTypes,
-				config);
+				config
+            );
             return doc;
         } catch (GrobidException e) {
 			throw e;
@@ -427,7 +423,7 @@ public class FullTextParser extends AbstractParser {
 
                 // At this point i have more than one candidate, which can be matched if the same first
                 // token is repeated in the sequence. The next step is to find the matching figure/table
-                // using a large sequence 
+                // using a large sequence
 
                 List<String> sequenceTokenItemWithoutSpaces = layoutTokenItem.stream()
                     .map(LayoutToken::getText)
@@ -548,7 +544,6 @@ public class FullTextParser extends AbstractParser {
         try {
             // general segmentation
             Document doc = parsers.getSegmentationParser().processing(documentSource, config);
-            SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
             // header processing
             BiblioItem resHeader = new BiblioItem();
@@ -1728,9 +1723,6 @@ public class FullTextParser extends AbstractParser {
     /**
      * Extract results from a labelled full text in the training format without any string modification.
      *
-     * @param result reult
-     * @param tokenizations toks
-     * @return extraction
      */
     private StringBuilder trainingExtraction(String result,
                                             List<LayoutToken> tokenizations) {
@@ -2846,7 +2838,14 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 }
             }
 
-            tei.append(teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, fundings, config));
+            tei.append(teiFormatter.toTEIHeader(
+                resHeader,
+                null,
+                resCitations,
+                markerTypes,
+                fundings,
+                config)
+            );
 
             tei = teiFormatter.toTEIBody(tei, bodyLabellingResult, resHeader, resCitations,
                     layoutTokenization, figures, tables, equations, markerTypes, doc, config);
@@ -2858,7 +2857,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append(annexStatement);
             }
 
-            if (fundings != null && fundings.size() >0) {
+            if (CollectionUtils.isNotEmpty(fundings)) {
                 tei.append("\n\t\t\t<listOrg type=\"funding\">\n");
                 for(Funding funding : fundings) {
                     if (funding.isNonEmptyFunding())
@@ -2867,7 +2866,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append("\t\t\t</listOrg>\n");
             }
 
-            if (affiliations != null && affiliations.size() >0) {
+            if (CollectionUtils.isNotEmpty(affiliations)) {
 
                 // check if we have at least one acknowledged research infrastructure here
                 List<Affiliation> filteredInfrastructures = new ArrayList<>();
