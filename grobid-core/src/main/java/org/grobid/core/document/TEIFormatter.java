@@ -836,6 +836,13 @@ public class TEIFormatter {
                     String divID = KeyGen.getKey().substring(0, 7);
                     tei.append(" xml:id=\"_" + divID + "\"");
                 }
+
+                if (config.isGenerateTeiCoordinates("note")) {
+                    String coords = LayoutTokensUtil.getCoordsString(discardedPieceTokens);
+                    tei.append(" coords=\"" + coords + "\"");
+                }
+
+                // This text is not processed at the moment
                 tei.append(">" + TextUtilities.HTMLEncode(normalizeText(LayoutTokensUtil.toText(discardedPieceTokens))) + "</note>\n");
             }
             tei.append("\t\t\t</notesStmt>\n");
