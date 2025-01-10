@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<front>server date 20190710; downloaded by EPO on 20190711 <lb/>Internet Engineering Task Force (IETF) <lb/>J. Arkko <lb/>Request for Comments: 8602 <lb/>Ericsson <lb/>Updates: 3219 <lb/>T. Hardie <lb/>Category: Standards Track <lb/>July 2019 <lb/>ISSN: 2070-1721 <lb/>Update to the Telephony Routing over IP (TRIP) IANA Registry Rules <lb/>regarding Postal Addresses <lb/>Abstract <lb/>This memo updates the IANA registry rules for the Telephony Routing <lb/>over IP (TRIP) protocol, by no longer requiring that postal addresses <lb/> be included in contact information. <lb/>This memo updates RFC 3219. <lb/>Status of This Memo <lb/>This is an Internet Standards Track document. <lb/>This document is a product of the Internet Engineering Task Force <lb/>(IETF). It represents the consensus of the IETF community. It has <lb/>received public review and has been approved for publication by the <lb/>Internet Engineering Steering Group (IESG). Further information on <lb/>Internet Standards is available in Section 2 of RFC 7841. <lb/>Information about the current status of this document, any errata, <lb/>and how to provide feedback on it may be obtained at <lb/>https://www.rfc-editor.org/info/rfc8602. <lb/>Copyright Notice <lb/>Copyright (c) 2019 IETF Trust and the persons identified as the <lb/>document authors. All rights reserved. <lb/>This document is subject to BCP 78 and the IETF Trust&apos;s Legal <lb/>Provisions Relating to IETF Documents <lb/>(https://trustee.ietf.org/license-info) in effect on the date of <lb/>publication of this document. Please review these documents <lb/>carefully, as they describe your rights and restrictions with respect <lb/>to this document. Code Components extracted from this document must <lb/>include Simplified BSD License text as described in Section 4.e of <lb/>the Trust Legal Provisions and are provided without warranty as <lb/>described in the Simplified BSD License. <lb/></front>
+
+			<note place="footnote">Arkko &amp; Hardie <lb/>Standards Track <lb/></note>
+
+			<page>[Page 1] <lb/></page>
+
+			<note place="headnote">RFC 8602 <lb/>TRIP Registry Update <lb/>July 2019 <lb/></note>
+
+			<body>Table of Contents <lb/>1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . <lb/>2 <lb/>2. IANA Considerations . . . . . . . . . . . . . . . . . . . . . <lb/>2 <lb/>3. Security Considerations . . . . . . . . . . . . . . . . . . . <lb/>2 <lb/>4. Normative References . . . . . . . . . . . . . . . . . . . . <lb/>2 <lb/>Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . . <lb/>3 <lb/>Authors&apos; Addresses . . . . . . . . . . . . . . . . . . . . . . . <lb/>3 <lb/>1. Introduction <lb/>This memo updates the IANA registry rules for the Telephony Routing <lb/>over IP (TRIP) protocol, by no longer requiring that postal addresses <lb/>be included in contact information. No use for the addresses is <lb/>identified, and omitting this information provides a privacy benefit. <lb/>This memo updates RFC 3219. <lb/>2. IANA Considerations <lb/>This memo updates the registration rules [RFC8126] for TRIP <lb/>Attributes ([RFC3219], Section 13.2) and TRIP IP Telephony <lb/>Administrative Domain (ITAD) Numbers ([RFC3219], Section 13.5) as <lb/>follows. <lb/>The IETF no longer requires IANA to collect postal address <lb/>information when adding TRIP registry entries. Additionally, IANA <lb/>has removed previously collected postal addresses from the <lb/>registries. <lb/>3. Security Considerations <lb/>No security impacts of this change have been identified. <lb/>4. Normative References <lb/>[RFC3219] Rosenberg, J., Salama, H., and M. Squire, &quot;Telephony <lb/>Routing over IP (TRIP)&quot;, RFC 3219, DOI 10.17487/RFC3219, <lb/>January 2002, &lt;https://www.rfc-editor.org/info/rfc3219&gt;. <lb/>[RFC8126] Cotton, M., Leiba, B., and T. Narten, &quot;Guidelines for <lb/>Writing an IANA Considerations Section in RFCs&quot;, BCP 26, <lb/>RFC 8126, DOI 10.17487/RFC8126, June 2017, <lb/>&lt;https://www.rfc-editor.org/info/rfc8126&gt;. <lb/></body>
+
+			<note place="footnote">Arkko &amp; Hardie <lb/>Standards Track <lb/></note>
+
+			<page>[Page 2] <lb/></page>
+
+			<note place="headnote">RFC 8602 <lb/>TRIP Registry Update <lb/>July 2019 <lb/></note>
+
+			<div type="acknowledgement">Acknowledgements <lb/>The authors would like to thank Michelle Cotton, Alissa Cooper, and <lb/>Jonathan Rosenberg for interesting discussions in this problem space. <lb/>The authors would also like to thank Carlos Pignataro, Russ Housley, <lb/>Abdussalam Baryun, and Paul Wouters for feedback. <lb/></div>
+
+			Authors&apos; Addresses <lb/>
+
+			<front>Jari Arkko <lb/>Ericsson <lb/>Kauniainen 02700 <lb/>Finland <lb/>Email: jari.arkko@piuha.net <lb/>Ted Hardie <lb/>Email: ted.ietf@gmail.com <lb/></front>
+
+			<note place="footnote">Arkko &amp; Hardie <lb/>Standards Track <lb/></note>
+
+			<page>[Page 3] </page>
+
+
+	</text>
+</tei>
