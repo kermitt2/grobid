@@ -4,8 +4,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.GrobidProperties;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.stream.Collectors;
 
 import static org.grobid.core.engines.EngineParsers.LOGGER;
 
@@ -32,6 +35,8 @@ public enum GrobidModels implements GrobidModel {
     ENTITIES_CHEMISTRY("entities/chemistry"),
     //	ENTITIES_CHEMISTRY("chemistry"),
     FULLTEXT("fulltext"),
+    FULLTEXT_ARTICLE_LIGHT_REF("fulltext"),
+    FULLTEXT_ARTICLE_LIGHT("fulltext"),
     SHORTTEXT("shorttext"),
     FIGURE("figure"),
     TABLE("table"),
@@ -101,6 +106,12 @@ public enum GrobidModels implements GrobidModel {
 
         public String toString() {
             return getLabel();
+        }
+
+        public static List<String> getLabels() {
+            return Arrays.stream(Flavor.values())
+                .map(Flavor::getLabel)
+                .collect(Collectors.toList());
         }
     }
 

@@ -27,6 +27,7 @@ public class EngineParsers implements Closeable {
     private ChemicalParser chemicalParser = null;
     private Segmentation segmentationParser = null;
     private Map<Flavor,Segmentation> segmentationParsers = null;
+    private Map<Flavor,FullTextParser> fullTextParsers = null;
     private ReferenceSegmenterParser referenceSegmenterParser = null;
     private FigureParser figureParser = null;
     private TableParser tableParser = null;
@@ -103,6 +104,30 @@ public class EngineParsers implements Closeable {
         }
 
         return citationParser;
+    }
+
+
+    public FullTextParser getFullTextParser(Flavor flavor) {
+        if (flavor == null) {
+            if (fullTextParser == null) {
+                synchronized (this) {
+                    if (fullTextParser == null) {
+                        fullTextParser = new FullTextParser(this);
+                    }
+                }
+            }
+            return fullTextParser;
+        } {
+            synchronized (this) {
+                if (fullTextParsers == null || fullTextParsers.get(flavor) == null) {
+                    FullTextParser localFulltextParser = new FullTextParser(this, flavor);
+                    if (fullTextParsers == null)
+                        fullTextParsers = new EnumMap<>(Flavor.class);
+                    fullTextParsers.put(flavor, localFulltextParser);
+                }
+            }
+            return fullTextParsers.get(flavor);
+        }
     }
 
     public FullTextParser getFullTextParser() {

@@ -1,3 +1,7 @@
+======= Header metadata =======
+
+Evaluation on 1000 random PDF files out of 998 PDF (ratio 1.0).
+
 ======= Strict Matching ======= (exact matches)
 
 ===== Field-level results =====
@@ -103,13 +107,13 @@ all (macro avg.)     97.78        85.27        82.31        83.69        321178
 
 label                accuracy     precision    recall       f1           support
 
-authors              97.46        81.5         78.74        80.09        44770
+authors              97.46        81.49        78.73        80.09        44770
 date                 97.88        84.63        81.26        82.91        45457
 first_author         98.84        91.71        88.57        90.11        44770
 inTitle              98.01        85.52        87.51        86.5         42795
 issue                99.51        93.62        92.7         93.16        18983
 page                 97.17        93.71        77.57        84.88        40844
-title                98.9         91.98        92.76        92.37        43101
+title                98.89        91.98        92.75        92.37        43101
 volume               99.41        95.9         96.12        96.01        40458
 
 all (micro avg.)     98.4         89.34        86.38        87.83        321178
@@ -141,7 +145,7 @@ all (macro avg.)     98.62        91.48        88.52        89.89        321178
 
 label                accuracy     precision    recall       f1           support
 
-authors              97.93        84.95        82.07        83.48        44770
+authors              97.93        84.94        82.07        83.48        44770
 date                 97.88        84.63        81.26        82.91        45457
 first_author         98.81        91.49        88.36        89.9         44770
 inTitle              97.96        85.17        87.15        86.15        42795
@@ -158,12 +162,12 @@ all (macro avg.)     98.48        90.43        87.5         88.86        321178
 Total expected instances:               48449
 Total extracted instances:              48231
 Total correct instances:                13495 (strict)
-Total correct instances:                22262 (soft)
+Total correct instances:                22261 (soft)
 Total correct instances:                24910 (Levenshtein)
-Total correct instances:                23262 (RatcliffObershelp)
+Total correct instances:                23261 (RatcliffObershelp)
 
 Instance-level precision:       27.98 (strict)
-Instance-level precision:       46.16 (soft)
+Instance-level precision:       46.15 (soft)
 Instance-level precision:       51.65 (Levenshtein)
 Instance-level precision:       48.23 (RatcliffObershelp)
 
@@ -177,11 +181,11 @@ Instance-level f-score: 46.05 (soft)
 Instance-level f-score: 51.53 (Levenshtein)
 Instance-level f-score: 48.12 (RatcliffObershelp)
 
-Matching 1 :    35375
+Matching 1 :    35374
 
 Matching 2 :    1262
 
-Matching 3 :    3265
+Matching 3 :    3266
 
 Matching 4 :    1801
 
@@ -252,155 +256,4 @@ availability_stmt    95.79        99.73        96.28        97.98        779
 all (micro avg.)     95.79        99.73        96.28        97.98        779
 all (macro avg.)     95.79        99.73        96.28        97.98        779
 
-
-************************************************************************************
-COUNTER: org.grobid.core.engines.counters.TableRejectionCounters
-************************************************************************************
-------------------------------------------------------------------------------------
-  CANNOT_PARSE_LABEL_TO_INT:          7
-  CONTENT_SIZE_TOO_SMALL:             98
-  CONTENT_WIDTH_TOO_SMALL:            9
-  EMPTY_LABEL_OR_HEADER_OR_CONTENT:   752
-  HEADER_NOT_STARTS_WITH_TABLE_WORD:  178
-  HEADER_NOT_CONSECUTIVE:             844
-  HEADER_AND_CONTENT_DIFFERENT_PAGES: 7
-  HEADER_AND_CONTENT_INTERSECT:       744
-====================================================================================
-
-************************************************************************************
-COUNTER: org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters
-************************************************************************************
-------------------------------------------------------------------------------------
-  UNMATCHED_REF_MARKERS:                    2046
-  MATCHED_REF_MARKERS_AFTER_POST_FILTERING: 21
-  STYLE_AUTHORS:                            778
-  STYLE_NUMBERED:                           48331
-  MANY_CANDIDATES:                          139
-  MANY_CANDIDATES_AFTER_POST_FILTERING:     10
-  NO_CANDIDATES:                            2524
-  INPUT_REF_STRINGS_CNT:                    49874
-  MATCHED_REF_MARKERS:                      73609
-  NO_CANDIDATES_AFTER_POST_FILTERING:       2
-  STYLE_OTHER:                              765
-====================================================================================
-
-************************************************************************************
-COUNTER: org.grobid.core.engines.counters.FigureCounters
-************************************************************************************
-------------------------------------------------------------------------------------
-  SKIPPED_BAD_STANDALONE_FIGURES:   203
-  SKIPPED_SMALL_STANDALONE_FIGURES: 27
-  SKIPPED_BIG_STANDALONE_FIGURES:   176
-====================================================================================
-
-************************************************************************************
-COUNTER: org.grobid.core.engines.label.TaggingLabelImpl
-************************************************************************************
-------------------------------------------------------------------------------------
-  HEADER_DOCTYPE:                         1612
-  CITATION_TITLE:                         46678
-  HEADER_KEYWORD:                         81
-  NAME-HEADER_MIDDLENAME:                 2179
-  HEADER_FUNDING:                         1047
-  HEADER_ADDRESS:                         4678
-  HEADER_PAD:                             1
-  TABLE_NOTE:                             2993
-  FULLTEXT_TABLE_MARKER:                  11589
-  FUNDING-ACKNOWLEDGEMENT_AFFILIATION:    349
-  CITATION_WEB:                           29529
-  HEADER_GROUP:                           7
-  FULLTEXT_SECTION:                       33201
-  DATE_YEAR:                              52917
-  CITATION_ISSUE:                         19290
-  AFFILIATION-ADDRESS_SETTLEMENT:         3971
-  CITATION_JOURNAL:                       42566
-  TABLE_FIGURE_HEAD:                      6147
-  CITATION_OTHER:                         291220
-  CITATION_TECH:                          323
-  AFFILIATION-ADDRESS_OTHER:              17589
-  AFFILIATION-ADDRESS_LABORATORY:         268
-  CITATION_AUTHOR:                        46783
-  CITATION_EDITOR:                        608
-  FUNDING-ACKNOWLEDGEMENT_PROJECTNAME:    119
-  FIGURE_FIGDESC:                         5198
-  CITATION_VOLUME:                        41093
-  AFFILIATION-ADDRESS_DEPARTMENT:         4458
-  CITATION_LOCATION:                      2877
-  NAME-CITATION_SUFFIX:                   141
-  FUNDING-ACKNOWLEDGEMENT_INFRASTRUCTURE: 16
-  FUNDING-ACKNOWLEDGEMENT_INSTITUTION:    671
-  NAME-HEADER_TITLE:                      136
-  HEADER_WEB:                             1
-  AFFILIATION-ADDRESS_ADDRLINE:           268
-  CITATION_INSTITUTION:                   800
-  HEADER_REFERENCE:                       2010
-  HEADER_AUTHOR:                          1042
-  NAME-HEADER_MARKER:                     5690
-  FUNDING-ACKNOWLEDGEMENT_FUNDERNAME:     2120
-  DATE_OTHER:                             10509
-  NAME-CITATION_FORENAME:                 179668
-  AFFILIATION-ADDRESS_REGION:             1231
-  NAME-CITATION_MIDDLENAME:               5392
-  FULLTEXT_PARAGRAPH:                     217037
-  FIGURE_FIGURE_HEAD:                     8633
-  AFFILIATION-ADDRESS_POSTCODE:           26
-  HEADER_DATE:                            994
-  TABLE_FIGDESC:                          1296
-  NAME-HEADER_SURNAME:                    7933
-  NAME-CITATION_OTHER:                    153160
-  CITATION_BOOKTITLE:                     3206
-  HEADER_AFFILIATION:                     4744
-  CITATION_NOTE:                          3030
-  FULLTEXT_CITATION_MARKER:               98063
-  HEADER_EMAIL:                           1145
-  TABLE_LABEL:                            2991
-  FUNDING-ACKNOWLEDGEMENT_PROGRAMNAME:    113
-  NAME-HEADER_FORENAME:                   8025
-  TABLE_CONTENT:                          3464
-  CITATION_COLLABORATION:                 106
-  HEADER_MEETING:                         1
-  HEADER_EDITOR:                          954
-  CITATION_SERIES:                        88
-  NAME-CITATION_SURNAME:                  176971
-  FULLTEXT_EQUATION_MARKER:               543
-  FULLTEXT_FIGURE_MARKER:                 16942
-  HEADER_TITLE:                           983
-  FIGURE_CONTENT:                         261
-  FIGURE_LABEL:                           4369
-  FULLTEXT_EQUATION_LABEL:                2745
-  HEADER_OTHER:                           10639
-  FULLTEXT_EQUATION:                      3887
-  CITATION_DATE:                          52109
-  FULLTEXT_FIGURE:                        9932
-  FULLTEXT_TABLE:                         6034
-  AFFILIATION-ADDRESS_MARKER:             3586
-  FULLTEXT_OTHER:                         172
-  HEADER_SUBMISSION:                      971
-  NAME-HEADER_OTHER:                      9100
-  AFFILIATION-ADDRESS_POSTBOX:            1
-  HEADER_AVAILABILITY:                    771
-  NAME-HEADER_SUFFIX:                     10
-  DATE_MONTH:                             6968
-  FUNDING-ACKNOWLEDGEMENT_PERSON:         2102
-  HEADER_ABSTRACT:                        1323
-  AFFILIATION-ADDRESS_INSTITUTION:        5012
-  FUNDING-ACKNOWLEDGEMENT_GRANTNAME:      133
-  CITATION_PAGES:                         42024
-  AFFILIATION-ADDRESS_COUNTRY:            4716
-  FUNDING-ACKNOWLEDGEMENT_OTHER:          8316
-  CITATION_PUBLISHER:                     4103
-  FUNDING-ACKNOWLEDGEMENT_GRANTNUMBER:    1253
-  HEADER_PUBNUM:                          1342
-  CITATION_PUBNUM:                        11434
-  HEADER_COPYRIGHT:                       1032
-  DATE_DAY:                               6559
-====================================================================================
-
-************************************************************************************
-COUNTER: FigureCounters
-************************************************************************************
-------------------------------------------------------------------------------------
-  STANDALONE_FIGURES:           200
-  ASSIGNED_GRAPHICS_TO_FIGURES: 3414
-====================================================================================
 ====================================================================================

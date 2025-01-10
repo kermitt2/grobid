@@ -318,14 +318,10 @@ public class HeaderTrainer extends AbstractTrainer{
         Flavor theFlavor = null;
         if (args.length > 0) {
             String flavor = args[0];
-            if (flavor.equalsIgnoreCase("light")) {
-                theFlavor = Flavor.ARTICLE_LIGHT;
-            } else if (flavor.equalsIgnoreCase("light-ref")) {
-                theFlavor = Flavor.ARTICLE_LIGHT_WITH_REFERENCES;
-            } else if (flavor.equalsIgnoreCase("ietf")) {
-                theFlavor = Flavor.IETF;
-            } else {
-                System.out.println("Warning, the flavor is not recognized, must one one of [3gpp, ietf, light, light-ref], defaulting training to no collection...");
+            theFlavor = GrobidModels.Flavor.fromLabel(flavor);
+            if (theFlavor == null) {
+                System.out.println("Warning, the flavor is not recognized, " +
+                    "must one one of " + Flavor.getLabels() + ", defaulting training to no collection...");
             }
         }
 

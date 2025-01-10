@@ -111,6 +111,9 @@ public class SegmentationTrainer extends AbstractTrainer {
                 writer3 = new OutputStreamWriter(os3, StandardCharsets.UTF_8);
             }
 
+            // get a factory for SAX parser
+            SAXParserFactory spf = SAXParserFactory.newInstance();
+
             for (File tf : refFiles) {
                 String name = tf.getName();
                 LOGGER.info("Processing: " + name);
@@ -123,9 +126,6 @@ public class SegmentationTrainer extends AbstractTrainer {
                 } else {
                     parser = new TEISegmentationSaxParser();
                 }
-
-                // get a factory for SAX parser
-                SAXParserFactory spf = SAXParserFactory.newInstance();
 
                 //get a new instance of parser
                 SAXParser p = spf.newSAXParser();
@@ -208,6 +208,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                         }
                     }
                     bis.close();
+
                     if (nbInvalid < 10) {
                         if ((writer2 == null) && (writer3 != null))
                             writer3.write(segmentation.toString() + "\n");
@@ -220,7 +221,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                                 writer3.write(segmentation.toString() + "\n");
                         }
                     } else {
-                        LOGGER.warn("{} / too many synchronization issues, file not used in training data and to be fixed!", name);
+                        LOGGER.error("{} / too many synchronization issues, file not used in training data and to be fixed!", name);
                     }
                 } catch (Exception e) {
                    LOGGER.error("Fail to open or process raw file", e);
@@ -255,7 +256,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
             theFlavor = Flavor.fromLabel(flavor);
             if (theFlavor == null) {
                 System.out.println("Warning, the flavor is not recognized, " +
-                    "must one one of [article/light, article/light-ref, sdo/ietf], " +
+                    "must one one of "+ Flavor.getLabels() +", " +
                     "defaulting training with no flavor...");
             }
         }

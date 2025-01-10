@@ -368,6 +368,8 @@ public class Engine implements Closeable {
      * @param consolidateFunders the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param includeRawAffiliations includes the raw affiliation in the output
+     * @param includeRawCopyrights includes the raw copyright information in the output
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
@@ -430,6 +432,8 @@ public class Engine implements Closeable {
      * @param consolidateFunders the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param includeRawAffiliations includes the raw affiliation in the output
+     * @param includeRawCopyrights includes the raw copyright information in the output
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
@@ -540,7 +544,7 @@ public class Engine implements Closeable {
      */
     public void createTraining(File inputFile, String pathRaw, String pathTEI, int id, GrobidModels.Flavor flavor) {
         System.out.println(inputFile.getPath());
-        Document doc = parsers.getFullTextParser().createTraining(inputFile, pathRaw, pathTEI, id, flavor);
+        Document doc = parsers.getFullTextParser(flavor).createTraining(inputFile, pathRaw, pathTEI, id, flavor);
     }
 
     /**
@@ -587,7 +591,7 @@ public class Engine implements Closeable {
                                     GrobidModels.Flavor flavor,
                                     String md5Str,
                                      GrobidAnalysisConfig config) throws Exception {
-        FullTextParser fullTextParser = parsers.getFullTextParser();
+        FullTextParser fullTextParser = parsers.getFullTextParser(flavor);
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
         long time = System.currentTimeMillis();
@@ -605,7 +609,7 @@ public class Engine implements Closeable {
     public Document fullTextToTEIDoc(DocumentSource documentSource,
                                     GrobidModels.Flavor flavor,
                                     GrobidAnalysisConfig config) throws Exception {
-        FullTextParser fullTextParser = parsers.getFullTextParser();
+        FullTextParser fullTextParser = parsers.getFullTextParser(flavor);
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + documentSource);
         long time = System.currentTimeMillis();

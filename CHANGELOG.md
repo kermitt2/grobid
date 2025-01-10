@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.8.2] - TBD
+
+### Added
+- New model specialisation/variants (flavors) mechanism #1151
+- New specialised models for a lightweight processing that covers other type of scientific articles that are not following the general segmentation schema (e.g. corrections, editorial letters, etc.) #1202
+- Additional training data covering edge cases where the Data Availability statements are over multiple pages #1200
+- Added a flag that allow output the raw copyright information in TEI #1181
+
+### Changed
+
+### Fixed
+- Fix URL identification for certain edge cases #1190, #1191, #1185
+- Fix fulltext model training data #1107 
+- Fix header model training data #1128
+- Updated the docker image's packages to reduce the vulnerabilities #1173
+
 ## [0.8.1] - 2024-09-14
 
 ### Added
