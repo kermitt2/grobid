@@ -7,14 +7,14 @@ Evaluation on 957 random PDF files out of 982 PDF (ratio 1.0).
 
 **Field-level results**
 
-| label            |  precision |   recall  |     f1     | support |
-|---               |---         |---        |---         |---      |
-| authors | 79.68 | 77.43 | 78.54 | 957 |
-| first_author | 91.83 | 89.33 | 90.56 | 956 |
-| title | 89.25 | 85.89 | 87.54 | 957 |
-|                  |            |           |            |         |
-| **all fields (micro avg.)** | **86.91** | **84.22** | **85.54** | 2870 |
-| all fields (macro avg.) | 86.92 | 84.22 | 85.55 | 2870 |
+| label                       | precision | recall    | f1        | support |
+|-----------------------------|-----------|-----------|-----------|---------|
+| authors                     | 79.68     | 77.43     | 78.54     | 957     |
+| first_author                | 91.83     | 89.33     | 90.56     | 956     |
+| title                       | 89.25     | 85.89     | 87.54     | 957     |
+|                             |           |           |           |         |
+| **all fields (micro avg.)** | **86.91** | **84.22** | **85.54** | 2870    |
+| all fields (macro avg.)     | 86.92     | 84.22     | 85.55     | 2870    |
 
 
 
@@ -22,14 +22,14 @@ Evaluation on 957 random PDF files out of 982 PDF (ratio 1.0).
 
 **Field-level results**
 
-| label            |  precision |   recall  |     f1     | support |
-|---               |---         |---        |---         |---      |
-| authors | 80 | 77.74 | 78.86 | 957 |
-| first_author | 91.83 | 89.33 | 90.56 | 956 |
-| title | 96.42 | 92.79 | 94.57 | 957 |
-|                  |            |           |            |         |
-| **all fields (micro avg.)** | **89.39** | **86.62** | **87.98** | 2870 |
-| all fields (macro avg.) | 89.41 | 86.62 | 88 | 2870 |
+| label                       | precision | recall    | f1        | support |
+|-----------------------------|-----------|-----------|-----------|---------|
+| authors                     | 80        | 77.74     | 78.86     | 957     |
+| first_author                | 91.83     | 89.33     | 90.56     | 956     |
+| title                       | 96.42     | 92.79     | 94.57     | 957     |
+|                             |           |           |           |         |
+| **all fields (micro avg.)** | **89.39** | **86.62** | **87.98** | 2870    |
+| all fields (macro avg.)     | 89.41     | 86.62     | 88        | 2870    |
 
 
 
@@ -37,14 +37,14 @@ Evaluation on 957 random PDF files out of 982 PDF (ratio 1.0).
 
 **Field-level results**
 
-| label            |  precision |   recall  |     f1     | support |
-|---               |---         |---        |---         |---      |
-| authors | 92.8 | 90.18 | 91.47 | 957 |
-| first_author | 92.26 | 89.75 | 90.99 | 956 |
-| title | 98.05 | 94.36 | 96.17 | 957 |
-|                  |            |           |            |         |
-| **all fields (micro avg.)** | **94.35** | **91.43** | **92.87** | 2870 |
-| all fields (macro avg.) | 94.37 | 91.43 | 92.87 | 2870 |
+| label                       | precision | recall    | f1        | support |
+|-----------------------------|-----------|-----------|-----------|---------|
+| authors                     | 92.8      | 90.18     | 91.47     | 957     |
+| first_author                | 92.26     | 89.75     | 90.99     | 956     |
+| title                       | 98.05     | 94.36     | 96.17     | 957     |
+|                             |           |           |           |         |
+| **all fields (micro avg.)** | **94.35** | **91.43** | **92.87** | 2870    |
+| all fields (macro avg.)     | 94.37     | 91.43     | 92.87     | 2870    |
 
 
 
@@ -52,14 +52,14 @@ Evaluation on 957 random PDF files out of 982 PDF (ratio 1.0).
 
 **Field-level results**
 
-| label            |  precision |   recall  |     f1     | support |
-|---               |---         |---        |---         |---      |
-| authors | 85.59 | 83.18 | 84.37 | 957 |
-| first_author | 91.83 | 89.33 | 90.56 | 956 |
-| title | 97.94 | 94.25 | 96.06 | 957 |
-|                  |            |           |            |         |
-| **all fields (micro avg.)** | **91.77** | **88.92** | **90.32** | 2870 |
-| all fields (macro avg.) | 91.79 | 88.92 | 90.33 | 2870 |
+| label                       | precision | recall    | f1        | support |
+|-----------------------------|-----------|-----------|-----------|---------|
+| authors                     | 85.59     | 83.18     | 84.37     | 957     |
+| first_author                | 91.83     | 89.33     | 90.56     | 956     |
+| title                       | 97.94     | 94.25     | 96.06     | 957     |
+|                             |           |           |           |         |
+| **all fields (micro avg.)** | **91.77** | **88.92** | **90.32** | 2870    |
+| all fields (macro avg.)     | 91.79     | 88.92     | 90.33     | 2870    |
 
 
 #### Instance-level results
