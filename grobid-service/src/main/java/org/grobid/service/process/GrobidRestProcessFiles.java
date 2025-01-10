@@ -30,7 +30,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 import java.io.*;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -432,12 +432,10 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.NO_CONTENT).build();
             } else {
 
-                response = Response.status(Status.OK).type("application/zip").build();
-
-                ByteArrayOutputStream ouputStream = new ByteArrayOutputStream();
-                ZipOutputStream out = new ZipOutputStream(ouputStream);
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                ZipOutputStream out = new ZipOutputStream(outputStream);
                 out.putNextEntry(new ZipEntry("tei.xml"));
-                out.write(retVal.getBytes(Charset.forName("UTF-8")));
+                out.write(retVal.getBytes(StandardCharsets.UTF_8));
                 // put now the assets, i.e. all the files under the asset path
                 File assetPathDir = new File(assetPath);
                 if (assetPathDir.exists()) {
@@ -469,7 +467,7 @@ public class GrobidRestProcessFiles {
                 response = Response
                     .ok()
                     .type("application/zip")
-                    .entity(ouputStream.toByteArray())
+                    .entity(outputStream.toByteArray())
                     .header("Content-Disposition", "attachment; filename=\"result.zip\"")
                     .build();
                 out.close();
