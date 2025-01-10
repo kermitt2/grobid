@@ -85,7 +85,7 @@ public class Segmentation extends AbstractParser {
     public Segmentation(Flavor flavor) {
         super(GrobidModels.getModelFlavor(GrobidModels.SEGMENTATION, flavor));
     }
-    
+
     /**
      * Segment a PDF document into high level zones: cover page, document header,
      * page footer, page header, body, page numbers, biblio section and annexes.

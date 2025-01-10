@@ -1,30 +1,40 @@
 package org.grobid.trainer;
 
 import org.grobid.core.GrobidModels;
-import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
-import org.grobid.trainer.sax.TEIFulltextSaxParser;
+import org.grobid.trainer.sax.*;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.StringTokenizer;
-
-import org.apache.commons.io.FileUtils;
 
 public class FulltextTrainer extends AbstractTrainer{
 
+    private final GrobidModels.Flavor flavor;
+
     public FulltextTrainer() {
         super(GrobidModels.FULLTEXT);
+        flavor = null;
+    }
+
+    public FulltextTrainer(GrobidModels.Flavor modelFlavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.FULLTEXT, modelFlavor));
+        flavor = modelFlavor;
     }
 
     @Override
     public int createCRFPPData(File corpusPath, File outputFile) {
-        return addFeaturesFulltext(corpusPath.getAbsolutePath() + "/tei", 
-                corpusPath + "/raw", outputFile, null, 1.0);
+        return addFeaturesFulltext(
+            corpusPath.getAbsolutePath() + "/tei",
+            corpusPath.getAbsolutePath() + "/raw",
+            outputFile,
+            null,
+            1.0
+        );
     }
 
 	/**
@@ -84,7 +94,7 @@ public class FulltextTrainer extends AbstractTrainer{
             Writer writer2 = null;
             if (trainingOutputPath != null) {
                 os2 = new FileOutputStream(trainingOutputPath);
-                writer2 = new OutputStreamWriter(os2, "UTF8");
+                writer2 = new OutputStreamWriter(os2, StandardCharsets.UTF_8);
             }
 
             // the file for writing the evaluation data
@@ -92,12 +102,8 @@ public class FulltextTrainer extends AbstractTrainer{
             Writer writer3 = null;
             if (evalOutputPath != null) {
                 os3 = new FileOutputStream(evalOutputPath);
-                writer3 = new OutputStreamWriter(os3, "UTF8");
+                writer3 = new OutputStreamWriter(os3, StandardCharsets.UTF_8);
             }
-
-            // the file for writing the training data
-            /*OutputStream os2 = new FileOutputStream(outputPath);
-            Writer writer2 = new OutputStreamWriter(os2, "UTF8");*/
 
             // get a factory for SAX parser
             SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -106,13 +112,20 @@ public class FulltextTrainer extends AbstractTrainer{
                 String name = tf.getName();
                 LOGGER.info("Processing: " + name);
 
-                TEIFulltextSaxParser parser2 = new TEIFulltextSaxParser();
+                TEIFulltextSaxParser parser;
+                if (flavor == GrobidModels.Flavor.ARTICLE_LIGHT) {
+                    parser = new TEIFulltextArticleLightSaxParser();
+                } else if (flavor == GrobidModels.Flavor.ARTICLE_LIGHT_WITH_REFERENCES) {
+                    parser = new TEIFulltextArticleLightRefSaxParser();
+                } else {
+                    parser = new TEIFulltextSaxParser();
+                }
             
                 //get a new instance of parser
                 SAXParser p = spf.newSAXParser();
-                p.parse(tf, parser2);
+                p.parse(tf, parser);
 
-                List<String> labeled = parser2.getLabeledResult();
+                List<String> labeled = parser.getLabeledResult();
 
                 // removing the @newline
                 /*List<String> newLabeled = new ArrayList<String>();
@@ -140,7 +153,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
 
                     BufferedReader bis = new BufferedReader(
                             new InputStreamReader(new FileInputStream(
-                            rawFile), "UTF8"));
+                            rawFile), StandardCharsets.UTF_8));
                     int q = 0; // current position in the TEI labeled list
                     StringBuilder fulltext = new StringBuilder();
 
@@ -158,7 +171,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                         String token = null;
                         if (ii != -1) {
                             token = line.substring(0, ii);
-                            // unicode normalisation of the token - it should not be necessary if the training data
+                            // Unicode normalisation of the token - it should not be necessary if the training data
                             // has been gnerated by a recent version of grobid
                             token = UnicodeUtil.normaliseTextAndRemoveSpaces(token);
                         }
@@ -172,7 +185,6 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                                 // unicode normalisation of the token - it should not be necessary if the training data
                                 // has been gnerated by a recent version of grobid
                                 localToken = UnicodeUtil.normaliseTextAndRemoveSpaces(localToken);
-
                                 if (localToken.equals(token)) {
                                     String tag = st.nextToken();
                                     fulltext.append(line).append(" ").append(tag);
@@ -197,8 +209,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                             break;
                         }
                     }
-                    
-                    bis.close();   
+                    bis.close();
 
                     // format with features for sequence tagging...
                     if (nbInvalid < 10) {
@@ -214,7 +225,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                         }
                         totalExamples++;
                     } else {
-                        LOGGER.error(name + " / too many synchronization issues, file not used in training data and to be fixed!");
+                        LOGGER.error("{} / too many synchronization issues, file not used in training data and to be fixed!", name);
                     }
                 } catch (Exception e) {
                     LOGGER.error("Fail to open or process raw file", e);
@@ -223,29 +234,45 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
 
             if (writer2 != null) {
                 writer2.close();
-                os2.close();
+                if (os2 != null) {
+                    os2.close();
+                }
             }
 
             if (writer3 != null) {
                 writer3.close();
-                os3.close();
+                if (os3 != null) {
+                    os3.close();
+                }
             }
         } catch (Exception e) {
-            LOGGER.error("An exception occured while running Grobid.", e);
+            LOGGER.error("An exception occurred while running Grobid.", e);
         }
         return totalExamples;					
 	}
 
-    /**
-     * Command line execution.
-     *
-     * @param args Command line arguments.
-     * @throws Exception 
-     */
+
     public static void main(String[] args) throws Exception {
-    	GrobidProperties.getInstance();
-        AbstractTrainer.runTraining(new FulltextTrainer());
-        System.out.println(AbstractTrainer.runEvaluation(new FulltextTrainer()));
+        // if we have a parameter, it gives the flavor refinement to consider
+        GrobidModels.Flavor theFlavor = null;
+        if (args.length > 0) {
+            String flavor = args[0];
+            theFlavor = GrobidModels.Flavor.fromLabel(flavor);
+            if (theFlavor == null) {
+                System.out.println("Warning, the flavor is not recognized, " +
+                    "must one one of [article/light, article/light-ref, sdo/ietf], " +
+                    "defaulting training with no flavor...");
+            }
+        }
+
+        GrobidProperties.getInstance();
+        if (theFlavor == null) {
+            AbstractTrainer.runTraining(new FulltextTrainer());
+            System.out.println(AbstractTrainer.runEvaluation(new FulltextTrainer()));
+        } else {
+            AbstractTrainer.runTraining(new FulltextTrainer(theFlavor));
+            System.out.println(AbstractTrainer.runEvaluation(new FulltextTrainer(theFlavor)));
+        }
         System.exit(0);
     }
-}	
+}
