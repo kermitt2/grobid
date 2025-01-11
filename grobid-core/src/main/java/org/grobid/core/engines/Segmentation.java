@@ -334,8 +334,8 @@ public class Segmentation extends AbstractParser {
             for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
                 Block block = page.getBlocks().get(blockIndex);
 
-                //boolean graphicVector = false;
-                //boolean graphicBitmap = false;
+                boolean graphicVector = false;
+                boolean graphicBitmap = false;
                 
                 // we skip figure and table areas recognized by the models upstream,
                 // but we keep as feature their occurences in the connected blocks
