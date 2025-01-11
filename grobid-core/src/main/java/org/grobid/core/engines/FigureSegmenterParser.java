@@ -116,6 +116,9 @@ public class FigureSegmenterParser {
         List<GraphicObject> figureAnchors = this.initFigureAnchors(doc);
 
         // for each figure anchor, we generate sequence to be labeled with features
+        //Pair<List<String>,List<LayoutTokenization>> featureObjectUp = 
+        //    this.createFeatureVector(doc, figureAnchors, Direction.UP);
+
         Pair<List<String>,List<LayoutTokenization>> featureObjectUp = 
             this.getAreasFeatured(doc, figureAnchors, Direction.UP);
         Pair<List<String>,List<LayoutTokenization>> featureObjectDown = 
