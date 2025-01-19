@@ -276,7 +276,7 @@ public class Figure {
 
         List<BoundingBox> theBoxes = null;
         // non graphic elements
-        if (getLayoutTokens() != null && getLayoutTokens().size() > 0) {
+        if (CollectionUtils.isNotEmpty(getLayoutTokens())) {
             //theBoxes = BoundingBoxCalculator.calculate(getLayoutTokens());
             BoundingBox oneBox = BoundingBoxCalculator.calculateOneBox(layoutTokens, true);
             List<BoundingBox> result = new ArrayList<BoundingBox>();
@@ -291,7 +291,7 @@ public class Figure {
         // here we bound all figure graphics in one single box (given that we can have hundred graphics
         // in a single figure)
         BoundingBox theGraphicsBox = null;
-        if ((graphicObjects != null) && (graphicObjects.size() > 0)) {
+        if (CollectionUtils.isNotEmpty(graphicObjects)) {
             for (GraphicObject graphicObject : graphicObjects) {
                 if (theGraphicsBox == null) {
                     theGraphicsBox = graphicObject.getBoundingBox();
@@ -307,8 +307,8 @@ public class Figure {
             theBoxes.add(theGraphicsBox);
         }
 
-        List<BoundingBox> result = new ArrayList<BoundingBox>();
-        if (theBoxes != null && theBoxes.size() > 0) {
+        List<BoundingBox> result = new ArrayList<>();
+        if (CollectionUtils.isNotEmpty(theBoxes)) {
             BoundingBox oneBox = BoundingBoxCalculator.calculateOneBox(layoutTokens, true);
             List<BoundingBox> mergedBox = VectorGraphicBoxCalculator.mergeBoxes(theBoxes);
             result.addAll(mergedBox);
@@ -436,7 +436,7 @@ public class Figure {
                 //    LayoutTokensUtil.normalizeText(caption.toString()));
             }
 
-            if (desc != null && config.isWithSentenceSegmentation()) {
+            if (config.isWithSentenceSegmentation()) {
                 formatter.segmentIntoSentences(desc, this.captionLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
 
                 // we need a sentence segmentation of the figure caption, for that we need to introduce 
