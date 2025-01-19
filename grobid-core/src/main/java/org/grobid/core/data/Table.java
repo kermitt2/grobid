@@ -1,5 +1,6 @@
 package org.grobid.core.data;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.grobid.core.GrobidModels;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.data.table.Cell;
@@ -69,6 +70,7 @@ public class Table extends Figure {
 	@Override
     public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter, List<MarkerType> markerTypes) {
 		if (!isCompleteForTEI()) {
+            LOGGER.warn("Found a table that is badly formatted but it should have been spotted before. We ignore it now.");
 			return null;
 		}
 
@@ -98,7 +100,7 @@ public class Table extends Figure {
 		}*/
 
         Element desc = null;
-        if (caption != null) {
+        if (StringUtils.isNotBlank(caption)) {
             // if the segment has been parsed with the full text model we further extract the clusters
             // to get the bibliographical references
 
@@ -111,14 +113,15 @@ public class Table extends Figure {
             if (StringUtils.isNotBlank(labeledCaption)) {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledCaption, captionLayoutTokens);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();                
+
+                MarkerType citationMarkerType = null;
+                if (CollectionUtils.isNotEmpty(markerTypes)) {
+                    citationMarkerType = markerTypes.get(0);
+                }
+
                 for (TaggingTokenCluster cluster : clusters) {
                     if (cluster == null) {
                         continue;
-                    }
-
-                    MarkerType citationMarkerType = null;
-                    if (markerTypes != null && markerTypes.size()>0) {
-                        citationMarkerType = markerTypes.get(0);
                     }
 
                     TaggingLabel clusterLabel = cluster.getTaggingLabel();

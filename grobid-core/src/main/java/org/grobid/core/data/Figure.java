@@ -329,6 +329,7 @@ public class Figure {
 
     public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter, List<MarkerType> markerTypes) {
         if (!isCompleteForTEI()) {
+            LOGGER.warn("Found a figure that is badly formatted but it should have been spotted before. We ignore it now.");
             return null;
         }
         Element figureElement = XmlBuilderUtils.teiElement("figure");
@@ -339,7 +340,7 @@ public class Figure {
         if (config.isGenerateTeiCoordinates("figure")) {
             List<BoundingBox> theBoxes = null;
             // non graphic elements
-            if (getLayoutTokens() != null && getLayoutTokens().size() > 0) {
+            if (CollectionUtils.isNotEmpty(getLayoutTokens())) {
                 theBoxes = BoundingBoxCalculator.calculate(getLayoutTokens());
             }
 
@@ -347,10 +348,10 @@ public class Figure {
             // -> note: this was restricted to the bitmap objects only... the bounding box calculation
             // with vector graphics might need some double check
 
-            // here we bound all figure graphics in one single box (given that we can have hundred graphics
+            // here we bound all figure graphics in one single box (given that we can have a hundred graphics
             // in a single figure)
             BoundingBox theGraphicsBox = null;
-            if ((graphicObjects != null) && (graphicObjects.size() > 0)) {
+            if (CollectionUtils.isNotEmpty(graphicObjects)) {
                 for (GraphicObject graphicObject : graphicObjects) {
                     if (theGraphicsBox == null) {
                         theGraphicsBox = graphicObject.getBoundingBox();
@@ -366,24 +367,24 @@ public class Figure {
                 theBoxes.add(theGraphicsBox);
             }
 
-            if (theBoxes != null && theBoxes.size() > 0) {
+            if (CollectionUtils.isNotEmpty(theBoxes)) {
                 String coords = Joiner.on(";").join(theBoxes);
                 XmlBuilderUtils.addCoords(figureElement, coords);
             }
         }
-        if (header != null) {
+
+        if (StringUtils.isNotBlank(header)) {
             Element head = XmlBuilderUtils.teiElement("head",
                     LayoutTokensUtil.normalizeText(header.toString()));
             figureElement.appendChild(head);
-
         }
-        if (label != null) {
+
+        if (StringUtils.isNotBlank(label)) {
             Element labelEl = XmlBuilderUtils.teiElement("label",
                 LayoutTokensUtil.normalizeText(label.toString()));
             figureElement.appendChild(labelEl);
         }
-        if (caption != null) {
-
+        if (StringUtils.isNotBlank(caption)) {
             Element desc = XmlBuilderUtils.teiElement("figDesc");
             if (config.isGenerateTeiIds()) {
                 String divID = KeyGen.getKey().substring(0, 7);
@@ -392,12 +393,12 @@ public class Figure {
 
             // if the segment has been parsed with the full text model we further extract the clusters
             // to get the bibliographical references
-            if ( (labeledCaption != null) && (labeledCaption.length() > 0) ) {
+            if (StringUtils.isNotBlank(labeledCaption)) {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledCaption, captionLayoutTokens);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();
                 
                 MarkerType citationMarkerType = null;
-                if (markerTypes != null && markerTypes.size()>0) {
+                if (CollectionUtils.isNotEmpty(markerTypes)) {
                     citationMarkerType = markerTypes.get(0);
                 }
 
@@ -453,7 +454,7 @@ public class Figure {
 
             figureElement.appendChild(desc);
         }
-        if ((graphicObjects != null) && (graphicObjects.size() > 0)) {
+        if (CollectionUtils.isNotEmpty(graphicObjects)) {
             for (GraphicObject graphicObject : graphicObjects) {
                 Element go = XmlBuilderUtils.teiElement("graphic");
                 String uri = graphicObject.getURI();
