@@ -1936,7 +1936,7 @@ public class TEIFormatter {
 
         // in xom, the following gives all the text under the element, for the whole subtree
         String text = curParagraph.getValue();
-        if (StringUtils.isEmpty(text))
+        if (StringUtils.isBlank(text))
             return;
 
         // identify ref nodes, ref spans and ref positions

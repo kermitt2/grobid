@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 - New model specialisation/variants (flavors) mechanism #1151
-- New specialised models for a lightweight processing that covers other type of scientific articles that are not following the general segmentation schema (e.g. corrections, editorial letters, etc.) #1202
+- Specialisation/variant process for a lightweight processing that covers other type of scientific articles that are not following the general segmentation schema (e.g. corrections, editorial letters, etc.) #1202
 - Additional training data covering edge cases where the Data Availability statements are over multiple pages #1200
 - Added a flag that allow output the raw copyright information in TEI #1181
 
@@ -19,6 +19,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Fix fulltext model training data #1107 
 - Fix header model training data #1128
 - Updated the docker image's packages to reduce the vulnerabilities #1173
+- Fixed a bug in the handling of badly formatted figures/tables #1207
+- Fixed various security vulnerabilities #1125 #1123 #1205
+- Correct replacement in the filenames of the fulltext generated files #1204
+- Fixed fulltext block start #1203
+
 
 ## [0.8.1] - 2024-09-14
 

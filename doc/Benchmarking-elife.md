@@ -24,7 +24,7 @@ Evaluation on 984 PDF preprints out of 984 (no failure).
 
 Runtime for processing 984 PDF: **1131** seconds (1.15 seconds per PDF file) on Ubuntu 22.04, 16 CPU (32 threads), 128GB RAM and with a GeForce GTX 1080 Ti GPU.
 
-Note: with CRF only models runtime is 492s (0.50 seconds per PDF) with 4GPU, 8 threads. 
+Note: with CRF only models runtime is 492s (0.50 seconds per PDF) with 4 CPU, 8 threads. 
 
 
 

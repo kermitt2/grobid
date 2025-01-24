@@ -381,6 +381,7 @@ public class BiblioItem {
     CopyrightsLicense copyrightsLicense = null;
 
     // All the tokens that are considered noise will be collected here
+    private List<String> discardedPieces = new ArrayList<>();
     private List<List<LayoutToken>> discardedPiecesTokens = new ArrayList<>();
 
     public static final List<String> confPrefixes = Arrays.asList("Proceedings of", "proceedings of",
@@ -4522,6 +4523,18 @@ public class BiblioItem {
 
     public CopyrightsLicense getCopyrightsLicense() {
         return this.copyrightsLicense;
+    }
+
+    public List<String> getDiscardedPieces() {
+        return discardedPieces;
+    }
+
+    public void setDiscardedPieces(List<String> discardedPieces) {
+        this.discardedPieces = discardedPieces;
+    }
+
+    public void addDiscardedPiece(String piece) {
+        this.discardedPieces.add(piece);
     }
 
     public List<List<LayoutToken>> getDiscardedPiecesTokens() {
