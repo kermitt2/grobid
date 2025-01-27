@@ -826,26 +826,28 @@ public class TEIFormatter {
 
         // We collect the discarded text from the header and add it as a <noteStmt>
         if(config.isIncludeDiscardedText()) {
-            tei.append("\t\t\t<notesStmt>\n");
-            for (List<LayoutToken> discardedPieceTokens : biblio.getDiscardedPiecesTokens()) {
-                LayoutToken first = Iterables.getFirst(discardedPieceTokens, null);
-                String place = first == null ? "unknown" : first.getLabels().get(0).getGrobidModel().getModelName();
+            if (CollectionUtils.isNotEmpty(biblio.getDiscardedPiecesTokens())) {
+                tei.append("\t\t\t<notesStmt>\n");
+                for (List<LayoutToken> discardedPieceTokens : biblio.getDiscardedPiecesTokens()) {
+                    LayoutToken first = Iterables.getFirst(discardedPieceTokens, null);
+                    String place = first == null ? "unknown" : first.getLabels().get(0).getGrobidModel().getModelName();
 
-                tei.append("\t\t\t\t<note type=\"other\" place=\"" + place + "\"");
-                if (generateIDs) {
-                    String divID = KeyGen.getKey().substring(0, 7);
-                    tei.append(" xml:id=\"_" + divID + "\"");
+                    tei.append("\t\t\t\t<note type=\"other\" place=\"" + place + "\"");
+                    if (generateIDs) {
+                        String divID = KeyGen.getKey().substring(0, 7);
+                        tei.append(" xml:id=\"_" + divID + "\"");
+                    }
+
+                    if (config.isGenerateTeiCoordinates("note")) {
+                        String coords = LayoutTokensUtil.getCoordsString(discardedPieceTokens);
+                        tei.append(" coords=\"" + coords + "\"");
+                    }
+
+                    // This text is not processed at the moment
+                    tei.append(">" + TextUtilities.HTMLEncode(normalizeText(LayoutTokensUtil.toText(discardedPieceTokens))) + "</note>\n");
                 }
-
-                if (config.isGenerateTeiCoordinates("note")) {
-                    String coords = LayoutTokensUtil.getCoordsString(discardedPieceTokens);
-                    tei.append(" coords=\"" + coords + "\"");
-                }
-
-                // This text is not processed at the moment
-                tei.append(">" + TextUtilities.HTMLEncode(normalizeText(LayoutTokensUtil.toText(discardedPieceTokens))) + "</note>\n");
+                tei.append("\t\t\t</notesStmt>\n");
             }
-            tei.append("\t\t\t</notesStmt>\n");
         }
 
         tei.append("\t\t</fileDesc>\n");

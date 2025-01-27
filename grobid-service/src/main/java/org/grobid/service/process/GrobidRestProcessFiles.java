@@ -270,7 +270,7 @@ public class GrobidRestProcessFiles {
                                         final boolean includeRawAffiliations,
                                         final boolean includeRawCitations,
                                         final boolean includeRawCopyrights,
-                                          final boolean includeDiscardedText,
+                                        final boolean includeDiscardedText,
                                         final int startPage,
                                         final int endPage,
                                         final boolean generateIDs,
