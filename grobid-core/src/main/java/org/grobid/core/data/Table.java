@@ -186,7 +186,7 @@ public class Table extends Figure {
             }
 
             if (StringUtils.isNotBlank(labeledNote)) {
-                Element p = null;
+                Element p = teiElement("p");
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledNote, noteLayoutTokens);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();                
                 for (TaggingTokenCluster cluster : clusters) {
@@ -203,10 +203,6 @@ public class Table extends Figure {
                     //String clusterContent = LayoutTokensUtil.normalizeText(cluster.concatTokens());
                     String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
                     if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
-                        if (p == null) {
-                            LOGGER.warn("Problem when serializing TEI fragment for table note, there is a reference at the beginning of the sentence. ");
-                            p = teiElement("p");
-                        }
                         try {
                             List<Node> refNodes = formatter.markReferencesTEILuceneBased(
                                     cluster.concatTokens(),
@@ -223,9 +219,7 @@ public class Table extends Figure {
                             LOGGER.warn("Problem when serializing TEI fragment for table note", e);
                         }
                     } else {
-                        if (p == null) {
-                            p = teiElement("p");
-                        } else if (isNewParagraph(clusterLabel, p)) {
+                        if (p.getChildCount() > 0 && isNewParagraph(clusterLabel, p)) {
                             noteNode.appendChild(p);
                             p = teiElement("p");
                         }
@@ -237,7 +231,7 @@ public class Table extends Figure {
                         formatter.segmentIntoSentences(noteNode, this.noteLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
                     }
                 }
-                if (p != null && p.getChildCount() > 0) {
+                if (p.getChildCount() > 0) {
                     noteNode.appendChild(p);
                 }
             } else {
