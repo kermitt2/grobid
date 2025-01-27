@@ -32,6 +32,7 @@ import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Node;
 
+import static org.grobid.core.document.TEIFormatter.isNewParagraph;
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
 import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
@@ -185,6 +186,7 @@ public class Table extends Figure {
             }
 
             if (StringUtils.isNotBlank(labeledNote)) {
+                Element p = null;
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledNote, noteLayoutTokens);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();                
                 for (TaggingTokenCluster cluster : clusters) {
@@ -193,7 +195,7 @@ public class Table extends Figure {
                     }
 
                     MarkerType citationMarkerType = null;
-                    if (markerTypes != null && markerTypes.size()>0) {
+                    if (CollectionUtils.isNotEmpty(markerTypes)) {
                         citationMarkerType = markerTypes.get(0);
                     }
 
@@ -201,6 +203,10 @@ public class Table extends Figure {
                     //String clusterContent = LayoutTokensUtil.normalizeText(cluster.concatTokens());
                     String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
                     if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
+                        if (p == null) {
+                            LOGGER.warn("Problem when serializing TEI fragment for table note, there is a reference at the beginning of the sentence. ");
+                            p = teiElement("p");
+                        }
                         try {
                             List<Node> refNodes = formatter.markReferencesTEILuceneBased(
                                     cluster.concatTokens(),
@@ -210,30 +216,29 @@ public class Table extends Figure {
                                     citationMarkerType);
                             if (refNodes != null) {
                                 for (Node n : refNodes) {
-                                    noteNode.appendChild(n);
+                                    p.appendChild(n);
                                 }
                             }
                         } catch(Exception e) {
                             LOGGER.warn("Problem when serializing TEI fragment for table note", e);
                         }
                     } else {
-                        noteNode.appendChild(textNode(clusterContent));
+                        if (p == null) {
+                            p = teiElement("p");
+                        } else if (isNewParagraph(clusterLabel, p)) {
+                            noteNode.appendChild(p);
+                            p = teiElement("p");
+                        }
+                        p.appendChild(textNode(clusterContent));
                     }
 
-                    if (noteNode != null && config.isWithSentenceSegmentation()) {
+                    if (config.isWithSentenceSegmentation()) {
                         // we need a sentence segmentation of the figure caption
                         formatter.segmentIntoSentences(noteNode, this.noteLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
                     }
-
-                    // enclose note content in a <p> element 
-                    if (noteNode != null) {
-                        noteNode.setLocalName("p");
-
-                        Element tabNote = XmlBuilderUtils.teiElement("note");                
-                        tabNote.appendChild(noteNode);
-
-                        noteNode = tabNote;
-                    }
+                }
+                if (p != null && p.getChildCount() > 0) {
+                    noteNode.appendChild(p);
                 }
             } else {
                 noteNode = XmlBuilderUtils.teiElement("note", LayoutTokensUtil.normalizeText(note.toString()).trim());
