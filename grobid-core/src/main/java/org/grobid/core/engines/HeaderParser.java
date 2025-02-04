@@ -150,6 +150,15 @@ public class HeaderParser extends AbstractParser {
 
                         contentSample.append(stringSample);
                     }
+                    //In case we don't have text, it might be that someone is trying to process a document that is not a scientific article,
+                    // one more attempt with the full header.
+                    if (contentSample.length() < 200) {
+                        String stringSample = Document.getTokenizationParts(doc.getDocumentPart(SegmentationLabels.HEADER), tokenizations)
+                            .stream().map(LayoutToken::toString)
+                            .collect(Collectors.joining(" "));
+
+                        contentSample.append(stringSample);
+                    }
                 }
                 Language langu = languageUtilities.runLanguageId(contentSample.toString());
                 if (langu != null) {
