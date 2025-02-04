@@ -594,7 +594,7 @@ public class GrobidProperties {
         // of the parent model
         String fallBackModelName = modelName;
         while(param == null) {
-            LOGGER.debug("No configuration parameter defined for model " + modelName);    
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
             int ind = fallBackModelName.lastIndexOf("-");
             if (ind != -1) {
                 fallBackModelName = modelName.substring(0,ind);
@@ -602,7 +602,7 @@ public class GrobidProperties {
                 return null;
             }
             param = modelMap.get(fallBackModelName);
-        }   
+        }
         return param;
     }
 
@@ -627,10 +627,10 @@ public class GrobidProperties {
 
     public static File getModelPath(final GrobidModel model) {
         if (modelMap.get(model.getModelName()) == null) {
-            // model is either: 
+            // model is either:
             // - a flavor without config, but that should fallback to the parent model config
-            //   if no specific config exists. If it is the case, the model path is infered 
-            //   from the flavor model name 
+            //   if no specific config exists. If it is the case, the model path is infered
+            //   from the flavor model name
             // - a normal model not specified in the config, so returning null
 
             if (getGrobidModelParameters(model.getModelName()) == null) {

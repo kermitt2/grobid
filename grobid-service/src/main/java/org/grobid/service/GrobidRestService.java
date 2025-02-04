@@ -3,6 +3,7 @@ package org.grobid.service;
 import com.codahale.metrics.annotation.Timed;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import org.apache.commons.lang3.StringUtils;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.grobid.core.GrobidModels;
@@ -30,6 +31,10 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import static org.grobid.core.GrobidModels.Flavor.ARTICLE_LIGHT;
+import static org.grobid.core.GrobidModels.Flavor.BLANK;
+
 
 /**
  * RESTful service for the GROBID system.
@@ -96,7 +101,7 @@ public class GrobidRestService implements GrobidPaths {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
-        
+
         LOGGER.info("Initiating of Servlet GrobidRestService finished.");
     }
 
@@ -252,7 +257,8 @@ public class GrobidRestService implements GrobidPaths {
         @DefaultValue("-1") @FormDataParam("end") int endPage,
         @FormDataParam("generateIDs") String generateIDs,
         @FormDataParam("segmentSentences") String segmentSentences,
-        @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
+        @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates
+    ) throws Exception {
         return processFulltext(
             inputStream, flavor, consolidateHeader, consolidateCitations, consolidateFunders,
             includeRawAffiliations, includeRawCitations, includeRawCopyrights,
@@ -277,7 +283,8 @@ public class GrobidRestService implements GrobidPaths {
         @DefaultValue("-1") @FormDataParam("end") int endPage,
         @FormDataParam("generateIDs") String generateIDs,
         @FormDataParam("segmentSentences") String segmentSentences,
-        @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
+        @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates
+    ) throws Exception {
         return processFulltext(
             inputStream, flavor, consolidateHeader, consolidateCitations, consolidateFunders,
             includeRawAffiliations, includeRawCitations, includeRawCopyrights,
@@ -306,8 +313,19 @@ public class GrobidRestService implements GrobidPaths {
         boolean generate = validateGenerateIdParam(generateIDs);
         boolean segment = validateGenerateIdParam(segmentSentences);
         GrobidModels.Flavor flavorValidated = validateModelFlavor(flavor);
-        
+
         List<String> teiCoordinates = collectCoordinates(coordinates);
+
+        if (flavorValidated == BLANK) {
+            return restProcessFiles.processFulltextDocumentBlank(
+                inputStream,
+                startPage,
+                endPage,
+                generate,
+                segment,
+                teiCoordinates
+            );
+        }
 
         return restProcessFiles.processFulltextDocument(
             inputStream, flavorValidated, consolHeader, consolCitations, consolFunders,
@@ -375,7 +393,7 @@ public class GrobidRestService implements GrobidPaths {
         @FormDataParam("segmentSentences") String segmentSentences,
         @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
         return processStatelessFulltextAssetHelper(
-            inputStream, flavor, consolidateHeader, consolidateCitations, consolidateFunders, 
+            inputStream, flavor, consolidateHeader, consolidateCitations, consolidateFunders,
             includeRawAffiliations, includeRawCitations, includeRawCopyrights,
             startPage, endPage, generateIDs, segmentSentences, coordinates
         );
@@ -400,7 +418,7 @@ public class GrobidRestService implements GrobidPaths {
         @FormDataParam("segmentSentences") String segmentSentences,
         @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
         return processStatelessFulltextAssetHelper(
-            inputStream, flavor, consolidateHeader, consolidateCitations, consolidateFunders, 
+            inputStream, flavor, consolidateHeader, consolidateCitations, consolidateFunders,
             includeRawAffiliations, includeRawCitations, includeRawCopyrights,
             startPage, endPage, generateIDs, segmentSentences, coordinates
         );
@@ -615,7 +633,7 @@ public class GrobidRestService implements GrobidPaths {
             .includeRawCitations(validateIncludeRawParam(includeRawCitations))
             .build();
         return restProcessString.processCitation(citation, config, ExpectedResponseType.BIBTEX);
-    } 
+    }
 
     @Path(PATH_CITATION)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -746,7 +764,7 @@ public class GrobidRestService implements GrobidPaths {
         boolean includeFig = validateIncludeRawParam(includeFiguresTables);
         return restProcessFiles.processPDFReferenceAnnotation(inputStream, consolHeader, consolCitations, includeRaw, includeFig);
     }
-    
+
     @Path(PATH_CITATIONS_PATENT_PDF_ANNOTATION)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_JSON)
@@ -792,8 +810,8 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response trainModel(@FormParam("model") String model,
                                @DefaultValue("crf") @FormParam("architecture") String architecture,
-                               @DefaultValue("split") @FormParam("type") String type, 
-                               @DefaultValue("0.9") @FormParam("ratio") double ratio, 
+                               @DefaultValue("split") @FormParam("type") String type,
+                               @DefaultValue("0.9") @FormParam("ratio") double ratio,
                                @DefaultValue("10") @FormParam("n") int n,
                                @DefaultValue("0") @FormParam("incremental") String incremental) {
         boolean incrementalVal = validateIncludeRawParam(incremental);

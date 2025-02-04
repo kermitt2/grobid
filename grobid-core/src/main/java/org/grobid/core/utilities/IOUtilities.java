@@ -107,10 +107,13 @@ public class IOUtilities {
             originFile = null;
         } finally {
             try {
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+
                 if (out != null) {
                     out.close();
                 }
-                inputStream.close();
             } catch (IOException e) {
                 LOGGER.error("An internal error occurs, while writing to disk (file to write '"
                         + originFile + "').", e);

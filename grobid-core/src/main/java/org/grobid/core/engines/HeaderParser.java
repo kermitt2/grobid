@@ -107,7 +107,12 @@ public class HeaderParser extends AbstractParser {
     /**
      * Header processing after application of the segmentation model 
      */
-    public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader, boolean serialize) {
+    public String processingHeaderSection(
+        GrobidAnalysisConfig config,
+        Document doc,
+        BiblioItem resHeader,
+        boolean serialize
+    ) {
         try {
             SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
             List<LayoutToken> tokenizations = doc.getTokenizations();
@@ -140,6 +145,15 @@ public class HeaderParser extends AbstractParser {
                     SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
                     if (documentBodyParts != null) {
                         String stringSample = Document.getTokenizationParts(documentBodyParts, tokenizations)
+                            .stream().map(LayoutToken::toString)
+                            .collect(Collectors.joining(" "));
+
+                        contentSample.append(stringSample);
+                    }
+                    //In case we don't have text, it might be that someone is trying to process a document that is not a scientific article,
+                    // one more attempt with the full header.
+                    if (contentSample.length() < 200) {
+                        String stringSample = Document.getTokenizationParts(doc.getDocumentPart(SegmentationLabels.HEADER), tokenizations)
                             .stream().map(LayoutToken::toString)
                             .collect(Collectors.joining(" "));
 
@@ -1062,7 +1076,10 @@ public class HeaderParser extends AbstractParser {
                 }*/
                 if (biblio.getJournal() == null)
                     biblio.setJournal(clusterContent);
-            }   
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_OTHER)) {
+                biblio.addDiscardedPiece(clusterContent);
+                biblio.addDiscardedPieceTokens(cluster.concatTokens());
+            }
             /*else if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
                 return biblio;
             }*/
