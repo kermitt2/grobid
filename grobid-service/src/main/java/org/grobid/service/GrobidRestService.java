@@ -143,12 +143,16 @@ public class GrobidRestService implements GrobidPaths {
         @FormDataParam(INPUT) InputStream inputStream,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidate,
         @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations,
-        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_COPYRIGHTS) String includeRawCopyrights) {
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_COPYRIGHTS) String includeRawCopyrights,
+        @DefaultValue("0") @FormDataParam("start") int startPage,
+        @DefaultValue("2") @FormDataParam("end") int endPage) {
         int consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processStatelessHeaderDocument(
             inputStream, consol,
             validateIncludeRawParam(includeRawAffiliations),
             validateIncludeRawParam(includeRawCopyrights),
+            startPage,
+            endPage,
             ExpectedResponseType.XML
         );
     }
@@ -180,8 +184,17 @@ public class GrobidRestService implements GrobidPaths {
         @FormDataParam(INPUT) InputStream inputStream,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidate,
         @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations,
-        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_COPYRIGHTS) String includeRawCopyrights) {
-        return processHeaderDocumentReturnXml_post(inputStream, consolidate, includeRawAffiliations, includeRawCopyrights);
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_COPYRIGHTS) String includeRawCopyrights,
+        @DefaultValue("0") @FormDataParam("start") int startPage,
+        @DefaultValue("2") @FormDataParam("end") int endPage) {
+        return processHeaderDocumentReturnXml_post(
+            inputStream,
+            consolidate,
+            includeRawAffiliations,
+            includeRawCopyrights,
+            startPage,
+            endPage
+        );
     }
 
     @Path(PATH_HEADER)
@@ -192,12 +205,16 @@ public class GrobidRestService implements GrobidPaths {
         @FormDataParam(INPUT) InputStream inputStream,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidate,
         @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations,
-        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_COPYRIGHTS) String includeRawCopyrights) {
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_COPYRIGHTS) String includeRawCopyrights,
+        @DefaultValue("0") @FormDataParam("start") int startPage,
+        @DefaultValue("2") @FormDataParam("end") int endPage) {
         int consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processStatelessHeaderDocument(
             inputStream, consol,
             validateIncludeRawParam(includeRawAffiliations),
             validateIncludeRawParam(includeRawCopyrights),
+            startPage,
+            endPage,
             ExpectedResponseType.BIBTEX
         );
     }
@@ -210,8 +227,17 @@ public class GrobidRestService implements GrobidPaths {
         @FormDataParam(INPUT) InputStream inputStream,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidate,
         @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations,
-        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_COPYRIGHTS) String includeRawCopyrights) {
-        return processHeaderDocumentReturnBibTeX_post(inputStream, consolidate, includeRawAffiliations, includeRawCopyrights);
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_COPYRIGHTS) String includeRawCopyrights,
+        @DefaultValue("0") @FormDataParam("start") int startPage,
+        @DefaultValue("2") @FormDataParam("end") int endPage) {
+        return processHeaderDocumentReturnBibTeX_post(
+            inputStream,
+            consolidate,
+            includeRawAffiliations,
+            includeRawCopyrights,
+            startPage,
+            endPage
+        );
     }
 
     @Path(PATH_FULL_TEXT)
@@ -649,72 +675,6 @@ public class GrobidRestService implements GrobidPaths {
             .build();
         return restProcessString.processCitationList(citations, config, ExpectedResponseType.BIBTEX);
     }
-
-    /**
-     * @see org.grobid.service.process.GrobidRestProcessAdmin#processSHA1(String)
-     */
-    /*@Path(PATH_SHA1)
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    @Produces(MediaType.TEXT_PLAIN)
-    @POST
-    public Response processSHA1Post(@FormParam(SHA1) String sha1) {
-        return restProcessAdmin.processSHA1(sha1);
-    }*/
-
-    /**
-     * @see org.grobid.service.process.GrobidRestProcessAdmin#processSHA1(String)
-     */
-    /*@Path(PATH_SHA1)
-    @Consumes(MediaType.TEXT_PLAIN)
-    @Produces(MediaType.TEXT_PLAIN)
-    @GET
-    public Response processSHA1Get(@QueryParam(SHA1) String sha1) {
-        return restProcessAdmin.processSHA1(sha1);
-    }*/
-
-    /**
-     * @see org.grobid.service.process.GrobidRestProcessAdmin#getAllPropertiesValues(String)
-     */
-    /*@Path(PATH_ALL_PROPS)
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    @Produces(MediaType.TEXT_PLAIN)
-    @POST
-    public Response getAllPropertiesValuesPost(@FormParam(SHA1) String sha1) {
-        return restProcessAdmin.getAllPropertiesValues(sha1);
-    }*/
-
-    /**
-     * @see org.grobid.service.process.GrobidRestProcessAdmin#getAllPropertiesValues(String)
-     */
-    /*@Path(PATH_ALL_PROPS)
-    @Consumes(MediaType.TEXT_PLAIN)
-    @Produces(MediaType.TEXT_PLAIN)
-    @GET
-    public Response getAllPropertiesValuesGet(@QueryParam(SHA1) String sha1) {
-        return restProcessAdmin.getAllPropertiesValues(sha1);
-    }*/
-
-    /**
-     * @see org.grobid.service.process.GrobidRestProcessAdmin#changePropertyValue(String)
-     */
-    /*@Path(PATH_CHANGE_PROPERTY_VALUE)
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    @Produces(MediaType.TEXT_PLAIN)
-    @POST
-    public Response changePropertyValuePost(@FormParam(XML) String xml) {
-        return restProcessAdmin.changePropertyValue(xml);
-    }*/
-
-    /**
-     * @see org.grobid.service.process.GrobidRestProcessAdmin#changePropertyValue(String)
-     */
-    /*@Path(PATH_CHANGE_PROPERTY_VALUE)
-    @Consumes(MediaType.TEXT_PLAIN)
-    @Produces(MediaType.TEXT_PLAIN)
-    @GET
-    public Response changePropertyValueGet(@QueryParam(XML) String xml) {
-        return restProcessAdmin.changePropertyValue(xml);
-    }*/
 
     @Path(PATH_REFERENCES)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
