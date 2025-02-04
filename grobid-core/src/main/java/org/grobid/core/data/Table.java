@@ -147,7 +147,7 @@ public class Table extends Figure {
                         desc.appendChild(textNode(clusterContent));
                     }
 
-                    if (config.isWithSentenceSegmentation()) {
+                    if (StringUtils.isNotBlank(desc.getValue()) && config.isWithSentenceSegmentation()) {
                         formatter.segmentIntoSentences(desc, this.captionLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
 
                         // we need a sentence segmentation of the table caption, for that we need to introduce 
