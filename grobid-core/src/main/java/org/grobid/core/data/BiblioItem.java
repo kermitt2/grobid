@@ -1287,7 +1287,7 @@ public class BiblioItem {
     }
 
     public void setNote(String not) {
-        if (StringUtils.isBlank(not)) {
+        if (StringUtils.isBlank(this.note)) {
             note = StringUtils.normalizeSpace(not);
         } else {
             note += " " + StringUtils.normalizeSpace(not);
