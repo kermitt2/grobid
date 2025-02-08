@@ -3151,7 +3151,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append(annexStatement);
             }
 
-            if (fundings != null && fundings.size() >0) {
+            if (CollectionUtils.isNotEmpty(fundings)) {
                 tei.append("\n\t\t\t<listOrg type=\"funding\">\n");
                 for(Funding funding : fundings) {
                     if (funding.isNonEmptyFunding())
@@ -3160,7 +3160,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append("\t\t\t</listOrg>\n");
             }
 
-            if (affiliations != null && affiliations.size() >0) {
+            if (CollectionUtils.isNotEmpty(affiliations)) {
 
                 // check if we have at least one acknowledged research infrastructure here
                 List<Affiliation> filteredInfrastructures = new ArrayList<>();

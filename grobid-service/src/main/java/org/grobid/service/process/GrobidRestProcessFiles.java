@@ -68,6 +68,25 @@ public class GrobidRestProcessFiles {
         final int consolidate,
         final boolean includeRawAffiliations,
         final boolean includeRawCopyrights,
+        ExpectedResponseType expectedResponseType
+    ) {
+         return processStatelessHeaderDocument(
+             inputStream,
+             consolidate,
+             includeRawAffiliations,
+             includeRawCopyrights,
+             false,
+             0,
+             2,
+             expectedResponseType
+         );
+     }
+
+     public Response processStatelessHeaderDocument(
+        final InputStream inputStream,
+        final int consolidate,
+        final boolean includeRawAffiliations,
+        final boolean includeRawCopyrights,
         int startPage,
         int endPage,
         ExpectedResponseType expectedResponseType
@@ -78,6 +97,8 @@ public class GrobidRestProcessFiles {
              includeRawAffiliations,
              includeRawCopyrights,
              false,
+             startPage,
+             endPage,
              expectedResponseType
          );
      }
@@ -88,6 +109,8 @@ public class GrobidRestProcessFiles {
         final boolean includeRawAffiliations,
         final boolean includeRawCopyrights,
         final boolean includeDiscardedText,
+        int startPage,
+        int endPage,
         ExpectedResponseType expectedResponseType
     ) {
         LOGGER.debug(methodLogIn());

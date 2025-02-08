@@ -222,8 +222,6 @@ public class GrobidRestService implements GrobidPaths {
             consol,
             validateIncludeRawParam(includeRawAffiliations),
             validateIncludeRawParam(includeRawCopyrights),
-            startPage,
-            endPage,
             ExpectedResponseType.BIBTEX
         );
     }
