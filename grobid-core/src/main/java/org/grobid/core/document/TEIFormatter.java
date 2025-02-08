@@ -825,27 +825,37 @@ public class TEIFormatter {
         tei.append("\t\t\t</sourceDesc>\n");
 
         // We collect the discarded text from the header and add it as a <noteStmt>
-        if(config.isIncludeDiscardedText()) {
-            if (CollectionUtils.isNotEmpty(biblio.getDiscardedPiecesTokens())) {
+        if (config.isIncludeDiscardedText()) {
+            List<TaggingLabel> locationTextNotProcessed = Arrays.asList(
+                SegmentationLabels.OTHER,
+                SegmentationLabels.PAGE_NUMBER,
+                SegmentationLabels.HEADNOTE,
+                SegmentationLabels.COVER
+            );
+
+            List<List<LayoutToken>> discardedTextElsewhere = new ArrayList<>();
+            for (TaggingLabel label : locationTextNotProcessed) {
+                SortedSet<DocumentPiece> docPieces = doc.getDocumentPart(label);
+                for (DocumentPiece docPiece: docPieces) {
+                    List<LayoutToken> tokens = doc.getDocumentPieceTokenization(docPiece);
+                    if (CollectionUtils.isEmpty(tokens)) {
+                        continue;
+                    }
+                    discardedTextElsewhere.add(tokens);
+                }
+            }
+
+
+            if (CollectionUtils.isNotEmpty(biblio.getDiscardedPiecesTokens()) || CollectionUtils.isNotEmpty(discardedTextElsewhere)) {
                 tei.append("\t\t\t<notesStmt>\n");
                 for (List<LayoutToken> discardedPieceTokens : biblio.getDiscardedPiecesTokens()) {
-                    LayoutToken first = Iterables.getFirst(discardedPieceTokens, null);
-                    String place = first == null ? "unknown" : first.getLabels().get(0).getGrobidModel().getModelName();
-
-                    tei.append("\t\t\t\t<note type=\"other\" place=\"" + place + "\"");
-                    if (generateIDs) {
-                        String divID = KeyGen.getKey().substring(0, 7);
-                        tei.append(" xml:id=\"_" + divID + "\"");
-                    }
-
-                    if (config.isGenerateTeiCoordinates("note")) {
-                        String coords = LayoutTokensUtil.getCoordsString(discardedPieceTokens);
-                        tei.append(" coords=\"" + coords + "\"");
-                    }
-
-                    // This text is not processed at the moment
-                    tei.append(">" + TextUtilities.HTMLEncode(normalizeText(LayoutTokensUtil.toText(discardedPieceTokens))) + "</note>\n");
+                    tei.append(generateDiscardedTextNote(discardedPieceTokens, config));
                 }
+
+                for (List<LayoutToken> discardedPieceTokens : discardedTextElsewhere) {
+                    tei.append(generateDiscardedTextNote(discardedPieceTokens, config));
+                }
+
                 tei.append("\t\t\t</notesStmt>\n");
             }
         }
@@ -1073,6 +1083,31 @@ public class TEIFormatter {
         }
 
         return tei;
+    }
+
+    private String generateDiscardedTextNote(List<LayoutToken> discardedPieceTokens, GrobidAnalysisConfig config) {
+        if (CollectionUtils.isEmpty(discardedPieceTokens)) {
+            return "";
+        }
+        LayoutToken first = Iterables.getFirst(discardedPieceTokens, null);
+        String place = first == null || CollectionUtils.isEmpty(first.getLabels())? "unknown" : first.getLabels().get(0).getGrobidModel().getModelName();
+
+        StringBuilder tei = new StringBuilder();
+        tei.append("\t\t\t\t<note type=\"other\" place=\"").append(place).append("\"");
+        if (config.isGenerateTeiIds()) {
+            String divID = KeyGen.getKey().substring(0, 7);
+            tei.append(" xml:id=\"_").append(divID).append("\"");
+        }
+
+        if (config.isGenerateTeiCoordinates("note")) {
+            String coords = LayoutTokensUtil.getCoordsString(discardedPieceTokens);
+            tei.append(" coords=\"").append(coords).append("\"");
+        }
+
+        // This text is not processed at the moment
+        tei.append(">").append(TextUtilities.HTMLEncode(normalizeText(LayoutTokensUtil.toText(discardedPieceTokens)))).append("</note>\n");
+
+        return tei.toString();
     }
 
 
