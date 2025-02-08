@@ -68,6 +68,8 @@ public class GrobidRestProcessFiles {
         final int consolidate,
         final boolean includeRawAffiliations,
         final boolean includeRawCopyrights,
+        int startPage,
+        int endPage,
         ExpectedResponseType expectedResponseType
     ) {
          return processStatelessHeaderDocument(
@@ -125,6 +127,8 @@ public class GrobidRestProcessFiles {
                 includeRawAffiliations,
                 includeRawCopyrights,
                 includeDiscardedText,
+                startPage,
+                endPage,
                 result
             );
 

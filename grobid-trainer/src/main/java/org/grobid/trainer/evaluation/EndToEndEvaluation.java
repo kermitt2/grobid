@@ -2051,8 +2051,7 @@ System.out.println("grobid: " + grobidResult);*/
             String flavor = args[4];
             parsedFlavor = GrobidModels.Flavor.fromLabel(flavor);
             if (parsedFlavor == null) {
-                System.err.println("Invalid value for flavor: " + flavor + ". Omit or correct the parameter. ");
-                return;
+                System.out.println("Flavor was not specified, or was empty. Using default Grobid process. ");
             } else {
                 System.out.println("Setting flavor to: " + parsedFlavor);
             }

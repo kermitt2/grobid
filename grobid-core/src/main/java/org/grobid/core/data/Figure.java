@@ -438,7 +438,7 @@ public class Figure {
                 //    LayoutTokensUtil.normalizeText(caption.toString()));
             }
 
-            if (config.isWithSentenceSegmentation()) {
+            if (StringUtils.isNotBlank(desc.getValue()) && config.isWithSentenceSegmentation()) {
                 formatter.segmentIntoSentences(desc, this.captionLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
 
                 // we need a sentence segmentation of the figure caption, for that we need to introduce 
