@@ -1,0 +1,143 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<head>Introduction<lb/></head> 
+
+			<p>Countries have been working to strengthen their alert and response capacities for acute public<lb/> health threats since 2007 under the International Health Regulations (IHR 2005) (1). Several<lb/> events have served to test these efforts such as the H1N1 Pandemic 2009, the 2011 Japan<lb/> earthquake and tsunami, the emergence of Middle East Respiratory Syndrome (MERS) in 2012,<lb/> various global terrorist events, Zika in the Americas in 2015 and the Ebola (EVD) outbreak in<lb/> West Africa in 2014/5 <ref type="biblio">(1)</ref>. Ebola constituted a Public Health Emergency of International<lb/> Concern as it left Africa for the first time, presenting a real threat to other countries. No longer<lb/> could Ebola be considered a disease of &apos;over there&apos; <ref type="biblio">(2)</ref>. The Ebola epidemic raised to the fore the<lb/> fragility of health systems. It showed what happens when a crisis hits and the health systems are<lb/> not prepared <ref type="biblio">(3)</ref>.<lb/></p>
+
+			<p>EVD is highly contagious with human to human spread via direct bodily contact with the blood,<lb/> secretions, organs or other bodily fluids of infected people, and with surfaces and materials (e.g.<lb/> bedding, clothing) contaminated with these fluids. The case fatality rate is high if persons are not<lb/> treated <ref type="biblio">(1,4)</ref>.<lb/></p>
+
+			<p>With increased air travel and persons from West Africa setting abroad including in Trinidad and<lb/> with links to their home country, the likelihood of a case or a contact arriving into the country or<lb/> any country, though rare, is now possible. Countries need to increase their resilience i.e. the<lb/> intrinsic capacity of individuals, populations and infrastructure to rebound from shocks <ref type="biblio">(5,6)</ref>.<lb/></p>
+
+			<p>The status of Trinidad and Tobago&apos;s health systems preparedness is known from annual IHR<lb/> 2005 status reports; it was therefore decided to seek the public&apos;s knowledge and attitudes on<lb/> Ebola as the community is a central player in in the emergency response and a successful<lb/> response relies on the participation and cooperation of the public. A well informed and well-<lb/>rehearsed public would be better able to act faster and effectively.<lb/></p>
+
+			<head>Materials and Methods<lb/></head>
+
+			<head>Study Design<lb/></head>
+
+			<p>A cross-sectional survey was undertaken.<lb/></p>
+
+			<head>Study Period<lb/></head>
+
+			<p>The survey was undertaken from January to May 2016.<lb/></p>
+
+			<head>Study setting<lb/></head>
+
+			<p>The study was undertaken in public spaces in Trinidad and Tobago (TT), a twin island republic<lb/> in the chain of islands collectively termed the Caribbean. The population of TT is approximately<lb/> 1.4 million persons <ref type="biblio">(7)</ref>.<lb/></p>
+
+			<head>Study Population<lb/></head>
+
+			<p>The study population comprised the adult (18 years and older) population of Trinidad and<lb/> Tobago. This included males and females of varying ethnic compositions, representative of the<lb/> general population. Responders were chosen by convenience sampling. Questionnaires were<lb/> distributed along busy streets, at malls, near bus stops, as well as other high traffic areas across<lb/> the different regions of Trinidad and Tobago.<lb/></p>
+
+			<head>Sample size<lb/></head>
+
+			<p>The sample size for the study was initially calculated at the onset as 913 responders.<lb/></p>
+
+			<head>Data Collection<lb/></head>
+
+			<p>A total of 920 questionnaires were distributed across Trinidad and Tobago. Responders were<lb/> briefed on the study&apos;s objectives before verbal consent was obtained for participation.<lb/></p>
+
+			<p>Interviewers assured the responders that their responses would be anonymous, that there would<lb/> be no way identifying them through the results. The questionnaire collected demographic<lb/> information, general knowledge and attitudes towards Ebola and views of responders on the<lb/> healthcare system in the country.<lb/></p>
+
+			<head>Data analysis<lb/></head>
+
+			<p>All data collected were analyzed using SPSS version 23. A knowledge scale was constructed<lb/> using the sum total score of nineteen binary questions concerning respondents&apos; knowledge about<lb/> EVD. The two-sample independent t-test was used to compare the mean knowledge score<lb/> between males and females. An ANOVA test was used to determine whether there were<lb/> differences among categories in the age, occupation and education variables. Tukey&apos;s HSD<lb/> Procedure was carried out to determine which pairs of mean scores across occupational<lb/> categories differed (adjusted p-value &lt;0.05). In order to determine if there was a relationship<lb/> between the attitudes toward Ebola and demographic factors (age, gender, occupation and<lb/> education), Chi-Squared Tests of Independence were carried out. In the cases where at least<lb/> 20% of the cells had expected counts less than 5, Fisher&apos;s Exact Test was used.<lb/></p>
+
+			<head>Ethical Approval<lb/></head>
+
+			<p>The University of the West Indies, St. Augustine, Trinidad and Tobago Ethics Committee<lb/> granted ethical approval for this study (Reference: CEC063/11/15).<lb/></p>
+
+			<head>FINDINGS<lb/></head>
+
+			<p>A total of 920 participants were approached to participate of which 622 (67.6%) agreed. There<lb/> were 42% male and 58% female responders. The ethnic groups of the responders comprised<lb/> those of East Indian origin (35.9%), African origin (27.2%) and other, including mixed ethnicity<lb/> (36.9%). The majority of responders reported attaining tertiary education (55.6%) followed by<lb/> secondary education (41.1%). Table <ref type="table">1</ref> summarises the age breakdown of responders and Table <ref type="table">2<lb/></ref> the occupational categories.<lb/></p>
+
+			<figure type="table">Table 1<lb/> Table showing the age and occupational groupings breakdown of responders<lb/> Age Group (years)<lb/> Frequency (%)<lb/> Occupational Category<lb/> Frequency (%)<lb/> &lt;20<lb/> 74 (11.2)<lb/> Managers/Directors/Senior<lb/> Officials<lb/> 58 (9.9)<lb/> 20 -30<lb/> 267 (40.5)<lb/> Professional Occupations<lb/> 78 (13.3)<lb/> 31 -40<lb/> 128 (19.4)<lb/> Administrative/Secretarial<lb/> 32 (5.5)<lb/> 41 -50<lb/> 87 (13.2)<lb/> Skilled Trades<lb/> 17 (2.9)<lb/> &gt;50<lb/> 104 (15.7)<lb/> Caring/Leisure/Other<lb/> 293 (50.1)<lb/> Sales/Customer Service<lb/> 102 (17.4)<lb/> Elementary Occupations<lb/> 5 (0.9)<lb/> Total<lb/> 660 (100.0)<lb/> 585 (100.0)<lb/></figure> 
+
+			<head>Findings related to Knowledge about Ebola<lb/></head> 
+
+			<p>In terms of knowledge questions about Ebola, more than 70% of responders knew what EVD was and how<lb/> it is transmitted. Forty-five per cent (45%) of responders reported that there is a cure for EVD. The average<lb/> knowledge score, based on 622 (67.6%) participants, was 10.61 (sd = 3.756). A Cronbach&apos;s alpha<lb/> coefficient of 0.681 indicated the constructed knowledge scale was a relatively consistent measure of the<lb/> concept.<lb/></p>
+
+			<p>There were no differences in the knowledge scores between males and females (T=-0.959, df= 608, p-value<lb/> = 0.338).<lb/></p>
+
+			<p>There were no significant differences in the knowledge scores among the five age groups (F = 2.186, df1 =<lb/> 4, df2= 613, p-value = 0.069). However, there were significant differences among the mean knowledge<lb/> score of the seven occupational categories (F = 2.811, df1 = 6, df2 = 571, p-value = 0.011). It was found<lb/> that the mean knowledge scores for professional and sales occupations differed significantly (Tukey&apos;s HSD<lb/> adjusted p-value = 0.003). There were also significant differences among education categories (p value =<lb/> &lt;0.001). Table <ref type="table">2</ref> summarizes the results.<lb/></p>
+
+			<figure type="table">Table 2<lb/> Knowledge of Ebola Scores versus Age, Gender, Occupation and Education<lb/> Knowledge Scores<lb/> Independent<lb/> Variable<lb/> Mean (95% CI)<lb/> Standard<lb/> Deviation<lb/> Test<lb/> statistic<lb/> p-value<lb/> Gender<lb/> Male<lb/> 10.49 (10.05, 10.93)<lb/> 3.586<lb/> T =<lb/> -0.959<lb/> 0.338*<lb/> Female<lb/> 10.78 (10.38, 11.18)<lb/> 3.837<lb/> Age (years)<lb/> &lt;20<lb/> 9.43 (8.42, 10.45)<lb/> 4.237<lb/> F =<lb/> 2.186<lb/> 0.069**<lb/> 20-30<lb/> 10.83 (10.41, 11.25)<lb/> 3.465<lb/> 31-40<lb/> 10.57 (9.86, 11.28)<lb/> 3.929<lb/> 41-50<lb/> 10.99 (10.14, 11.83)<lb/> 3.678<lb/> &gt;50<lb/> 10.78 (10.00, 11.56)<lb/> 3.765<lb/> Occupation<lb/> Managers/Directors/Senior<lb/> Officials<lb/> 10.76 (9.88, 11.64)<lb/> 3.352<lb/> F =<lb/> 2.811<lb/> 0.011**<lb/> Professional Occupations<lb/> 12.05 (11.30, 12.81)<lb/> 3.320<lb/> Administrative/Secretarial<lb/> 10.41 (8.86, 11.95)<lb/> 4.279<lb/> Skilled Trades<lb/> 10.44 (8.33, 12.54)<lb/> 3.949<lb/> Caring/Leisure/Other<lb/> 10.76 (10.31, 11.20)<lb/> 3.852<lb/> Sales/Customer Service<lb/> 9.96 (9.32, 10.60)<lb/> 3.226<lb/> Elementary Occupations<lb/> 8.40 (5.28, 11.52)<lb/> 2.510<lb/> Education<lb/> Primary<lb/> 8.20 (5.67, 10.73)<lb/> 5.415<lb/> F =<lb/> 16.647<lb/> &lt; 0.001**<lb/> Secondary<lb/> 9.81 (9.32, 10.29)<lb/> 3.872<lb/> Tertiary<lb/> 11.32 (10.96, 11.68)<lb/> 3.355<lb/> *Two sample t-Test<lb/> **ANOVA Test<lb/></figure>
+
+			<head>Findings related to Attitudes towards Ebola<lb/></head>
+
+			<p>Of the 586 participants, 50% believed that an outbreak of the EVD was very likely in TT and the most<lb/> common reason cited for this was easy travel between countries. Furthermore, 97% thought the citizens of<lb/> TT were not prepared for an outbreak. In terms of age groups, 355 (60.1%) of the 591 respondents were<lb/> between the ages of 20 and 40 years and believed the country is not prepared to deal with an outbreak of<lb/> the EVD. It was found that opinions on the likelihood of an outbreak were not dependent on gender, age,<lb/> occupation and education (p-values &gt; 0.05).<lb/></p>
+
+			<p>The top three reasons given for the country being ill-prepared for an outbreak were outdated healthcare<lb/> facilities, lack of education and awareness, and ignorance and laziness among the public.<lb/></p>
+
+			<p>The majority of participants thought both private and public health care facilities were not prepared to deal<lb/> with an outbreak. They reported that an outbreak would result in death and panic.<lb/></p>
+
+			<p>The majority of responders (62%) would be likely or very likely to shun someone with the disease; while<lb/> 21% were neutral in response. When asked about a family member with EVD, 24% were neutral, and 35%<lb/> likely or very likely to shun their family member.<lb/></p>
+
+			<p>Almost one fifth of responders said they would be afraid to go for treatment; 14% stated they would opt for<lb/> traditional medicine over a health facility. There was no association between citizens who believed there<lb/> is a cure for the disease and those who would rather use traditional medicine than go to a medical facility<lb/> (p-value = 0.307).<lb/></p>
+
+			<p>Being afraid to go for treatment was significantly associated with age of the respondent (p-value = 0.001).<lb/></p>
+
+			<p>Occupational category was found to be significantly associated with opinion towards private medical<lb/> facilities preparedness, likelihood to shun family members, being afraid to go for treatment and preference<lb/> for traditional medicine (p-value &lt; 0.05).<lb/></p>
+
+			<p>Education was found to be significantly associated with opinion towards private medical facilities<lb/> preparedness, likelihood to shun a person with EVD, being afraid to go for treatment and preference for<lb/> traditional medicine (p value &lt; 0.05).<lb/></p>
+
+			<p>No association with any aspect of attitude was found with gender (p-values &gt; 0.05).<lb/></p>
+
+			<figure type="table">Table 3<lb/> Association of Attitudes toward Ebola and Age Category<lb/> Variable<lb/> Age (years)<lb/> p-value<lb/> 1 &lt;20<lb/> 20-30<lb/> 31-40<lb/> 41-50<lb/> &gt;50<lb/> Public medical<lb/> facilities<lb/> prepared?<lb/> No<lb/> 63<lb/> 242<lb/> 107<lb/> 71<lb/> 78<lb/> 0.926***<lb/> Yes<lb/> 2<lb/> 9<lb/> 6<lb/> 3<lb/> 4<lb/> Odds Ratio<lb/> (95% C.I.)<lb/> 1.171 (0.247,<lb/> 5.558)<lb/> 1.766<lb/> (0.346,<lb/> 9.018)<lb/> 1.331<lb/> (0.215,<lb/> 8.223)<lb/> 1.615 (0.287,<lb/> 9.108)<lb/> Private<lb/> medical<lb/> facilities<lb/> prepared?<lb/> No<lb/> 46<lb/> 194<lb/> 86<lb/> 62<lb/> 69<lb/> 0.477****<lb/> Yes<lb/> 15<lb/> 48<lb/> 19<lb/> 9<lb/> 14<lb/> Odds Ratio<lb/> (95% C.I.)<lb/> 0.759 (0.391,<lb/> 1.472)<lb/> 0.678<lb/> (0.315,<lb/> 1.457)<lb/> 0.445<lb/> (0.179,<lb/> 1.106)<lb/> 0.622 (0.275,<lb/> 1.410)<lb/> Likely to shun<lb/> person?<lb/> Not Very Likely<lb/> 3<lb/> 24<lb/> 12<lb/> 8<lb/> 9<lb/> 0.414****<lb/> Not Likely<lb/> 5<lb/> 20<lb/> 8<lb/> 2<lb/> 3<lb/> Neutral<lb/> 19<lb/> 55<lb/> 19<lb/> 9<lb/> 13<lb/> Likely<lb/> 7<lb/> 36<lb/> 16<lb/> 9<lb/> 13<lb/> Very Likely<lb/> 24<lb/> 106<lb/> 51<lb/> 39<lb/> 42<lb/> Likely to shun<lb/> family<lb/> member?<lb/> Not Very Likely<lb/> 11<lb/> 53<lb/> 29<lb/> 16<lb/> 22<lb/> 0.775****<lb/> Not Likely<lb/> 10<lb/> 47<lb/> 28<lb/> 12<lb/> 18<lb/> Neutral<lb/> 17<lb/> 58<lb/> 25<lb/> 17<lb/> 25<lb/> Likely<lb/> 12<lb/> 39<lb/> 16<lb/> 12<lb/> 10<lb/> Very Likely<lb/> 17<lb/> 55<lb/> 18<lb/> 12<lb/> 12<lb/> Afraid to go<lb/> for treatment?<lb/> Strongly<lb/> Disagree<lb/> 32<lb/> 136<lb/> 72<lb/> 41<lb/> 62<lb/> 0.001****<lb/> Disagree<lb/> 15<lb/> 46<lb/> 18<lb/> 11<lb/> 6<lb/> Neutral<lb/> 12<lb/> 26<lb/> 8<lb/> 1<lb/> 4<lb/> Agree<lb/> 1<lb/> 22<lb/> 6<lb/> 4<lb/> 1<lb/> Strongly Agree<lb/> 7<lb/> 24<lb/> 12<lb/> 12<lb/> 15<lb/> Rather use<lb/> traditional<lb/> medicine?<lb/> Strongly<lb/> Disagree<lb/> 33<lb/> 138<lb/> 68<lb/> 42<lb/> 62<lb/> 0.402****<lb/> Disagree<lb/> 11<lb/> 35<lb/> 19<lb/> 10<lb/> 8<lb/> Neutral<lb/> 11<lb/> 44<lb/> 13<lb/> 7<lb/> 8<lb/> Agree<lb/> 5<lb/> 18<lb/> 9<lb/> 5<lb/> 1<lb/> Strongly Agree<lb/> 5<lb/> 19<lb/> 8<lb/> 5<lb/> 9<lb/> ***<lb/> Fisher&apos;s Exact Test<lb/> ****χ 2 Test<lb/> 1 Reference Category<lb/></figure>
+
+			<figure type="table">Table 4<lb/> Association of Attitudes toward Ebola and Occupation<lb/> Variable<lb/> Occupation<lb/> p-<lb/>value<lb/> 1 Manager<lb/> Professional<lb/> Administrative<lb/> Skilled<lb/> Trade<lb/> Caring<lb/> Sales<lb/> Elementary<lb/> No<lb/> 1<lb/> 4<lb/> 2<lb/> 1<lb/> 13<lb/> 1<lb/> 0<lb/> Public medical<lb/> facilities<lb/> prepared?<lb/> Yes<lb/> 54<lb/> 69<lb/> 30<lb/> 13<lb/> 262<lb/> 92<lb/> 5<lb/> 0.607*<lb/> **<lb/> Odds<lb/> Ratio<lb/> (95%<lb/> C.I.)<lb/> 3.130 (0.340,<lb/> 28.824)<lb/> 3.724 (0.324,<lb/> 42.834)<lb/> 4.154<lb/> (0.243,<lb/> 70.896)<lb/> 2.669<lb/> (0.342,<lb/> 20.836)<lb/> 0.587<lb/> (0.036,<lb/> 9.576)<lb/> Private medical<lb/> facilities<lb/> prepared?<lb/> No<lb/> 47<lb/> 60<lb/> 28<lb/> 4<lb/> 208<lb/> 75<lb/> 5<lb/> &lt;0.001<lb/> ***<lb/> Yes<lb/> 5<lb/> 10<lb/> 5<lb/> 9<lb/> 59<lb/> 11<lb/> 0<lb/> Odds<lb/> Ratio<lb/> (95%<lb/> C.I.)<lb/> 1.567 (0.501,<lb/> 4.896)<lb/> 1.741 (0.462,<lb/> 6.561)<lb/> 21.150<lb/> (4.739,<lb/> 94.384)<lb/> 2.654<lb/> (1.010,<lb/> 6.973)<lb/> 1.379<lb/> (0.451,<lb/> 4.218)<lb/> Likely to shun<lb/> person?<lb/> Not<lb/> Very<lb/> Likely<lb/> 2<lb/> 5<lb/> 0<lb/> 3<lb/> 28<lb/> 14<lb/> 0<lb/> 0.116*<lb/> **<lb/> Not<lb/> Likely<lb/> 3<lb/> 5<lb/> 5<lb/> 0<lb/> 17<lb/> 6<lb/> 0<lb/> Neutral<lb/> 5<lb/> 18<lb/> 6<lb/> 4<lb/> 55<lb/> 19<lb/> 2<lb/> Likely<lb/> 9<lb/> 6<lb/> 7<lb/> 2<lb/> 41<lb/> 9<lb/> 1<lb/> Very<lb/> Likely<lb/> 33<lb/> 39<lb/> 11<lb/> 7<lb/> 119<lb/> 34<lb/> 2<lb/> Likely to shun<lb/> family member?<lb/> Not<lb/> Very<lb/> Likely<lb/> 9<lb/> 18<lb/> 11<lb/> 8<lb/> 51<lb/> 27<lb/> 1<lb/> 0.014*<lb/> **<lb/> Not<lb/> Likely<lb/> 9<lb/> 21<lb/> 5<lb/> 1<lb/> 58<lb/> 14<lb/> 0<lb/> Neutral<lb/> 14<lb/> 12<lb/> 7<lb/> 3<lb/> 72<lb/> 24<lb/> 1<lb/> Likely<lb/> 5<lb/> 12<lb/> 9<lb/> 1<lb/> 44<lb/> 9<lb/> 1<lb/> Very<lb/> Likely<lb/> 17<lb/> 9<lb/> 1<lb/> 3<lb/> 58<lb/> 17<lb/> 2<lb/> Afraid to go for<lb/> treatment?<lb/> Strongl<lb/> y<lb/> Disagr<lb/> ee<lb/> 35<lb/> 49<lb/> 24<lb/> 10<lb/> 161<lb/> 47<lb/> 3<lb/> 0.044*<lb/> **<lb/> Disagr<lb/> ee<lb/> 11<lb/> 14<lb/> 3<lb/> 2<lb/> 45<lb/> 13<lb/> 0<lb/> Neutral<lb/> 1<lb/> 1<lb/> 2<lb/> 0<lb/> 31<lb/> 7<lb/> 1<lb/> Agree<lb/> 2<lb/> 1<lb/> 2<lb/> 0<lb/> 32<lb/> 14<lb/> 0<lb/> Strongl<lb/> y<lb/> Agree<lb/> 5<lb/> 8<lb/> 1<lb/> 4<lb/> 32<lb/> 14<lb/> 0<lb/> Rather use<lb/> traditional<lb/> medicine?<lb/> Strongl<lb/> y<lb/> Disagr<lb/> ee<lb/> 30<lb/> 50<lb/> 21<lb/> 10<lb/> 169<lb/> 43<lb/> 2<lb/> 0.039*<lb/> **<lb/> Disagr<lb/> ee<lb/> 12<lb/> 8<lb/> 8<lb/> 3<lb/> 30<lb/> 14<lb/> 1<lb/> Neutral<lb/> 8<lb/> 4<lb/> 1<lb/> 0<lb/> 45<lb/> 19<lb/> 1<lb/> Agree<lb/> 1<lb/> 6<lb/> 2<lb/> 0<lb/> 17<lb/> 5<lb/> 0<lb/> Strongl<lb/> y<lb/> Agree<lb/> 2<lb/> 6<lb/> 0<lb/> 3<lb/> 23<lb/> 11<lb/> 1<lb/> ***<lb/> Fisher&apos;s Exact Test<lb/> ****χ 2 Test<lb/> 1 Reference Category<lb/></figure>
+
+			<figure type="table">Table 5<lb/> Association of Attitudes toward Ebola and Education<lb/> Variable<lb/> Education<lb/> p-value<lb/> Odds Ratio<lb/> (95% C.I.)<lb/> 0.302 (0.111, 0.824)<lb/> 0.214<lb/> (0.079,<lb/> 0.583)<lb/> Likely to<lb/> shun<lb/> person?<lb/> Not Very Likely<lb/> 3<lb/> 34<lb/> 18<lb/> 0.006***<lb/> Not Likely<lb/> 1<lb/> 16<lb/> 22<lb/> Neutral<lb/> 0<lb/> 47<lb/> 64<lb/> Likely<lb/> 1<lb/> 33<lb/> 45<lb/> Very Likely<lb/> 9<lb/> 89<lb/> 161<lb/> Likely to<lb/> shun family<lb/> member?<lb/> Not Very Likely<lb/> 2<lb/> 56<lb/> 73<lb/> 0.909***<lb/> Not Likely<lb/> 2<lb/> 42<lb/> 70<lb/> Neutral<lb/> 5<lb/> 59<lb/> 73<lb/> Likely<lb/> 3<lb/> 37<lb/> 47<lb/> Very Likely<lb/> 3<lb/> 45<lb/> 64<lb/> Afraid to go<lb/> for<lb/> treatment?<lb/> Strongly<lb/> Disagree<lb/> 4<lb/> 128<lb/> 207<lb/> &lt;0.001***<lb/> Disagree<lb/> 2<lb/> 31<lb/> 59<lb/> Neutral<lb/> 3<lb/> 27<lb/> 22<lb/> Agree<lb/> 1<lb/> 13<lb/> 18<lb/> Strongly Agree<lb/> 5<lb/> 40<lb/> 22<lb/> Rather use<lb/> traditional<lb/> medicine?<lb/> Strongly<lb/> Disagree<lb/> 3<lb/> 137<lb/> 197<lb/> 0.013***<lb/> Disagree<lb/> 2<lb/> 31<lb/> 48<lb/> Neutral<lb/> 5<lb/> 32<lb/> 46<lb/> Agree<lb/> 1<lb/> 19<lb/> 16<lb/> Strongly Agree<lb/> 4<lb/> 21<lb/> 19<lb/> ***<lb/> Fisher&apos;s Exact Test<lb/> ****χ 2 Test<lb/> 1 Reference Category<lb/></figure> 
+
+			<head>Preparedness<lb/></head> 
+
+			<p>Further Chi-Squared Tests were carried out to determine the dependence between having a preparedness<lb/> plan for an outbreak of EVD and demographic factors. In the cases where at least 20% of the cells had<lb/> expected counts less than 5, Fisher&apos;s Exact Test was used. It was found that preparedness did not depend<lb/> on demographic factors (p-values &gt; 0.05).<lb/></p>
+
+			<head>Obtaining Information about Ebola<lb/></head> 
+
+			<p>Of the 598 respondents who responded to this question, 499 (83.4%) obtained information from various<lb/> forms of media. Of the 499 responders, the majority (53.3%) were under 30 years of age. However, it was<lb/> found that the method by which information was obtained was independent of the individual&apos;s age (p-value<lb/> = 0.673).<lb/></p>
+
+			<head>DISCUSSION<lb/></head>
+
+			<p>The study&apos;s response rate of 67% presented some useful findings about the public&apos;s knowledge<lb/> and attitudes towards Ebola.<lb/></p>
+
+			<p>Females outnumbered males but this was somewhat expected since the data collection took place<lb/> at shopping areas during the day time when more men than women are likely to be at work. The<lb/> study revealed some useful findings for improving health and healthcare during an outbreak. For<lb/> example, the significant difference in knowledge scores noted between professional and sales<lb/> occupations could direct health education measures towards certain occupational groupings.<lb/></p>
+
+			<p>There was no association between age group and knowledge scores; in Nigeria, sub optimal<lb/> knowledge was found among secondary school students despite a case of imported EVD in 2014<lb/> <ref type="biblio">(8)</ref>.<lb/></p>
+
+			<p>There was a significant association between age group and being afraid to seek treatment. Fear of<lb/> seeking treatment suggests a lack of knowledge. The findings show that education level was also<lb/> significantly associated with being afraid to seek treatment.<lb/></p>
+
+			<p>Occupational grouping and educational category were associated with likelihood to shun<lb/> someone with the disease, being afraid to go for treatment and choice of traditional medicine.<lb/></p>
+
+			<p>Education has been found to influence people&apos;s knowledge about EVD in Nigeria <ref type="biblio">(9)</ref>. In Uganda<lb/> being educated beyond primary level was a significant predictor of awareness towards EVD and<lb/> Marburg <ref type="biblio">(10)</ref>. Our survey showed a significant association between education level and<lb/> knowledge about EVD. These findings have potentially serious implications for the health<lb/> system during an outbreak and in peace time as this factor likely applies to all disease and<lb/> conditions. When patients are prepared to anticipate an untoward situation, they are more likely<lb/> to cope effectively <ref type="biblio">(11)</ref>. If persons do not present for treatment, their risk of a poor outcome<lb/> increases. If they are likely to shun those who are ill, the likelihood of spread would be greater<lb/> since infection control measures would not be maintained. A knowledge attitude and practices<lb/> survey undertaken in Liberia <ref type="biblio">(12)</ref> found that more than 90% of responders were fearful of EVD<lb/> patients and of those who live with EVD patients. Choosing to attend traditional healers will lead<lb/> to further spread as these practitioners would not usually have personal protective equipment and<lb/> the appropriate training in their usage.<lb/></p>
+
+			<p>A cause for concern was the finding of the likelihood to shun someone with the disease if you<lb/> were in a caring occupation. The health workforce density in Guinea, Sierra Leone and Liberia<lb/> which were the three most affected countries is less than 1.5 per 10 000 population, 2.2 per 10<lb/> 000 population and less than 3.7 per 10 000 population, respectively <ref type="biblio">(13)</ref>. In comparison, in TT<lb/> there are 8 physicians per 10000 people; there are 26 per 10 000 in the USA <ref type="biblio">(14)</ref>. According to<lb/> WHO at least 23 physicians, nurses and midwives per 10 000 population are needed for well -<lb/>functioning primary healthcare interventions <ref type="biblio">(15)</ref>. The workforce should be well-qualified,<lb/> capable, responsive and efficient. Lack of a skilled workforce was found to be a major factor in<lb/> controlling the outbreaks. Lack of knowledge about basic infection prevention and control<lb/> measures among health care workers was a critical factor in the outbreak response. Lack of PPE<lb/> and knowing who to report to affected the outcome of the outbreaks <ref type="biblio">(7)</ref>. Training and rehearsing<lb/> are critical to a smooth response <ref type="biblio">(16,17,18)</ref>. However it should be noted that in several studies<lb/></p>
+
+			<figure>health workers indicated a reluctance to present to work under emergency conditions because of<lb/> competing priorities such as family responsibility.<lb/> The Government and Public Health practitioners need to change the mindset of the public by<lb/> providing training and education. When persons are educated and possess the skills to manage a<lb/> disease which have been rehearsed the fears become less.<lb/></figure>
+
+			<p>Responders obtained their information from various media sources. Media coverage can have a<lb/> great impact. Governments may therefore use this route for dissemination of clear, accurate<lb/> information during outbreaks <ref type="biblio">(19)</ref>.<lb/></p>
+
+			<p>The little confidence in the health system for handling an outbreak was attributed to a perception<lb/> that facilities are outdated along with an indifferent attitude. It is noteworthy that responders also<lb/> had little confidence in private facilities in addition to the public facilities. It seems the<lb/> Government of TT needs to act to change this perception and /modify their current strategy to<lb/> inform and educate the public.<lb/></p>
+
+			<p>The study shows many potential areas for capacity strengthening not only for EVD but for any<lb/> disease/event that poses a threat to national and thus global health security. The responders are<lb/> not totally incorrect in their perception that the country is not prepared for an outbreak, since<lb/></p>
+
+			<p>Trinidad and Tobago has not yet fully met its obligations under the IHR 2005.<lb/></p>
+
+			<p>To build a resilient health system there is a need for community engagement which can aid<lb/> containment efforts during an outbreak. In addition to the healthcare workers who need to train<lb/> and to exercise their preparedness plans, the community needs to be involved in the planning and<lb/> preparedness. In addition to health system strengthening in terms of surveillance and response<lb/> capacity to early detect and manage outbreaks, the community needs to be engaged and made<lb/> aware of the risks for each potential threat and of their roles and responsibilities in securing<lb/> national health security. This could address the issue of staff not presenting to work since<lb/> community involvement in planning could positively influence decisions healthcare workers take<lb/> during an emergency with respect to work and surge capacity. In Nigeria respondents suggested<lb/> sensitisation of communities for effective prevention and control. A survey in the USA stated the<lb/> need for honest accurate information, &apos;even if that information worried people.&apos; The survey<lb/> report indicated that &apos;These results suggest the value of proactive communications designed to<lb/> inform the lay public&apos;s decisions, thoughts, and emotions, and informed by concurrent surveys of<lb/> their responses and needs&apos; <ref type="biblio">(20)</ref>.<lb/></p>
+
+			<head>Limitations<lb/></head>
+
+			<p>The study used convenience sampling which could affect the generalizability of the findings. In<lb/> terms of the response rate, the non-responders were in the minority. The demographic<lb/> characteristics (age, sex) of the non-responders were consistent with those of respondents and<lb/> hence we could have some confidence in the findings from the 622 responders.<lb/></p>
+
+			<head>Conclusion<lb/></head>
+
+			<p>Ebola virus disease was chosen for this study as this disease was of grave concern at the time of<lb/> the outbreaks since the disease left the African continent for the first time. To quote Dr Keiji<lb/> Fukuda, a WHO expert, &quot;what happens in Africa affects your neighborhood, either directly or<lb/> indirectly…the IHR are founded on that principle...but the world beyond public health remains<lb/> largely unconvinced of it. To really make strides against diseases like Ebola, we have to<lb/> convince people that there is no &quot;over there&quot; for infectious pathogens in a globalized world <ref type="biblio">(2)</ref>.<lb/></p>
+
+			<p>We therefore all need to be prepared at all times which means rehearsals and drills in the form of<lb/> table top exercises and multisectoral simulation exercises. Community support and involvement<lb/> are key. Sensitisation, communication and training are essential. Unfortunately lessons learned<lb/> from previous outbreaks are not being used to modify existing services and practices and for<lb/> each new public health event it seems we are starting from square one. An understanding of the<lb/> community perceptions about a public health threat is what is needed to be able to develop and<lb/> target information about the disease and its control <ref type="biblio">(21)</ref>. This study attempted to achieve this, to<lb/> aid the Government in its capacity building efforts to increase the country&apos;s resilience during a<lb/> major public health event.</p>
+
+
+	</text>
+</tei>

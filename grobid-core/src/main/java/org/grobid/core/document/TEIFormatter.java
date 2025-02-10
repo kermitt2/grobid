@@ -297,7 +297,7 @@ public class TEIFormatter {
                 if (config.getIncludeRawCopyrights() && biblio.getCopyright() != null && biblio.getCopyright().length()>0) {
                     tei.append("\t\t\t\t\t<p type=\"raw\">");
                     tei.append(TextUtilities.HTMLEncode(biblio.getCopyright()));
-                    tei.append("</note>\n");
+                    tei.append("</p>\n");
                 }
 
                 tei.append("\t\t\t\t</availability>\n");
@@ -315,7 +315,7 @@ public class TEIFormatter {
                 if (config.getIncludeRawCopyrights() && biblio.getCopyright() != null && biblio.getCopyright().length()>0) {
                     tei.append("\t\t\t\t\t<p type=\"raw\">");
                     tei.append(TextUtilities.HTMLEncode(biblio.getCopyright()));
-                    tei.append("</note>\n");
+                    tei.append("</p>\n");
                 }
 
                 tei.append("\t\t\t\t</availability>\n");
@@ -923,8 +923,8 @@ public class TEIFormatter {
             tei.append("\t\t\t<abstract>\n");
         }
 
-        if ((abstractText != null) && (abstractText.length() != 0)) {
-            if ( (biblio.getLabeledAbstract() != null) && (biblio.getLabeledAbstract().length() > 0) ) {
+        if (StringUtils.isNotBlank(abstractText)) {
+            if (StringUtils.isNotBlank(biblio.getLabeledAbstract())) {
                 // we have available structured abstract, which can be serialized as a full text "piece"
                 StringBuilder buffer = new StringBuilder();
                 try {
@@ -1887,7 +1887,7 @@ public class TEIFormatter {
 
         // in xom, the following gives all the text under the element, for the whole subtree
         String text = curParagraph.getValue();
-        if (StringUtils.isEmpty(text))
+        if (StringUtils.isBlank(text))
             return;
 
         // identify ref nodes, ref spans and ref positions

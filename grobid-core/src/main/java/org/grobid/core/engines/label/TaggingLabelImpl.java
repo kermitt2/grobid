@@ -54,6 +54,6 @@ public class TaggingLabelImpl implements TaggingLabel {
     @Override
     public String getName() {
         final String tmp = getLabel().replaceAll("[<>]", "");
-        return StringUtils.upperCase(getGrobidModel().getModelName() + "_" + tmp.replace(GenericTaggerUtils.START_ENTITY_LABEL_PREFIX, ""));
+        return StringUtils.upperCase(getGrobidModel().getModelName() + "_" + tmp.replace(TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX, ""));
     }
 }

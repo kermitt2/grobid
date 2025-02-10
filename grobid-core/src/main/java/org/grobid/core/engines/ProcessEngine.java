@@ -373,7 +373,7 @@ public class ProcessEngine implements Closeable {
     public void createTraining(final GrobidMainArgs pGbdArgs) {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
-        int result = getEngine().batchCreateTraining(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
+        int result = getEngine().batchCreateTraining(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1, pGbdArgs.getModelFlavor());
         LOGGER.info(result + " files processed.");
     }
 
@@ -581,7 +581,7 @@ public class ProcessEngine implements Closeable {
                             .generateTeiCoordinates(elementWithCoords)
                             .build();
 
-                    Document teiDoc = getEngine().fullTextToTEIDoc(currPDF, null, config);
+                    Document teiDoc = getEngine().fullTextToTEIDoc(currPDF, null, null, config);
                     document = PDDocument.load(currPDF);
                     //If no pages, skip the document
                     if (document.getNumberOfPages() > 0) {
@@ -622,7 +622,7 @@ public class ProcessEngine implements Closeable {
      * @return List<String> containing the list of the methods.
      */
     public final static List<String> getUsableMethods() {
-        final Class<?> pClass = new ProcessEngine().getClass();
+        final Class<?> pClass = ProcessEngine.class;
         final List<String> availableMethods = new ArrayList<String>();
         for (final Method method : pClass.getMethods()) {
             if (isUsableMethod(method.getName())) {
