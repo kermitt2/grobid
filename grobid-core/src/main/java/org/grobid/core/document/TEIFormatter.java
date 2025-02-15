@@ -827,10 +827,10 @@ public class TEIFormatter {
         // We collect the discarded text from the header and add it as a <noteStmt>
         if (config.isIncludeDiscardedText()) {
             List<TaggingLabel> locationTextNotProcessed = Arrays.asList(
-                SegmentationLabels.OTHER,
-                SegmentationLabels.PAGE_NUMBER,
-                SegmentationLabels.HEADNOTE,
-                SegmentationLabels.COVER
+                SegmentationLabels.OTHER
+//                SegmentationLabels.PAGE_NUMBER,
+//                SegmentationLabels.HEADNOTE,
+//                SegmentationLabels.COVER
             );
 
             List<List<LayoutToken>> discardedTextElsewhere = new ArrayList<>();
