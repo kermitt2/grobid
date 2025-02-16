@@ -2306,24 +2306,37 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             }
 
             boolean spaceEnd = false;
+            boolean spaceStart = false;
             text = text.replace("\n", " ");
-            if (text.endsWith(" "))
+            if (text.endsWith(" ")) {
                 spaceEnd = true;
+            }
+            if (!text.equals(" ") & text.startsWith(" ")) {
+                spaceStart = true;
+            }
             text = text.trim();
 
             if (StringUtils.isBlank(text)) {
-                nodes.add(new Text(text));
-                if (spaceEnd)
+                if (spaceStart) {
                     nodes.add(new Text(" "));
+                }
+                nodes.add(new Text(text));
+                if (spaceEnd) {
+                    nodes.add(new Text(" "));
+                }
                 continue;
             }
 
             String andWordString = null;
             if (text.endsWith("and") || text.endsWith("&")) {
                 if (text.equals("and") || text.equals("&")) {
-                    nodes.add(new Text(text));
-                    if (spaceEnd)
+                    if (spaceStart) {
                         nodes.add(new Text(" "));
+                    }
+                    nodes.add(new Text(text));
+                    if (spaceEnd) {
+                        nodes.add(new Text(" "));
+                    }
                     continue;
                 } else if (text.endsWith("and")) {
                     // the AND_WORD_PATTERN case, we want to exclude the AND word from the tagged chunk
@@ -2358,14 +2371,18 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             if (bestFigure != null) {
                 ref.addAttribute(new Attribute("target", "#fig_" + bestFigure));
             }
+            if (spaceStart) {
+                nodes.add(new Text(" "));
+            }
             nodes.add(ref);
 
             if (andWordString != null) {
                 nodes.add(new Text(andWordString));
             }
 
-            if (spaceEnd)
+            if (spaceEnd) {
                 nodes.add(new Text(" "));
+            }
         }
         return nodes;
     }
