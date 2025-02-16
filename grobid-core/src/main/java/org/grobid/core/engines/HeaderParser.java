@@ -947,10 +947,7 @@ public class HeaderParser extends AbstractParser {
                 } else
                     biblio.setInstitution(clusterContent);
             }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_NOTE)) {
-                if (biblio.getNote() != null) {
-                    biblio.setNote(biblio.getNote() + " " + clusterContent);
-                } else
-                    biblio.setNote(clusterContent);
+                biblio.setNoteOrConcatenateIfNotEmpty(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_ABSTRACT)) {
                 if (biblio.getAbstract() != null) {
                     // this will need to be reviewed with more training data, for the moment
