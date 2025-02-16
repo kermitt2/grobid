@@ -2445,10 +2445,9 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                     // second pass with relaxed table marker matching
                     for(int i=tables.size()-1; i>=0; i--) {
                         Table table = tables.get(i);
-                        if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
+                        if (StringUtils.isNotBlank(table.getLabel())) {
                             String label = TextUtilities.cleanField(table.getLabel(), false);
-                            if (label != null && (label.length() > 0) &&
-                                    (textLow.contains(label.toLowerCase()))) {
+                            if (StringUtils.isNotBlank(label) && (textLow.contains(label.toLowerCase()))) {
                                 bestTable = table.getId();
                                 break;
                             }
@@ -2458,20 +2457,44 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             }
 
             boolean spaceEnd = false;
+            boolean spaceStart = false;
             text = text.replace("\n", " ");
-            if (text.endsWith(" "))
+            if (text.endsWith(" ")) {
                 spaceEnd = true;
+            }
+            if (!text.equals(" ") & text.startsWith(" ")) {
+                spaceStart = true;
+            }
             text = text.trim();
+
+            if (StringUtils.isBlank(text)) {
+                if (spaceStart) {
+                    nodes.add(new Text(" "));
+                }
+                nodes.add(new Text(text));
+                if (spaceEnd) {
+                    nodes.add(new Text(" "));
+                }
+                continue;
+            }
 
             String andWordString = null;
             if (text.endsWith("and") || text.endsWith("&")) {
-                // the AND_WORD_PATTERN case, we want to exclude the AND word from the tagged chunk                
-                if (text.endsWith("and")) {
+               if (text.equals("and") || text.equals("&")) {
+                    if (spaceStart) {
+                        nodes.add(new Text(" "));
+                    }
+                    nodes.add(new Text(text));
+                    if (spaceEnd) {
+                        nodes.add(new Text(" "));
+                    }
+                    continue;
+                } else if (text.endsWith("and")) {
+                    // the AND_WORD_PATTERN case, we want to exclude the AND word from the tagged chunk
                     text = text.substring(0, text.length()-3);
                     andWordString = "and";
                     refTokens = refTokens.subList(0,refTokens.size()-1);
-                }
-                else if (text.endsWith("&")) {
+                } else if (text.endsWith("&")) {
                     text = text.substring(0, text.length()-1);
                     andWordString = "&";
                     refTokens = refTokens.subList(0,refTokens.size()-1);
@@ -2495,17 +2518,22 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                 ref.addAttribute(new Attribute("coords", coords));
             }
             ref.appendChild(text);
+
             if (bestTable != null) {
                 ref.addAttribute(new Attribute("target", "#tab_" + bestTable));
+            }
+            if (spaceStart) {
+                nodes.add(new Text(" "));
             }
             nodes.add(ref);
 
             if (andWordString != null) {
                 nodes.add(new Text(andWordString));
             }
-            
-            if (spaceEnd)
+
+            if (spaceEnd) {
                 nodes.add(new Text(" "));
+            }
         }
         return nodes;
     }
