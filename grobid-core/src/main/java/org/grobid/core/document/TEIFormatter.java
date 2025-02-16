@@ -1731,7 +1731,7 @@ public class TEIFormatter {
                 } else {
                     throw new IllegalStateException("Unsupported marker type: " + clusterLabel);
                 }
-                
+
                 if (refNodes != null) {
                     boolean footNoteCallout = false;
 
@@ -2293,9 +2293,9 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                     // second pass with relaxed figure marker matching
                     for(int i=figures.size()-1; i>=0; i--) {
                         Figure figure = figures.get(i);
-                        if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
+                        if (StringUtils.isNotBlank(figure.getLabel())) {
                             String label = TextUtilities.cleanField(figure.getLabel(), false);
-                            if (label != null && (label.length() > 0) &&
+                            if (StringUtils.isNotBlank(label) &&
                                     (textLow.contains(label.toLowerCase()))) {
                                 bestFigure = figure.getId();
                                 break;
@@ -2313,13 +2313,17 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
 
             String andWordString = null;
             if (text.endsWith("and") || text.endsWith("&")) {
-                // the AND_WORD_PATTERN case, we want to exclude the AND word from the tagged chunk                
-                if (text.endsWith("and")) {
+                if (text.equals("and") || text.equals("&")) {
+                    nodes.add(new Text(text));
+                    if (spaceEnd)
+                        nodes.add(new Text(" "));
+                    continue;
+                } else if (text.endsWith("and")) {
+                    // the AND_WORD_PATTERN case, we want to exclude the AND word from the tagged chunk
                     text = text.substring(0, text.length()-3);
                     andWordString = "and";
                     refTokens = refTokens.subList(0,refTokens.size()-1);
-                }
-                else if (text.endsWith("&")) {
+                } else if (text.endsWith("&")) {
                     text = text.substring(0, text.length()-1);
                     andWordString = "&";
                     refTokens = refTokens.subList(0,refTokens.size()-1);

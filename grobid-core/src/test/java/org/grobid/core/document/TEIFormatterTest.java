@@ -1,7 +1,9 @@
 package org.grobid.core.document;
 
 import nu.xom.Element;
+import nu.xom.Node;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.data.Figure;
 import org.grobid.core.data.Note;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.GrobidProperties;
@@ -10,9 +12,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
 
 public class TEIFormatterTest {
@@ -71,6 +75,34 @@ public class TEIFormatterTest {
             .generateURLRef("http:// github.com/ lfoppiano/ grobid-bla", tokens, false);
 
         assertThat(node.toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"url\" target=\"http://github.com/lfoppiano/grobid-bla\">http:// github.com/ lfoppiano/ grobid-bla</ref>"));
+    }
+
+    @Test
+    public void testMarkReferencesFigureTEI() throws Exception {
+        String input = "and 3D";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+
+        List<LayoutToken> tokensWithOffset = tokens.stream()
+            .peek(t -> t.setOffset(t.getOffset() + 51393))
+            .collect(Collectors.toList());
+
+        Figure f1 = new Figure();
+        f1.setLabel(new StringBuilder("1"));
+        Figure f2 = new Figure();
+        f1.setLabel(new StringBuilder("2"));
+        Figure f3 = new Figure();
+        f1.setLabel(new StringBuilder(""));
+
+        List<Figure> figures = List.of(f1, f2, f3);
+
+
+        List<Node> nodes = new TEIFormatter(null, null)
+            .markReferencesFigureTEI(input, tokensWithOffset, figures, false);
+
+        assertThat(nodes, hasSize(2));
+        assertThat(nodes.get(0).toXML(), is("and"));
+        assertThat(((Element)nodes.get(1)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">3D</ref>"));
     }
 
 
