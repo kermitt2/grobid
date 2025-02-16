@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
@@ -24,6 +25,7 @@ import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.tokenization.LabeledTokensContainer;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.GrobidModels.Flavor;
 import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.counters.CntManager;
 import org.slf4j.Logger;
@@ -71,6 +73,18 @@ public class HeaderParser extends AbstractParser {
         GrobidProperties.getInstance();
     }
 
+    public HeaderParser(EngineParsers parsers, CntManager cntManager, Flavor flavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.HEADER, flavor), cntManager);
+        this.parsers = parsers;
+        GrobidProperties.getInstance();
+    }
+
+    public HeaderParser(EngineParsers parsers, Flavor flavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.HEADER, flavor));
+        this.parsers = parsers;
+        GrobidProperties.getInstance();
+    }
+
     /**
      * Processing with application of the segmentation model
      */
@@ -93,7 +107,12 @@ public class HeaderParser extends AbstractParser {
     /**
      * Header processing after application of the segmentation model 
      */
-    public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader, boolean serialize) {
+    public String processingHeaderSection(
+        GrobidAnalysisConfig config,
+        Document doc,
+        BiblioItem resHeader,
+        boolean serialize
+    ) {
         try {
             SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
             List<LayoutToken> tokenizations = doc.getTokenizations();
@@ -126,6 +145,15 @@ public class HeaderParser extends AbstractParser {
                     SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
                     if (documentBodyParts != null) {
                         String stringSample = Document.getTokenizationParts(documentBodyParts, tokenizations)
+                            .stream().map(LayoutToken::toString)
+                            .collect(Collectors.joining(" "));
+
+                        contentSample.append(stringSample);
+                    }
+                    //In case we don't have text, it might be that someone is trying to process a document that is not a scientific article,
+                    // one more attempt with the full header.
+                    if (contentSample.length() < 200) {
+                        String stringSample = Document.getTokenizationParts(doc.getDocumentPart(SegmentationLabels.HEADER), tokenizations)
                             .stream().map(LayoutToken::toString)
                             .collect(Collectors.joining(" "));
 
@@ -261,7 +289,7 @@ public class HeaderParser extends AbstractParser {
                     //resHeader.setKeyword(keywords.replace("\n", " ").replace("  ", " "));
                     resHeader.setKeyword(keywords);
                     List<Keyword> keywordsSegmented = BiblioItem.segmentKeywords(keywords);
-                    if ((keywordsSegmented != null) && (keywordsSegmented.size() > 0))
+                    if (CollectionUtils.isNotEmpty(keywordsSegmented))
                         resHeader.setKeywords(keywordsSegmented);
                 }
 
@@ -311,7 +339,7 @@ public class HeaderParser extends AbstractParser {
                 }
 
                 // copyrights/license identification
-                if (resHeader.getCopyright() != null && resHeader.getCopyright().length()>0) {
+                if (StringUtils.isNotBlank(resHeader.getCopyright())) {
                     if (GrobidProperties.getGrobidEngineName("copyright").equals("delft")) {
                         CopyrightsLicense copyrightsLicense = LicenseClassifier.getInstance().classify(resHeader.getCopyright());
                         if (copyrightsLicense != null) 
@@ -928,6 +956,7 @@ public class HeaderParser extends AbstractParser {
                     // this will need to be reviewed with more training data, for the moment
                     // avoid concatenation for abstracts as it brings more noise than correct pieces
                     //biblio.setAbstract(biblio.getAbstract() + " " + clusterContent);
+                    //TODO: avoid dumping text on the floor
                 } else {
                     biblio.setAbstract(clusterContent);
                     List<LayoutToken> tokens = cluster.concatTokens();
@@ -1047,7 +1076,9 @@ public class HeaderParser extends AbstractParser {
                 }*/
                 if (biblio.getJournal() == null)
                     biblio.setJournal(clusterContent);
-            }   
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_OTHER)) {
+                biblio.addDiscardedPieceTokens(cluster.concatTokens());
+            }
             /*else if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
                 return biblio;
             }*/

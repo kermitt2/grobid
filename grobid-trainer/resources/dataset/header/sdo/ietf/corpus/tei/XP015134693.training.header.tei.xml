@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="XP015134693"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	ICNRG<lb/> D. Oran<lb/>
+	<note type="doctype">Internet-Draft<lb/></note>
+
+	Network Systems Research and Design<lb/> Intended status: Experimental<lb/>
+	<date>August 10, 2019<lb/></date>
+
+	Expires: February 11, 2020<lb/>
+
+	<docTitle>
+	<titlePart>Maintaining CCNx or NDN flow balance with highly variable data object<lb/> sizes<lb/></titlePart>
+	</docTitle>
+
+	<idno>draft-oran-icnrg-flowbalance-01<lb/></idno>
+
+	<div type="abstract">Abstract<lb/> Deeply embedded in some ICN architectures, especially Named Data<lb/> Networking (NDN) and Content-Centric Networking (CCNx) is the notion<lb/> of flow balance. This captures the idea that there is a one-to-one<lb/> correspondence between requests for data, carried in Interest<lb/> messages, and the responses with the requested data object, carried<lb/> in Data messages. This has a number of highly beneficial properties<lb/> for flow and congestion control in networks, as well as some<lb/> desirable security properties. For example, neither legitimate users<lb/> nor attackers are able to inject large amounts of un-requested data<lb/> into the network.<lb/> Existing congestion control approaches however cannot deal<lb/> effectively with a widely varying MTU of ICN data messages, since the<lb/> protocols allow a dynamic range of 1-64K bytes. Since Interest<lb/> messages are used to allocate the reverse link bandwidth for<lb/> returning Data, there is large uncertainty in how to allocate that<lb/> bandwidth. Unfortunately, current congestion control schemes in CCNx<lb/> and NDN only count Interest messages and have no idea how much data<lb/> is involved that could congest the inverse link. This document<lb/> proposes a method to maintain flow balance by accommodating the wide<lb/> dynamic range in Data message MTU.<lb/></div>
+
+	<note type="other">Status of This Memo<lb/> This Internet-Draft is submitted in full conformance with the<lb/> provisions of BCP 78 and BCP 79.<lb/> Internet-Drafts are working documents of the Internet Engineering<lb/> Task Force (IETF). Note that other groups may also distribute<lb/> working documents as Internet-Drafts. The list of current Internet-<lb/>Drafts is at https://datatracker.ietf.org/drafts/current/.<lb/> Internet-Drafts are draft documents valid for a maximum of six months<lb/> and may be updated, replaced, or obsoleted by other documents at any<lb/> time. It is inappropriate to use Internet-Drafts as reference<lb/> material or to cite them other than as &quot;work in progress.&quot;<lb/></note>
+
+	D. Oran<lb/> Expires February 11, 2020<lb/> [Page 1]<lb/>
+	<note type="doctype">Internet-Draft<lb/></note>
+
+	Maintaining Flow Balance<lb/> August 2019<lb/>
+	This Internet-Draft will expire on February 11, 2020.<lb/>
+
+	Copyright Notice<lb/>
+	<note type="copyright">Copyright (c) 2019 IETF Trust and the persons identified as the<lb/> document authors. All rights reserved.<lb/> This document is subject to BCP 78 and the IETF Trust&apos;s Legal<lb/> Provisions Relating to IETF Documents<lb/> (https://trustee.ietf.org/license-info) in effect on the date of<lb/> publication of this document. Please review these documents<lb/> carefully, as they describe your rights and restrictions with respect<lb/> to this document. Code Components extracted from this document must<lb/> include Simplified BSD License text as described in Section 4.e of<lb/> the Trust Legal Provisions and are provided without warranty as<lb/> described in the Simplified BSD License.<lb/></note>
+
+	<byline>
+	<docAuthor>Dave Oran<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Network Systems Research and Design<lb/></affiliation>
+	</byline>
+
+	<address>4 Shady Hill Square<lb/> Cambridge, MA 02138<lb/> USA<lb/></address>
+
+	<email>Email: daveoran@orandom.net</email>
+
+		</front>
+	</text>
+</tei>
