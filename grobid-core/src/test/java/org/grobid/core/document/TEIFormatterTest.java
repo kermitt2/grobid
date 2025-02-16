@@ -105,5 +105,35 @@ public class TEIFormatterTest {
         assertThat(((Element)nodes.get(1)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">3D</ref>"));
     }
 
+    @Test
+    public void testMarkReferencesFigureTEI_() throws Exception {
+        String input = "5, & ";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+
+        List<LayoutToken> tokensWithOffset = tokens.stream()
+            .peek(t -> t.setOffset(t.getOffset() + 51393))
+            .collect(Collectors.toList());
+
+        Figure f1 = new Figure();
+        f1.setLabel(new StringBuilder("1"));
+        Figure f2 = new Figure();
+        f1.setLabel(new StringBuilder("2"));
+        Figure f3 = new Figure();
+        f1.setLabel(new StringBuilder(""));
+
+        List<Figure> figures = List.of(f1, f2, f3);
+
+
+        List<Node> nodes = new TEIFormatter(null, null)
+            .markReferencesFigureTEI(input, tokensWithOffset, figures, false);
+
+        assertThat(nodes, hasSize(4));
+        assertThat(((Element)nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">5,</ref>"));
+        assertThat(nodes.get(1).toXML(), is(" &amp;"));
+        assertThat(nodes.get(2).toXML(), is(""));
+        assertThat(nodes.get(3).toXML(), is(" "));
+    }
+
 
 }

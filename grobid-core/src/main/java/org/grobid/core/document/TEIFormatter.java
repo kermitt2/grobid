@@ -2311,6 +2311,13 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                 spaceEnd = true;
             text = text.trim();
 
+            if (StringUtils.isBlank(text)) {
+                nodes.add(new Text(text));
+                if (spaceEnd)
+                    nodes.add(new Text(" "));
+                continue;
+            }
+
             String andWordString = null;
             if (text.endsWith("and") || text.endsWith("&")) {
                 if (text.equals("and") || text.equals("&")) {
