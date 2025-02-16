@@ -32,7 +32,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 import java.io.*;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -63,11 +63,52 @@ public class GrobidRestProcessFiles {
      * @param consolidate consolidation parameter for the header extraction
      * @return a response object which contains a TEI representation of the header part
      */
+     public Response processStatelessHeaderDocument(
+        final InputStream inputStream,
+        final int consolidate,
+        final boolean includeRawAffiliations,
+        final boolean includeRawCopyrights,
+        ExpectedResponseType expectedResponseType
+    ) {
+         return processStatelessHeaderDocument(
+             inputStream,
+             consolidate,
+             includeRawAffiliations,
+             includeRawCopyrights,
+             false,
+             0,
+             2,
+             expectedResponseType
+         );
+     }
+
+     public Response processStatelessHeaderDocument(
+        final InputStream inputStream,
+        final int consolidate,
+        final boolean includeRawAffiliations,
+        final boolean includeRawCopyrights,
+        int startPage,
+        int endPage,
+        ExpectedResponseType expectedResponseType
+    ) {
+         return processStatelessHeaderDocument(
+             inputStream,
+             consolidate,
+             includeRawAffiliations,
+             includeRawCopyrights,
+             false,
+             startPage,
+             endPage,
+             expectedResponseType
+         );
+     }
+
     public Response processStatelessHeaderDocument(
         final InputStream inputStream,
         final int consolidate,
         final boolean includeRawAffiliations,
         final boolean includeRawCopyrights,
+        final boolean includeDiscardedText,
         int startPage,
         int endPage,
         ExpectedResponseType expectedResponseType
@@ -108,6 +149,7 @@ public class GrobidRestProcessFiles {
                 consolidate,
                 includeRawAffiliations,
                 includeRawCopyrights,
+                includeDiscardedText,
                 startPage,
                 endPage,
                 result
@@ -160,7 +202,8 @@ public class GrobidRestProcessFiles {
         final int consolidateHeader,
         final int consolidateFunders,
         final boolean includeRawAffiliations,
-        final boolean includeRawCopyrights
+        final boolean includeRawCopyrights,
+        final boolean includeDiscardedText
     ) {
         LOGGER.debug(methodLogIn());
         String retVal = null;
@@ -196,7 +239,8 @@ public class GrobidRestProcessFiles {
                 consolidateHeader,
                 consolidateFunders,
                 includeRawAffiliations,
-                includeRawCopyrights
+                includeRawCopyrights,
+                includeDiscardedText
             );
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
@@ -253,6 +297,7 @@ public class GrobidRestProcessFiles {
                                         final boolean includeRawAffiliations,
                                         final boolean includeRawCitations,
                                         final boolean includeRawCopyrights,
+                                        final boolean includeDiscardedText,
                                         final int startPage,
                                         final int endPage,
                                         final boolean generateIDs,
@@ -294,6 +339,7 @@ public class GrobidRestProcessFiles {
                     .includeRawAffiliations(includeRawAffiliations)
                     .includeRawCitations(includeRawCitations)
                     .includeRawCopyrights(includeRawCopyrights)
+                    .includeDiscardedText(includeDiscardedText)
                     .startPage(startPage)
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
@@ -487,12 +533,10 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.NO_CONTENT).build();
             } else {
 
-                response = Response.status(Status.OK).type("application/zip").build();
-
-                ByteArrayOutputStream ouputStream = new ByteArrayOutputStream();
-                ZipOutputStream out = new ZipOutputStream(ouputStream);
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                ZipOutputStream out = new ZipOutputStream(outputStream);
                 out.putNextEntry(new ZipEntry("tei.xml"));
-                out.write(retVal.getBytes(Charset.forName("UTF-8")));
+                out.write(retVal.getBytes(StandardCharsets.UTF_8));
                 // put now the assets, i.e. all the files under the asset path
                 File assetPathDir = new File(assetPath);
                 if (assetPathDir.exists()) {
@@ -524,7 +568,7 @@ public class GrobidRestProcessFiles {
                 response = Response
                     .ok()
                     .type("application/zip")
-                    .entity(ouputStream.toByteArray())
+                    .entity(outputStream.toByteArray())
                     .header("Content-Disposition", "attachment; filename=\"result.zip\"")
                     .build();
                 out.close();

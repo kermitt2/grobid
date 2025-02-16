@@ -402,11 +402,13 @@ public class FullTextParser extends AbstractParser {
             // callout in superscript is by error labeled as a numerical reference callout)
             List<MarkerType> markerTypes = null;
 
-            if (bodyResults != null)
+            if (bodyResults != null) {
                 markerTypes = postProcessCallout(bodyResults, bodyLayoutTokens);
+            }
 
             // final combination
-            toTEI(doc, // document
+            toTEI(
+                doc, // document
 				bodyResults,
                 annexResults, // labeled data for body and annex
                 bodyLayoutTokens,
@@ -416,7 +418,8 @@ public class FullTextParser extends AbstractParser {
                 tables,
                 equations,
                 markerTypes,
-				config);
+				config
+            );
             return doc;
         } catch (GrobidException e) {
 			throw e;
@@ -569,7 +572,6 @@ public class FullTextParser extends AbstractParser {
         try {
             // general segmentation
             Document doc = parsers.getSegmentationParser().processing(documentSource, config);
-            SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
             // header processing
             BiblioItem resHeader = new BiblioItem();
@@ -1757,9 +1759,6 @@ public class FullTextParser extends AbstractParser {
     /**
      * Extract results from a labelled full text in the training format without any string modification.
      *
-     * @param result reult
-     * @param tokenizations toks
-     * @return extraction
      */
     private StringBuilder trainingExtraction(String result,
                                             List<LayoutToken> tokenizations) {
@@ -2875,7 +2874,14 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 }
             }
 
-            tei.append(teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, fundings, config));
+            tei.append(teiFormatter.toTEIHeader(
+                resHeader,
+                null,
+                resCitations,
+                markerTypes,
+                fundings,
+                config)
+            );
 
             tei = teiFormatter.toTEIBody(
                 tei,
@@ -2897,7 +2903,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append(annexStatement);
             }
 
-            if (fundings != null && fundings.size() >0) {
+            if (CollectionUtils.isNotEmpty(fundings)) {
                 tei.append("\n\t\t\t<listOrg type=\"funding\">\n");
                 for(Funding funding : fundings) {
                     if (funding.isNonEmptyFunding())
@@ -2906,7 +2912,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append("\t\t\t</listOrg>\n");
             }
 
-            if (affiliations != null && affiliations.size() >0) {
+            if (CollectionUtils.isNotEmpty(affiliations)) {
 
                 // check if we have at least one acknowledged research infrastructure here
                 List<Affiliation> filteredInfrastructures = new ArrayList<>();
@@ -3145,7 +3151,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append(annexStatement);
             }
 
-            if (fundings != null && fundings.size() >0) {
+            if (CollectionUtils.isNotEmpty(fundings)) {
                 tei.append("\n\t\t\t<listOrg type=\"funding\">\n");
                 for(Funding funding : fundings) {
                     if (funding.isNonEmptyFunding())
@@ -3154,7 +3160,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append("\t\t\t</listOrg>\n");
             }
 
-            if (affiliations != null && affiliations.size() >0) {
+            if (CollectionUtils.isNotEmpty(affiliations)) {
 
                 // check if we have at least one acknowledged research infrastructure here
                 List<Affiliation> filteredInfrastructures = new ArrayList<>();

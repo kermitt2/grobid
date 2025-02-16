@@ -51,6 +51,8 @@ public class Table extends Figure {
     private List<LayoutToken> noteLayoutTokens = null;
     private String labeledNote = null;
 
+    private List<List<LayoutToken>> discardedPiecesTokens = new ArrayList<>();
+
 
 	public void setGoodTable(boolean goodTable) {
 		this.goodTable = goodTable;
@@ -254,8 +256,18 @@ public class Table extends Figure {
     		tableElement.appendChild(desc);
 		tableElement.appendChild(contentEl);
 
-        if (noteNode != null)
+        if (noteNode != null) {
             tableElement.appendChild(noteNode);
+        }
+
+        if (CollectionUtils.isNotEmpty(discardedPiecesTokens)) {
+            for (List<LayoutToken> discardedPieceTokens : discardedPiecesTokens) {
+                Element note = XmlBuilderUtils.teiElement("note");
+                note.addAttribute(new Attribute("type", "other"));
+                note.appendChild(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(discardedPieceTokens)).trim());
+                tableElement.appendChild(note);
+            }
+        }
 
 		return tableElement.toXML();
     }
@@ -436,4 +448,15 @@ public class Table extends Figure {
         return "tab_" + this.id;
     }
 
+    public List<List<LayoutToken>> getDiscardedPiecesTokens() {
+        return discardedPiecesTokens;
+    }
+
+    public void setDiscardedPiecesTokens(List<List<LayoutToken>> discardedPiecesTokens) {
+        this.discardedPiecesTokens = discardedPiecesTokens;
+    }
+
+    public void addDiscardedPieceTokens(List<LayoutToken> pieceToken) {
+        this.discardedPiecesTokens.add(pieceToken);
+    }
 }

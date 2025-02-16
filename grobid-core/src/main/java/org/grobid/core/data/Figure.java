@@ -88,6 +88,8 @@ public class Figure {
     private List<BoundingBox> textArea;
     private List<LayoutToken> layoutTokens;
 
+    private List<List<LayoutToken>> discardedPiecesTokens = new ArrayList<>();
+
     // coordinates
     private int page = -1;
     private double y = 0.0;
@@ -454,6 +456,16 @@ public class Figure {
 
             figureElement.appendChild(desc);
         }
+
+        if (CollectionUtils.isNotEmpty(discardedPiecesTokens)) {
+            for (List<LayoutToken> discardedPieceTokens : discardedPiecesTokens) {
+                Element note = XmlBuilderUtils.teiElement("note");
+                note.addAttribute(new Attribute("type", "other"));
+                note.appendChild(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(discardedPieceTokens)).trim());
+                figureElement.appendChild(note);
+            }
+        }
+
         if (CollectionUtils.isNotEmpty(graphicObjects)) {
             for (GraphicObject graphicObject : graphicObjects) {
                 Element go = XmlBuilderUtils.teiElement("graphic");
@@ -574,4 +586,15 @@ public class Figure {
         this.uri = uri;
     }
 
+    public List<List<LayoutToken>> getDiscardedPiecesTokens() {
+        return discardedPiecesTokens;
+    }
+
+    public void setDiscardedPiecesTokens(List<List<LayoutToken>> discardedPiecesTokens) {
+        this.discardedPiecesTokens = discardedPiecesTokens;
+    }
+
+    public void addDiscardedPieceTokens(List<LayoutToken> pieceToken) {
+        this.discardedPiecesTokens.add(pieceToken);
+    }
 }
