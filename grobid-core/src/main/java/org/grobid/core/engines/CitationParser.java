@@ -177,6 +177,10 @@ public class CitationParser extends AbstractParser {
         if (allRes == null || allRes.length() == 0)
             return null;
         String[] resBlocks = allRes.split("\n\n");
+        if (resBlocks.length != tokenList.size()) {
+            LOGGER.error("didn't get the same number of citations as raw reference strings");
+            throw new GrobidException("didn't get the same number of citations as raw reference strings");
+        }
         int i = 0;
         for (List<LayoutToken> tokens : tokenList) {
             if (CollectionUtils.isEmpty(tokens))
