@@ -34,11 +34,7 @@ class FigureParser extends AbstractParser {
     public Figure processing(List<LayoutToken> tokenizationFigure, String featureVector) {
         String res;
         try {
-//System.out.println("---------------------featureVector-----------------------");
-//System.out.println(featureVector);
             res = label(featureVector);;
-//System.out.println("---------------------res-----------------------");
-//System.out.println(res);
         } catch (Exception e) {
             throw new GrobidException("Sequence labeling with figure model fails.", e);
         }
@@ -74,7 +70,7 @@ class FigureParser extends AbstractParser {
                 //label should also go to head
                 figure.appendHeader(" " + clusterContent + " ");
             } else if (clusterLabel.equals(FIG_OTHER)) {
-
+                figure.addDiscardedPieceTokens(cluster.concatTokens());
             } else if (clusterLabel.equals(FIG_CONTENT)) {
                 figure.appendContent(clusterContent);
             } else {

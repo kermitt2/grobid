@@ -6,7 +6,6 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.grobid.core.data.util.AuthorEmailAssigner;
 import org.grobid.core.data.util.ClassicAuthorEmailAssigner;
 import org.grobid.core.data.util.EmailSanitizer;
-import org.grobid.core.data.CopyrightsLicense;
 import org.grobid.core.document.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
@@ -22,7 +21,6 @@ import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.GrobidModels;
-import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
 
 import java.net.URLEncoder;
@@ -107,6 +105,7 @@ public class BiblioItem {
                 ", PMID='" + PMID + '\'' +
                 ", PMCID='" + PMCID + '\'' +
                 ", PII='" + PII + '\'' +
+                ", HALId='" + halId + '\'' +
                 ", ark='" + ark + '\'' +
                 ", istexId='" + istexId + '\'' +
                 ", inDOI='" + inDOI + '\'' +
@@ -256,6 +255,7 @@ public class BiblioItem {
     private String PMID = null;
     private String PMCID = null;
     private String PII = null;
+    private String halId = null;
     private String ark = null;
     private String istexId = null;
     private String abstract_ = null;
@@ -379,6 +379,10 @@ public class BiblioItem {
 
     // Copyrights/license information object
     CopyrightsLicense copyrightsLicense = null;
+
+    // All the tokens that are considered noise will be collected here
+    private List<String> discardedPieces = new ArrayList<>();
+    private List<List<LayoutToken>> discardedPiecesTokens = new ArrayList<>();
 
     public static final List<String> confPrefixes = Arrays.asList("Proceedings of", "proceedings of",
             "In Proceedings of the", "In: Proceeding of", "In Proceedings, ", "In Proceedings of",
@@ -524,6 +528,10 @@ public class BiblioItem {
 
     public String getDOI() {
         return doi;
+    }
+
+    public String getHalId() {
+        return halId;
     }
 
     public String getArk() {
@@ -1060,7 +1068,18 @@ public class BiblioItem {
         doi = doi.replaceAll("[\\p{M}]", "");
         doi = doi.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
 
+        // remove possible starting/trailing parenthesis
+        if (doi.startsWith("(") || doi.startsWith("[") || doi.startsWith("⟨"))
+            doi = doi.substring(1);
+
+        if (doi.endsWith(")") || doi.endsWith("]") || doi.endsWith("⟩"))
+            doi = doi.substring(0,doi.length()-1);
+
         return doi;
+    }
+
+    public void setHalId(String halId) {
+        this.halId = halId;
     }
 
     public void setArXivId(String id) {
@@ -1265,6 +1284,14 @@ public class BiblioItem {
 
     public void setInstitution(String inst) {
         institution = StringUtils.normalizeSpace(inst);
+    }
+
+    public void setNoteOrConcatenateIfNotEmpty(String note) {
+        if (StringUtils.isBlank(this.note)) {
+            this.note = StringUtils.normalizeSpace(note);
+        } else {
+            this.note += " " + StringUtils.normalizeSpace(note);
+        }
     }
 
     public void setNote(String not) {
@@ -1591,6 +1618,7 @@ public class BiblioItem {
         type = null;
         book_type = null;
         doi = null;
+        halId = null;
         istexId = null;
         ark = null;
         inDOI = null;
@@ -2169,7 +2197,7 @@ public class BiblioItem {
             }
         }
 
-        // TODO: PII
+        // TODO: PII and HALId
 
     }
 
@@ -2343,6 +2371,13 @@ public class BiblioItem {
                     tei.append("\t");
                 }
                 tei.append("<idno type=\"DOI\">" + TextUtilities.HTMLEncode(doi) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(halId)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"HALid\">" + TextUtilities.HTMLEncode(halId) + "</idno>\n");
             }
 
             if (!StringUtils.isEmpty(arXivId)) {
@@ -2786,9 +2821,6 @@ public class BiblioItem {
                     }
                 }
 
-                /*for (int i = 0; i < indent + 2; i++) {
-                    tei.append("\t");
-                }*/
                 if ((volumeBlock != null) | (issue != null) || (pageRange != null) || (publication_date != null)
                         || (publisher != null)) {
                     for (int i = 0; i < indent + 2; i++) {
@@ -2947,7 +2979,12 @@ public class BiblioItem {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
-                if ((publication_date != null) || (pageRange != null) || (location != null) || (publisher != null) || (volumeBlock != null)) {
+                if (normalized_publication_date != null ||
+                    publication_date != null || 
+                    pageRange != null || 
+                    location != null || 
+                    publisher != null || 
+                    volumeBlock != null) {
                     tei.append("<imprint>\n");
                 }
 				else {
@@ -3177,12 +3214,13 @@ public class BiblioItem {
             }
 
             if (uri != null) {
-                if (uri.startsWith("http://hal.")) {
+                /*if (uri.startsWith("http://hal.") || ) {
                     for (int i = 0; i < indent + 1; i++) {
                         tei.append("\t");
                     }
                     tei.append("<idno type=\"HALid\">" + TextUtilities.HTMLEncode(uri) + "</idno>\n");
-                } else {
+                } else */
+                {
                     for (int i = 0; i < indent + 1; i++) {
                         tei.append("\t");
                     }
@@ -3191,7 +3229,7 @@ public class BiblioItem {
             }
 
             if (url != null) {
-                if (url.startsWith("http://hal.")) {
+                if (url.startsWith("http://hal.") || url.startsWith("https://hal.")) {
                     for (int i = 0; i < indent + 1; i++) {
                         tei.append("\t");
                     }
@@ -4117,6 +4155,7 @@ public class BiblioItem {
         destination.setPII(source.getPII());
         destination.setIstexId(source.getIstexId());
         destination.setArk(source.getArk());
+        destination.setHalId(source.getHalId());
     }
 
     /**
@@ -4140,6 +4179,8 @@ public class BiblioItem {
             bib.setIstexId(bibo.getIstexId());
         if (bibo.getArk() != null)
             bib.setArk(bibo.getArk());
+        if (bibo.getHalId() != null)
+            bib.setHalId(bibo.getHalId());
 
         if (bibo.getOAURL() != null)
             bib.setOAURL(bibo.getOAURL());
@@ -4243,6 +4284,8 @@ public class BiblioItem {
             bib.setISBN10(bibo.getISBN10());
         if (bibo.getISBN13() != null)
             bib.setISBN13(bibo.getISBN13());
+        if (bibo.getHalId() != null)
+            bib.setHalId(bibo.getHalId());
 
         if (bibo.getItem() != -1) {
             bib.setItem(bibo.getItem());
@@ -4361,7 +4404,7 @@ public class BiblioItem {
 		if (fullAuthors == null && collaboration == null) 
 			authorSet = false;
 		// normally properties authors and authorList are null in the current Grobid version
-		if (!titleSet && !authorSet && (url == null) && (doi == null))
+		if (!titleSet && !authorSet && url == null && doi == null && halId ==null)
 			return true;
 		else
 			return false;
@@ -4488,5 +4531,29 @@ public class BiblioItem {
 
     public CopyrightsLicense getCopyrightsLicense() {
         return this.copyrightsLicense;
+    }
+
+    public List<String> getDiscardedPieces() {
+        return discardedPieces;
+    }
+
+    public void setDiscardedPieces(List<String> discardedPieces) {
+        this.discardedPieces = discardedPieces;
+    }
+
+    public void addDiscardedPiece(String piece) {
+        this.discardedPieces.add(piece);
+    }
+
+    public List<List<LayoutToken>> getDiscardedPiecesTokens() {
+        return discardedPiecesTokens;
+    }
+
+    public void setDiscardedPiecesTokens(List<List<LayoutToken>> discardedPiecesTokens) {
+        this.discardedPiecesTokens = discardedPiecesTokens;
+    }
+
+    public void addDiscardedPieceTokens(List<LayoutToken> pieceToken) {
+        this.discardedPiecesTokens.add(pieceToken);
     }
 }

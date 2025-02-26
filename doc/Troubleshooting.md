@@ -19,7 +19,7 @@ Following are the configuration used to process with `processFulltextDocument` a
 
 - in the query, consolidateHeader can be `1` or `2` if you are using the consolidation. It significantly improves the accuracy and add useful metadata.
 
-- ff you want to consolidate all the bibliographical references and use `consolidateCitations` as `1` or `2`, CrossRef query rate limit will avoid scaling to more than 1 document per second (and likely less in practice)... For scaling the bibliographical reference resolution, you will need to use a [local consolidation service](https://github.com/kermitt2/biblio-glutton). The overall capacity will depend on the biblio-glutton service then, and the number of elasticsearch nodes you can exploit. From experience, it is difficult to go beyond 300K PDF per day when using consolidation for every extracted bibliographical references with one biblio-glutton instance.
+- if you want to consolidate all the bibliographical references and use `consolidateCitations` as `1` or `2`, CrossRef query rate limit will avoid scaling to more than 1 document per second (and likely less in practice)... For scaling the bibliographical reference resolution, you will need to use a [local consolidation service](https://github.com/kermitt2/biblio-glutton). The overall capacity will depend on the biblio-glutton service then, and the number of elasticsearch nodes you can exploit. From experience, it is difficult to go beyond 300K PDF per day when using consolidation for every extracted bibliographical references with one biblio-glutton instance.
 
 See [full thread](https://github.com/kermitt2/grobid/issues/443).
 

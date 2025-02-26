@@ -59,6 +59,9 @@ public class GrobidAnalysisConfig {
     // if the raw copyrights/license string should be included in the parsed results
     private boolean includeRawCopyrights = false;
 
+    //if the text marked as <other> in fulltext and header should be retained
+    private boolean includeDiscardedText = false;
+
     /// === TEI-specific settings ==
 
     // if true, generate random attribute id on the textual elements of
@@ -89,6 +92,14 @@ public class GrobidAnalysisConfig {
 
     // if true, the TEI text will be segmented into sentences 
     private boolean withSentenceSegmentation = false;
+
+    public boolean isIncludeDiscardedText() {
+        return includeDiscardedText;
+    }
+
+    public void setIncludeDiscardedText(boolean includeDiscardedText) {
+        this.includeDiscardedText = includeDiscardedText;
+    }
 
     // BUILDER
 
@@ -136,6 +147,11 @@ public class GrobidAnalysisConfig {
 
         public GrobidAnalysisConfigBuilder includeRawCopyrights(boolean rawCopyrights) {
             config.includeRawCopyrights = rawCopyrights;
+            return this;
+        }
+
+        public GrobidAnalysisConfigBuilder includeDiscardedText(boolean includeDiscardedText) {
+            config.includeDiscardedText = includeDiscardedText;
             return this;
         }
 
