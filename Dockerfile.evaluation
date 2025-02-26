@@ -11,7 +11,7 @@ ENV LANG C.UTF-8
 USER root
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install unzip wget
+    apt-get -y --no-install-recommends install unzip wget git git-lfs
 
 WORKDIR /opt/grobid
 
