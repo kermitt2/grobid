@@ -1286,12 +1286,16 @@ public class BiblioItem {
         institution = StringUtils.normalizeSpace(inst);
     }
 
-    public void setNote(String not) {
+    public void setNoteOrConcatenateIfNotEmpty(String note) {
         if (StringUtils.isBlank(this.note)) {
-            note = StringUtils.normalizeSpace(not);
+            this.note = StringUtils.normalizeSpace(note);
         } else {
-            note += " " + StringUtils.normalizeSpace(not);
+            this.note += " " + StringUtils.normalizeSpace(note);
         }
+    }
+
+    public void setNote(String not) {
+        note = StringUtils.normalizeSpace(not);
     }
 
     public void setAffiliation(String a) {

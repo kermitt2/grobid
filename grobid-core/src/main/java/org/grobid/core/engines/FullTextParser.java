@@ -286,35 +286,6 @@ public class FullTextParser extends AbstractParser {
                 //Correct subsequent I-<figure> or I-<table>
                 bodyResults = LabelUtils.postProcessFulltextFixInvalidTableOrFigure(bodyResults);
 
-                if (flavor != null) {
-                    // To avoid loosing potential data, we add in the body also the part of the header
-                    // that was discarded.
-
-                    String resultHeader = resHeader.getDiscardedPiecesTokens()
-                        .stream()
-                        .flatMap(ll -> ll.stream()
-                            .filter(l -> StringUtils.isNotBlank(l.getText()))
-                            .map(l -> l.getText() + "\t" + PARAGRAPH_LABEL)
-                        )
-                        .collect(Collectors.joining("\n"));
-
-                    List<LayoutToken> tokensHeader = resHeader.getDiscardedPiecesTokens()
-                        .stream()
-                        .flatMap(Collection::stream)
-                        .collect(Collectors.toList());
-
-                    // Add I- prefix on the first label of the discarded pieces from the header
-                    String[] resultHeaderAsArray = resultHeader.split("\n");
-                    resultHeaderAsArray[0] = resultHeaderAsArray[0].replace(PARAGRAPH_LABEL, "I-" + PARAGRAPH_LABEL);
-                    resultHeader = String.join("\n", resultHeaderAsArray);
-
-                    bodyResults = StringUtils.strip(resultHeader + "\n" + bodyResults);
-                    List<LayoutToken> concatenatedTokenization = Stream
-                        .concat(tokensHeader.stream(), bodyLayoutTokens.getTokenization().stream())
-                        .collect(Collectors.toList());
-                    bodyLayoutTokens.setTokenization(concatenatedTokenization);
-                }
-
                 // we apply now the figure and table models based on the fulltext labeled output
 				figures = processFigures(bodyResults, bodyLayoutTokens.getTokenization(), doc);
                 // further parse the caption

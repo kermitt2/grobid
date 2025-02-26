@@ -2005,8 +2005,15 @@ public class TEIFormatter {
         List<OffsetPosition> offsetPositionsUrls = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(curParagraphTokens, annotations, text);
         forbiddenPositions.addAll(offsetPositionsUrls);
 
-        List<OffsetPosition> theSentences = 
-            SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions, curParagraphTokens, new Language(lang));
+        Language language = new Language("en");
+        if (lang != null) {
+            language = new Language(lang);
+        } else {
+            LOGGER.warn("There wasn't enough usable text to detect the language. Defaulting to English (en) for applying sentence segmentation. ");
+        }
+
+        List<OffsetPosition> theSentences =
+            SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions, curParagraphTokens, language);
     
         /*if (theSentences.size() == 0) {
             // this should normally not happen, but it happens (depending on sentence splitter, usually the text 
