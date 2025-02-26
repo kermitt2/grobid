@@ -1,4 +1,4 @@
-name: Build and push a full docker image
+name: Build and push the Grobid ent to end evaluation docker image
 
 on:
   workflow_dispatch:
