@@ -271,7 +271,8 @@ grobid:
           batch_size: 50
 
     - name: "patent-citation"
-      engine: "wapiti"
+      #engine: "wapiti"
+      engine: "delft"
       wapiti:
         # wapiti training parameters, they will be used at training time only
         epsilon: 0.0001
