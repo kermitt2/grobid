@@ -5,8 +5,7 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
 public class GrobidModelsTest {
@@ -76,5 +75,13 @@ public class GrobidModelsTest {
 
         assertThat(GrobidModels.Flavor.fromLabel("3gpp"), is(nullValue()));
         assertThat(GrobidModels.Flavor.fromLabel("sdo/3gpp"), is(GrobidModels.Flavor._3GPP));
+    }
+
+    @Test
+    public void testGrobidFlavor_missing_shouldFallbackToStandardModel() throws Exception {
+        GrobidModel modelFlavor = GrobidModels.getModelFlavor(GrobidModels.DATE, GrobidModels.Flavor.IETF);
+        assertThat(modelFlavor.getFolderName(), is("date"));
+        assertThat(modelFlavor.getModelPath(), not(containsString("ietf")));
+        assertThat(modelFlavor.getModelPath(), endsWith("date/model.wapiti"));
     }
 }
