@@ -119,6 +119,14 @@ grobid:
         window: 50
         nbMaxIterations: 2000
 
+    - name: "segmentation-sdo-ietf"
+      engine: "wapiti"
+      wapiti:
+        # wapiti training parameters, they will be used at training time only
+        epsilon: 0.0000001
+        window: 50
+        nbMaxIterations: 2000
+
     - name: "fulltext"
       # at this time, must always be CRF wapiti, the input sequence size is too large for a Deep Learning implementation
       engine: "wapiti"
@@ -176,6 +184,14 @@ grobid:
       delft:
         architecture: "BidLSTM_ChainCRF_FEATURES"
         useELMo: false
+
+    - name: "header-sdo-ietf"
+      engine: "wapiti"
+      wapiti:
+        # wapiti training parameters, they will be used at training time only
+        epsilon: 0.000001
+        window: 30
+        nbMaxIterations: 1500
 
     - name: "reference-segmenter"
       engine: "wapiti"
