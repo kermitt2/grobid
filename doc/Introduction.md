@@ -61,7 +61,7 @@ GROBID should run properly "out of the box" on Linux (64 bits) and macOS (Intel 
 
 The main author is Patrice Lopez (patrice.lopez@science-miner.com). 
 
-Core committers and maintenance: Patrice Lopez (science-miner) and Luca Foppiano (NIMS, Japan).
+Core committers and maintenance: Patrice Lopez (science-miner) and Luca Foppiano (ScienciaLAB).
 
 Many thanks to:
 
