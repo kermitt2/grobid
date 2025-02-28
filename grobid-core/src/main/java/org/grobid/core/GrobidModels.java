@@ -4,6 +4,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.GrobidProperties;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -166,8 +168,15 @@ public enum GrobidModels implements GrobidModel {
     public static GrobidModel getModelFlavor(GrobidModel model, Flavor flavor) {
         if (flavor == null) {
             return model;
-        } else
-            return modelFor(model.toString() + "/" + flavor.getLabel().toLowerCase());
+        } else {
+            GrobidModel grobidModel = modelFor(model.toString() + "/" + flavor.getLabel().toLowerCase());
+            if (!Files.exists(Paths.get(grobidModel.getModelPath()))) {
+                LOGGER.info("The requested model flavor " + flavor.getLabel() + " model is not available. Defaulting to the standard model. ");
+                return model;
+            } else {
+                return grobidModel;
+            }
+        }
     }
 
     public static GrobidModel modelFor(final String name) {
