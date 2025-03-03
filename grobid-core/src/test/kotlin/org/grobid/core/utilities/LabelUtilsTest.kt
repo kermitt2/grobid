@@ -283,6 +283,178 @@ class LabelUtilsTest {
 
     }
 
+    @Test
+    fun testPostProcessFulltextCorrectSequencesWithoutInitialToken_shouldChangeAbstractLabelInAvailabilityLabel() {
+        val resultHeader = "Data\tdata\tD\tDa\tDat\tData\ta\tta\tata\tData\tBLOCKSTART\tLINESTART\tALIGNEDLEFT\tNEWFONT\tSAMEFONTSIZE\t1\t0\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<other>\n" +
+            "Availability\tavailability\tA\tAv\tAva\tAvai\ty\tty\tity\tlity\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t1\t0\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<other>\n" +
+            "Statement\tstatement\tS\tSt\tSta\tStat\tt\tnt\tent\tment\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t1\t0\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<other>\n" +
+            ":\t:\t:\t:\t:\t:\t:\t:\t:\t:\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t1\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tPUNCT\t0\t0\t1\t0\t<other>\n" +
+            "The\tthe\tT\tTh\tThe\tThe\te\the\tThe\tThe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tNEWFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\tI-<availability>\n" +
+            "raw\traw\tr\tra\traw\traw\tw\taw\traw\traw\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "sequencing\tsequencing\ts\tse\tseq\tsequ\tg\tng\ting\tcing\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "reads\treads\tr\tre\trea\tread\ts\tds\tads\teads\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "for\tfor\tf\tfo\tfor\tfor\tr\tor\tfor\tfor\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "metagenomic\tmetagenomic\tm\tme\tmet\tmeta\tc\tic\tmic\tomic\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "samples\tsamples\ts\tsa\tsam\tsamp\ts\tes\tles\tples\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t1\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "used\tused\tu\tus\tuse\tused\td\ted\tsed\tused\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "in\tin\ti\tin\tin\tin\tn\tin\tin\tin\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t1\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "this\tthis\tt\tth\tthi\tthis\ts\tis\this\tthis\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "study\tstudy\ts\tst\tstu\tstud\ty\tdy\tudy\ttudy\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "were\twere\tw\twe\twer\twere\te\tre\tere\twere\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "downloaded\tdownloaded\td\tdo\tdow\tdown\td\ted\tded\taded\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "from\tfrom\tf\tfr\tfro\tfrom\tm\tom\trom\tfrom\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "public\tpublic\tp\tpu\tpub\tpubl\tc\tic\tlic\tblic\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "repositories\trepositories\tr\tre\trep\trepo\ts\tes\ties\tries\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "listed\tlisted\tl\tli\tlis\tlist\td\ted\tted\tsted\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "in\tin\ti\tin\tin\tin\tn\tin\tin\tin\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t1\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "following\tfollowing\tf\tfo\tfol\tfoll\tg\tng\ting\twing\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "publications\tpublications\tp\tpu\tpub\tpubl\ts\tns\tons\tions\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            ":\t:\t:\t:\t:\t:\t:\t:\t:\t:\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "1038\t1038\t1\t10\t103\t1038\t8\t38\t038\t1038\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t1\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "/\t/\t/\t/\t/\t/\t/\t/\t/\t/\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "nature11209\tnature11209\tn\tna\tnat\tnatu\t9\t09\t209\t1209\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tCONTAINSDIGITS\t0\t0\t0\t1\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tCOMMA\t0\t0\t1\t0\t<abstract>\n" +
+            "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "1038\t1038\t1\t10\t103\t1038\t8\t38\t038\t1038\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t1\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "/\t/\t/\t/\t/\t/\t/\t/\t/\t/\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "nature11450\tnature11450\tn\tna\tnat\tnatu\t0\t50\t450\t1450\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tCONTAINSDIGITS\t0\t0\t0\t1\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tCOMMA\t0\t0\t1\t0\t<abstract>\n" +
+            "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "1016\t1016\t1\t10\t101\t1016\t6\t16\t016\t1016\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t1\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "/\t/\t/\t/\t/\t/\t/\t/\t/\t/\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "j\tj\tj\tj\tj\tj\tj\tj\tj\tj\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t1\t0\t0\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "cels\tcels\tc\tce\tcel\tcels\ts\tls\tels\tcels\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "2016\t2016\t2\t20\t201\t2016\t6\t16\t016\t2016\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t1\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "004\t004\t0\t00\t004\t004\t4\t04\t004\t004\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tCOMMA\t0\t0\t1\t0\t<abstract>\n" +
+            "and\tand\ta\tan\tand\tand\td\tnd\tand\tand\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "1101\t1101\t1\t11\t110\t1101\t1\t01\t101\t1101\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t1\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "/\t/\t/\t/\t/\t/\t/\t/\t/\t/\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "gr\tgr\tg\tgr\tgr\tgr\tr\tgr\tgr\tgr\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "233940\t233940\t2\t23\t233\t2339\t0\t40\t940\t3940\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t1\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "117\t117\t1\t11\t117\t117\t7\t17\t117\t117\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "Data\tdata\tD\tDa\tDat\tData\ta\tta\tata\tData\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "underlying\tunderlying\tu\tun\tund\tunde\tg\tng\ting\tying\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "all\tall\ta\tal\tall\tall\tl\tll\tall\tall\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "figures\tfigures\tf\tfi\tfig\tfigu\ts\tes\tres\tures\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tCOMMA\t0\t0\t1\t0\t<abstract>\n" +
+            "such\tsuch\ts\tsu\tsuc\tsuch\th\tch\tuch\tsuch\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "as\tas\ta\tas\tas\tas\ts\tas\tas\tas\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "numerical\tnumerical\tn\tnu\tnum\tnume\tl\tal\tcal\tical\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "values\tvalues\tv\tva\tval\tvalu\ts\tes\tues\tlues\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "of\tof\to\tof\tof\tof\tf\tof\tof\tof\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "bar\tbar\tb\tba\tbar\tbar\tr\tar\tbar\tbar\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "plots\tplots\tp\tpl\tplo\tplot\ts\tts\tots\tlots\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tCOMMA\t0\t0\t1\t0\t<abstract>\n" +
+            "can\tcan\tc\tca\tcan\tcan\tn\tan\tcan\tcan\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "be\tbe\tb\tbe\tbe\tbe\te\tbe\tbe\tbe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "found\tfound\tf\tfo\tfou\tfoun\td\tnd\tund\tound\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "in\tin\ti\tin\tin\tin\tn\tin\tin\tin\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t1\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "5281\t5281\t5\t52\t528\t5281\t1\t81\t281\t5281\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "/\t/\t/\t/\t/\t/\t/\t/\t/\t/\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "zenodo\tzenodo\tz\tze\tzen\tzeno\to\tdo\todo\tnodo\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "10304481\t10304481\t1\t10\t103\t1030\t1\t81\t481\t4481\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t1\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "All\tall\tA\tAl\tAll\tAll\tl\tll\tAll\tAll\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "other\tother\to\tot\toth\tothe\tr\ter\ther\tther\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "metadata\tmetadata\tm\tme\tmet\tmeta\ta\tta\tata\tdata\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tCOMMA\t0\t0\t1\t0\t<abstract>\n" +
+            "as\tas\ta\tas\tas\tas\ts\tas\tas\tas\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "well\twell\tw\twe\twel\twell\tl\tll\tell\twell\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "as\tas\ta\tas\tas\tas\ts\tas\tas\tas\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "source\tsource\ts\tso\tsou\tsour\te\tce\trce\turce\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "code\tcode\tc\tco\tcod\tcode\te\tde\tode\tcode\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "for\tfor\tf\tfo\tfor\tfor\tr\tor\tfor\tfor\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "sequencing\tsequencing\ts\tse\tseq\tsequ\tg\tng\ting\tcing\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "pipeline\tpipeline\tp\tpi\tpip\tpipe\te\tne\tine\tline\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tCOMMA\t0\t0\t1\t0\t<abstract>\n" +
+            "downstream\tdownstream\td\tdo\tdow\tdown\tm\tam\team\tream\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "analyses\tanalyses\ta\tan\tana\tanal\ts\tes\tses\tyses\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tCOMMA\t0\t0\t1\t0\t<abstract>\n" +
+            "and\tand\ta\tan\tand\tand\td\tnd\tand\tand\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "figure\tfigure\tf\tfi\tfig\tfigu\te\tre\ture\tgure\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "generation\tgeneration\tg\tge\tgen\tgene\tn\ton\tion\ttion\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "are\tare\ta\tar\tare\tare\te\tre\tare\tare\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "available\tavailable\ta\tav\tava\tavai\te\tle\tble\table\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "at\tat\ta\tat\tat\tat\tt\tat\tat\tat\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "Zenodo\tzenodo\tZ\tZe\tZen\tZeno\to\tdo\todo\tnodo\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            "(\t(\t(\t(\t(\t(\t(\t(\t(\t(\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tOPENBRACKET\t0\t0\t1\t0\t<abstract>\n" +
+            "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<abstract>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<abstract>\n" +
+            "5281\t5281\t5\t52\t528\t5281\t1\t81\t281\t5281\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "/\t/\t/\t/\t/\t/\t/\t/\t/\t/\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "zenodo\tzenodo\tz\tze\tzen\tzeno\to\tdo\todo\tnodo\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<availability>\n" +
+            "10368227\t10368227\t1\t10\t103\t1036\t7\t27\t227\t8227\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t0\t0\t0\t1\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            ")\t)\t)\t)\t)\t)\t)\t)\t)\t)\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tENDBRACKET\t0\t0\t1\t0\t<availability>\n" +
+            "or\tor\to\tor\tor\tor\tr\tor\tor\tor\tBLOCKEND\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "GitHub\tgithub\tG\tGi\tGit\tGitH\tb\tub\tHub\ttHub\tBLOCKSTART\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "(\t(\t(\t(\t(\t(\t(\t(\t(\t(\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tOPENBRACKET\t0\t0\t1\t0\t<availability>\n" +
+            "https\thttps\th\tht\thtt\thttp\ts\tps\ttps\tttps\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t1\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            ":\t:\t:\t:\t:\t:\t:\t:\t:\t:\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t1\tPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "/\t/\t/\t/\t/\t/\t/\t/\t/\t/\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t1\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "/\t/\t/\t/\t/\t/\t/\t/\t/\t/\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t1\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "github\tgithub\tg\tgi\tgit\tgith\tb\tub\thub\tthub\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t1\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t1\tDOT\t0\t0\t1\t0\t<availability>\n" +
+            "com\tcom\tc\tco\tcom\tcom\tm\tom\tcom\tcom\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t1\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "/\t/\t/\t/\t/\t/\t/\t/\t/\t/\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t1\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "zhiru\tzhiru\tz\tzh\tzhi\tzhir\tu\tru\tiru\thiru\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t1\tNOPUNCT\t0\t0\t1\t0\t<availability>\n" +
+            "-\t-\t-\t-\t-\t-\t-\t-\t-\t-\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t1\tHYPHEN\t0\t0\t1\t0\t<copyright>\n" +
+            "liu\tliu\tl\tli\tliu\tliu\tu\tiu\tliu\tliu\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t1\t0\t0\t0\t0\t0\t1\tNOPUNCT\t0\t0\t1\t0\t<copyright>\n" +
+            "/\t/\t/\t/\t/\t/\t/\t/\t/\t/\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t1\tNOPUNCT\t0\t0\t1\t0\t<copyright>\n" +
+            "microbiome_\tmicrobiome_\tm\tmi\tmic\tmicr\t_\te_\tme_\tome_\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t0\t0\t0\t0\t0\t1\tNOPUNCT\t0\t0\t1\t0\t<copyright>\n" +
+            "evolution\tevolution\te\tev\tevo\tevol\tn\ton\tion\ttion\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<copyright>\n" +
+            ")\t)\t)\t)\t)\t)\t)\t)\t)\t)\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tENDBRACKET\t0\t0\t1\t0\t<copyright>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKEND\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tDOT\t0\t0\t1\t0\t<copyright>\n" +
+            "Funding\tfunding\tF\tFu\tFun\tFund\tg\tng\ting\tding\tBLOCKSTART\tLINESTART\tALIGNEDLEFT\tNEWFONT\tSAMEFONTSIZE\t1\t0\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<other>\n" +
+            ":\t:\t:\t:\t:\t:\t:\t:\t:\t:\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t1\t0\tALLCAP\tNODIGIT\t1\t0\t0\t0\t0\t0\t0\t0\tPUNCT\t0\t0\t1\t0\t<other>\n" +
+            "This\tthis\tT\tTh\tThi\tThis\ts\tis\this\tThis\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tNEWFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\tI-<funding>\n" +
+            "work\twork\tw\two\twor\twork\tk\trk\tork\twork\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<funding>\n" +
+            "was\twas\tw\twa\twas\twas\ts\tas\twas\twas\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<funding>\n" +
+            "supported\tsupported\ts\tsu\tsup\tsupp\td\ted\tted\trted\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t0\t0\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<funding>\n" +
+            "in\tin\ti\tin\tin\tin\tn\tin\tin\tin\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\t1\t1\t0\t0\t1\t0\t0\tNOPUNCT\t0\t0\t1\t0\t<funding>"
+        val postprocessed = LabelUtils.postProcessFulltextCorrectSequencesWithoutInitialToken(resultHeader)
+
+        assertThat(
+            Arrays.stream(StringUtils.split(postprocessed, "\n"))
+                .filter { l -> l.endsWith("<abstract>") }
+                .count(), `is`(0L)
+        )
+        assertThat(
+            Arrays.stream(StringUtils.split(postprocessed, "\n"))
+                .filter { l -> l.endsWith("<copyright>") }
+                .count(), `is`(0L)
+        )
+
+        assertThat(
+            Arrays.stream(StringUtils.split(postprocessed, "\n"))
+                .filter { l -> l.endsWith("<availability>") }
+                .count(), `is`(139)
+        )
+    }
+
 
     companion object {
         @JvmStatic
