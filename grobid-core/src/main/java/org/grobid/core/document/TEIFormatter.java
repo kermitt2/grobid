@@ -846,7 +846,7 @@ public class TEIFormatter {
             }
 
 
-            if (CollectionUtils.isNotEmpty(biblio.getDiscardedPiecesTokens()) || CollectionUtils.isNotEmpty(discardedTextElsewhere)) {
+            if (config.isIncludeDiscardedText() && (CollectionUtils.isNotEmpty(biblio.getDiscardedPiecesTokens()) || CollectionUtils.isNotEmpty(discardedTextElsewhere))) {
                 tei.append("\t\t\t<notesStmt>\n");
                 for (List<LayoutToken> discardedPieceTokens : biblio.getDiscardedPiecesTokens()) {
                     tei.append(generateDiscardedTextNote(discardedPieceTokens, config));
