@@ -316,7 +316,9 @@ public class FullTextParser extends AbstractParser {
                     .filter(f -> !f.isCompleteForTEI())
                     .collect(Collectors.toList());
 
-                LOGGER.info("Number of figures badly formatted or incomplete we identified: " + badFigures.size());
+                if (CollectionUtils.isNotEmpty(badFigures)) {
+                    LOGGER.info("Number of figures badly formatted or incomplete we identified: " + badFigures.size());
+                }
                 bodyResults = revertResultsForBadItems(badFigures, bodyResults, !(figures.size() > numberFiguresFulltextModel));
 
                 figures = figures.stream()
@@ -338,7 +340,9 @@ public class FullTextParser extends AbstractParser {
                     .filter(t -> !(t.isCompleteForTEI() && t.validateTable()))
                     .collect(Collectors.toList());
 
-                LOGGER.info("Number of tables badly formatted or incomplete we identified: " + badTables.size());
+                if (CollectionUtils.isNotEmpty(badFigures)) {
+                    LOGGER.info("Number of tables badly formatted or incomplete we identified: " + badTables.size());
+                }
                 bodyResults = revertResultsForBadItems(badTables, bodyResults, !(tables.size() > numberTablesFulltextModel));
 
                 tables = tables.stream()
@@ -438,7 +442,7 @@ public class FullTextParser extends AbstractParser {
                 List<Integer> candidateIndexes = findCandidateIndex(layoutTokenItem, labelledResultsAsList,
                     itemLabel, strict);
                 if (candidateIndexes.isEmpty()) {
-                    LOGGER.info("Cannot find the candidate index for fixing the tables.");
+                    LOGGER.info("Cannot find the candidate index for fixing the figures/tables. Tokens: " + LayoutTokensUtil.toText(layoutTokenItem));
                     continue;
                 }
 
@@ -470,7 +474,7 @@ public class FullTextParser extends AbstractParser {
                         line.set(line.size() - 1, label.replace(itemLabel, TaggingLabels.PARAGRAPH_LABEL));
                     }
                 } else {
-                    LOGGER.warn("Cannot find the result index candidate.");
+                    LOGGER.warn("Cannot find the result index candidate for fixing the figure/table. Tokens: " + LayoutTokensUtil.toText(layoutTokenItem));
                 }
             }
 
@@ -498,7 +502,7 @@ public class FullTextParser extends AbstractParser {
                 // Find the index of the first layoutToken of the table in the tokenization
                 List<Integer> candidateIndexes = findCandidateIndex(tokens, labelledResultsAsList, itemLabel, strict);
                 if (candidateIndexes.isEmpty()) {
-                    LOGGER.info("Cannot find the candidate index for fixing the results.");
+                    LOGGER.info("Cannot find the candidate index for fixing the results. Tokens: " + LayoutTokensUtil.toText(tokens));
                     continue;
                 }
 
@@ -534,7 +538,7 @@ public class FullTextParser extends AbstractParser {
                         line.set(line.size() - 1, label.replace(itemLabel, TaggingLabels.PARAGRAPH_LABEL));
                     }
                 } else {
-                    LOGGER.warn("Cannot find the result index candidate.");
+                    LOGGER.warn("Cannot find the result index candidate for fixing the results. Tokens " + LayoutTokensUtil.toText(tokens));
                 }
             }
 
