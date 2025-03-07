@@ -3,11 +3,16 @@ name: Build and push the Grobid end to end evaluation docker image
 on:
   workflow_dispatch:
     inputs:
+#      input_tag:
+#        type: string
+#        description: Tag of the docker image to evaluate
+#        required: true
+#        default: "latest-full"
       custom_tag:
         type: string
         description: Docker image tag
         required: true
-        default: "latest"
+        default: "latest-evaluation-full"
 
 jobs:
   build:
