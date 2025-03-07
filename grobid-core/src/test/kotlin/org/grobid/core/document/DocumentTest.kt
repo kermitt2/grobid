@@ -95,7 +95,7 @@ class DocumentTest {
 
         val output = doc.getFigureLayoutTokens(figure)
 
-        assertThat(LayoutTokensUtil.toText(output), `is`("Figure 1: This is a caption."))
+        assertThat(LayoutTokensUtil.toText(output.left), `is`("Figure 1: This is a caption."))
     }
 
     @Test
@@ -144,7 +144,7 @@ class DocumentTest {
 
         val output = doc.getFigureLayoutTokens(figure)
 
-        assertThat(LayoutTokensUtil.toText(output), `is`("Figure 1: This is a caption.\nd\nand a paragraph we want to keep or revert back into the fulltext.\n"))
+        assertThat(LayoutTokensUtil.toText(output.left), `is`("Figure 1: This is a caption.\nd\nand a paragraph we want to keep or revert back into the fulltext.\n"))
     }
 
     companion object {
