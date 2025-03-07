@@ -457,7 +457,7 @@ public class Figure {
             figureElement.appendChild(desc);
         }
 
-        if (CollectionUtils.isNotEmpty(discardedPiecesTokens)) {
+        if (config.isIncludeDiscardedText() && CollectionUtils.isNotEmpty(discardedPiecesTokens)) {
             for (List<LayoutToken> discardedPieceTokens : discardedPiecesTokens) {
                 Element note = XmlBuilderUtils.teiElement("note");
                 note.addAttribute(new Attribute("type", "other"));
