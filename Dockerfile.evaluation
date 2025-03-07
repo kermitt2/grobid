@@ -48,7 +48,7 @@ VOLUME ["/opt/grobid/grobid-home/tmp"]
 
 WORKDIR /opt/grobid
 
-CMD ["/bin/bash", "-c", "./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/PMC_sample_1943 -Prun=1 -PfileRatio=1; ./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/biorxiv-10k-test-2000 -Prun=1 -PfileRatio=1; ./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/eLife_984 -Prun=1 -PfileRatio=1; ./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/PLOS_1000 -Prun=1 -PfileRatio=1;"]
+#CMD ["/bin/bash", "-c", "./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/PMC_sample_1943 -Prun=1 -PfileRatio=1; ./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/biorxiv-10k-test-2000 -Prun=1 -PfileRatio=1; ./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/eLife_984 -Prun=1 -PfileRatio=1; ./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/PLOS_1000 -Prun=1 -PfileRatio=1;"]
 #CMD ["/bin/bash", "-c", "./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/PMC_sample_1943 -Prun=1 -PfileRatio=1;"]
 
 LABEL \
