@@ -12,7 +12,7 @@ on:
         type: string
         description: Docker image tag
         required: true
-        default: "latest-evaluation-full"
+        default: "latest"
 
 jobs:
   build:
