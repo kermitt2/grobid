@@ -500,7 +500,8 @@ public class FullTextParser extends AbstractParser {
 
             for (List<LayoutToken> tokens: layoutTokenPieces) {
                 // Find the index of the first layoutToken of the table in the tokenization
-                List<Integer> candidateIndexes = findCandidateIndex(tokens, labelledResultsAsList, itemLabel, strict);
+                // False because we might have random sequences of tokens within the figures
+                List<Integer> candidateIndexes = findCandidateIndex(tokens, labelledResultsAsList, itemLabel, false);
                 if (candidateIndexes.isEmpty()) {
                     LOGGER.info("Cannot find the candidate index for fixing the results. Tokens: " + LayoutTokensUtil.toText(tokens));
                     continue;
