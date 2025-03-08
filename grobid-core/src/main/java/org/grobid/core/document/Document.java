@@ -1287,6 +1287,7 @@ public class Document implements Serializable {
                 || norm.startsWith("quadro")
                 || norm.startsWith("wykres")
                 || norm.startsWith("fuente")
+                || norm.startsWith("video")
             ) {
                 result.addAll(figBlock.getTokens());
 
