@@ -287,7 +287,7 @@ public class FullTextParser extends AbstractParser {
 
                     if (nbDifferences > 0) {
                         // In this case we assume they are figures
-                        String updatedBodyResult = revertDiscardedTokensInMainResults(difference, bodyResults, true);
+                        String updatedBodyResult = revertDiscardedTokensInMainResults(difference, bodyResults);
                         bodyResults = updatedBodyResult;
                     }
                 }
@@ -487,11 +487,11 @@ public class FullTextParser extends AbstractParser {
         return resultBody;
     }
 
-    static String revertDiscardedTokensInMainResults(List<List<LayoutToken>> layoutTokenPieces, String resultBody, boolean strict) {
-        return revertDiscardedTokensInMainResults(layoutTokenPieces, resultBody, FIGURE_LABEL, strict);
+    static String revertDiscardedTokensInMainResults(List<List<LayoutToken>> layoutTokenPieces, String resultBody) {
+        return revertDiscardedTokensInMainResults(layoutTokenPieces, resultBody, FIGURE_LABEL);
     }
 
-    static String revertDiscardedTokensInMainResults(List<List<LayoutToken>> layoutTokenPieces, String resultBody, String itemLabel, boolean strict) {
+    static String revertDiscardedTokensInMainResults(List<List<LayoutToken>> layoutTokenPieces, String resultBody, String itemLabel) {
         //LF: we update the resultBody sequence by reverting the tokens as <paragraph> elements
         if (CollectionUtils.isNotEmpty(layoutTokenPieces)) {
             List<List<String>> labelledResultsAsList = Arrays.stream(resultBody.split("\n"))
@@ -596,13 +596,14 @@ public class FullTextParser extends AbstractParser {
     static List<Integer> findCandidateIndex(List<LayoutToken> layoutTokenItem, List<List<String>> labelledResultsAsList, String itemLabel, boolean strict) {
         LayoutToken firstLayoutTokenItem = layoutTokenItem.get(0);
 
-        List<Integer> candidateIndexes = IntStream.range(0, labelledResultsAsList.size())
-            .filter(i -> labelledResultsAsList.get(i).get(0).equals(firstLayoutTokenItem.getText())
-                && Iterables.getLast(labelledResultsAsList.get(i)).equals("I-" + itemLabel))
-            .boxed()
-            .collect(Collectors.toList());
-
-        if (candidateIndexes.isEmpty() || !strict) {
+        List<Integer> candidateIndexes = new ArrayList<>();
+        if (strict) {
+             candidateIndexes = IntStream.range(0, labelledResultsAsList.size())
+                .filter(i -> labelledResultsAsList.get(i).get(0).equals(firstLayoutTokenItem.getText())
+                    && Iterables.getLast(labelledResultsAsList.get(i)).equals("I-" + itemLabel))
+                .boxed()
+                .collect(Collectors.toList());
+        } else {
             candidateIndexes = IntStream.range(0, labelledResultsAsList.size())
             .filter(i -> labelledResultsAsList.get(i).get(0).equals(firstLayoutTokenItem.getText())
                 && (

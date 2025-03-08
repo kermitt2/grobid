@@ -632,7 +632,7 @@ class FullTextParserTest {
 
         val discardedElements = tokens.subList(62, 71)
 
-        val output = FullTextParser.revertDiscardedTokensInMainResults(listOf(discardedElements), wapitiResults, true)
+        val output = FullTextParser.revertDiscardedTokensInMainResults(listOf(discardedElements), wapitiResults)
 
         val wapitiResultsAsList = convertResultsToList(output)
 
