@@ -846,14 +846,14 @@ public class TEIFormatter {
             }
 
 
-            if (config.isIncludeDiscardedText() && (CollectionUtils.isNotEmpty(biblio.getDiscardedPiecesTokens()) || CollectionUtils.isNotEmpty(discardedTextElsewhere))) {
+            if (CollectionUtils.isNotEmpty(biblio.getDiscardedPiecesTokens()) || CollectionUtils.isNotEmpty(discardedTextElsewhere)) {
                 tei.append("\t\t\t<notesStmt>\n");
                 for (List<LayoutToken> discardedPieceTokens : biblio.getDiscardedPiecesTokens()) {
-                    tei.append(generateDiscardedTextNote(discardedPieceTokens, config));
+                    tei.append(generateDiscardedTextNote(discardedPieceTokens, doc, this, config).toXML());
                 }
 
                 for (List<LayoutToken> discardedPieceTokens : discardedTextElsewhere) {
-                    tei.append(generateDiscardedTextNote(discardedPieceTokens, config));
+                    tei.append(generateDiscardedTextNote(discardedPieceTokens, doc, this, config).toXML());
                 }
 
                 tei.append("\t\t\t</notesStmt>\n");
@@ -1085,29 +1085,35 @@ public class TEIFormatter {
         return tei;
     }
 
-    private String generateDiscardedTextNote(List<LayoutToken> discardedPieceTokens, GrobidAnalysisConfig config) {
-        if (CollectionUtils.isEmpty(discardedPieceTokens)) {
-            return "";
-        }
+    public static Element generateDiscardedTextNote(List<LayoutToken> discardedPieceTokens, Document doc, TEIFormatter formatter, GrobidAnalysisConfig config) {
         LayoutToken first = Iterables.getFirst(discardedPieceTokens, null);
-        String place = first == null || CollectionUtils.isEmpty(first.getLabels())? "unknown" : first.getLabels().get(0).getGrobidModel().getModelName();
+        String place = first == null || CollectionUtils.isEmpty(first.getLabels()) ? "unknown" : first.getLabels().get(0).getGrobidModel().getModelName();
 
-        StringBuilder tei = new StringBuilder();
-        tei.append("\t\t\t\t<note type=\"other\" place=\"").append(place).append("\"");
+        Element note = XmlBuilderUtils.teiElement("note");
+        note.addAttribute(new Attribute("type", "other"));
+        note.addAttribute(new Attribute("place", place));
+        Element p = teiElement("p");
+        note.appendChild(p);
+
         if (config.isGenerateTeiIds()) {
             String divID = KeyGen.getKey().substring(0, 7);
-            tei.append(" xml:id=\"_").append(divID).append("\"");
+            addXmlId(note, "_" + divID);
+            divID = KeyGen.getKey().substring(0, 7);
+            addXmlId(p, "_" + divID);
+        }
+
+        p.appendChild(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(discardedPieceTokens)).trim());
+        if (config.isWithSentenceSegmentation()) {
+            // we need a sentence segmentation of the table caption
+            formatter.segmentIntoSentences(p, discardedPieceTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
         }
 
         if (config.isGenerateTeiCoordinates("note")) {
             String coords = LayoutTokensUtil.getCoordsString(discardedPieceTokens);
-            tei.append(" coords=\"").append(coords).append("\"");
+            note.addAttribute(new Attribute("coords", coords));
         }
 
-        // This text is not processed at the moment
-        tei.append(">").append(TextUtilities.HTMLEncode(normalizeText(LayoutTokensUtil.toText(discardedPieceTokens)))).append("</note>\n");
-
-        return tei.toString();
+        return note;
     }
 
 
