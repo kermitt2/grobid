@@ -8,8 +8,7 @@ import org.grobid.core.data.Table
 import org.grobid.core.document.Document
 import org.grobid.core.document.DocumentPiece
 import org.grobid.core.document.DocumentPointer
-import org.grobid.core.engines.label.TaggingLabels.FIGURE_LABEL
-import org.grobid.core.engines.label.TaggingLabels.TABLE_LABEL
+import org.grobid.core.engines.label.TaggingLabels.*
 import org.grobid.core.factory.GrobidFactory
 import org.grobid.core.layout.LayoutToken
 import org.grobid.core.main.LibraryLoader
@@ -401,8 +400,8 @@ class FullTextParserTest {
             "lines[0] fields",
             Arrays.asList(
                 *lines[0].split("\\s".toRegex())
-                .dropLastWhile { it.isEmpty() }
-                .toTypedArray()), `is`(Matchers.hasItem("BLOCKSTART"))
+                    .dropLastWhile { it.isEmpty() }
+                    .toTypedArray()), `is`(Matchers.hasItem("BLOCKSTART"))
         )
     }
 
@@ -478,20 +477,20 @@ class FullTextParserTest {
         val table1 = Table()
         table1.layoutTokens = tokens.subList(25, 61)
 
-        val output = FullTextParser.revertResultsForBadItems(Arrays.asList(table1), wapitiResults, TABLE_LABEL, true)
+        val output = FullTextParser.revertResultsForBadItems(listOf(table1), wapitiResults, true)
 
         val wapitiResultsAsList = convertResultsToList(output)
 
-        val tableCount = wapitiResultsAsList.stream()
+        val tablesCount = wapitiResultsAsList.stream()
             .filter { l: List<String> -> l[1] == "I-$TABLE_LABEL" }
             .count()
 
-        assertThat(tableCount, `is`(2))
+        assertThat(tablesCount, `is`(2))
     }
 
     @Test
-    fun testRevertResultsForBadItems_shouldRemoveOneFigures() {
-        var sequence = "This article solves the problem where some of our interaction are fauly. " +
+    fun testRevertResultsForBadItems_shouldLeaveOneFigures() {
+        val sequence = "This article solves the problem where some of our interaction are fauly. " +
             "a 8 9 j 92j 3 3j 9 j 9j Table 1: The reconstruction of the national anthem " +
             "We are interested in the relation between certain information and " +
             "a b b d 1 2 3 4 s 3 3 d9 Table 2: The relation between information and noise " +
@@ -499,7 +498,7 @@ class FullTextParserTest {
             "a b b d 1 2 3 4 5 6 7 Table 3: The relation between homicides and donuts eating " +
             "The relation between homicides and donuts eating is a very important one. "
 
-        var tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(sequence)
+        val tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(sequence)
 
         // These triples made in following way: label, starting index (included), ending index (excluded)
         val labels = listOf(
@@ -528,15 +527,128 @@ class FullTextParserTest {
         val badFigure2 = Figure()
         badFigure2.layoutTokens = tokens.subList(130, 171)
 
-        val output = FullTextParser.revertResultsForBadItems(Arrays.asList(badFigure1, badFigure2), wapitiResults, FIGURE_LABEL, true)
+        val output = FullTextParser.revertResultsForBadItems(listOf(badFigure1, badFigure2), wapitiResults, true)
 
         val wapitiResultsAsList = convertResultsToList(output)
 
-        val tableCount = wapitiResultsAsList.stream()
+        val figuresCount = wapitiResultsAsList.stream()
             .filter { l: List<String> -> l[1] == "I-$FIGURE_LABEL" }
             .count()
 
-        assertThat(tableCount, `is`(1))
+        val tablesCount = wapitiResultsAsList.stream()
+            .filter { l: List<String> -> l[1] == "I-$TABLE_LABEL" }
+            .count()
+
+        assertThat(figuresCount, `is`(1))
+        assertThat(tablesCount, `is`(0))
+    }
+
+    @Test
+    fun testRevertResultsForBadItems_mixedFiguresTables_shouldRemoveOneFiguresAndOneTable() {
+        val sequence = "This article solves the problem where some of our interaction are fauly. " +
+            "a 8 9 j 92j 3 3j 9 j 9j Table 1: The reconstruction of the national anthem " +
+            "We are interested in the relation between certain information and " +
+            "a b b d 1 2 3 4 s 3 3 d9 Table 2: The relation between information " +
+            "and noise the related affectionality. " +
+            "a b b d 1 2 3 4 5 6 7 Table 3: The relation between homicides and donuts eating " +
+            "The relation between homicides and donuts eating is a very important one. "
+
+        val tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(sequence)
+
+        // These triples made in following way: label, starting index (included), ending index (excluded)
+        val labels = listOf(
+            Triple.of("I-<paragraph>", 0, 1),
+            Triple.of("<paragraph>", 1, 24),
+            Triple.of("I-<figure>", 25, 26),
+            Triple.of("<figure>", 26, 61),
+            Triple.of("I-<paragraph>", 62, 63),
+            Triple.of("<paragraph>", 63, 81),
+            Triple.of("I-<table>", 82, 83),
+            Triple.of("<table>", 82, 118),
+            Triple.of("I-<paragraph>", 119, 120),
+            Triple.of("<paragraph>", 120, 129),
+            Triple.of("I-<figure>", 130, 131),
+            Triple.of("<figure>", 131, 171),
+            Triple.of("I-<paragraph>", 171, 172),
+            Triple.of("<paragraph>", 172, 195),
+        )
+
+        val features = tokens.stream().map { it.text }.collect(Collectors.toList())
+        val wapitiResults = GrobidTestUtils.getWapitiResult(features, labels, "\t")
+
+        val badTable1 = Table()
+        badTable1.layoutTokens = tokens.subList(82, 118)
+
+        val badFigure1 = Figure()
+        badFigure1.layoutTokens = tokens.subList(130, 171)
+
+        val output = FullTextParser.revertResultsForBadItems(listOf(badTable1, badFigure1), wapitiResults, true)
+
+        val wapitiResultsAsList = convertResultsToList(output)
+
+        val figuresCount = wapitiResultsAsList.stream()
+            .filter { l: List<String> -> l[1] == "I-$FIGURE_LABEL" }
+            .count()
+        val tablesCount = wapitiResultsAsList.stream()
+            .filter { l: List<String> -> l[1] == "I-$TABLE_LABEL" }
+            .count()
+
+        assertThat(figuresCount, `is`(1))
+        assertThat(tablesCount, `is`(0))
+    }
+
+    @Test
+    fun testRevertDiscardedTokensInMainResults_mixedFiguresTables_shouldRemoveOneFiguresAndOneTable() {
+        val sequence = "This article solves the problem where some of our interaction are fauly. " +
+            "a 8 9 j 92j 3 3j 9 j 9j Table 1: The reconstruction of the national anthem " +
+            "We are interested in the relation between certain information and " +
+            "a b b d 1 2 3 4 s 3 3 d9 Table 2: The relation between information " +
+            "and noise the related affectionality. " +
+            "a b b d 1 2 3 4 5 6 7 Table 3: The relation between homicides and donuts eating " +
+            "The relation between homicides and donuts eating is a very important one. "
+
+        val tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(sequence)
+
+        // These triples made in following way: label, starting index (included), ending index (excluded)
+        val labels = listOf(
+            Triple.of("I-<paragraph>", 0, 1),
+            Triple.of("<paragraph>", 1, 25),
+            Triple.of("I-<figure>", 25, 26),
+            Triple.of("<figure>", 26, 71),
+            Triple.of("I-<paragraph>", 71, 73),
+            Triple.of("<paragraph>", 73, 81),
+            Triple.of("I-<table>", 82, 83),
+            Triple.of("<table>", 83, 118),
+            Triple.of("I-<paragraph>", 119, 120),
+            Triple.of("<paragraph>", 120, 129),
+            Triple.of("I-<figure>", 130, 131),
+            Triple.of("<figure>", 131, 171),
+            Triple.of("I-<paragraph>", 171, 172),
+            Triple.of("<paragraph>", 172, 195),
+        )
+
+        val features = tokens.stream().map { it.text }.collect(Collectors.toList())
+        val wapitiResults = GrobidTestUtils.getWapitiResult(features, labels, "\t")
+
+        val discardedElements = tokens.subList(62, 71)
+
+        val output = FullTextParser.revertDiscardedTokensInMainResults(listOf(discardedElements), wapitiResults)
+
+        val wapitiResultsAsList = convertResultsToList(output)
+
+        val paragraphsCount = wapitiResultsAsList.stream()
+            .filter { l: List<String> -> l[1] == "I-$PARAGRAPH_LABEL" }
+            .count()
+        val figuresCount = wapitiResultsAsList.stream()
+            .filter { l: List<String> -> l[1] == "I-$FIGURE_LABEL" }
+            .count()
+        val tablesCount = wapitiResultsAsList.stream()
+            .filter { l: List<String> -> l[1] == "I-$TABLE_LABEL" }
+            .count()
+
+        assertThat(paragraphsCount, `is`(5))
+        assertThat(figuresCount, `is`(2))
+        assertThat(tablesCount, `is`(1))
     }
 
     private fun convertResultsToList(output: String): MutableList<List<String>> =
