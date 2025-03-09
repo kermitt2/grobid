@@ -1264,7 +1264,7 @@ public class Document implements Serializable {
     }
 
     /**
-     * This method assigns graphic objects to tables based on the proximity of the graphic object to the table caption.
+     * This method assigns graphic objects to figures based on the proximity of the graphic object to the figure caption.
      * In addition, it removes blocks of layout tokens that are at a distance greater than a threshold from the figure caption.
      * The method returns the updated list of layout tokens, and the list of layout tokens that have been discarded.
      */
@@ -1275,10 +1275,10 @@ public class Document implements Serializable {
         Iterator<Integer> it = f.getBlockPtrs().iterator();
 
         while (it.hasNext()) {
-            Integer blockPtr = it.next();
+            Integer newBlockPtr = it.next();
 
-            Block figBlock = getBlocks().get(blockPtr);
-            String norm = LayoutTokensUtil.toText(figBlock.getTokens()).trim().toLowerCase();
+            Block previousBlock = getBlocks().get(newBlockPtr);
+            String norm = LayoutTokensUtil.toText(previousBlock.getTokens()).trim().toLowerCase();
             if (norm.startsWith("fig")
                 || norm.startsWith("abb")
                 || norm.startsWith("scheme")
@@ -1289,32 +1289,84 @@ public class Document implements Serializable {
                 || norm.startsWith("fuente")
                 || norm.startsWith("video")
             ) {
-                result.addAll(figBlock.getTokens());
+                result.addAll(previousBlock.getTokens());
 
                 while (it.hasNext()) {
-                    BoundingBox prevBlock = BoundingBox.fromPointAndDimensions(figBlock.getPageNumber(), figBlock.getX(), figBlock.getY(), figBlock.getWidth(), figBlock.getHeight());
-                    blockPtr = it.next();
-                    Block b = getBlocks().get(blockPtr);
-                    if (BoundingBox.fromPointAndDimensions(b.getPageNumber(), b.getX(), b.getY(), b.getWidth(), b.getHeight()).distanceTo(prevBlock) < 15) {
-                        result.addAll(b.getTokens());
-                        figBlock = b;
+                    BoundingBox prevBlockCoords = BoundingBox.fromPointAndDimensions(previousBlock.getPageNumber(), previousBlock.getX(), previousBlock.getY(), previousBlock.getWidth(), previousBlock.getHeight());
+                    newBlockPtr = it.next();
+                    Block newBlock = getBlocks().get(newBlockPtr);
+                    BoundingBox newBlockCoords = BoundingBox.fromPointAndDimensions(newBlock.getPageNumber(), newBlock.getX(), newBlock.getY(), newBlock.getWidth(), newBlock.getHeight());
+                    if (newBlockCoords.distanceTo(prevBlockCoords) < 15) {
+                        result.addAll(newBlock.getTokens());
+                        previousBlock = newBlock;
                     } else {
                         // A TEMPORARY trick would be to iterate to all the following blocks
                         // and place them into the discarded token list of the figure
 //                        f.addDiscardedPieceTokens(b.getTokens());
-                        discardedPieces.add(b.getTokens());
+                        List<LayoutToken> newBlockTrimmed = newBlock.getTokens();
+
+                        String figureLayoutTokens = LayoutTokensUtil.toText(f.getLayoutTokens());
+                        if (!figureLayoutTokens.contains(newBlock.getText())) {
+                            // We need to keep only the common tokens, we assume the block will overrun the figure layout tokens
+                            int subListSize = newBlock.getTokens().size();
+
+                            while (!figureLayoutTokens.endsWith(LayoutTokensUtil.toText(newBlock.getTokens().subList(0, subListSize)))
+                                && subListSize > 0) {
+                                subListSize -= 1;
+                            }
+
+                            if (subListSize > 0) {
+                                newBlockTrimmed = newBlock.getTokens().subList(0, subListSize);
+                            } else {
+                                // If the item is not found, we discard the current block and all the following
+                                f.addDiscardedPieceTokens(newBlock.getTokens());
+                                while (it.hasNext()) {
+                                    newBlockPtr = it.next();
+                                    newBlock = getBlocks().get(newBlockPtr);
+                                    Iterables.getLast(f.getDiscardedPiecesTokens()).addAll(newBlock.getTokens());
+                                }
+                                break;
+                            }
+
+                        }
+                        discardedPieces.add(newBlockTrimmed);
+
                         while (it.hasNext()) {
-                            blockPtr = it.next();
-                            figBlock = getBlocks().get(blockPtr);
-//                            Iterables.getLast(f.getDiscardedPiecesTokens()).addAll(figBlock.getTokens());
-                            Iterables.getLast(discardedPieces).addAll(figBlock.getTokens());
+                            newBlockPtr = it.next();
+                            newBlock = getBlocks().get(newBlockPtr);
+                            //                            Iterables.getLast(f.getDiscardedPiecesTokens()).addAll(figBlock.getTokens());
+
+                            newBlockTrimmed = newBlock.getTokens();
+                            if (!figureLayoutTokens.contains(newBlock.getText())) {
+                                // We need to keep only the common tokens, we assume the block will overrun the figure layout tokens
+                                int subListSize = newBlock.getTokens().size();
+
+                                while (!figureLayoutTokens.endsWith(LayoutTokensUtil.toText(newBlock.getTokens().subList(0, subListSize)))
+                                    && subListSize > 0) {
+                                    subListSize -= 1;
+                                }
+                                if (subListSize > 0) {
+                                    newBlockTrimmed = newBlock.getTokens().subList(0, subListSize);
+                                } else {
+                                    // If the item is not found, we discard the current block and all the following
+                                    f.addDiscardedPieceTokens(previousBlock.getTokens());
+                                    while (it.hasNext()) {
+                                        newBlockPtr = it.next();
+                                        newBlock = getBlocks().get(newBlockPtr);
+                                        Iterables.getLast(f.getDiscardedPiecesTokens()).addAll(newBlock.getTokens());
+                                    }
+                                    break;
+                                }
+                            }
+                            Iterables.getLast(discardedPieces).addAll(newBlockTrimmed);
                         }
                         break;
+
                     }
                 }
                 break;
             } else {
-                f.addDiscardedPieceTokens(figBlock.getTokens());
+                f.addDiscardedPieceTokens(previousBlock.getTokens());
 //                LOGGER.info("BAD_FIGIRE_LABEL: " + norm);
             }
         }
