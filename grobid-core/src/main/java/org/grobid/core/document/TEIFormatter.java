@@ -12,6 +12,7 @@ import nu.xom.Element;
 import nu.xom.Node;
 import nu.xom.Text;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
@@ -1648,15 +1649,16 @@ public class TEIFormatter {
                 }
 
                 //Identify URLs and attach reference in the text
-                List<OffsetPosition> offsetPositionsUrls = Lexicon.tokenPositionUrlPatternWithPdfAnnotations(clusterTokens, doc.getPDFAnnotations());
-                offsetPositionsUrls.stream()
+                List<Pair<OffsetPosition, String>> offsetPositionsAndDestinationUrls = Lexicon.tokenPositionUrlPatternWithPdfAnnotations(clusterTokens, doc.getPDFAnnotations());
+
+                offsetPositionsAndDestinationUrls.stream()
                     .forEach(opu -> {
                             // We correct the latest token here, since later we will do a substring in the shared code,
                             // and we cannot add a +1 there.
                         matchedLabelPositions.add(
-                            Triple.of(LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(opu.start, opu.end)),
+                            Triple.of(opu.getRight() != null ? opu.getRight() : LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(opu.getLeft().start, opu.getLeft().end)),
                                 "url",
-                                new OffsetPosition(opu.start, opu.end + 1)
+                                new OffsetPosition(opu.getLeft().start, opu.getLeft().end + 1)
                             )
                         );
                     }
