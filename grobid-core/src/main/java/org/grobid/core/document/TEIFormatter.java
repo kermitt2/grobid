@@ -849,11 +849,17 @@ public class TEIFormatter {
             if (CollectionUtils.isNotEmpty(biblio.getDiscardedPiecesTokens()) || CollectionUtils.isNotEmpty(discardedTextElsewhere)) {
                 tei.append("\t\t\t<notesStmt>\n");
                 for (List<LayoutToken> discardedPieceTokens : biblio.getDiscardedPiecesTokens()) {
-                    tei.append(generateDiscardedTextNote(discardedPieceTokens, doc, this, config).toXML());
+                    tei
+                        .append("\t\t\t\t")
+                        .append(generateDiscardedTextNote(discardedPieceTokens, doc, this, config).toXML())
+                        .append("\n");
                 }
 
                 for (List<LayoutToken> discardedPieceTokens : discardedTextElsewhere) {
-                    tei.append(generateDiscardedTextNote(discardedPieceTokens, doc, this, config).toXML());
+                    tei
+                        .append("\t\t\t\t")
+                        .append(generateDiscardedTextNote(discardedPieceTokens, doc, this, config).toXML())
+                        .append("\n");
                 }
 
                 tei.append("\t\t\t</notesStmt>\n");
