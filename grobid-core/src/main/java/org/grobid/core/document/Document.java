@@ -926,6 +926,11 @@ public class Document implements Serializable {
     }
 
     public void assignGraphicObjectsToFigures() {
+    /**
+     * This method assigns graphic objects to figures based on the proximity of the graphic object to the figure caption.
+     * It also modifies captions and textarea for existing figures
+     * @return the modified figures
+     */
         Multimap<Integer, Figure> figureMap = HashMultimap.create();
 
         for (Figure f : figures) {
@@ -960,7 +965,7 @@ public class Document implements Serializable {
             List<GraphicObject> vectorBoxGraphicObjects =
                     Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE));
 
-            // case where figure caption is covered almost precisely but the vector graphics box -- filter those out - they are covered by caption anyways
+            // case where figure caption is covered almost precisely but the vector graphics box -- filter those out - they are covered by caption anyway
             vectorBoxGraphicObjects = vectorBoxGraphicObjects.stream().filter(go -> {
                 for (Figure f : pageFigures) {
                     BoundingBox intersection = BoundingBoxCalculator.calculateOneBox(f.getLayoutTokens(), true).boundingBoxIntersection(go.getBoundingBox());
@@ -1255,11 +1260,15 @@ public class Document implements Serializable {
 
             Block figBlock = getBlocks().get(blockPtr);
             String norm = LayoutTokensUtil.toText(figBlock.getTokens()).trim().toLowerCase();
-            if (norm.startsWith("fig") || norm.startsWith("abb") || norm.startsWith("scheme") || norm.startsWith("photo")
-                    || norm.startsWith("gambar") || norm.startsWith("quadro")
-                    || norm.startsWith("wykres")
-                    || norm.startsWith("fuente")
-                    ) {
+            if (norm.startsWith("fig")
+                || norm.startsWith("abb")
+                || norm.startsWith("scheme")
+                || norm.startsWith("photo")
+                || norm.startsWith("gambar")
+                || norm.startsWith("quadro")
+                || norm.startsWith("wykres")
+                || norm.startsWith("fuente")
+            ) {
                 result.addAll(figBlock.getTokens());
 
                 while (it.hasNext()) {
@@ -1270,11 +1279,20 @@ public class Document implements Serializable {
                         result.addAll(b.getTokens());
                         figBlock = b;
                     } else {
+                        // A TEMPORARY trick would be to iterate to all the following blocks
+                        // and place them into the discarded token list of the figure
+                        f.addDiscardedPieceTokens(b.getTokens());
+                        while (it.hasNext()) {
+                            blockPtr = it.next();
+                            figBlock = getBlocks().get(blockPtr);
+                            f.addDiscardedPieceTokens(figBlock.getTokens());
+                        }
                         break;
                     }
                 }
                 break;
             } else {
+                f.addDiscardedPieceTokens(figBlock.getTokens());
 //                LOGGER.info("BAD_FIGIRE_LABEL: " + norm);
             }
         }

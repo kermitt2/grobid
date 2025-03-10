@@ -445,7 +445,7 @@ public class FullTextParser extends AbstractParser {
                                 break;
                             }
                         }
-                        line.set(line.size() - 1, label.replace(TaggingLabels.TABLE_LABEL, TaggingLabels.PARAGRAPH_LABEL));
+                        line.set(line.size() - 1, label.replace(itemLabel, TaggingLabels.PARAGRAPH_LABEL));
                     }
                 } else {
                     LOGGER.warn("Cannot find the result index candidate.");
