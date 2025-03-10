@@ -1,47 +1,39 @@
 package org.grobid.core.data;
 
+import com.google.common.base.Joiner;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.google.common.base.Joiner;
-
-import org.grobid.core.GrobidModels;
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.grobid.core.document.xml.XmlBuilderUtils;
-import org.grobid.core.document.Document;
-import org.grobid.core.document.TEIFormatter;
-import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.layout.BoundingBox;
-import org.grobid.core.layout.GraphicObject;
-import org.grobid.core.layout.GraphicObjectType;
-import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.layout.VectorGraphicBoxCalculator;
-import org.grobid.core.utilities.BoundingBoxCalculator;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.tokenization.TaggingTokenCluster;
-import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.engines.label.TaggingLabels;
-import org.grobid.core.engines.label.TaggingLabel;
-import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Node;
-import nu.xom.Text;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.grobid.core.GrobidModels;
+import org.grobid.core.document.Document;
+import org.grobid.core.document.TEIFormatter;
+import org.grobid.core.document.xml.XmlBuilderUtils;
+import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
+import org.grobid.core.layout.*;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.BoundingBoxCalculator;
+import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.TextUtilities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.SortedSet;
-import java.util.Collections;
 
-import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
+import static org.grobid.core.document.TEIFormatter.generateDiscardedTextNote;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
 import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 
@@ -459,10 +451,9 @@ public class Figure {
 
         if (config.isIncludeDiscardedText() && CollectionUtils.isNotEmpty(discardedPiecesTokens)) {
             for (List<LayoutToken> discardedPieceTokens : discardedPiecesTokens) {
-                Element note = XmlBuilderUtils.teiElement("note");
-                note.addAttribute(new Attribute("type", "other"));
-                note.appendChild(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(discardedPieceTokens)).trim());
-                figureElement.appendChild(note);
+                figureElement.appendChild(
+                    generateDiscardedTextNote(discardedPieceTokens, doc, formatter, config)
+                );
             }
         }
 
