@@ -1366,7 +1366,12 @@ public class Document implements Serializable {
                 }
                 break;
             } else {
-                f.addDiscardedPieceTokens(previousBlock.getTokens());
+                // If the figure is contained completely into a big block,
+                // it means that we either will have the full image somewhere or not (if it's reversed),
+                // there is no risk of loosing pieces, so we don't collect the tokens
+                if (!LayoutTokensUtil.toText(previousBlock.getTokens()).trim().toLowerCase().contains(LayoutTokensUtil.toText(f.getLayoutTokens()).trim().toLowerCase())) {
+                    f.addDiscardedPieceTokens(previousBlock.getTokens());
+                }
 //                LOGGER.info("BAD_FIGIRE_LABEL: " + norm);
             }
         }
