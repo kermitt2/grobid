@@ -9,6 +9,7 @@ import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.IOUtils;
 import org.grobid.core.analyzers.Analyzer;
 import org.grobid.core.analyzers.GrobidAnalyzer;
@@ -162,7 +163,7 @@ public class Document implements Serializable {
     // map of sequence of LayoutTokens for the fulltext model labels
     //Map<String, List<LayoutTokenization>> labeledTokenSequences = null;
 
-    protected double byteSize = 0; 
+    protected double byteSize = 0;
 
     public Document(DocumentSource documentSource) {
         this.documentSource = documentSource;
@@ -301,7 +302,7 @@ public class Document implements Serializable {
     *
     *  @author Daniel Ecer
     */
-    protected static void parseInputStream(InputStream in, SAXParser saxParser, DefaultHandler handler) 
+    protected static void parseInputStream(InputStream in, SAXParser saxParser, DefaultHandler handler)
         throws SAXException, IOException {
         CharsetDecoder utf8Decoder = StandardCharsets.UTF_8.newDecoder();
         utf8Decoder.onMalformedInput(CodingErrorAction.IGNORE);
@@ -309,7 +310,7 @@ public class Document implements Serializable {
         saxParser.parse(new InputSource(new InputStreamReader(in, utf8Decoder)), handler);
     }
 
-    protected static void parseInputStream(InputStream in, SAXParserFactory saxParserFactory, DefaultHandler handler) 
+    protected static void parseInputStream(InputStream in, SAXParserFactory saxParserFactory, DefaultHandler handler)
         throws SAXException, IOException, ParserConfigurationException {
         parseInputStream(in, saxParserFactory.newSAXParser(), handler);
     }
@@ -925,12 +926,12 @@ public class Document implements Serializable {
         }
     }
 
-    public void assignGraphicObjectsToFigures() {
     /**
      * This method assigns graphic objects to figures based on the proximity of the graphic object to the figure caption.
      * It also modifies captions and textarea for existing figures
      * @return the modified figures
      */
+    public void assignGraphicObjectsToFigures() {
         Multimap<Integer, Figure> figureMap = HashMultimap.create();
 
         for (Figure f : figures) {
@@ -1095,7 +1096,7 @@ public class Document implements Serializable {
 
                 ArrayList<GraphicObject> it = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.GRAPHIC_OBJECT_PREDICATE));
 
-                List<GraphicObject> vectorBoxGraphicObjects = 
+                List<GraphicObject> vectorBoxGraphicObjects =
                     Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE));
 
                 List<GraphicObject> graphicObjects = new ArrayList<>();
@@ -1254,54 +1255,73 @@ public class Document implements Serializable {
     protected List<LayoutToken> getFigureLayoutTokens(Figure f) {
         List<LayoutToken> result = new ArrayList<>();
         Iterator<Integer> it = f.getBlockPtrs().iterator();
+        List<List<LayoutToken>> discardedPieces = new ArrayList<>();
 
         while (it.hasNext()) {
-            Integer blockPtr = it.next();
+            Integer newBlockPtr = it.next();
 
-            Block figBlock = getBlocks().get(blockPtr);
-            String norm = LayoutTokensUtil.toText(figBlock.getTokens()).trim().toLowerCase();
-            if (norm.startsWith("fig")
-                || norm.startsWith("abb")
-                || norm.startsWith("scheme")
-                || norm.startsWith("photo")
-                || norm.startsWith("gambar")
-                || norm.startsWith("quadro")
-                || norm.startsWith("wykres")
-                || norm.startsWith("fuente")
+            Block previousBlock = getBlocks().get(newBlockPtr);
+            String blockTextNorm = LayoutTokensUtil.toText(previousBlock.getTokens()).trim().toLowerCase();
+            if (blockTextNorm.startsWith("fig")
+                || blockTextNorm.startsWith("abb")
+                || blockTextNorm.startsWith("scheme")
+                || blockTextNorm.startsWith("photo")
+                || blockTextNorm.startsWith("gambar")
+                || blockTextNorm.startsWith("quadro")
+                || blockTextNorm.startsWith("wykres")
+                || blockTextNorm.startsWith("fuente")
             ) {
-                result.addAll(figBlock.getTokens());
+                result.addAll(previousBlock.getTokens());
 
                 while (it.hasNext()) {
-                    BoundingBox prevBlock = BoundingBox.fromPointAndDimensions(figBlock.getPageNumber(), figBlock.getX(), figBlock.getY(), figBlock.getWidth(), figBlock.getHeight());
-                    blockPtr = it.next();
-                    Block b = getBlocks().get(blockPtr);
-                    if (BoundingBox.fromPointAndDimensions(b.getPageNumber(), b.getX(), b.getY(), b.getWidth(), b.getHeight()).distanceTo(prevBlock) < 15) {
-                        result.addAll(b.getTokens());
-                        figBlock = b;
+                    BoundingBox prevBlockCoords = BoundingBox.fromPointAndDimensions(previousBlock.getPageNumber(), previousBlock.getX(), previousBlock.getY(), previousBlock.getWidth(), previousBlock.getHeight());
+                    newBlockPtr = it.next();
+                    Block newBlock = getBlocks().get(newBlockPtr);
+                    BoundingBox newBlockCoords = BoundingBox.fromPointAndDimensions(newBlock.getPageNumber(), newBlock.getX(), newBlock.getY(), newBlock.getWidth(), newBlock.getHeight());
+                    if (newBlockCoords.distanceTo(prevBlockCoords) < 15) {
+                        result.addAll(newBlock.getTokens());
+                        previousBlock = newBlock;
                     } else {
                         // A TEMPORARY trick would be to iterate to all the following blocks
                         // and place them into the discarded token list of the figure
-                        f.addDiscardedPieceTokens(b.getTokens());
+                        discardedPieces.add(newBlock.getTokens());
                         while (it.hasNext()) {
-                            blockPtr = it.next();
-                            figBlock = getBlocks().get(blockPtr);
-                            f.addDiscardedPieceTokens(figBlock.getTokens());
+                            newBlockPtr = it.next();
+                            newBlock = getBlocks().get(newBlockPtr);
+                            discardedPieces.add(newBlock.getTokens());
                         }
                         break;
                     }
                 }
                 break;
             } else {
-                // If the figure is contained completely into a big block,
-                // it means that we either will have the full image somewhere or not (if it's reversed),
-                // there is no risk of loosing pieces, so we don't collect the tokens
-                if (!LayoutTokensUtil.toText(figBlock.getTokens()).trim().toLowerCase().contains(LayoutTokensUtil.toText(f.getLayoutTokens()).trim().toLowerCase())) {
-                    f.addDiscardedPieceTokens(figBlock.getTokens());
+                // If the full block is contained in the figure, and it does not start with a prefix,
+                // we will discard it entirely.
+                String figureTextNorm = LayoutTokensUtil.toText(f.getLayoutTokens()).trim().toLowerCase();
+                if (figureTextNorm.contains(blockTextNorm)) {
+                    discardedPieces.add(previousBlock.getTokens());
+                } else if (blockTextNorm.contains(figureTextNorm)) {
+                    // If the figure is contained completely into a big block,
+                    // it means that we either will have the full image somewhere or not (if it's reversed),
+                    // there is no risk of loosing pieces, so we don't collect the tokens
+//                    System.out.println("===");
+                } else {
+                    // If there is a partial overlap of the image
+                    discardedPieces.add(previousBlock.getTokens());
                 }
 //                LOGGER.info("BAD_FIGIRE_LABEL: " + norm);
             }
         }
 
+        if (!CollectionUtils.isEmpty(result)) {
+            // If there result is zero, we discard the discarded data, because the figure will not be changed
+
+            discardedPieces.stream()
+                .forEach(
+                    f::addDiscardedPieceTokens
+                );
+
+        }
 
         return result;
     }
@@ -1554,8 +1574,8 @@ public class Document implements Serializable {
     }
 
     /**
-     * Initialize the mapping between sequences of LayoutToken and 
-     * fulltext model labels. 
+     * Initialize the mapping between sequences of LayoutToken and
+     * fulltext model labels.
      * @param labeledResult labeled sequence as produced by the CRF model
      * @param tokenization List of LayoutToken for the body parts
      */
