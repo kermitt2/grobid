@@ -32,12 +32,7 @@ import org.grobid.core.layout.PDFAnnotation;
 import org.grobid.core.layout.Page;
 import org.grobid.core.layout.VectorGraphicBoxCalculator;
 import org.grobid.core.sax.*;
-import org.grobid.core.utilities.BoundingBoxCalculator;
-import org.grobid.core.utilities.ElementCounter;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.Pair;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.Utilities;
+import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 
@@ -1298,17 +1293,26 @@ public class Document implements Serializable {
                 // If the full block is contained in the figure, and it does not start with a prefix,
                 // we will discard it entirely.
                 String figureTextNorm = LayoutTokensUtil.toText(f.getLayoutTokens()).trim().toLowerCase();
+//                OverlapType overlap = findOverlap(blockTextNorm, figureTextNorm);
+//                System.out.println(overlap);
                 if (figureTextNorm.contains(blockTextNorm)) {
                     discardedPieces.add(previousBlock.getTokens());
-                } else if (blockTextNorm.contains(figureTextNorm)) {
+                }
+/*                if (overlap == OverlapType.IS_CONTAINED) {
+                    discardedPieces.add(previousBlock.getTokens());
+                } else if (overlap == OverlapType.CONTAINS) {
                     // If the figure is contained completely into a big block,
                     // it means that we either will have the full image somewhere or not (if it's reversed),
                     // there is no risk of loosing pieces, so we don't collect the tokens
 //                    System.out.println("===");
+                } else if (overlap == OverlapType.LEFT_OVERLAP) {
+                    // The figure overlap the beginning of the block, nothing to do here
+                } else if (overlap == OverlapType.RIGHT_OVERLAP) {
+                    // The figure overlap the end of the block, nothing to do here
                 } else {
                     // If there is a partial overlap of the image
-                    discardedPieces.add(previousBlock.getTokens());
-                }
+//                    discardedPieces.add(previousBlock.getTokens());
+                }*/
 //                LOGGER.info("BAD_FIGIRE_LABEL: " + norm);
             }
         }
