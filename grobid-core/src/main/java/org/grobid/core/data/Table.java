@@ -227,17 +227,25 @@ public class Table extends Figure {
                         }
                         p.appendChild(textNode(clusterContent));
                     }
-
-                    if (config.isWithSentenceSegmentation()) {
-                        // we need a sentence segmentation of the figure caption
-                        formatter.segmentIntoSentences(noteNode, this.noteLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
-                    }
                 }
                 if (p.getChildCount() > 0) {
                     noteNode.appendChild(p);
                 }
+                if (config.isWithSentenceSegmentation()) {
+                    // we need a sentence segmentation of the figure caption
+                    formatter.segmentIntoSentences(p, this.noteLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
+                }
             } else {
-                noteNode = XmlBuilderUtils.teiElement("note", LayoutTokensUtil.normalizeText(note.toString()).trim());
+                Element p = teiElement("p");
+                p.appendChild(LayoutTokensUtil.normalizeText(note.toString()).trim());
+
+                if (config.isWithSentenceSegmentation()) {
+                    // we need a sentence segmentation of the figure caption
+                    formatter.segmentIntoSentences(p, this.noteLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
+                }
+
+                noteNode = XmlBuilderUtils.teiElement("note");
+                noteNode.appendChild(p);
             }
 
             String coords = null;
@@ -260,7 +268,7 @@ public class Table extends Figure {
             tableElement.appendChild(noteNode);
         }
 
-        if (CollectionUtils.isNotEmpty(discardedPiecesTokens)) {
+        if (config.isIncludeDiscardedText() && CollectionUtils.isNotEmpty(discardedPiecesTokens)) {
             for (List<LayoutToken> discardedPieceTokens : discardedPiecesTokens) {
                 Element note = XmlBuilderUtils.teiElement("note");
                 note.addAttribute(new Attribute("type", "other"));
