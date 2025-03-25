@@ -1656,7 +1656,7 @@ public class TEIFormatter {
                             // We correct the latest token here, since later we will do a substring in the shared code,
                             // and we cannot add a +1 there.
                         matchedLabelPositions.add(
-                            Triple.of(opu.getRight() != null ? opu.getRight() : LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(opu.getLeft().start, opu.getLeft().end)),
+                            Triple.of(opu.getRight() != null ? opu.getRight() : LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(opu.getLeft().start, opu.getLeft().end + 1)),
                                 "url",
                                 new OffsetPosition(opu.getLeft().start, opu.getLeft().end + 1)
                             )
