@@ -2710,7 +2710,8 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
         }
 
         // For URLs, we remove spaces
-        String cleanText = StringUtils.trim(LayoutTokensUtil.toText(refTokens).replace("\n", " ").replace(" ", ""));
+        String cleanText = StringUtils.trim(LayoutTokensUtil.toText(refTokens).replace("\n", " "));
+        String cleanDestination = StringUtils.trim(destination.replace("\n", " ").replace(" ", ""));
 
         String coords = null;
         if (generateCoordinates && refTokens != null) {
@@ -2724,7 +2725,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             ref.addAttribute(new Attribute("coords", coords));
         }
         ref.appendChild(cleanText);
-        ref.addAttribute(new Attribute("target", destination));
+        ref.addAttribute(new Attribute("target", cleanDestination));
 
         return ref;
     }
