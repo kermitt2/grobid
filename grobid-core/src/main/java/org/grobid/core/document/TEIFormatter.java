@@ -1757,8 +1757,8 @@ public class TEIFormatter {
                             Note note = labels2Notes.get(referenceInformation.getLeft());
                             ref = generateNoteRef(calloutTokens, referenceInformation.getLeft(), note, config);
                         } else if (type.equals("url")) {
-                            String normalizeDehyphenizeText = LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(matchingPosition.start, matchingPosition.end));
-                            ref = generateURLRef(normalizeDehyphenizeText, calloutTokens, config.isGenerateTeiCoordinates("ref"));
+                            String destinationText = referenceInformation.getLeft();
+                            ref = generateURLRef(destinationText, calloutTokens, config.isGenerateTeiCoordinates("ref"));
 
                             //We might need to add a space if it's in the layout tokens
                             if (CollectionUtils.isNotEmpty(before) && StringUtils.equalsAnyIgnoreCase(Iterables.getLast(before).getText(), " ", "\n")) {
@@ -2702,15 +2702,15 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
         return nodes;
     }
 
-    public Element generateURLRef(String text,
+    public Element generateURLRef(String destination,
                                   List<LayoutToken> refTokens,
                                   boolean generateCoordinates) {
-        if (StringUtils.isEmpty(text)) {
+        if (StringUtils.isEmpty(destination)) {
             return null;
         }
 
         // For URLs, we remove spaces
-        String cleanText = StringUtils.trim(text.replace("\n", " ").replace(" ", ""));
+        String cleanText = StringUtils.trim(LayoutTokensUtil.toText(refTokens).replace("\n", " ").replace(" ", ""));
 
         String coords = null;
         if (generateCoordinates && refTokens != null) {
@@ -2723,8 +2723,8 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
         if (coords != null) {
             ref.addAttribute(new Attribute("coords", coords));
         }
-        ref.appendChild(text);
-        ref.addAttribute(new Attribute("target", cleanText));
+        ref.appendChild(cleanText);
+        ref.addAttribute(new Attribute("target", destination));
 
         return ref;
     }
