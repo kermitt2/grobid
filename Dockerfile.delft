@@ -119,7 +119,7 @@ ENV JAVA_OPTS=-Xmx4g
 # See tag of builder image in [Dockerfile tag](https://github.com/docker-library/docs/blob/master/eclipse-temurin/README.md#simple-tags) to find JAVA_HOME to copy from builder image.
 COPY --from=builder /opt/java/openjdk ${JAVA_HOME}
 
-# install jep 
+# install jep
 RUN pip3 install jep==4.0.3
 
 
@@ -135,7 +135,7 @@ ENTRYPOINT ["/tini", "-s", "--"]
 
 WORKDIR /opt/grobid
 
-# preload embeddings, for GROBID all the RNN models use glove-840B (default for the script), ELMo is currently not loaded 
+# preload embeddings, for GROBID all the RNN models use glove-840B (default for the script), ELMo is currently not loaded
 # to be done: mechanism to download GROBID fine-tuned models based on SciBERT if selected (but not good enough for the moment)
 COPY --from=builder /opt/grobid-source/grobid-home/scripts/preload_embeddings.py .
 COPY --from=builder /opt/grobid-source/grobid-home/config/resources-registry.json .
