@@ -1,10 +1,11 @@
 package org.grobid.core;
 
+import org.grobid.core.utilities.GrobidConfig;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
 public class GrobidModelsTest {
@@ -17,7 +18,6 @@ public class GrobidModelsTest {
 
     @Test
     public void testGrobidModelsEnum_StandardModel_affiliation() throws Exception {
-
         GrobidModel model = GrobidModels.AFFILIATION_ADDRESS;
 
         assertThat(model.getFolderName(), is("affiliation-address"));
@@ -31,7 +31,6 @@ public class GrobidModelsTest {
 
     @Test
     public void testGrobidModelsEnum_StandardModel_name() throws Exception {
-
         GrobidModel model = GrobidModels.HEADER;
 
         assertThat(model.getFolderName(), is("header"));
@@ -43,8 +42,13 @@ public class GrobidModelsTest {
         assertThat(splittedPath[splittedPath.length - 4], is("grobid-home"));
     }
 
-    //@Test
-    public void testGrobidModelsEnum_CustomModel() throws Exception {
+    @Test
+    public void testGrobidModelsEnum_CustomModel_shouldBeConfiguredBeforeHand() throws Exception {
+        GrobidConfig.ModelParameters modelParameters = new GrobidConfig.ModelParameters();
+        modelParameters.name = "myDreamModel";
+        modelParameters.engine = "wapiti";
+        GrobidProperties.addModel(modelParameters);
+
         GrobidModel model = GrobidModels.modelFor("myDreamModel");
 
         assertThat(model.getFolderName(), is("myDreamModel"));
@@ -62,5 +66,22 @@ public class GrobidModelsTest {
 
         GrobidModel model3 = GrobidModels.modelFor("myDreamModel");
         assertThat(model3.equals(model), is(true));
+    }
+
+    @Test
+    public void testGrobidFlavor_getFlavorFromName() throws Exception {
+        assertThat(GrobidModels.Flavor.fromLabel("ietf"), is(nullValue()));
+        assertThat(GrobidModels.Flavor.fromLabel("sdo/ietf"), is(GrobidModels.Flavor.IETF));
+
+        assertThat(GrobidModels.Flavor.fromLabel("3gpp"), is(nullValue()));
+        assertThat(GrobidModels.Flavor.fromLabel("sdo/3gpp"), is(GrobidModels.Flavor._3GPP));
+    }
+
+    @Test
+    public void testGrobidFlavor_missing_shouldFallbackToStandardModel() throws Exception {
+        GrobidModel modelFlavor = GrobidModels.getModelFlavor(GrobidModels.DATE, GrobidModels.Flavor.IETF);
+        assertThat(modelFlavor.getFolderName(), is("date"));
+        assertThat(modelFlavor.getModelPath(), not(containsString("ietf")));
+        assertThat(modelFlavor.getModelPath(), endsWith("date/model.wapiti"));
     }
 }

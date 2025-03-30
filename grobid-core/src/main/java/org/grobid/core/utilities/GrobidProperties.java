@@ -588,13 +588,28 @@ public class GrobidProperties {
         return pathToPdfalto;
     }
 
+    public static ModelParameters getGrobidModelParameters(final String modelName) {
+        ModelParameters param = modelMap.get(modelName);
+        // if we have a flavor of the model, we can fall back to the configuration
+        // of the parent model
+        String fallBackModelName = modelName;
+        while(param == null) {
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
+            int ind = fallBackModelName.lastIndexOf("-");
+            if (ind != -1) {
+                fallBackModelName = modelName.substring(0,ind);
+            } else {
+                return null;
+            }
+            param = modelMap.get(fallBackModelName);
+        }
+        return param;
+    }
 
     public static String getGrobidEngineName(final String modelName) {
-        ModelParameters param = modelMap.get(modelName);
-        if (param == null) {
-            LOGGER.debug("No configuration parameter defined for model " + modelName);
+        ModelParameters param = getGrobidModelParameters(modelName);
+        if (param == null)
             return null;
-        }
         return param.engine;
     }
 
@@ -612,8 +627,15 @@ public class GrobidProperties {
 
     public static File getModelPath(final GrobidModel model) {
         if (modelMap.get(model.getModelName()) == null) {
-            // model is not specified in the config, ignoring
-            return null;
+            // model is either:
+            // - a flavor without config, but that should fallback to the parent model config
+            //   if no specific config exists. If it is the case, the model path is infered
+            //   from the flavor model name
+            // - a normal model not specified in the config, so returning null
+
+            if (getGrobidModelParameters(model.getModelName()) == null) {
+                return null;
+            }
         }
         String extension = getGrobidEngine(model).getExt();
         return new File(getGrobidHome(), FOLDER_NAME_MODELS + File.separator
@@ -626,10 +648,10 @@ public class GrobidProperties {
     }
 
     public static File getTemplatePath(final File resourcesDir, final GrobidModel model) {
-        if (modelMap.get(model.getModelName()) == null) {
-            // model is not specified in the config, ignoring
+        ModelParameters param = getGrobidModelParameters(model.getModelName());
+        if (param == null)
             return null;
-        }
+
         File theFile = new File(resourcesDir, "dataset/" + model.getFolderName()
             + "/crfpp-templates/" + model.getTemplateName());
         if (!theFile.exists()) {
@@ -727,7 +749,7 @@ public class GrobidProperties {
     }
 
     public static int getWindow(final GrobidModel model) {
-        ModelParameters parameters = modelMap.get(model.getModelName());
+        ModelParameters parameters = getGrobidModelParameters(model.getModelName());
         if (parameters != null && parameters.wapiti != null)
             return parameters.wapiti.window;
         else 
@@ -735,7 +757,7 @@ public class GrobidProperties {
     }
 
     public static double getEpsilon(final GrobidModel model) {
-        ModelParameters parameters = modelMap.get(model.getModelName());
+        ModelParameters parameters = getGrobidModelParameters(model.getModelName());
         if (parameters != null && parameters.wapiti != null)
             return parameters.wapiti.epsilon;
         else 
@@ -743,7 +765,7 @@ public class GrobidProperties {
     }
 
     public static int getNbMaxIterations(final GrobidModel model) {
-        ModelParameters parameters = modelMap.get(model.getModelName());
+        ModelParameters parameters = getGrobidModelParameters(model.getModelName());
         if (parameters != null && parameters.wapiti != null)
             return parameters.wapiti.nbMaxIterations;
         else 
@@ -751,7 +773,7 @@ public class GrobidProperties {
     }
 
     public static boolean useELMo(final String modelName) {
-        ModelParameters param = modelMap.get(modelName);
+        ModelParameters param = getGrobidModelParameters(modelName);
         if (param == null) {
             LOGGER.debug("No configuration parameter defined for model " + modelName);
             return false;
@@ -765,7 +787,7 @@ public class GrobidProperties {
     }
 
     public static String getDelftArchitecture(final String modelName) {
-        ModelParameters param = modelMap.get(modelName);
+        ModelParameters param = getGrobidModelParameters(modelName);
         if (param == null) {
             LOGGER.debug("No configuration parameter defined for model " + modelName);
             return null;
@@ -779,7 +801,7 @@ public class GrobidProperties {
     }
 
     public static String getDelftEmbeddingsName(final String modelName) {
-        ModelParameters param = modelMap.get(modelName);
+        ModelParameters param = getGrobidModelParameters(modelName);
         if (param == null) {
             LOGGER.debug("No configuration parameter defined for model " + modelName);
             return null;
@@ -793,7 +815,7 @@ public class GrobidProperties {
     }
 
     public static String getDelftTranformer(final String modelName) {
-        ModelParameters param = modelMap.get(modelName);
+        ModelParameters param = getGrobidModelParameters(modelName);
         if (param == null) {
             LOGGER.debug("No configuration parameter defined for model " + modelName);
             return null;
@@ -810,7 +832,7 @@ public class GrobidProperties {
     *  Return -1 if not set in the configuration and the default DeLFT value will be used in this case.
     */
     public static int getDelftTrainingMaxSequenceLength(final String modelName) {
-        ModelParameters param = modelMap.get(modelName);
+        ModelParameters param = getGrobidModelParameters(modelName);
         if (param == null) {
             LOGGER.debug("No configuration parameter defined for model " + modelName);
             return -1;
@@ -833,7 +855,7 @@ public class GrobidProperties {
     *  Return -1 if not set in the configuration and the default DeLFT value will be used in this case.
     */
     public static int getDelftRuntimeMaxSequenceLength(final String modelName) {
-        ModelParameters param = modelMap.get(modelName);
+        ModelParameters param = getGrobidModelParameters(modelName);
         if (param == null) {
             LOGGER.debug("No configuration parameter defined for model " + modelName);
             return -1;
@@ -856,7 +878,7 @@ public class GrobidProperties {
     *  Return -1 if not set in the configuration and the default DeLFT value will be used in this case.
     */
     public static int getDelftTrainingBatchSize(final String modelName) {
-        ModelParameters param = modelMap.get(modelName);
+        ModelParameters param = getGrobidModelParameters(modelName);
         if (param == null) {
             LOGGER.debug("No configuration parameter defined for model " + modelName);
             return -1;
@@ -879,7 +901,7 @@ public class GrobidProperties {
     *  Return -1 if not set in the configuration and the default DeLFT value will be used in this case.
     */
     public static int getDelftRuntimeBatchSize(final String modelName) {
-        ModelParameters param = modelMap.get(modelName);
+        ModelParameters param = getGrobidModelParameters(modelName);
         if (param == null) {
             LOGGER.debug("No configuration parameter defined for model " + modelName);
             return -1;

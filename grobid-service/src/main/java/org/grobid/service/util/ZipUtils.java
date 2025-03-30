@@ -80,8 +80,11 @@ public class ZipUtils {
 							+ entry.getName());
 					// This is not robust, just for demonstration purposes.
 
-					(new File(tempDir.getAbsolutePath() + File.separator
-							+ entry.getName())).mkdir();
+					File dir = new File(tempDir.getAbsolutePath() + File.separator + entry.getName()).getCanonicalFile();
+					if (!dir.toPath().startsWith(tempDir.toPath())) {
+						throw new IOException("Bad zip entry: " + entry.getName());
+					}
+					dir.mkdir();
 					continue;
 				}
 
@@ -89,10 +92,15 @@ public class ZipUtils {
 
 				copyInputStream(
 						zipFile.getInputStream(entry),
-						new BufferedOutputStream(new FileOutputStream(tempDir
+						new BufferedOutputStream(new FileOutputStream(new File(tempDir
 								.getAbsolutePath()
 								+ File.separator
-								+ entry.getName())));
+								+ entry.getName()).getCanonicalFile())));
+						File outFile = new File(tempDir.getAbsolutePath() + File.separator + entry.getName()).getCanonicalFile();
+						if (!outFile.toPath().startsWith(tempDir.toPath())) {
+							throw new IOException("Bad zip entry: " + entry.getName());
+						}
+						copyInputStream(zipFile.getInputStream(entry), new BufferedOutputStream(new FileOutputStream(outFile)));
 			}
 
 			zipFile.close();

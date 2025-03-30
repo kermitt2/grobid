@@ -173,7 +173,10 @@ public class GrobidHomeFinder {
         ZipInputStream zipIn = new ZipInputStream(is);
         ZipEntry entry = zipIn.getNextEntry();
         while (entry != null) {
-            File filePath = new File(destinationDir, entry.getName());
+            File filePath = new File(destinationDir, entry.getName()).toPath().normalize().toFile();
+            if (!filePath.toPath().startsWith(destinationDir.toPath())) {
+                throw new IOException("Bad zip entry: " + entry.getName());
+            }
             try {
                 if (!entry.isDirectory()) {
                     String absolutePath = filePath.getAbsolutePath();

@@ -103,6 +103,7 @@ public class TableParser extends AbstractParser {
                 table.addAllNoteLayoutTokens(tokens);
                 table.addLayoutTokens(tokens);
             } else if (clusterLabel.equals(TBL_OTHER)) {
+                table.addDiscardedPieceTokens(cluster.concatTokens());
                 table.addLayoutTokens(tokens);
             } else if (clusterLabel.equals(TBL_CONTENT)) {
                 table.appendContent(clusterContent);

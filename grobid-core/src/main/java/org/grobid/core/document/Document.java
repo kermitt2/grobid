@@ -61,6 +61,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CodingErrorAction;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -178,7 +179,7 @@ public class Document implements Serializable {
         doc.fromText(text);
         if (text != null) {
             try {
-                final byte[] utf8Bytes = text.getBytes("UTF-8");
+                final byte[] utf8Bytes = text.getBytes(StandardCharsets.UTF_8);
                 doc.byteSize = utf8Bytes.length;
             } catch(Exception e) {
                 LOGGER.warn("Could not set the original text document size in bytes for UTF-8 encoding");
@@ -302,7 +303,7 @@ public class Document implements Serializable {
     */
     protected static void parseInputStream(InputStream in, SAXParser saxParser, DefaultHandler handler) 
         throws SAXException, IOException {
-        CharsetDecoder utf8Decoder = Charset.forName("UTF-8").newDecoder();
+        CharsetDecoder utf8Decoder = StandardCharsets.UTF_8.newDecoder();
         utf8Decoder.onMalformedInput(CodingErrorAction.IGNORE);
         utf8Decoder.onUnmappableCharacter(CodingErrorAction.IGNORE);
         saxParser.parse(new InputSource(new InputStreamReader(in, utf8Decoder)), handler);
@@ -874,6 +875,7 @@ public class Document implements Serializable {
     public void postProcessTables() {
         for (Table table : tables) {
             if (!table.firstCheck()) {
+                table.setGoodTable(false);
                 continue;
             }
 
@@ -919,11 +921,16 @@ public class Document implements Serializable {
             table.getContentTokens().clear();
             table.getContentTokens().addAll(contentResult);
 
-            table.secondCheck();
+            table.setGoodTable(table.secondCheck());
         }
     }
 
     public void assignGraphicObjectsToFigures() {
+    /**
+     * This method assigns graphic objects to figures based on the proximity of the graphic object to the figure caption.
+     * It also modifies captions and textarea for existing figures
+     * @return the modified figures
+     */
         Multimap<Integer, Figure> figureMap = HashMultimap.create();
 
         for (Figure f : figures) {
@@ -958,7 +965,7 @@ public class Document implements Serializable {
             List<GraphicObject> vectorBoxGraphicObjects =
                     Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE));
 
-            // case where figure caption is covered almost precisely but the vector graphics box -- filter those out - they are covered by caption anyways
+            // case where figure caption is covered almost precisely but the vector graphics box -- filter those out - they are covered by caption anyway
             vectorBoxGraphicObjects = vectorBoxGraphicObjects.stream().filter(go -> {
                 for (Figure f : pageFigures) {
                     BoundingBox intersection = BoundingBoxCalculator.calculateOneBox(f.getLayoutTokens(), true).boundingBoxIntersection(go.getBoundingBox());
@@ -1253,11 +1260,15 @@ public class Document implements Serializable {
 
             Block figBlock = getBlocks().get(blockPtr);
             String norm = LayoutTokensUtil.toText(figBlock.getTokens()).trim().toLowerCase();
-            if (norm.startsWith("fig") || norm.startsWith("abb") || norm.startsWith("scheme") || norm.startsWith("photo")
-                    || norm.startsWith("gambar") || norm.startsWith("quadro")
-                    || norm.startsWith("wykres")
-                    || norm.startsWith("fuente")
-                    ) {
+            if (norm.startsWith("fig")
+                || norm.startsWith("abb")
+                || norm.startsWith("scheme")
+                || norm.startsWith("photo")
+                || norm.startsWith("gambar")
+                || norm.startsWith("quadro")
+                || norm.startsWith("wykres")
+                || norm.startsWith("fuente")
+            ) {
                 result.addAll(figBlock.getTokens());
 
                 while (it.hasNext()) {
@@ -1268,11 +1279,20 @@ public class Document implements Serializable {
                         result.addAll(b.getTokens());
                         figBlock = b;
                     } else {
+                        // A TEMPORARY trick would be to iterate to all the following blocks
+                        // and place them into the discarded token list of the figure
+                        f.addDiscardedPieceTokens(b.getTokens());
+                        while (it.hasNext()) {
+                            blockPtr = it.next();
+                            figBlock = getBlocks().get(blockPtr);
+                            f.addDiscardedPieceTokens(figBlock.getTokens());
+                        }
                         break;
                     }
                 }
                 break;
             } else {
+                f.addDiscardedPieceTokens(figBlock.getTokens());
 //                LOGGER.info("BAD_FIGIRE_LABEL: " + norm);
             }
         }
@@ -1407,8 +1427,8 @@ public class Document implements Serializable {
 //    }
 
     public void produceStatistics() {
-        // document lenght in characters
-        // we calculate current document length and intialize the body tokenization structure
+        // document length in characters
+        // we calculate current document length and initialize the body tokenization structure
         for (Block block : blocks) {
             List<LayoutToken> tokens = block.getTokens();
             if (tokens == null)

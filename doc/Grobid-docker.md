@@ -57,7 +57,7 @@ Access the service:
   - open the browser at the address `http://localhost:8080`
   - the health check will be accessible at the address `http://localhost:8081`
 
-Grobid web services are then available as described in the [service documentation](https://grobid.readthedocs.io/en/latest/Grobid-service/).
+Grobid web services are then available as described in the [service documentation](Grobid-service.md).
 
 By default, this image runs Deep Learning models for:
 
@@ -113,7 +113,7 @@ Access the service:
   - open the browser at the address `http://localhost:8080`
   - the health check will be accessible at the address `http://localhost:8081`
 
-Grobid web services are then available as described in the [service documentation](https://grobid.readthedocs.io/en/latest/Grobid-service/).
+Grobid web services are then available as described in the [service documentation](Grobid-service.md).
 
 ### ARM64
 
