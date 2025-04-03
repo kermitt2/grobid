@@ -209,7 +209,9 @@ public class GrobidAnalysisConfig {
         }
 
         public GrobidAnalysisConfigBuilder flavor(GrobidModels.Flavor a) {
-            config.flavor = a.getLabel();
+            if (a != null) {
+                config.flavor = a.getLabel();
+            }
             return this;
         }
 
