@@ -5,13 +5,15 @@ buildscript {
         maven {
             url 'https://plugins.gradle.org/m2/'
         }
+        gradlePluginPortal()
     }
     dependencies {
         classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.12.0'
         classpath "gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0"
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21"
-        classpath group: 'net.researchgate', name: 'gradle-release', version: '3.0.2'
+        classpath "net.researchgate:gradle-release:3.0.2"
+        classpath "com.palantir.gradle.gitversion:gradle-git-version:3.2.0"
     }
 }
 
@@ -36,6 +38,7 @@ allprojects {
     apply plugin: 'com.adarshr.test-logger'
     apply plugin: 'org.jetbrains.kotlin.jvm'
     apply plugin: 'net.researchgate.release'
+    apply plugin: 'com.palantir.git-version'
 
     group = "org.grobid"
 
@@ -45,6 +48,15 @@ allprojects {
         options.compilerArgs << '-parameters'
     }
 }
+
+
+task collectGitRevision {
+    doLast {
+        project.ext.gitRevision = gitVersion()
+        println "Current Git revision: ${gitRevision}"
+    }
+}
+
 
 subprojects {
     apply plugin: 'java'
@@ -72,18 +84,6 @@ subprojects {
             jvmTarget = JavaVersion.VERSION_11
         }
     }
-
-//    kotlin {
-//        jvmToolchain(11)
-//    }
-
-//    java {
-//        toolchain {
-//            languageVersion.set(JavaLanguageVersion.of(11))
-//            vendor.set(JvmVendorSpec.ADOPTIUM)
-//
-//        }
-//    }
 
     repositories {
         mavenCentral()
@@ -157,32 +157,6 @@ subprojects {
         archives sourceJar
         archives jar
     }
-
-    //compileJava.dependsOn(changeVersionIfNeeded)
-
-//    uploadArchives {
-//        // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:
-//        /*
-//            mavenRepoUserName=maven_username
-//            mavenRepoPassword=super_secret
-//            mavenRepoReleasesUrl=https://nexus3.example.org/repository/maven-releases/
-//            mavenRepoSnapshotsUrl=https://nexus3.example.org/repository/maven-snapshots/
-//        */
-//        def user = project.hasProperty('mavenRepoUserName') ? project.findProperty('mavenRepoUserName') : ''
-//        def password = project.hasProperty('mavenRepoPassword') ? project.findProperty('mavenRepoPassword') : ''
-//        def rurl = project.hasProperty('mavenRepoReleasesUrl') ? project.findProperty('mavenRepoReleasesUrl') : ''
-//        def surl = project.hasProperty('mavenRepoSnapshotsUrl') ? project.findProperty('mavenRepoSnapshotsUrl') : ''
-//
-//        repositories.mavenDeployer {
-//            repository(url: rurl) {
-//                authentication(userName: user, password: password)
-//            }
-//            snapshotRepository(url: surl) {
-//                authentication(userName: user, password: password)
-//            }
-//
-//        }
-//    }
 
     test {
         useJUnitPlatform()
@@ -292,10 +266,12 @@ project("grobid-core") {
     }
 
     processResources {
-        filesMatching('grobid-version.txt') {
-            filter {
-                it.replace('project.version', project.property('version'))
-            }
+        var version = gitVersion()
+        filesMatching(["grobid-version.txt", "grobid-revision.txt"]) {
+            expand(
+                project_version: project.property('version'),
+                project_revision: version
+            )
         }
     }
 
@@ -338,6 +314,7 @@ project(":grobid-service") {
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
 
     tasks.run {
+        dependsOn collectGitRevision
         def libraries = ""
         if (Os.isFamily(Os.FAMILY_MAC)) {
             if (Os.OS_ARCH.equals("aarch64")) {
