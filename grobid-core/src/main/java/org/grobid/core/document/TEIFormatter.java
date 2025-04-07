@@ -1768,7 +1768,6 @@ public class TEIFormatter {
 
                         curParagraphTokens.addAll(before);
 
-
                         Element ref = null;
                         List<LayoutToken> calloutTokens = clusterTokens.subList(matchingPosition.start, matchingPosition.end);
                         if (type.equals("note")) {
@@ -1785,7 +1784,11 @@ public class TEIFormatter {
                         }
 
                         pos = matchingPosition.end;
-                        curParagraph.appendChild(ref);
+                        if (ref != null) {
+                            curParagraph.appendChild(ref);
+                        } else {
+                            LOGGER.warn("Detected empty reference or note after " + clusterContentBefore);
+                        }
                     }
 
                     // add last chunk of paragraph stuff (or whole paragraph if no note callout matching)
