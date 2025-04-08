@@ -324,7 +324,7 @@ public class GrobidProperties {
         }
         synchronized (GrobidProperties.class) {
             if (VERSION == null) {
-                VERSION = readFromFile(GROBID_VERSION_FILE);
+                VERSION = readFromSystemPropertyOrFromFile("project.version", GROBID_VERSION_FILE);
             }
         }
         return VERSION;
@@ -336,18 +336,26 @@ public class GrobidProperties {
         }
         synchronized (GrobidProperties.class) {
             if (REVISION == null) {
-                REVISION = readFromFile(GROBID_REVISION_FILE);
+                REVISION = readFromSystemPropertyOrFromFile("gitRevision", GROBID_REVISION_FILE);
             }
         }
         return REVISION;
     }
 
-    private static String readFromFile(String filePath) {
+    private static String readFromSystemPropertyOrFromFile(String systemPropertyName, String filePath) {
         String grobidVersion = UNKNOWN_VERSION_STR;
-        try (InputStream is = GrobidProperties.class.getResourceAsStream(filePath)) {
-            grobidVersion = IOUtils.toString(is, StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            LOGGER.error("Cannot read the version from resources", e);
+        String systemPropertyValue = System.getProperty(systemPropertyName);
+        if (systemPropertyValue != null) {
+            grobidVersion = systemPropertyValue;
+        } else {
+            try (InputStream is = GrobidProperties.class.getResourceAsStream(filePath)) {
+                String grobidVersionTmp = IOUtils.toString(is, StandardCharsets.UTF_8);
+                if (!StringUtils.startsWithIgnoreCase(grobidVersionTmp, "${project_")) {
+                    grobidVersion = grobidVersionTmp;
+                }
+            } catch (IOException e) {
+                LOGGER.error("Cannot read the version from resources", e);
+            }
         }
         return grobidVersion;
     }
