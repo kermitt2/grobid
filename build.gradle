@@ -38,7 +38,7 @@ def getGitRevision() {
         println("Checking git under ${rootProject.rootDir}")
         exec {
             workingDir rootProject.rootDir
-            commandLine 'git', 'rev-parse', '--short', 'HEAD'
+            commandLine 'git', 'describe', '--tags', '--always', '--first-parent'
             standardOutput = stdout
         }
         gitRevision = stdout.toString().trim()
