@@ -871,10 +871,17 @@ public class TEIFormatter {
         df.setTimeZone(tz);
         String dateISOString = df.format(new java.util.Date());
 
-        tei.append("\t\t\t\t<application version=\"" + GrobidProperties.getVersion() +
-                "\" ident=\"GROBID\" when=\"" + dateISOString + "\">\n");
+        tei.append("\t\t\t\t<application version=\"").append(GrobidProperties.getVersion())
+            .append("\" ident=\"GROBID\" when=\"")
+            .append(dateISOString)
+            .append("\">\n");
         tei.append("\t\t\t\t\t<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>\n");
-        tei.append("\t\t\t\t\t<desc type=\"parameters\">" + config.toStringTEI() + "</desc>\n");
+        tei.append("\t\t\t\t\t<label type=\"revision\">")
+            .append(GrobidProperties.getRevision())
+            .append("</label>\n");
+        tei.append("\t\t\t\t\t<label type=\"parameters\">")
+            .append(config.toStringTEI())
+            .append("</label>\n");
         tei.append("\t\t\t\t\t<ref target=\"https://github.com/kermitt2/grobid\"/>\n");
         tei.append("\t\t\t\t</application>\n");
         tei.append("\t\t\t</appInfo>\n");
@@ -887,7 +894,7 @@ public class TEIFormatter {
         // keywords here !! Normally the keyword field has been preprocessed
         // if the segmentation into individual keywords worked, the first conditional
         // statement will be used - otherwise the whole keyword field is outputed
-        if ((biblio.getKeywords() != null) && (biblio.getKeywords().size() > 0)) {
+        if (CollectionUtils.isNotEmpty(biblio.getKeywords())) {
             textClassWritten = true;
             tei.append("\t\t\t<textClass>\n");
             tei.append("\t\t\t\t<keywords>\n");
@@ -895,7 +902,7 @@ public class TEIFormatter {
             List<Keyword> keywords = biblio.getKeywords();
             int pos = 0;
             for (Keyword keyw : keywords) {
-                if ((keyw.getKeyword() == null) || (keyw.getKeyword().length() == 0))
+                if (StringUtils.isBlank(keyw.getKeyword()))
                     continue;
                 String res = keyw.getKeyword().trim();
                 if (res.startsWith(":")) {
