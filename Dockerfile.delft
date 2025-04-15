@@ -100,10 +100,10 @@ WORKDIR /opt/grobid
 
 COPY --from=builder /opt/grobid .
 
-RUN python3 -m pip install pip --upgrade
+RUN python3 -m pip install pip --upgrade --no-cache-dir
 
 # install DeLFT via pypi
-RUN pip3 install requests delft==0.3.3
+RUN pip3 install --no-cache-dir requests delft==0.3.3
 # link the data directory to /data
 # the current working directory will most likely be /opt/grobid
 RUN mkdir -p /data \
@@ -123,7 +123,7 @@ RUN curl --fail --show-error --location -q ${JDK_URL} -o /tmp/openjdk.tar.gz && 
     mkdir /tmp/jdk-17 &&  \
     tar xvfz /tmp/openjdk.tar.gz --directory /tmp/jdk-17 --strip-components 1 --no-same-owner && \
     /tmp/jdk-17/bin/javac -version && \
-    JAVA_HOME=/tmp/jdk-17 pip3 install jep==4.0.2 &&  \
+    JAVA_HOME=/tmp/jdk-17 pip3 --no-cache-dir install jep==4.0.2 &&  \
     rm -f /tmp/openjdk.tar.gz && \
     rm -rf /tmp/jdk-17
 
