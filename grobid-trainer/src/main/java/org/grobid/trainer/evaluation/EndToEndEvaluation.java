@@ -100,6 +100,7 @@ public class EndToEndEvaluation {
                         .consolidateFunders(0)
                         .withPreprocessImages(true)
                         .withSentenceSegmentation(false)
+                        .flavor(flavor)
                         .build();
 
                 String tei = engine.fullTextToTEI(this.pdfFile, flavor, config);

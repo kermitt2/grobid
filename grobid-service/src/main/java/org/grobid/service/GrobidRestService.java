@@ -13,6 +13,7 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.factory.GrobidPoolingFactory;
 
+import org.grobid.service.data.ServiceInfo;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
 import org.grobid.service.process.GrobidRestProcessString;
@@ -116,14 +117,11 @@ public class GrobidRestService implements GrobidPaths {
         return Response.status(Response.Status.OK).entity(restProcessGeneric.isAlive()).build();
     }
 
-    /**
-     * @see org.grobid.service.process.GrobidRestProcessGeneric#getVersion()
-     */
     @Path(GrobidPaths.PATH_GET_VERSION)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     @GET
-    public Response getVersion() {
-        return restProcessGeneric.getVersion();
+    public ServiceInfo getVersion() {
+        return new ServiceInfo(GrobidProperties.getVersion(), GrobidProperties.getRevision());
     }
 
     /**

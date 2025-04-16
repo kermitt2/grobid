@@ -345,6 +345,7 @@ public class GrobidRestProcessFiles {
                     .generateTeiIds(generateIDs)
                     .generateTeiCoordinates(teiCoordinates)
                     .withSentenceSegmentation(segmentSentences)
+                    .flavor(flavor)
                     .build();
 
             retVal = engine.fullTextToTEI(originFile, flavor, md5Str, config);
@@ -525,6 +526,7 @@ public class GrobidRestProcessFiles {
                     .generateTeiCoordinates(teiCoordinates)
                     .pdfAssetPath(new File(assetPath))
                     .withSentenceSegmentation(segmentSentences)
+                    .flavor(flavor)
                     .build();
 
             retVal = engine.fullTextToTEI(originFile, flavor, md5Str, config);
