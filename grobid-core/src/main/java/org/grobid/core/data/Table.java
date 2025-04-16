@@ -1,41 +1,39 @@
 package org.grobid.core.data;
 
+import nu.xom.Attribute;
+import nu.xom.Element;
+import nu.xom.Node;
 import org.apache.commons.collections4.CollectionUtils;
-import org.grobid.core.GrobidModels;
 import org.apache.commons.lang3.StringUtils;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.data.table.Cell;
 import org.grobid.core.data.table.Line;
 import org.grobid.core.data.table.LinePart;
 import org.grobid.core.data.table.Row;
-import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.TEIFormatter;
+import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
+import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.counters.TableRejectionCounters;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.utilities.BoundingBoxCalculator;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.counters.CntManager;
-import org.grobid.core.engines.counters.TableRejectionCounters;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.engines.label.TaggingLabels;
-import org.grobid.core.engines.label.TaggingLabel;
-import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
+import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.counters.CntManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import nu.xom.Attribute;
-import nu.xom.Element;
-import nu.xom.Node;
-
+import static org.grobid.core.document.TEIFormatter.generateDiscardedTextNote;
 import static org.grobid.core.document.TEIFormatter.isNewParagraph;
-import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
-import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
-import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
+import static org.grobid.core.document.xml.XmlBuilderUtils.*;
 
 /**
  * Class for representing a table.
@@ -270,10 +268,9 @@ public class Table extends Figure {
 
         if (config.isIncludeDiscardedText() && CollectionUtils.isNotEmpty(discardedPiecesTokens)) {
             for (List<LayoutToken> discardedPieceTokens : discardedPiecesTokens) {
-                Element note = XmlBuilderUtils.teiElement("note");
-                note.addAttribute(new Attribute("type", "other"));
-                note.appendChild(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(discardedPieceTokens)).trim());
-                tableElement.appendChild(note);
+                tableElement.appendChild(
+                    generateDiscardedTextNote(discardedPieceTokens, doc, formatter, config)
+                );
             }
         }
 
