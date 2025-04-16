@@ -847,14 +847,20 @@ public class TEIFormatter {
             }
 
 
-            if (config.isIncludeDiscardedText() && (CollectionUtils.isNotEmpty(biblio.getDiscardedPiecesTokens()) || CollectionUtils.isNotEmpty(discardedTextElsewhere))) {
+            if (CollectionUtils.isNotEmpty(biblio.getDiscardedPiecesTokens()) || CollectionUtils.isNotEmpty(discardedTextElsewhere)) {
                 tei.append("\t\t\t<notesStmt>\n");
                 for (List<LayoutToken> discardedPieceTokens : biblio.getDiscardedPiecesTokens()) {
-                    tei.append(generateDiscardedTextNote(discardedPieceTokens, config));
+                    tei
+                        .append("\t\t\t\t")
+                        .append(generateDiscardedTextNote(discardedPieceTokens, doc, this, config).toXML())
+                        .append("\n");
                 }
 
                 for (List<LayoutToken> discardedPieceTokens : discardedTextElsewhere) {
-                    tei.append(generateDiscardedTextNote(discardedPieceTokens, config));
+                    tei
+                        .append("\t\t\t\t")
+                        .append(generateDiscardedTextNote(discardedPieceTokens, doc, this, config).toXML())
+                        .append("\n");
                 }
 
                 tei.append("\t\t\t</notesStmt>\n");
@@ -872,9 +878,17 @@ public class TEIFormatter {
         df.setTimeZone(tz);
         String dateISOString = df.format(new java.util.Date());
 
-        tei.append("\t\t\t\t<application version=\"" + GrobidProperties.getVersion() +
-                "\" ident=\"GROBID\" when=\"" + dateISOString + "\">\n");
+        tei.append("\t\t\t\t<application version=\"").append(GrobidProperties.getVersion())
+            .append("\" ident=\"GROBID\" when=\"")
+            .append(dateISOString)
+            .append("\">\n");
         tei.append("\t\t\t\t\t<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>\n");
+        tei.append("\t\t\t\t\t<label type=\"revision\">")
+            .append(GrobidProperties.getRevision())
+            .append("</label>\n");
+        tei.append("\t\t\t\t\t<label type=\"parameters\">")
+            .append(config.toStringTEI())
+            .append("</label>\n");
         tei.append("\t\t\t\t\t<ref target=\"https://github.com/kermitt2/grobid\"/>\n");
         tei.append("\t\t\t\t</application>\n");
         tei.append("\t\t\t</appInfo>\n");
@@ -887,7 +901,7 @@ public class TEIFormatter {
         // keywords here !! Normally the keyword field has been preprocessed
         // if the segmentation into individual keywords worked, the first conditional
         // statement will be used - otherwise the whole keyword field is outputed
-        if ((biblio.getKeywords() != null) && (biblio.getKeywords().size() > 0)) {
+        if (CollectionUtils.isNotEmpty(biblio.getKeywords())) {
             textClassWritten = true;
             tei.append("\t\t\t<textClass>\n");
             tei.append("\t\t\t\t<keywords>\n");
@@ -895,7 +909,7 @@ public class TEIFormatter {
             List<Keyword> keywords = biblio.getKeywords();
             int pos = 0;
             for (Keyword keyw : keywords) {
-                if ((keyw.getKeyword() == null) || (keyw.getKeyword().length() == 0))
+                if (StringUtils.isBlank(keyw.getKeyword()))
                     continue;
                 String res = keyw.getKeyword().trim();
                 if (res.startsWith(":")) {
@@ -1086,29 +1100,35 @@ public class TEIFormatter {
         return tei;
     }
 
-    private String generateDiscardedTextNote(List<LayoutToken> discardedPieceTokens, GrobidAnalysisConfig config) {
-        if (CollectionUtils.isEmpty(discardedPieceTokens)) {
-            return "";
-        }
+    public static Element generateDiscardedTextNote(List<LayoutToken> discardedPieceTokens, Document doc, TEIFormatter formatter, GrobidAnalysisConfig config) {
         LayoutToken first = Iterables.getFirst(discardedPieceTokens, null);
-        String place = first == null || CollectionUtils.isEmpty(first.getLabels())? "unknown" : first.getLabels().get(0).getGrobidModel().getModelName();
+        String place = first == null || CollectionUtils.isEmpty(first.getLabels()) ? "unknown" : first.getLabels().get(0).getGrobidModel().getModelName();
 
-        StringBuilder tei = new StringBuilder();
-        tei.append("\t\t\t\t<note type=\"other\" place=\"").append(place).append("\"");
+        Element note = XmlBuilderUtils.teiElement("note");
+        note.addAttribute(new Attribute("type", "other"));
+        note.addAttribute(new Attribute("place", place));
+        Element p = teiElement("p");
+        note.appendChild(p);
+
         if (config.isGenerateTeiIds()) {
             String divID = KeyGen.getKey().substring(0, 7);
-            tei.append(" xml:id=\"_").append(divID).append("\"");
+            addXmlId(note, "_" + divID);
+            divID = KeyGen.getKey().substring(0, 7);
+            addXmlId(p, "_" + divID);
+        }
+
+        p.appendChild(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(discardedPieceTokens)).trim());
+        if (config.isWithSentenceSegmentation()) {
+            // we need a sentence segmentation of the table caption
+            formatter.segmentIntoSentences(p, discardedPieceTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
         }
 
         if (config.isGenerateTeiCoordinates("note")) {
             String coords = LayoutTokensUtil.getCoordsString(discardedPieceTokens);
-            tei.append(" coords=\"").append(coords).append("\"");
+            note.addAttribute(new Attribute("coords", coords));
         }
 
-        // This text is not processed at the moment
-        tei.append(">").append(TextUtilities.HTMLEncode(normalizeText(LayoutTokensUtil.toText(discardedPieceTokens)))).append("</note>\n");
-
-        return tei.toString();
+        return note;
     }
 
 
@@ -1717,16 +1737,16 @@ public class TEIFormatter {
                     }
 
                     // sort the matches by position
-                    Collections.sort(matchedLabelPositions, (m1, m2) -> {
-                            return m1.getRight().start - m2.getRight().start;
-                        }
-                    );
+                    List<Triple<String, String, OffsetPosition>> sortedFilteredMatchedLabelPositions = matchedLabelPositions.stream()
+                        .filter(a -> StringUtils.isNotBlank(a.getLeft()))
+                        .sorted(Comparator.comparingInt(m -> m.getRight().start))
+                        .collect(Collectors.toList());
 
                     // position in the layout token index
                     int pos = 0;
 
                     // build the paragraph segment, match by match
-                    for (Triple<String, String, OffsetPosition> referenceInformation : matchedLabelPositions) {
+                    for (Triple<String, String, OffsetPosition> referenceInformation : sortedFilteredMatchedLabelPositions) {
                         String type = referenceInformation.getMiddle();
                         OffsetPosition matchingPosition = referenceInformation.getRight();
 
@@ -1750,7 +1770,6 @@ public class TEIFormatter {
 
                         curParagraphTokens.addAll(before);
 
-
                         Element ref = null;
                         List<LayoutToken> calloutTokens = clusterTokens.subList(matchingPosition.start, matchingPosition.end);
                         if (type.equals("note")) {
@@ -1767,7 +1786,11 @@ public class TEIFormatter {
                         }
 
                         pos = matchingPosition.end;
-                        curParagraph.appendChild(ref);
+                        if (ref != null) {
+                            curParagraph.appendChild(ref);
+                        } else {
+                            LOGGER.warn("Detected empty reference or note after " + clusterContentBefore);
+                        }
                     }
 
                     // add last chunk of paragraph stuff (or whole paragraph if no note callout matching)

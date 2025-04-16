@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -29,14 +30,14 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 
 /**
- * This class provide methods to set/load/access grobid config value from a yaml config file loaded 
- * in the class {@link GrobidConfig}. 
+ * This class provide methods to set/load/access grobid config value from a yaml config file loaded
+ * in the class {@link GrobidConfig}.
  *
- * New yaml parameters and former properties should be equivalent via this class. We keep the 
+ * New yaml parameters and former properties should be equivalent via this class. We keep the
  * class name "GrobidProperties" for compatibility with Grobid modules and other Java applications
  * using Grobid as a library.
- * 
- * to be done: having parameters that can be overridden by a system property having a compatible name. 
+ *
+ * to be done: having parameters that can be overridden by a system property having a compatible name.
  */
 public class GrobidProperties {
     public static final Logger LOGGER = LoggerFactory.getLogger(GrobidProperties.class);
@@ -44,8 +45,13 @@ public class GrobidProperties {
     static final String FOLDER_NAME_MODELS = "models";
     static final String FILE_NAME_MODEL = "model";
     private static final String GROBID_VERSION_FILE = "/grobid-version.txt";
-    static final String UNKNOWN_VERSION_STR = "unknown";
-    
+    private static final String UNKNOWN_VERSION_STR = "unknown";
+    private static final String GROBID_REVISION_FILE = "/grobid-revision.txt";
+
+    // Version
+    private static String VERSION = null;
+    private static String REVISION = null;
+
     private static GrobidProperties grobidProperties = null;
 
     // indicate if GROBID is running in server mode or not
@@ -223,13 +229,13 @@ public class GrobidProperties {
 
     /**
      * Create a new object and search where to find the grobid-home folder.
-     * 
+     *
      * We check if the system property GrobidPropertyKeys.PROP_GROBID_HOME
      * is set. If not set, the method will search for a folder named
      * grobid-home in the current project.
-     * 
-     * Finally from the found grobid-home, the yaml config file is loaded and 
-     * the native and data resource paths are initialized. 
+     *
+     * Finally from the found grobid-home, the yaml config file is loaded and
+     * the native and data resource paths are initialized.
      */
     public GrobidProperties() {
         assignGrobidHomePath();
@@ -261,7 +267,7 @@ public class GrobidProperties {
      */
     private static void createModelMap() {
         for(ModelParameters modelParameter : grobidConfig.grobid.models) {
-            if (modelMap == null) 
+            if (modelMap == null)
                 modelMap = new TreeMap<>();
             modelMap.put(modelParameter.name, modelParameter);
         }
@@ -271,14 +277,14 @@ public class GrobidProperties {
      * Add a model with its parameter object in the model map
      */
     public static void addModel(ModelParameters modelParameter) {
-        if (modelMap == null) 
+        if (modelMap == null)
             modelMap = new TreeMap<>();
         modelMap.put(modelParameter.name, modelParameter);
     }
 
     /**
      * Create indicated tmp path if it does not exist
-     */ 
+     */
     private void initializeTmpPath() {
         File tmpDir = getTempPath();
         if (!tmpDir.exists()) {
@@ -288,7 +294,7 @@ public class GrobidProperties {
         }
     }
 
-    /** 
+    /**
      * Return the distinct values of all the engines that are specified in the the model map
      */
     public static Set<GrobidCRFEngine> getDistinctModels() {
@@ -313,20 +319,45 @@ public class GrobidProperties {
      * @return GROBID version
      */
     public static String getVersion() {
-        if (GROBID_VERSION == null) {
-            synchronized (GrobidProperties.class) {
-                if (GROBID_VERSION == null) {
-                    String grobidVersion = UNKNOWN_VERSION_STR;
-                    try (InputStream is = GrobidProperties.class.getResourceAsStream(GROBID_VERSION_FILE)) {
-                        grobidVersion = IOUtils.toString(is, "UTF-8");
-                    } catch (IOException e) {
-                        LOGGER.error("Cannot read Grobid version from resources", e);
-                    }
-                    GROBID_VERSION = grobidVersion;
-                }
+        if (VERSION != null) {
+            return VERSION;
+        }
+        synchronized (GrobidProperties.class) {
+            if (VERSION == null) {
+                VERSION = readFromSystemPropertyOrFromFile("project.version", GROBID_VERSION_FILE);
             }
         }
-        return GROBID_VERSION;
+        return VERSION;
+    }
+
+    public static String getRevision() {
+        if (REVISION != null) {
+            return REVISION;
+        }
+        synchronized (GrobidProperties.class) {
+            if (REVISION == null) {
+                REVISION = readFromSystemPropertyOrFromFile("gitRevision", GROBID_REVISION_FILE);
+            }
+        }
+        return REVISION;
+    }
+
+    private static String readFromSystemPropertyOrFromFile(String systemPropertyName, String filePath) {
+        String grobidVersion = UNKNOWN_VERSION_STR;
+        String systemPropertyValue = System.getProperty(systemPropertyName);
+        if (systemPropertyValue != null) {
+            grobidVersion = systemPropertyValue;
+        } else {
+            try (InputStream is = GrobidProperties.class.getResourceAsStream(filePath)) {
+                String grobidVersionTmp = IOUtils.toString(is, StandardCharsets.UTF_8);
+                if (!StringUtils.startsWithIgnoreCase(grobidVersionTmp, "${project_")) {
+                    grobidVersion = grobidVersionTmp;
+                }
+            } catch (IOException e) {
+                LOGGER.error("Cannot read the version from resources", e);
+            }
+        }
+        return grobidVersion;
     }
 
     /**
@@ -380,7 +411,7 @@ public class GrobidProperties {
     }
 
     public static String getGluttonUrl() {
-        if (grobidConfig.grobid.consolidation.glutton.url == null || grobidConfig.grobid.consolidation.glutton.url.trim().length() == 0) 
+        if (grobidConfig.grobid.consolidation.glutton.url == null || grobidConfig.grobid.consolidation.glutton.url.trim().length() == 0)
             return null;
         else
             return grobidConfig.grobid.consolidation.glutton.url;
@@ -393,10 +424,10 @@ public class GrobidProperties {
     /**
      * Returns the host for a proxy connection, given in the grobid config file.
      *
-     * @return proxy host 
+     * @return proxy host
      */
     public static String getProxyHost() {
-        if (grobidConfig.grobid.proxy.host == null || grobidConfig.grobid.proxy.host.trim().length() == 0)
+        if (grobidConfig.grobid.proxy.host == null || StringUtils.trimToEmpty(grobidConfig.grobid.proxy.host).isEmpty())
             return null;
         else
             return grobidConfig.grobid.proxy.host;
@@ -405,7 +436,7 @@ public class GrobidProperties {
     /**
      * Sets the host a proxy connection, given in the config file.
      *
-     * @param the proxy host to be used
+     * @param host the proxy host to be used
      */
     public static void setProxyHost(final String host) {
         grobidConfig.grobid.proxy.host = host;
@@ -416,7 +447,7 @@ public class GrobidProperties {
     /**
      * Returns the port for a proxy connection, given in the grobid config file.
      *
-     * @return proxy port 
+     * @return proxy port
      */
     public static Integer getProxyPort() {
         return grobidConfig.grobid.proxy.port;
@@ -473,7 +504,7 @@ public class GrobidProperties {
     /**
      * Sets the port for a proxy connection, given in the grobid config file.
      *
-     * @param proxy port 
+     * @param port the proxy port
      */
     public static void setProxyPort(int port) {
         grobidConfig.grobid.proxy.port = port;
@@ -570,7 +601,7 @@ public class GrobidProperties {
         pathToPdfalto = new File(grobidHome.getPath(), pathName);
         if (!pathToPdfalto.exists()) {
             throw new GrobidPropertyException(
-                "Path to pdfalto doesn't exists. " + 
+                "Path to pdfalto doesn't exists. " +
                 "Please set the path to pdfalto in the config file");
         }
 
@@ -752,7 +783,7 @@ public class GrobidProperties {
         ModelParameters parameters = getGrobidModelParameters(model.getModelName());
         if (parameters != null && parameters.wapiti != null)
             return parameters.wapiti.window;
-        else 
+        else
             return 20;
     }
 
@@ -760,7 +791,7 @@ public class GrobidProperties {
         ModelParameters parameters = getGrobidModelParameters(model.getModelName());
         if (parameters != null && parameters.wapiti != null)
             return parameters.wapiti.epsilon;
-        else 
+        else
             return 0.00001;
     }
 
@@ -768,7 +799,7 @@ public class GrobidProperties {
         ModelParameters parameters = getGrobidModelParameters(model.getModelName());
         if (parameters != null && parameters.wapiti != null)
             return parameters.wapiti.nbMaxIterations;
-        else 
+        else
             return 2000;
     }
 
