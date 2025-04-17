@@ -12,6 +12,7 @@ import nu.xom.Element;
 import nu.xom.Node;
 import nu.xom.Text;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
@@ -1668,15 +1669,17 @@ public class TEIFormatter {
                 }
 
                 //Identify URLs and attach reference in the text
-                List<OffsetPosition> offsetPositionsUrls = Lexicon.tokenPositionUrlPatternWithPdfAnnotations(clusterTokens, doc.getPDFAnnotations());
-                offsetPositionsUrls.stream()
+                List<Pair<OffsetPosition, String>> offsetPositionsAndDestinationUrls = Lexicon.tokenPositionUrlPatternWithPdfAnnotations(clusterTokens, doc.getPDFAnnotations());
+
+                offsetPositionsAndDestinationUrls.stream()
+                    .filter(opu -> opu.getLeft().end - opu.getLeft().start > 0)
                     .forEach(opu -> {
                             // We correct the latest token here, since later we will do a substring in the shared code,
                             // and we cannot add a +1 there.
                         matchedLabelPositions.add(
-                            Triple.of(LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(opu.start, opu.end)),
+                            Triple.of(opu.getRight() != null ? opu.getRight() : LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(opu.getLeft().start, opu.getLeft().end + 1)),
                                 "url",
-                                new OffsetPosition(opu.start, opu.end + 1)
+                                new OffsetPosition(opu.getLeft().start, opu.getLeft().end + 1)
                             )
                         );
                     }
@@ -1735,16 +1738,16 @@ public class TEIFormatter {
                     }
 
                     // sort the matches by position
-                    Collections.sort(matchedLabelPositions, (m1, m2) -> {
-                            return m1.getRight().start - m2.getRight().start;
-                        }
-                    );
+                    List<Triple<String, String, OffsetPosition>> sortedFilteredMatchedLabelPositions = matchedLabelPositions.stream()
+                        .filter(a -> StringUtils.isNotBlank(a.getLeft()))
+                        .sorted(Comparator.comparingInt(m -> m.getRight().start))
+                        .collect(Collectors.toList());
 
                     // position in the layout token index
                     int pos = 0;
 
                     // build the paragraph segment, match by match
-                    for (Triple<String, String, OffsetPosition> referenceInformation : matchedLabelPositions) {
+                    for (Triple<String, String, OffsetPosition> referenceInformation : sortedFilteredMatchedLabelPositions) {
                         String type = referenceInformation.getMiddle();
                         OffsetPosition matchingPosition = referenceInformation.getRight();
 
@@ -1768,15 +1771,14 @@ public class TEIFormatter {
 
                         curParagraphTokens.addAll(before);
 
-
                         Element ref = null;
                         List<LayoutToken> calloutTokens = clusterTokens.subList(matchingPosition.start, matchingPosition.end);
                         if (type.equals("note")) {
                             Note note = labels2Notes.get(referenceInformation.getLeft());
                             ref = generateNoteRef(calloutTokens, referenceInformation.getLeft(), note, config);
                         } else if (type.equals("url")) {
-                            String normalizeDehyphenizeText = LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(matchingPosition.start, matchingPosition.end));
-                            ref = generateURLRef(normalizeDehyphenizeText, calloutTokens, config.isGenerateTeiCoordinates("ref"));
+                            String destinationText = referenceInformation.getLeft();
+                            ref = generateURLRef(destinationText, calloutTokens, config.isGenerateTeiCoordinates("ref"));
 
                             //We might need to add a space if it's in the layout tokens
                             if (CollectionUtils.isNotEmpty(before) && StringUtils.equalsAnyIgnoreCase(Iterables.getLast(before).getText(), " ", "\n")) {
@@ -1785,7 +1787,11 @@ public class TEIFormatter {
                         }
 
                         pos = matchingPosition.end;
-                        curParagraph.appendChild(ref);
+                        if (ref != null) {
+                            curParagraph.appendChild(ref);
+                        } else {
+                            LOGGER.warn("Detected empty reference or note after " + clusterContentBefore);
+                        }
                     }
 
                     // add last chunk of paragraph stuff (or whole paragraph if no note callout matching)
@@ -2720,15 +2726,16 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
         return nodes;
     }
 
-    public Element generateURLRef(String text,
+    public Element generateURLRef(String destination,
                                   List<LayoutToken> refTokens,
                                   boolean generateCoordinates) {
-        if (StringUtils.isEmpty(text)) {
+        if (StringUtils.isEmpty(destination)) {
             return null;
         }
 
         // For URLs, we remove spaces
-        String cleanText = StringUtils.trim(text.replace("\n", " ").replace(" ", ""));
+        String cleanText = StringUtils.trim(LayoutTokensUtil.toText(refTokens).replace("\n", " "));
+        String cleanDestination = StringUtils.trim(destination.replace("\n", " ").replace(" ", ""));
 
         String coords = null;
         if (generateCoordinates && refTokens != null) {
@@ -2741,8 +2748,8 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
         if (coords != null) {
             ref.addAttribute(new Attribute("coords", coords));
         }
-        ref.appendChild(text);
-        ref.addAttribute(new Attribute("target", cleanText));
+        ref.appendChild(cleanText);
+        ref.addAttribute(new Attribute("target", cleanDestination));
 
         return ref;
     }
