@@ -242,10 +242,10 @@ public class HeaderParser extends AbstractParser {
                 resHeader.attachEmails();
                 boolean attached = false;
                 if (fragmentedAuthors && !hasMarker) {
-                    if (resHeader.getFullAffiliations() != null) {
-                        if (resHeader.getFullAffiliations().size() == authorSegments.size()) {
-                            int k = 0;
-                            List<Person> persons = resHeader.getFullAuthors();
+                    if (resHeader.getFullAffiliations() != null && resHeader.getFullAffiliations().size() == authorSegments.size()) {
+                        int k = 0;
+                        List<Person> persons = resHeader.getFullAuthors();
+                        if (CollectionUtils.isNotEmpty(persons)) {
                             for (Person pers : persons) {
                                 if (k < authorsBlocks.size()) {
                                     int indd = authorsBlocks.get(k);
@@ -255,10 +255,10 @@ public class HeaderParser extends AbstractParser {
                                 }
                                 k++;
                             }
-                            attached = true;
-                            resHeader.setFullAffiliations(null);
-                            resHeader.setAffiliation(null);
                         }
+                        attached = true;
+                        resHeader.setFullAffiliations(null);
+                        resHeader.setAffiliation(null);
                     }
 
                 }
