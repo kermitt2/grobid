@@ -15,7 +15,7 @@ We assume in the following that docker is installed and working on your system. 
 
 ## Deep Learning and CRF image
 
-The process for retrieving and running the image is as follow:
+The process for retrieving and running a docker image is as follows:
 
 - Pull the image from docker HUB (check the [latest version number](https://hub.docker.com/r/grobid/grobid/tags)):
 
@@ -35,7 +35,7 @@ Current latest version:
 > docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.1
 ```
 
-The image will automatically uses the GPU and CUDA version available on your host machine, but only on Linux. GPU usage via a container on Windows and MacOS machine is currently not supported by Docker. If no GPU are available, CPU will be used. 
+The image will automatically use the GPU and CUDA version available on your host machine, but only on Linux. GPU usage via a container on Windows and MacOS machine is currently not supported by Docker. If no GPU are available, CPU will be used. 
 
 Note that starting the container with option `--ulimit core=0` avoids having possible core dumped inside the container, which can happen overwise due to the crash of the PDF parsing C++ component. Starting the container with parameter `-it` allows to interact with the docker run process, which is of limited use here, except conveniently stopping the docker container with control-c.
 
@@ -61,7 +61,7 @@ Grobid web services are then available as described in the [service documentatio
 
 By default, this image runs Deep Learning models for:
 
-- bibliographical parsing (adding 2-4 points in term of F1-score for bibliographical reference parsing and 2-5 points in term of citation context identifications, as compared to CRF-only image)
+- bibliographical parsing (adding 2-4 points in terms of F1-score for bibliographical reference parsing and 2-5 points in term of citation context identifications, as compared to CRF-only image)
 
 - affiliation-address parsing,
 
@@ -77,7 +77,7 @@ It is then possible to select other Deep Learning models for other processing st
 
 ## CRF-only image
 
-The process for retrieving and running the image is as follow:
+The process for retrieving and running the image is as follows:
 
 - Pull the image from docker HUB (check the [latest version number](https://hub.docker.com/r/lfoppiano/grobid/tags)):
 
@@ -219,7 +219,7 @@ In order to build an image supporting GPU, you need:
 
 Without this requirement, the image might default to CPU, even if GPU are available on the host machine running the image. 
 
-For being able to use both CRF and Deep Learningmodels, use the dockerfile `./Dockerfile.delft`. The only important information then is the version which will be checked out from the tags.
+For being able to use both CRF and Deep Learning models, use the dockerfile `./Dockerfile.delft`. The only important information then is the version which will be checked out from the tags.
 
 ```bash
 > docker build -t grobid/grobid:0.8.1 --build-arg GROBID_VERSION=0.8.1 --file Dockerfile.delft .

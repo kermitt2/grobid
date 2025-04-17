@@ -32,12 +32,7 @@ import org.grobid.core.layout.PDFAnnotation;
 import org.grobid.core.layout.Page;
 import org.grobid.core.layout.VectorGraphicBoxCalculator;
 import org.grobid.core.sax.*;
-import org.grobid.core.utilities.BoundingBoxCalculator;
-import org.grobid.core.utilities.ElementCounter;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.Pair;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.Utilities;
+import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 
@@ -163,7 +158,7 @@ public class Document implements Serializable {
     // map of sequence of LayoutTokens for the fulltext model labels
     //Map<String, List<LayoutTokenization>> labeledTokenSequences = null;
 
-    protected double byteSize = 0; 
+    protected double byteSize = 0;
 
     public Document(DocumentSource documentSource) {
         this.documentSource = documentSource;
@@ -1273,6 +1268,7 @@ public class Document implements Serializable {
         List<LayoutToken> result = new ArrayList<>();
         List<List<LayoutToken>> discardedPieces = new ArrayList<>();
         Iterator<Integer> it = f.getBlockPtrs().iterator();
+        List<List<LayoutToken>> discardedPieces = new ArrayList<>();
 
         while (it.hasNext()) {
             Integer newBlockPtr = it.next();
@@ -1376,6 +1372,15 @@ public class Document implements Serializable {
             }
         }
 
+        if (!CollectionUtils.isEmpty(result)) {
+            // If there result is zero, we discard the discarded data, because the figure will not be changed
+
+            discardedPieces.stream()
+                .forEach(
+                    f::addDiscardedPieceTokens
+                );
+
+        }
 
         return org.apache.commons.lang3.tuple.Pair.of(result, discardedPieces);
     }
