@@ -1268,7 +1268,6 @@ public class Document implements Serializable {
         List<LayoutToken> result = new ArrayList<>();
         List<List<LayoutToken>> discardedPieces = new ArrayList<>();
         Iterator<Integer> it = f.getBlockPtrs().iterator();
-        List<List<LayoutToken>> discardedPieces = new ArrayList<>();
 
         while (it.hasNext()) {
             Integer newBlockPtr = it.next();
