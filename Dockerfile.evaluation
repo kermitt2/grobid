@@ -1,0 +1,59 @@
+## Grobid evaluation image
+# ------
+# https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/
+# NOTE: To match the exact evaluation published in the Grobid documentation is necessary to have a
+# running Biblio-glutton instance
+#
+# A project using this image can be found here: https://huggingface.co/spaces/lfoppiano/grobid-evaluation
+# Please notice that the evaluation is run through a python script that runs all the needed commands
+# TODO: upload the evaluation in Markdown somewhere
+
+FROM lfoppiano/grobid:latest-evaluation-full as runtime
+
+# setting locale is likely useless but to be sure
+ENV LANG C.UTF-8
+
+USER root
+
+RUN apt-get update && \
+    apt-get -y --no-install-recommends install unzip wget git git-lfs
+
+WORKDIR /opt/grobid
+
+# gradle
+COPY gradle/ ./gradle/
+COPY gradlew ./
+COPY gradle.properties ./
+COPY build.gradle ./
+COPY settings.gradle ./
+
+# source
+COPY grobid-core/ ./grobid-core/
+COPY grobid-service/ ./grobid-service/
+COPY grobid-trainer/ ./grobid-trainer/
+
+# Setting DL-powered configuration + biblio-glutton
+COPY grobid-home/config/grobid-evaluation.yaml grobid-home/config/config.yaml
+
+RUN rm -rf /opt/grobid/grobid-home/models/*-with_ELMo \
+    && mkdir /opt/grobid/evaluation
+
+# Download evaluation data (For space reasons, we are not downloading the evaluation data) \
+# See https://huggingface.co/spaces/lfoppiano/grobid-evaluation/blob/main/Dockerfile
+WORKDIR /opt/grobid/evaluation
+#RUN git lfs install && git clone --depth 1 https://huggingface.co/datasets/sciencialab/grobid-evaluation evaluation
+#RUN chmod -R uog+rw /opt/grobid/evaluation
+
+VOLUME ["/opt/grobid/grobid-home/tmp"]
+
+WORKDIR /opt/grobid
+
+#CMD ["/bin/bash", "-c", "./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/PMC_sample_1943 -Prun=1 -PfileRatio=1; ./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/biorxiv-10k-test-2000 -Prun=1 -PfileRatio=1; ./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/eLife_984 -Prun=1 -PfileRatio=1; ./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/PLOS_1000 -Prun=1 -PfileRatio=1;"]
+#CMD ["/bin/bash", "-c", "./gradlew jatsEval -Pp2t=/opt/grobid/evaluation/PMC_sample_1943 -Prun=1 -PfileRatio=1;"]
+
+LABEL \
+    authors="The contributors" \
+    org.label-schema.name="Grobid" \
+    org.label-schema.description="Image running the Grobid End 2 end evaluation" \
+    org.label-schema.url="https://github.com/kermitt2/Grobid" \
+    org.label-schema.version=${GROBID_VERSION}

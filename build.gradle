@@ -5,13 +5,14 @@ buildscript {
         maven {
             url 'https://plugins.gradle.org/m2/'
         }
+        gradlePluginPortal()
     }
     dependencies {
         classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.12.0'
         classpath "gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0"
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21"
-        classpath group: 'net.researchgate', name: 'gradle-release', version: '3.0.2'
+        classpath "net.researchgate:gradle-release:3.0.2"
     }
 }
 
@@ -63,6 +64,35 @@ jacoco {
     toolVersion = '0.8.8'
 }
 
+
+def getGitRevision() {
+    def gitRevision = "unknown"
+    try {
+        def stdout = new ByteArrayOutputStream()
+        println("Checking git under ${rootProject.rootDir}")
+        exec {
+            workingDir rootProject.rootDir
+            commandLine 'git', 'describe', '--tags', '--always', '--first-parent'
+            standardOutput = stdout
+        }
+        gitRevision = stdout.toString().trim()
+        println "Current Git revision: ${gitRevision}"
+    } catch (Exception e) {
+        println "Could not get Git revision: ${e}"
+    }
+    return gitRevision
+}
+
+project.ext.gitRevision = getGitRevision()
+
+// Create a task to expose the revision for other tasks
+tasks.register('collectGitRevision') {
+    project.ext.gitRevision = getGitRevision()
+    doLast {
+        println "Git revision: ${project.ext.gitRevision}"
+    }
+}
+
 allprojects {
     apply plugin: 'java-library'
     apply plugin: 'base'
@@ -79,6 +109,7 @@ allprojects {
         options.compilerArgs << '-parameters'
     }
 }
+
 
 subprojects {
     apply plugin: 'java'
@@ -106,18 +137,6 @@ subprojects {
             jvmTarget = JavaVersion.VERSION_11
         }
     }
-
-//    kotlin {
-//        jvmToolchain(11)
-//    }
-
-//    java {
-//        toolchain {
-//            languageVersion.set(JavaLanguageVersion.of(11))
-//            vendor.set(JvmVendorSpec.ADOPTIUM)
-//
-//        }
-//    }
 
     repositories {
         mavenCentral()
@@ -181,7 +200,7 @@ subprojects {
         implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.3"
     }
 
-    task sourceJar(type: Jar) {
+    tasks.register('sourceJar', Jar) {
         description = 'A jar that contains source code'
         archiveClassifier = 'sources'
         from project.sourceSets.main.java
@@ -191,32 +210,6 @@ subprojects {
         archives sourceJar
         archives jar
     }
-
-    //compileJava.dependsOn(changeVersionIfNeeded)
-
-//    uploadArchives {
-//        // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:
-//        /*
-//            mavenRepoUserName=maven_username
-//            mavenRepoPassword=super_secret
-//            mavenRepoReleasesUrl=https://nexus3.example.org/repository/maven-releases/
-//            mavenRepoSnapshotsUrl=https://nexus3.example.org/repository/maven-snapshots/
-//        */
-//        def user = project.hasProperty('mavenRepoUserName') ? project.findProperty('mavenRepoUserName') : ''
-//        def password = project.hasProperty('mavenRepoPassword') ? project.findProperty('mavenRepoPassword') : ''
-//        def rurl = project.hasProperty('mavenRepoReleasesUrl') ? project.findProperty('mavenRepoReleasesUrl') : ''
-//        def surl = project.hasProperty('mavenRepoSnapshotsUrl') ? project.findProperty('mavenRepoSnapshotsUrl') : ''
-//
-//        repositories.mavenDeployer {
-//            repository(url: rurl) {
-//                authentication(userName: user, password: password)
-//            }
-//            snapshotRepository(url: surl) {
-//                authentication(userName: user, password: password)
-//            }
-//
-//        }
-//    }
 
     test {
         useJUnitPlatform()
@@ -232,6 +225,7 @@ subprojects {
             jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED",
                 "--add-opens", "java.base/java.io=ALL-UNNAMED", "--add-opens", "java.xml/jdk.xml.internal=ALL-UNNAMED"
         }
+        
         systemProperty "java.library.path", "${javaLibraryPath}"
     }
 }
@@ -312,21 +306,25 @@ project("grobid-core") {
     }
 
     processResources {
-        filesMatching('grobid-version.txt') {
-            filter {
-                it.replace('project.version', project.property('version'))
-            }
+        filesMatching(["grobid-version.txt", "grobid-revision.txt"]) {
+            expand(
+                project_version: project.property('version') ?: "unknown",
+                project_revision: rootProject.ext.gitRevision
+            )
         }
     }
 
-    task install {
-        dependsOn publishToMavenLocal
-        dependsOn 'shadowJar'
-    }
+    tasks.register(
+        "install",
+        {
+            dependsOn publishToMavenLocal
+            dependsOn 'shadowJar'
+        }
+    )
 }
 
 project("grobid-home") {
-    task packageGrobidHome(type: Zip) {
+    tasks.register('packageGrobidHome', Zip) {
         zip64 true
         from('.') {
             include("config/*")
@@ -356,6 +354,7 @@ project(":grobid-service") {
     apply plugin: 'com.github.johnrengelman.shadow'
 
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
+
 
     tasks.run {
         def javaLibraryPath = getJavaLibraryPath()
@@ -590,7 +589,7 @@ project(":grobid-trainer") {
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path", "${javaLibraryPath}"
+        systemProperty "java.library.path", "${System.getProperty('java.library.path')}:" + libraries
     }
 
     task(teiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
@@ -598,6 +597,7 @@ project(":grobid-trainer") {
         classpath = sourceSets.main.runtimeClasspath
         args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0'), getArg('flavor', '')
         def javaLibraryPath = getJavaLibraryPath()
+        
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         } else {
@@ -611,11 +611,13 @@ project(":grobid-trainer") {
         classpath = sourceSets.main.runtimeClasspath
         args 'data', getArg('p2t', '.')
         def javaLibraryPath = getJavaLibraryPath()
+
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         } else {
             jvmArgs '-Xmx3072m'
         }
+
         systemProperty "java.library.path", "${javaLibraryPath}"
     }
 
@@ -623,12 +625,15 @@ project(":grobid-trainer") {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'eval', getArg('p2t', '.')
+
         def javaLibraryPath = getJavaLibraryPath()
+
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         } else {
             jvmArgs '-Xmx3072m'
         }
+
         systemProperty "java.library.path", "${javaLibraryPath}"
     }
 }

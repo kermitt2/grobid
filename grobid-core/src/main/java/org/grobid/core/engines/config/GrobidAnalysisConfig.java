@@ -3,6 +3,7 @@ package org.grobid.core.engines.config;
 import java.io.File;
 import java.util.List;
 
+import org.grobid.core.GrobidModels;
 import org.grobid.core.analyzers.Analyzer;
 
 /**
@@ -100,6 +101,8 @@ public class GrobidAnalysisConfig {
     public void setIncludeDiscardedText(boolean includeDiscardedText) {
         this.includeDiscardedText = includeDiscardedText;
     }
+
+    private String flavor = null;
 
     // BUILDER
 
@@ -205,6 +208,14 @@ public class GrobidAnalysisConfig {
             return this;
         }
 
+        public GrobidAnalysisConfigBuilder flavor(GrobidModels.Flavor a) {
+            if (a != null) {
+                config.flavor = a.getLabel();
+            }
+            return this;
+        }
+
+
         public GrobidAnalysisConfig build() {
             postProcessAndValidate();
             return config;
@@ -232,6 +243,24 @@ public class GrobidAnalysisConfig {
 
     public static GrobidAnalysisConfig defaultInstance() {
         return new GrobidAnalysisConfig();
+    }
+
+    public String toStringTEI() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("startPage=").append(startPage);
+        sb.append(", endPage=").append(endPage);
+        sb.append(", consolidateCitations=").append(consolidateCitations);
+        sb.append(", consolidateHeader=").append(consolidateHeader);
+        sb.append(", consolidateFunders=").append(consolidateFunders);
+        sb.append(", includeRawAffiliations=").append(includeRawAffiliations);
+        sb.append(", includeRawCitations=").append(includeRawCitations);
+        sb.append(", includeRawCopyrights=").append(includeRawCopyrights);
+        sb.append(", generateTeiIds=").append(generateTeiIds);
+        sb.append(", generateTeiCoordinates=").append(generateTeiCoordinates);
+        sb.append(", flavor=").append(flavor);
+
+        return sb.toString();
     }
 
     public int getStartPage() {
@@ -308,5 +337,9 @@ public class GrobidAnalysisConfig {
 
     public boolean isWithSentenceSegmentation() {
         return withSentenceSegmentation;
+    }
+
+    public String getFlavor() {
+        return flavor;
     }
 }
