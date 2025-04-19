@@ -45,7 +45,7 @@ public class PDFAnnotation {
 
 	public void addBoundingBox(BoundingBox box) {
         if (boundingBoxes == null) {
-        	boundingBoxes = new ArrayList<BoundingBox>();
+        	boundingBoxes = new ArrayList<>();
         };
 		boundingBoxes.add(box);
     }
@@ -75,11 +75,7 @@ public class PDFAnnotation {
     }
 
     public boolean isNull() {
-        if ( (boundingBoxes == null) && (startToken == -1) && (endToken == -1) && (type == null) ) {
-            return true;
-        }
-        else 
-            return false;
+        return (boundingBoxes == null) && (startToken == -1) && (endToken == -1) && (type == null);
     }
 
 	public String getDestination() {
@@ -98,7 +94,7 @@ public class PDFAnnotation {
                 ", endToken=" + endToken +
                 ", type=" + type;
         if (boundingBoxes != null)
-            res += ", boundingBoxes=" + boundingBoxes.toString() + '}';
+            res += ", boundingBoxes=" + boundingBoxes + '}';
         return res;
     }
 	
@@ -113,7 +109,7 @@ public class PDFAnnotation {
 		// do we have an entity annotation at this location?
 		// we need to check the coordinates
 		int pageToken = token.getPage();
-		if (pageToken == pageNumber) {
+		if (pageToken == pageNumber && boundingBoxes != null) {
 			BoundingBox tokenBox = BoundingBox.fromLayoutToken(token);
 			for(BoundingBox box : boundingBoxes) {
 				if (box.intersect(tokenBox)) {
@@ -147,7 +143,7 @@ public class PDFAnnotation {
             return null;
         BoundingBox intersectBox = null;
         int pageToken = token.getPage();
-        if (pageToken == pageNumber) {
+        if (pageToken == pageNumber && boundingBoxes != null) {
             BoundingBox tokenBox = BoundingBox.fromLayoutToken(token);
             for(BoundingBox box : boundingBoxes) {
                 if (box.intersect(tokenBox)) {
