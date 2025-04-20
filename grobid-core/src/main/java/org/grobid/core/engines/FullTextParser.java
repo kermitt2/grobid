@@ -122,7 +122,7 @@ public class FullTextParser extends AbstractParser {
     }
 
 	/**
-     * Machine-learning recognition of the complete full text structures.
+     * Machine-learning recognition of the complete fulltext structures.
      *
      * @param documentSource input
      * @param config config
@@ -801,7 +801,7 @@ public class FullTextParser extends AbstractParser {
 
 	static public Pair<String, LayoutTokenization> getBodyTextFeatured(Document doc,
                                                                        SortedSet<DocumentPiece> documentBodyParts) {
-		if ((documentBodyParts == null) || (documentBodyParts.size() == 0)) {
+		if (CollectionUtils.isEmpty(documentBodyParts)) {
 			return null;
 		}
 		FeatureFactory featureFactory = FeatureFactory.getInstance();
@@ -810,7 +810,7 @@ public class FullTextParser extends AbstractParser {
         int currentFontSize = -1;
 
 		List<Block> blocks = doc.getBlocks();
-		if ( (blocks == null) || blocks.size() == 0) {
+		if (CollectionUtils.isEmpty (blocks)) {
 			return null;
 		}
 
