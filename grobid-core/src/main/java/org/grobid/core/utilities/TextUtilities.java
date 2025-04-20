@@ -1216,10 +1216,6 @@ public class TextUtilities {
             filter = true;
         } else if (line.contains("@IMAGE") || line.contains("@PAGE")) {
             filter = true;
-        } else if (line.contains(".pbm") || line.contains(".ppm") ||
-            line.contains(".svg") || line.contains(".jpg") ||
-            line.contains(".png")) {
-            filter = true;
         }
         return filter;
     }
