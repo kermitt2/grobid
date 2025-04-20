@@ -1311,7 +1311,7 @@ public class Document implements Serializable {
                             }
 
                             if (subListSize > 0) {
-                                newBlockTrimmed = newBlock.getTokens().subList(0, subListSize);
+                                newBlockTrimmed = new ArrayList<>(newBlock.getTokens().subList(0, subListSize));
                             } else {
                                 // If the item is not found, we discard the current block and all the following
                                 f.addDiscardedPieceTokens(newBlock.getTokens());
@@ -1341,7 +1341,7 @@ public class Document implements Serializable {
                                     subListSize -= 1;
                                 }
                                 if (subListSize > 0) {
-                                    newBlockTrimmed = newBlock.getTokens().subList(0, subListSize);
+                                    newBlockTrimmed = new ArrayList<>(newBlock.getTokens().subList(0, subListSize));
                                 } else {
                                     // If the item is not found, we discard the current block and all the following
                                     f.addDiscardedPieceTokens(previousBlock.getTokens());
@@ -1554,7 +1554,7 @@ public class Document implements Serializable {
             String text = block.getText();
             if ((text != null) && (!text.contains("@PAGE")) && (!text.contains("@IMAGE"))) {
                 double surface = block.getWidth() * block.getHeight();
-                
+
                 /*System.out.println("block.width: " + block.width);
                 System.out.println("block.height: " + block.height);
                 System.out.println("surface: " + surface);
