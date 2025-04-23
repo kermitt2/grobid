@@ -101,8 +101,8 @@ public class TEIFormatterTest {
 
 
         List<Node> nodes = new TEIFormatter(null, null)
-            .markReferencesFigureOrTableTEI(input, tokensWithOffset,
-                figures, FigureTableType.FIGURE, false);
+            .markReferencesFigureTEI(input, tokensWithOffset,
+                figures, false);
 
         assertThat(nodes, hasSize(4));
         assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">3C</ref>"));
@@ -132,8 +132,8 @@ public class TEIFormatterTest {
 
 
         List<Node> nodes = new TEIFormatter(null, null)
-            .markReferencesFigureOrTableTEI(input, tokensWithOffset,
-                figures, FigureTableType.FIGURE, false);
+            .markReferencesFigureTEI(input, tokensWithOffset,
+                figures, false);
 
         assertThat(nodes, hasSize(2));
         assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">3D</ref>"));
@@ -161,8 +161,8 @@ public class TEIFormatterTest {
 
 
         List<Node> nodes = new TEIFormatter(null, null)
-            .markReferencesFigureOrTableTEI(input, tokensWithOffset,
-                figures, FigureTableType.FIGURE, false);
+            .markReferencesFigureTEI(input, tokensWithOffset,
+                figures, false);
 
         assertThat(nodes, hasSize(3));
         assertThat(nodes.get(0).toXML(), is("and"));
@@ -190,7 +190,7 @@ public class TEIFormatterTest {
 
 
         List<Node> nodes = new TEIFormatter(null, null)
-            .markReferencesFigureOrTableTEI(input, tokensWithOffset, figures, FigureTableType.FIGURE,  false);
+            .markReferencesFigureTEI(input, tokensWithOffset, figures, false);
 
         assertThat(nodes, hasSize(6));
         assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">5</ref>"));
@@ -222,7 +222,7 @@ public class TEIFormatterTest {
 
 
         List<Node> nodes = new TEIFormatter(null, null)
-            .markReferencesFigureOrTableTEI(input, tokensWithOffset, figures, FigureTableType.FIGURE, false);
+            .markReferencesFigureTEI(input, tokensWithOffset, figures, false);
 
         assertThat(nodes, hasSize(3));
         assertThat(nodes.get(0).toXML(), is(","));
@@ -251,7 +251,7 @@ public class TEIFormatterTest {
 
 
         List<Node> nodes = new TEIFormatter(null, null)
-            .markReferencesFigureOrTableTEI(input, tokensWithOffset, figures, FigureTableType.FIGURE, false);
+            .markReferencesFigureTEI(input, tokensWithOffset, figures, false);
 
         assertThat(nodes, hasSize(4));
         assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">5</ref>"));
@@ -280,8 +280,8 @@ public class TEIFormatterTest {
 
 
         List<Node> nodes = new TEIFormatter(null, null)
-            .markReferencesFigureOrTableTEI(input, tokensWithOffset,
-                tables, TABLE, false);
+            .markReferencesTableTEI(input, tokensWithOffset,
+                tables, false);
         assertThat(nodes, hasSize(4));
         assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"table\">3C</ref>"));
         assertThat(nodes.get(1).toXML(), is(" and"));
@@ -308,8 +308,8 @@ public class TEIFormatterTest {
         List<Table> tables = List.of(t1, t2, t3);
 
         List<Node> nodes = new TEIFormatter(null, null)
-            .markReferencesFigureOrTableTEI(input, tokensWithOffset, tables,
-                FigureTableType.TABLE, false);
+            .markReferencesTableTEI(input, tokensWithOffset, tables,
+                false);
         assertThat(nodes, hasSize(3));
         assertThat(nodes.get(0).toXML(), is("and"));
         assertThat(nodes.get(1).toXML(), is(" "));
@@ -335,8 +335,8 @@ public class TEIFormatterTest {
         List<Table> tables = List.of(t1, t2, t3);
 
         List<Node> nodes = new TEIFormatter(null, null)
-            .markReferencesFigureOrTableTEI(input, tokensWithOffset, tables,
-                FigureTableType.TABLE, false);
+            .markReferencesTableTEI(input, tokensWithOffset, tables,
+                false);
 
         assertThat(nodes, hasSize(6));
         assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"table\">5</ref>"));
@@ -366,8 +366,7 @@ public class TEIFormatterTest {
         List<Table> tables = List.of(t1, t2, t3);
 
         List<Node> nodes = new TEIFormatter(null, null)
-            .markReferencesFigureOrTableTEI(input, tokensWithOffset, tables,
-                FigureTableType.TABLE, false);
+            .markReferencesTableTEI(input, tokensWithOffset, tables, false);
 
         assertThat(nodes, hasSize(6));
         assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"table\">5</ref>"));
