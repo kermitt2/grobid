@@ -577,10 +577,10 @@ public class Segmentation extends AbstractParser {
                         currentFontSize = newFontSize;
                     }
 
-                    if (token.getBold())
+                    if (token.isBold())
                         features.bold = true;
 
-                    if (token.getItalic())
+                    if (token.isItalic())
                         features.italic = true;
 
                     // HERE horizontal information
