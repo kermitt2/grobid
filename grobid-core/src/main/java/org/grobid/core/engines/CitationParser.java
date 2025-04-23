@@ -197,7 +197,7 @@ public class CitationParser extends AbstractParser {
                         LOGGER.error("An exception occured when processing author names of a citation.", e);
                     }
                     if (resCitation.getPublicationDate() != null) {
-                        List<Date> dates = parsers.getDateParser().processing(resCitation
+                        List<Date> dates = parsers.getDateParser().process(resCitation
                                 .getPublicationDate());
                         if (dates != null) {
                             Date bestDate = null;

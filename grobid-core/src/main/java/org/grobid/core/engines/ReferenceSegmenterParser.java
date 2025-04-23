@@ -890,10 +890,10 @@ System.out.println("");
                     features.http = true;
                 }
 
-                if ( (token != null) && (token.getBold()) )
+                if ( (token != null) && (token.isBold()) )
                     features.bold = true;
 
-                if ( (token != null) && (token.getItalic()) )
+                if ( (token != null) && (token.isItalic()) )
                     features.italic = true;
 
                 if (features.capitalisation == null)
