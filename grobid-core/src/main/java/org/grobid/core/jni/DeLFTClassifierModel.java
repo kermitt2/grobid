@@ -40,15 +40,15 @@ public class DeLFTClassifierModel {
 
     class InitModel implements Runnable { 
         private String modelName;
-        private String architecture;
         private File modelPath;
-          
+        private String architecture;
+
         public InitModel(String modelName, File modelPath, String architecture) { 
             this.modelName = modelName;
             this.modelPath = modelPath;
             this.architecture = architecture;
         } 
-          
+
         @Override
         public void run() { 
             Jep jep = JEPThreadPoolClassifier.getInstance().getJEPInstance(); 
@@ -59,13 +59,16 @@ public class DeLFTClassifierModel {
                 jep.eval(model_variable+" = Classifier('" + this.modelName + "_" + this.architecture + "')");
                 jep.eval(model_variable+".load(dir_path='"+this.modelPath.getAbsolutePath()+"')");
 
-                if (GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(this.modelName) != -1)
+                GrobidProperties.getInstance();
+                if (GrobidProperties.getDelftRuntimeMaxSequenceLength(this.modelName) != -1) {
                     jep.eval(this.modelName+".config.max_sequence_length="+
-                        GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(this.modelName));
+                        GrobidProperties.getDelftRuntimeMaxSequenceLength(this.modelName));
+                }
 
-                if (GrobidProperties.getInstance().getDelftRuntimeBatchSize(this.modelName) != -1)
+                if (GrobidProperties.getDelftRuntimeBatchSize(this.modelName) != -1) {
                     jep.eval(this.modelName+".config.batch_size="+
-                        GrobidProperties.getInstance().getDelftRuntimeBatchSize(this.modelName));
+                        GrobidProperties.getDelftRuntimeBatchSize(this.modelName));
+                }
 
             } catch(JepException e) {
                 LOGGER.error("DeLFT classifier model initialization failed. ", e);
@@ -89,7 +92,7 @@ public class DeLFTClassifierModel {
         ) throws JepException, IOException {
             try {
                 jep.set(name, values);
-                // convert PyJList to normal python list (necessary for Hugging Face transformer tokenizer input)
+                // convert PyJList to a normal python list (necessary for Hugging Face transformer tokenizer input)
                 jep.eval(name + " = list("+name+")");
             } catch(JepException e) {
                 // we have normally the Java List as a PyJList in python, which should
@@ -112,11 +115,8 @@ public class DeLFTClassifierModel {
         @Override
         public String call() { 
             Jep jep = JEPThreadPoolClassifier.getInstance().getJEPInstance(); 
-            StringBuilder labelledData = new StringBuilder();
             String results = null;
             try {
-                //System.out.println(this.data);
-
                 // load and classify, input here is an array of texts to classify
                 this.setJepStringValueWithFileFallback(jep, "input", this.data);
                 String model_variable = this.modelName.replace("-", "_");
@@ -126,19 +126,21 @@ public class DeLFTClassifierModel {
 
                 results = (String) objectResult;
 
-                //System.out.println(results);
-                // cleaning
-                jep.eval("del jsondict");
-                jep.eval("del input");
             } catch(JepException e) {
                 LOGGER.error("DeLFT model classification via JEP failed", e);
             } catch(IOException e) {
                 LOGGER.error("DeLFT model classification failed", e);
+            } finally {
+                // No need to close the JEP instance here as it's managed by the pool
+                // and will be reused for other tasks
+                // cleaning
+                jep.eval("del jsondict");
+                jep.eval("del input");
             }
             //System.out.println(labelledData.toString());
             return results;
         } 
-    } 
+    }
 
     /**
      *  Classify an array of string in batch. The result is a json array giving 
@@ -164,8 +166,9 @@ public class DeLFTClassifierModel {
     public static void trainJNI(String modelName, File trainingData, File outputModel) {
         try {
             LOGGER.info("Train DeLFT classification model " + modelName + "...");
+            GrobidProperties.getInstance();
             JEPThreadPoolClassifier.getInstance().run(
-                new TrainTask(modelName, trainingData, GrobidProperties.getInstance().getModelPath()));
+                new TrainTask(modelName, trainingData, GrobidProperties.getModelPath()));
         } catch(InterruptedException e) {
             LOGGER.error("Train DeLFT classification model " + modelName + " task failed", e);
         }
@@ -187,7 +190,7 @@ public class DeLFTClassifierModel {
             this.architecture = null;
             this.incremental = false;
         }
-          
+
         @Override
         public void run() { 
             Jep jep = JEPThreadPoolClassifier.getInstance().getJEPInstance(); 
@@ -199,23 +202,24 @@ public class DeLFTClassifierModel {
                 jep.eval("print(len(x_train), 'train sequences')");
                 jep.eval("print(len(x_valid), 'validation sequences')");
 
+                GrobidProperties.getInstance();
                 String useELMo = "False";
-                if (GrobidProperties.getInstance().useELMo(this.modelName)) {
+                if (GrobidProperties.useELMo(this.modelName)) {
                     useELMo = "True";
                 }
 
                 String localArgs = "";
-                if (GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName) != -1)
+                if (GrobidProperties.getDelftTrainingMaxSequenceLength(this.modelName) != -1)
                     localArgs += ", maxlen="+
-                        GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName);
+                        GrobidProperties.getDelftTrainingMaxSequenceLength(this.modelName);
 
-                if (GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName) != -1)
+                if (GrobidProperties.getDelftTrainingBatchSize(this.modelName) != -1)
                     localArgs += ", batch_size="+
-                        GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName);
+                        GrobidProperties.getDelftTrainingBatchSize(this.modelName);
 
-                if (GrobidProperties.getInstance().getDelftTranformer(modelName) != null) {
+                if (GrobidProperties.getDelftTranformer(modelName) != null) {
                     localArgs += ", transformer="+
-                        GrobidProperties.getInstance().getDelftTranformer(modelName);
+                        GrobidProperties.getDelftTranformer(modelName);
                 }
 
                 // init model to be trained
@@ -246,7 +250,12 @@ public class DeLFTClassifierModel {
                 // saving the model
                 System.out.println(this.modelPath.getAbsolutePath());
                 jep.eval("model.save('"+this.modelPath.getAbsolutePath()+"')");
-                
+
+            } catch(JepException e) {
+                LOGGER.error("DeLFT classification model training via JEP failed", e);
+            } catch(GrobidException e) {
+                LOGGER.error("GROBID call to DeLFT training via JEP failed", e);
+            } finally {
                 // cleaning
                 jep.eval("del x_all");
                 jep.eval("del y_all");
@@ -256,11 +265,7 @@ public class DeLFTClassifierModel {
                 jep.eval("del y_train");
                 jep.eval("del y_valid");
                 jep.eval("del model");
-            } catch(JepException e) {
-                LOGGER.error("DeLFT classification model training via JEP failed", e);
-            } catch(GrobidException e) {
-                LOGGER.error("GROBID call to DeLFT training via JEP failed", e);
-            } 
+            }
         } 
     }
 
@@ -313,32 +318,38 @@ public class DeLFTClassifierModel {
 
     private class CloseModel implements Runnable { 
         private String modelName;
-          
+
         public CloseModel(String modelName) { 
             this.modelName = modelName;
         } 
-          
+
         @Override
         public void run() { 
-            Jep jep = JEPThreadPoolClassifier.getInstance().getJEPInstance(); 
+            Jep jep = JEPThreadPoolClassifier.getInstance().getJEPInstance();
+            String model_variable = null;
             try { 
-                String model_variable = this.modelName.replace("-", "_");
-                jep.eval("del "+model_variable);
+                model_variable = this.modelName.replace("-", "_");
+                // We don't close the JEP instance here because it might be reused by other models
+                // The JEP instance will be closed when the application shuts down or when explicitly requested
             } catch(JepException e) {
                 LOGGER.error("Closing DeLFT classification model failed", e);
-            } 
+            } finally {
+                if (model_variable != null) {
+                    jep.eval("del " + model_variable);
+                }
+            }
         } 
     }
 
     private static class SimpleStreamGobbler implements Runnable {
         private InputStream inputStream;
         private Consumer<String> consumer;
-     
+
         public SimpleStreamGobbler(InputStream inputStream, Consumer<String> consumer) {
             this.inputStream = inputStream;
             this.consumer = consumer;
         }
-     
+
         @Override
         public void run() {
             new BufferedReader(new InputStreamReader(inputStream)).lines()
@@ -361,7 +372,7 @@ public class DeLFTClassifierModel {
             this.is = is;
             this.os = os;
         }
-     
+
         @Override
         public void run() {
             try {
