@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -231,8 +232,6 @@ public class Lexicon {
                 file.getAbsolutePath() + "'.");
         }
         InputStream ist = null;
-        //InputStreamReader isr = null;
-        //BufferedReader dis = null;
         try {
             ist = new FileInputStream(file);
             CountryCodeSaxParser parser = new CountryCodeSaxParser(countryCodes, countries);
@@ -243,13 +242,7 @@ public class Lexicon {
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
-
-            try {
-                if (ist != null)
-                    ist.close();
-            } catch (Exception e) {
-                throw new GrobidResourceException("Cannot close all streams.", e);
-            }
+            IOUtils.closeQuietly(ist);
         }
 
         for (String country : countries) {
@@ -285,10 +278,12 @@ public class Lexicon {
                 file.getAbsolutePath() + "'.");
         }
         InputStream ist = null;
+        InputStreamReader isr = null;
         BufferedReader dis = null;
         try {
             ist = new FileInputStream(file);
-            dis = new BufferedReader(new InputStreamReader(ist, "UTF8"));
+            isr = new InputStreamReader(ist, StandardCharsets.UTF_8);
+            dis = new BufferedReader(isr);
 
             String l = null;
             while ((l = dis.readLine()) != null) {
@@ -302,19 +297,10 @@ public class Lexicon {
                     }
                 }
             }
-        } catch (FileNotFoundException e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
         } catch (IOException e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
-            try {
-                if (ist != null)
-                    ist.close();
-                if (dis != null)
-                    dis.close();
-            } catch (Exception e) {
-                throw new GrobidResourceException("Cannot close all streams.", e);
-            }
+            IOUtils.closeQuietly(dis, isr, ist);
         }
     }
 
@@ -329,10 +315,12 @@ public class Lexicon {
                 file.getAbsolutePath() + "'.");
         }
         InputStream ist = null;
+        InputStreamReader isr = null;
         BufferedReader dis = null;
         try {
             ist = new FileInputStream(file);
-            dis = new BufferedReader(new InputStreamReader(ist, "UTF8"));
+            isr = new InputStreamReader(ist, "UTF8");
+            dis = new BufferedReader(isr);
 
             String l = null;
             while ((l = dis.readLine()) != null) {
@@ -351,14 +339,7 @@ public class Lexicon {
         } catch (IOException e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
-            try {
-                if (ist != null)
-                    ist.close();
-                if (dis != null)
-                    dis.close();
-            } catch (Exception e) {
-                throw new GrobidResourceException("Cannot close all streams.", e);
-            }
+            IOUtils.closeQuietly(dis, isr, ist);
         }
     }
 

@@ -1832,14 +1832,11 @@ public class TEIFormatter {
                             keepUnsolvedCallout, citationMarkerType);
 
                 } else if (clusterLabel.equals(TaggingLabels.FIGURE_MARKER)) {
-                    refNodes = markReferencesFigureOrTableTEI(chunkRefString,
-                        refTokens, figures,
-                        FigureTableType.FIGURE, config.isGenerateTeiCoordinates("ref"));
+                    refNodes = markReferencesFigureTEI(chunkRefString,
+                        refTokens, figures, config.isGenerateTeiCoordinates("ref"));
                 } else if (clusterLabel.equals(TaggingLabels.TABLE_MARKER)) {
-                    refNodes = markReferencesFigureOrTableTEI(chunkRefString,
-                        refTokens, tables,
-                        FigureTableType.TABLE,
-                        config.isGenerateTeiCoordinates("ref"));
+                    refNodes = markReferencesTableTEI(chunkRefString,
+                        refTokens, tables, config.isGenerateTeiCoordinates("ref"));
                 } else if (clusterLabel.equals(TaggingLabels.EQUATION_MARKER)) {
                     refNodes = markReferencesEquationTEI(chunkRefString, refTokens, equations,
                             config.isGenerateTeiCoordinates("ref"));
@@ -2355,8 +2352,25 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
         return nodes;
     }
 
+    public List<Node> markReferencesFigureTEI(
+        String refText,
+        List<LayoutToken> allRefTokens,
+        List<Figure> figures,
+        boolean generateCoordinates
+    ) {
+        return markReferencesFigureOrTableTEI(refText, allRefTokens, figures, FigureTableType.FIGURE, generateCoordinates);
+    }
 
-    public List<Node> markReferencesFigureOrTableTEI(
+    public List<Node> markReferencesTableTEI(
+        String refText,
+        List<LayoutToken> allRefTokens,
+        List<Table> tables,
+        boolean generateCoordinates
+    ) {
+        return markReferencesFigureOrTableTEI(refText, allRefTokens, tables, FigureTableType.TABLE, generateCoordinates);
+    }
+
+    private List<Node> markReferencesFigureOrTableTEI(
         String refText,
         List<LayoutToken> allRefTokens,
         List<? extends Figure> figuresOrTables,
