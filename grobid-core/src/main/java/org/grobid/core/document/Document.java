@@ -1261,7 +1261,9 @@ public class Document implements Serializable {
     /**
      * This method assigns graphic objects to figures based on the proximity of the graphic object to the figure caption.
      * In addition, it removes blocks of layout tokens that are at a distance greater than a threshold from the figure caption.
-     * The method returns the updated list of layout tokens, and the list of layout tokens that have been discarded.
+     * The method returns the updated list of layout tokens and the list of layout tokens that have been discarded.
+     *
+     * LF: To bear in mind that this method was designed assuming the figure caption comes after the figure.
      */
     protected org.apache.commons.lang3.tuple.Pair<List<LayoutToken>, List<List<LayoutToken>>> getFigureLayoutTokens(Figure f) {
 
@@ -1295,9 +1297,10 @@ public class Document implements Serializable {
                         result.addAll(newBlock.getTokens());
                         previousBlock = newBlock;
                     } else {
-                        // A TEMPORARY trick would be to iterate to all the following blocks
+                        // LF: The first temporary trick was to iterate to all the following blocks
                         // and place them into the discarded token list of the figure
 //                        f.addDiscardedPieceTokens(b.getTokens());
+
                         List<LayoutToken> newBlockTrimmed = newBlock.getTokens();
 
                         String figureLayoutTokens = LayoutTokensUtil.toText(f.getLayoutTokens());
@@ -1363,11 +1366,10 @@ public class Document implements Serializable {
             } else {
                 // If the figure is contained completely into a big block,
                 // it means that we either will have the full image somewhere or not (if it's reversed),
-                // there is no risk of loosing pieces, so we don't collect the tokens
+                // there is no risk of losing pieces, so we don't collect the tokens
                 if (!LayoutTokensUtil.toText(previousBlock.getTokens()).trim().toLowerCase().contains(LayoutTokensUtil.toText(f.getLayoutTokens()).trim().toLowerCase())) {
                     f.addDiscardedPieceTokens(previousBlock.getTokens());
                 }
-//                LOGGER.info("BAD_FIGIRE_LABEL: " + norm);
             }
         }
 
