@@ -926,23 +926,33 @@ public class Document implements Serializable {
      * It also modifies captions and textarea for existing figures
      * @return the modified figures
      */
-    public void assignGraphicObjectsToFigures() {
+    public List<org.apache.commons.lang3.tuple.Triple<Figure, Figure, List<List<LayoutToken>>>> assignGraphicObjectsToFigures() {
         Multimap<Integer, Figure> figureMap = HashMultimap.create();
 
         for (Figure f : figures) {
             figureMap.put(f.getPage(), f);
         }
 
+        // TODO: we should cleanup this part that might not needed to be used.
+        List<org.apache.commons.lang3.tuple.Triple<Figure, Figure, List<List<LayoutToken>>>> differences = new ArrayList<>();
+
         for (Integer pageNum : figureMap.keySet()) {
             List<Figure> pageFigures = new ArrayList<>();
             for (Figure f : figureMap.get(pageNum)) {
-                List<LayoutToken> realCaptionTokens = getFigureLayoutTokens(f);
-                if (realCaptionTokens != null && !realCaptionTokens.isEmpty()) {
+                org.apache.commons.lang3.tuple.Pair<List<LayoutToken>, List<List<LayoutToken>>> figureLayoutTokens = getFigureLayoutTokens(f);
+                List<LayoutToken> realCaptionTokens = figureLayoutTokens.getLeft();
+                if (CollectionUtils.isNotEmpty(realCaptionTokens)) {
+                    Figure oldFigure = new Figure();
+                    oldFigure.setLayoutTokens(f.getLayoutTokens());
                     f.setLayoutTokens(realCaptionTokens);
+                    oldFigure.setTextArea(f.getTextArea());
                     f.setTextArea(BoundingBoxCalculator.calculate(realCaptionTokens));
+                    oldFigure.setCaption(new StringBuilder(f.getCaption()));
                     f.setCaption(new StringBuilder(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(realCaptionTokens))));
+                    oldFigure.setCaptionLayoutTokens(f.getCaptionLayoutTokens());
                     f.setCaptionLayoutTokens(realCaptionTokens);
                     pageFigures.add(f);
+                    differences.add(org.apache.commons.lang3.tuple.Triple.of(oldFigure, f, figureLayoutTokens.getRight()));
                 }
             }
 
@@ -1137,6 +1147,7 @@ public class Document implements Serializable {
             }
         }
 
+        return differences;
     }
 
     private boolean badStandaloneFigure(GraphicObject o) {
@@ -1247,24 +1258,33 @@ public class Document implements Serializable {
 
     }
 
-    protected List<LayoutToken> getFigureLayoutTokens(Figure f) {
+    /**
+     * This method assigns graphic objects to figures based on the proximity of the graphic object to the figure caption.
+     * In addition, it removes blocks of layout tokens that are at a distance greater than a threshold from the figure caption.
+     * The method returns the updated list of layout tokens and the list of layout tokens that have been discarded.
+     *
+     * LF: To bear in mind that this method was designed assuming the figure caption comes after the figure.
+     */
+    protected org.apache.commons.lang3.tuple.Pair<List<LayoutToken>, List<List<LayoutToken>>> getFigureLayoutTokens(Figure f) {
+
         List<LayoutToken> result = new ArrayList<>();
-        Iterator<Integer> it = f.getBlockPtrs().iterator();
         List<List<LayoutToken>> discardedPieces = new ArrayList<>();
+        Iterator<Integer> it = f.getBlockPtrs().iterator();
 
         while (it.hasNext()) {
             Integer newBlockPtr = it.next();
 
             Block previousBlock = getBlocks().get(newBlockPtr);
-            String blockTextNorm = LayoutTokensUtil.toText(previousBlock.getTokens()).trim().toLowerCase();
-            if (blockTextNorm.startsWith("fig")
-                || blockTextNorm.startsWith("abb")
-                || blockTextNorm.startsWith("scheme")
-                || blockTextNorm.startsWith("photo")
-                || blockTextNorm.startsWith("gambar")
-                || blockTextNorm.startsWith("quadro")
-                || blockTextNorm.startsWith("wykres")
-                || blockTextNorm.startsWith("fuente")
+            String norm = LayoutTokensUtil.toText(previousBlock.getTokens()).trim().toLowerCase();
+            if (norm.startsWith("fig")
+                || norm.startsWith("abb")
+                || norm.startsWith("scheme")
+                || norm.startsWith("photo")
+                || norm.startsWith("gambar")
+                || norm.startsWith("quadro")
+                || norm.startsWith("wykres")
+                || norm.startsWith("fuente")
+                || norm.startsWith("video")
             ) {
                 result.addAll(previousBlock.getTokens());
 
@@ -1277,43 +1297,79 @@ public class Document implements Serializable {
                         result.addAll(newBlock.getTokens());
                         previousBlock = newBlock;
                     } else {
-                        // A TEMPORARY trick would be to iterate to all the following blocks
+                        // LF: The first temporary trick was to iterate to all the following blocks
                         // and place them into the discarded token list of the figure
-                        discardedPieces.add(newBlock.getTokens());
+//                        f.addDiscardedPieceTokens(b.getTokens());
+
+                        List<LayoutToken> newBlockTrimmed = newBlock.getTokens();
+
+                        String figureLayoutTokens = LayoutTokensUtil.toText(f.getLayoutTokens());
+                        if (!figureLayoutTokens.contains(newBlock.getText())) {
+                            // We need to keep only the common tokens, we assume the block will overrun the figure layout tokens
+                            int subListSize = newBlock.getTokens().size();
+
+                            while (!figureLayoutTokens.endsWith(LayoutTokensUtil.toText(newBlock.getTokens().subList(0, subListSize)))
+                                && subListSize > 0) {
+                                subListSize -= 1;
+                            }
+
+                            if (subListSize > 0) {
+                                newBlockTrimmed = new ArrayList<>(newBlock.getTokens().subList(0, subListSize));
+                            } else {
+                                // If the item is not found, we discard the current block and all the following
+                                f.addDiscardedPieceTokens(newBlock.getTokens());
+                                while (it.hasNext()) {
+                                    newBlockPtr = it.next();
+                                    newBlock = getBlocks().get(newBlockPtr);
+                                    Iterables.getLast(f.getDiscardedPiecesTokens()).addAll(newBlock.getTokens());
+                                }
+                                break;
+                            }
+
+                        }
+                        discardedPieces.add(newBlockTrimmed);
+
                         while (it.hasNext()) {
                             newBlockPtr = it.next();
                             newBlock = getBlocks().get(newBlockPtr);
-                            discardedPieces.add(newBlock.getTokens());
+                            //                            Iterables.getLast(f.getDiscardedPiecesTokens()).addAll(figBlock.getTokens());
+
+                            newBlockTrimmed = newBlock.getTokens();
+                            if (!figureLayoutTokens.contains(newBlock.getText())) {
+                                // We need to keep only the common tokens, we assume the block will overrun the figure layout tokens
+                                int subListSize = newBlock.getTokens().size();
+
+                                while (!figureLayoutTokens.endsWith(LayoutTokensUtil.toText(newBlock.getTokens().subList(0, subListSize)))
+                                    && subListSize > 0) {
+                                    subListSize -= 1;
+                                }
+                                if (subListSize > 0) {
+                                    newBlockTrimmed = new ArrayList<>(newBlock.getTokens().subList(0, subListSize));
+                                } else {
+                                    // If the item is not found, we discard the current block and all the following
+                                    f.addDiscardedPieceTokens(previousBlock.getTokens());
+                                    while (it.hasNext()) {
+                                        newBlockPtr = it.next();
+                                        newBlock = getBlocks().get(newBlockPtr);
+                                        Iterables.getLast(f.getDiscardedPiecesTokens()).addAll(newBlock.getTokens());
+                                    }
+                                    break;
+                                }
+                            }
+                            Iterables.getLast(discardedPieces).addAll(newBlockTrimmed);
                         }
                         break;
+
                     }
                 }
                 break;
             } else {
-                // If the full block is contained in the figure, and it does not start with a prefix,
-                // we will discard it entirely.
-                String figureTextNorm = LayoutTokensUtil.toText(f.getLayoutTokens()).trim().toLowerCase();
-//                OverlapType overlap = findOverlap(blockTextNorm, figureTextNorm);
-//                System.out.println(overlap);
-                if (figureTextNorm.contains(blockTextNorm)) {
-                    discardedPieces.add(previousBlock.getTokens());
+                // If the figure is contained completely into a big block,
+                // it means that we either will have the full image somewhere or not (if it's reversed),
+                // there is no risk of losing pieces, so we don't collect the tokens
+                if (!LayoutTokensUtil.toText(previousBlock.getTokens()).trim().toLowerCase().contains(LayoutTokensUtil.toText(f.getLayoutTokens()).trim().toLowerCase())) {
+                    f.addDiscardedPieceTokens(previousBlock.getTokens());
                 }
-/*                if (overlap == OverlapType.IS_CONTAINED) {
-                    discardedPieces.add(previousBlock.getTokens());
-                } else if (overlap == OverlapType.CONTAINS) {
-                    // If the figure is contained completely into a big block,
-                    // it means that we either will have the full image somewhere or not (if it's reversed),
-                    // there is no risk of loosing pieces, so we don't collect the tokens
-//                    System.out.println("===");
-                } else if (overlap == OverlapType.LEFT_OVERLAP) {
-                    // The figure overlap the beginning of the block, nothing to do here
-                } else if (overlap == OverlapType.RIGHT_OVERLAP) {
-                    // The figure overlap the end of the block, nothing to do here
-                } else {
-                    // If there is a partial overlap of the image
-//                    discardedPieces.add(previousBlock.getTokens());
-                }*/
-//                LOGGER.info("BAD_FIGIRE_LABEL: " + norm);
             }
         }
 
@@ -1327,7 +1383,7 @@ public class Document implements Serializable {
 
         }
 
-        return result;
+        return org.apache.commons.lang3.tuple.Pair.of(result, discardedPieces);
     }
 
     public void setConnectedGraphics2(Figure figure) {
@@ -1500,7 +1556,7 @@ public class Document implements Serializable {
             String text = block.getText();
             if ((text != null) && (!text.contains("@PAGE")) && (!text.contains("@IMAGE"))) {
                 double surface = block.getWidth() * block.getHeight();
-                
+
                 /*System.out.println("block.width: " + block.width);
                 System.out.println("block.height: " + block.height);
                 System.out.println("surface: " + surface);
