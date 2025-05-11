@@ -258,6 +258,7 @@ public class GrobidAnalysisConfig {
         sb.append(", includeRawCopyrights=").append(includeRawCopyrights);
         sb.append(", generateTeiIds=").append(generateTeiIds);
         sb.append(", generateTeiCoordinates=").append(generateTeiCoordinates);
+        sb.append(", sentenceSegmentation=").append(withSentenceSegmentation);
         sb.append(", flavor=").append(flavor);
 
         return sb.toString();
