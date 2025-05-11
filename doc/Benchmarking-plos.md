@@ -2,7 +2,7 @@
 
 ## General
 
-This is the end-to-end benchmarking result for GROBID version **0.8.1** against the `PLOS` test set, see the [End-to-end evaluation](End-to-end-evaluation.md) page for explanations and for reproducing this evaluation. 
+This is the end-to-end benchmarking result for GROBID version **0.8.2** against the `PLOS` test set, see the [End-to-end evaluation](End-to-end-evaluation.md) page for explanations and for reproducing this evaluation. 
 
 The following end-to-end results are using:
 
