@@ -442,7 +442,7 @@ public class FullTextParser extends AbstractParser {
                 List<Integer> candidateIndexes = findCandidateIndex(layoutTokenItem, labelledResultsAsList,
                     itemLabel, strict);
                 if (candidateIndexes.isEmpty()) {
-                    LOGGER.info("Cannot find the candidate index for fixing the figures/tables. Tokens: " + LayoutTokensUtil.toText(layoutTokenItem));
+                    LOGGER.warn("Cannot find the candidate index for fixing the figures/tables. Tokens: " + LayoutTokensUtil.toText(layoutTokenItem));
                     continue;
                 }
 
@@ -503,7 +503,7 @@ public class FullTextParser extends AbstractParser {
                 // False because we might have random sequences of tokens within the figures
                 List<Integer> candidateIndexes = findCandidateIndex(tokens, labelledResultsAsList, itemLabel, false);
                 if (candidateIndexes.isEmpty()) {
-                    LOGGER.info("Cannot find the candidate index for fixing the results. Tokens: " + LayoutTokensUtil.toText(tokens));
+                    LOGGER.warn("Cannot find the candidate index for fixing the results. Tokens: " + LayoutTokensUtil.toText(tokens));
                     continue;
                 }
 
