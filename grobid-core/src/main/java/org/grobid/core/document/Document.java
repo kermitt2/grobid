@@ -1293,7 +1293,7 @@ public class Document implements Serializable {
                     newBlockPtr = it.next();
                     Block newBlock = getBlocks().get(newBlockPtr);
                     BoundingBox newBlockCoords = BoundingBox.fromPointAndDimensions(newBlock.getPageNumber(), newBlock.getX(), newBlock.getY(), newBlock.getWidth(), newBlock.getHeight());
-                    if (newBlockCoords.distanceTo(prevBlockCoords) < 15) {
+                    if (newBlockCoords.distanceTo(prevBlockCoords) < 15 || (Math.abs(newBlockCoords.verticalDistanceTo(prevBlockCoords)) == 0 && newBlockCoords.distanceTo(prevBlockCoords) < 20)) {
                         result.addAll(newBlock.getTokens());
                         previousBlock = newBlock;
                     } else {
