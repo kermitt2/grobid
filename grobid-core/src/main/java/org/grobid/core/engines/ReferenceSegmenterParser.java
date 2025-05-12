@@ -234,7 +234,7 @@ System.out.println(featureVectorPiece.size());
 				res = label(featureVector);
 		}
 		catch(Exception e) {
-			throw new GrobidException("Labeling in ReferenceSegmenter fails.", e);
+			throw new GrobidException("Sequence labeling in ReferenceSegmenter fails.", e);
 		}
 		if (res == null) {
 			return null;
