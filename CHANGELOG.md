@@ -4,15 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [0.8.2] - TBD
+## [0.8.2] - 2025-05-11
 
 ### Added
-- New model specialisation/variants (flavors) mechanism #1151
-- Specialisation/variant process for a lightweight processing that covers other type of scientific articles that are not following the general segmentation schema (e.g. corrections, editorial letters, etc.) #1202
-- Additional training data covering edge cases where the Data Availability statements are over multiple pages #1200
-- Added a flag that allow output the raw copyright information in TEI #1181
+- New model specialization/variants (flavors) mechanism #1151
+- Specialization/variant process for a lightweight processing that covers other types of scientific articles that are not following the general segmentation schema (e.g., corrections, editorial letters, etc.) #1202
+- Additional training data covering additional cases where the Data Availability statements are over multiple pages #1200
+- Added a flag that allows output the raw copyright information in TEI #1181
+- New docker container for running end-to-end evaluation #1255
+- New Grobid client in Go #1159
+- Make the start/end page for header processing customizable #282
+- Return configuration processing parameters in TEI XML response header #1274 
 
 ### Changed
+- Update pdfalto recognition of non-standard fonts #1216
+- Revert text that does not belong to graphics as paragraphs instead of dropping it #1266
+- Updated Grobid lucene analyzers for CJK languages #1228
 
 ### Fixed
 - Fix URL identification for certain edge cases #1190, #1191, #1185
@@ -20,9 +27,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Fix header model training data #1128
 - Updated the docker image's packages to reduce the vulnerabilities #1173
 - Fixed a bug in the handling of badly formatted figures/tables #1207
-- Fixed various security vulnerabilities #1125 #1123 #1205
 - Correct replacement in the filenames of the fulltext generated files #1204
-- Fixed fulltext block start #1203
+- Fixed full-text block start #1203
+- Fix affiliation missing when using DL affiliation-address model #1166
+- Fixed various security vulnerabilities #1125 #1123 #1205
+- Avoid NPE when iterating over annotations that might have null bounding Boxes #1194
 
 
 ## [0.8.1] - 2024-09-14
@@ -33,7 +42,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
  - Copyrights owner and licenses identification models #1078 
  - Add research infrastructure recognition for funding processing #1085
  - Add paragraphs coordinates in the TEI output #1068
- - Specify configuration file with DL models enabled for the full docker image #1117
+ - Specify the configuration file with DL models enabled for the full docker image #1117
  - Support for biblio-glutton 0.3 #1086
 
 ### Changed

@@ -9,7 +9,7 @@ The second option is of course to build yourself Grobid and to use the generated
 
 ## Using maven
 
-The Java artefacts of the latest GROBID release (0.8.1) are uploaded on a DIY repository. 
+The Java artefacts of the latest GROBID release (0.8.2) are uploaded on a DIY repository. 
 
 You need to add the following snippet in your `pom.xml` in order to configure it:
 
@@ -29,7 +29,7 @@ Here an example of `grobid-core` dependency:
 	<dependency>
         <groupId>org.grobid</groupId>
         <artifactId>grobid-core</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.2</version>
     </dependency>
 ```
 
@@ -59,8 +59,8 @@ Add the following snippet in your gradle.build file:
 
 and add the Grobid dependency as well: 
 ```
-    implement 'org.grobid:grobid-core:0.8.1'
-    implement 'org.grobid:grobid-trainer:0.8.1'
+    implement 'org.grobid:grobid-core:0.8.2'
+    implement 'org.grobid:grobid-trainer:0.8.2'
 ```
 
 ## API call

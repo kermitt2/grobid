@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.regex.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -25,6 +27,8 @@ import com.google.common.collect.Iterables;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.lang.Language;
@@ -228,8 +232,6 @@ public class Lexicon {
                 file.getAbsolutePath() + "'.");
         }
         InputStream ist = null;
-        //InputStreamReader isr = null;
-        //BufferedReader dis = null;
         try {
             ist = new FileInputStream(file);
             CountryCodeSaxParser parser = new CountryCodeSaxParser(countryCodes, countries);
@@ -240,13 +242,7 @@ public class Lexicon {
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
-
-            try {
-                if (ist != null)
-                    ist.close();
-            } catch (Exception e) {
-                throw new GrobidResourceException("Cannot close all streams.", e);
-            }
+            IOUtils.closeQuietly(ist);
         }
 
         for (String country : countries) {
@@ -282,10 +278,12 @@ public class Lexicon {
                 file.getAbsolutePath() + "'.");
         }
         InputStream ist = null;
+        InputStreamReader isr = null;
         BufferedReader dis = null;
         try {
             ist = new FileInputStream(file);
-            dis = new BufferedReader(new InputStreamReader(ist, "UTF8"));
+            isr = new InputStreamReader(ist, StandardCharsets.UTF_8);
+            dis = new BufferedReader(isr);
 
             String l = null;
             while ((l = dis.readLine()) != null) {
@@ -299,19 +297,10 @@ public class Lexicon {
                     }
                 }
             }
-        } catch (FileNotFoundException e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
         } catch (IOException e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
-            try {
-                if (ist != null)
-                    ist.close();
-                if (dis != null)
-                    dis.close();
-            } catch (Exception e) {
-                throw new GrobidResourceException("Cannot close all streams.", e);
-            }
+            IOUtils.closeQuietly(dis, isr, ist);
         }
     }
 
@@ -326,10 +315,12 @@ public class Lexicon {
                 file.getAbsolutePath() + "'.");
         }
         InputStream ist = null;
+        InputStreamReader isr = null;
         BufferedReader dis = null;
         try {
             ist = new FileInputStream(file);
-            dis = new BufferedReader(new InputStreamReader(ist, "UTF8"));
+            isr = new InputStreamReader(ist, "UTF8");
+            dis = new BufferedReader(isr);
 
             String l = null;
             while ((l = dis.readLine()) != null) {
@@ -348,14 +339,7 @@ public class Lexicon {
         } catch (IOException e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
-            try {
-                if (ist != null)
-                    ist.close();
-                if (dis != null)
-                    dis.close();
-            } catch (Exception e) {
-                throw new GrobidResourceException("Cannot close all streams.", e);
-            }
+            IOUtils.closeQuietly(dis, isr, ist);
         }
     }
 
@@ -1196,7 +1180,12 @@ public class Lexicon {
         List<PDFAnnotation> pdfAnnotations,
         String text) {
 
-        List<OffsetPosition> urlTokensPositions = tokenPositionUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations);
+        List<Pair<OffsetPosition, String>> urlTokensPositionsAndDestinations = tokenPositionUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations);
+
+        // We only need the positions here
+        List<OffsetPosition> urlTokensPositions = urlTokensPositionsAndDestinations.stream()
+            .map(Pair::getLeft)
+            .collect(Collectors.toList());
 
         // We need to adjust the end of the positions to avoid problems with the sublist that is used in the following method
         urlTokensPositions.stream().forEach(o -> o.end += 1);
@@ -1210,14 +1199,20 @@ public class Lexicon {
      * This method returns the token positions in respect of the layout tokens, result is inclusive, inclusive, so for
      * calling this subList after this method, remember to add +1  to the end offset.
      */
-    public static List<OffsetPosition> tokenPositionUrlPatternWithPdfAnnotations(
+    public static List<Pair<OffsetPosition, String>> tokenPositionUrlPatternWithPdfAnnotations(
         List<LayoutToken> layoutTokens,
         List<PDFAnnotation> pdfAnnotations) {
 
-        List<OffsetPosition> characterPositions = characterPositionsUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations);
-        List<OffsetPosition> offsetPositions = convertStringOffsetToTokenOffset(characterPositions, layoutTokens);
+        List<Pair<OffsetPosition, String>> characterPositionsAndDestinations = characterPositionsUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations);
+        List<OffsetPosition> characterPositions = characterPositionsAndDestinations.stream()
+            .map(Pair::getLeft)
+            .collect(Collectors.toList());
 
-        return offsetPositions;
+        List<OffsetPosition> tokenOffsetPositions = convertStringOffsetToTokenOffset(characterPositions, layoutTokens);
+
+        return IntStream.range(0, tokenOffsetPositions.size())
+            .mapToObj(i -> Pair.of(tokenOffsetPositions.get(i), characterPositionsAndDestinations.get(i).getRight()))
+            .collect(Collectors.toList());
     }
 
     public static OffsetPosition getTokenPositions(int startPos, int endPos, List<LayoutToken> layoutTokens) {
@@ -1250,11 +1245,11 @@ public class Lexicon {
      * This method returns the character offsets in relation to the string obtained by the layout tokens.
      * Notice the absence of the String text parameter.
      */
-    public static List<OffsetPosition> characterPositionsUrlPatternWithPdfAnnotations(
+    public static List<Pair<OffsetPosition, String>> characterPositionsUrlPatternWithPdfAnnotations(
         List<LayoutToken> layoutTokens,
         List<PDFAnnotation> pdfAnnotations) {
         List<OffsetPosition> urlPositions = Lexicon.characterPositionsUrlPattern(layoutTokens);
-        List<OffsetPosition> resultPositions = new ArrayList<>();
+        List<Pair<OffsetPosition, String>> resultPositions = new ArrayList<>();
 
         // Do we need to extend the url position based on additional position of the corresponding
         // PDF annotation?
@@ -1306,8 +1301,10 @@ public class Lexicon {
                 }
             }
 
+            String destination = null;
+
             if (targetAnnotation != null) {
-                String destination = targetAnnotation.getDestination();
+                destination = targetAnnotation.getDestination();
 
                 int destinationPos = 0;
                 if (urlString.replaceAll("\\s", "").equals(destination)) {
@@ -1400,7 +1397,7 @@ public class Lexicon {
             OffsetPosition position = new OffsetPosition();
             position.start = startPos;
             position.end = endPos;
-            resultPositions.add(position);
+            resultPositions.add(Pair.of(position, destination));
         }
         return resultPositions;
     }

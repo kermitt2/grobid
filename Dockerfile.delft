@@ -21,7 +21,7 @@ USER root
 
 RUN apt-get update && \
     apt-get -y upgrade && \
-    apt-get -y --no-install-recommends install unzip
+    apt-get -y --no-install-recommends install unzip git
 
 WORKDIR /opt/grobid-source
 
@@ -31,6 +31,9 @@ COPY gradlew ./
 COPY gradle.properties ./
 COPY build.gradle ./
 COPY settings.gradle ./
+
+# git
+COPY .git/ ./.git
 
 # source
 COPY grobid-home/ ./grobid-home/
@@ -94,10 +97,10 @@ WORKDIR /opt/grobid
 
 COPY --from=builder /opt/grobid .
 
-RUN python3 -m pip install pip --upgrade
+RUN python3 -m pip install pip --upgrade --no-cache-dir
 
 # install DeLFT via pypi
-RUN pip3 install requests delft==0.3.3
+RUN pip3 install --no-cache-dir requests delft==0.3.3
 # link the data directory to /data
 # the current working directory will most likely be /opt/grobid
 RUN mkdir -p /data \
@@ -111,12 +114,14 @@ ENV JAVA_HOME=/opt/java/openjdk
 ENV PATH=$JAVA_HOME/bin:$PATH
 ENV JAVA_OPTS=-Xmx4g
 
+
 # Get java jdk from builder image
 # See tag of builder image in [Dockerfile tag](https://github.com/docker-library/docs/blob/master/eclipse-temurin/README.md#simple-tags) to find JAVA_HOME to copy from builder image.
 COPY --from=builder /opt/java/openjdk ${JAVA_HOME}
 
 # install jep 
 RUN pip3 install jep==4.0.3
+
 
 ENV LD_LIBRARY_PATH=/usr/local/lib/python3.8/dist-packages/jep:grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep:${LD_LIBRARY_PATH}
 # remove libjep.so because we are providing our own version in the virtual env above

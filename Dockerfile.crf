@@ -19,7 +19,7 @@ USER root
 
 RUN apt-get update && \
     apt-get -y upgrade && \
-    apt-get -y --no-install-recommends install unzip
+    apt-get -y --no-install-recommends install unzip git
 
 WORKDIR /opt/grobid-source
 
@@ -29,6 +29,9 @@ COPY gradlew ./
 COPY gradle.properties ./
 COPY build.gradle ./
 COPY settings.gradle ./
+
+# git
+COPY .git/ ./.git
 
 # source
 COPY grobid-home/ ./grobid-home/

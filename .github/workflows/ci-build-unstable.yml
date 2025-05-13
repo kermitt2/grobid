@@ -47,6 +47,10 @@ jobs:
       - name: Create more disk space
         run: sudo rm -rf /usr/share/dotnet && sudo rm -rf /opt/ghc && sudo rm -rf "/usr/local/share/boost" && sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - uses: actions/checkout@v4
+        with:
+          fetch-tags: true
+          fetch-depth: 0
+
       - name: Build and push
         id: docker_build
         uses: mr-smithers-excellent/docker-build-push@v6
