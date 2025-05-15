@@ -1,3 +1,5 @@
+Evaluation metrics produced in 7.821 seconds
+
 ======= Header metadata =======
 
 Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
@@ -8,12 +10,12 @@ Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
 
 label                accuracy     precision    recall       f1           support
 
-authors              97.29        92.2         91.91        92.05        1941
-first_author         98.64        96.28        95.98        96.13        1941
-title                94.46        84.33        83.38        83.85        1943
+authors              97.48        92.67        92.48        92.57        1941
+first_author         98.76        96.54        96.34        96.44        1941
+title                94.75        84.56        84.25        84.4         1943
 
-all (micro avg.)     96.8         90.95        90.42        90.69        5825
-all (macro avg.)     96.8         90.94        90.42        90.68        5825
+all (micro avg.)     97           91.26        91.02        91.14        5825
+all (macro avg.)     97           91.26        91.02        91.14        5825
 
 
 ======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
@@ -22,12 +24,12 @@ all (macro avg.)     96.8         90.94        90.42        90.68        5825
 
 label                accuracy     precision    recall       f1           support
 
-authors              97.92        94.11        93.82        93.96        1941
-first_author         98.76        96.64        96.34        96.49        1941
-title                97           92.04        90.99        91.51        1943
+authors              98.11        94.58        94.38        94.48        1941
+first_author         98.88        96.9         96.7         96.8         1941
+title                97.29        92.2         91.87        92.03        1943
 
-all (micro avg.)     97.89        94.27        93.72        93.99        5825
-all (macro avg.)     97.89        94.26        93.72        93.99        5825
+all (micro avg.)     98.1         94.56        94.32        94.44        5825
+all (macro avg.)     98.1         94.56        94.32        94.44        5825
 
 
 ==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
@@ -36,12 +38,12 @@ all (macro avg.)     97.89        94.26        93.72        93.99        5825
 
 label                accuracy     precision    recall       f1           support
 
-authors              98.64        96.28        95.98        96.13        1941
-first_author         98.87        96.95        96.65        96.8         1941
-title                99.02        98.18        97.07        97.62        1943
+authors              98.82        96.7         96.5         96.6         1941
+first_author         98.99        97.21        97.01        97.11        1941
+title                99.33        98.35        97.99        98.17        1943
 
-all (micro avg.)     98.84        97.13        96.57        96.85        5825
-all (macro avg.)     98.84        97.14        96.57        96.85        5825
+all (micro avg.)     99.04        97.42        97.17        97.29        5825
+all (macro avg.)     99.04        97.42        97.17        97.29        5825
 
 
 = Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
@@ -50,26 +52,38 @@ all (macro avg.)     98.84        97.14        96.57        96.85        5825
 
 label                accuracy     precision    recall       f1           support
 
-authors              98.32        95.3         95           95.15        1941
-first_author         98.64        96.28        95.98        96.13        1941
-title                98.37        96.2         95.11        95.65        1943
+authors              98.49        95.72        95.52        95.62        1941
+first_author         98.76        96.54        96.34        96.44        1941
+title                98.68        96.38        96.04        96.21        1943
 
-all (micro avg.)     98.44        95.92        95.36        95.64        5825
-all (macro avg.)     98.44        95.93        95.36        95.64        5825
+all (micro avg.)     98.64        96.21        95.97        96.09        5825
+all (macro avg.)     98.64        96.21        95.97        96.09        5825
 
 ===== Instance-level results =====
 
-Total expected instances:       1943
-Total correct instances:        1506 (strict)
-Total correct instances:        1669 (soft)
-Total correct instances:        1816 (Levenshtein)
-Total correct instances:        1760 (ObservedRatcliffObershelp)
+Total expected instances: 1943
+Total correct instances: 1528 (strict)
+Total correct instances: 1693 (soft)
+Total correct instances: 1839 (Levenshtein)
+Total correct instances: 1784 (ObservedRatcliffObershelp)
 
-Instance-level recall:  77.51   (strict)
-Instance-level recall:  85.9    (soft)
-Instance-level recall:  93.46   (Levenshtein)
-Instance-level recall:  90.58   (RatcliffObershelp)
+Instance-level recall:78.64(strict)
+Instance-level recall:87.13(soft)
+Instance-level recall:94.65(Levenshtein)
+Instance-level recall:91.82(RatcliffObershelp)
 
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  UNMATCHED_REF_MARKERS: 75878
+  STYLE_AUTHORS:         23504
+  STYLE_NUMBERED:        50509
+  NO_CANDIDATES:         118036
+  INPUT_REF_STRINGS_CNT: 76103
+  STYLE_OTHER:           2090
+====================================================================================
 
 ************************************************************************************
 COUNTER: org.grobid.core.engines.counters.FigureCounters
@@ -84,23 +98,66 @@ COUNTER: org.grobid.core.engines.counters.FigureCounters
 COUNTER: org.grobid.core.engines.label.TaggingLabelImpl
 ************************************************************************************
 ------------------------------------------------------------------------------------
-  HEADER_DATE:            1100
-  NAME-HEADER_MIDDLENAME: 5588
-  HEADER_OTHER:           25153
-  NAME-HEADER_FORENAME:   13536
-  DATE_YEAR:              1014
-  HEADER_AUTHOR:          3675
-  NAME-HEADER_MARKER:     8126
-  DATE_OTHER:             121
-  NAME-HEADER_SURNAME:    13392
-  NAME-HEADER_OTHER:      16626
-  NAME-HEADER_SUFFIX:     17
-  HEADER_TITLE:           2019
-  HEADER_PUBNUM:          1526
-  FULLTEXT_PARAGRAPH:     7766
-  NAME-HEADER_TITLE:      735
-  DATE_MONTH:             1006
-  DATE_DAY:               1011
+  HEADER_DOCTYPE:                      1743
+  AFFILIATION-ADDRESS_POSTCODE:        3082
+  HEADER_DATE:                         1036
+  NAME-HEADER_MIDDLENAME:              6051
+  HEADER_KEYWORD:                      1415
+  NAME-HEADER_SURNAME:                 14331
+  HEADER_FUNDING:                      144
+  HEADER_ADDRESS:                      6144
+  HEADER_AFFILIATION:                  6272
+  FULLTEXT_CITATION_MARKER:            154322
+  HEADER_EMAIL:                        2168
+  FULLTEXT_TABLE_MARKER:               13640
+  FUNDING-ACKNOWLEDGEMENT_AFFILIATION: 2
+  HEADER_GROUP:                        5
+  FULLTEXT_SECTION:                    56310
+  FUNDING-ACKNOWLEDGEMENT_PROGRAMNAME: 12
+  NAME-HEADER_FORENAME:                14670
+  DATE_YEAR:                           982
+  HEADER_MEETING:                      28
+  HEADER_EDITOR:                       137
+  AFFILIATION-ADDRESS_SETTLEMENT:      5927
+  FULLTEXT_EQUATION_MARKER:            374
+  FULLTEXT_FIGURE_MARKER:              35274
+  HEADER_TITLE:                        1958
+  FULLTEXT_EQUATION_LABEL:             2004
+  HEADER_OTHER:                        9680
+  AFFILIATION-ADDRESS_OTHER:           24869
+  AFFILIATION-ADDRESS_LABORATORY:      707
+  FULLTEXT_EQUATION:                   6398
+  AFFILIATION-ADDRESS_MARKER:          3701
+  FULLTEXT_OTHER:                      2
+  HEADER_SUBMISSION:                   1220
+  NAME-HEADER_OTHER:                   18004
+  FUNDING-ACKNOWLEDGEMENT_PROJECTNAME: 22
+  AFFILIATION-ADDRESS_POSTBOX:         231
+  NAME-HEADER_SUFFIX:                  25
+  HEADER_AVAILABILITY:                 5
+  AFFILIATION-ADDRESS_DEPARTMENT:      6728
+  NAME-HEADER_TITLE:                   792
+  FUNDING-ACKNOWLEDGEMENT_INSTITUTION: 46
+  HEADER_WEB:                          296
+  DATE_MONTH:                          981
+  AFFILIATION-ADDRESS_ADDRLINE:        2631
+  FUNDING-ACKNOWLEDGEMENT_PERSON:      72
+  HEADER_ABSTRACT:                     2263
+  HEADER_REFERENCE:                    2500
+  AFFILIATION-ADDRESS_INSTITUTION:     6820
+  FUNDING-ACKNOWLEDGEMENT_GRANTNAME:   25
+  HEADER_AUTHOR:                       4313
+  NAME-HEADER_MARKER:                  8147
+  AFFILIATION-ADDRESS_COUNTRY:         5871
+  DATE_OTHER:                          103
+  FUNDING-ACKNOWLEDGEMENT_OTHER:       758
+  FUNDING-ACKNOWLEDGEMENT_FUNDERNAME:  305
+  FUNDING-ACKNOWLEDGEMENT_GRANTNUMBER: 182
+  AFFILIATION-ADDRESS_REGION:          1842
+  HEADER_PUBNUM:                       1633
+  FULLTEXT_PARAGRAPH:                  423390
+  HEADER_COPYRIGHT:                    2269
+  DATE_DAY:                            979
 ====================================================================================
 
 ************************************************************************************
