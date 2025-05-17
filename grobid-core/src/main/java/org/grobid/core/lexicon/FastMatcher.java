@@ -133,24 +133,27 @@ public final class FastMatcher {
      * Load a set of term to the fast matcher from an input stream
      */
     public int loadTerms(InputStream is, org.grobid.core.analyzers.Analyzer analyzer, boolean caseSensitive) throws IOException {
-        InputStreamReader reader = new InputStreamReader(is, UTF_8);
-        BufferedReader bufReader = new BufferedReader(reader);
-        String line;
         if (terms == null) {
             terms = new HashMap();
         }
         int nbTerms = 0;
-        while ((line = bufReader.readLine()) != null) {
-            if (line.length() == 0) continue;
-            line = UnicodeUtil.normaliseText(line);
-            line = StringUtils.normalizeSpace(line);
-            if (!caseSensitive)
-                line = line.toLowerCase();
-            nbTerms += loadTerm(line, analyzer, true);
+        try (InputStreamReader reader = new InputStreamReader(is, UTF_8);
+             BufferedReader bufReader = new BufferedReader(reader)) {
+            String line;
+            while ((line = bufReader.readLine()) != null) {
+                if (line.length() == 0) continue;
+                line = UnicodeUtil.normaliseText(line);
+                line = StringUtils.normalizeSpace(line);
+                if (!caseSensitive)
+                    line = line.toLowerCase();
+                nbTerms += loadTerm(line, analyzer, true);
+            }
+        } finally {
+            // Close the input stream if it's not already closed
+            if (is != null) {
+                is.close();
+            }
         }
-        bufReader.close();
-        reader.close();
-
         return nbTerms;
     }
 
@@ -440,7 +443,6 @@ public final class FastMatcher {
      * All the matches are returned.
      *
      * @param text: the text to be processed
-     * @param caseSensitive: ensure case sensitive matching or not
      * @return the list of offset positions of the matches referred to the input string, an empty
      * list if no match have been found
      */
@@ -690,4 +692,3 @@ public final class FastMatcher {
         return "";
     }
 }
-

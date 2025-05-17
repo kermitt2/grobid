@@ -7,16 +7,16 @@ This page contains a set of notes for the Grobid developers:
 With the end of JCenter, the fact that the repo is too large for JitPack and that we are technically not ready to move back to the bureaucratic Maven Central yet, we currently publish the Grobid library artefacts ourselves... with the Grobid DIY repository :) 
 The idea anyway is that people will use Grobid with the Docker image, the service and usually not via the Java library artefacts. If they use the Java library, they will likely simply rebuild from the repo, because in this scenario they will likely want to massage the tool and they need a local `grobid-home`. 
 
-In order to make a new release:  
+To make a new release:  
 
-+ tag the project branch to be releases, for instance a version `0.8.1`: 
++ tag the project branch to be releases, for instance a version `0.8.2`: 
 
 ```
-> git tag 0.8.1
-> git push origin 0.8.1
+> git tag 0.8.2
+> git push origin 0.8.2
 ```
 
-+ create a github release: the easiest is to use the GitHub web interface
++ create a Github release: the easiest is to use the GitHub web interface
 
 + do something to publish the Java artefacts... currently just uploading them on AWS S3 
 
@@ -35,7 +35,7 @@ In order to make a new release:
 
 ```
 dependencies {
-    implementation 'org.grobid:grobid-core:0.8.1'
+    implementation 'org.grobid:grobid-core:0.8.2'
 }
 ```
 
@@ -55,7 +55,7 @@ for maven projects:
     <dependency>
         <groupId>org.grobid</groupId>
         <artifactId>grobid-core</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.2</version>
     </dependency>
 ```
 

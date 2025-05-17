@@ -242,10 +242,10 @@ public class HeaderParser extends AbstractParser {
                 resHeader.attachEmails();
                 boolean attached = false;
                 if (fragmentedAuthors && !hasMarker) {
-                    if (resHeader.getFullAffiliations() != null) {
-                        if (resHeader.getFullAffiliations().size() == authorSegments.size()) {
-                            int k = 0;
-                            List<Person> persons = resHeader.getFullAuthors();
+                    if (resHeader.getFullAffiliations() != null && resHeader.getFullAffiliations().size() == authorSegments.size()) {
+                        int k = 0;
+                        List<Person> persons = resHeader.getFullAuthors();
+                        if (CollectionUtils.isNotEmpty(persons)) {
                             for (Person pers : persons) {
                                 if (k < authorsBlocks.size()) {
                                     int indd = authorsBlocks.get(k);
@@ -255,10 +255,10 @@ public class HeaderParser extends AbstractParser {
                                 }
                                 k++;
                             }
-                            attached = true;
-                            resHeader.setFullAffiliations(null);
-                            resHeader.setAffiliation(null);
                         }
+                        attached = true;
+                        resHeader.setFullAffiliations(null);
+                        resHeader.setAffiliation(null);
                     }
 
                 }
@@ -370,7 +370,7 @@ public class HeaderParser extends AbstractParser {
      */
     private Optional<Date> getNormalizedDate(String rawDate) {
         if (rawDate != null) {
-            List<Date> dates = parsers.getDateParser().processing(rawDate);
+            List<Date> dates = parsers.getDateParser().process(rawDate);
             // TODO: most basic heuristic, we take the first date
             // LF: perhaps we could validate that the dates have are formatted decently
             if (isNotEmpty(dates)) {
@@ -775,10 +775,10 @@ public class HeaderParser extends AbstractParser {
                     /*if (token.isSuperscript()) 
                         features.superscript = true;*/
 
-                    if (token.getBold())
+                    if (token.isBold())
                         features.bold = true;
 
-                    if (token.getItalic())
+                    if (token.isItalic())
                         features.italic = true;
 
                     if (features.capitalisation == null)

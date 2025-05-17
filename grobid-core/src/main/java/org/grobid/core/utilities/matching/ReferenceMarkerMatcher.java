@@ -11,7 +11,6 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
-import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
 import org.slf4j.Logger;
@@ -42,6 +41,7 @@ public class ReferenceMarkerMatcher {
     public static final int MAX_RANGE = 20;
     public static final Pattern NUMBERED_CITATIONS_SPLIT_PATTERN = Pattern.compile("[,;]");
     public static final Pattern AND_WORD_PATTERN = Pattern.compile("(and)|&");
+    public static final Pattern FIGURE_TABLES_REF_SEPARATORS = Pattern.compile("(and)|(&)|(,)");
     public static final Pattern DASH_PATTERN = Pattern.compile("[–−-]");
 
     public class MatchResult {  

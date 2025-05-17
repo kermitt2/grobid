@@ -1,10 +1,9 @@
 package org.grobid.core.data;
 
-import org.apache.commons.lang3.StringUtils;
-
 import nu.xom.Attribute;
 import nu.xom.Element;
-
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
@@ -756,18 +755,20 @@ public class Person {
      *  Remove invalid/impossible person names (no last names, noise, etc.)
      */
     public static List<Person> sanityCheck(List<Person> persons) {
-        if (persons == null)
+        if (persons == null) {
             return null;
-        if (persons.size() == 0)
+        }
+
+        if (CollectionUtils.isEmpty(persons)) {
             return persons;
+        }
         
-        List<Person> result = new ArrayList<Person>();
+        List<Person> result = new ArrayList<>();
 
         for(Person person : persons) {
-            if (person.getLastName() == null || person.getLastName().trim().length() == 0) 
-                continue;
-            else
+            if (StringUtils.isNotBlank(person.getLastName())) {
                 result.add(person);
+            }
         }
 
         return result;
