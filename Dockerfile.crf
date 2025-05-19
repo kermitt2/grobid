@@ -13,7 +13,7 @@
 # -------------------
 # build builder image
 # -------------------
-FROM openjdk:17-jdk-slim as builder
+FROM eclipse-temurin:17.0.14_7-jdk AS builder
 
 USER root
 
@@ -66,7 +66,7 @@ RUN rm -rf grobid-source
 # -------------------
 # build runtime image
 # -------------------
-FROM openjdk:17-slim
+FROM eclipse-temurin:17.0.14_7-jre
 
 RUN apt-get update && \
     apt-get -y upgrade && \
