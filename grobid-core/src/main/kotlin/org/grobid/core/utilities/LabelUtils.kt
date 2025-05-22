@@ -84,4 +84,49 @@ object LabelUtils {
         return result.toString()
     }
 
+    /**
+     * PostProcess the sequence of labels by reverting change of labels that are not starting with a initial sequence.
+     * For example, in a sequence of I-<abstract> <abstract> followed by <availability>,
+     * we revert all sequence of availability as <abstract>
+     */
+    @JvmStatic
+    fun postProcessFulltextCorrectSequencesWithoutInitialToken(fulltextLabeledText: String): String {
+        val result = StringBuilder()
+
+        val lines = fulltextLabeledText
+            .split("\n".toRegex())
+            .dropLastWhile { it.isEmpty() }
+            .toTypedArray()
+
+        var previousLabel: String? = null
+        for (i in lines.indices) {
+            val line = lines[i]
+            if (StringUtils.isBlank(line)) continue
+            val pieces = line
+                .split("\t".toRegex())
+                .dropLastWhile { it.isEmpty() }
+                .toTypedArray()
+            var label = pieces[pieces.size - 1]
+
+            if (!label.equals(TaggingLabels.OTHER_LABEL)) {
+                if (!label.startsWith("I-")) {
+                    if (previousLabel != null && previousLabel != label) {
+                        pieces[pieces.size - 1] = previousLabel
+                        label = previousLabel
+                    }
+                }
+            }
+
+            result.append(pieces.joinToString("\t"))
+            if (label == TaggingLabels.OTHER_LABEL) {
+                previousLabel = null
+            } else {
+                previousLabel = label.replace("I-", "")
+            }
+            result.append("\n")
+        }
+
+        return result.toString()
+    }
+
 }
