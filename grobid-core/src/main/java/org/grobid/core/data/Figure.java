@@ -385,7 +385,7 @@ public class Figure {
                 addXmlId(desc, "_" + divID);
             }
 
-            // if the segment has been parsed with the full text model we further extract the clusters
+            // if the segment has been parsed with the full-text model, we further extract the clusters
             // to get the bibliographical references
             if (StringUtils.isNotBlank(labeledCaption)) {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledCaption, captionLayoutTokens);
@@ -432,19 +432,17 @@ public class Figure {
 
             if (StringUtils.isNotBlank(desc.getValue()) && config.isWithSentenceSegmentation()) {
                 formatter.segmentIntoSentences(desc, this.captionLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
-
-                // we need a sentence segmentation of the figure caption, for that we need to introduce 
-                // a <div>, then a <p>
-                desc.setLocalName("p");
-
-                Element div = XmlBuilderUtils.teiElement("div");
-                div.appendChild(desc);
-
-                Element figDesc = XmlBuilderUtils.teiElement("figDesc");                
-                figDesc.appendChild(div);
-
-                desc = figDesc;
             }
+
+            desc.setLocalName("p");
+
+            Element div = XmlBuilderUtils.teiElement("div");
+            div.appendChild(desc);
+
+            Element figDesc = XmlBuilderUtils.teiElement("figDesc");
+            figDesc.appendChild(div);
+
+            desc = figDesc;
 
             figureElement.appendChild(desc);
         }
