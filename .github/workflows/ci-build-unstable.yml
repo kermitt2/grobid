@@ -9,15 +9,21 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest, ubuntu-24.04-arm, macos-13 ]
+
+      fail-fast: false
+
+    runs-on: ${{ matrix.os }}
+
     steps:
       - uses: actions/checkout@v4
-      - name: Set up JDK 11
+      - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '11'
-          distribution: 'adopt'
+          java-version: '17.0.10+7'
+          distribution: 'temurin'
           cache: 'gradle'
       - name: Build with Gradle
         run: ./gradlew clean assemble --info --stacktrace --no-daemon
@@ -45,7 +51,11 @@ jobs:
 
     steps:
       - name: Create more disk space
-        run: sudo rm -rf /usr/share/dotnet && sudo rm -rf /opt/ghc && sudo rm -rf "/usr/local/share/boost" && sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+        run: |
+          sudo rm -rf /usr/share/dotnet 
+          sudo rm -rf /opt/ghc 
+          sudo rm -rf "/usr/local/share/boost" 
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - uses: actions/checkout@v4
         with:
           fetch-tags: true
@@ -64,25 +74,3 @@ jobs:
           dockerfile: Dockerfile.crf
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-
-  # docker-build-full:
-  #   needs: [ build ]
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #     - name: Create more disk space
-  #       run: sudo rm -rf /usr/share/dotnet && sudo rm -rf /opt/ghc && sudo rm -rf "/usr/local/share/boost" && sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-  #     - uses: actions/checkout@v2
-  #     - name: Build and push
-  #       id: docker_build
-  #       uses: mr-smithers-excellent/docker-build-push@v5
-  #       with:
-  #         username: ${{ secrets.DOCKERHUB_USERNAME_LFOPPIANO }}
-  #         password: ${{ secrets.DOCKERHUB_TOKEN_LFOPPIANO }}
-  #         image: lfoppiano/grobid
-  #         registry: docker.io
-  #         pushImage: ${{ github.event_name != 'pull_request' }}
-  #         tags: latest-develop
-  #         dockerfile: Dockerfile.delft
-  #     - name: Image digest
-  #       run: echo ${{ steps.docker_build.outputs.digest }}
