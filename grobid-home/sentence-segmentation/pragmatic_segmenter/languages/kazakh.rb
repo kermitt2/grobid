@@ -23,7 +23,7 @@ module PragmaticSegmenter
 
         def between_punctuation(txt)
           super(txt)
-          txt.apply(QuestionMarkFollowedByDashLowercaseRule, ExclamationMarkFollowedByDashLowercaseRule)
+          Rule.apply(txt, QuestionMarkFollowedByDashLowercaseRule, ExclamationMarkFollowedByDashLowercaseRule)
         end
       end
 
@@ -35,7 +35,7 @@ module PragmaticSegmenter
 
         def replace
           super
-          @text.apply(SingleUpperCaseCyrillicLetterAtStartOfLineRule, SingleUpperCaseCyrillicLetterRule)
+          Rule.apply(@text, SingleUpperCaseCyrillicLetterAtStartOfLineRule, SingleUpperCaseCyrillicLetterRule)
         end
       end
     end

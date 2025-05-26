@@ -24,9 +24,9 @@ module PragmaticSegmenter
       replace_numbers
       replace_continuous_punctuation
       replace_periods_before_numeric_references
-      @text.apply(@language::Abbreviations::WithMultiplePeriodsAndEmailRule)
-      @text.apply(@language::GeoLocationRule)
-      @text.apply(@language::FileFormatRule)
+      Rule.apply(@text, @language::Abbreviations::WithMultiplePeriodsAndEmailRule)
+      Rule.apply(@text, @language::GeoLocationRule)
+      Rule.apply(@text, @language::FileFormatRule)
       split_into_segments
     end
 
@@ -34,21 +34,21 @@ module PragmaticSegmenter
 
     def split_into_segments
       check_for_parens_between_quotes(@text).split("\r")
-         .map! { |segment| segment.apply(@language::SingleNewLineRule, @language::EllipsisRules::All) }
+         .map! { |segment| Rule.apply(segment, @language::SingleNewLineRule, @language::EllipsisRules::All) }
          .map { |segment| check_for_punctuation(segment) }.flatten
-         .map! { |segment| segment.apply(@language::SubSymbolsRules::All) }
+         .map! { |segment| Rule.apply(segment, @language::SubSymbolsRules::All) }
          .map { |segment| post_process_segments(segment) }
          .flatten.compact.delete_if(&:empty?)
-         .map! { |segment| segment.apply(@language::SubSingleQuoteRule) }
+         .map! { |segment| Rule.apply(segment, @language::SubSingleQuoteRule) }
     end
 
     def post_process_segments(txt)
       return txt if txt.length < 2 && txt =~ /\A[a-zA-Z]*\Z/
       return if consecutive_underscore?(txt) || txt.length < 2
-      txt.apply(
+      Rule.apply(
+        txt,
         @language::ReinsertEllipsisRules::All,
-        # PL: avoid removal of white spaces in the original string
-        #@language::ExtraWhiteSpaceRule
+        @language::ExtraWhiteSpaceRule
       )
 
       if txt =~ @language::QUOTATION_AT_END_OF_SENTENCE_REGEX
@@ -92,7 +92,8 @@ module PragmaticSegmenter
       txt << 'ȸ' unless @language::Punctuations.any? { |p| txt[-1].include?(p) }
       ExclamationWords.apply_rules(txt)
       between_punctuation(txt)
-      txt = txt.apply(
+      txt = Rule.apply(
+        txt,
         @language::DoublePunctuationRules::All,
         @language::QuestionMarkInQuotationRule,
         @language::ExclamationPointRules::All
@@ -102,7 +103,7 @@ module PragmaticSegmenter
     end
 
     def replace_numbers
-      @text.apply @language::Numbers::All
+      Rule.apply @text, @language::Numbers::All
     end
 
     def abbreviations_replacer
@@ -130,8 +131,8 @@ module PragmaticSegmenter
     end
 
     def sentence_boundary_punctuation(txt)
-      txt = txt.apply @language::ReplaceColonBetweenNumbersRule if defined? @language::ReplaceColonBetweenNumbersRule
-      txt = txt.apply @language::ReplaceNonSentenceBoundaryCommaRule if defined? @language::ReplaceNonSentenceBoundaryCommaRule
+      txt = Rule.apply txt, @language::ReplaceColonBetweenNumbersRule if defined? @language::ReplaceColonBetweenNumbersRule
+      txt = Rule.apply txt, @language::ReplaceNonSentenceBoundaryCommaRule if defined? @language::ReplaceNonSentenceBoundaryCommaRule
 
       txt.scan(@language::SENTENCE_BOUNDARY_REGEX)
     end
