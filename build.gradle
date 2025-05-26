@@ -385,17 +385,17 @@ project(":grobid-service") {
         //Dropwizard
         implementation 'ru.vyarus:dropwizard-guicey:7.0.2'
 
-        implementation 'io.dropwizard:dropwizard-bom:4.0.12'
-        implementation 'io.dropwizard:dropwizard-core:4.0.12'
-        implementation 'io.dropwizard:dropwizard-assets:4.0.12'
-        implementation 'io.dropwizard:dropwizard-testing:4.0.12'
-        implementation 'io.dropwizard.modules:dropwizard-testing-junit4:4.0.12'
-        implementation 'io.dropwizard:dropwizard-forms:4.0.12'
-        implementation 'io.dropwizard:dropwizard-client:4.0.12'
-        implementation 'io.dropwizard:dropwizard-auth:4.0.12'
+        implementation 'io.dropwizard:dropwizard-bom:4.0.13'
+        implementation 'io.dropwizard:dropwizard-core:4.0.13'
+        implementation 'io.dropwizard:dropwizard-assets:4.0.13'
+        implementation 'io.dropwizard:dropwizard-testing:4.0.13'
+        implementation 'io.dropwizard.modules:dropwizard-testing-junit4:4.0.13'
+        implementation 'io.dropwizard:dropwizard-forms:4.0.13'
+        implementation 'io.dropwizard:dropwizard-client:4.0.13'
+        implementation 'io.dropwizard:dropwizard-auth:4.0.13'
         implementation 'io.dropwizard.metrics:metrics-core:4.2.30'
         implementation 'io.dropwizard.metrics:metrics-servlets:4.2.30'
-        implementation 'io.dropwizard:dropwizard-json-logging:4.0.12'
+        implementation 'io.dropwizard:dropwizard-json-logging:4.0.13'
 
         implementation "org.apache.pdfbox:pdfbox:2.0.33"
         implementation "javax.activation:activation:1.1.1"
