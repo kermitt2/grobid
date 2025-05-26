@@ -31,7 +31,7 @@ jobs:
 
       - name: Build CRF image from Dockerfile.crf
         run: |
-          docker build -t docker.io/lfoppiano/grobid:${{ github.sha }} -f Dockerfile.crf
+          docker build -t docker.io/lfoppiano/grobid:${{ github.sha }} -f Dockerfile.crf .
       
       # - name: Build DeepLearning image from Dockerfile.delft
       #   run: |
