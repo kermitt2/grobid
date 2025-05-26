@@ -43,7 +43,7 @@ jobs:
           image-ref: 'docker.io/lfoppiano/grobid:${{ github.sha }}'
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'
-          scan-type: "vuln"
+          scan-type: "fs"
           scan-ref: .
 
       - name: Upload Trivy scan results to GitHub Security tab
