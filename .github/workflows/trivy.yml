@@ -29,9 +29,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build an image from Dockerfile
+      - name: Build CRF image from Dockerfile.crf
         run: |
-          docker build -t docker.io/lfoppiano/grobid:${{ github.sha }} .
+          docker build -t docker.io/lfoppiano/grobid:${{ github.sha }} -f Dockerfile.crf
+      
+      # - name: Build DeepLearning image from Dockerfile.delft
+      #   run: |
+      #     docker build -t docker.io/lfoppiano/grobid:${{ github.sha }} -f Dockerfile.delft
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
