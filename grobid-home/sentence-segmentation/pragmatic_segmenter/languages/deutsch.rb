@@ -47,7 +47,7 @@ module PragmaticSegmenter
         private
 
         def replace_numbers
-          @text.apply Numbers::All
+          Rule.apply @text, Numbers::All
 
           replace_period_in_deutsch_dates
         end
@@ -68,7 +68,8 @@ module PragmaticSegmenter
         ).freeze
 
         def replace
-          @text = text.apply(
+          @text = Rule.apply(
+            text,
             @language::PossessiveAbbreviationRule,
             @language::SingleLetterAbbreviationRules::All,
             SingleLowerCaseLetterRule,
@@ -76,7 +77,7 @@ module PragmaticSegmenter
 
           @text = search_for_abbreviations_in_string(@text)
           @text = replace_multi_period_abbreviations(@text)
-          @text.apply(Languages::Common::AmPmRules::All)
+          Rule.apply(@text, Languages::Common::AmPmRules::All)
           replace_abbreviation_as_sentence_boundary(@text)
         end
 
