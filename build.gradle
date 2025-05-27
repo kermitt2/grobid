@@ -165,10 +165,10 @@ subprojects {
         implementation "com.fasterxml.jackson.module:jackson-module-afterburner:2.14.3"
         implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.3"
 
-        implementation 'org.apache.xmlgraphics:batik-anim:1.14'
-        implementation 'org.apache.xmlgraphics:batik-bridge:1.14'
-        implementation 'org.apache.xmlgraphics:batik-svg-dom:1.14'
-        implementation 'org.apache.xmlgraphics:batik-dom:1.14'
+        implementation 'org.apache.xmlgraphics:batik-anim:1.19'
+        implementation 'org.apache.xmlgraphics:batik-bridge:1.19'
+        implementation 'org.apache.xmlgraphics:batik-svg-dom:1.19'
+        implementation 'org.apache.xmlgraphics:batik-dom:1.19'
     }
 
     tasks.register('sourceJar', Jar) {
