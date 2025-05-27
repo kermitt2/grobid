@@ -32,7 +32,7 @@ jobs:
       - name: Build CRF image from Dockerfile.crf
         run: |
           docker build -t docker.io/lfoppiano/grobid:${{ github.sha }} -f Dockerfile.crf .
-      
+
       # - name: Build DeepLearning image from Dockerfile.delft
       #   run: |
       #     docker build -t docker.io/lfoppiano/grobid:${{ github.sha }} -f Dockerfile.delft
@@ -41,10 +41,10 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'docker.io/lfoppiano/grobid:${{ github.sha }}'
+          format: 'sarif'
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'
-          scan-type: "fs"
-          scan-ref: .
+          scanners: 'vuln'
 
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v3
