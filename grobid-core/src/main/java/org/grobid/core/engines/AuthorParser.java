@@ -129,14 +129,17 @@ public class AuthorParser {
                                 } else {
                                     double pixPerChar = authorsToken.getWidth() / authorsToken.getText().length();
                                     int charsCovered = (int) ((intersectBox.getWidth() / pixPerChar) + 0.5);
-                                    if (pdfAnnotation.getDestination() != null && pdfAnnotation.getDestination().length() > 0) {
+                                    if (StringUtils.isNotBlank(pdfAnnotation.getDestination())) {
                                         Matcher orcidMatcher = TextUtilities.ORCIDPattern.matcher(pdfAnnotation.getDestination());
                                         if (orcidMatcher.find()) {
                                             // !! here we consider the annot is at the tail or end of the names
-                                            String newToken = authorsToken.getText().substring(0, authorsToken.getText().length() - charsCovered);        
+                                            //LF: sometimes there is no token at the end of the name, and the annotation covers all the name.
+                                            String newToken = authorsToken.getText().substring(0, authorsToken.getText().length() - charsCovered);
+                                            if (StringUtils.isNotBlank(newToken)) {
+                                                authorsToken.setText(newToken);
+                                            }
                                             aut.setORCID(orcidMatcher.group(1) + "-"
                                                 + orcidMatcher.group(2) + "-" + orcidMatcher.group(3)+ "-" + orcidMatcher.group(4));
-                                            authorsToken.setText(newToken);
                                         }
                                     }
                                 }
@@ -149,8 +152,10 @@ public class AuthorParser {
                 Engine.getCntManager().i(clusterLabel);
                 //String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
                 String clusterContent = StringUtils.normalizeSpace(LayoutTokensUtil.toText(cluster.concatTokens()));
-                if (clusterContent.trim().length() == 0)
+                if (StringUtils.isBlank(clusterContent)) {
                     continue;
+                }
+
                 if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_MARKER)) {
                     // a marker introduces a new author, and the marker could be attached to the previous (usual) 
                     // or following author (rare)

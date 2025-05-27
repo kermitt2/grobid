@@ -1,0 +1,100 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="_PMC4990296"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Online Discussion on #KidneyStones: A<lb/> Longitudinal Assessment of Activity, Users<lb/> and Content<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Johannes Salem 1☯ *, Hendrik Borgmann 2☯ , Matthew Bultitude 3 , Hans-Martin Fritsche 4 ,<lb/> Axel Haferkamp 2 , Axel Heidenreich 1 , Arkadiusz Miernik 5 , Andreas Neisius 2 ,<lb/> Thomas Knoll 6 , Christian Thomas 2 , Igor Tsaur 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Urology, University Hospital,</affiliation>
+	</byline>
+
+	<address>Cologne, Germany,</address>
+
+	<byline>
+	<affiliation>2 Department of Urology, University of<lb/> Medicine,</affiliation>
+	</byline>
+
+	<address>Mainz, Germany,</address>
+
+	<byline>
+	<affiliation>3 Stone Unit, Guy&apos;s and St. Thomas&apos; NHS Foundation Trust,</affiliation>
+	</byline>
+
+	<address>London, United<lb/> Kingdom,</address> 
+
+	<byline>
+	<affiliation>4 Department of Urology, Caritas St Josef Hospital, University of Regensburg,</affiliation>
+	</byline>
+
+	<address>Regensburg,<lb/> Germany,</address>
+
+	<byline>
+	<affiliation>5 Department of Urology, University Medical Center,</affiliation>
+	</byline>
+
+	<address>Freiburg, Germany,</address>
+
+	<byline>
+	<affiliation>6 Department of<lb/> Urology, Klinikum Sindelfingen-Böblingen,</affiliation>
+	</byline>
+
+	<address>Sindelfingen, Germany<lb/></address>
+
+	☯ These authors contributed equally to this work.<lb/> *
+	<email>j.salem@gesru.de</email>
+
+	Abstract
+	<div type="abstract">Introduction<lb/> Twitter is a popular microblogging platform for the rapid dissemination of information and<lb/> reciprocal exchange in the urological field. We aimed to assess the activity, users and con-<lb/>tent of the online discussion, #KidneyStones, on Twitter. Methods<lb/> We investigated the Symplur Signals analytics tool for Twitter data distributed via the #Kid-<lb/>neyStones hashtag over a one year period. Activity analysis reflected overall activity and<lb/> tweet enhancements. We assessed users&apos; geolocations and performed an influencer analy-<lb/>sis. Content analysis included the most frequently used words, tweet sentiment and shares<lb/> for top tweets. Results<lb/> 3,426 users generated over 10,333 tweets, which were frequently accompanied by links<lb/> (49%), mentions (30%) and photos (13%). Users came from 106 countries across the globe<lb/> and were most frequently from North America (63%) and Europe (16%). Individual and<lb/> organisational healthcare professionals made up 56% of the influencers of the Twitter dis-<lb/>cussion on #KidneyStones. Besides the words &apos;kidney&apos; (used 4,045 times) and &apos;stones&apos;<lb/> (3,335), &apos;pain&apos; (1,233), &apos;urine&apos; (1,158), and &apos;risk&apos; (1,023) were the most frequently used<lb/> words. 56% of tweets had a positive sentiment. The median (range) number of shares was<lb/> 85 (62-587) for the top 10 links, 45.5 (17-94) for the top 10 photos, and 44 (22-95) for the<lb/> top 10 retweets.<lb/></div>
+
+	PLOS ONE |
+	<idno>DOI:10.1371/journal.pone.0160863</idno>
+
+	<date>August 18, 2016<lb/></date>
+
+	1 / 11 a11111<lb/>
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Salem J, Borgmann H, Bultitude M, Fritsche<lb/> H-M, Haferkamp A, Heidenreich A, et al. (2016)<lb/> Online Discussion on #KidneyStones: A Longitudinal<lb/> Assessment of Activity, Users and Content. PLoS<lb/> ONE 11(8): e0160863.</reference>
+
+	<idno>doi:10.1371/journal.<lb/> pone.0160863<lb/></idno>
+
+	Editor:
+	<editor>Jeff M Sands,</editor>
+
+	<byline>
+	<affiliation>Emory University Department<lb/> of Medicine, UNITED STATES<lb/></affiliation>
+	</byline>
+
+	<note type="submission">Received: April 10, 2016<lb/> Accepted: July 26, 2016<lb/></note>
+
+	Published:
+	<date>August 18, 2016<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2016 Salem et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which permits<lb/> unrestricted use, distribution, and reproduction in any<lb/> medium, provided the original author and source are<lb/> credited.<lb/></note>
+
+	Data Availability Statement: 
+    <note type="availability">The information<lb/> underlying this study is available from the Symplur<lb/> Signals database, and can be accessed under www.<lb/> symplur.com/signals with a fee-based account<lb/> subscribed for the hashtag #KidneyStones. The time<lb/> period was set from 1st October 2014 to 1st October<lb/> 2015. We paid US$1,099 for a one month explorative<lb/> analysis.<lb/></note>
+
+    Funding: 
+	<note type="funding">The authors have no support or funding to<lb/> report.</note>
+
+	<div type="abstract">Conclusion<lb/> The rapidly growing Twitter discussion on #KidneyStones engaged multiple stakeholders in<lb/> the healthcare sector on a global scale and reached both professionals and laypeople.<lb/> When used effectively and responsibly, the Twitter platform could improve prevention and<lb/> medical care of kidney stone patients.<lb/></div>
+
+	Competing Interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

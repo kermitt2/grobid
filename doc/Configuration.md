@@ -17,14 +17,14 @@ The GROBID home is the path where all the runtime GROBID resources are located (
   grobidHome: "grobid-home"
 ```
 
-By default temporary files are currently written under `grobid-home/tmp`:
+By default, temporary files are currently written under `grobid-home/tmp`:
 
 ```yml
   # path relative to the grobid-home path (e.g. tmp for grobid-home/tmp) or absolute path (/tmp)
   temp: "tmp"
 ```
 
-By default native libraries are currently written under `grobid-home/lib`:
+By default, native libraries are currently written under `grobid-home/lib`:
 
 ```yml
   # normally nothing to change here, path relative to the grobid-home path (e.g. grobid-home/lib)
@@ -72,7 +72,7 @@ Optionally a proxy can be defined, which will be used when calling CrossRef REST
 
 ### CORS
 
-CORS for the GROBID web API service can be configurated by the following yaml part: 
+CORS for the GROBID web API service can be configured by the following yaml part: 
 
 ```yml
   # CORS configuration for the GROBID web API service
@@ -85,7 +85,7 @@ CORS for the GROBID web API service can be configurated by the following yaml pa
 
 GROBID uses external implementation for recognizing the language used in a publication and for performing sentence disambiguation. 
 
-There is currently only one possible language recognition implementation possible (Cybozu Language Detector) and two possible sentence segmenters (OpenNLP, default and the Pragmatic Segmenter).
+There is currently only one possible language recognition implementation possible (Cybozu Language Detector) and two possible sentence segmenters (OpenNLP (default) and the Pragmatic Segmenter).
 
 ```yml 
   # the actual implementation for language recognition to be used
@@ -95,6 +95,7 @@ There is currently only one possible language recognition implementation possibl
   #sentenceDetectorFactory: "org.grobid.core.lang.impl.PragmaticSentenceDetectorFactory"
   sentenceDetectorFactory: "org.grobid.core.lang.impl.OpenNLPSentenceDetectorFactory"  
 ```
+**NOTE**: While OpenNLP is 60 time faster than the Pragmatic Segmenter, it performs "slightly" worst. The pragmatic segmenter runs with the JRuby Interpreter.  
 
 ### Service configuration
 
@@ -121,7 +122,7 @@ When executing the service, models can be loaded in a lazy manner (if you plan t
   modelPreload: true
 ```
 
-Finally the following part specifies the port to be used by the GROBID web service:
+Finally, the following part specifies the port to be used by the GROBID web service:
 
 ```yml
 server:

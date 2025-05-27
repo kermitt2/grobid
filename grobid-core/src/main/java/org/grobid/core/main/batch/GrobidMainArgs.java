@@ -1,5 +1,7 @@
 package org.grobid.core.main.batch;
 
+import org.grobid.core.GrobidModels;
+
 /**
  * Class containing args of the batch {@link GrobidMain}.
  * 
@@ -33,6 +35,8 @@ public class GrobidMainArgs {
 	private boolean segmentSentences = false;
 
 	private boolean addElementId = false;
+
+    private GrobidModels.Flavor modelFlavor = null;
 
 	/**
 	 * @return the path2grobidHome
@@ -241,4 +245,11 @@ public class GrobidMainArgs {
 		segmentSentences = pSegmentSentences;
 	}
 
+    public GrobidModels.Flavor getModelFlavor() {
+        return modelFlavor;
+    }
+
+    public void setModelFlavor(GrobidModels.Flavor modelFlavor) {
+        this.modelFlavor = modelFlavor;
+    }
 }

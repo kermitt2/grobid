@@ -1,24 +1,33 @@
 package org.grobid.trainer;
 
 import org.grobid.core.GrobidModels;
+import org.grobid.core.GrobidModels.Flavor;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.trainer.sax.TEISegmentationArticleLightRefSaxParser;
+import org.grobid.trainer.sax.TEISegmentationArticleLightSaxParser;
 import org.grobid.trainer.sax.TEISegmentationSaxParser;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.StringTokenizer;
-
-import org.apache.commons.io.FileUtils;
 
 public class SegmentationTrainer extends AbstractTrainer {
 
+    private final GrobidModels.Flavor flavor;
+
     public SegmentationTrainer() {
         super(GrobidModels.SEGMENTATION);
+        flavor = null;
+    }
+
+    public SegmentationTrainer(GrobidModels.Flavor modelFlavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.SEGMENTATION, modelFlavor));
+        flavor = modelFlavor;
     }
 
     @Override
@@ -91,7 +100,7 @@ public class SegmentationTrainer extends AbstractTrainer {
             Writer writer2 = null;
             if (trainingOutputPath != null) {
                 os2 = new FileOutputStream(trainingOutputPath);
-                writer2 = new OutputStreamWriter(os2, "UTF8");
+                writer2 = new OutputStreamWriter(os2, StandardCharsets.UTF_8);
             }
 
             // the file for writing the evaluation data
@@ -99,7 +108,7 @@ public class SegmentationTrainer extends AbstractTrainer {
             Writer writer3 = null;
             if (evalOutputPath != null) {
                 os3 = new FileOutputStream(evalOutputPath);
-                writer3 = new OutputStreamWriter(os3, "UTF8");
+                writer3 = new OutputStreamWriter(os3, StandardCharsets.UTF_8);
             }
 
             // get a factory for SAX parser
@@ -109,13 +118,20 @@ public class SegmentationTrainer extends AbstractTrainer {
                 String name = tf.getName();
                 LOGGER.info("Processing: " + name);
 
-                TEISegmentationSaxParser parser2 = new TEISegmentationSaxParser();
+                TEISegmentationSaxParser parser;
+                if (flavor == Flavor.ARTICLE_LIGHT) {
+                    parser = new TEISegmentationArticleLightSaxParser();
+                } else if (flavor == Flavor.ARTICLE_LIGHT_WITH_REFERENCES) {
+                    parser = new TEISegmentationArticleLightRefSaxParser();
+                } else {
+                    parser = new TEISegmentationSaxParser();
+                }
 
                 //get a new instance of parser
                 SAXParser p = spf.newSAXParser();
-                p.parse(tf, parser2);
+                p.parse(tf, parser);
 
-                List<String> labeled = parser2.getLabeledResult();
+                List<String> labeled = parser.getLabeledResult();
 
                 // we can now add the features
                 // we open the featured file
@@ -142,7 +158,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                 
                     int q = 0;
                     BufferedReader bis = new BufferedReader(
-                            new InputStreamReader(new FileInputStream(theRawFile), "UTF8"));
+                        new InputStreamReader(new FileInputStream(theRawFile), StandardCharsets.UTF_8));
                     StringBuilder segmentation = new StringBuilder();
                     String line = null;
                     int l = 0;
@@ -192,6 +208,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                         }
                     }
                     bis.close();
+
                     if (nbInvalid < 10) {
                         if ((writer2 == null) && (writer3 != null))
                             writer3.write(segmentation.toString() + "\n");
@@ -204,7 +221,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                                 writer3.write(segmentation.toString() + "\n");
                         }
                     } else {
-                        LOGGER.warn(name + " / too many synchronization issues, file not used in training data and to be fixed!");
+                        LOGGER.error("{} / too many synchronization issues, file not used in training data and to be fixed!", name);
                     }
                 } catch (Exception e) {
                    LOGGER.error("Fail to open or process raw file", e);
@@ -213,134 +230,45 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
 
             if (writer2 != null) {
                 writer2.close();
-                os2.close();
+                if (os2 != null) {
+                    os2.close();
+                }
             }
 
             if (writer3 != null) {
                 writer3.close();
-                os3.close();
+                if (os3 != null) {
+                    os3.close();
+                }
             }
         } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occurred while running Grobid.", e);
         }
         return totalExamples;
     }
 
-    /**
-     * Add the selected features to the author model training for headers
-     *
-     * @param sourceTEIPathLabel path to TEI files
-     * @param sourceRawPathLabel path to raw files
-     * @param outputPath         output train file
-     * @return number of examples
-     */
-    /*public int addFeaturesSegmentation2(String sourceTEIPathLabel,
-                                        String sourceRawPathLabel,
-                                        File outputPath) {
-        int totalExamples = 0;
-        try {
-            System.out.println("sourceTEIPathLabel: " + sourceTEIPathLabel);
-            System.out.println("sourceRawPathLabel: " + sourceRawPathLabel);
-            System.out.println("outputPath: " + outputPath);
 
-            // we need first to generate the labeled files from the TEI annotated files
-            File input = new File(sourceTEIPathLabel);
-            // we process all tei files in the output directory
-            File[] refFiles = input.listFiles(new FilenameFilter() {
-                public boolean accept(File dir, String name) {
-                    return name.endsWith(".tei.xml");
-                }
-            });
-
-            if (refFiles == null) {
-                return 0;
-            }
-
-            System.out.println(refFiles.length + " tei files");
-
-            // the file for writing the training data
-            OutputStream os2 = new FileOutputStream(outputPath);
-            Writer writer2 = new OutputStreamWriter(os2, "UTF8");
-
-            // get a factory for SAX parser
-            SAXParserFactory spf = SAXParserFactory.newInstance();
-
-//            int n = 0;
-            for (File tf : refFiles) {
-                String name = tf.getName();
-                System.out.println(name);
-
-                TEISegmentationSaxParser parser2 = new TEISegmentationSaxParser();
-
-                //get a new instance of parser
-                SAXParser p = spf.newSAXParser();
-                p.parse(tf, parser2);
-
-                List<String> labeled = parser2.getLabeledResult();
-                //totalExamples += parser2.n;
-
-                // we can now add the features
-                // we open the featured file
-                int q = 0;
-                BufferedReader bis = new BufferedReader(
-                        new InputStreamReader(new FileInputStream(
-                                sourceRawPathLabel + File.separator + name.replace(".tei.xml", "")), "UTF8"));
-
-                StringBuilder segmentation = new StringBuilder();
-
-                String line;
-//                String lastTag = null;
-                while ((line = bis.readLine()) != null) {
-                    int ii = line.indexOf(' ');
-                    String token = null;
-                    if (ii != -1)
-                        token = line.substring(0, ii);
-//                    boolean found = false;
-                    // we get the label in the labelled data file for the same token
-                    for (int pp = q; pp < labeled.size(); pp++) {
-                        String localLine = labeled.get(pp);
-                        StringTokenizer st = new StringTokenizer(localLine, " ");
-                        if (st.hasMoreTokens()) {
-                            String localToken = st.nextToken();
-
-                            if (localToken.equals(token)) {
-                                String tag = st.nextToken();
-                                segmentation.append(line).append(" ").append(tag);
-//                                lastTag = tag;
-//                                found = true;
-                                q = pp + 1;
-                                pp = q + 10;
-                            }
-                        }
-                        if (pp - q > 5) {
-                            break;
-                        }
-                    }
-                }
-                bis.close();
-
-                // format with features for sequence tagging...
-                writer2.write(segmentation.toString() + "\n");
-            }
-
-            writer2.close();
-            os2.close();
-        } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
-        }
-        return totalExamples;
-    }*/
-
-    /**
-     * Command line execution.
-     *
-     * @param args Command line arguments.
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
+        // if we have a parameter, it gives the flavor refinement to consider
+        Flavor theFlavor = null;
+        if (args.length > 0) {
+            String flavor = args[0];
+            theFlavor = Flavor.fromLabel(flavor);
+            if (theFlavor == null) {
+                System.out.println("Warning, the flavor is not recognized, " +
+                    "must one one of "+ Flavor.getLabels() +", " +
+                    "defaulting training with no flavor...");
+            }
+        }
+
         GrobidProperties.getInstance();
-        AbstractTrainer.runTraining(new SegmentationTrainer());
-        System.out.println(AbstractTrainer.runEvaluation(new SegmentationTrainer()));
+        if (theFlavor == null) {
+            AbstractTrainer.runTraining(new SegmentationTrainer());
+            System.out.println(AbstractTrainer.runEvaluation(new SegmentationTrainer()));
+        } else {
+            AbstractTrainer.runTraining(new SegmentationTrainer(theFlavor));
+            System.out.println(AbstractTrainer.runEvaluation(new SegmentationTrainer(theFlavor)));
+        }
         System.exit(0);
     }
 }

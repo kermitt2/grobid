@@ -28,6 +28,7 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.service.GrobidPaths;
 import org.grobid.service.GrobidRestService;
 import org.grobid.service.GrobidServiceConfiguration;
+import org.grobid.service.data.ServiceInfo;
 import org.grobid.service.main.GrobidServiceApplication;
 import org.grobid.service.module.GrobidServiceModuleTest;
 import org.grobid.service.util.BibTexMediaType;
@@ -212,7 +213,9 @@ public class GrobidRestServiceTest {
                 .get();
 
         assertEquals(Response.Status.OK.getStatusCode(), resp.getStatus());
-        assertEquals(GrobidProperties.getVersion(), resp.readEntity(String.class));
+        ServiceInfo responseEntity = resp.readEntity(ServiceInfo.class);
+        assertEquals(GrobidProperties.getVersion(), responseEntity.getVersion());
+        assertEquals(GrobidProperties.getRevision(), responseEntity.getRevision());
     }
 
     @Test

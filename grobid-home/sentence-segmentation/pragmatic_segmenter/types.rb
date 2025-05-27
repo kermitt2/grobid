@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 module PragmaticSegmenter
-  Rule = Struct.new(:pattern, :replacement)
-
-  class Text < String
-    def apply(*rules)
-      rules.flatten.each do |rule|
-        self.gsub!(rule.pattern, rule.replacement)
+  class Rule < Struct.new(:pattern, :replacement)
+    class << self
+      def apply(str, *rules)
+        rules.flatten.each do |rule|
+          str.gsub!(rule.pattern, rule.replacement)
+        end
+        str
       end
-      self
     end
   end
 end

@@ -4,6 +4,70 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.8.2] - 2025-05-11
+
+### Added
+- New model specialization/variants (flavors) mechanism #1151
+- Specialization/variant process for a lightweight processing that covers other types of scientific articles that are not following the general segmentation schema (e.g., corrections, editorial letters, etc.) #1202
+- Additional training data covering additional cases where the Data Availability statements are over multiple pages #1200
+- Added a flag that allows output the raw copyright information in TEI #1181
+- New docker container for running end-to-end evaluation #1255
+- New Grobid client in Go #1159
+- Make the start/end page for header processing customizable #282
+- Return configuration processing parameters in TEI XML response header #1274 
+
+### Changed
+- Update pdfalto recognition of non-standard fonts #1216
+- Revert text that does not belong to graphics as paragraphs instead of dropping it #1266
+- Updated Grobid lucene analyzers for CJK languages #1228
+
+### Fixed
+- Fix URL identification for certain edge cases #1190, #1191, #1185
+- Fix fulltext model training data #1107 
+- Fix header model training data #1128
+- Updated the docker image's packages to reduce the vulnerabilities #1173
+- Fixed a bug in the handling of badly formatted figures/tables #1207
+- Correct replacement in the filenames of the fulltext generated files #1204
+- Fixed full-text block start #1203
+- Fix affiliation missing when using DL affiliation-address model #1166
+- Fixed various security vulnerabilities #1125 #1123 #1205
+- Avoid NPE when iterating over annotations that might have null bounding Boxes #1194
+
+
+## [0.8.1] - 2024-09-14
+
+### Added
+ - Identified URLs are now added in the TEI output #1099
+ - Added DL models for patent processing #1082
+ - Copyrights owner and licenses identification models #1078 
+ - Add research infrastructure recognition for funding processing #1085
+ - Add paragraphs coordinates in the TEI output #1068
+ - Specify the configuration file with DL models enabled for the full docker image #1117
+ - Support for biblio-glutton 0.3 #1086
+
+### Changed
+ - Update affiliation process #1069
+ - Improved the recognition of URLs using (when available) PDF annotations, such as clickable links
+ - Updated TEI schema #1084
+ - Review patent process #1082
+ - Add Kotlin language to support development and testing #1096
+
+### Fixed
+ - Avoid splitting URLs between sentences #1097
+ - Add missing sentence segmentation in funding and acknowledgement #1106
+ - Docker image was optimized to reduce the needed space #1088
+ - Fixed OOBE when processing large quantities of notes #1075
+ - Corrected `<title>` coordinate attribute name #1070
+ - Fix missing coordinates in paragraph continuation #1076
+ - Fixed JSON log output
+ - Fixed notes identification #1124
+ - Fixed extraneous semicolon in the training data #1133
+ - Reduced security vulnerabilities in the dependencies #1136 #1137
+
+## New Contributors
+* @tanaynayak made their first contribution in https://github.com/kermitt2/grobid/pull/1133
+* @vipulg13 made their first contribution in https://github.com/kermitt2/grobid/pull/1137
+
 ## [0.8.0] - 2023-11-19
 
 ### Added

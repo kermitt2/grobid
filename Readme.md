@@ -78,7 +78,11 @@ For facilitating the usage GROBID service at scale, we provide clients written i
 - <a href="https://github.com/kermitt2/grobid-client-java" target="_blank">Java GROBID client</a>
 - <a href="https://github.com/kermitt2/grobid-client-node" target="_blank">Node.js GROBID client</a>
 
-All these clients will take advantage of the multi-threading for scaling large set of PDF processing. As a consequence, they will be much more efficient than the [batch command lines](https://grobid.readthedocs.io/en/latest/Grobid-batch/) (which use only one thread) and should be preferred. 
+A third party client for Go is available offering functionality similar to the Python client:
+
+- <a href="https://github.com/miku/grobidclient" target="_blank">Go GROBID client</a>
+
+All these clients will take advantage of the multi-threading for scaling large set of PDF processing. As a consequence, they will be much more efficient than the [batch command lines](https://grobid.readthedocs.io/en/latest/Grobid-batch/) (which use only one thread) and should be preferred.
 
 For example, we have been able to run the complete full-text processing at around 10.6 PDF per second (around 915,000 PDF per day, around 20M pages per day) with the node.js client listed above during one week on one 16 CPU machine (16 threads, 32GB RAM, no SDD, articles from mainstream publishers), see [here](https://github.com/kermitt2/grobid/issues/443#issuecomment-505208132) (11.3M PDF were processed in 6 days by 2 servers without interruption).
 
@@ -105,11 +109,10 @@ Detailed end-to-end [benchmarking](https://grobid.readthedocs.io/en/latest/Bench
 A series of additional modules have been developed for performing __structure aware__ text mining directly on scholar PDF, reusing GROBID's PDF processing and sequence labelling weaponry:
 
 - [software-mention](https://github.com/ourresearch/software-mentions): recognition of software mentions and associated attributes in scientific literature
-- [datastet](https://github.com/kermitt2/datastet): identification of named and implicit research datasets and associated attributes in scientific articles
+- [datastet](https://github.com/kermitt2/datastet): identification of sections and sentences introducing datasets in a scientific article, identification of dataset names and attributes (implict and named datasets) and classification of the type of datasets
 - [grobid-quantities](https://github.com/kermitt2/grobid-quantities): recognition and normalization of physical quantities/measurements
 - [grobid-superconductors](https://github.com/lfoppiano/grobid-superconductors): recognition of superconductor material and properties in scientific literature
 - [entity-fishing](https://github.com/kermitt2/entity-fishing), a tool for extracting Wikidata entities from text and document, which can also use Grobid to pre-process scientific articles in PDF, leading to more precise and relevant entity extraction and the capacity to annotate the PDF with interactive layout
-- [datastet](https://github.com/kermitt2/datastet): identification of sections and sentences introducing datasets in a scientific article, identification of dataset names (implict and named datasets) and classification of the type of these datasets
 - [grobid-ner](https://github.com/kermitt2/grobid-ner): named entity recognition
 - [grobid-astro](https://github.com/kermitt2/grobid-astro): recognition of astronomical entities in scientific papers
 - [grobid-bio](https://github.com/kermitt2/grobid-bio): a toy bio-entity tagger using BioNLP/NLPBA 2004 dataset
@@ -144,7 +147,7 @@ If you want to cite this work, please refer to the present GitHub project, toget
     title = {GROBID},
     howpublished = {\url{https://github.com/kermitt2/grobid}},
     publisher = {GitHub},
-    year = {2008--2024},
+    year = {2008--2025},
     archivePrefix = {swh},
     eprint = {1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c}
 }
