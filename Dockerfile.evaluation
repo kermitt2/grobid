@@ -8,7 +8,7 @@
 # Please notice that the evaluation is run through a python script that runs all the needed commands
 # TODO: upload the evaluation in Markdown somewhere
 
-FROM lfoppiano/grobid:latest-evaluation-full as runtime
+FROM lfoppiano/grobid:latest-evaluation-full AS runtime
 
 # setting locale is likely useless but to be sure
 ENV LANG C.UTF-8
