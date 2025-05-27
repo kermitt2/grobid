@@ -63,7 +63,7 @@ import java.awt.image.BufferedImage;
 
 /**
  * A model for segmenting the figure areas. The model is applied after the Segmentation model and
- * work as follow:
+ * work as follows:
  * - we identify first graphic objects which are possible figures, as the result of bitmap and SVG 
  *   object 2D aggregations, these graphic boxes are the figure anchors
  * - we try to extend each figure anchor by labeling the sequence of LayoutToken before and after
@@ -74,7 +74,7 @@ import java.awt.image.BufferedImage;
  *   results, to be excluded by the other models (in particular the full text model)
  *
  * Contrary to the segmentation model, which is line-based, this model is working at Layout Token 
- * granularity (e.g. every token receives a label decision).
+ * granularity (e.g., every token receives a label decision).
  *
  */
 public class FigureSegmenterParser {
@@ -266,7 +266,7 @@ public class FigureSegmenterParser {
 
         // to be sorted
         HashSet<Integer> theKeys = new HashSet<>(imagesPerPage.keySet());
-        List<Integer> keys = new ArrayList<Integer>(theKeys);
+        List<Integer> keys = new ArrayList<>(theKeys);
         Collections.sort(keys);
         for (Integer pageNum : keys) {
             Collection<GraphicObject> elements = imagesPerPage.get(pageNum);
@@ -331,14 +331,14 @@ public class FigureSegmenterParser {
                 //pageBlocks = readingReorder(pageBlocks);
 
             BoundingBox graphicBox = figureAnchor.getBoundingBox();
-System.out.println("\n\ngraphicBox: " + graphicBox.toString() + ", startGraphicPos: " + startGraphicPos + ", endGraphicPos: " + endGraphicPos);    
-if (startGraphicPos != -1 && endGraphicPos != -1) {
-for(int i=startGraphicPos; i<=endGraphicPos; i++) {
-    System.out.print(tokenizations.get(i));
-}
-System.out.println("");
-System.out.println("------------------------------------");
-}
+            System.out.println("\n\ngraphicBox: " + graphicBox.toString() + ", startGraphicPos: " + startGraphicPos + ", endGraphicPos: " + endGraphicPos);
+            if (startGraphicPos != -1 && endGraphicPos != -1) {
+            for(int i=startGraphicPos; i<=endGraphicPos; i++) {
+                System.out.print(tokenizations.get(i));
+            }
+            System.out.println("");
+            System.out.println("------------------------------------");
+            }
 
             if (direction == Direction.UP) {
                 List<Block> blocksUp = new ArrayList<>();
@@ -900,7 +900,7 @@ System.out.println(taggingLabel);
      * raw feature data. 
      */
     public Pair<Pair<String,String>,Pair<String,String>> createTraining(Document doc, String id) {
-        // the figure are not segmented by the segmentation model (it's the purpose of this parser),
+        // The figures are not segmented by the segmentation model (it's the purpose of this parser),
         // but normally pre-located in the BODY and ANNEX segments
 
         List<LayoutToken> tokenizations = doc.getTokenizations();

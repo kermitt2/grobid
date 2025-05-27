@@ -33,7 +33,6 @@ import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.matching.EntityMatcherException;
-import org.grobid.core.utilities.Triple;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -46,7 +45,6 @@ import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static net.sf.saxon.expr.parser.Token.tokens;
 import static org.apache.commons.lang3.StringUtils.*;
 import static org.grobid.core.GrobidModels.FULLTEXT;
 import static org.grobid.core.engines.label.TaggingLabels.FIGURE_LABEL;
