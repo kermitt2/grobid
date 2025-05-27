@@ -55,7 +55,7 @@ jobs:
         with:
           context: .
           file: Dockerfile.crf
-          platforms: linux/amd64,linux/arm64,linux/arm64/v8
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
             lfoppiano/grobid:latest-develop, lfoppiano/grobid:${{ github.event.inputs.custom_tag}}

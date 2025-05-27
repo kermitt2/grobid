@@ -41,13 +41,8 @@ COPY grobid-trainer/ ./grobid-trainer/
 
 # cleaning unused native libraries before packaging
 RUN rm -rf grobid-home/pdf2xml
-RUN rm -rf grobid-home/pdfalto/lin-32
-RUN rm -rf grobid-home/pdfalto/mac-64
-RUN rm -rf grobid-home/pdfalto/mac_arm-64
 RUN rm -rf grobid-home/pdfalto/win-*
-RUN rm -rf grobid-home/lib/lin-32
 RUN rm -rf grobid-home/lib/win-*
-RUN rm -rf grobid-home/lib/mac-64
 
 # cleaning Delft models
 RUN rm -rf grobid-home/models/*-BidLSTM_CRF*
@@ -73,10 +68,11 @@ RUN apt-get update && \
     apt-get -y --no-install-recommends install libxml2 libfontconfig && \
     rm -rf /var/lib/apt/lists/*
 
+ARG TARGETARCH
+
 # Add Tini
 ENV TINI_VERSION v0.19.0
-ARG ARCH=amd64
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-${ARCH} /tini
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-${TARGETARCH} /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-s", "--"]
 
@@ -84,18 +80,6 @@ WORKDIR /opt/grobid
 
 COPY --from=builder /opt/grobid .
 
-#ARG TARGETARCH
-#ARG PROCESS_MECHANISM
-
-#RUN if [ "$TARGETARCH" = "arm64" ]; then \
-#        PROCESS_MECHANISM="-Djdk.lang.Process.launchMechanism=vfork "; \
-#    else \
-#        PROCESS_MECHANISM=""; \
-#    fi
-#
-#RUN echo "Selected process spawning mechanism: $PROCESS_MECHANISM"
-
-#ENV GROBID_SERVICE_OPTS "$PROCESS_MECHANISM-Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED"
 ENV GROBID_SERVICE_OPTS "-Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED"
 
 CMD ["./grobid-service/bin/grobid-service"]
