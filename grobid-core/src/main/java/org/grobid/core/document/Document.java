@@ -411,7 +411,7 @@ public class Document implements Serializable {
         }
 
         // cache images per page
-        images = images = images.stream()
+        images = images.stream()
             .filter(go -> go.getType() != GraphicObjectType.BITMAP || isValidBitmapGraphicObject(go))
             .collect(Collectors.toList());
 
@@ -427,7 +427,7 @@ public class Document implements Serializable {
 
             String coordinates = images.stream()
                 .map(g -> g.getBoundingBox().toString() +
-                    (g.getType() == GraphicObjectType.BITMAP ? ",red,dotted" : ",yellow,dashed"))
+                    (g.getType() == GraphicObjectType.BITMAP ? ",blue,dotted" : ",green,dashed"))
                 .collect(Collectors.joining(";\n"));
 
             LOGGER.info("-> image object coordinates: \n{}", coordinates);

@@ -59,72 +59,15 @@ object VectorGraphicBoxCalculator {
 
                 //XQueryProcessor pr = new XQueryProcessor(vecFile);
                 val doc = docFactory.createSVGDocument(vecFile.path)
+                val boxesFromClips: MutableList<BoundingBox?> = extractBoxesFromClips(doc, pageNum)
 
-                //GVTBuilder builder = new GVTBuilder();
-                // GraphicsNode rootGN = builder.build(ctx, doc);
-                val boxes: MutableList<BoundingBox?> = ArrayList<BoundingBox?>()
+                val boxesFromGroups = extractBoxesFromGroupElements(doc, pageNum)
 
-                // Get clipPath elements
-                val clipPaths = doc.getElementsByTagNameNS("http://www.w3.org/2000/svg", "clipPath")
-                for (i in 0 until clipPaths.length) {
-                    val clipPathElement = clipPaths.item(i) as SVGElement
+                val allBoxes = ArrayList<BoundingBox?>()
+                allBoxes.addAll(boxesFromClips)
+                allBoxes.addAll(boxesFromGroups)
 
-                    // Analyze child elements inside the clipPath
-                    val childElements = clipPathElement.childNodes
-                    var aggregatedBox: BoundingBox? = null
-
-                    // Process each child element
-                    for (j in 0 until childElements.getLength()) {
-                        if (childElements.item(j) is SVGElement) {
-                            val child = childElements.item(j) as SVGElement
-
-                            // For path elements, get path data and calculate bounds
-                            if (child.getTagName() == "path") {
-                                val pathData = child.getAttribute("d")
-                                // Use Batik's PathParser to parse path data
-                                val pathBox = calculatePathBounds(pathData, pageNum)
-
-                                // Merge with aggregated box
-                                if (aggregatedBox == null) {
-                                    aggregatedBox = pathBox
-                                } else if (pathBox != null) {
-                                    aggregatedBox = aggregatedBox.boundBox(pathBox)
-                                }
-                            } else if (child is SVGLocatable) {
-                                try {
-                                    val locatable = child as SVGLocatable
-                                    val rect = locatable.getBBox()
-                                    if (rect != null) {
-                                        val elementBox = BoundingBox.fromPointAndDimensions(
-                                            pageNum,
-                                            rect.getX().toDouble(),
-                                            rect.getY().toDouble(),
-                                            rect.getWidth().toDouble(),
-                                            rect.getHeight().toDouble()
-                                        )
-
-                                        if (aggregatedBox == null) {
-                                            aggregatedBox = elementBox
-                                        } else {
-                                            aggregatedBox = aggregatedBox.boundBox(elementBox)
-                                        }
-                                    }
-                                } catch (e: Exception) {
-                                    // Some elements might not support getBBox
-                                    LOGGER.debug("Could not get bounding box for element: " + child.getTagName(), e)
-                                }
-                            }
-                        }
-                    }
-
-                    // Add the resulting aggregated box if valid
-                    if (aggregatedBox != null && aggregatedBox.area() > 0) {
-                        boxes.add(aggregatedBox)
-                    }
-                }
-
-                // Sort boxed by size
-                val boxesSortedBySize: MutableList<BoundingBox> = boxes.stream()
+                val boxesSortedBySize: MutableList<BoundingBox> = allBoxes.stream()
                     .distinct()
                     .sorted { b1: BoundingBox?, b2: BoundingBox? -> b2!!.area().compareTo(b1!!.area()) }
                     .collect(Collectors.toList())
@@ -133,8 +76,8 @@ object VectorGraphicBoxCalculator {
                 for (box in boxesSortedBySize) {
                     // Remove boxes that
                     // - are contained in other boxes or
-                    // - that are outside the main area (this might not work for supplementary material)
-                    if (boxes.stream()
+                    // - that are outside the main area
+                    if (boxesSortedBySize.stream()
                             .noneMatch { b: BoundingBox? ->
                                 b !== box && b!!.contains(box)
                             } && (mainPageArea.contains(box) || box.calculateOutsideRatio(mainPageArea) < 0.03)
@@ -147,12 +90,6 @@ object VectorGraphicBoxCalculator {
             }
         }
 
-        // Fallback method in case we did not extract any boxes
-        if (finalListOfBoxes.isEmpty()) {
-            finalListOfBoxes.addAll(extractBoxesFallback(document, docFactory))
-        }
-
-
         // Transformation of bounding boxes to GraphicObjects
         finalListOfBoxes.stream()
             .map { b: BoundingBox? -> GraphicObject(b, GraphicObjectType.VECTOR_BOX) }
@@ -162,33 +99,141 @@ object VectorGraphicBoxCalculator {
     }
 
     /**
-     * Calculates the visible boundaries of a path element when clipped by a clipPath.
+     * Determines if an SVG element is transparent and should be ignored.
      *
-     * @param pathData The SVG path data string for the element
-     * @param clipPathData The SVG path data string for the clipping path
-     * @param pageNum The current page number
-     * @return BoundingBox representing the visible portion of the path, or null if invalid
+     * @param element The SVG element to check
+     * @return true if the element is determined to be transparent
      */
-    private fun getVisibleBounds(pathData: String, clipPathData: String, pageNum: Int): BoundingBox? {
-        // Parse path coordinates
-        val pathBox = calculatePathBounds(pathData, pageNum) ?: return null
-
-        // Parse clipPath coordinates
-        val clipBox = calculatePathBounds(clipPathData, pageNum) ?: return null
-
-        // Check if there's any intersection
-        if (!pathBox.intersect(clipBox)) {
-            return null
+    private fun isTransparentSVG(element: SVGElement): Boolean {
+        // Check direct fill-opacity attribute on the element
+        if (element.hasAttribute("fill-opacity") &&
+            element.getAttribute("fill-opacity").toDoubleOrNull() == 0.0
+        ) {
+            return true
         }
 
-        // Calculate intersection by finding max of mins and min of maxes
-        return BoundingBox.fromPointAndDimensions(
-            pageNum,
-            Math.max(pathBox.x, clipBox.x),
-            Math.max(pathBox.y, clipBox.y),
-            Math.min(pathBox.x + pathBox.width, clipBox.x + clipBox.width) - Math.max(pathBox.x, clipBox.x),
-            Math.min(pathBox.y + pathBox.height, clipBox.y + clipBox.height) - Math.max(pathBox.y, clipBox.y)
-        )
+        // Check style attribute for fill-opacity
+        val styleValue = element.getAttribute("style")
+        if (StringUtils.isBlank(styleValue)) {
+            return false
+        }
+
+        var hasOpacityAttribute = false
+        var opacityValue = 1.0
+        var fillOpacityValue = 1.0
+        var hasFillNone = false
+        var hasStroke = false
+
+        for (attributePair in styleValue.split(";").filter { it.isNotEmpty() }) {
+            val cleanPair = attributePair.trim()
+            val separatorIndex = cleanPair.indexOf(":")
+
+            if (separatorIndex != -1) {
+                val key = cleanPair.substring(0, separatorIndex).trim()
+                val value = cleanPair.substring(separatorIndex + 1).trim()
+
+                when (key) {
+                    "opacity" -> {
+                        hasOpacityAttribute = true
+                        opacityValue = value.toDoubleOrNull() ?: 1.0
+                    }
+
+                    "fill-opacity" -> {
+                        fillOpacityValue = value.toDoubleOrNull() ?: 1.0
+                    }
+
+                    "fill" -> {
+                        hasFillNone = value == "none"
+                    }
+
+                    "stroke" -> {
+                        hasStroke = value != "none" && !value.equals("#000000", ignoreCase = true)
+                    }
+                }
+            }
+        }
+
+        // Element is effectively transparent if:
+        // - Has zero opacity
+        // - Has zero fill-opacity and no visible stroke
+        // - Has fill:none and no visible stroke
+        return (hasOpacityAttribute && opacityValue < 0.01) ||
+            (fillOpacityValue < 0.01 && !hasStroke) ||
+            (hasFillNone && !hasStroke)
+    }
+
+    private fun extractBoxesFromClips(
+        doc: SVGDocument?,
+        pageNum: Int
+    ): MutableList<BoundingBox?> {
+        //GVTBuilder builder = new GVTBuilder();
+        // GraphicsNode rootGN = builder.build(ctx, doc);
+        val boxes: MutableList<BoundingBox?> = ArrayList<BoundingBox?>()
+
+        // Get clipPath elements
+        val clipPaths = doc!!.getElementsByTagNameNS("http://www.w3.org/2000/svg", "clipPath")
+        for (i in 0 until clipPaths.length) {
+            val clipPathElement = clipPaths.item(i) as SVGElement
+
+            // Analyze child elements inside the clipPath
+            val childElements = clipPathElement.childNodes
+            var aggregatedBox: BoundingBox? = null
+
+            // Process each child element
+            for (j in 0 until childElements.getLength()) {
+                if (childElements.item(j) is SVGElement) {
+                    val child = childElements.item(j) as SVGElement
+
+                    // For path elements, get path data and calculate bounds
+                    if (child.getTagName() == "path") {
+                        // Skip transparent paths
+                        if (isTransparentSVG(child)) {
+                            continue
+                        }
+
+                        val pathData = child.getAttribute("d")
+                        // Use Batik's PathParser to parse path data
+                        val pathBox = calculatePathBounds(pathData, pageNum)
+
+                        // Merge with aggregated box
+                        if (aggregatedBox == null) {
+                            aggregatedBox = pathBox
+                        } else if (pathBox != null) {
+                            aggregatedBox = aggregatedBox.boundBox(pathBox)
+                        }
+                    } else if (child is SVGLocatable) {
+                        try {
+                            val locatable = child as SVGLocatable
+                            val rect = locatable.getBBox()
+                            if (rect != null) {
+                                val elementBox = BoundingBox.fromPointAndDimensions(
+                                    pageNum,
+                                    rect.getX().toDouble(),
+                                    rect.getY().toDouble(),
+                                    rect.getWidth().toDouble(),
+                                    rect.getHeight().toDouble()
+                                )
+
+                                if (aggregatedBox == null) {
+                                    aggregatedBox = elementBox
+                                } else {
+                                    aggregatedBox = aggregatedBox.boundBox(elementBox)
+                                }
+                            }
+                        } catch (e: Exception) {
+                            // Some elements might not support getBBox
+                            LOGGER.debug("Could not get bounding box for element: " + child.getTagName(), e)
+                        }
+                    }
+                }
+            }
+
+            // Add the resulting aggregated box if valid
+            if (aggregatedBox != null && aggregatedBox.area() > 0) {
+                boxes.add(aggregatedBox)
+            }
+        }
+        return boxes
     }
 
     //                 !!!!!!
@@ -197,54 +242,16 @@ object VectorGraphicBoxCalculator {
     //                 way to get the BB of clipPath
     //                 !!!!!!
 
-    private fun extractBoxesFallback(
-        document: Document,
-        docFactory: SAXSVGDocumentFactory
-    ): List<BoundingBox> {
-        val boxes = mutableListOf<BoundingBox>()
-
-        // Process each page
-        for (pageNum in 1..document.getPages().size) {
-            val mainPageArea = document.getPage(pageNum).mainArea
-
-            val vecFile = File(document.getDocumentSource().xmlFile.absolutePath + "_data", "image-$pageNum.svg")
-            if (!vecFile.exists() || vecFile.length() > VEC_GRAPHICS_FILE_SIZE_LIMIT) {
-                continue
-            }
-
-            try {
-                val svgDoc = docFactory.createSVGDocument(vecFile.path)
-
-                // Use the existing extractBoxesFromGroupElements method
-                val pageBoxes = extractBoxesFromGroupElements(svgDoc, pageNum, mainPageArea)
-
-                // Add valid boxes to our result list
-                pageBoxes.forEach { box ->
-                    if (box != null && box.area() > MINIMUM_VECTOR_BOX_AREA) {
-                        boxes.add(box)
-                    }
-                }
-            } catch (e: Exception) {
-                LOGGER.debug("Error processing SVG file for page $pageNum: ${e.message}")
-            }
-        }
-
-        LOGGER.info("Fallback method found ${boxes.size} vector boxes")
-        return boxes
-    }
-
     /**
      * Extracts bounding boxes from SVG group elements when no boxes were detected from clipPath elements.
      *
      * @param doc The SVG document
      * @param pageNum The current page number
-     * @param mainPageArea The main area of the page
      * @return List of valid bounding boxes extracted from group elements
      */
     private fun extractBoxesFromGroupElements(
         doc: SVGDocument,
-        pageNum: Int,
-        mainPageArea: BoundingBox
+        pageNum: Int
     ): MutableList<BoundingBox?> {
         val boxes: MutableList<BoundingBox?> = ArrayList<BoundingBox?>()
 
@@ -273,23 +280,60 @@ object VectorGraphicBoxCalculator {
         for (i in 0 until nodeList.getLength()) {
             try {
                 val item = nodeList.item(i) as SVGElement?
-                val locatable = item as SVGLocatable
-                val rect = locatable.getBBox()
 
-                if (rect == null) {
+                // Skip transparent elements
+                if (item == null) {
                     continue
                 }
 
-                val box = BoundingBox.fromPointAndDimensions(
-                    pageNum,
-                    rect.getX().toDouble(),
-                    rect.getY().toDouble(),
-                    rect.getWidth().toDouble(),
-                    rect.getHeight().toDouble()
-                )
+                if (item != null && isTransparentSVG(item)) {
+                    LOGGER.debug("Skipping transparent group element: {}", item!!.getAttribute("id"))
+                    continue
+                }
 
-                // Filter out invalid boxes: outside main area, zero area, or too large
-                if (!mainPageArea.contains(box) || box.area() == 0.0 || box.area() / mainPageArea.area() > 0.7) {
+                // Skip elements with specific problematic attributes
+                if (item.hasAttribute("evenodd") == true) {
+                    LOGGER.debug(
+                        "Skipping element with invalid evenodd attribute: {}",
+                        item.getAttribute("id")
+                    )
+                    continue
+                }
+
+
+                val locatable = item as SVGLocatable
+                var box: BoundingBox? = null
+
+                // First try to get the bounding box directly
+                val rect = locatable.getBBox()
+                if (rect != null) {
+                    box = BoundingBox.fromPointAndDimensions(
+                        pageNum,
+                        rect.getX().toDouble(),
+                        rect.getY().toDouble(),
+                        rect.getWidth().toDouble(),
+                        rect.getHeight().toDouble()
+                    )
+                } else {
+                    // If getBBox() returns null, try to get bounding box from child path elements
+                    val paths = item.getElementsByTagNameNS("http://www.w3.org/2000/svg", "path")
+                    if (paths.length > 0) {
+                        // Combine all path-bounding boxes in this group
+                        for (j in 0 until paths.length) {
+                            val pathElement = paths.item(j) as SVGElement
+                            val pathData = pathElement.getAttribute("d")
+                            val pathBox = calculatePathBounds(pathData, pageNum)
+
+                            if (pathBox != null) {
+                                box = if (box == null) pathBox else box.boundBox(pathBox)
+                            }
+                        }
+                        LOGGER.debug("Created bounding box from path data for group: {}", item.getAttribute("id"))
+                    }
+                }
+
+                // Preliminary filtering
+                if (box == null || box.area() == 0.0) {
                     continue
                 }
 
