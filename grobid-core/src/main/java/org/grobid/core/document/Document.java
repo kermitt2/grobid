@@ -3,17 +3,12 @@ package org.grobid.core.document;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Predicate;
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.LinkedListMultimap;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Multimap;
-import com.google.common.collect.SortedSetMultimap;
+import com.google.common.collect.*;
 import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.io.IOUtils;
 import org.grobid.core.analyzers.Analyzer;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.*;
+import org.grobid.core.data.Table;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.FigureCounters;
@@ -22,23 +17,16 @@ import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
-import org.grobid.core.layout.Block;
-import org.grobid.core.layout.BoundingBox;
-import org.grobid.core.layout.Cluster;
-import org.grobid.core.layout.GraphicObject;
-import org.grobid.core.layout.GraphicObjectType;
-import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.layout.PDFAnnotation;
-import org.grobid.core.layout.Page;
-import org.grobid.core.layout.VectorGraphicBoxCalculator;
-import org.grobid.core.sax.*;
+import org.grobid.core.layout.*;
+import org.grobid.core.sax.PDFALTOAnnotationSaxHandler;
+import org.grobid.core.sax.PDFALTOOutlineSaxHandler;
+import org.grobid.core.sax.PDFALTOSaxHandler;
+import org.grobid.core.sax.PDFMetadataSaxHandler;
 import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -46,27 +34,11 @@ import org.xml.sax.helpers.DefaultHandler;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.Serializable;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
+import java.io.*;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CodingErrorAction;
-
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.SortedSet;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 
@@ -145,7 +117,7 @@ public class Document implements Serializable {
 
     protected transient List<Figure> figures;
     protected transient Predicate<GraphicObject> validGraphicObjectPredicate;
-    
+
     // general parameter indicating bounding box margin when considering area
     protected int m;
 
@@ -177,7 +149,7 @@ public class Document implements Serializable {
             try {
                 final byte[] utf8Bytes = text.getBytes(StandardCharsets.UTF_8);
                 doc.byteSize = utf8Bytes.length;
-            } catch(Exception e) {
+            } catch (Exception e) {
                 LOGGER.warn("Could not set the original text document size in bytes for UTF-8 encoding");
             }
         }
@@ -304,11 +276,11 @@ public class Document implements Serializable {
     }
 
     /**
-    * See https://github.com/kermitt2/grobid/pull/475
-    * Ignore invalid unicode characters
-    *
-    *  @author Daniel Ecer
-    */
+     * See https://github.com/kermitt2/grobid/pull/475
+     * Ignore invalid unicode characters
+     *
+     *  @author Daniel Ecer
+     */
     protected static void parseInputStream(InputStream in, SAXParser saxParser, DefaultHandler handler)
         throws SAXException, IOException {
         CharsetDecoder utf8Decoder = StandardCharsets.UTF_8.newDecoder();
@@ -348,12 +320,12 @@ public class Document implements Serializable {
         tokenizations = null;
 
         File file = new File(pathXML);
-		File fileAnnot = new File(pathXML+"_annot.xml");
-        File fileOutline = new File(pathXML+"_outline.xml");
-        File fileMetadata = new File(pathXML+"_metadata.xml");
+        File fileAnnot = new File(pathXML + "_annot.xml");
+        File fileOutline = new File(pathXML + "_outline.xml");
+        File fileMetadata = new File(pathXML + "_metadata.xml");
 
         // parsing of the pdfalto file
-        try (FileInputStream in = new FileInputStream(file)){
+        try (FileInputStream in = new FileInputStream(file)) {
             // in = new XMLFilterFileInputStream(file); // -> to filter invalid XML characters
 
             // get a new instance of parser
@@ -367,7 +339,7 @@ public class Document implements Serializable {
 
         if (fileAnnot.exists()) {
             // parsing of the annotation XML file (for annotations in the PDF)
-            try (FileInputStream in = new FileInputStream(fileAnnot)){
+            try (FileInputStream in = new FileInputStream(fileAnnot)) {
                 SAXParser p = spf.newSAXParser();
                 p.parse(in, parserAnnot);
             } catch (GrobidException e) {
@@ -379,7 +351,7 @@ public class Document implements Serializable {
 
         if (fileOutline.exists()) {
             // parsing of the outline XML file (for PDF bookmark) - not used currently so minor
-            try (FileInputStream in = new FileInputStream(fileOutline)){
+            try (FileInputStream in = new FileInputStream(fileOutline)) {
                 SAXParser p = spf.newSAXParser();
                 p.parse(in, parserOutline);
                 outlineRoot = parserOutline.getRootNode();
@@ -391,7 +363,7 @@ public class Document implements Serializable {
         }
         if (fileMetadata.exists()) {
             // parsing of the metadata XML file (for PDF embedded metadata)
-            try (FileInputStream in = new FileInputStream(fileMetadata)){
+            try (FileInputStream in = new FileInputStream(fileMetadata)) {
                 SAXParser p = spf.newSAXParser();
                 p.parse(in, parserMetadata);
                 metadata = parserMetadata.getMetadata();
@@ -406,7 +378,7 @@ public class Document implements Serializable {
         if (getBlocks() == null) {
             throw new GrobidException("PDF parsing resulted in empty content", GrobidExceptionStatus.NO_BLOCKS);
         } else {
-            for(Block block : getBlocks()) {
+            for (Block block : getBlocks()) {
                 List<LayoutToken> localTokens = block.getTokens();
                 if (CollectionUtils.isEmpty(localTokens))
                     continue;
@@ -424,40 +396,41 @@ public class Document implements Serializable {
 
         // calculating boxes for pages
         if (config.isProcessVectorGraphics()) {
-            // remove vector graphics in the image list because they are going to be reprocessed in the following part
-            List<GraphicObject> newImages = new ArrayList<>();
-            for(GraphicObject image : images) {
-                if (image.getType() != GraphicObjectType.VECTOR) {
-                    newImages.add(image);
-                }
-            }
-            images = newImages;
+            // remove vector graphics in the image list because they are going to be
+            // reprocessed in the following part
 
-            LOGGER.info("!!!!!!!!!!  number of bitmap image objects: " + images.size());
-
-//            for(GraphicObject image : images) {
-//                System.out.println(image.toString());
-//            }
+            images = images.stream()
+                .filter(i -> i.getType() != GraphicObjectType.VECTOR)
+                .collect(Collectors.toList());
 
             try {
-                for (GraphicObject o : VectorGraphicBoxCalculator.calculate(this).values()) {
-                    images.add(o);
-                }
+                images.addAll(VectorGraphicBoxCalculator.calculate(this).values());
             } catch (Exception e) {
                 throw new GrobidException("Cannot process vector graphics: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
             }
         }
-//System.out.println("!!!!!!!!!!  number of bitmap & vector image objects: " + images.size());
-        
-        // cache images per page
-        for (GraphicObject go : images) {
-            // filtering out small figures that are likely to be logos and stuff
-            if (go.getType() == GraphicObjectType.BITMAP && !isValidBitmapGraphicObject(go)) {
-//System.out.println("       ----> Invalid bitmap object: " + go.toString());
-                continue;
-            }
 
-            imagesPerPage.put(go.getPage(), go);
+        // cache images per page
+        images = images = images.stream()
+            .filter(go -> go.getType() != GraphicObjectType.BITMAP || isValidBitmapGraphicObject(go))
+            .collect(Collectors.toList());
+
+        images.forEach(go -> imagesPerPage.put(go.getPage(), go));
+
+        if (CollectionUtils.isNotEmpty(images)) {
+            Map<GraphicObjectType, Long> imageStats = images.stream()
+                .collect(
+                    Collectors.groupingBy(GraphicObject::getType, Collectors.counting())
+                );
+
+            LOGGER.info("-> image object statistics: {}", imageStats);
+
+            String coordinates = images.stream()
+                .map(g -> g.getBoundingBox().toString() +
+                    (g.getType() == GraphicObjectType.BITMAP ? ",red,dotted" : ",yellow,dashed"))
+                .collect(Collectors.joining(";\n"));
+
+            LOGGER.info("-> image object coordinates: \n{}", coordinates);
         }
 
         HashSet<Integer> keys = new HashSet<>(imagesPerPage.keySet());
@@ -539,16 +512,16 @@ public class Document implements Serializable {
             for (Page page : pages) {
                 if (page.isEven()) {
                     page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(),
-                            pageEvenX, pageY, pageEvenWidth, pageHeight));
+                        pageEvenX, pageY, pageEvenWidth, pageHeight));
                 } else {
                     page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(),
-                            pageOddX, pageY, pageOddWidth, pageHeight));
+                        pageOddX, pageY, pageOddWidth, pageHeight));
                 }
             }
         } else {
             for (Page page : pages) {
                 page.setMainArea(BoundingBox.fromPointAndDimensions(page.getNumber(),
-                        0, 0, page.getWidth(), page.getHeight()));
+                    0, 0, page.getWidth(), page.getHeight()));
             }
         }
     }
@@ -576,9 +549,9 @@ public class Document implements Serializable {
             }
 
             if (Utilities.doubleEquals(prev.getBoundingBox().getWidth(), cur.getBoundingBox().getWidth(), 0.0001)
-                    && Utilities.doubleEquals(prev.getBoundingBox().getY2(), cur.getBoundingBox().getY(), 0.0001)
+                && Utilities.doubleEquals(prev.getBoundingBox().getY2(), cur.getBoundingBox().getY(), 0.0001)
 
-                    ) {
+            ) {
                 end++;
             } else {
                 if (start != end) {
@@ -756,8 +729,8 @@ public class Document implements Serializable {
             pages = new ArrayList<Page>();
         pages.add(page);
         if (page.getBlocks() != null) {
-            for(Block localBlock : page.getBlocks())
-                blocksPerPage.put(pages.size()-1,localBlock);
+            for (Block localBlock : page.getBlocks())
+                blocksPerPage.put(pages.size() - 1, localBlock);
         }
     }
 
@@ -890,10 +863,10 @@ public class Document implements Serializable {
             if (block.getPageNumber() != image.getPage())
                 continue;
             if (((Math.abs((image.getY() + image.getHeight()) - block.getY()) < MIN_DISTANCE) ||
-                    (Math.abs(image.getY() - (block.getY() + block.getHeight())) < MIN_DISTANCE)) //||
+                (Math.abs(image.getY() - (block.getY() + block.getHeight())) < MIN_DISTANCE)) //||
                 //( (Math.abs((image.x+image.getWidth()) - block.getX()) < MIN_DISTANCE) ||
                 //  (Math.abs(image.x - (block.getX()+block.getWidth())) < MIN_DISTANCE) )
-                    ) {
+            ) {
                 // the image is at a distance of at least MIN_DISTANCE from one border 
                 // of the block on the vertical/horizontal axis
                 if (images == null)
@@ -1007,13 +980,13 @@ public class Document implements Serializable {
             }).collect(Collectors.toList());
 
             List<GraphicObject> vectorBoxGraphicObjects =
-                    Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE));
+                Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE));
 
             // case where figure caption is covered almost precisely but the vector graphics box -- filter those out - they are covered by caption anyway
             vectorBoxGraphicObjects = vectorBoxGraphicObjects.stream().filter(go -> {
                 for (Figure f : pageFigures) {
                     BoundingBox intersection = BoundingBoxCalculator.calculateOneBox(f.getLayoutTokens(), true).boundingBoxIntersection(go.getBoundingBox());
-                    if(intersection != null && intersection.area() / go.getBoundingBox().area() > 0.5) {
+                    if (intersection != null && intersection.area() / go.getBoundingBox().area() > 0.5) {
                         return false;
                     }
                 }
@@ -1039,7 +1012,7 @@ public class Document implements Serializable {
                 for (Figure figure : pageFigures) {
                     List<LayoutToken> tokens = figure.getLayoutTokens();
                     final BoundingBox figureBox =
-                            BoundingBoxCalculator.calculateOneBox(tokens, true);
+                        BoundingBoxCalculator.calculateOneBox(tokens, true);
 
                     double minDist = MAX_FIG_BOX_DISTANCE * 100;
 
@@ -1083,7 +1056,7 @@ public class Document implements Serializable {
                 for (Figure figure : pageFigures) {
                     List<LayoutToken> tokens = figure.getLayoutTokens();
                     final BoundingBox figureBox =
-                            BoundingBoxCalculator.calculateOneBox(tokens, true);
+                        BoundingBoxCalculator.calculateOneBox(tokens, true);
 
                     double minDist = MAX_FIG_BOX_DISTANCE * 100;
 
@@ -1436,7 +1409,7 @@ public class Document implements Serializable {
 //        }
 
         final BoundingBox figureBox =
-                BoundingBoxCalculator.calculateOneBox(tokens, true);
+            BoundingBoxCalculator.calculateOneBox(tokens, true);
 
         double minDist = MAX_FIG_BOX_DISTANCE * 100;
 
@@ -1450,8 +1423,8 @@ public class Document implements Serializable {
                 }
 
                 BoundingBox goBox =
-                        BoundingBox.fromPointAndDimensions(go.getPage(), go.getX(), go.getY(),
-                                go.getWidth(), go.getHeight());
+                    BoundingBox.fromPointAndDimensions(go.getPage(), go.getX(), go.getY(),
+                        go.getWidth(), go.getHeight());
 
                 if (!getPage(goBox.getPage()).getMainArea().contains(goBox)) {
                     continue;
@@ -1515,7 +1488,8 @@ public class Document implements Serializable {
 //                    continue;
 //                if (figure.getPage() != image.getPage())
 //                    continue;
-////System.out.println(image.toString());
+
+    ////System.out.println(image.toString());
 //                if (((Math.abs((image.getY() + image.getHeight()) - figure.getY()) < MIN_DISTANCE) ||
 //                        (Math.abs(image.getY() - (figure.getY() + figure.getHeight())) < MIN_DISTANCE)) //||
 //                    //( (Math.abs((image.x+image.width) - figure.getX()) < MIN_DISTANCE) ||
@@ -1548,7 +1522,6 @@ public class Document implements Serializable {
 //            e.printStackTrace();
 //        }
 //    }
-
     public void produceStatistics() {
         // document length in characters
         // we calculate current document length and initialize the body tokenization structure
@@ -1698,7 +1671,6 @@ public class Document implements Serializable {
             labeledTokenSequences.put(clusterLabel.getLabel(), theList);
         }
     }*/
-
     public double getByteSize() {
         return byteSize;
     }
