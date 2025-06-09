@@ -20,11 +20,15 @@
 				
 			<p><ref type="biblio">(Vergelli et al., 2016, 2017)</ref> and pyridinones <ref type="biblio">(Crocetti<lb/> et al., 2020)</ref> bearing the same 4-bromophenylacetamide<lb/> side group. We also evaluated the effects of replacing the<lb/> 4-bromophenylacetamide side group with alkyl chains in new<lb/> compounds of type B (Figure <ref type="figure">2</ref>).<lb/></p>
 
-			<head>2 | EXPERIMENTAL SECTION<lb/> 2.1 | Materials and methods<lb/></head>
+			<head>2 | EXPERIMENTAL SECTION<lb/> </head>
+				
+			<head>2.1 | Materials and methods<lb/></head>
 
 			<p>Reagents and starting materials were obtained from com-<lb/>mercial sources. Extracts were dried over Na 2 SO 4 , and the<lb/> solvents were removed under reduced pressure. All reac-<lb/>tions were monitored by thin-layer chromatography (TLC)<lb/> using commercial plates precoated with Merck silica gel 60<lb/> F-254. Visualization was performed by UV fluorescence<lb/> (λ max = 254 nm). Chromatographic separations were per-<lb/>formed on a silica gel column by gravity chromatography<lb/> (Kieselgel 40, 0.063-0.200 mm; Merck) or flash chromatog-<lb/>raphy (Kieselgel 40, 0.040-0.063 mm; Merck). Yields refer to<lb/> chromatographically and spectroscopically pure compounds,<lb/> unless otherwise stated. Compounds were named follow-<lb/>ing IUPAC rules, as applied by Beilstein-Institut AutoNom<lb/> 2000 (4.01.305) or CA Index Name. All melting points were<lb/> determined on a microscope hot stage Büchi apparatus and<lb/> are uncorrected. The identity and purity of intermediates and<lb/> final compounds were determined through 1 H NMR and TLC<lb/> chromatography. 1 H NMR and 13 C NMR, HSQC, and HMBC<lb/> spectra were recorded on an Avance 400 instruments (Bruker<lb/> Biospin Version 002 with SGU, Bruker Inc.). Chemical shifts<lb/> (δ) are reported in ppm to the nearest 0.01 ppm using solvent<lb/> as the internal standard. Coupling constants (J values) are<lb/> given in Hz and were calculated using &apos;TopSpin 1.3&apos; soft-<lb/>ware (Nicolet Instrument Corp., Madison, WI) and rounded<lb/> to the nearest 0.1 Hz. Mass spectra (m/z) were recorded on a<lb/> ESI-MS triple quadrupole (Varian 1200L) system, in positive<lb/> ion mode, by infusing a 10 mg/L solution of each analyte dis-<lb/>solved in a mixture of mQ H 2 O:acetonitrile 1:1 v/v. All new<lb/> compounds had a purity ≥95%; microanalyses indicated by<lb/> the symbols of the elements were performed with a Perkin-<lb/>Elmer 260 elemental analyzer for C, H, and N, and they were<lb/> within ±0.4% of the theoretical values.<lb/></p>
 
-			<head>2.2 | General procedure for the synthesis of<lb/> new compounds<lb/> 2.2.1 | General procedure for 3a-c<lb/></head>
+			<head>2.2 | General procedure for the synthesis of<lb/> new compounds<lb/> </head>
+				
+			<head>2.2.1 | General procedure for 3a-c<lb/></head>
 
 			<p>A mixture of the commercially available appropriate inter-<lb/>mediate of type 1 (1a-c; 2.77 mmol), K 2 CO 3 (5.44 mmol),<lb/></p>
 
@@ -166,7 +170,9 @@
 				
 			<p>Yield = 20%; 123-124°C (EtOH); 1 H-NMR (400 MHz,<lb/> DMSO-d 6 ) δ 2.16 (s, 3H, CH 3 ); 4.62 (s, 2H, OCH 2 ); 4.72 (s,<lb/> 2H, NCH 2 ); 5.57 (s, 1H, pyrazolo); 7.49 (m, 8H, Ar); 10.09<lb/> (exch br s, 1H, NH); 10.29 (exch br s, 1H, NH). 13 C-NMR<lb/> (100 MHz DMSO-d 6 ) δ 11.44, 52.06, 67.62, 90.97, 115.59,<lb/> 121.59, 121.94, 131.91, 132.06, 138.45, 142.41, 161.24,<lb/> 166.32, 167.29. ESI-MS calcd. for C 20 H 18 Br 2 N 4 O 3 , 522.20;<lb/> found: m/z 522.92 [M + H] + . Anal. Calcd for C 20 H 18 Br 2 N 4 O 3 :<lb/> C, 56.48; H, 4,03; N, 13,17. Found: C, 56.60, H, 4.02, N,<lb/> 13.15.<lb/></p>
 
-			<head>2.3 | Biological assays<lb/> 2.3.1 | Cell culture<lb/></head>
+			<head>2.3 | Biological assays<lb/> </head>
+				
+			<head>2.3.1 | Cell culture<lb/></head>
 
 			<p>Human promyelocytic leukemia HL60 cells stably trans-<lb/>fected with FPR1 (FPR1-HL60 cells) or FPR2 (FPR2-HL60<lb/> cells; kind gift from Dr. Marie-Josephe Rabiet, Université<lb/> Joseph Fourier, Grenoble, France) were cultured in RPMI<lb/> 1640 medium supplemented with 10% heat-inactivated fetal<lb/> calf serum, 10 mM HEPES, 100 μg/ml streptomycin, 100 U/<lb/> ml penicillin, and G418 (1 mg/ml). Although stable cell lines<lb/> are cultured under G418 selection pressure, G418 may affect<lb/> some assays, so it was removed in the last round of culture<lb/> before assays were performed.<lb/></p>
 
@@ -186,7 +192,9 @@
 
 			<p>Structures of compounds EC3, EC10, 2a, 4e, 7a, 10, and 15<lb/> were built using ChemOffice 2016 software, pre-optimized<lb/> with the MM2 force field, and saved in Tripos MOL2 format.<lb/> A homology model of FPR1 with docked fMLF <ref type="biblio">(Zhuang<lb/> et al., 2020)</ref> and a cryo-EM structure of FPR2-G i complex<lb/> with the peptide agonist Trp-Lys-Tyr-Met-Val-D-Met-NH 2<lb/> (WKYMVm; <ref type="biblio">Zhuang et al., 2020</ref>; PDB entry 6OMM) was<lb/> taken as sources of the receptor geometries for the docking<lb/> study. Each of the receptor structures was then imported into<lb/> the Molegro Virtual Docker 6.0 program (MVD) together<lb/> with the built models of ligands EC3, EC10, 2a, 4e, 7a, 10,<lb/> and 15. A search space for docking was defined as a sphere<lb/> 12 Å in radius located at the geometric center of gravity of<lb/> the bound peptide molecule (fMLF for FPR1 or WKYMVm<lb/> for FPR2). MolDock score functions were applied with a<lb/> 0.3 Å grid resolution. Flexibility of ligands was accounted for<lb/> with respect to torsions auto-detected in MVD. The receptor<lb/> structures were considered rigid. The &quot;Internal HBond&quot; and<lb/> &quot;sp 2 -sp 2 torsions&quot; options were activated in the &quot;Ligand eval-<lb/>uation&quot; panel of the MVD Docking Wizard. Three hundred<lb/> docking runs were performed for each investigated com-<lb/>pound with each receptor. The option &quot;Return multiple poses<lb/> for each run&quot; was enabled, and the post-processing options<lb/> &quot;Energy minimization&quot; and &quot;Optimize H-bonds&quot; were ap-<lb/>plied after docking. Similar poses were clustered at a RMSD<lb/> threshold of 1 Å.<lb/></p>
 
-			<head>3 | RESULTS AND DISCUSSION<lb/> 3.1 | Chemistry<lb/></head>
+			<head>3 | RESULTS AND DISCUSSION<lb/> </head>
+				
+			<head>3.1 | Chemistry<lb/></head>
 
 			<p>All new compounds were synthesized as reported in<lb/> Schemes 1-4, and the structures were confirmed by analyti-<lb/>cal and spectral data. The synthetic pathways leading to the<lb/> final pyrazole derivatives of type 4 and 7, modified at posi-<lb/>tions 3, 4, and 5, are shown in Schemes 1 and 2, respectively.<lb/> Compounds 4a-e were obtained starting from the appropriate<lb/> commercially available precursors 1a-c, which were reacted<lb/> with N-(4-bromophenyl)-2-chloroacetamide (2; <ref type="biblio">Baraldi<lb/> et al., 2007</ref>), in anhydrous CH 3 CN to obtain the intermediate<lb/> 5-aminopyrazoles 3a-c. Finally, a coupling reaction between<lb/> 3a-c and the suitable 3-or 4-methoxybenzeneboronic acid,<lb/> with copper(II)acetate and Et 3 N as catalysts, resulted in the<lb/> final desired compounds of type 4.<lb/></p>
 
