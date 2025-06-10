@@ -52,15 +52,9 @@
 			
 			<p>Solutions<lb/> containing various concentrations of chromophore in 0.05 M<lb/> sodium phosphate buffer (pH 7.0) were added to 12 wells<lb/> in a 96-well half area black bottom plate (Corning) with<lb/> final volumes of 25 μL. FP was analyzed by a SpectraMax M5<lb/> plate reader (Molecular Devices). The parallel fluorescence<lb/> emission (F = ) and perpendicular fluorescence emission (F ⊥ )<lb/> at 524 nm (for compounds 1 and 2, excitation at 492 nm)<lb/> or at 584 nm (for compounds 3 and 4, excitation at 544 nm)<lb/> were measured by a SpectraMax M5 plate reader (Molecular<lb/> Devices), and the anisotropy (r) was calculated using (<ref type="formula">1</ref>),<lb/> the minimal concentration at which stable FP signals with<lb/> minimal standard deviations were chosen as the optimal<lb/> concentration for the chromophore.<lb/></p>
 
-				<formula>r =<lb/> F = -G • F ⊥<lb/> F = + 2G • F ⊥<lb/> (</formula>
+			<formula>r =<lb/> F = -G • F ⊥<lb/> F = + 2G • F ⊥<lb/> (<label>1</label>)</formula><lb/>
 
-				<label>1</label>
-
-				<formula>)<lb/> y = m 1 + (m 2 -m 1 )<lb/> ×<lb/> (x + C t + m 3 ) -(x + C t + m 3 ) 2 -4xC t<lb/> 2C t<lb/> (</formula>
-					
-					<label>2</label>
-				
-				<formula>)<lb/></formula>
+			<formula>y = m 1 + (m 2 -m 1 )<lb/> ×<lb/> (x + C t + m 3 ) -(x + C t + m 3 ) 2 -4xC t<lb/> 2C t<lb/> (<label>2</label>)</formula><lb/>
 
 			<head>2.6. FP Binding Assay to Determine the Chromophore Binding<lb/> Affinities. </head>
 				
@@ -76,11 +70,7 @@
 				
 			<p>Solutions contain-<lb/>ing 2 μM of Af UGM and 15 nM of chromophore 3 in the<lb/> absence (negative control) and presence (positive control) of<lb/> 300 μM of UDP were incubated at room temperature for 5<lb/> minutes. Each solution was added to octuplicate wells in a<lb/> 96-well half area black bottom plate with final volumes of<lb/> 25 μL. The Z factors were calculated using (<ref type="formula">3</ref>), where μ -<lb/>represents the mean anisotropy value of the negative control,<lb/> and μ + is the mean anisotropy value of the positive control;<lb/> σ -represents the standard deviation of the negative control,<lb/> and σ + is the standard deviation of the positive control. A Z<lb/> factor of 0.79 ± 0.02 was obtained for chromophore 3.<lb/></p>
 
-				<formula>Z = 1 -<lb/>3(σ -+ σ + )<lb/> μ --μ +<lb/> (</formula>
-					
-				<label>3</label>
-				
-				<formula>)<lb/></formula>
+			<formula>Z = 1 -<lb/>3(σ -+ σ + )<lb/> μ --μ +<lb/> (<label>3</label>)<lb/></formula>
 
 			<head>2.8. Optimization of AfUGM Concentration. </head>
 				
@@ -96,13 +86,9 @@
 
 			<p>(pH 7.0) were mixed with various concentrations of UDP,<lb/> UDP-Galp, 7, or 8 (Figure <ref type="figure">8</ref>), and the reactions incubated<lb/> at room temperature for 5 minutes. Each solution was done<lb/> in triplicate. Anisotropy values were measured and the IC 50<lb/> values obtained by fitting the data to (<ref type="formula">4</ref>), where m 1 and m 2<lb/> are the minimum and maximum anisotropy, respectively; m 3<lb/> is the slope, and m 4 is the IC 50 . The K d values were obtained<lb/> using (<ref type="formula">5</ref>), where K i is the binding affinity of chromophore 3<lb/> on Af UGM (2.6 ± 0.6 μM), and I is the concentration of the<lb/> chromophore (15 nM).<lb/></p>
 
-				<formula>y = m 1 +<lb/> (m 2 -m 1 )x m3<lb/> m m3<lb/> 4 + x m3<lb/></formula>
+			<formula>y = m 1 +<lb/> (m 2 -m 1 )x m3<lb/> m m3<lb/> 4 + x m3<lb/> <label>(4)<lb/></label></formula>
 
-				<label>(4)<lb/></label>
-
-				<formula>K d =<lb/> IC 50<lb/> 1 + (I/K i )<lb/> </formula>
-
-				<label>(5)<lb/></label>
+			<formula>K d =<lb/> IC 50<lb/> 1 + (I/K i )<lb/> <label>(5)<lb/></label></formula>
 
 			<head>2.10. AfUGM Activity Assay. </head>
 				
