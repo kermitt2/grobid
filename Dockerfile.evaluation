@@ -128,8 +128,8 @@ WORKDIR /opt/grobid
 
 # preload embeddings, for GROBID all the RNN models use glove-840B (default for the script), ELMo is currently not loaded
 # to be done: mechanism to download GROBID fine-tuned models based on SciBERT if selected (but not good enough for the moment)
-COPY --from=builder /opt/grobid-source/grobid-home/scripts/preload_embeddings.py .
-COPY --from=builder /opt/grobid-source/grobid-home/config/resources-registry.json .
+COPY --from=builder /opt/grobid/grobid-home/scripts/preload_embeddings.py .
+COPY --from=builder /opt/grobid/grobid-home/config/resources-registry.json .
 RUN python3 preload_embeddings.py --registry ./resources-registry.json &&  \
     ln -s /opt/grobid /opt/delft
 
