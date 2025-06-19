@@ -29,6 +29,8 @@ COPY gradle.properties ./
 COPY build.gradle ./
 COPY settings.gradle ./
 
+COPY .git/ ./.git
+
 # source
 COPY grobid-home/ ./grobid-home/
 COPY grobid-core/ ./grobid-core/
