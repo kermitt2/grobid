@@ -150,19 +150,16 @@ public class Table extends Figure {
 
                     if (StringUtils.isNotBlank(desc.getValue()) && config.isWithSentenceSegmentation()) {
                         formatter.segmentIntoSentences(desc, this.captionLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
-
-                        // we need a sentence segmentation of the table caption, for that we need to introduce 
-                        // a <div>, then a <p>
-                        desc.setLocalName("p");
-
-                        Element div = XmlBuilderUtils.teiElement("div");
-                        div.appendChild(desc);
-
-                        Element figDesc = XmlBuilderUtils.teiElement("figDesc");                
-                        figDesc.appendChild(div);
-
-                        desc = figDesc;
                     }
+                    desc.setLocalName("p");
+
+                    Element div = XmlBuilderUtils.teiElement("div");
+                    div.appendChild(desc);
+
+                    Element figDesc = XmlBuilderUtils.teiElement("figDesc");
+                    figDesc.appendChild(div);
+
+                    desc = figDesc;
                 }
             } else {
                 desc.appendChild(LayoutTokensUtil.normalizeText(caption.toString()).trim());
