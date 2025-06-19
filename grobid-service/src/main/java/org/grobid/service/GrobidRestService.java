@@ -329,9 +329,9 @@ public class GrobidRestService implements GrobidPaths {
                 inputStream,
                 startPage,
                 endPage,
-                generate,
-                segment,
-                teiCoordinates
+                false,
+                false,
+                new ArrayList<>()
             );
         }
 
