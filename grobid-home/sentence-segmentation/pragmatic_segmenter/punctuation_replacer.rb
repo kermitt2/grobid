@@ -45,9 +45,9 @@ module PragmaticSegmenter
 
     def replace_punctuation(array)
       return if !array || array.empty?
-      @text.apply(Rules::EscapeRegexReservedCharacters::All)
+      Rule.apply(@text, Rules::EscapeRegexReservedCharacters::All)
       array.each do |a|
-        a.apply(Rules::EscapeRegexReservedCharacters::All)
+        Rule.apply(a, Rules::EscapeRegexReservedCharacters::All)
         sub = sub_characters(a, '.', '∯')
         sub_1 = sub_characters(sub, '。', '&ᓰ&')
         sub_2 = sub_characters(sub_1, '．', '&ᓱ&')
@@ -59,7 +59,7 @@ module PragmaticSegmenter
           sub_7 = sub_characters(sub_6, "'", '&⎋&')
         end
       end
-      @text.apply(Rules::SubEscapedRegexReservedCharacters::All)
+      Rule.apply(@text, Rules::SubEscapedRegexReservedCharacters::All)
     end
 
     def sub_characters(string, char_a, char_b)

@@ -27,9 +27,9 @@ From a development installation, you can also build and install the service as a
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.1.zip
-mv grobid-service-0.8.1 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.1.zip
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.2.zip
+mv grobid-service-0.8.2 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.2.zip
 ./grobid-service/bin/grobid-service
 ```
 
