@@ -77,10 +77,12 @@ object VectorGraphicBoxCalculator {
                     // Remove boxes that
                     // - are contained in other boxes or
                     // - that are outside the main area
-                    if (boxesSortedBySize.stream()
-                            .noneMatch { b: BoundingBox? ->
-                                b !== box && b!!.contains(box)
+                    if (
+                        boxesSortedBySize.stream()
+                            .noneMatch {
+                                b: BoundingBox? -> b !== box && b!!.contains(box)
                             } && (mainPageArea.contains(box) || box.calculateOutsideRatio(mainPageArea) < 0.03)
+                        && box.area() >= MINIMUM_VECTOR_BOX_AREA
                     ) {
                         boxesToKeep.add(box)
                     }
@@ -147,7 +149,7 @@ object VectorGraphicBoxCalculator {
                     }
 
                     "stroke" -> {
-                        hasStroke = value != "none" && !value.equals("#000000", ignoreCase = true)
+                        hasStroke = value != "none" //&& !value.equals("#000000", ignoreCase = true)
                     }
                 }
             }
@@ -241,7 +243,6 @@ object VectorGraphicBoxCalculator {
     //                 note: getBBox on the clipBox is producing nothing because no rendering of clipBox of course, we need to find another
     //                 way to get the BB of clipPath
     //                 !!!!!!
-
     /**
      * Extracts bounding boxes from SVG group elements when no boxes were detected from clipPath elements.
      *
