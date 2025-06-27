@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import eugfc.imageio.plugins.PNMRegistry;
 import org.apache.commons.io.FileUtils;
@@ -56,7 +57,7 @@ import java.util.SortedSet;
 import java.util.regex.Matcher;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Comparator; 
+import java.util.Comparator;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -88,10 +89,10 @@ public class FigureSegmenterParser {
 
     private final GenericTagger figureSegmenterParserUp;
     private final GenericTagger figureSegmenterParserDown;
-    
+
     // direction of the labeling from the graphic object
     public enum Direction {
-        UP, DOWN 
+        UP, DOWN
     }
 
     public FigureSegmenterParser() {
@@ -99,18 +100,19 @@ public class FigureSegmenterParser {
         figureSegmenterParserDown = null;//TaggerFactory.getTagger(GrobidModels.FIGURE_SEGMENTER_DOWN);
     }
 
+    public Document process(File inputPdf,
+                   GrobidAnalysisConfig config
+    ) throws Exception {
+        DocumentSource documentSource =
+			DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
+				config.getPdfAssetPath() != null, true, false);
+
+        return prepareDocument_(documentSource, config);
+    }
+
     public Document extract(DocumentSource documentSource, GrobidAnalysisConfig config) {
 
-        Document doc = new Document(documentSource);
-        if (config.getAnalyzer() != null)
-            doc.setAnalyzer(config.getAnalyzer());
-        doc.addTokenizedDocument(config);
-        doc = prepareDocument(doc);
-
-        File assetFile = config.getPdfAssetPath();
-        if (assetFile != null) {
-            dealWithImages(documentSource, doc, assetFile, config);
-        }
+        Document doc = prepareDocument_(documentSource, config);
 
         // figure anchors are based on VectorGraphicBoxCalculator, which aggregate bitmap and SVG elements
         List<GraphicObject> figureAnchors = this.initFigureAnchors(doc);
@@ -119,11 +121,11 @@ public class FigureSegmenterParser {
         //Pair<List<String>,List<LayoutTokenization>> featureObjectUp = 
         //    this.createFeatureVector(doc, figureAnchors, Direction.UP);
 
-        Pair<List<String>,List<LayoutTokenization>> featureObjectUp = 
+        Pair<List<String>,List<LayoutTokenization>> featureObjectUp =
             this.getAreasFeatured(doc, figureAnchors, Direction.UP);
-        Pair<List<String>,List<LayoutTokenization>> featureObjectDown = 
+        Pair<List<String>,List<LayoutTokenization>> featureObjectDown =
             this.getAreasFeatured(doc, figureAnchors, Direction.DOWN);
-        
+
         List<String> contentsUp = featureObjectUp.getLeft();
         List<String> contentsDown = featureObjectDown.getLeft();
         List<LayoutTokenization> theTokenizationsUp = featureObjectUp.getRight();
@@ -151,10 +153,27 @@ public class FigureSegmenterParser {
         }
 
         // validate and set the figure areas in the Document object
-        doc = BasicStructureBuilder.figureResultSegmentation(doc, figureAnchors, 
-                                                             labelledResultsUp, theTokenizationsUp, 
-                                                             labelledResultsDown, theTokenizationsDown);
-        
+        doc = BasicStructureBuilder.figureResultSegmentation(
+            doc,
+            figureAnchors,
+            labelledResultsUp, theTokenizationsUp,
+            labelledResultsDown, theTokenizationsDown
+        );
+
+        return doc;
+    }
+
+    private Document prepareDocument_(DocumentSource documentSource, GrobidAnalysisConfig config) {
+        Document doc = new Document(documentSource);
+        if (config.getAnalyzer() != null)
+            doc.setAnalyzer(config.getAnalyzer());
+        doc.addTokenizedDocument(config);
+        doc = prepareDocument(doc);
+
+        File assetFile = config.getPdfAssetPath();
+        if (assetFile != null) {
+            dealWithImages(documentSource, doc, assetFile, config);
+        }
         return doc;
     }
 
@@ -295,7 +314,7 @@ public class FigureSegmenterParser {
         List<LayoutTokenization> tokenizationsFigures = new ArrayList<>();
 
         for (GraphicObject figureAnchor : figureAnchors) {
-            
+
             StringBuilder content = new StringBuilder();
             List<LayoutToken> localTokenization = new ArrayList<>();
 
@@ -319,14 +338,14 @@ public class FigureSegmenterParser {
 
             int startGraphicPos = figureAnchor.getStartPosition();
             int endGraphicPos = figureAnchor.getEndPosition();
-            
+
 
             // we find the closest block before and after the graphic element and extend in both directions
             // end of extension is 1) page start/end 2) EXTENSION_SIZE reached
             // to be considered: 3) non body or annex segments ?
 
             //if (figureAnchor.getType() == GraphicObjectType.BITMAP) 
-            
+
                 // simple reorder of blocks following reading order
                 //pageBlocks = readingReorder(pageBlocks);
 
@@ -353,7 +372,7 @@ public class FigureSegmenterParser {
                         blocksUp.add(closestBlockUp);
                     }
                 }
-                
+
                 // extend blocksUp 
                 if (closestBlockUp != null) {
                     List<Block> workPageBlocks = new ArrayList<>(pageBlocks);
@@ -391,7 +410,7 @@ public class FigureSegmenterParser {
                             content.append(features.printVector());
                         }
                     }
-                } 
+                }
                 if (startGraphicPos == -1 && closestBlockUp != null) {
                     startGraphicPos = closestBlockUp.getEndToken();
                     figureAnchor.setStartPosition(startGraphicPos);
@@ -400,7 +419,7 @@ public class FigureSegmenterParser {
                 if (endGraphicPos == -1 ) {
                     figureAnchor.setEndPosition(startGraphicPos);
                 }
-                
+
             } else {
                 List<Block> blocksDown = new ArrayList<>();
                 Block closestBlockDown = getClosestDown(pageBlocks, graphicBox);;
@@ -428,7 +447,7 @@ public class FigureSegmenterParser {
                         }
                     }
                 }
-                
+
                 // we start at the possible graphic object layout token content
                 if (startGraphicPos != endGraphicPos) {
                     for(int i=startGraphicPos; i<=endGraphicPos; i++) {
@@ -439,8 +458,8 @@ public class FigureSegmenterParser {
                             content.append(features.printVector());
                         }
                     }
-                } 
-                
+                }
+
                 if (endGraphicPos == -1 && closestBlockDown != null) {
                     endGraphicPos = closestBlockDown.getStartToken();
                     figureAnchor.setEndPosition(endGraphicPos);
@@ -450,17 +469,17 @@ public class FigureSegmenterParser {
                 }
 
                 // follow selected blocks down from the graphic object
-                if (blocksDown.size() > 0) {
-                    for(Block block : blocksDown) {
-                        for(int i=block.getStartToken(); i<=block.getEndToken(); i++) {
-                            localTokenization.add(tokenizations.get(i));
-                            FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, pageBlocks, direction);
-                            if (features != null) {
-                                content.append(features.printVector());
-                            }
-                        }
-                    }
-                }   
+//                if (blocksDown.size() > 0) {
+//                    for(Block block : blocksDown) {
+//                        for(int i=block.getStartToken(); i<=block.getEndToken(); i++) {
+//                            localTokenization.add(tokenizations.get(i));
+//                            FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, pageBlocks, direction);
+//                            if (features != null) {
+//                                content.append(features.printVector());
+//                            }
+//                        }
+//                    }
+//                }
             }
 
             LayoutTokenization tokenizationsFigure = new LayoutTokenization(localTokenization);
@@ -500,7 +519,7 @@ public class FigureSegmenterParser {
 
         for (Block block : pageBlocks) {
             List<LayoutToken> localTokens = block.getTokens();
-            if (localTokens == null || localTokens.size() == 0) 
+            if (localTokens == null || localTokens.size() == 0)
                 continue;
 
             BoundingBox blockBox = block.getBoundingBox();
@@ -508,7 +527,7 @@ public class FigureSegmenterParser {
                 blockBox = BoundingBoxCalculator.calculateOneBox(localTokens, true);
                 block.setBoundingBox(blockBox);
             }
-            
+
             if (blockBox == null) {
                 continue;
             }
@@ -519,7 +538,7 @@ public class FigureSegmenterParser {
                 // check column
                 if (
                     (blockBox.getX() < graphicBox.getX() && graphicBox.getX() < blockBox.getX()+blockBox.getWidth()) ||
-                    (blockBox.getX() > graphicBox.getX() && blockBox.getX() < graphicBox.getX()+graphicBox.getWidth()) 
+                    (blockBox.getX() > graphicBox.getX() && blockBox.getX() < graphicBox.getX()+graphicBox.getWidth())
                     ) {
                     double localClosestBlockUpSpace = graphicBox.getY() - (blockBox.getY()+blockBox.getHeight());
                     if (localClosestBlockUpSpace < 0)
@@ -548,7 +567,7 @@ if (closestBlockUp != null)
 
         for (Block block : pageBlocks) {
             List<LayoutToken> localTokens = block.getTokens();
-            if (localTokens == null || localTokens.size() == 0) 
+            if (localTokens == null || localTokens.size() == 0)
                 continue;
 
             BoundingBox blockBox = block.getBoundingBox();
@@ -556,18 +575,18 @@ if (closestBlockUp != null)
                 blockBox = BoundingBoxCalculator.calculateOneBox(localTokens, true);
                 block.setBoundingBox(blockBox);
             }
-            
+
             if (blockBox == null) {
                 continue;
             }
-            
+
             //System.out.println("blockBox: " + blockBox.toString());
 
             if (blockBox.getY() > graphicBox.getY()) {
                 // check column
                 if (
                     (blockBox.getX() < graphicBox.getX() && graphicBox.getX() < blockBox.getX()+blockBox.getWidth()) ||
-                    (blockBox.getX() > graphicBox.getX() && blockBox.getX() < graphicBox.getX()+graphicBox.getWidth()) 
+                    (blockBox.getX() > graphicBox.getX() && blockBox.getX() < graphicBox.getX()+graphicBox.getWidth())
                     ) {
 
                     double localClosestBlockDownSpace = blockBox.getY() - (graphicBox.getY()+graphicBox.getHeight());
@@ -581,7 +600,7 @@ if (closestBlockUp != null)
                         closestBlockDownSpace = localClosestBlockDownSpace;
                     }
                 }
-            }    
+            }
         }
 
 if (closestBlockDown != null)
@@ -601,7 +620,7 @@ if (closestBlockDown != null)
 
         for (Block block : pageBlocks) {
             List<LayoutToken> localTokens = block.getTokens();
-            if (localTokens == null || localTokens.size() == 0) 
+            if (localTokens == null || localTokens.size() == 0)
                 continue;
 
             BoundingBox blockBox = block.getBoundingBox();
@@ -609,7 +628,7 @@ if (closestBlockDown != null)
                 blockBox = BoundingBoxCalculator.calculateOneBox(localTokens, true);
                 block.setBoundingBox(blockBox);
             }
-            
+
             if (blockBox == null) {
                 continue;
             }
@@ -647,7 +666,7 @@ if (closestBlockRight != null)
 
         for (Block block : pageBlocks) {
             List<LayoutToken> localTokens = block.getTokens();
-            if (localTokens == null || localTokens.size() == 0) 
+            if (localTokens == null || localTokens.size() == 0)
                 continue;
 
             BoundingBox blockBox = block.getBoundingBox();
@@ -655,7 +674,7 @@ if (closestBlockRight != null)
                 blockBox = BoundingBoxCalculator.calculateOneBox(localTokens, true);
                 block.setBoundingBox(blockBox);
             }
-            
+
             if (blockBox == null) {
                 continue;
             }
@@ -665,7 +684,7 @@ if (closestBlockRight != null)
                     (blockBox.getY() < graphicBox.getY() && graphicBox.getY() < blockBox.getY()+blockBox.getHeight()) ||
                     (blockBox.getY() > graphicBox.getY() && blockBox.getY() < graphicBox.getY()+graphicBox.getHeight() ||
                     (blockBox.getY() > graphicBox.getY() && blockBox.getY()+blockBox.getHeight() < graphicBox.getY() + graphicBox.getHeight())
-                        ) 
+                        )
                     ) {
                     double localClosestBlockLeftSpace = (graphicBox.getX()+graphicBox.getWidth()) - blockBox.getX();
                     if (localClosestBlockLeftSpace < closestBlockLeftSpace) {
@@ -742,18 +761,20 @@ if (closestBlockRight != null)
                         return 1;
                     } else if (blockBox1.getX() > blockBox2.getX()+blockBox2.getWidth()) {
                         return -1;
-                    } else 
+                    } else
                         return 0;
-                }       
+                }
             }
         });
         return blocks;
     }
 
-    private FeaturesVectorFigureSegmenter createFeatureVector(List<LayoutToken> tokenizations, 
-                                                            int i, 
-                                                            List<Block> pageBlocks,
-                                                            Direction direction) {
+    private FeaturesVectorFigureSegmenter createFeatureVector(
+        List<LayoutToken> tokenizations,
+        int i,
+        List<Block> pageBlocks,
+        Direction direction
+    ) {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
 
         LayoutToken token = tokenizations.get(i);
@@ -798,22 +819,22 @@ if (closestBlockRight != null)
         else {
             // look forward
             int nextIndex = i+1;
-            while(nextIndex < tokenizations.size() && 
+            while(nextIndex < tokenizations.size() &&
                 (tokenizations.get(nextIndex).getText() == null) || (tokenizations.get(nextIndex).getText().equals(" "))) {
                 nextIndex++;
             }
-            if (tokenizations.get(nextIndex).getText().equals("\n")) {
+            if (nextIndex < tokenizations.size() && tokenizations.get(nextIndex).getText().equals("\n")) {
                 features.lineStatus = "LINEEND";
-            } 
+            }
             // look backward
             int previousIndex = i-1;
-            while(previousIndex > 0 && 
+            while(previousIndex > 0 &&
                 (tokenizations.get(previousIndex).getText() == null) || (tokenizations.get(previousIndex).getText().equals(" "))) {
                 previousIndex--;
             }
-            if (tokenizations.get(previousIndex).getText().equals("\n")) {
+            if (previousIndex >= 0 && tokenizations.get(previousIndex).getText().equals("\n")) {
                 features.lineStatus = "LINESTART";
-            } 
+            }
         }
 
         if (featureFactory.test_digit(localText)) {
@@ -839,62 +860,68 @@ if (closestBlockRight != null)
 
         // look backward
         int previousIndex = i-1;
-        while(previousIndex > 0 && 
-            (tokenizations.get(previousIndex).getText() == null) || (tokenizations.get(previousIndex).getText().equals(" "))) {
+        while(previousIndex > 1 &&
+            StringUtils.isBlank(tokenizations.get(previousIndex).getText())) {
             previousIndex--;
         }
-        String currentFont = tokenizations.get(previousIndex).getFont();
-        double currentFontSize = tokenizations.get(previousIndex).getFontSize();
+        if (previousIndex > 1) {
+            String currentFont = tokenizations.get(previousIndex).getFont();
+            double currentFontSize = tokenizations.get(previousIndex).getFontSize();
 
-        if (currentFont == null) {
-            currentFont = token.getFont();
-            features.fontStatus = "NEWFONT";
-        } else if (!currentFont.equals(token.getFont())) {
-            currentFont = token.getFont();
-            features.fontStatus = "NEWFONT";
-        } else
-            features.fontStatus = "SAMEFONT";
+            if (currentFont == null) {
+                currentFont = token.getFont();
+                features.fontStatus = "NEWFONT";
+            } else if (!currentFont.equals(token.getFont())) {
+                currentFont = token.getFont();
+                features.fontStatus = "NEWFONT";
+            } else
+                features.fontStatus = "SAMEFONT";
 
-        int newFontSize = (int) token.getFontSize();
-        if (currentFontSize == -1) {
-            currentFontSize = newFontSize;
-            features.fontSize = "HIGHERFONT";
-        } else if (currentFontSize == newFontSize) {
-            features.fontSize = "SAMEFONTSIZE";
-        } else if (currentFontSize < newFontSize) {
-            features.fontSize = "HIGHERFONT";
-            currentFontSize = newFontSize;
-        } else if (currentFontSize > newFontSize) {
-            features.fontSize = "LOWERFONT";
-            currentFontSize = newFontSize;
+            int newFontSize = (int) token.getFontSize();
+            if (currentFontSize == -1) {
+                currentFontSize = newFontSize;
+                features.fontSize = "HIGHERFONT";
+            } else if (currentFontSize == newFontSize) {
+                features.fontSize = "SAMEFONTSIZE";
+            } else if (currentFontSize < newFontSize) {
+                features.fontSize = "HIGHERFONT";
+                currentFontSize = newFontSize;
+            } else if (currentFontSize > newFontSize) {
+                features.fontSize = "LOWERFONT";
+                currentFontSize = newFontSize;
+            }
+
+            if (token.getBold())
+                features.bold = true;
+
+            if (token.getItalic())
+                features.italic = true;
+
+            if (features.capitalisation == null)
+                features.capitalisation = "NOCAPS";
+
+            if (features.digit == null)
+                features.digit = "NODIGIT";
+
+            if (features.punctType == null)
+                features.punctType = "NOPUNCT";
         }
-
-        if (token.getBold())
-            features.bold = true;
-
-        if (token.getItalic())
-            features.italic = true;
-
-        if (features.capitalisation == null)
-            features.capitalisation = "NOCAPS";
-
-        if (features.digit == null)
-            features.digit = "NODIGIT";
-
-        if (features.punctType == null)
-            features.punctType = "NOPUNCT";
 
         List<TaggingLabel> theUpstreamLabels = token.getLabels();
         if (theUpstreamLabels != null) {
             for(TaggingLabel taggingLabel : theUpstreamLabels) {
-System.out.println(taggingLabel);
+                System.out.println(taggingLabel);
             }
         }
 
+        // bug fix
+        if (features.lineStatus == null)
+            features.lineStatus = "LINEIN";
+
         return features;
     }
-    
-    /** 
+
+    /**
      * Create training data based on an input Document (segmented by the segmentation model) and 
      * the current FigureSegmenter model. The result is a pair of TEI training data string and 
      * raw feature data. 
@@ -939,7 +966,7 @@ System.out.println(taggingLabel);
         StringBuilder allFeatureVectorDown = new StringBuilder();
 
         for(int i=0; i<featureVectorsUp.size(); i++) {
-            
+
             sbUp.append("\n<div><p>");
 
             String featureVectorUp = featureVectorsUp.get(i);
@@ -983,7 +1010,7 @@ System.out.println(taggingLabel);
                     TaggingLabel clusterLabel = cluster.getTaggingLabel();
                     Engine.getCntManager().i(clusterLabel);
                     List<LayoutToken> localTokens = cluster.concatTokens();
-            
+
                     if (clusterLabel.equals(TaggingLabels.FIGURE)) {
                         sbUp.append("    <figure>");
                         String localContent = TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokens));
@@ -1015,7 +1042,7 @@ System.out.println(taggingLabel);
                     TaggingLabel clusterLabel = cluster.getTaggingLabel();
                     Engine.getCntManager().i(clusterLabel);
                     List<LayoutToken> localTokens = cluster.concatTokens();
-            
+
                     if (clusterLabel.equals(TaggingLabels.FIGURE)) {
                         sbDown.append("    <figure>");
                         String localContent = TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokens));
@@ -1027,7 +1054,7 @@ System.out.println(taggingLabel);
                     }
                 }
             }
-            
+
             sbDown.append("</p></div>\n\n");
         }
 
@@ -1039,7 +1066,7 @@ System.out.println(taggingLabel);
         sbDown.append(closer);
 
         return Pair.of(
-            Pair.of(sbUp.toString(), allFeatureVectorUp.toString()), 
+            Pair.of(sbUp.toString(), allFeatureVectorUp.toString()),
             Pair.of(sbDown.toString(), allFeatureVectorDown.toString())
         );
     }
