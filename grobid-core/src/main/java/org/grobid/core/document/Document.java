@@ -22,7 +22,10 @@ import org.grobid.core.sax.PDFALTOAnnotationSaxHandler;
 import org.grobid.core.sax.PDFALTOOutlineSaxHandler;
 import org.grobid.core.sax.PDFALTOSaxHandler;
 import org.grobid.core.sax.PDFMetadataSaxHandler;
-import org.grobid.core.utilities.*;
+import org.grobid.core.utilities.BoundingBoxCalculator;
+import org.grobid.core.utilities.ElementCounter;
+import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.slf4j.Logger;
@@ -41,6 +44,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
+
+import static org.grobid.core.utilities.BoundingBoxCalculator.isValidGraphicObject;
+import static org.grobid.core.utilities.BoundingBoxCalculator.mergeBoundingBoxesIfTouching;
+
 
 /**
  * Class for representing, processing and exchanging a document item.
@@ -412,53 +419,51 @@ public class Document implements Serializable {
 
         // cache images per page
         images = images.stream()
-            .filter(go -> go.getType() != GraphicObjectType.BITMAP || isValidBitmapGraphicObject(go))
+            .filter(go -> go.getType() != GraphicObjectType.BITMAP
+                || isValidGraphicObject(go, getPage(go.getPage())))
             .collect(Collectors.toList());
 
         images.forEach(go -> imagesPerPage.put(go.getPage(), go));
-
-        if (CollectionUtils.isNotEmpty(images)) {
-            Map<GraphicObjectType, Long> imageStats = images.stream()
-                .collect(
-                    Collectors.groupingBy(GraphicObject::getType, Collectors.counting())
-                );
-
-            LOGGER.info("-> image object statistics: {}", imageStats);
-
-            String coordinates = images.stream()
-                .map(g -> g.getBoundingBox().toString() +
-                    (g.getType() == GraphicObjectType.BITMAP ? ",blue,dotted" : ",green,dashed"))
-                .collect(Collectors.joining(";\n"));
-
-            LOGGER.info("-> image object coordinates: \n{}", coordinates);
-        }
 
         HashSet<Integer> keys = new HashSet<>(imagesPerPage.keySet());
         for (Integer pageNum : keys) {
 
             Collection<GraphicObject> elements = imagesPerPage.get(pageNum);
             if (elements.size() > 100) {
+                // TODO: LF Revise this
                 imagesPerPage.removeAll(pageNum);
                 Engine.getCntManager().i(FigureCounters.TOO_MANY_FIGURES_PER_PAGE);
             } else {
-                ArrayList<GraphicObject> res = glueImagesIfNecessary(pageNum, Lists.newArrayList(elements));
-                if (res != null) {
-                    imagesPerPage.removeAll(pageNum);
-                    imagesPerPage.putAll(pageNum, res);
-                }
+                System.out.println("Before: number of elements page " + pageNum + ": " + elements.size());
+                ArrayList<GraphicObject> res = mergeBoundingBoxesIfTouching(Lists.newArrayList(elements));
+                System.out.println("After: Number of elements page " + pageNum + ": " + res.size());
+                imagesPerPage.removeAll(pageNum);
+                imagesPerPage.putAll(pageNum, res);
             }
         }
 
-        images = new ArrayList<>();
+        //Perhaps validate again
 
-        for (int pageNum = 1; pageNum <= this.getPages().size(); pageNum++) {
-            Collection<GraphicObject> elements = imagesPerPage.get(pageNum);
-            if (elements != null) {
-                for (GraphicObject element : elements) {
-                    images.add(element);
-                }
-                //System.out.println("   -> page " + pageNum + ": " + elements.size());
-            }
+        // Only keep valid objects
+//        val validGraphicObjectPredicate =
+//            Predicate { go: GraphicObject? -> go != null && BoundingBoxCalculator.isValidGraphicObject(go, go.page) }
+//        return Lists.newArrayList(Iterables.filter(result, validGraphicObjectPredicate))
+
+        // Print and collect
+        images = new ArrayList<>();
+        for (Integer pageNum : imagesPerPage.keySet()) {
+            Collection<GraphicObject> imagesOnPage = imagesPerPage.get(pageNum);
+
+            String coordinates = imagesOnPage.stream()
+                .map(
+                    g -> g.getBoundingBox().toString() +
+                        (g.getType() == GraphicObjectType.BITMAP ? ",blue,dotted" : ",green,dashed")
+                )
+                .collect(Collectors.joining(";\n"));
+
+            LOGGER.info("-> image object coordinates: \n{}", coordinates);
+
+            images.addAll(imagesOnPage);
         }
 
         return tokenizations;
@@ -524,74 +529,6 @@ public class Document implements Serializable {
                     0, 0, page.getWidth(), page.getHeight()));
             }
         }
-    }
-
-    protected ArrayList<GraphicObject> glueImagesIfNecessary(Integer pageNum, List<GraphicObject> graphicObjects) {
-
-        List<Pair<Integer, Integer>> toGlue = new ArrayList<>();
-//        List<GraphicObject> cur = new ArrayList<>();
-
-//        List<GraphicObject> graphicObjects = new ArrayList<>(objs);
-
-        int start = 0, end = 0;
-        for (int i = 1; i < graphicObjects.size(); i++) {
-            GraphicObject prev = graphicObjects.get(i - 1);
-            GraphicObject cur = graphicObjects.get(i);
-
-            if (prev.getType() != GraphicObjectType.BITMAP || cur.getType() != GraphicObjectType.BITMAP) {
-                if (start != end) {
-                    toGlue.add(new Pair<>(start, end + 1));
-                }
-                start = i;
-                end = start;
-
-                continue;
-            }
-
-            if (Utilities.doubleEquals(prev.getBoundingBox().getWidth(), cur.getBoundingBox().getWidth(), 0.0001)
-                && Utilities.doubleEquals(prev.getBoundingBox().getY2(), cur.getBoundingBox().getY(), 0.0001)
-
-            ) {
-                end++;
-            } else {
-                if (start != end) {
-                    toGlue.add(new Pair<>(start, end + 1));
-                }
-                start = i;
-                end = start;
-            }
-
-        }
-
-        if (start != end) {
-            toGlue.add(new Pair<>(start, end + 1));
-        }
-
-        if (toGlue.isEmpty()) {
-            return null;
-        }
-        for (Pair<Integer, Integer> p : toGlue) {
-            BoundingBox box = graphicObjects.get(p.a).getBoundingBox();
-            for (int i = p.a + 1; i < p.b; i++) {
-                box = box.boundBox(graphicObjects.get(i).getBoundingBox());
-            }
-
-            graphicObjects.set(p.a, new GraphicObject(box, GraphicObjectType.VECTOR_BOX));
-            for (int i = p.a + 1; i < p.b; i++) {
-                graphicObjects.set(i, null);
-            }
-
-        }
-
-        validGraphicObjectPredicate = new Predicate<GraphicObject>() {
-            @Override
-            public boolean apply(GraphicObject graphicObject) {
-                return graphicObject != null && isValidBitmapGraphicObject(graphicObject);
-            }
-        };
-        return Lists.newArrayList(Iterables.filter(graphicObjects, validGraphicObjectPredicate));
-
-
     }
 
     protected static int getCoordItem(ElementCounter<Integer> cnt, boolean getMin) {
@@ -1024,7 +961,7 @@ public class Document implements Serializable {
                                 continue;
                             }
 
-                            if (!isValidBitmapGraphicObject(go)) {
+                            if (!isValidGraphicObject(go, getPage(go.getPage()))) {
                                 continue;
                             }
 
@@ -1073,7 +1010,7 @@ public class Document implements Serializable {
                                 continue;
                             }
 
-                            if (go.getType() == GraphicObjectType.BITMAP && !isValidBitmapGraphicObject(go)) {
+                            if (go.getType() == GraphicObjectType.BITMAP && !isValidGraphicObject(go, getPage(go.getPage()))) {
                                 continue;
                             }
 
@@ -1173,28 +1110,6 @@ public class Document implements Serializable {
         }
 
         return false;
-    }
-
-    protected boolean isValidBitmapGraphicObject(GraphicObject go) {
-        if (go.getWidth() * go.getHeight() < 1000) {
-            return false;
-        }
-
-        if (go.getWidth() < 50) {
-            return false;
-        }
-
-        if (go.getHeight() < 50) {
-            return false;
-        }
-
-        BoundingBox mainArea = getPage(go.getBoundingBox().getPage()).getMainArea();
-
-        if (!mainArea.contains(go.getBoundingBox()) && go.getWidth() * go.getHeight() < 10000) {
-            return false;
-        }
-
-        return true;
     }
 
     // graphic boxes could overlap captions, we need to cut this from a vector box
@@ -1492,7 +1407,7 @@ public class Document implements Serializable {
     ////System.out.println(image.toString());
 //                if (((Math.abs((image.getY() + image.getHeight()) - figure.getY()) < MIN_DISTANCE) ||
 //                        (Math.abs(image.getY() - (figure.getY() + figure.getHeight())) < MIN_DISTANCE)) //||
-//                    //( (Math.abs((image.x+image.width) - figure.getX()) < MIN_DISTANCE) ||
+//                    //( (Math.abs((image.x+image.getWidth()) - figure.getX()) < MIN_DISTANCE) ||
 //                    //(Math.abs(image.x - (figure.getX()+figure.getWidth())) < MIN_DISTANCE) )
 //                        ) {
 //                    // the image is at a distance of at least MIN_DISTANCE from one border

@@ -29,7 +29,9 @@ object VectorGraphicBoxCalculator {
     private val LOGGER: Logger = LoggerFactory.getLogger(VectorGraphicBoxCalculator::class.java)
 
     const val MINIMUM_VECTOR_BOX_AREA: Int = 3000
+    const val MINIMUM_BITMAP_AREA: Int = 10000
     val VEC_GRAPHICS_FILE_SIZE_LIMIT: Int = 100 * 1024 * 1024
+    const val MAX_OUTSIDE_RATIO = 0.10
 
     @JvmStatic
     @Throws(IOException::class)
@@ -81,7 +83,7 @@ object VectorGraphicBoxCalculator {
                         boxesSortedBySize.stream()
                             .noneMatch {
                                 b: BoundingBox? -> b !== box && b!!.contains(box)
-                            } && (mainPageArea.contains(box) || box.calculateOutsideRatio(mainPageArea) < 0.03)
+                            } && (mainPageArea.contains(box) || box.calculateOutsideRatio(mainPageArea) <= MAX_OUTSIDE_RATIO)
                         && box.area() >= MINIMUM_VECTOR_BOX_AREA
                     ) {
                         boxesToKeep.add(box)

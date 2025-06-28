@@ -37,6 +37,7 @@ public class GraphicObject {
     public GraphicObject(BoundingBox boundingBox, GraphicObjectType type) {
         this.boundingBox = boundingBox;
         this.type = type;
+        this.page = boundingBox.getPage();
     }
 
     /**
