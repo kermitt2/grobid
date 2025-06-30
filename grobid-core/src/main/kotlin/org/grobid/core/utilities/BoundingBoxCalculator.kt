@@ -131,24 +131,50 @@ object BoundingBoxCalculator {
             groups.add(group)
         }
 
-        // 2. For each group, sort and try to merge
+        // 2. For each group, sort by Y, then X
+        for (group in groups) {
+            if (group.size > 1) {
+                group.sortWith(
+                    Comparator.comparingDouble<GraphicObject> { it.boundingBox.y }
+                        .thenComparingDouble { it.boundingBox.x }
+                )
+            }
+        }
+
+        // 3. For each group, merge touching bounding boxes
         val result: MutableList<GraphicObject?> = ArrayList<GraphicObject?>()
         for (group in groups) {
             if (group.size == 1) {
                 result.add(group.get(0))
                 continue
             }
-            // Sort by Y, then X
-            group.sortWith(
-                Comparator.comparingDouble<GraphicObject> { it.boundingBox.y }
-                    .thenComparingDouble { it.boundingBox.x }
-            )
 
+            // Merge touching bounding boxes in the group using a horizontal-leading sweep
+            val newGroup: MutableList<GraphicObject> = ArrayList<GraphicObject>()
             var current = group[0]
             for (i in 1 until group.size) {
                 val next = group[i]
-                if (touchingOrIntersectingWithPartial(current.boundingBox, next.boundingBox, 0.9)) {
-                    // Merge current and next
+                val doMerge =
+                    touchingOrIntersectingWithPartial(current.boundingBox, next.boundingBox, 0.85)
+
+                if (doMerge) {
+                    val mergedBox = current.boundingBox.boundBox(next.boundingBox)
+                    current = GraphicObject(mergedBox, GraphicObjectType.VECTOR_BOX)
+                } else {
+                    newGroup.add(current)
+                    current = next
+                }
+            }
+            newGroup.add(current)
+
+            // Merge touching boxes in the group using a vertical-leading sweep
+            current = newGroup[0]
+            for (i in 1 until newGroup.size) {
+                val next = newGroup[i]
+                val doMerge =
+                    touchingOrIntersectingWithPartial(current.boundingBox, next.boundingBox, 0.85)
+
+                if (doMerge) {
                     val mergedBox = current.boundingBox.boundBox(next.boundingBox)
                     current = GraphicObject(mergedBox, GraphicObjectType.VECTOR_BOX)
                 } else {
@@ -156,6 +182,7 @@ object BoundingBoxCalculator {
                     current = next
                 }
             }
+            //Add the last merged box
             result.add(current)
         }
 
@@ -191,9 +218,9 @@ object BoundingBoxCalculator {
     fun touchingOrIntersecting(a: BoundingBox, b: BoundingBox): Boolean {
         if (a.intersect(b)) return true
         // Check if they share an edge (touching)
-        val xTouch = (abs(a.getX2() - b.getX()) < 0.01 || abs(b.getX2() - a.getX()) < 0.01)
+        val xTouch = (abs(a.getX2() - b.getX()) < 1 || abs(b.getX2() - a.getX()) < 1)
         val yOverlap = (a.getY() < b.getY2() && a.getY2() > b.getY())
-        val yTouch = (abs(a.getY2() - b.getY()) < 0.01 || abs(b.getY2() - a.getY()) < 0.01)
+        val yTouch = (abs(a.getY2() - b.getY()) < 1 || abs(b.getY2() - a.getY()) < 1)
         val xOverlap = (a.getX() < b.getX2() && a.getX2() > b.getX())
         return (xTouch && yOverlap) || (yTouch && xOverlap)
     }
@@ -201,7 +228,7 @@ object BoundingBoxCalculator {
     @JvmStatic
     fun touchingOrIntersectingWithPartial(a: BoundingBox, b: BoundingBox, alignmentPercentage: Double): Boolean {
         // Vertical edge touch (left/right), check Y overlap and percentage
-        val xTouch = abs(a.getX2() - b.getX()) < 0.01 || abs(b.getX2() - a.getX()) < 0.01 ||
+        val xTouch = abs(a.getX2() - b.getX()) < 1 || abs(b.getX2() - a.getX()) < 1 ||
             (a.getX() < b.getX2() && a.getX2() > b.getX())
         if (xTouch) {
             val overlapY = minOf(a.getY2(), b.getY2()) - maxOf(a.getY(), b.getY())
@@ -217,8 +244,8 @@ object BoundingBoxCalculator {
         }
 
         // Horizontal edge touch (top/bottom), check X overlap and percentage
-        val yTouch = abs(a.getY2() - b.getY()) < 0.01 || abs(b.getY2() - a.getY()) < 0.01 ||
-             (a.getY() < b.getY2() && a.getY2() > b.getY())
+        val yTouch = abs(a.getY2() - b.getY()) < 1 || abs(b.getY2() - a.getY()) < 1 ||
+            (a.getY() < b.getY2() && a.getY2() > b.getY())
         if (yTouch) {
             val overlapX = minOf(a.getX2(), b.getX2()) - maxOf(a.getX(), b.getX())
             val minWidth = minOf(a.getWidth(), b.getWidth())
@@ -234,5 +261,4 @@ object BoundingBoxCalculator {
 
         return false
     }
-
 }
