@@ -3,7 +3,6 @@ package org.grobid.service;
 import com.codahale.metrics.annotation.Timed;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import org.apache.commons.lang3.StringUtils;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.grobid.core.GrobidModels;
@@ -33,7 +32,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import static org.grobid.core.GrobidModels.Flavor.ARTICLE_LIGHT;
 import static org.grobid.core.GrobidModels.Flavor.BLANK;
 
 
@@ -852,5 +850,14 @@ public class GrobidRestService implements GrobidPaths {
     public Response getModel_post(@FormParam("model") String model,
                                   @FormParam("architecture") String architecture) {
         return restProcessTraining.getModel(model, architecture);
+    }
+
+    @Path(PATH_GET_FIGURES_AND_TABLES)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response getFiguresAndTables(
+        @FormDataParam(INPUT) InputStream inputStream) throws Exception {
+        return restProcessFiles.getFigures(inputStream);
     }
 }
