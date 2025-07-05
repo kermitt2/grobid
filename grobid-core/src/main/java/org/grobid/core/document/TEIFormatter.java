@@ -48,6 +48,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 
+import static org.grobid.core.document.DocumentNode.findNodeDepth;
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
 import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
@@ -1531,6 +1532,55 @@ public class TEIFormatter {
 
         List<Element> divResults = new ArrayList<>();
 
+        // We check the header of section depth in the outline of the document is existing
+        boolean isCurrentClusterHead = false;
+        boolean areSubHeadInThisDocument = false;
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            if (clusterLabel.equals(TaggingLabels.SECTION)) {
+                if (isCurrentClusterHead) {
+                    areSubHeadInThisDocument = true;
+                }
+                isCurrentClusterHead = true;
+
+            } else {
+                isCurrentClusterHead = false;
+            }
+        }
+
+
+
+        DocumentNode outlineRoot = doc.getOutlineRoot();
+        Map<String, Integer> sectionDepths = new HashMap<>();
+        if (areSubHeadInThisDocument && outlineRoot != null) {
+            for (TaggingTokenCluster cluster : clusters) {
+                if (cluster == null) {
+                    continue;
+                }
+
+                TaggingLabel clusterLabel = cluster.getTaggingLabel();
+                if (clusterLabel.equals(TaggingLabels.SECTION)) {
+                    String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+
+                    int depth = findNodeDepth(outlineRoot, clusterContent, 0);
+                    if (depth > 0) {
+                        sectionDepths.put(clusterContent, depth);
+                    }
+                }
+            }
+        }
+
+        int minDepth = sectionDepths.keySet().stream().
+            mapToInt(sectionDepths::get).
+            min().
+            orElse(-1);
+
+
+
         Element curDiv = teiElement("div");
         if (config.isGenerateTeiIds()) {
             String divID = KeyGen.getKey().substring(0, 7);
@@ -1575,6 +1625,14 @@ public class TEIFormatter {
 
                 curDiv.appendChild(head);
                 divResults.add(curDiv);
+
+                Integer currentDepth = sectionDepths.get(clusterContent);
+                if (currentDepth != null && currentDepth == minDepth) {
+                    curDiv = teiElement("div");
+                    divResults.add(curDiv);
+                }
+
+
             } else if (clusterLabel.equals(TaggingLabels.EQUATION) ||
                     clusterLabel.equals(TaggingLabels.EQUATION_LABEL)) {
                 // get starting position of the cluster

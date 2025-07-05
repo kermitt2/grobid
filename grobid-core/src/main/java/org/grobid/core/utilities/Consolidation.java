@@ -565,7 +565,7 @@ public class Consolidation {
         return valid;
     }
 
-    private double ratcliffObershelpDistance(String string1, String string2, boolean caseDependent) {
+    public static double ratcliffObershelpDistance(String string1, String string2, boolean caseDependent) {
         if ( StringUtils.isBlank(string1) || StringUtils.isBlank(string2) )
             return 0.0;
         Double similarity = 0.0;

@@ -28,7 +28,8 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 
 	private int currentLevel = -1;
 	private int currentId = -1;
-	private int currentParentId = -1;
+
+	private Deque<Integer> currentParentIdStack = new ArrayDeque<>();
 
 	private Map<Integer,DocumentNode> nodes = null;
 
@@ -62,7 +63,11 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
             box = null;
             label = null;
 		} else if (qName.equals("TOCITEMLIST")) {
-		    currentParentId = -1;
+            if (!currentParentIdStack.isEmpty()) {
+                currentParentIdStack.pop();
+            } else {
+                LOGGER.warn("TOCITEMLIST end encountered with empty parent stack. Possible malformed outline structure.");
+            }
         } else if (qName.equals("LINK")) {
 		    // in case of nested item, we need to assign the box right away or we will lose it.
             if (box != null) {
@@ -77,7 +82,7 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 		if (qName.equals("TOCITEMS")) {
 			// this is the document root
 			root = new DocumentNode();
-			nodes = new HashMap<Integer,DocumentNode>();
+			nodes = new HashMap<>();
 		} else if (qName.equals("ITEM")) {
 			currentNode = new DocumentNode();
 			// get the node id 
@@ -102,7 +107,8 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 			}
 			currentNode.setId(currentId);
 			nodes.put(currentId,currentNode);
-			if (currentParentId != -1) {
+			if (!currentParentIdStack.isEmpty()) {
+				int currentParentId = currentParentIdStack.peek();
 				DocumentNode father = nodes.get(currentParentId);
                 if (father == null)
 					LOGGER.warn("Father not yet encountered! id is " + currentParentId);
@@ -136,14 +142,16 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 						}
 					} else if (name.equals("idItemParent")) {
 						try {
-							currentParentId = Integer.parseInt(value);
+							int parentId = Integer.parseInt(value);
+							currentParentIdStack.push(parentId);
 						} catch(Exception e) {
 							LOGGER.warn("Invalid parent id string (should be an integer): " + value);
-							currentParentId = -1;
+							currentParentIdStack.push(-1);
 						}
 					}
 				}
 			}
+            System.out.println("TOCITEMLIST: level=" + currentLevel + ", parentId=" + currentParentIdStack.peek());
 		} else if (qName.equals("LINK")) {
 			int length = atts.getLength();
 
@@ -221,7 +229,9 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 				height = bottom - top;
 			box = BoundingBox
 				.fromPointAndDimensions(page, x, y, width, height);
-		} 
+
+            System.out.println("LINK ("+currentParentIdStack.peek()+"): "+ accumulator.toString());
+		}
 		accumulator.setLength(0);
 	}
 	

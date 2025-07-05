@@ -1,13 +1,15 @@
 package org.grobid.core.document;
 
+import org.grobid.core.layout.BoundingBox;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.grobid.core.layout.BoundingBox;
+
+import static org.grobid.core.utilities.Consolidation.ratcliffObershelpDistance;
 
 /**
  * Class corresponding to a node of the structure of a hierarchically organized document (i.e. for a table
  * of content).
- *
  */
 public class DocumentNode {
     private Integer id = null;
@@ -37,6 +39,7 @@ public class DocumentNode {
     // parent document node, if null it is a root node
 
     private DocumentNode father = null;
+
     public DocumentNode() {
     }
 
@@ -188,6 +191,37 @@ public class DocumentNode {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    /**
+     * Given the name of a potential node, find it using soft string matching and return its position
+     * in the hierarchy.
+     *
+     * @param rootNode
+     * @return an integer representing the level in the hierarchy of the node
+     */
+    public static int findNodeDepth(DocumentNode rootNode, String label, int depth) {
+        if (rootNode == null || label == null) {
+            return -1;
+        }
+        String nodeLabel = rootNode.getLabel();
+        if (nodeLabel != null) {
+            double threshold = 0.90; // adjust as needed
+            double score = ratcliffObershelpDistance(nodeLabel, label, false);
+            if (score >= threshold) {
+            return depth;
+            }
+        }
+        if (rootNode.getChildren() != null) {
+            for (int i = 0; i < rootNode.getChildren().size(); i++) {
+                DocumentNode child = rootNode.getChildren().get(i);
+                int index = findNodeDepth(child, label, depth + 1);
+                if (index != -1) {
+                    return index;
+                }
+            }
+        }
+        return -1;
     }
 }
 
