@@ -468,19 +468,22 @@ public class GrobidRestProcessFiles {
      * @return a response object mainly contain the TEI representation of the
      * full text
      */
-    public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
-                                                        final GrobidModels.Flavor flavor,
-                                                        final int consolidateHeader,
-                                                        final int consolidateCitations,
-                                                        final int consolidateFunders,
-                                                        final boolean includeRawAffiliations,
-                                                        final boolean includeRawCitations,
-                                                        final boolean includeRawCopyrights,
-                                                        final int startPage,
-                                                        final int endPage,
-                                                        final boolean generateIDs,
-                                                        final boolean segmentSentences,
-                                                        final List<String> teiCoordinates) throws Exception {
+    public Response processStatelessFulltextAssetDocument(
+        final InputStream inputStream,
+        final GrobidModels.Flavor flavor,
+        final int consolidateHeader,
+        final int consolidateCitations,
+        final int consolidateFunders,
+        final boolean includeRawAffiliations,
+        final boolean includeRawCitations,
+        final boolean includeRawCopyrights,
+        final int startPage,
+        final int endPage,
+        final boolean generateIDs,
+        final boolean segmentSentences,
+        final List<String> teiCoordinates
+    ) throws Exception {
+
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
