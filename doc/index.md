@@ -13,7 +13,7 @@
 
 <h3>User manual</h3>
 
-* [Run GROBID](Run-Grobid.md)
+* [Getting Started](Run-Grobid.md)
 
 * [Use GROBID as a service](Grobid-service.md)
 
