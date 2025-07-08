@@ -1366,7 +1366,7 @@ public class FullTextParser extends AbstractParser {
 
             // we write first the full text untagged (but featurized with segmentation features)
             String outPathFulltext = pathFullText + File.separator + pdfFileName.replaceAll("(?i)\\.pdf$", ".training.segmentation");
-            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), StandardCharsets.UTF_8);
+            Writer writer = new OutputStreamWriter(new FileOutputStream(outPathFulltext, false), StandardCharsets.UTF_8);
             writer.write(fulltext + "\n");
             writer.close();
 
