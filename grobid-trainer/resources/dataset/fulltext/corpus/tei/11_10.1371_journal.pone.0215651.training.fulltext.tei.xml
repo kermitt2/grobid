@@ -1,0 +1,331 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<head>Introduction<lb/></head>
+
+			<p>Coastal dunes play an important role to protect against flooding and beach erosion, while pro-<lb/>viding nature and recreation values <ref type="biblio">[1,2]</ref>. Therefore, both natural and artificial dunes are<lb/> becoming increasingly popular flood protection methods in many coastal areas <ref type="biblio">[3,4]</ref>. Mean-<lb/>while, rising sea levels increase the probability of flooding as well as the pressure on beaches<lb/> and dunes <ref type="biblio">[5,6]</ref>. The capability to predict future beach and dune evolution is thus of major<lb/> importance for flood risk assessment and design of coastal protection. Several models have<lb/> been developed to separately estimate dune erosion during storms <ref type="biblio">[7-9]</ref>, dune build-up due to<lb/> aeolian transport <ref type="biblio">[10-12]</ref>, and long-term coastline evolution <ref type="biblio">[13]</ref>. However, models for the<lb/> evolution of the beach and dune system at decadal time scales, which are of particular interest<lb/> in coastal management <ref type="biblio">[14]</ref>, require a coupling between constructive and destructive near-<lb/>shore, beach, and dune processes <ref type="biblio">[15]</ref>. In recent years, there has been advances in the coupling<lb/> of cross-shore and longshore transport processes at decadal time scales, e.g., the CoSMoS--<lb/>COAST model <ref type="biblio">[16]</ref> and the LX-model <ref type="biblio">[17]</ref>; but, these models do not include dune processes.<lb/> To improve the understanding of how processes in the land-sea interface control the foredune<lb/> evolution, Cohn et al <ref type="biblio">[18]</ref> combined three process-based models-X-BEACH <ref type="biblio">[8]</ref>, CDM <ref type="biblio">[19]</ref>,<lb/> and Aeolis <ref type="biblio">[20]</ref>-in the model framework Windsurf. Windsurf successfully simulated dune<lb/> evolution in one cross-shore transect during one year, however, longer time and spatial scales<lb/> require reduced complexity approaches. In this study, a model is developed that simulates sed-<lb/>iment transport and morphological evolution of the beach and dune on time scales of decades<lb/> to centuries. The aim is to create a robust, computationally efficient model that couples near-<lb/>shore, beach, and dune processes.<lb/></p>
+
+			<p>Simulations of long-term beach and dune evolution require integration of sediment trans-<lb/>port processes acting in both the cross-shore and longshore direction on multiple time scales<lb/> <ref type="biblio">[14,21]</ref>. This work builds on the CS-model <ref type="biblio">[15]</ref>, a semi-empirical beach profile evolution<lb/> model that simulates sediment transport due to dune erosion and dune overwash caused by<lb/> wave action, dune build-up from aeolian transport, and beach-bar material exchange. Long-<lb/>shore sediment transport gradients are accounted for as constant sources or sinks, and nour-<lb/>ishment episodes can be added to the beach or dune <ref type="biblio">[22]</ref>. Previously, sea level rise (SLR) has<lb/> not been included in the CS-model and the dune build-up from wind-blown sand did not take<lb/> into account sediment availability, which is an important factor for long-term dune evolution<lb/> <ref type="biblio">[23,24]</ref>. In this study, the CS-model is developed through introducing SLR and mathematical<lb/> methods to compute aeolian transport and the associated dune growth.<lb/></p>
+
+			<p>The included transport processes are active over a range of spatial and temporal scales (Fig<lb/> <ref type="figure">1</ref>). Sediment transport and morphological evolution are simulated in cross-shore transects,<lb/> which may be aggregated to represent coastal evolution at spatial scales of kilometres. Model<lb/> input is SLR, wind, deep water waves, and simultaneous still water levels (SWL). From a<lb/> coastal management perspective model output of interest is e.g. long-term shoreline change,<lb/> the shoreline variation envelope, and dune height and dune volume in relation to storm ero-<lb/>sion rates <ref type="biblio">[25]</ref>. The model is computationally efficient due to reduced complexity transport<lb/> equations and a simplified representation of the coastal morphology, which makes it suitable<lb/> for probabilistic approaches.<lb/></p>
+
+			<p>The main objective of this study is to develop a simple, robust, and computationally effi-<lb/>cient model for evolution of the beach-dune system under rising sea levels at decadal to cen-<lb/>tennial time scales. Established conceptual morphological models are translated into<lb/> mathematical formulations to extend the CS-model <ref type="biblio">[15]</ref> to include the dynamic and intercon-<lb/>nected effects of SLR and aeolian transport.<lb/></p>
+
+			<p>The paper starts by presenting the theoretical background for the proposed model develop-<lb/>ment, followed by a model description. The proposed model is then applied to simulate the<lb/> long-term beach and dune evolution at A ¨ngelholm Beach, Sweden. First, the model is cali-<lb/>brated and validated against a seven-year data set and thereafter, the evolution from 2018-<lb/>2100 is simulated considering a range of SLR scenarios. The paper ends with a discussion on<lb/> model performance and suggestions for further development. Notations used throughout the<lb/> paper are summarized in a list of symbols at the end.<lb/></p>
+
+			<head>Theoretical background<lb/></head>
+
+			<head>Aeolian sediment transport<lb/></head>
+
+			<p>The mechanics of sediment transport by wind and the associated morphological evolution of<lb/> coastal dune systems have been studied extensively <ref type="biblio">[26,27]</ref>, which has provided physical<lb/> insights to aeolian transport processes. Still, existing models do not manage to accurately pre-<lb/>dict transport rates at time scales relevant for coastal management <ref type="biblio">[23,25,28]</ref>. Sediment trans-<lb/>port formulas only accounting for wind speed and grain size <ref type="biblio">[26,29-33]</ref> are commonly<lb/> overestimating transport rates when compared to field data from beach environments <ref type="biblio">[23,34]</ref>.<lb/></p>
+
+			<p>When modelling yearly to decadal sediment transport rates, limits to transport are of inter-<lb/>est, rather than time-varying forcing conditions <ref type="biblio">[23]</ref>. Such limiting factors are sediment avail-<lb/>ability <ref type="biblio">[24]</ref>, beach width and fetch length <ref type="biblio">[35]</ref>, beach slope <ref type="biblio">[34]</ref>, surface moisture <ref type="biblio">[35]</ref>, snow<lb/> and ice cover <ref type="biblio">[36]</ref>, vegetation, and crust development on the beach surface <ref type="biblio">[20]</ref>.<lb/></p>
+
+			<p>Dune build-up by wind requires sediment with a grain size fine enough to be mobilised by<lb/> the wind, and coarse enough to be deposited in the foredune, where the wind shear stress<lb/></p>
+
+			<figure>Fig 1. Conceptual model of decadal to centennial scale beach and dune evolution.<lb/> https://doi.org/10.1371/journal.pone.0215651.g001<lb/></figure>
+
+			<p>decreases due to the effect of vegetation and topography <ref type="biblio">[35]</ref>. Grain sizes in aeolian deposits<lb/> typically range between 0.15-0.30 mm <ref type="biblio">[37]</ref>, and are often smaller than those found on the<lb/> beach <ref type="biblio">[38]</ref>. Eroding beaches tend to be drained of fine sediment and accreting beaches to be<lb/> supplied with fine sediment due to the selection of grain size in transport processes, where<lb/> smaller grains are more likely to be picked up <ref type="biblio">[39]</ref>. In this way, the aeolian sediment transport<lb/> depends on the longshore and cross-shore transport processes, which control the supply of<lb/> sediment of appropriate grain size.<lb/></p>
+
+			<head>Dune morphology<lb/></head>
+
+			<p>Transport rates alone cannot be used to predict the morphological evolution of foredunes. It is<lb/> also important where the aeolian sediment is deposited; on the crest, the seaward or landward<lb/> slopes. The beach sediment budget, which could be positive, negative, or stable, affects both<lb/> the rate of transport and the morphological evolution <ref type="biblio">[24,25]</ref>. According to Psuty&apos;s conceptual<lb/> model <ref type="biblio">[24]</ref>, dunes at an accreting beach will grow rapidly and create a prograding dune ridge<lb/> topography, where a new foredune is formed in front of the existing ones, creating low dunes<lb/> with mild slopes <ref type="biblio">[40,41]</ref>. The dunes will be low because there is not enough time for them to<lb/> grow in height before a new foredune is built in front of them <ref type="biblio">[42]</ref>. At a stable beach, the dune<lb/> stays in place and grows higher due to scarping and recovery. Eroding beaches may develop in<lb/> two different ways; if they are slightly eroding, the dune will maintain or even increase its vol-<lb/>ume, grow higher, and be displaced inland through scarping in combination with aeolian<lb/> transport and/or overwash. If the beach is eroding rapidly and overwash processes are domi-<lb/>nant, the dune will be flattened and move landward.<lb/></p>
+
+			<p>The explanatory mechanisms behind these different morphological behaviours are sedi-<lb/>ment supply and the influence of vegetation. If vegetation is present at the dune foot, sediment<lb/> is trapped in an embryonal foredune and without vegetation sediment is deposited near the<lb/> foot of the foredune, forming a dune ramp (Fig <ref type="figure">2</ref>), which facilitates the passage of wind-blown<lb/> sand over the dune crest <ref type="biblio">[43,44]</ref>.<lb/></p>
+
+			<p>The interaction between dune ramps and morphological evolution was studied at Skallin-<lb/>gen spit in Denmark, which is a retreating coastal feature, subject to overwash and landward<lb/> foredune migration <ref type="biblio">[44]</ref>. Christiansen and Davidson-Arnott <ref type="biblio">[44]</ref> found that aeolian transport<lb/> over the dune crest increased rapidly as the vertical distance from the top of the ramp to the<lb/></p>
+
+			<figure>Fig 2. Vegetated embryonal foredune (left) at an accreting beach, and non-vegetated dune ramp (right) at a stable beach in A ¨ngelholm, Sweden. The sites are later<lb/> referred to as profile C and B, respectively.<lb/> https://doi.org/10.1371/journal.pone.0215651.g002<lb/></figure>
+
+			<p>crest became equal to or less than 1 m, and that the wind during wet conditions eroded the<lb/> ramp to approximately this height.<lb/></p>
+
+			<p>The dune ramp concept was further developed in a study at Greenwich Dunes on Prince<lb/> Edward Island in Canada <ref type="biblio">[36]</ref>. In 2002-2009 measurements were performed at two stretches of a<lb/> beach with different littoral sediment budgets; one negative and one positive or neutral, although<lb/> both showing a long-term transgressive trend. After scarping, if no ramp was present, very little<lb/> sediment reached the dune crest or landward slope. When a dune ramp was present, accumula-<lb/>tion was observed at the upper seaward slope, crest and landward slope. The beach with a tempo-<lb/>rarily positive sediment transport had vegetated embryonal dunes present for 2-3 years and<lb/> through that time most sediments were deposited at the seaward side of the dune. When the<lb/> embryonal dune was damaged and a vegetated ramp had not yet been formed, the observed<lb/> transport to the crest and landward side of the dune was significant. These studies support that<lb/> the sediment budget affects the morphological evolution, since embryonal foredunes are more<lb/> likely to occur on accreting beaches whereas dune ramps form on eroding or stable beaches.<lb/></p>
+
+			<p>For long-term modelling of foredune evolution, dune height is essential as it affects flood<lb/> safety. The conceptual models of Psuty <ref type="biblio">[24]</ref> and Sherman and Bauer <ref type="biblio">[25]</ref> suggest that dune<lb/> height is depending on the sediment budget. The ratio between height/width of coastal fore-<lb/>dunes are typically about 0.11 <ref type="biblio">[12]</ref>, but the maximum height varies between different environ-<lb/>ments. Dura ´n and Moore <ref type="biblio">[19]</ref> proposed a linear relationship between foredune height and<lb/> wave height, assuming that the dune height was depending on wave impact. Hesp <ref type="biblio">[27]</ref> found a<lb/> strong relationship between increasing foredune height and increasing dissipativeness but<lb/> concluded that the trend might also be explained by higher exposure to storm winds at dissipa-<lb/>tive beaches. In summary, the dune height is site-specific and depends on the sediment budget,<lb/> wind and wave climate, and sediment and vegetation characteristics.<lb/></p>
+
+			<head>The Bruun rule<lb/></head>
+
+			<p>The Bruun rule provides a simple method to estimate the shoreline retreat, R Bruun , under a<lb/> slowly rising sea level <ref type="biblio">[45]</ref>,<lb/></p>
+
+				<formula>R Bruun ¼ S SLR<lb/> B Bruun<lb/> h<lb/> <label>ð1Þ<lb/></label></formula>
+
+
+			<p>where S SLR is the sea level rise, B Bruun and h the width and the height of the active profile,<lb/> respectively. The width B Bruun represents the distance from the shoreline to the depth closure,<lb/> and h is the sum of the depth of closure and the beach berm height.<lb/> The Bruun rule is based on the assumption that SLR creates accommodation space for sedi-<lb/>ment within the subaqueous part of the active profile. The Bruun Rule only considers cross-<lb/>shore transport, assuming that the profile consists entirely of sand, that there is a full spectrum<lb/> of waves, wind and water levels to force the profile to its new equilibrium, and that the SLR is<lb/> slow. All sediment transport is in the seaward direction to the subaqueous part of the profile.<lb/> However, infilling sediment can come from various sources, not only the beach. The sediment<lb/> may also originate from a negative longshore sediment transport gradient, artificial nourish-<lb/>ments, or from offshore supplies outside the depth of closure, also known as the Dean equilib-<lb/>rium concept <ref type="biblio">[46-48]</ref>.<lb/></p>
+
+			<p>The original version of the Bruun rule does not consider any vertical adjustment of the sub-<lb/>aerial part of the profile to SLR. If the mean sea level rises, also the beach berm height and<lb/> dune foot are expected to adjust to the new sea level <ref type="biblio">[49]</ref>. For this purpose, extended versions<lb/> of the Bruun Rule that accounts for landward transport due to aeolian processes and overwash<lb/> of the beach berm and dune have been proposed <ref type="biblio">[49-51]</ref>.<lb/></p>
+
+			<p>It should be noted that the Bruun rule is a much discussed method that has been subject to<lb/> numerous critical evaluations <ref type="biblio">[52]</ref>. The first main argument against the Bruun rule concerns<lb/> its two-dimensionality and the assumption that other transport processes such as gradients in<lb/> longshore transport and overwash are excluded. In the CS-model, however, the Bruun rule<lb/> will only be applied to compute the transport directly related to SLR. Other relevant transport<lb/> processes are dealt with in separate transport equations, and the morphological evolution of<lb/> the beach and dune is a result of all of these types of transports.<lb/></p>
+
+			<p>The second common critique against the Bruun rule is the validity of the concepts of equi-<lb/>librium profiles and depth of closure. In a recent extensive laboratory study <ref type="biblio">[53]</ref>, both the orig-<lb/>inal Bruun rule <ref type="biblio">[45]</ref> and a modified version including landward transport <ref type="biblio">[49]</ref> showed good<lb/> agreement with observations and confirmed the underlying assumption of a profile adjust-<lb/>ment to SLR.<lb/></p>
+
+			<p>Last, the Bruun rule has also been criticized for ignoring import of sediment from deeper<lb/> water outside depth of closure <ref type="biblio">[47]</ref>. However, these processes are more common at geological<lb/> time scales than at engineering time scales. If known to be present they could be added as a<lb/> sediment source in the model.<lb/></p>
+
+			<head>Model for long-term foredune and beach evolution<lb/></head>
+
+			<p>The CS-model simulates sediment transport and the associated morphological evolution based<lb/> on a set of transport and continuity equations <ref type="biblio">[15]</ref>. In this paper, the profile schematization is<lb/> developed and routines are added for aeolian transport, morphological dune evolution, and<lb/> the effect of SLR. For more detailed description of the other model components we refer to<lb/> Larson et al <ref type="biblio">[15]</ref>.<lb/></p>
+
+			<head>Profile schematization<lb/></head>
+
+			<p>The beach profile is schematized through distances, slopes, characteristic heights, and volumes<lb/> (Fig <ref type="figure">3</ref>), which are updated every time step. Length coordinates, relative to a reference point<lb/></p>
+
+			<figure>Fig 3. Definition of heights, length coordinates, volumes and transports (red arrows).<lb/> https://doi.org/10.1371/journal.pone.0215651.g003<lb/></figure>
+
+			<p>behind the dune, are defined for landward and seaward dune foot, y L and y S , and dune crest,<lb/> y&apos; L and y&apos; S , and the intersection with mean sea level, y G . Landward and seaward dune slopes,<lb/> tan β L and tan β S , are assumed to be constant and a maximum foreshore slope, tan β F,max , is<lb/> defined. If tan β F,max is exceeded, β F &gt;β F,max , the entire beach is considered a swash zone.<lb/> Under this condition, sediment that would have been eroded from the beach is instead eroded<lb/> from the dune.<lb/></p>
+
+			<p>Depth of closure, D C , and dune foot height, D F , are constants referenced to the mean sea<lb/> level (MSL). The dune height, S, is a variable, specified relative to D F . A maximum value of S,<lb/> S max , is limiting dune height growth if the sediment budget is positive, whereas for negative<lb/> and stable budgets S has no restrictions <ref type="biblio">[12]</ref>. S max can be approximated as a representative<lb/> height of prograding dune ridges, present in or near the study area.<lb/></p>
+
+			<p>Volumes and transport rates are given per meter of beach width. The specified volumes are<lb/> dune volume, V dune , where the dune ramp volume, V ramp , is an integral part, total beach vol-<lb/>ume, V beach , where the berm volume, V berm , is an integral part, and bar volume, V bar (Fig <ref type="figure">3</ref>).<lb/> The bar volume represents nearshore subaqueous deposits involved in material exchange with<lb/> the beach and may consist of none, one, or multiple bars. The rest of the subaqueous part of<lb/> the profile, from MSL to D C , is assumed to be in equilibrium <ref type="biblio">[54]</ref>.<lb/></p>
+
+			<p>The beach volume V beach is defined as the volume of sediment from a reference point<lb/> behind the dune to the intersection with mean sea level, y G , which is vertically limited by the<lb/> depth of closure, D C , and the dune foot height, D F . The sub-volume V berm is used to calculate<lb/> beach width; the quantity y G -y S is defined as a function of V berm based on site specific data.<lb/> Thus, the shape of the beach is not specified; it is only described by its width and volume, indi-<lb/>cated with a dashed line in Fig <ref type="figure">3</ref>.<lb/></p>
+
+			<p>The purpose of the ramp volume V ramp is to determine how the sediment distribution over<lb/> the dune occurs. If the dune is eroded, V ramp is eroded first and if the ramp disappears<lb/> completely, the main part of the dune (behind the seaward dune crest, y&apos; S ) will start to erode.<lb/></p>
+
+			<p>The changes in profile schematization compared to previous versions of the CS-model<lb/> require adjustment of the frictional losses over the beach. The runup height significant for<lb/> dune impact, R, is defined as R ¼ 0:158<lb/> ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi<lb/> H rms L 0<lb/> p<lb/> , where H rms and L 0 are deep water root-<lb/>mean-square wave height and mean wavelength, respectively <ref type="biblio">[55]</ref>. R is corrected for friction<lb/> over the beach according to <ref type="biblio">[56]</ref>,<lb/></p>
+
+			<formula>R 0 ¼ RexpðÀ 2c f xÞ þ ðD F À SWLÞð1 À expðÀ 2c f xÞÞ<lb/> <label>ð2Þ<lb/></label></formula>
+
+
+			<p>where R&apos; is the adjusted runup height, c f is an empirical friction coefficient, and x is the hori-<lb/>zontal travel distance of the wave front. If SWL+ R&apos; &gt; D F dune erosion will occur. Since the<lb/> beach in the CS-model has no shape, the travel distance cannot be exactly known. Instead the<lb/> travel distance x is expressed as a function of the volume V berm ,<lb/></p>
+
+			<formula>x ¼<lb/> 2V berm<lb/> D F<lb/> 1 À<lb/> SWL<lb/> D F<lb/> �<lb/> �<lb/> <label>ð3Þ<lb/></label></formula>
+
+			<head>Aeolian sediment transport<lb/></head>
+
+			<p>The proposed aeolian sediment transport scheme is based on the assumption that, on a decadal<lb/> time scale, the most important limiting factor for aeolian sediment transport is the supply of<lb/> material of appropriate grain size. Sediment available for aeolian transport is assumed to be<lb/> present as a location-specific fraction of the transported sediment volumes longshore and<lb/> cross-shore. Availability is computed through a balance including sediment transport and<lb/> nourishments, to and from V beach . The volume of sediment available for aeolian transport, V W ,<lb/> in time step i is calculated as,<lb/></p>
+
+			<formula>V W;i ¼ V W;iÀ 1 þ ðq S;iÀ 1 À q W;iÀ 1 À A q ðq SLR;iÀ 1 À q LS;iÀ 1 ÞÞDt þ A b V nour;iÀ 1<lb/> V W � 0<lb/> <label>ð4Þ<lb/></label></formula>
+
+			<p>where q S is the transport rate of eroded sediment from the dune to the beach, q W is the aeolian<lb/> transport rate from the beach to the dune, q SLR is the transport rate of sediment to compensate<lb/> for SLR, &apos;Bruun Rule&apos; transport, q LS is the transport rate due to gradients in longshore trans-<lb/>port, Δt is length of time step, and V nour volume of beach nourishments. The coefficients A q<lb/> and A b describe the fractions of the transport rate and nourished volume, respectively, that are<lb/> within the proper range of grain size and available for aeolian transport.<lb/> If V W,i &gt; 0, aeolian transport will take place during time step t = i. If V W,i � 0, the aeolian<lb/> transport will be turned off and V w,i is set to zero. The initial available volume, V w,0 , depends<lb/> on conditions prior to the simulation period, e.g. nourishments and large dune erosion events.<lb/></p>
+
+			<p>The potential aeolian sediment transport rate, m WE , in kg/s/m, can be estimated by <ref type="biblio">[31]</ref>,<lb/></p>
+
+				<formula>m WE ¼ K W<lb/> ffi ffi ffi ffi ffi ffi ffiffi<lb/> D 50<lb/> D ref<lb/> 50<lb/> s<lb/> r a<lb/> u 2<lb/> �<lb/> g<lb/> ðu � À u �c Þ<lb/> <label>ð5Þ<lb/></label></formula>
+
+			<p>where D 50 is the median grain size, D 50<lb/> ref is the median reference grain size of 0.25 mm, ρ a the<lb/> density of air, g the acceleration due to gravity, u� the shear velocity at the bed, u� c the critical<lb/> shear velocity at the bed, and K w an empirical coefficient. If u� &lt; u� c , then m WE = 0.<lb/> The shear velocity, u�, can be calculated using the law of the wall,<lb/></p>
+
+				<formula>u z<lb/> u �<lb/> ¼<lb/> 1<lb/> k<lb/> ln<lb/> z<lb/> z 0<lb/> � �<lb/> <label>ð6Þ<lb/></label></formula>
+
+
+
+			<p>where u z is the wind velocity at z meter above ground, z 0 is the aerodynamic roughness height,<lb/> and κ is von Karman&apos;s constant (� 0.41). For wind conditions below the critical shear velocity<lb/> for initiation of transport, u�&lt;u� c , the roughness height, z 0 , can be parameterized as z 0 =<lb/> 0.081log 10 (d/0.18), where d is the grain size in mm <ref type="biblio">[33]</ref>. The critical shear velocity can be esti-<lb/>mated through <ref type="biblio">[26]</ref>,<lb/></p>
+
+				<formula>u �c ¼ A W<lb/> ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi<lb/> ðr s À r a Þ<lb/> r a<lb/> gD 50<lb/> s<lb/> <label>ð7Þ<lb/></label></formula>
+
+
+
+			<p>where ρ s is the density of sand (typically 2650 kg/m 3 ) and A W is a coefficient of about 0.1.<lb/> To determine the shear velocity during transport, two wind measurements at different<lb/> heights or one wind measurement and an estimate of the roughness height affected by trans-<lb/>port are required. For long-term simulations, wind data is typically not available from the<lb/> beach of interest but from a wind gauge that is not influenced by the sand transport. Consider-<lb/>ing the spatial and temporal resolution of available wind data, the relationship between u z and<lb/> u� can be approximated as linear <ref type="biblio">[57]</ref> so that m WE /u z<lb/> 2<lb/> (u z -u z,c ) <ref type="biblio">[58]</ref>. The critical velocity for<lb/> transport at z m height, u z,c can be computed through combining Eqs 6 and 7. Eq 5 can then<lb/> be rewritten as,<lb/></p>
+
+				<formula>m WE ¼ C W<lb/> ffi ffi ffi ffi ffi ffi ffiffi<lb/> D 50<lb/> D ref<lb/> 50<lb/> s<lb/> r a<lb/> u 2<lb/> z<lb/> g<lb/> ðu z À u z;c Þ<lb/> <label>ð8Þ<lb/></label></formula>
+
+			<p>where C W is an empirical coefficient.<lb/></p>
+
+			<p>The mass flux m WE is converted to a volumetric equilibrium transport rate (q WE ) of sand to<lb/> the dunes by,<lb/></p>
+
+				<formula>q WE ¼<lb/> m WE<lb/> r s ð1 À PÞ<lb/> <label>ð9Þ<lb/></label></formula>
+
+			<p>where P is the porosity (typically 40%).<lb/></p>
+
+			<p>To reach the transport rates described by the equilibrium equations, a critical fetch length is<lb/> required <ref type="biblio">[35,59]</ref>. The fetch length, F, depends on the wind angle towards shore normal, θ, and<lb/> the dry beach width, B dry . For 0˚� θ � 80˚,<lb/></p>
+
+				<formula>F ¼<lb/> B dry<lb/> cosðyÞ<lb/> <label>ð10Þ<lb/></label></formula>
+
+			<p>The beach is assumed to be dry landward of the runup limit. A runup length coordinate, y R ,<lb/> is defined as,<lb/></p>
+
+				<formula>y R ¼ y S þ 1 À<lb/> R þ SWL<lb/> D F<lb/> �<lb/> �<lb/> ðy G À y S Þ<lb/> <label>ð11Þ<lb/></label></formula>
+
+			<p>The dry beach width, B dry , is then calculated as the horizontal distance from the runup limit<lb/> to the seaward dune foot B dry = y R -y S . If y R � y S , the whole beach is assumed to be wet and<lb/> there will be no aeolian transport.<lb/></p>
+
+			<p>A simplified equation for the potential transport rate, corrected for fetch-limited condi-<lb/>tions, q WF , was developed by Larson et al <ref type="biblio">[15]</ref> based on the work by Sauermann et al <ref type="biblio">[60]</ref>,<lb/></p>
+
+				<formula>q WF ¼ q WE ð1 À expðÀ d FÞÞ<lb/> <label>ð12Þ<lb/></label></formula>
+
+
+
+			<p>where δ is an empirical coefficient in the order of 0.1-0.2 m -1 .<lb/> Oblique wind angles have longer fetches and may therefore generate higher aeolian trans-<lb/>port rates. This effect is counteracted by the cosine effect, implying that only the onshore com-<lb/>ponent, q W , adds to the dune volume,<lb/></p>
+
+				<formula>q W ¼ q WF cosðy Þ<lb/> <label>ð13Þ<lb/></label></formula>
+
+			<p>Aeolian transport due to offshore directed wind is neglected.<lb/> When neglecting the impact of grain size, the effect of slope correction on transport rates<lb/> has been found to be small at beaches with slopes below 15˚<ref type="biblio">[34]</ref>. Here, grain size is accounted<lb/> for in Eqs 5 and 6 and since most beach slopes are milder than 15˚<ref type="biblio">[61]</ref>, the effect of beach<lb/> slope is assumed to be negligible.<lb/></p>
+
+			<head>Morphological dune evolution<lb/></head>
+
+			<p>Dunes evolve differently depending on where the aeolian transported sediment is deposited, in<lb/> front of the dune, on the seaward slope, on the crest, or on the landward slope. Here we intro-<lb/>duce a sediment deposition scheme based on Psuty&apos;s sediment budget formulation <ref type="biblio">[24]</ref> and<lb/> the dune ramp concept <ref type="biblio">[36,44]</ref>.<lb/></p>
+
+			<p>The sediment budget is calculated as the change of volume in the beach-dune system (ΔV T )<lb/> over a relevant time scale (T bud ) and can either be negative (ΔV T &lt; 0), stable (ΔV T � 0), or pos-<lb/>itive (ΔV T &gt; 0),<lb/></p>
+
+				<formula>DV T ¼<lb/> 1<lb/> n<lb/> X t¼i<lb/> t¼iÀ n<lb/> ðÀ q SLR;t þ q LS;t ÞDt þ V nour;t<lb/> À<lb/> �<lb/> <label>ð14Þ<lb/></label></formula>
+
+			<p>where n = T bud /Δt. Here all nourishments are considered in V nour , also dune nourishments.<lb/></p>
+
+			<p>The time scale, T bud , is in the order of years and should be long enough to represent long-term<lb/> trends and not seasonal variations. The proposed distribution scheme generates different dune<lb/> evolution depending on the sediment budget (Fig <ref type="figure">4</ref>).<lb/></p>
+
+			<p>In the case of a positive sediment budget, ΔV T &gt; 0, the ramp is filled until the ramp height<lb/> is equal to the dune height, S. After the ramp has filled up, if S &lt; S max , for a trapezoidal shape,<lb/> the sediment will be deposited on the crest, and for a triangular shape, the dune grows while<lb/> maintaining a constant dune crest length coordinate, y&apos; L = y&apos; S = constant, until S max is reached.<lb/> If S � S max , all sediment is deposited on the seaward side of the dune and the dune grows sea-<lb/>ward maintaining a trapezoidal shape.<lb/></p>
+
+			<p>For a stable sediment budget, ΔV T � 0, the ramp is filled until the ramp height is equal to<lb/> the dune height, S. Thereafter, in the case of a trapezoidal dune shape, a fraction of the sedi-<lb/>ment, A s , is deposited on the crest and the fraction 1-A s is deposited on the seaward side of the<lb/> dune. If the dune has a triangular shape, the dune grows in height while maintaining a con-<lb/>stant dune crest length coordinate, y&apos; L = y&apos; S = constant.<lb/></p>
+
+			<p>When the sediment budget is negative, ΔV T &lt; 0, the ramp is filled until a critical ramp<lb/> height is reached. Thereafter, in the case of a trapezoidal dune shape, a fraction of the sedi-<lb/>ment, A e , is deposited on the crest and the fraction 1-A e is deposited on the landward side<lb/> of the dune. If the dune has a triangular shape, y&apos; L = y&apos; S , the dune grows on its landward<lb/> side.<lb/></p>
+
+			<p>The critical ramp height is here defined as 1 m below the crest level <ref type="biblio">[44]</ref>. If the model is<lb/> applied in an area where local observations suggest otherwise, a site-specific value of the criti-<lb/>cal ramp height should be adopted. If there are no observations of sediment distribution across<lb/> the dune, the distribution coefficients, A s and A e , can be set to 0.5 based on the observations by<lb/> Ollerhead et al <ref type="biblio">[36]</ref>.<lb/></p>
+
+			<figure>Fig 4. Sediment distribution scheme on a dune due to wind-blown sand.<lb/> https://doi.org/10.1371/journal.pone.0215651.g004<lb/></figure>
+
+			<head>Impact of sea level rise<lb/></head>
+
+			<p>The Bruun Rule is used to calculate the required sediment transport from the beach volume,<lb/> V beach , to the active part of the profile to compensate for SLR. In agreement with previous<lb/> Bruun rule extensions <ref type="biblio">[49-51]</ref>, also landward transport is accounted for to compensate for an<lb/> elevation adjustment of the dry beach (Fig <ref type="figure">5</ref>). Analogous to the original Bruun Rule concept,<lb/> the dry beach is assumed to be subject to hydrodynamic forcing capable of adjusting it to a<lb/> slowly rising sea level. The explanatory mechanism is that the beach is built by waves; with a<lb/> higher MSL the waves will build a higher beach. Therefore, the width of the active profile, B, is<lb/> here extended to encompass the horizontal distance from the seaward dune foot, y S , to the<lb/> depth of closure, D C .<lb/></p>
+
+			<p>The dune foot height is kept constant relative to MSL. Thus, the dune foot is moving up<lb/> with the same rate as SLR. Since the dune crest elevation is not changing, the lowest part of the<lb/> dune is per definition converted from dune volume, V dune , to beach volume, V beach . Also the<lb/> depth of closure, D C , is constant, so that the lower vertical limit of the beach volume is moving<lb/> up with the same rate as SLR.<lb/></p>
+
+			<p>V beach is eroding to supply the active profile with sediment equivalent to the demand from<lb/> the increased accommodation space due to SLR. The difference between the old and new<lb/> V beach is denoted V SLR . Thus, the volume V SLR eroded from the beach is derived from the<lb/> Bruun Rule with the new definition of the active profile width, B,<lb/></p>
+
+			<formula>V SLR ¼ R Bruun ðD F þ D C Þ ¼ S SLR B<lb/> <label>ð15Þ<lb/></label></formula>
+
+			<p>The sediment transport required to maintain the equilibrium profile, q SLR , is taken as the<lb/> time derivative of V SLR ,<lb/></p>
+
+			<formula>q SLR ¼<lb/> dV SLR<lb/> dt<lb/> ¼<lb/> dS SLR<lb/> dt<lb/> B<lb/> <label>ð16Þ<lb/></label></formula>
+
+			<p>Consequently, there are two direct effects of SLR in the CS-model: first, adjustment of the<lb/> equilibrium profile to the new sea level by an offshore &apos;Bruun rule&apos; transport, q SLR , from the<lb/></p>
+
+			<figure>Fig 5. Impact of sea level rise on beach volume and dune height. The beach and dune volumes are for simplicity of<lb/> the visualisation schematized as rectangular shapes.<lb/> https://doi.org/10.1371/journal.pone.0215651.g005<lb/></figure>
+
+		<p>beach volume V beach ; and second, decrease of dune volume, V dune , and height, S, due to an<lb/> upward shift of the reference SWL (Fig <ref type="figure">5</ref>). The aeolian transport and morphological dune evolu-<lb/>tion scheme are indirectly impacted through q SLR (Eqs <ref type="formula">4 and 14</ref>). Furthermore, the &apos;Bruun rule&apos;<lb/> transport is a sink for the beach volume, which will affect wave energy dissipation over the beach<lb/> (Eqs <ref type="formula">2 and 3</ref>). This leads to an increase in the probability of dune erosion and overwash trans-<lb/>port, which are processes already included in the CS-model <ref type="biblio">[15]</ref>. In this way, the dune may<lb/> translate landwards and the new scheme for morphological dune evolution allows the dunes to<lb/> adjust in height to the new sea level by keeping S max constant relative the dune foot elevation.<lb/></p>
+
+			<head>Case study A ¨ngelholm Beach, Sweden<lb/></head>
+
+			<p>To demonstrate the capability of the proposed model to simulate long-term beach and dune evo-<lb/>lution, it was applied to a seven-year data set from A ¨ngelholm Beach in south Sweden (Fig <ref type="figure">6</ref>).<lb/></p>
+
+			<head>Forcing<lb/></head>
+
+			<p>Wind data at 10 m height was collected from stations 1, 3, 6, and 7 (Fig <ref type="figure">6</ref>), operated by the<lb/> Swedish Meteorological and Hydrological Institute (SMHI). Predominant wind direction is<lb/> west to southwest and the shore normal is oriented 310˚N (Fig <ref type="figure">7</ref>).<lb/></p>
+
+			<p>Deep-water wave conditions at the mouth of Ska ¨lderviken Bay were hindcasted from the<lb/> wind data using a modified SMB-method <ref type="biblio">[22,62]</ref> (Fig <ref type="figure">8</ref>). The largest computed significant<lb/> wave height and peak period is 5.3 m and 9.3 s, respectively, which occurred on 06/12/2013.<lb/></p>
+
+			<p>Water level data was collected from SMHI station 5 (Fig <ref type="figure">6</ref>). The water levels were corrected<lb/> for local wind setup, following the method described by Palalane et al <ref type="biblio">[22]</ref>. The current decade<lb/> has seen several extreme events compared to the period 1990-2010 (Fig <ref type="figure">9</ref>). The highest<lb/> observed water level, adjusted for wind setup, was 185 cm above MSL on 27/11/2011. There is<lb/> no significant astronomical tide.<lb/></p>
+
+			<head>Morphology<lb/></head>
+
+			<p>Beach morphology varies alongshore, with higher dunes and a narrower beach in the north,<lb/> and lower dunes and a wider beach in the south. The observed long-term coastline evolution is<lb/> erosion in the north and accretion in the south (Fig <ref type="figure">6</ref>). Profiles A, B, and C have been selected<lb/></p>
+
+			<figure>Fig 6. Maps over the study area and measurement stations.<lb/> https://doi.org/10.1371/journal.pone.0215651.g006<lb/></figure>
+
+			<p>to represent stretches of the beach with different long-term evolution (Fig <ref type="figure">10</ref>). Analysis of<lb/> aerial photos since the 1940&apos;s suggests that the vegetation line has been retreating about 0.3 m/<lb/> year in profile A, stable in profile B, and accreting about 0.3 m/year in profile C <ref type="biblio">[22]</ref>.<lb/></p>
+
+			<p>Topographic observations are available from 2010-2017. In Table <ref type="table">1</ref>, the dune volume<lb/> changes over time are presented together with the data source.<lb/></p>
+
+			<p>Storms causing dune erosion occurred in November 2011, December 2013, January 2015,<lb/> December 2015, and December 2016, of which the storms in 2011 and 2013 were the most<lb/> severe.<lb/></p>
+
+			<p>Since 2010, the dune volume has decreased in all three profiles, including the long-term sta-<lb/>ble and accreting profiles, B and C. This is mainly due to the storm erosion in December 2013<lb/> from which the dunes have not recovered. In profile A, the observed accretion in November<lb/> 2014 and September 2015 is due to dune nourishments when sediment was scraped from just<lb/> seaward of the water line and deposited in the dune front. These operations were carried out<lb/> in April 2012, April 2014, and March 2015 to replace the sediment lost from the dunes during<lb/> storms.<lb/></p>
+
+			<p>In a bathymetric survey from October 2012 (provided by the Swedish Geological Survey)<lb/> no bars are observed in the subaqueous part of the studied profiles. However, from aerial<lb/></p>
+
+			<figure>Fig 7. Wind rose compiled with data from 1976-2017.<lb/> https://doi.org/10.1371/journal.pone.0215651.g007<lb/></figure>
+
+			<p>photos, parallel bars can be detected south of profile C. Along the entire beach temporary cres-<lb/>centic subaqueous deposit are visible within 70 m from the shoreline. These features indicate<lb/> that there is a cross-shore exchange of sediment stored in nearshore deposits, although, no<lb/> fully developed bars are observed within the measured profiles.<lb/></p>
+
+			<head>Sediments<lb/></head>
+
+			<p>Sediment samples have been collected at four occasions during 2015 and 2016 to determine<lb/> D 50 across the beach and dune (Fig <ref type="figure">11</ref>).<lb/></p>
+
+			<p>The median grain size at sample points 1-5 on the foreshore and berm is in general decreas-<lb/>ing from profile A to profile C, indicating a longshore sorting. As the sediment is fairly well<lb/> graded, the grain size found in the dune, about 0.2-0.3 mm, is assumed to be representative<lb/> for dune building sediments. The samples from the dune in profile A with lower D 50 are mixed<lb/> with silty material from the artificial fill, and is therefore not considered representative for aeo-<lb/>lian transported sediment.<lb/></p>
+
+			<p>In profile C, dune-building sediment was available at all sampling occasions, except for the<lb/> first in October 2015 when it was finer, with D 50 below 0.2 mm. In Profile A, sediment of<lb/> appropriate grain size was only available on the last sampling occasion in October 2016. Profile<lb/></p>
+
+			<figure>Fig 8. Hindcasted significant wave height at the mouth of Ska ¨lderviken Bay during 1976-2017.<lb/> https://doi.org/10.1371/journal.pone.0215651.g008<lb/></figure>
+
+			<figure>Fig 9. Yearly maximum SWL in 1976-2016 based on measurements from Viken (dashed grey line) and the yearly maximum corrected for local wind<lb/> setup in Ska ¨lderviken Bay (solid black line).<lb/> https://doi.org/10.1371/journal.pone.0215651.g009<lb/></figure>
+
+			<figure>Fig 10. Profiles from DEM dated 12/04/2010, dashed lines display model schematization of the dune.<lb/> https://doi.org/10.1371/journal.pone.0215651.g010<lb/></figure>
+
+			<p> had only complete samples from three of the occasions and then showed availability in some<lb/> of the sampling points along the profile, but not all.<lb/></p>
+
+			<figure type="table">Table 1. Dune volume changes between consecutive measurements. A summation of the changes since the first topographic observation in 2010 is given within<lb/> brackets.<lb/> Volumetric change since previous survey in m 3 /m (accumulated change since<lb/> 2010)<lb/> Survey date<lb/> Profile A<lb/> Profile B<lb/> Profile C<lb/> Data source<lb/> 12/04/2010<lb/> initial profile<lb/> initial profile<lb/> initial profile<lb/> DEM LiDAR (resolution 1×1 m)<lb/> 30/11/2012<lb/> -2 (-2)<lb/> -1 (-1)<lb/> 1 (1)<lb/> DEM LiDAR (resolution 1×1 m)<lb/> 26/11/2014<lb/> 13 (11)<lb/> -10 (-11)<lb/> -10 (-9)<lb/> DEM Photogrammetry (resolution 1×1 m)<lb/> 21/01/2015<lb/> -28 (-17)<lb/> -1 (-12)<lb/> -2 (-11)<lb/> DEM Photogrammetry (resolution 1×1 m)<lb/> 30/09/2015<lb/> 13 (-4)<lb/> 0 (-12)<lb/> 2 (-9)<lb/> Profile RTK-GPS<lb/> 15/12/2015<lb/> -14 (-18)<lb/> -2 (-14)<lb/> -2 (-11)<lb/> DEM Photogrammetry (resolution 1×1 m)<lb/> 22/04/2016<lb/> 3 (-15)<lb/> -1 (-15)<lb/> 0 (-11)<lb/> Profile RTK-GPS<lb/> 27/10/2016<lb/> 0 (-15)<lb/> 0 (-15)<lb/> 0 (-11)<lb/> Profile RTK-GPS<lb/> 05/01/2017(A,C)<lb/> 17/01/2017(B)<lb/> -10 (-25)<lb/> 1 (-14)<lb/> -1 (-12)<lb/> Profile RTK-GPS<lb/> https://doi.org/10.1371/journal.pone.0215651.t001<lb/> Fig 11. Median grain size D 50 for sediment samples in Profile A, B, and C sampled from the shoreline (1) to the dune<lb/> crest (7).<lb/> https://doi.org/10.1371/journal.pone.0215651.g011<lb/></figure>
+
+			<head>Model setup<lb/></head>
+
+			<p>The initial profile was schematized so that the total sand volume in the subaerial part of the<lb/> profile was represented (Fig <ref type="figure">10</ref>). Profile C, which consists of three dune rows, was schematized<lb/> into one dune, while preserving dune volume and seaward dune crest position. This procedure<lb/> is necessary as the CS-model can only simulate one row of dunes. The seaward dune slope<lb/> angle, β S , was set equal to the angle of repose of sand (approximately 30-34 ˚), whereas the<lb/> landward dune slope angle, β L , and maximum foreshore slope angle, β F,max , was obtained from<lb/> the topographic observations.<lb/> The relationship between the beach width, y G -y S , and the beach volume, V berm , is deter-<lb/>mined from the topographic observations covering the profile from the dune foot (y S ) to the<lb/> intersection with MSL (y G ) (Fig <ref type="figure">12</ref>). A linear function was least-square fitted to the data yield-<lb/>ing y G -y S = 1.2V berm -4.3, with a coefficient of determination, R 2 , of 0.76.<lb/></p>
+
+			<p>The D 50 used to calculate the fall velocity in the beach-bar exchange formulas <ref type="biblio">[15]</ref> and<lb/> employed in the aeolian transport equations was set to 0.2 mm for all three profiles. The dune<lb/> foot height, D F , was estimated to 2 m for all profiles, based on an average of the topographic<lb/> observations.<lb/></p>
+
+			<p>The depth of closure, D C , was calculated to be 5.7 m according to Hallermeier <ref type="biblio">[63]</ref> and the<lb/> width of the subaqueous part of the active profile was estimated to be 800 m (B = 800+y G -y S ).<lb/> The average sea temperature is assumed to be about 10˚C <ref type="biblio">[64]</ref>.<lb/></p>
+
+			<p>The gradients in the longshore sediment transport rate was estimated to be 4.1 m 3 /m/year<lb/> in profile A, 0 m 3 /m/year in profile B, and -3.0 m 3 /m/year in profile C, based on the vegetation<lb/> line analysis <ref type="biblio">[22]</ref>; thus, q LS equals -4.1, 0, and 3 m 3 /m/year for profile A, B, and C respectively.<lb/></p>
+
+			<p>The simulation time step was set to one hour.<lb/></p>
+
+			<head>Calibration and validation<lb/></head>
+
+			<p>The model was calibrated for the period 12/04/2010-21/04/2016 and then validated for the<lb/> period 22/04/2016-17/01/2017. Literature values were used for all empirical coefficients <ref type="biblio">[22]<lb/></ref> except for C S and C W , which are the most important calibration parameters for the dune<lb/> evolution.<lb/> Dune erosion was calibrated by adjusting the impact coefficient, C S , to fit the observed<lb/> dune erosion. C S describes the resistance of the dunes to wave erosion; the eroded volume<lb/> from the dune during wave attack is proportional to C S <ref type="biblio">[15]</ref>. For profiles B and C, which<lb/></p>
+
+			<figure>Fig 12. Observed relation between beach volume (V berm ) and beach width (y G -y S ).<lb/> https://doi.org/10.1371/journal.pone.0215651.g012<lb/></figure>
+
+			<p>involve dunes built up by aeolian transport with similar vegetation, C S was calibrated to a com-<lb/>mon value of 7.5�10 -5 . In profile A, the dune had initially aeolian transported sand, but was<lb/> after April 2012 partly nourished with a silty material. The impact coefficient, C S , was here cali-<lb/>brated to a larger value of 5�10 -4 , meaning that the dune is less resistant to erosion.<lb/></p>
+
+			<p>The empirical coefficient in the aeolian transport equation (Eq 7) C W was calibrated to<lb/> 1.0�10 -5 , a common value for all profiles. Initial available sediment volume for aeolian trans-<lb/>port, V w , was set to 0 m 3 /m in the calibration phase.<lb/></p>
+
+			<p>For this study, there was no information on the morphological evolution of the subaqueous<lb/> part of the profile. The initial bar volume, which represents subaqueous deposits interacting<lb/> with the beach deposits, was set to 20 m 3 /m for profile A, 70 m 3 /m for profile B, and 50 m 3 /m<lb/> for profile C, to reproduce the evolution of the beach volume. For the validation, the bar vol-<lb/>ume at the end of the calibration period was used as the initial value.<lb/></p>
+
+			<p>During the calibration period minor dune erosion events occur almost yearly and there are<lb/> two major storm events with significant dune erosion in November 2011 and December 2013<lb/> (Fig <ref type="figure">13</ref>). The sudden increases in dune volume in profile A are due to the dune nourishment<lb/> episodes. In agreement with field observations, the aeolian transported volumes throughout<lb/> the simulation period are small compared to the eroded volumes during these storm events.<lb/> The dunes have not fully recovered at the end of the calibration period.<lb/></p>
+
+			<p>The validation period contains one storm event in December 2016, with a clear signal of<lb/> erosion in profile A and C (Fig <ref type="figure">14</ref>). In profile B no erosion is observed, which is probably due<lb/> to an error in the measured topographic data.<lb/></p>
+
+			<figure>Fig 13. Dune and beach volume evolution for calibration period.<lb/> https://doi.org/10.1371/journal.pone.0215651.g013<lb/></figure>
+
+			<p>The performance of the calibration and validation is satisfactory. For the calibration period,<lb/> the coefficient of determination, R 2 , equals 0.73 for the dune volume evolution and 0.63 for the<lb/> berm volume evolution. For the validation period, R 2 equals 0.69 for the dune evolution, but<lb/> for the berm evolution, R 2 equals 0 because of few observations with only small volume<lb/> changes. The model sensitivity to the calibrated parameters was investigated by comparing a<lb/> modified model to the calibrated model. (Table <ref type="table">2</ref>). The mean absolute deviation of dune and<lb/> berm volume was calculated for a simulation period encompassing both the calibration and<lb/> validation period. The sensitivity analysis showed that the model was most sensitive to changes<lb/></p>
+
+			<figure>Fig 14. Dune and beach volume evolution for validation period.<lb/> https://doi.org/10.1371/journal.pone.0215651.g014<lb/></figure>
+
+			<figure type="table">Table 2. Result from sensitivity analysis of calibrated parameters.<lb/> Parameter<lb/> Modification<lb/> Mean absolute deviation from calibrated<lb/> model (m 3 /m)<lb/> V dune<lb/> V berm<lb/> Initial V W<lb/> +10 m 3<lb/> 0.26<lb/> 0.14<lb/> Initial bar volume, V bar,1<lb/> +25%<lb/> 0.37<lb/> 1.24<lb/> -25%<lb/> 0.39<lb/> 1.22<lb/> C W<lb/> +25%<lb/> 0.27<lb/> 0.17<lb/> -25%<lb/> 0.27<lb/> 0.19<lb/> C S<lb/> +25%<lb/> 4.58<lb/> 1.59<lb/> -25%<lb/> 4.28<lb/> 1.66<lb/> https://doi.org/10.1371/journal.pone.0215651.t002<lb/></figure>
+
+			<p>in the duneha erosion impact coefficient, C S . Changes to the other parameters had only a<lb/> minor impact on the dune and berm volume evolution.<lb/> However, there are uncertainties associated both with the topographic observations and the<lb/> forcing. The beach profiles are derived from DEMs with resolution 1×1 m based on both<lb/> LiDAR data and photogrammetry, and topographic surveys with GPS are carried out by both<lb/> the local municipality and by researchers within this study. Therefore, it is uncertain whether<lb/> some of the minor observed topographic developments are due to actual morphologic changes<lb/> or artefacts related to different data acquisition methods. The eroded volumes under storms<lb/> are on some occasions overestimated, and on other occasions underestimated. This can partly<lb/> be due to both uncertainties in the topographic data and in the forcing.<lb/></p>
+
+			<p>In the dune erosion equation, the water level and wave properties both have large impact<lb/> on the eroded volume. The lack of in situ water level gauge data introduces uncertainty when<lb/> the water levels within the bay are corrected for the local wind setup. It is also possible that<lb/> local variation in the wave climate occurs within the study area, which is not considered here;<lb/> this could partly explain the large variation in the value of the impact coefficient, C S , between<lb/> profile A and profiles B-C. Other possible explanations can be the mix of sediment in the dune<lb/> in profile A, where the main part of the dune consists of sand with D 50 around 0.2-0.3 mm<lb/> and the front part consists of finer, silty material from the dune nourishment; and further, that<lb/> vegetation is less abundant in profile A compared to B and C. The dune erosion formula used<lb/> in the CS-model <ref type="biblio">[55]</ref> was developed for sandy dunes with D 50 ranging from 0.15 to 0.5 mm,<lb/> and its validity outside this range of grain sizes is uncertain. Future coastal management<lb/> approaches in the area are unknown; possibly the sediment characteristics in the dune may<lb/> change. In the long-term simulations from 2018-2100, dune evolution in profile A is simulated<lb/> with both the high and low calibrated value of C S .<lb/></p>
+
+			<p>The simulated yearly average aeolian transport amounts to 0.3 m 3 /m/year in profile A, 0.5<lb/> m 3 /m/year in profile B and 0.6 m 3 /m/year in profile C (Fig <ref type="figure">15</ref>), which is significantly lower<lb/> than in previous CS-model applications where a constant rate of about 10-11 m 3 /m/year was<lb/> applied in all three profiles <ref type="biblio">[22]</ref>. The new results are more realistic when compared to the<lb/> observed long-term evolution. In the accreting profile C, the vegetation line has advanced 0.3<lb/> m/year since the 1940s <ref type="biblio">[22]</ref>, which is approximately equal to an accumulation of 0.6 m 3 /year<lb/> considering the average dune height of 2 m.<lb/></p>
+
+			<p>The simulation results, with the highest aeolian transport in profile C and lower transport<lb/> in profile A, are in line with the topographic observations. The simulated differences in the<lb/></p>
+
+			<figure>Fig 15. Available sediment for aeolian transport (V W ) and accumulated aeolian transport (q W ) during the calibration and validation<lb/> periods.<lb/> https://doi.org/10.1371/journal.pone.0215651.g015<lb/></figure>
+
+			<p>average annual transport rates are due to variations in sediment supply between the different<lb/> profiles as well as the variation in beach width. The four sets of sediment samples taken from<lb/> October 2015 to October 2016 display variations both in space and time (Fig <ref type="figure">11</ref>), where profile<lb/> C has the most available sediment, profile B less, and profile A only intermittent availability<lb/> during the period 2010-2016. This pattern is reflected in the simulated available sediment (Fig<lb/> <ref type="figure">15</ref>). However, the simulation results show that there should be sediment available for aeolian<lb/> transport within all three profiles during the actual sampling period, which was not supported<lb/> by the sediment grain size data. An explanation for this could be that the material eroded from<lb/> the dune in profile A before the sampling period was finer than the appropriate grain size for<lb/> dune build up, due to the silty nourishment, and thus should not have been accounted for in<lb/> the available sediment volume, V W .<lb/></p>
+
+			<head>Long-term simulation with sea level rise<lb/></head>
+
+			<p>Long-term beach and dune evolution from 2018-2100 was simulated with a range of SLR sce-<lb/>narios from IPCC <ref type="biblio">[65]</ref>. The simulations were run with 10 sets of 83 years of input data,<lb/> obtained by randomly shuffling years (July-June) from 01/07/1976-30/06/2016 with simulta-<lb/>neous values of wind, waves, and water levels relative to MSL. The three different scenarios of<lb/> SLR until 2100 were defined as mean low 0.44 m, mean high 0.74 m, and likely upper range<lb/> high 0.98 m, relative to the average MSL during the years 1986-2005. The first scenario corre-<lb/>sponds to the RCP 2.6 scenario and the latter two to the RCP 8.5 scenario in the fifth assess-<lb/>ment report by IPCC <ref type="biblio">[65]</ref>. The SLR rate was derived from fitting quadratic polynomials to the<lb/> data provided by IPCC (Table AII.7.7 in <ref type="biblio">[66]</ref>). A post glacial uplift of 1.3 mm/year <ref type="biblio">[67]</ref> was<lb/> subtracted from the computed SLR rates and the scenarios were compared to a baseline sce-<lb/>nario with no relative SLR, i.e. where SLR compensates exactly the post-glacial uplift.<lb/></p>
+
+			<p>The regional climate change prognosis does not predict any changes to the wind climate<lb/> <ref type="biblio">[67]</ref>; therefore no changes in wind speed or direction were considered in this study. The same<lb/> holds for the wave climate, which is dominated by regionally wind-generated waves.<lb/></p>
+
+			<p>Profile A was simulated with two different values on the impact coefficient, C S ; the calibrated<lb/> value of 5�10 -4 , which is assumed to partly depend on the dune nourishments during the cali-<lb/>bration period, and the lower value of 7.5�10 -5 , which was estimated for profiles B and C.<lb/> In all profiles, dune volumes decrease for all three scenarios, including profile C despite<lb/> input of sediment due to a negative gradient in longshore transport (Fig <ref type="figure">16</ref>). In Profile A, the<lb/> dune erodes away completely before year 2100, both with the large and small dune erosion<lb/> coefficient, C S . In the simulations with large C S , dune erosion is more important than the effect<lb/> of SLR, also without SLR the dune is eroded away quickly. Taking into account all SLR scenar-<lb/>ios, the dunes are eroded away completely within the period 2050-2075 with the lower C S coef-<lb/>ficient, compared to 2027-2037 with the higher C S coefficient. This evolution is explained by<lb/> the long-term trend of beach erosion and the severe storms in the last decade that are present<lb/> in the data set.<lb/></p>
+
+			<p>For profile B, the dune only disappears completely in the upper high SLR scenario, but the<lb/> volume is markedly diminished also in the other two scenarios. In Profile C, the effect of SLR<lb/> is compensated by the negative gradient in the longshore transport, which is added as a con-<lb/>stant transport rate to the beach volume. Still, the long-term simulation without SLR does not<lb/> show a net dune growth, which could be expected on an accreting beach. This can be explained<lb/> by the severe storm events in 2011 and 2013 that are present in the data set.<lb/></p>
+
+			<p>The long-term observation of dune evolution based on aerial photos from the 1940s con-<lb/>tains a period during 1960s and 1970s that was unusually calm with respect to storminess <ref type="biblio">[68]</ref>.<lb/> If the wind climate from 1976-2016 is representative for future conditions, model results<lb/> indicate that the aeolian transport capacity will not be sufficient to repair storm erosion. In<lb/> profiles B and C, the available sediment for aeolian transport accumulates faster than the aeo-<lb/>lian transport rate, the gradient in longshore transport cause the beach volume to increase and<lb/> the shoreline to extend seawards (Fig <ref type="figure">17</ref>). The wider beach increases frictional losses, so that<lb/> dune erosion decreases which explains the trend change in dune volume evolution in profile C<lb/> for the low and baseline scenarios (Fig <ref type="figure">16</ref>). The dune erosion and recovery during the simula-<lb/>tion period are subtracted from, or added to, the foredune. In reality, new foredune ridges<lb/> could form during periods of recovery, however, this is not possible with the present simplified<lb/> dune schematization of the CS-model.<lb/></p>
+
+			<p>The dunes are also losing sediment due to the change of reference dune foot elevation when<lb/> the sea level is rising, causing the dune crest height to decrease (Fig <ref type="figure">17</ref>). In profile B the hori-<lb/>zontal dune crest erodes away completely and the dune attains a triangular shape, so that the<lb/> dune crest is further lowered due to storm erosion. None of the simulations of profile B and C<lb/> results in landward dune translation. In profile B, with no gradient in the longshore transport,<lb/> SLR changes the sediment budget from stable to eroding for all scenarios. Profile C is still<lb/> accreting in the low scenario but changes into a negative sediment budget in the mean high<lb/> and upper high scenarios. In the scenarios with negative sediment budget, the aeolian trans-<lb/>port capacity is too low to restore the dune ramp, which is supposed to produce landward<lb/> translation between consecutive erosion events.<lb/></p>
+
+			<figure>Fig 16. Simulated dune volume evolution. Solid lines represent mean value, and the dashed lines represent min and max values from the<lb/> 10 simulations for each scenario.<lb/> https://doi.org/10.1371/journal.pone.0215651.g016<lb/></figure>
+
+			<head>Discussion and concluding remarks<lb/></head>
+
+			<p>In this study, the CS-model was expanded to simulate beach and dune evolution at decadal to<lb/> centennial time scales under SLR. Model development was based on morphological concepts<lb/> from the literature, which were translated into mathematical formulations that were numeri-<lb/>cally solved. The proposed model was applied to a data set from A ¨ngelholm Beach, Sweden.<lb/> First, the model was calibrated and validated for a seven-year period, and then the beach and<lb/> dune evolution was simulated from 2018-2100 for a range of SLR scenarios.<lb/></p>
+
+			<p>Topography and grain size data suggests that the morphological evolution at A ¨ngelholm<lb/> Beach conform to the concepts that were introduced in the CS-model. The different profile<lb/> characteristics fit the conceptual sediment budget model by Psuty <ref type="biblio">[24]</ref> where the eroding and<lb/> stable dunes in profiles A and B are the highest and the accumulating profile C displays a<lb/> lower, prograding dune-ridge topography. The differences in distribution of D 50 over the pro-<lb/>files are in line with the hypothesis that available sediment is a controlling factor for aeolian<lb/> transport and that preconditions for aeolian transport are variable both in space and time.<lb/> However, although there was sediment available, the aeolian transport that was observed in<lb/> the stable and accreting profiles B and C were not of sufficient rates to repair the storm erosion<lb/> during the study period.<lb/></p>
+
+			<p>Overall, the results of the calibration and validation against field data were satisfactory and<lb/> the long-term predictions of beach and dune evolution under different SLR scenarios showed<lb/> reasonable results. The CS-model illustrated the relative importance of longshore transport<lb/> gradients, storm erosion, aeolian transport, and SLR for the profile evolution. The simulations<lb/> demonstrated the importance of extreme storm events for decadal-scale dune evolution, and<lb/> confirmed the need of integration of physical processes acting on multiple time scales <ref type="biblio">[21]</ref>.<lb/></p>
+
+			<p>At A ¨ngelholm Beach the aeolian transport capacity, rather than sediment availability, lim-<lb/>ited the dune growth in the long-term simulations. In the case with a positive sediment budget<lb/> (the low SLR scenario in profile C), the available sediment was accumulating faster than the<lb/> aeolian transport capacity, so that the shoreline extended seawards, widening the beach. For<lb/> the profiles with negative sediment budget, the dune ramp did not become fully developed<lb/> until the sediment available for aeolian transport had eroded away, suggesting that aeolian<lb/> transport capacity in relation to dune erosion rates is too low to result in landward dune<lb/> migration. The model assumes that the dune ramp is built entirely by wind-blown sand. Field<lb/> studies suggest that the main part of the ramp is built from wind-blown sand <ref type="biblio">[36]</ref>, however, in<lb/></p>
+
+			<figure>Fig 17. Simulated beach-dune evolution for profile B and C. The &apos;+&apos; indicates intersection with MSL.<lb/> https://doi.org/10.1371/journal.pone.0215651.g017<lb/></figure>
+
+			<p>future studies it would be worthwhile exploring if an avalanche mechanism should be included<lb/> in the model to facilitate the development of dune ramps.<lb/></p>
+
+			<p>Precipitation is not included in the model, but may be an important limiting factor <ref type="biblio">[35]</ref>. At<lb/> beaches with seasonal ice and snow cover the effect on aeolian transport may be significant,<lb/> especially if transport is inhibited during periods with strong winds <ref type="biblio">[36]</ref>. In areas with signifi-<lb/>cant impact of rain, snow, and ice, the model could be improved through modifying sediment<lb/> availability during wet or frozen conditions to restrict aeolian transport. Blowouts may also be<lb/> an important factor for landward foredune migration <ref type="biblio">[40]</ref> but are difficult to include in a 1-D<lb/> model.<lb/></p>
+
+			<p>The CS-model assumes an equilibrium profile and therefore the Bruun rule fits well with<lb/> the model concept. Introducing a more realistic profile representation to the CS-model would<lb/> introduce a higher degree of model complexity, which is not desired. It is however important<lb/> to keep the limitations of the equilibrium concept in mind when applying the CS-model and<lb/> the Bruun rule. Furthermore, the depth of closure is time scale dependent. Over longer peri-<lb/>ods, the probability of storm events mobilizing sediment at deeper water increases <ref type="biblio">[69]</ref>. There-<lb/>fore, the depth of closure adopted in the CS-model should be chosen with consideration to the<lb/> length of the simulation period.<lb/></p>
+
+			<p>In conclusion, the modified CS-model, including SLR related processes and a more<lb/> advanced transport and dune evolution scheme, provides fast and robust simulations with rea-<lb/>sonable results. The simplified model approach enables robust, long-term simulations and<lb/> makes the model suitable for probabilistic simulations. The results presented in this study are<lb/> promising, but more studies with longer-term data sets are required to validate the proposed<lb/> numerical formulations more thoroughly.<lb/></p>
+
+
+	</text>
+</tei>
