@@ -18,9 +18,9 @@ Current neural models can be up to 50 times slower than CRF, depending on the ar
 
 ## Recommended Deep Learning models
 
-By default, only CRF models are used by Grobid. You need to select the Deep Learning models you would like to use in the GROBID configuration yaml file (`grobid/grobid-home/config/grobid.yaml`). See [here](https://grobid.readthedocs.io/en/latest/Configuration/#configuring-the-models) for more details on how to select these models. The most convenient way to use the Deep Learning models is to use the full GROBID Docker image and pass a configuration file at launch of the container describing the selected models to be used instead of the default CRF ones. Note that the full GROBID Docker image is already configured to use Deep Learning models for bibliographical reference and affiliation-address parsing. 
+By default, only CRF models are used by Grobid. You need to select the Deep Learning models you would like to use in the GROBID configuration yaml file (`grobid/grobid-home/config/grobid.yaml`). See [here](Configuration.md#configuring-the-models) for more details on how to select these models. The most convenient way to use the Deep Learning models is to use the full GROBID Docker image and pass a configuration file at launch of the container describing the selected models to be used instead of the default CRF ones. Note that the full GROBID Docker image is already configured to use Deep Learning models for bibliographical reference and affiliation-address parsing. 
 
-For current GROBID version 0.8.1, we recommend considering the usage of the following Deep Learning models: 
+For current GROBID version 0.8.2, we recommend considering the usage of the following Deep Learning models: 
 
 - `citation` model: for bibliographical parsing, the `BidLSTM_CRF_FEATURES` architecture provides currently the best accuracy, significantly better than CRF (+3 to +5 points in F1-Score). With a GPU, there is normally no runtime impact by selecting this model. SciBERT fine-tuned model performs currently at  lower accuracy. 
 
@@ -46,7 +46,7 @@ However, if you need a "local" library installation and build, prepare a lot of 
 
 #### Classic python and Virtualenv
 
-<span>0.</span> Install GROBID as indicated [here](https://grobid.readthedocs.io/en/latest/Install-Grobid/).
+<span>0.</span> Install GROBID as indicated [here](Install-Grobid.md).
 
 The following was tested with Java version up to 17.
 
@@ -130,7 +130,7 @@ INFO  [2020-10-30 23:04:07,756] org.grobid.core.jni.DeLFTModel: Loading DeLFT mo
 INFO  [2020-10-30 23:04:07,758] org.grobid.core.jni.JEPThreadPool: Creating JEP instance for thread 44
 ```
 
-It is then possible to [benchmark end-to-end](https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) the selected Deep Learning models as any usual GROBID benchmarking exercise. In practice, the CRF models should be mixed with Deep Learning models to keep the process reasonably fast and memory-hungry. In addition, note that, currently, due to the limited amount of training data, Deep Learning models perform significantly better than CRF only for a few models (`citation`, `affiliation-address`, `reference-segmenter`). This should of course certainly change in the future! 
+It is then possible to [benchmark end-to-end](End-to-end-evaluation.md) the selected Deep Learning models as any usual GROBID benchmarking exercise. In practice, the CRF models should be mixed with Deep Learning models to keep the process reasonably fast and memory-hungry. In addition, note that, currently, due to the limited amount of training data, Deep Learning models perform significantly better than CRF only for a few models (`citation`, `affiliation-address`, `reference-segmenter`). This should of course certainly change in the future! 
 
 #### Anaconda 
 

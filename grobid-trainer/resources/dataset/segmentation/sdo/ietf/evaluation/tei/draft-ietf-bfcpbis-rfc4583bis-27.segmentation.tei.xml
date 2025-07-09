@@ -1,0 +1,403 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <front>BFCPbis Working Group <lb/> G. Camarillo <lb/>Internet-Draft <lb/>Ericsson <lb/>Obsoletes: 4583 (if approved) <lb/>T. Kristensen <lb/>Intended status: Standards Track <lb/>Cisco <lb/>Expires: June 11, 2019 <lb/>C. Holmberg <lb/>Ericsson <lb/>December 8, 2018 <lb/>Session Description Protocol (SDP) Format for Binary Floor Control <lb/>Protocol (BFCP) Streams <lb/>draft-ietf-bfcpbis-rfc4583bis-27 <lb/>Abstract <lb/>This document defines the Session Description Protocol (SDP) offer/ <lb/>answer procedures for negotiating and establishing Binary Floor <lb/>Control Protocol (BFCP) streams. <lb/>This document obsoletes RFC 4583. Changes from RFC 4583 are <lb/>summarized in Section 14. <lb/>Status of This Memo <lb/>This Internet-Draft is submitted in full conformance with the <lb/>provisions of BCP 78 and BCP 79. <lb/>Internet-Drafts are working documents of the Internet Engineering <lb/>Task Force (IETF). Note that other groups may also distribute <lb/>working documents as Internet-Drafts. The list of current Internet-<lb/>Drafts is at http://datatracker.ietf.org/drafts/current/. <lb/>Internet-Drafts are draft documents valid for a maximum of six months <lb/>and may be updated, replaced, or obsoleted by other documents at any <lb/>time. It is inappropriate to use Internet-Drafts as reference <lb/>material or to cite them other than as &quot;work in progress.&quot; <lb/>This Internet-Draft will expire on June 11, 2019. <lb/>Copyright Notice <lb/>Copyright (c) 2018 IETF Trust and the persons identified as the <lb/>document authors. All rights reserved. <lb/>This document is subject to BCP 78 and the IETF Trust&apos;s Legal <lb/>Provisions Relating to IETF Documents <lb/>(http://trustee.ietf.org/license-info) in effect on the date of <lb/>publication of this document. Please review these documents <lb/>Camarillo, et al. <lb/>Expires June 11, 2019 <lb/>[Page 1] <lb/>Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>carefully, as they describe your rights and restrictions with respect <lb/>to this document. Code Components extracted from this document must <lb/>include Simplified BSD License text as described in Section 4.e of <lb/>the Trust Legal Provisions and are provided without warranty as <lb/>described in the Simplified BSD License. <lb/></front>
+
+            <div type="toc">Table of Contents <lb/>1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . <lb/>3 <lb/>2. Conventions . . . . . . . . . . . . . . . . . . . . . . . . . <lb/>3 <lb/>3. Floor Control Roles . . . . . . . . . . . . . . . . . . . . . <lb/>4 <lb/>4. Fields in the &apos;m&apos; Line . . . . . . . . . . . . . . . . . . . <lb/>4 <lb/>5. SDP Attributes . . . . . . . . . . . . . . . . . . . . . . . <lb/>5 <lb/>5.1. SDP &apos;floorctrl&apos; Attribute . . . . . . . . . . . . . . . . <lb/>5 <lb/>5.2. SDP &apos;confid&apos; Attribute . . . . . . . . . . . . . . . . . <lb/>7 <lb/>5.3. SDP &apos;userid&apos; Attribute . . . . . . . . . . . . . . . . . <lb/>8 <lb/>5.4. SDP &apos;floorid&apos; Attribute . . . . . . . . . . . . . . . . . <lb/>9 <lb/>5.5. SDP &apos;bfcpver&apos; Attribute . . . . . . . . . . . . . . . . . 10 <lb/>6. Multiplexing Considerations . . . . . . . . . . . . . . . . . 11 <lb/>7. BFCP Connection Management . . . . . . . . . . . . . . . . . 12 <lb/>7.1. TCP Connection Management . . . . . . . . . . . . . . . . 12 <lb/>8. TLS/DTLS Considerations . . . . . . . . . . . . . . . . . . . 13 <lb/>9. ICE Considerations . . . . . . . . . . . . . . . . . . . . . 13 <lb/>10. SDP Offer/Answer Procedures . . . . . . . . . . . . . . . . . 14 <lb/>10.1. Generating the Initial SDP Offer . . . . . . . . . . . . 15 <lb/>10.2. Generating the SDP Answer . . . . . . . . . . . . . . . 15 <lb/>10.3. Offerer Processing of the SDP Answer . . . . . . . . . . 16 <lb/>10.4. Modifying the Session . . . . . . . . . . . . . . . . . 17 <lb/>11. Examples . . . . . . . . . . . . . . . . . . . . . . . . . . 17 <lb/>12. Security Considerations . . . . . . . . . . . . . . . . . . . 19 <lb/>13. IANA Considerations . . . . . . . . . . . . . . . . . . . . . 20 <lb/>13.1. Registration of SDP &apos;proto&apos; Values . . . . . . . . . . . 20 <lb/>13.2. Registration of the SDP &apos;floorctrl&apos; Attribute . . . . . 20 <lb/>13.3. Registration of the SDP &apos;confid&apos; Attribute . . . . . . . 20 <lb/>13.4. Registration of the SDP &apos;userid&apos; Attribute . . . . . . . 20 <lb/>13.5. Registration of the SDP &apos;floorid&apos; Attribute . . . . . . 21 <lb/>13.6. Registration of the SDP &apos;bfcpver&apos; Attribute . . . . . . 21 <lb/>14. Changes from RFC 4583 . . . . . . . . . . . . . . . . . . . . 21 <lb/>15. Acknowledgements . . . . . . . . . . . . . . . . . . . . . . 22 <lb/>16. References . . . . . . . . . . . . . . . . . . . . . . . . . 22 <lb/>16.1. Normative References . . . . . . . . . . . . . . . . . . 22 <lb/>16.2. Informational References . . . . . . . . . . . . . . . . 24 <lb/>Authors&apos; Addresses . . . . . . . . . . . . . . . . . . . . . . . 24 <lb/>
+            </div>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 2] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+            
+            <body>
+                  1. Introduction <lb/>As discussed in the BFCP (Binary Floor Control Protocol) <lb/>specification [I-D.ietf-bfcpbis-rfc4582bis], a given BFCP client <lb/>needs a set of data in order to establish a BFCP connection to a <lb/>floor control server. This data includes the transport address of <lb/>the server, the conference identifier, and the user identifier. <lb/>One way for clients to obtain this information is to use an SDP <lb/>offer/answer [RFC3264] exchange. This document specifies how to <lb/>encode this information in the SDP session descriptions that are part <lb/>of such an offer/answer exchange. <lb/>User agents typically use the offer/answer model to establish a <lb/>number of media streams of different types. Following this model, a <lb/>BFCP connection is described as any other media stream by using an <lb/>SDP &apos;m&apos; line, possibly followed by a number of SDP lines that also <lb/>apply to the BFCP connection. <lb/>Section 4 defines how the field values in &apos;m&apos; line representing a <lb/>BFCP connection are set. <lb/>Section 5 defines SDP attributes that are used when negotiating a <lb/>BFCP connection. <lb/>Section 6 defines multiplexing considerations for a BFCP connection. <lb/>Section 7 defines procedures for managing a BFCP connection. <lb/>Section 8 defines TLS and DTLS considerations when negotiating a BFCP <lb/>connection. <lb/>Section 9 defines the Interactive Connectivity Establishment (ICE) <lb/>[RFC8445] considerations when negotiating a BFCP connection. <lb/>Section 10 defines the SDP offer/answer procedures for negotiating a <lb/>BFCP connection. <lb/>2. Conventions <lb/>The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, <lb/>&quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;NOT RECOMMENDED&quot;, &quot;MAY&quot;, and <lb/>&quot;OPTIONAL&quot; in this document are to be interpreted as described in BCP <lb/>14 [RFC2119] [RFC8174] when, and only when, they appear in all <lb/>capitals, as shown here. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 3] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  3. Floor Control Roles <lb/>When two endpoints establish a BFCP stream, they need to determine <lb/>which of them acts as a floor control client and which acts as a <lb/>floor control server. <lb/>Once the roles have been determined, the roles will apply to all <lb/>BFCP-controlled streams associated with the BFCP stream. <lb/>4. Fields in the &apos;m&apos; Line <lb/>According to the SDP specification [RFC4566], the &apos;m&apos; line format is <lb/>the following: <lb/>m=&lt;media&gt; &lt;port&gt; &lt;proto&gt; &lt;fmt&gt; ... <lb/>This section describes how to generate an &apos;m&apos; line of an SDP Media <lb/>Description (&apos;m&apos; section) describing a BFCP stream. <lb/>The media field MUST have a value of &quot;application&quot;. <lb/>The port field is set depending on the value of the proto field, as <lb/>explained below. A port field value of zero has the standard SDP <lb/>meaning (i.e., rejection of the media stream) regardless of the proto <lb/>field. <lb/>When TCP is used as the transport, the port field is set following <lb/>the rules in [RFC4145]. Depending on the value of the &apos;setup&apos; <lb/>attribute (discussed in Section 7.1), the port field contains the <lb/>port to which the remote endpoint will direct BFCP messages, or in <lb/>the case where the endpoint will initiate the connection towards <lb/>the remote endpoint, should be set to a value of 9. <lb/>When UDP is used as the transport, the port field contains the <lb/>port to which the remote endpoint will direct BFCP messages <lb/>regardless of the value of the &apos;setup&apos; attribute. <lb/>This document defines five values for the proto field: TCP/BFCP, <lb/>TCP/DTLS/BFCP, TCP/TLS/BFCP, UDP/BFCP, and UDP/TLS/BFCP. <lb/>The proto value are used as described below: <lb/>&apos;TCP/BFCP&apos; is used for TCP transport of BFCP without TLS <lb/>encryption, and is backward compatible with RFC 4583 compliant <lb/>endpoints. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 4] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  &apos;TCP/TLS/BFCP&apos; is used for TCP transport of BFCP with TLS <lb/>encryption, and is backward compatible with RFC 4583 compliant <lb/>endpoints that support TLS. <lb/>&apos;UDP/BFCP&apos; is used for UDP transport of BFCP without DTLS <lb/>encryption [RFC6347]. <lb/>&apos;UDP/TLS/BFCP&apos; is used for UDP transport of BFCP with DTLS <lb/>encryption. This is one of the options when ICE is used <lb/>(Section 9). It can also be used without ICE when backward <lb/>compatibility with RFC 4583 compliant endpoints is not required. <lb/>&apos;TCP/DTLS/BFCP&apos; is used for TCP transport of BFCP with DTLS <lb/>encryption, running on top of TCP using the framing method defined <lb/>in [RFC4571], with DTLS packets being sent and received instead of <lb/>RTP/RTCP packets using the shim defined in RFC 4571 such that the <lb/>length field defined in RFC 4571 precedes each DTLS message. This <lb/>is one of the options when ICE is used (Section 9). It can also <lb/>be used without ICE when backward compatibility with RFC 4583 <lb/>compliant endpoints is not required. <lb/>The fmt (format) list is not applicable to BFCP. The fmt list of &apos;m&apos; <lb/>lines in the case of any proto field value related to BFCP MUST <lb/>contain a single &quot;*&quot; character. If the the fmt list contains any <lb/>other value it MUST be ignored. <lb/>The following is an example of an &apos;m&apos; line for a BFCP connection: <lb/>m=application 50000 TCP/TLS/BFCP * <lb/>5. SDP Attributes <lb/>5.1. SDP &apos;floorctrl&apos; Attribute <lb/>This section defines the SDP &apos;floorctrl&apos; media-level attribute. The <lb/>attribute is used to determine the floor control roles (client and <lb/>server) for the endpoints associated with the BFCP stream. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 5] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  Attribute Name: floorctrl <lb/>Attribute Value: floor-control <lb/>Usage Level: media <lb/>Charset Dependent: No <lb/>Mux Category: TBD <lb/>The Augmented BNF syntax [RFC5234] for the attribute is: <lb/>floor-control = role *(SP role) <lb/>role = &quot;c-only&quot; / &quot;s-only&quot; / &quot;c-s&quot; <lb/>An endpoint includes the attribute to indicate the role(s) it would <lb/>be willing to perform for the BFCP-controlled media streams: <lb/>c-only: The endpoint is willing to act as floor control client. <lb/>s-only: The endpoint is willing to act as floor control server only. <lb/>When inserted in an offer, the offerer MAY indicate multiple <lb/>attribute values (&quot;c-only&quot; and &quot;s-only&quot;). When inserted in an <lb/>answer, the answerer MUST indicate only one attribute value: &quot;c-only&quot; <lb/>or &quot;s-only&quot;. The answerer indicates the role taken by the answerer. <lb/>The offerer will then take the opposite role. <lb/>In [RFC4583], there was a third attribute specified, &quot;c-s&quot;, which <lb/>meant that an endpoint was willing to act as both floor control <lb/>client and floor control server at the same time for the BFCP stream, <lb/>taking different roles for different BFCP-controlled media streams. <lb/>The feature was underspecified and implemented in different ways, in <lb/>particular many implementations interpreted &quot;c-s&quot; to mean that the <lb/>endpoint is willing to act as either client or server (equivalent to <lb/>&quot;c-only s-only&quot;). An implementation compliant to this specification <lb/>MUST NOT include the &quot;c-s&quot; floorctl attribute value in an offer or in <lb/>an answer, but MUST accept the attribute value in an offer and <lb/>process it as equivalent to &quot;c-only s-only&quot; (or &quot;s-only c-only&quot;). <lb/>Also, as an implementation compliant to this specification is only <lb/>allowed to include one role, either &apos;c-only&apos; or &apos;s-conly&apos;, in an <lb/>answer, each endpoint will only take one role, and as a result the <lb/>endpoint will take the same role for each BFCP-controlled media <lb/>stream associated with the BFCP stream. <lb/>Table 1 shows the roles that the answerer is allowed to take, based <lb/>on what roles the offerer has indicated that it is willing to take. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 6] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  +---------+----------+ <lb/>| Offerer | Answerer | <lb/>+---------+----------+ <lb/>| c-only | s-only | <lb/>| s-only | c-only | <lb/>| <lb/>c-s <lb/>| c-only | <lb/>| <lb/>c-s <lb/>| s-only | <lb/>+---------+----------+ <lb/>Table 1: Roles <lb/>Endpoints compliant with [RFC4583] might not include the &apos;floorctrl&apos; <lb/>attribute in offers and answerer. If the &apos;floorctrl&apos; attribute is <lb/>not present, in order to be interoperable with such endpoints, the <lb/>offerer will act as floor control client and the answerer will act as <lb/>floor control server. <lb/>The SDP Offer/Answer procedures for the &apos;floorctrl&apos; attribute are <lb/>defined in Section 10. <lb/>The following is an example of a &apos;floorctrl&apos; attribute in an offer: <lb/>a=floorctrl:c-only s-only <lb/>5.2. SDP &apos;confid&apos; Attribute <lb/>This section defines the SDP &apos;confid&apos; media-level attribute. The <lb/>attribute is used by a floor control server to convey the conference <lb/>ID value to the floor control client, using decimal integer <lb/>representation. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 7] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  Attribute Name: confid <lb/>Attribute Value: conference-id <lb/>Usage Level: media <lb/>Charset Dependent: No <lb/>Mux Category: TBD <lb/>The Augmented BNF syntax [RFC5234] for the attribute is: <lb/>conference-id = 1*DIGIT <lb/>DIGIT = &lt;DIGIT defined in [RFC5234]&gt; <lb/>The maximum value of the attribute is determined by the <lb/>COMMON-HEADER format [I-D.ietf-bfcpbis-rfc4582bis]. <lb/>The SDP Offer/Answer procedures for the &apos;confid&apos; attribute are <lb/>defined in Section 10. <lb/>5.3. SDP &apos;userid&apos; Attribute <lb/>This section defines the SDP userid&apos; media-level attribute. The <lb/>attribute is used by a floor control server to convey the user ID <lb/>value to the floor control client, using decimal integer <lb/>representation. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 8] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+
+                  Attribute Name: userid <lb/>Attribute Value: user-id <lb/>Usage Level: media <lb/>Charset Dependent: No <lb/>Mux Category: TBD <lb/>The Augmented BNF syntax [RFC5234] for the attribute is: <lb/>user-id = 1*DIGIT <lb/>DIGIT = &lt;DIGIT defined in [RFC5234]&gt; <lb/>The maximum value of the attribute is determined by the <lb/>COMMON-HEADER format [I-D.ietf-bfcpbis-rfc4582bis]. <lb/>The SDP Offer/Answer procedures for the &apos;userid&apos; attribute are <lb/>defined in Section 10. <lb/>5.4. SDP &apos;floorid&apos; Attribute <lb/>This section defines the SDP &apos;floorid&apos; media-level attribute. The <lb/>attribute conveys a floor identifier, using decimal integer <lb/>representation, and optionally pointers to one or more BFCP-<lb/>controlled media streams. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 9] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  Attribute Name: floorid <lb/>Attribute Value: floor-id <lb/>Usage Level: media <lb/>Charset Dependent: No <lb/>Mux Category: TBD <lb/>The Augmented BNF syntax [RFC5234] for the attribute is: <lb/>floor-id = 1*DIGIT SP &quot;mstrm:&quot; token *(SP token) <lb/>DIGIT = &lt;DIGIT defined in [RFC5234]&gt; <lb/>token = &lt;token defined in [RFC4566]&gt; <lb/>The maximum value of the attribute is determined by the <lb/>FLOOR-ID format [I-D.ietf-bfcpbis-rfc4582bis]. <lb/>The floor identifier value is the integer representation of the Floor <lb/>ID to be used in BFCP. Each media stream pointer value is associated <lb/>with an SDP &apos;label&apos; attribute [RFC4574] of a media stream. <lb/>The SDP Offer/Answer procedures for the &apos;floorid&apos; attribute are <lb/>defined in Section 10. <lb/>Note: In [RFC4583] &apos;m-stream&apos; was erroneously used in Section 11. <lb/>Although the example was non-normative, it is implemented by some <lb/>vendors and occurs in cases where the endpoint is willing to act <lb/>as a server. Therefore, it is RECOMMENDED to support parsing and <lb/>interpreting &apos;m-stream&apos; the same way as &apos;mstrm&apos; when receiving. <lb/>5.5. SDP &apos;bfcpver&apos; Attribute <lb/>This section defines the SDP &apos;bfcpver&apos; media-level attribute. The <lb/>attribute is used to negotiate the BFCP version, using decimal <lb/>integer representation. <lb/>The Augmented BNF syntax [RFC5234] for the attributes is: <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 10] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  Attribute Name: bfcpver <lb/>Attribute Value: bfcp-version <lb/>Usage Level: media <lb/>Charset Dependent: No <lb/>Mux Category: TBD <lb/>The Augmented BNF syntax [RFC5234] for the attribute is: <lb/>bfcp-version = version *(SP version) <lb/>version <lb/>= 1*DIGIT <lb/>DIGIT = &lt;DIGIT defined in [RFC5234]&gt; <lb/>The maximum value of the attribute is determined by the <lb/>COMMON-HEADER format [I-D.ietf-bfcpbis-rfc4582bis]. <lb/>An endpoint uses the &apos;bfcpver&apos; attribute to convey the version(s) of <lb/>BFCP supported by the endpoint, using integer values. For a given <lb/>version, the attribute value representing the version MUST match the <lb/>&quot;Version&quot; field that would be presented in the BFCP COMMON-HEADER <lb/>[I-D.ietf-bfcpbis-rfc4582bis]. The BFCP version that will eventually <lb/>be used will be conveyed with a BFCP-level Hello/HelloAck. <lb/>Endpoints compliant with [RFC4583] might not always include the <lb/>&apos;bfcpver&apos; attribute in offers and answers. The attribute value, if <lb/>present, MUST be in accordance with the definition of the Version <lb/>field in [I-D.ietf-bfcpbis-rfc4582bis]. If the attribute is not <lb/>present, endpoints MUST assume a default value in accordance with <lb/>[I-D.ietf-bfcpbis-rfc4582bis]: when used over a reliable transport <lb/>the default attribute value is &quot;1&quot;, and when used over an unreliable <lb/>transport the default attribute value is &quot;2&quot;. The value is inferred <lb/>from the transport specified in the &apos;m&apos; line (Section 4) of the &apos;m&apos; <lb/>section associated with the stream. <lb/>The SDP Offer/Answer procedures for the &apos;bfcpver&apos; attribute are <lb/>defined in Section 10. <lb/>6. Multiplexing Considerations <lb/>[I-D.ietf-mmusic-sdp-bundle-negotiation] defines how multiplexing of <lb/>multiple media streams can be negotiated. This specification does <lb/>not define how BFCP streams can be multiplexed with other media <lb/>streams. Therefore, a BFCP stream MUST NOT be associated with a <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 11] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  BUNDLE group [I-D.ietf-mmusic-sdp-bundle-negotiation]. Note that <lb/>BFCP-controlled media streams might be multiplexed with other media <lb/>streams. <lb/>[I-D.ietf-mmusic-sdp-mux-attributes] defines the mux categories for <lb/>the SDP attributes defined in this specification, except for the <lb/>&apos;bfcpver&apos; attribute. Table 2 defines the mux category for the <lb/>&apos;bfcpver&apos; attribute: <lb/>+---------+-------------------------------------+-------+-----------+ <lb/>| Name <lb/>| Notes <lb/>| Level | Mux <lb/>| <lb/>| <lb/>| <lb/>| <lb/>| Category | <lb/>+---------+-------------------------------------+-------+-----------+ <lb/>| bfcpver | Needs further analysis in a <lb/>| M <lb/>| TBD <lb/>| <lb/>| <lb/>| separate specification <lb/>| <lb/>| <lb/>| <lb/>+---------+-------------------------------------+-------+-----------+ <lb/>Table 2: Multiplexing Attribute Analysis <lb/>7. BFCP Connection Management <lb/>BFCP streams can use TCP or UDP as the underlying transport. <lb/>Endpoints exchanging BFCP messages over UDP send the BFCP messages <lb/>towards the peer using the connection address and port provided in <lb/>the SDP &apos;c&apos; and &apos;m&apos; lines. TCP connection management is more <lb/>complicated and is described in the following Section. <lb/>Note: When using Interactive Connectivity Establishment (ICE) <lb/>[RFC8445], TCP/DTLS/BFCP, or UDP/TLS/BFCP, the straight-forward <lb/>procedures for connection management as UDP/BFCP described above <lb/>apply. TCP/TLS/BFCP follows the same procedures as TCP/BFCP and <lb/>is described below. <lb/>7.1. TCP Connection Management <lb/>The management of the TCP connection used to transport BFCP messages <lb/>is performed using the SDP &apos;setup&apos; and &apos;connection&apos; attributes <lb/>[RFC4145]. The &apos;setup&apos; attribute indicates which of the endpoints <lb/>initiates the TCP connection. The &apos;connection&apos; attribute handles TCP <lb/>connection re-establishment. <lb/>The BFCP specification [I-D.ietf-bfcpbis-rfc4582bis] describes a <lb/>number of situations when the TCP connection between a floor control <lb/>client and the floor control server needs to be re-established. <lb/>However, that specification does not describe the re-establishment <lb/>process because this process depends on how the connection was <lb/>established in the first place. Endpoints using the offer/answer <lb/>mechanism follow the following rules. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 12] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  When the existing TCP connection is closed and re-established <lb/>following the rules in [I-D.ietf-bfcpbis-rfc4582bis], the floor <lb/>control client MUST send an offer towards the floor control server in <lb/>order to re-establish the connection. If a TCP connection cannot <lb/>deliver a BFCP message and times out, the endpoint that attempted to <lb/>send the message (i.e., the one that detected the TCP timeout) MUST <lb/>send an offer in order to re-establish the TCP connection. <lb/>Endpoints that use the offer/answer mechanism to negotiate TCP <lb/>connections MUST support the &apos;setup&apos; and &apos;connection&apos; attributes. <lb/>8. TLS/DTLS Considerations <lb/>When DTLS is used with UDP, the generic procedures defined in <lb/>Section 5 of [I-D.ietf-mmusic-dtls-sdp] MUST be followed. <lb/>When TLS is used with TCP, once the underlying connection is <lb/>established, the answerer always acts as the TLS server. If the TCP <lb/>connection is lost, the active endpoint [RFC4583] is responsible for <lb/>re-establishing the TCP connection. Unless a new TLS connection is <lb/>negotiated, subsequent SDP offers and answers will not impact the <lb/>previously negotiated TLS roles. <lb/>Note: For TLS, it was decided to keep the original procedures in <lb/>[RFC4583] to determine which endpoint acts as the TLS server in <lb/>order to retain backwards compatibility. <lb/>9. ICE Considerations <lb/>Generic SDP offer/answer procedures for Interactive Connectivity <lb/>Establishment (ICE) are defined in [I-D.ietf-mmusic-ice-sip-sdp]. <lb/>When BFCP is used with UDP based ICE candidates [RFC8445] then the <lb/>procedures for UDP/TLS/BFCP are used. <lb/>When BFCP is used with TCP based ICE candidates [RFC6544] then the <lb/>procedures for TCP/DTLS/BFCP are used. <lb/>Based on the procedures defined in [I-D.ietf-mmusic-dtls-sdp], <lb/>endpoints treat all ICE candidate pairs associated with a BFCP stream <lb/>on top of a DTLS association as part of the same DTLS association. <lb/>Thus, there will only be one BFCP handshake and one DTLS handshake <lb/>even if there are multiple valid candidate pairs, and if BFCP media <lb/>is shifted between candidate pairs (including switching between UDP <lb/>to TCP candidate pairs) prior to nomination. If new candidates are <lb/>added, they will also be part of the same DTLS association. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 13] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  In order to maximize the likelihood of interoperability between the <lb/>endpoints, all ICE enabled BFCP-over-DTLS endpoints SHOULD implement <lb/>support for UDP/TLS/BFCP. <lb/>When an SDP offer or answer conveys multiple ICE candidates for a <lb/>BFCP stream, UDP based candidates SHOULD be included and the default <lb/>candidate SHOULD be chosen from one of those UDP candidates. If UDP <lb/>transport is used for the default candidate, then the &apos;m&apos; line proto <lb/>value MUST be &apos;UDP/TLS/BFCP&apos;. If TCP transport is used for the <lb/>default candidate, the &apos;m&apos; line proto value MUST be &apos;TCP/DTLS/BFCP&apos;. <lb/>Note: Usage of ICE with protocols other than UDP/TLS/BFCP and <lb/>TCP/DTLS/BFCP is outside of scope for this specification. <lb/>10. SDP Offer/Answer Procedures <lb/>This section defines the SDP offer/answer [RFC3264] procedures for <lb/>negotiating and establishing a BFCP stream. Generic procedures for <lb/>DTLS are defined in [I-D.ietf-mmusic-dtls-sdp]. Generic procedures <lb/>for TLS are defined in [RFC8122]. <lb/>This section only defines the BFCP-specific procedures. Unless <lb/>explicitly stated otherwise, the procedures apply to an &apos;m&apos; section <lb/>describing a BFCP stream. If an offer or answer contains multiple <lb/>&apos;m&apos; sections describing BFCP streams, the procedures are applied <lb/>independently to each stream. <lb/>Within this document, &apos;initial offer&apos; refers to the first offer, <lb/>within an SDP session (e.g. a SIP dialog when the Session Initiation <lb/>Protocol (SIP) [RFC3261] is used to carry SDP) in which the offerer <lb/>indicates that it wants to negotiate the establishment of a BFCP <lb/>stream. <lb/>If the &apos;m&apos; line &apos;proto&apos; value is &apos;TCP/TLS/BFCP&apos;, &apos;TCP/DTLS/BFCP&apos; or <lb/>&apos;UDP/TLS/BFCP&apos;, the offerer and answerer follow the generic <lb/>procedures defined in [RFC8122]. <lb/>If the &apos;m&apos; line proto value is &apos;TCP/BFCP&apos;, &apos;TCP/TLS/BFCP&apos;, &apos;TCP/DTLS/ <lb/>TCP&apos; or &apos;UDP/TLS/BFCP&apos;, the offerer and answerer use the SDP &apos;setup&apos; <lb/>attribute according to the procedures in [RFC4145]. <lb/>If the &apos;m&apos; line proto value is &apos;TCP/BFCP&apos;, &apos;TCP/TLS/BFCP&apos; or <lb/>&apos;TCP/DTLS/BFCP&apos;, the offerer and anwerer use the SDP &apos;connection&apos; <lb/>attribute according to the procedures in [RFC4145]. <lb/>Note: The use of source-specific SDP parameters [RFC5576] is not <lb/>defined for BFCP streams. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 14] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+
+                  10.1. Generating the Initial SDP Offer <lb/>When the offerer creates an initial offer, the offerer MUST include <lb/>an SDP &apos;floorctrl&apos; attribute (Section 5.1) and an SDP &apos;bfcpver&apos; <lb/>attribute (Section 5.5) in the &apos;m&apos; section. <lb/>In addition, if the offerer includes an SDP &apos;floorctrl&apos; attribute <lb/>with &apos;s-only&apos; or &apos;c-s&apos; attribute values in the offer, the offerer: <lb/>o MUST include an SDP &apos;confid&apos; attribute (Section 5.2) in the &apos;m&apos; <lb/>section; and <lb/>o MUST include an SDP &apos;userid&apos; attribute (Section 5.3) in the &apos;m&apos; <lb/>section; and <lb/>o MUST include an SDP &apos;floorid&apos; attribute (Section 5.4) in the &apos;m&apos; <lb/>section; and <lb/>o MUST include an SDP &apos;label&apos; attribute ([RFC4574]) with the &apos;m&apos; <lb/>section of each BFCP-controlled media stream. <lb/>Note: If the offerer includes an SDP &apos;floorctrl&apos; attribute with a <lb/>&apos;c-s&apos; attribute value, or both a &apos;c-only&apos; and a &apos;s-only&apos; attribute <lb/>value in the offer, the attribute values above will only be used <lb/>if it is determined (Section 5.1) that the offerer will act as <lb/>floor control server. <lb/>10.2. Generating the SDP Answer <lb/>When the answerer receives an offer that contains an &apos;m&apos; section <lb/>describing a BFCP stream, the answerer MUST check whether it supports <lb/>one or more of the BFCP versions supported by the offerer <lb/>(Section 5.5). If the answerer does not support any of the BFCP <lb/>versions, it MUST NOT accept the &apos;m&apos; section. Otherwise, if the <lb/>answerer accepts the &apos;m&apos; section, it: <lb/>o MUST insert a corresponding &apos;m&apos; section in the answer, with an <lb/>identical &apos;m&apos; line proto value [RFC3264]; and <lb/>o MUST include a &apos;bfcpver&apos; attribute in the &apos;m&apos; section. The <lb/>versions indicated by the answer MUST be the same or a subset of <lb/>the versions indicated by the offerer in the corresponding offer; <lb/>and <lb/>o MUST, if the offer contained an SDP &apos;floorctrl&apos; attribute, include <lb/>a &apos;floorctrl&apos; attribute in the &apos;m&apos; section. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 15] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  In addition, if the answerer includes an SDP &apos;floorctrl&apos; attribute <lb/>with an &apos;s-only&apos; attribute value in the answer, the answerer: <lb/>o MUST include an SDP &apos;confid&apos; attribute in the &apos;m&apos; section; and <lb/>o MUST include an SDP &apos;userid&apos; attribute in the &apos;m&apos; section; and <lb/>o MUST include an SDP &apos;floorid&apos; attribute in the &apos;m&apos; section; and <lb/>o MUST include an SDP &apos;label&apos; attribute in the &apos;m&apos; section of each <lb/>BFCP-controlled media stream. <lb/>Note: An offerer compliant with [RFC4583] might not include <lb/>&apos;floorctrl&apos; and &apos;bfcpver&apos; attributes in offers, in which cases the <lb/>default values apply. <lb/>Once the answerer has sent the answer, the answerer: <lb/>o MUST, if the answerer is the active endpoint, and if a TCP <lb/>connection associated with the &apos;m&apos; section is to be established <lb/>(or re-established), initiate the establishing of the TCP <lb/>connection; and <lb/>o MUST, if the answerer is the active endpoint, and if an TLS/DTLS <lb/>connection associated with the &apos;m&apos; section is to be established <lb/>(or re-established), initiate the establishing of the TLS/DTLS <lb/>connection (by sending a ClientHello message). <lb/>If the answerer does not accept the &apos;m&apos; section in the offer, it MUST <lb/>assign a zero port value to the &apos;m&apos; line of the corresponding &apos;m&apos; <lb/>section in the answer. In addition, the answerer MUST NOT establish <lb/>a TCP connection or a TLS/DTLS connection associated with the &apos;m&apos; <lb/>section. <lb/>10.3. Offerer Processing of the SDP Answer <lb/>When the offerer receives an answer that contains an &apos;m&apos; section with <lb/>a non-zero port value, describing a BFCP stream, the offerer: <lb/>o MUST, if the offerer is the active endpoint, and if a TCP <lb/>connection associated with the &apos;m&apos; section is to be established <lb/>(or re-established), initiate the establishing of the TCP <lb/>connection; and <lb/>o MUST, if the offerer is the active endpoint, and if an TLS/DTLS <lb/>connection associated with the &apos;m&apos; section is to be established <lb/>(or re-established), initiate the establishing of the TLS/DTLS <lb/>connection (by sending a ClientHello message). <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 16] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  Note: An answerer compliant with [RFC4583] might not include <lb/>&apos;floorctrl&apos; and &apos;bfcpver&apos; attributes in answers, in which cases the <lb/>default values apply. <lb/>If the &apos;m&apos; line in the answer contains a zero port value, or if the <lb/>offerer for some other reason does not accept the answer (e.g., if <lb/>the answerer only indicates support of BFCP versions not supported by <lb/>the offerer), the offerer MUST NOT establish a TCP connection or a <lb/>TLS/DTLS connection associated with the &apos;m&apos; section. <lb/>10.4. Modifying the Session <lb/>When an offerer sends an updated offer, in order to modify a <lb/>previously established BFCP stream, it follows the procedures in <lb/>Section 10.1, with the following exceptions: <lb/>o If the BFCP stream is carried on top of TCP, and if the offerer <lb/>does not want to re-establish an existing TCP connection, the <lb/>offerer MUST include an SDP &apos;connection&apos; attribute with a value of <lb/>&quot;existing&quot;, in the &apos;m&apos; section; and <lb/>o If the offerer wants to disable a previously established BFCP <lb/>stream, it MUST assign a zero port value to the &apos;m&apos; line <lb/>associated with the BFCP connection, following the procedures in <lb/>[RFC3264]. <lb/>11. Examples <lb/>For the purpose of brevity, the main portion of the session <lb/>description is omitted in the examples, which only show &apos;m&apos; sections <lb/>and their &apos;m&apos; lines and attributes. <lb/>The following is an example of an offer sent by a conference server <lb/>to a client. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 17] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  m=application 50000 TCP/TLS/BFCP * <lb/>a=setup:actpass <lb/>a=connection:new <lb/>a=fingerprint:sha-256 \ <lb/>19:E2:1C:3B:4B:9F:81:E6:B8:5C:F4:A5:A8:D8:73:04: \ <lb/>BB:05:2F:70:9F:04:A9:0E:05:E9:26:33:E8:70:88:A2 <lb/>a=floorctrl:c-only s-only <lb/>a=confid:4321 <lb/>a=userid:1234 <lb/>a=floorid:1 mstrm:10 <lb/>a=floorid:2 mstrm:11 <lb/>a=bfcpver:1 2 <lb/>m=audio 50002 RTP/AVP 0 <lb/>a=label:10 <lb/>m=video 50004 RTP/AVP 31 <lb/>a=label:11 <lb/>Note that due to RFC formatting conventions, this document splits SDP <lb/>across lines whose content would exceed 72 characters. A backslash <lb/>character marks where this line folding has taken place. This <lb/>backslash and its trailing CRLF and whitespace would not appear in <lb/>actual SDP content. <lb/>The following is the answer returned by the client. <lb/>m=application 9 TCP/TLS/BFCP * <lb/>a=setup:active <lb/>a=connection:new <lb/>a=fingerprint:sha-256 \ <lb/>6B:8B:F0:65:5F:78:E2:51:3B:AC:6F:F3:3F:46:1B:35: \ <lb/>DC:B8:5F:64:1A:24:C2:43:F0:A1:58:D0:A1:2C:19:08 <lb/>a=floorctrl:c-only <lb/>a=bfcpver:1 <lb/>m=audio 55000 RTP/AVP 0 <lb/>m=video 55002 RTP/AVP 31 <lb/>A similar example using unreliable transport and DTLS is shown below, <lb/>where the offer is sent from a client. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 18] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  m=application 50000 UDP/TLS/BFCP * <lb/>a=setup:actpass <lb/>a=dtls-id:abc3dl <lb/>a=fingerprint:sha-256 \ <lb/>19:E2:1C:3B:4B:9F:81:E6:B8:5C:F4:A5:A8:D8:73:04: \ <lb/>BB:05:2F:70:9F:04:A9:0E:05:E9:26:33:E8:70:88:A2 <lb/>a=floorctrl:c-only s-only <lb/>a=confid:4321 <lb/>a=userid:1234 <lb/>a=floorid:1 mstrm:10 <lb/>a=floorid:2 mstrm:11 <lb/>a=bfcpver:1 2 <lb/>m=audio 50002 RTP/AVP 0 <lb/>a=label:10 <lb/>m=video 50004 RTP/AVP 31 <lb/>a=label:11 <lb/>The following is the answer returned by the server. <lb/>m=application 55000 UDP/TLS/BFCP * <lb/>a=setup:active <lb/>a=dtls-id:abc3dl <lb/>a=fingerprint:sha-256 \ <lb/>6B:8B:F0:65:5F:78:E2:51:3B:AC:6F:F3:3F:46:1B:35: \ <lb/>DC:B8:5F:64:1A:24:C2:43:F0:A1:58:D0:A1:2C:19:08 <lb/>a=floorctrl:s-only <lb/>a=confid:4321 <lb/>a=userid:1234 <lb/>a=floorid:1 mstrm:10 <lb/>a=floorid:2 mstrm:11 <lb/>a=bfcpver:2 <lb/>m=audio 55002 RTP/AVP 0 <lb/>m=video 55004 RTP/AVP 31 <lb/>12. Security Considerations <lb/>The BFCP [I-D.ietf-bfcpbis-rfc4582bis], SDP [RFC4566], and offer/ <lb/>answer [RFC3264] specifications discuss security issues related to <lb/>BFCP, SDP, and offer/answer, respectively. In addition, [RFC4145] <lb/>and [RFC8122] discuss security issues related to the establishment of <lb/>TCP and TLS connections using an offer/answer model. Furthermore, <lb/>when using DTLS over UDP, the generic offer/answer considerations <lb/>defined in [I-D.ietf-mmusic-dtls-sdp] MUST be followed. <lb/>The usage of certain proto values in the SDP offer/answer negotiation <lb/>will result in a BFCP stream that is not protected by TLS or DTLS. <lb/>Operators will need to provide integrity protection and <lb/>confidentiality protection of the BFCP stream using other means. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 19] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  The generic security considerations associated with SDP attributes <lb/>are defined in [RFC3264]. While the attributes defined in this <lb/>specification do not reveal information about the content of <lb/>individual BFCP controlled media streams, they do reveal which media <lb/>streams will be BFCP controlled. <lb/>13. IANA Considerations <lb/>[Editorial note: The changes in Section 13.1 instruct the IANA to <lb/>register the three new values TCP/DTLS/BFCP, UDP/BFCP and UDP/TLS/ <lb/>BFCP for the SDP &apos;proto&apos; field. The new section Section 5.5 <lb/>registers a new SDP &quot;bfcpver&quot; attribute. The rest is unchanged <lb/>from [RFC4582].] <lb/>13.1. Registration of SDP &apos;proto&apos; Values <lb/>The IANA is requested to register the following values for the SDP <lb/>&apos;proto&apos; field under the Session Description Protocol (SDP) Parameters <lb/>registry: <lb/>+---------------+------------+ <lb/>| Value <lb/>| Reference | <lb/>+---------------+------------+ <lb/>| TCP/BFCP <lb/>| [RFC XXXX] | <lb/>| TCP/DTLS/BFCP | [RFC XXXX] | <lb/>| TCP/TLS/BFCP | [RFC XXXX] | <lb/>| UDP/BFCP <lb/>| [RFC XXXX] | <lb/>| UDP/TLS/BFCP | [RFC XXXX] | <lb/>+---------------+------------+ <lb/>Table 3: Values for the SDP &apos;proto&apos; field <lb/>13.2. Registration of the SDP &apos;floorctrl&apos; Attribute <lb/>This document defines the SDP attribute,&apos;floorctrl&apos;. The details of <lb/>the attribute are defined in Section 5.1. <lb/>13.3. Registration of the SDP &apos;confid&apos; Attribute <lb/>This document defines the SDP attribute,&apos;confid&apos;. The details of the <lb/>attribute are defined in Section 5.2. <lb/>13.4. Registration of the SDP &apos;userid&apos; Attribute <lb/>This document defines the SDP attribute,&apos;userid&apos;. The details of the <lb/>attribute are defined in Section 5.3. <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 20] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  13.5. Registration of the SDP &apos;floorid&apos; Attribute <lb/>This document defines the SDP attribute,&apos;floorid&apos;. The details of <lb/>the attribute are defined in Section 5.4. <lb/>13.6. Registration of the SDP &apos;bfcpver&apos; Attribute <lb/>This document defines the SDP attribute,&apos;bfcpver&apos;. The details of <lb/>the attribute are defined in Section 5.5. <lb/>14. Changes from RFC 4583 <lb/>Following is the list of technical changes and other fixes from <lb/>[RFC4583]. <lb/>Main purpose of this work was to add signaling support necessary to <lb/>support BFCP over unreliable transport, as described in <lb/>[I-D.ietf-bfcpbis-rfc4582bis], resulting in the following changes: <lb/>1. Fields in the &apos;m&apos; line (Section 4): <lb/>The section is re-written to remove reference to the exclusivity <lb/>of TCP as a transport for BFCP streams. The proto field values <lb/>TCP/DTLS/BFCP, UDP/BFCP and UDP/TLS/BFCP added. <lb/>2. Security Considerations (Section 12): <lb/>For the DTLS over UDP case, mention existing considerations and <lb/>requirements for the offer/answer exchange in <lb/>[I-D.ietf-mmusic-dtls-sdp]. <lb/>3. Registration of SDP &apos;proto&apos; Values (Section 13.1): <lb/>Register the three new values TCP/DTLS/BFCP, UDP/BFCP and <lb/>UDP/TLS/BFCP in the SDP parameters registry. <lb/>4. BFCP Version Negotiation (Section 5.5): <lb/>A new &apos;bfcpver&apos; SDP media-level attribute is added in order to <lb/>signal supported version number. <lb/>In addition to the changes associated with support of BFCP over <lb/>unreliable transport, the possibility for an endpoint to act as both <lb/>floor control client and floor control server at the same time has <lb/>been removed. An endpoint will now take the same role for all BFCP-<lb/>controlled streams associated with the BFCP stream. <lb/>Clarification and bug fixes: <lb/>1. Errata ID: 712 (Section 3 and Section 10): <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 21] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+                  Language clarification. Don&apos;t use terms like an SDP attribute is <lb/>&quot;used in an &apos;m&apos; line&quot;, instead make clear that the attribute is a <lb/>media-level attribute. <lb/>2. Fix typo in example (Section 11): <lb/>Do not use &apos;m-stream&apos; in the SDP example, use the correct &apos;mstrm&apos; <lb/>as specified in Section 11. Recommend interpreting &apos;m-stream&apos; if <lb/>it is received, since it is present in some implementations. <lb/>3. Assorted clarifications (Across the document): <lb/>Language clarifications as a result of reviews. Also, the <lb/>normative language where tightened where appropriate, i.e. <lb/>changed from SHOULD strength to MUST in a number of places. <lb/>
+            </body>
+
+            <div type="acknowledgement">15. Acknowledgements <lb/>Joerg Ott, Keith Drage, Alan Johnston, Eric Rescorla, Roni Even, and <lb/>Oscar Novo provided useful ideas for the original [RFC4583]. The <lb/>authors also acknowledge contributions to the revision of BFCP for <lb/>use over an unreliable transport from Geir Arne Sandbakken, Charles <lb/>Eckel, Alan Ford, Eoin McLeod and Mark Thompson. Useful and <lb/>important final reviews were done by Ali C. Begen, Mary Barnes and <lb/>Charles Eckel. In the final stages, Roman Shpount made a <lb/>considerable effort in adding proper ICE support and considerations. <lb/>
+            </div>
+
+            <listBibl>16. References <lb/>16.1. Normative References <lb/>[I-D.ietf-bfcpbis-rfc4582bis] <lb/>Camarillo, G., Drage, K., Kristensen, T., Ott, J., and C. <lb/>Eckel, &quot;The Binary Floor Control Protocol (BFCP)&quot;, draft-<lb/>ietf-bfcpbis-rfc4582bis-16 (work in progress), November <lb/>2015. <lb/>[I-D.ietf-mmusic-dtls-sdp] <lb/>Holmberg, C. and R. Shpount, &quot;Session Description Protocol <lb/>(SDP) Offer/Answer Considerations for Datagram Transport <lb/>Layer Security (DTLS) and Transport Layer Security (TLS)&quot;, <lb/>draft-ietf-mmusic-dtls-sdp-32 (work in progress), October <lb/>2017. <lb/>[I-D.ietf-mmusic-ice-sip-sdp] <lb/>Petit-Huguenin, M., Nandakumar, S., and A. Keranen, <lb/>&quot;Session Description Protocol (SDP) Offer/Answer <lb/>procedures for Interactive Connectivity Establishment <lb/>(ICE)&quot;, draft-ietf-mmusic-ice-sip-sdp-24 (work in <lb/>progress), November 2018. <lb/>
+            </listBibl>
+
+            <note place="footnote">
+                Camarillo, et al. <lb/>Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>[Page 22] <lb/></page>
+
+            <note place="headnote">
+                Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+            <listBibl>[I-D.ietf-mmusic-sdp-mux-attributes] <lb/>Nandakumar, S., &quot;A Framework for SDP Attributes when <lb/>Multiplexing&quot;, draft-ietf-mmusic-sdp-mux-attributes-17 <lb/>(work in progress), February 2018. <lb/>[RFC2119] Bradner, S., &quot;Key words for use in RFCs to Indicate <lb/>Requirement Levels&quot;, BCP 14, RFC 2119, <lb/>DOI 10.17487/RFC2119, March 1997, &lt;https://www.rfc-<lb/>editor.org/info/rfc2119&gt;. <lb/>[RFC3261] Rosenberg, J., Schulzrinne, H., Camarillo, G., Johnston, <lb/>A., Peterson, J., Sparks, R., Handley, M., and E. <lb/>Schooler, &quot;SIP: Session Initiation Protocol&quot;, RFC 3261, <lb/>DOI 10.17487/RFC3261, June 2002, &lt;https://www.rfc-<lb/>editor.org/info/rfc3261&gt;. <lb/>[RFC3264] Rosenberg, J. and H. Schulzrinne, &quot;An Offer/Answer Model <lb/>with Session Description Protocol (SDP)&quot;, RFC 3264, <lb/>DOI 10.17487/RFC3264, June 2002, &lt;https://www.rfc-<lb/>editor.org/info/rfc3264&gt;. <lb/>[RFC4145] Yon, D. and G. Camarillo, &quot;TCP-Based Media Transport in <lb/>the Session Description Protocol (SDP)&quot;, RFC 4145, <lb/>DOI 10.17487/RFC4145, September 2005, &lt;https://www.rfc-<lb/>editor.org/info/rfc4145&gt;. <lb/>[RFC4566] Handley, M., Jacobson, V., and C. Perkins, &quot;SDP: Session <lb/>Description Protocol&quot;, RFC 4566, DOI 10.17487/RFC4566, <lb/>July 2006, &lt;https://www.rfc-editor.org/info/rfc4566&gt;. <lb/>[RFC4571] Lazzaro, J., &quot;Framing Real-time Transport Protocol (RTP) <lb/>and RTP Control Protocol (RTCP) Packets over Connection-<lb/>Oriented Transport&quot;, RFC 4571, DOI 10.17487/RFC4571, July <lb/>2006, &lt;https://www.rfc-editor.org/info/rfc4571&gt;. <lb/>[RFC4574] Levin, O. and G. Camarillo, &quot;The Session Description <lb/>Protocol (SDP) Label Attribute&quot;, RFC 4574, <lb/>DOI 10.17487/RFC4574, August 2006, &lt;https://www.rfc-<lb/>editor.org/info/rfc4574&gt;. <lb/>[RFC4582] Camarillo, G., Ott, J., and K. Drage, &quot;The Binary Floor <lb/>Control Protocol (BFCP)&quot;, RFC 4582, DOI 10.17487/RFC4582, <lb/>November 2006, &lt;https://www.rfc-editor.org/info/rfc4582&gt;. <lb/>[RFC4583] Camarillo, G., &quot;Session Description Protocol (SDP) Format <lb/>for Binary Floor Control Protocol (BFCP) Streams&quot;, <lb/>RFC 4583, DOI 10.17487/RFC4583, November 2006, <lb/>&lt;https://www.rfc-editor.org/info/rfc4583&gt;. <lb/>
+            </listBibl>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 23] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+            <listBibl>[RFC5234] Crocker, D., Ed. and P. Overell, &quot;Augmented BNF for Syntax <lb/>Specifications: ABNF&quot;, STD 68, RFC 5234, <lb/>DOI 10.17487/RFC5234, January 2008, &lt;https://www.rfc-<lb/>editor.org/info/rfc5234&gt;. <lb/>[RFC6347] Rescorla, E. and N. Modadugu, &quot;Datagram Transport Layer <lb/>Security Version 1.2&quot;, RFC 6347, DOI 10.17487/RFC6347, <lb/>January 2012, &lt;https://www.rfc-editor.org/info/rfc6347&gt;. <lb/>[RFC6544] Rosenberg, J., Keranen, A., Lowekamp, B., and A. Roach, <lb/>&quot;TCP Candidates with Interactive Connectivity <lb/>Establishment (ICE)&quot;, RFC 6544, DOI 10.17487/RFC6544, <lb/>March 2012, &lt;https://www.rfc-editor.org/info/rfc6544&gt;. <lb/>[RFC8122] Lennox, J. and C. Holmberg, &quot;Connection-Oriented Media <lb/>Transport over the Transport Layer Security (TLS) Protocol <lb/>in the Session Description Protocol (SDP)&quot;, RFC 8122, <lb/>DOI 10.17487/RFC8122, March 2017, &lt;https://www.rfc-<lb/>editor.org/info/rfc8122&gt;. <lb/>[RFC8174] Leiba, B., &quot;Ambiguity of Uppercase vs Lowercase in RFC <lb/>2119 Key Words&quot;, BCP 14, RFC 8174, DOI 10.17487/RFC8174, <lb/>May 2017, &lt;https://www.rfc-editor.org/info/rfc8174&gt;. <lb/>[RFC8445] Keranen, A., Holmberg, C., and J. Rosenberg, &quot;Interactive <lb/>Connectivity Establishment (ICE): A Protocol for Network <lb/>Address Translator (NAT) Traversal&quot;, RFC 8445, <lb/>DOI 10.17487/RFC8445, July 2018, &lt;https://www.rfc-<lb/>editor.org/info/rfc8445&gt;. <lb/>16.2. Informational References <lb/>[I-D.ietf-mmusic-sdp-bundle-negotiation] <lb/>Holmberg, C., Alvestrand, H., and C. Jennings, <lb/>&quot;Negotiating Media Multiplexing Using the Session <lb/>Description Protocol (SDP)&quot;, draft-ietf-mmusic-sdp-bundle-<lb/>negotiation-53 (work in progress), September 2018. <lb/>[RFC5576] Lennox, J., Ott, J., and T. Schierl, &quot;Source-Specific <lb/>Media Attributes in the Session Description Protocol <lb/>(SDP)&quot;, RFC 5576, DOI 10.17487/RFC5576, June 2009, <lb/>&lt;https://www.rfc-editor.org/info/rfc5576&gt;. <lb/>
+            </listBibl>
+
+            Authors&apos; Addresses <lb/>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 24] <lb/>
+            </page>
+            
+            <note place="headnote">
+            Internet-Draft <lb/>BFCP <lb/>December 2018 <lb/>
+            </note>
+
+            <front>Gonzalo Camarillo <lb/>Ericsson <lb/>Hirsalantie 11 <lb/>FI-02420 Jorvas <lb/>Finland <lb/>Email: Gonzalo.Camarillo@ericsson.com <lb/>Tom Kristensen <lb/>Cisco <lb/>Philip Pedersens vei 1 <lb/>NO-1366 Lysaker <lb/>Norway <lb/>Email: tomkrist@cisco.com, tomkri@ifi.uio.no <lb/>Christer Holmberg <lb/>Ericsson <lb/>Hirsalantie 11 <lb/>Jorvas 02420 <lb/>Finland <lb/>Email: christer.holmberg@ericsson.com <lb/>
+            </front>
+
+            <note place="footnote">
+            Camarillo, et al. <lb/>
+
+            Expires June 11, 2019 <lb/>
+            </note>
+
+            <page>
+            [Page 25] <lb/>
+            </page>
+            
+
+    </text>
+</tei>

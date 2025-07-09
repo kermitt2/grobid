@@ -2,7 +2,7 @@
 
 ## Introduction
 
-For the following guidelines, it is expected that training data has been generated as explained [here](../Training-the-models-of-Grobid/#generation-of-training-data).
+For the following guidelines, it is expected that training data has been generated as explained [here](../Training-the-models-of-Grobid.md#generation-of-training-data).
 
 In Grobid, the document "header" corresponds to the bibliographical/metadata information sections about the document. This is typically all the information at the beginning of the article (often called the "front", title, authors, publication information, affiliations, abstrac, keywords, correspondence information, submission information, etc.), before the start of the document body (e.g. typically before the introduction section), but not only. Some of these elements can be located in the footnotes of the first page (e.g. affiliation of the authors), or at the end of the article (full list of authors, detailed affiliation and contact, how to cite, copyrights/licence and Open Access information). 
 

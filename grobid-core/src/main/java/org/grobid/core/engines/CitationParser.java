@@ -197,7 +197,7 @@ public class CitationParser extends AbstractParser {
                         LOGGER.error("An exception occured when processing author names of a citation.", e);
                     }
                     if (resCitation.getPublicationDate() != null) {
-                        List<Date> dates = parsers.getDateParser().processing(resCitation
+                        List<Date> dates = parsers.getDateParser().process(resCitation
                                 .getPublicationDate());
                         if (dates != null) {
                             Date bestDate = null;
@@ -502,9 +502,9 @@ public class CitationParser extends AbstractParser {
                 if (biblio.getTitle() == null)
                     biblio.setTitle(clusterContent);
                 else if (biblio.getTitle().length() >= clusterContent.length())
-                    biblio.setNote(clusterContent);
+                    biblio.setNoteOrConcatenateIfNotEmpty(clusterContent);
                 else {
-                    biblio.setNote(biblio.getTitle());
+                    biblio.setNoteOrConcatenateIfNotEmpty(biblio.getTitle());
                     biblio.setTitle(clusterContent);
                 }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_AUTHOR)) {
@@ -528,18 +528,18 @@ public class CitationParser extends AbstractParser {
                 if (biblio.getBookTitle() == null)
                     biblio.setBookTitle(clusterContent);
                 else if (biblio.getBookTitle().length() >= clusterContent.length())
-                    biblio.setNote(clusterContent);
+                    biblio.setNoteOrConcatenateIfNotEmpty(clusterContent);
                 else {
-                    biblio.setNote(biblio.getBookTitle());
+                    biblio.setNoteOrConcatenateIfNotEmpty(biblio.getBookTitle());
                     biblio.setBookTitle(clusterContent);
                 }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_SERIES)) {
                 if (biblio.getSerieTitle() == null)
                     biblio.setSerieTitle(clusterContent);
-                else if (biblio.getSerieTitle().length() >= clusterContent.length())
-                    biblio.setNote(clusterContent);
-                else {
-                    biblio.setNote(biblio.getSerieTitle());
+                else if (biblio.getSerieTitle().length() >= clusterContent.length()) {
+                    biblio.setNoteOrConcatenateIfNotEmpty(clusterContent);
+                } else {
+                    biblio.setNoteOrConcatenateIfNotEmpty(biblio.getSerieTitle());
                     biblio.setSerieTitle(clusterContent);
                 }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_PAGES)) {
@@ -553,32 +553,32 @@ public class CitationParser extends AbstractParser {
                 else
                     biblio.setCollaboration(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_JOURNAL)) {
-                if (biblio.getJournal() == null)
+                if (biblio.getJournal() == null) {
                     biblio.setJournal(clusterContent);
-                else if (biblio.getJournal().length() >= clusterContent.length())
-                    biblio.setNote(clusterContent);
-                else {
-                    biblio.setNote(biblio.getJournal());
+                }else if (biblio.getJournal().length() >= clusterContent.length()) {
+                    biblio.setNoteOrConcatenateIfNotEmpty(clusterContent);
+                } else {
+                    biblio.setNoteOrConcatenateIfNotEmpty(biblio.getJournal());
                     biblio.setJournal(clusterContent);
                 }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_VOLUME)) {
-                if (biblio.getVolumeBlock() == null)
-                   biblio.setVolumeBlock(clusterContent, volumePostProcess);
+                if (biblio.getVolumeBlock() == null) {
+                    biblio.setVolumeBlock(clusterContent, volumePostProcess);
+                }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_ISSUE)) {
-                if (biblio.getIssue() == null)
+                if (biblio.getIssue() == null) {
                     biblio.setIssue(clusterContent);
+                }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_EDITOR)) {
                 biblio.setEditors(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_INSTITUTION)) {
-                if (biblio.getInstitution() != null)
+                if (biblio.getInstitution() != null) {
                     biblio.setInstitution(biblio.getInstitution() + " ; " + clusterContent);
-                else
-                   biblio.setInstitution(clusterContent);
+                } else {
+                    biblio.setInstitution(clusterContent);
+                }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_NOTE)) {             
-                if (biblio.getNote() != null)
-                    biblio.setNote(biblio.getNote()+ ". " + clusterContent);
-                else    
-                   biblio.setNote(clusterContent);
+                biblio.setNoteOrConcatenateIfNotEmpty(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.CITATION_PUBNUM)) {
                 String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
                 biblio.setPubnum(clusterNonDehypenizedContent);

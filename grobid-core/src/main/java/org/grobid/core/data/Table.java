@@ -1,40 +1,39 @@
 package org.grobid.core.data;
 
-import org.grobid.core.GrobidModels;
+import nu.xom.Attribute;
+import nu.xom.Element;
+import nu.xom.Node;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.data.table.Cell;
 import org.grobid.core.data.table.Line;
 import org.grobid.core.data.table.LinePart;
 import org.grobid.core.data.table.Row;
-import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.TEIFormatter;
+import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
+import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.counters.TableRejectionCounters;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.utilities.BoundingBoxCalculator;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.counters.CntManager;
-import org.grobid.core.engines.counters.TableRejectionCounters;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.engines.label.TaggingLabels;
-import org.grobid.core.engines.label.TaggingLabel;
-import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
+import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.counters.CntManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import nu.xom.Attribute;
-import nu.xom.Element;
-import nu.xom.Node;
-import nu.xom.Text;
-
-import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
-import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
-import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
+import static org.grobid.core.document.TEIFormatter.generateDiscardedTextNote;
+import static org.grobid.core.document.TEIFormatter.isNewParagraph;
+import static org.grobid.core.document.xml.XmlBuilderUtils.*;
 
 /**
  * Class for representing a table.
@@ -43,11 +42,14 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 public class Table extends Figure {
 	private List<LayoutToken> contentTokens = new ArrayList<>();
 	private List<LayoutToken> fullDescriptionTokens = new ArrayList<>();
+
 	private boolean goodTable = true;
 
     private StringBuilder note = null;
     private List<LayoutToken> noteLayoutTokens = null;
     private String labeledNote = null;
+
+    private List<List<LayoutToken>> discardedPiecesTokens = new ArrayList<>();
 
 
 	public void setGoodTable(boolean goodTable) {
@@ -62,9 +64,14 @@ public class Table extends Figure {
         note = new StringBuilder();
     }
 
+    public boolean isCompleteForTEI() {
+        return (StringUtils.isNotEmpty(header) && StringUtils.isNotEmpty(caption));
+    }
+
 	@Override
     public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter, List<MarkerType> markerTypes) {
-		if (StringUtils.isEmpty(header) && StringUtils.isEmpty(caption)) {
+		if (!isCompleteForTEI()) {
+            LOGGER.warn("Found a table that is badly formatted but it should have been spotted before. We ignore it now.");
 			return null;
 		}
 
@@ -94,7 +101,7 @@ public class Table extends Figure {
 		}*/
 
         Element desc = null;
-        if (caption != null) {
+        if (StringUtils.isNotBlank(caption)) {
             // if the segment has been parsed with the full text model we further extract the clusters
             // to get the bibliographical references
 
@@ -104,17 +111,18 @@ public class Table extends Figure {
                 addXmlId(desc, "_" + divID);
             }
 
-            if ( (labeledCaption != null) && (labeledCaption.length() > 0) ) {
+            if (StringUtils.isNotBlank(labeledCaption)) {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledCaption, captionLayoutTokens);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();                
+
+                MarkerType citationMarkerType = null;
+                if (CollectionUtils.isNotEmpty(markerTypes)) {
+                    citationMarkerType = markerTypes.get(0);
+                }
+
                 for (TaggingTokenCluster cluster : clusters) {
                     if (cluster == null) {
                         continue;
-                    }
-
-                    MarkerType citationMarkerType = null;
-                    if (markerTypes != null && markerTypes.size()>0) {
-                        citationMarkerType = markerTypes.get(0);
                     }
 
                     TaggingLabel clusterLabel = cluster.getTaggingLabel();
@@ -140,7 +148,7 @@ public class Table extends Figure {
                         desc.appendChild(textNode(clusterContent));
                     }
 
-                    if (desc != null && config.isWithSentenceSegmentation()) {
+                    if (StringUtils.isNotBlank(desc.getValue()) && config.isWithSentenceSegmentation()) {
                         formatter.segmentIntoSentences(desc, this.captionLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
 
                         // we need a sentence segmentation of the table caption, for that we need to introduce 
@@ -169,7 +177,7 @@ public class Table extends Figure {
 		}
 
         Element noteNode = null;
-        if (note != null && note.toString().trim().length()>0) {
+        if (StringUtils.isNotBlank(note)) {
 
             noteNode = XmlBuilderUtils.teiElement("note");
             if (config.isGenerateTeiIds()) {
@@ -177,7 +185,8 @@ public class Table extends Figure {
                 addXmlId(noteNode, "_" + divID);
             }
 
-            if ( (labeledNote != null) && (labeledNote.length() > 0) ) {
+            if (StringUtils.isNotBlank(labeledNote)) {
+                Element p = teiElement("p");
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledNote, noteLayoutTokens);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();                
                 for (TaggingTokenCluster cluster : clusters) {
@@ -186,7 +195,7 @@ public class Table extends Figure {
                     }
 
                     MarkerType citationMarkerType = null;
-                    if (markerTypes != null && markerTypes.size()>0) {
+                    if (CollectionUtils.isNotEmpty(markerTypes)) {
                         citationMarkerType = markerTypes.get(0);
                     }
 
@@ -203,33 +212,38 @@ public class Table extends Figure {
                                     citationMarkerType);
                             if (refNodes != null) {
                                 for (Node n : refNodes) {
-                                    noteNode.appendChild(n);
+                                    p.appendChild(n);
                                 }
                             }
                         } catch(Exception e) {
                             LOGGER.warn("Problem when serializing TEI fragment for table note", e);
                         }
                     } else {
-                        noteNode.appendChild(textNode(clusterContent));
-                    }
-
-                    if (noteNode != null && config.isWithSentenceSegmentation()) {
-                        // we need a sentence segmentation of the figure caption
-                        formatter.segmentIntoSentences(noteNode, this.noteLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
-                    }
-
-                    // enclose note content in a <p> element 
-                    if (noteNode != null) {
-                        noteNode.setLocalName("p");
-
-                        Element tabNote = XmlBuilderUtils.teiElement("note");                
-                        tabNote.appendChild(noteNode);
-
-                        noteNode = tabNote;
+                        if (p.getChildCount() > 0 && isNewParagraph(clusterLabel, p)) {
+                            noteNode.appendChild(p);
+                            p = teiElement("p");
+                        }
+                        p.appendChild(textNode(clusterContent));
                     }
                 }
+                if (p.getChildCount() > 0) {
+                    noteNode.appendChild(p);
+                }
+                if (config.isWithSentenceSegmentation()) {
+                    // we need a sentence segmentation of the figure caption
+                    formatter.segmentIntoSentences(p, this.noteLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
+                }
             } else {
-                noteNode = XmlBuilderUtils.teiElement("note", LayoutTokensUtil.normalizeText(note.toString()).trim());
+                Element p = teiElement("p");
+                p.appendChild(LayoutTokensUtil.normalizeText(note.toString()).trim());
+
+                if (config.isWithSentenceSegmentation()) {
+                    // we need a sentence segmentation of the figure caption
+                    formatter.segmentIntoSentences(p, this.noteLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
+                }
+
+                noteNode = XmlBuilderUtils.teiElement("note");
+                noteNode.appendChild(p);
             }
 
             String coords = null;
@@ -248,8 +262,17 @@ public class Table extends Figure {
     		tableElement.appendChild(desc);
 		tableElement.appendChild(contentEl);
 
-        if (noteNode != null)
+        if (noteNode != null) {
             tableElement.appendChild(noteNode);
+        }
+
+        if (config.isIncludeDiscardedText() && CollectionUtils.isNotEmpty(discardedPiecesTokens)) {
+            for (List<LayoutToken> discardedPieceTokens : discardedPiecesTokens) {
+                tableElement.appendChild(
+                    generateDiscardedTextNote(discardedPieceTokens, doc, formatter, config)
+                );
+            }
+        }
 
 		return tableElement.toXML();
     }
@@ -346,9 +369,14 @@ public class Table extends Figure {
         return this.labeledNote;
     }
 
-	private boolean validateTable() {
+    /** Check if the table:
+     * - has label, header and content
+     * - header starts with "tab"
+     * - label can be parsed
+     */
+	public boolean validateTable() {
 		CntManager cnt = Engine.getCntManager();
-		if (StringUtils.isEmpty(label) || StringUtils.isEmpty(header) || StringUtils.isEmpty(content)) {
+		if (StringUtils.isAnyBlank(label, header, content)) {
 			cnt.i(TableRejectionCounters.EMPTY_LABEL_OR_HEADER_OR_CONTENT);
 			return false;
 		}
@@ -359,7 +387,8 @@ public class Table extends Figure {
 			cnt.i(TableRejectionCounters.CANNOT_PARSE_LABEL_TO_INT);
 			return false;
 		}
-		if (!getHeader().toLowerCase().startsWith("table")) {
+        // tab covers: table, tabelle, tableu, tabella, etc.
+		if (!StringUtils.startsWithIgnoreCase(getHeader(), "tab")) {
 			cnt.i(TableRejectionCounters.HEADER_NOT_STARTS_WITH_TABLE_WORD);
 			return false;
 		}
@@ -422,5 +451,17 @@ public class Table extends Figure {
 
     public String getTeiId() {
         return "tab_" + this.id;
+    }
+
+    public List<List<LayoutToken>> getDiscardedPiecesTokens() {
+        return discardedPiecesTokens;
+    }
+
+    public void setDiscardedPiecesTokens(List<List<LayoutToken>> discardedPiecesTokens) {
+        this.discardedPiecesTokens = discardedPiecesTokens;
+    }
+
+    public void addDiscardedPieceTokens(List<LayoutToken> pieceToken) {
+        this.discardedPiecesTokens.add(pieceToken);
     }
 }

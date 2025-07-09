@@ -2,11 +2,15 @@ package org.grobid.core.engines;
 
 import org.grobid.core.engines.entities.ChemicalParser;
 import org.grobid.core.engines.patent.ReferenceExtractor;
+import org.grobid.core.GrobidModels.Flavor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.Closeable;
 import java.io.IOException;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.EnumMap;
 
 public class EngineParsers implements Closeable {
     public static final Logger LOGGER = LoggerFactory.getLogger(EngineParsers.class);
@@ -14,12 +18,16 @@ public class EngineParsers implements Closeable {
     private AuthorParser authorParser = null;
     private AffiliationAddressParser affiliationAddressParser = null;
     private HeaderParser headerParser = null;
+    private Map<Flavor,HeaderParser> headerParsers = null;
     private DateParser dateParser = null;
     private CitationParser citationParser = null;
     private FullTextParser fullTextParser = null;
+    private FullTextBlankParser fullTextBlankParser = null;
     private ReferenceExtractor referenceExtractor = null;
     private ChemicalParser chemicalParser = null;
     private Segmentation segmentationParser = null;
+    private Map<Flavor,Segmentation> segmentationParsers = null;
+    private Map<Flavor,FullTextParser> fullTextParsers = null;
     private ReferenceSegmenterParser referenceSegmenterParser = null;
     private FigureParser figureParser = null;
     private TableParser tableParser = null;
@@ -49,14 +57,30 @@ public class EngineParsers implements Closeable {
     }
 
     public HeaderParser getHeaderParser() {
-        if (headerParser == null) {
-            synchronized (this) {
-                if (headerParser == null) {
-                    headerParser = new HeaderParser(this);
+        return getHeaderParser(null);
+    }
+
+    public HeaderParser getHeaderParser(Flavor flavor) {
+        if (flavor == null) {
+            if (headerParser == null) {
+                synchronized (this) {
+                    if (headerParser == null) {
+                        headerParser = new HeaderParser(this);
+                    }
                 }
             }
+            return headerParser;
+        } else {
+            synchronized (this) {
+                if (headerParsers == null || headerParsers.get(flavor) == null) {
+                    HeaderParser localHeaderParser = new HeaderParser(this, flavor);
+                    if (headerParsers == null)
+                        headerParsers = new EnumMap<>(Flavor.class);
+                    headerParsers.put(flavor, localHeaderParser);
+                }
+            }
+            return headerParsers.get(flavor);
         }
-        return headerParser;
     }
 
     public DateParser getDateParser() {
@@ -82,6 +106,30 @@ public class EngineParsers implements Closeable {
         return citationParser;
     }
 
+
+    public FullTextParser getFullTextParser(Flavor flavor) {
+        if (flavor == null) {
+            if (fullTextParser == null) {
+                synchronized (this) {
+                    if (fullTextParser == null) {
+                        fullTextParser = new FullTextParser(this);
+                    }
+                }
+            }
+            return fullTextParser;
+        } {
+            synchronized (this) {
+                if (fullTextParsers == null || fullTextParsers.get(flavor) == null) {
+                    FullTextParser localFulltextParser = new FullTextParser(this, flavor);
+                    if (fullTextParsers == null)
+                        fullTextParsers = new EnumMap<>(Flavor.class);
+                    fullTextParsers.put(flavor, localFulltextParser);
+                }
+            }
+            return fullTextParsers.get(flavor);
+        }
+    }
+
     public FullTextParser getFullTextParser() {
         if (fullTextParser == null) {
             synchronized (this) {
@@ -94,15 +142,43 @@ public class EngineParsers implements Closeable {
         return fullTextParser;
     }
 
-    public Segmentation getSegmentationParser() {
-        if (segmentationParser == null) {
+    public FullTextBlankParser getFullTextBlankParser() {
+        if (fullTextBlankParser == null) {
             synchronized (this) {
-                if (segmentationParser == null) {
-                    segmentationParser = new Segmentation();
+                if (fullTextBlankParser == null) {
+                    fullTextBlankParser = new FullTextBlankParser(this);
                 }
             }
         }
-        return segmentationParser;
+
+        return fullTextBlankParser;
+    }
+
+    public Segmentation getSegmentationParser() {
+        return getSegmentationParser(null);
+    }
+
+    public Segmentation getSegmentationParser(Flavor flavor) {
+        if (flavor == null) {
+            if (segmentationParser == null) {
+                synchronized (this) {
+                    if (segmentationParser == null) {
+                        segmentationParser = new Segmentation();
+                    }
+                }
+            }
+            return segmentationParser;
+        } {
+            synchronized (this) {
+                if (segmentationParsers == null || segmentationParsers.get(flavor) == null) {
+                    Segmentation localSegmentationParser = new Segmentation(flavor);
+                    if (segmentationParsers == null)
+                        segmentationParsers = new EnumMap<>(Flavor.class);
+                    segmentationParsers.put(flavor, localSegmentationParser);
+                }
+            }
+            return segmentationParsers.get(flavor);
+        }
     }
 
     public ReferenceExtractor getReferenceExtractor() {

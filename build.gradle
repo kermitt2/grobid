@@ -5,13 +5,14 @@ buildscript {
         maven {
             url 'https://plugins.gradle.org/m2/'
         }
+        gradlePluginPortal()
     }
     dependencies {
         classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.12.0'
         classpath "gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0"
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21"
-        classpath group: 'net.researchgate', name: 'gradle-release', version: '3.0.2'
+        classpath "net.researchgate:gradle-release:3.0.2"
     }
 }
 
@@ -23,10 +24,73 @@ repositories {
     }
 }
 
+def getJavaLibraryPath = {
+    def jepLocalLibraries = ""
+    if (Os.isFamily(Os.FAMILY_MAC)) {
+        if (Os.OS_ARCH.equals("aarch64")) {
+            jepLocalLibraries = "${file("./grobid-home/lib/mac_arm-64").absolutePath}"
+        } else {
+            jepLocalLibraries = "${file("./grobid-home/lib/mac-64").absolutePath}"
+        }
+    } else if (Os.isFamily(Os.FAMILY_UNIX)) {
+        jepLocalLibraries = "${rootProject.rootDir.getAbsolutePath()}/grobid-home/lib/lin-64/jep:" +
+            "${rootProject.rootDir.getAbsolutePath()}/grobid-home/lib/lin-64"
+    } else {
+        throw new RuntimeException("Unsupported platform!")
+    }
+
+    def javaLibraryPath = "${System.getProperty('java.library.path')}:${jepLocalLibraries}"
+
+    def envPrefix = ""
+    if (System.env.CONDA_PREFIX) {
+        envPrefix = "${System.env.CONDA_PREFIX}"
+    } else if (System.env.VIRTUAL_ENV) {
+        envPrefix = "${System.env.VIRTUAL_ENV}"
+    }
+
+    if (envPrefix) {
+        def envLibs = "${envPrefix}/lib"
+        def pythonDirectory = file(envLibs).listFiles({ it.toString().contains("/lib/python") } as FileFilter)?.first()
+        def pythonVersion = (pythonDirectory =~ /python([0-9]\.[0-9]+)/)[0][1]
+
+        javaLibraryPath += ":${envLibs}:${envLibs}/python${pythonVersion}/site-packages/jep"
+    }
+    return javaLibraryPath
+}
+
 apply plugin: 'jacoco'
 
 jacoco {
     toolVersion = '0.8.8'
+}
+
+
+def getGitRevision() {
+    def gitRevision = "unknown"
+    try {
+        def stdout = new ByteArrayOutputStream()
+        println("Checking git under ${rootProject.rootDir}")
+        exec {
+            workingDir rootProject.rootDir
+            commandLine 'git', 'describe', '--tags', '--always', '--first-parent'
+            standardOutput = stdout
+        }
+        gitRevision = stdout.toString().trim()
+        println "Current Git revision: ${gitRevision}"
+    } catch (Exception e) {
+        println "Could not get Git revision: ${e}"
+    }
+    return gitRevision
+}
+
+project.ext.gitRevision = getGitRevision()
+
+// Create a task to expose the revision for other tasks
+tasks.register('collectGitRevision') {
+    project.ext.gitRevision = getGitRevision()
+    doLast {
+        println "Git revision: ${project.ext.gitRevision}"
+    }
 }
 
 allprojects {
@@ -45,6 +109,7 @@ allprojects {
         options.compilerArgs << '-parameters'
     }
 }
+
 
 subprojects {
     apply plugin: 'java'
@@ -73,18 +138,6 @@ subprojects {
         }
     }
 
-//    kotlin {
-//        jvmToolchain(11)
-//    }
-
-//    java {
-//        toolchain {
-//            languageVersion.set(JavaLanguageVersion.of(11))
-//            vendor.set(JvmVendorSpec.ADOPTIUM)
-//
-//        }
-//    }
-
     repositories {
         mavenCentral()
         maven {
@@ -104,7 +157,7 @@ subprojects {
         // to avoid missing dependencies from the projects that include grobid-core (see 'jar' task in grobid-core)
         localLibs = ['crfpp-1.0.2.jar',
                      'langdetect-1.1-20120112.jar',
-                     'wipo-analysers-0.0.2.jar',
+                     'grobid-lucene-analysers-0.0.1.jar',
                      'imageio-pnm-1.0.jar',
                      'wapiti-1.5.0.jar']
     }
@@ -132,7 +185,7 @@ subprojects {
         implementation "com.cybozu.labs:langdetect:1.1-20120112"
         implementation "com.rockymadden.stringmetric:stringmetric-core_2.11:0.27.4"
         implementation "commons-pool:commons-pool:1.6"
-        implementation "commons-io:commons-io:2.5"
+        implementation "commons-io:commons-io:2.14.0"
         implementation "org.apache.commons:commons-lang3:3.6"
         implementation "org.apache.commons:commons-collections4:4.1"
         implementation 'org.apache.commons:commons-text:1.11.0'
@@ -147,7 +200,7 @@ subprojects {
         implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.3"
     }
 
-    task sourceJar(type: Jar) {
+    tasks.register('sourceJar', Jar) {
         description = 'A jar that contains source code'
         archiveClassifier = 'sources'
         from project.sourceSets.main.java
@@ -158,61 +211,22 @@ subprojects {
         archives jar
     }
 
-    //compileJava.dependsOn(changeVersionIfNeeded)
-
-//    uploadArchives {
-//        // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:
-//        /*
-//            mavenRepoUserName=maven_username
-//            mavenRepoPassword=super_secret
-//            mavenRepoReleasesUrl=https://nexus3.example.org/repository/maven-releases/
-//            mavenRepoSnapshotsUrl=https://nexus3.example.org/repository/maven-snapshots/
-//        */
-//        def user = project.hasProperty('mavenRepoUserName') ? project.findProperty('mavenRepoUserName') : ''
-//        def password = project.hasProperty('mavenRepoPassword') ? project.findProperty('mavenRepoPassword') : ''
-//        def rurl = project.hasProperty('mavenRepoReleasesUrl') ? project.findProperty('mavenRepoReleasesUrl') : ''
-//        def surl = project.hasProperty('mavenRepoSnapshotsUrl') ? project.findProperty('mavenRepoSnapshotsUrl') : ''
-//
-//        repositories.mavenDeployer {
-//            repository(url: rurl) {
-//                authentication(userName: user, password: password)
-//            }
-//            snapshotRepository(url: surl) {
-//                authentication(userName: user, password: password)
-//            }
-//
-//        }
-//    }
-
     test {
         useJUnitPlatform()
-        
+
         testLogging.showStandardStreams = true
         // enable for having separate test executor for different tests
         forkEvery = 1
-        maxHeapSize = "1024m"        
+        maxHeapSize = "1024m"
 
-        def libraries = ""
-        if (Os.isFamily(Os.FAMILY_MAC)) {
-            if (Os.OS_ARCH.equals("aarch64")) {
-                libraries = "${file("./grobid-home/lib/mac_arm-64").absolutePath}"
-            } else {
-                libraries = "${file("./grobid-home/lib/mac-64").absolutePath}"
-            }
-        } else if (Os.isFamily(Os.FAMILY_UNIX)) {            
-            def jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64/jep"
-            libraries = jepDir
-            jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64"
-            libraries += ":"+jepDir
-        } else {
-            throw new RuntimeException("Unsupported platform!")
-        }
+        def javaLibraryPath = getJavaLibraryPath()
 
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
-            jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED", 
-            "--add-opens", "java.base/java.io=ALL-UNNAMED", "--add-opens", "java.xml/jdk.xml.internal=ALL-UNNAMED"
+            jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED",
+                "--add-opens", "java.base/java.io=ALL-UNNAMED", "--add-opens", "java.xml/jdk.xml.internal=ALL-UNNAMED"
         }
-        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+        
+        systemProperty "java.library.path", "${javaLibraryPath}"
     }
 }
 
@@ -237,22 +251,22 @@ project("grobid-core") {
         }
 
         // Logs
-        implementation 'org.slf4j:slf4j-api:1.7.30'
-        implementation 'ch.qos.logback:logback-classic:1.2.3'
+        implementation 'org.slf4j:slf4j-api:1.7.36'
+        implementation 'ch.qos.logback:logback-classic:1.2.13'
 
-        implementation "org.apache.pdfbox:pdfbox:2.0.18"
+        implementation "org.apache.pdfbox:pdfbox:2.0.33"
 
         api "xerces:xercesImpl:2.12.0"
         api "net.arnx:jsonic:1.3.10"
         api "net.sf.saxon:Saxon-HE:9.6.0-9"
-        api "xom:xom:1.3.2"
+        api "xom:xom:1.3.9"
         api 'javax.xml.bind:jaxb-api:2.3.0'
 
         implementation "joda-time:joda-time:2.9.9"
         implementation "org.apache.lucene:lucene-analyzers-common:4.5.1"
-        implementation 'black.ninia:jep:4.0.2'
-        implementation 'org.apache.opennlp:opennlp-tools:1.9.1'
-        implementation group: 'org.jruby', name: 'jruby-complete', version: '9.2.13.0'
+        implementation 'black.ninia:jep:4.0.3'
+        implementation 'org.apache.opennlp:opennlp-tools:1.9.4'
+        implementation group: 'org.jruby', name: 'jruby-complete', version: '9.4.12.1'
 
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
     }
@@ -292,21 +306,25 @@ project("grobid-core") {
     }
 
     processResources {
-        filesMatching('grobid-version.txt') {
-            filter {
-                it.replace('project.version', project.property('version'))
-            }
+        filesMatching(["grobid-version.txt", "grobid-revision.txt"]) {
+            expand(
+                project_version: project.property('version') ?: "unknown",
+                project_revision: rootProject.ext.gitRevision
+            )
         }
     }
 
-    task install {
-        dependsOn publishToMavenLocal
-        dependsOn 'shadowJar'
-    }
+    tasks.register(
+        "install",
+        {
+            dependsOn publishToMavenLocal
+            dependsOn 'shadowJar'
+        }
+    )
 }
 
 project("grobid-home") {
-    task packageGrobidHome(type: Zip) {
+    tasks.register('packageGrobidHome', Zip) {
         zip64 true
         from('.') {
             include("config/*")
@@ -337,37 +355,16 @@ project(":grobid-service") {
 
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
 
+
     tasks.run {
-        def libraries = ""
-        if (Os.isFamily(Os.FAMILY_MAC)) {
-            if (Os.OS_ARCH.equals("aarch64")) {
-                libraries = "${file("../grobid-home/lib/mac_arm-64").absolutePath}"
-            } else {
-                libraries = "${file("../grobid-home/lib/mac-64").absolutePath}"
-            }
-        } else if (Os.isFamily(Os.FAMILY_UNIX)) {
-            libraries = "${file("../grobid-home/lib/lin-64/jep").absolutePath}:" +
-                "${file("../grobid-home/lib/lin-64").absolutePath}:"
-        } else  {
-            throw new RuntimeException("Unsupported platform!")
-        }
-        
+        def javaLibraryPath = getJavaLibraryPath()
+
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         }
         workingDir = rootProject.rootDir
-        def javaLibraryPath = "${System.getProperty('java.library.path')}:" + libraries
-//        if (System.env.CONDA_PREFIX) {
-//            def condaEnv = "${System.env.CONDA_PREFIX}/lib"
-//            def pythonDirectory = file(condaEnv).listFiles({ it.toString().contains("/lib/python") } as FileFilter)?.first()
-//            def pythonVersion = (pythonDirectory =~ /python([0-9]\.[0-9]+)/)[0][1]
-//
-//            javaLibraryPath = "${System.getProperty('java.library.path')}:" +
-//                libraries + ":" +
-//                "${System.env.CONDA_PREFIX}/lib:" +
-//                "${System.env.CONDA_PREFIX}/lib/python${pythonVersion}/site-packages/jep"
-//        }
-        systemProperty "java.library.path", javaLibraryPath
+
+        systemProperty "java.library.path", "${javaLibraryPath}"
     }
 
     tasks.distZip.enabled = true
@@ -380,25 +377,25 @@ project(":grobid-service") {
     distTar { duplicatesStrategy = DuplicatesStrategy.EXCLUDE }
 
     dependencies {
-        implementation project(':grobid-core') 
+        implementation project(':grobid-core')
         implementation project(':grobid-trainer')
 
         //Dropwizard
-        implementation 'ru.vyarus:dropwizard-guicey:7.0.0'
+        implementation 'ru.vyarus:dropwizard-guicey:7.0.2'
 
-        implementation 'io.dropwizard:dropwizard-bom:4.0.0'
-        implementation 'io.dropwizard:dropwizard-core:4.0.0'
-        implementation 'io.dropwizard:dropwizard-assets:4.0.0'
-        implementation 'io.dropwizard:dropwizard-testing:4.0.0'
-        implementation 'io.dropwizard.modules:dropwizard-testing-junit4:4.0.0'
-        implementation 'io.dropwizard:dropwizard-forms:4.0.0'
-        implementation 'io.dropwizard:dropwizard-client:4.0.0'
-        implementation 'io.dropwizard:dropwizard-auth:4.0.0'
-        implementation 'io.dropwizard.metrics:metrics-core:4.2.22'
-        implementation 'io.dropwizard.metrics:metrics-servlets:4.2.22'
-        implementation 'io.dropwizard:dropwizard-json-logging:4.0.0'
-        
-        implementation "org.apache.pdfbox:pdfbox:2.0.3"
+        implementation 'io.dropwizard:dropwizard-bom:4.0.13'
+        implementation 'io.dropwizard:dropwizard-core:4.0.13'
+        implementation 'io.dropwizard:dropwizard-assets:4.0.13'
+        implementation 'io.dropwizard:dropwizard-testing:4.0.13'
+        implementation 'io.dropwizard.modules:dropwizard-testing-junit4:4.0.13'
+        implementation 'io.dropwizard:dropwizard-forms:4.0.13'
+        implementation 'io.dropwizard:dropwizard-client:4.0.13'
+        implementation 'io.dropwizard:dropwizard-auth:4.0.13'
+        implementation 'io.dropwizard.metrics:metrics-core:4.2.30'
+        implementation 'io.dropwizard.metrics:metrics-servlets:4.2.30'
+        implementation 'io.dropwizard:dropwizard-json-logging:4.0.13'
+
+        implementation "org.apache.pdfbox:pdfbox:2.0.33"
         implementation "javax.activation:activation:1.1.1"
         implementation "io.prometheus:simpleclient_dropwizard:0.16.0"
         implementation "io.prometheus:simpleclient_servlet:0.16.0"
@@ -456,8 +453,8 @@ project(":grobid-trainer") {
         implementation "me.tongfei:progressbar:0.9.0"
 
         // logs
-        implementation 'org.slf4j:slf4j-api:1.7.30'
-        implementation 'ch.qos.logback:logback-classic:1.2.3'
+        implementation 'org.slf4j:slf4j-api:1.7.36'
+        implementation 'ch.qos.logback:logback-classic:1.2.13'
     }
 
     configurations {
@@ -500,44 +497,74 @@ project(":grobid-trainer") {
     }
 
     def trainerTasks = [
-        "train_name_header"           : "org.grobid.trainer.NameHeaderTrainer",
-        "train_name_citation"         : "org.grobid.trainer.NameCitationTrainer",
-        "train_affiliation_address"   : "org.grobid.trainer.AffiliationAddressTrainer",
-        "train_header"                : "org.grobid.trainer.HeaderTrainer",
-        "train_fulltext"              : "org.grobid.trainer.FulltextTrainer",
-        "train_shorttext"             : "org.grobid.trainer.ShorttextTrainer",
-        "train_figure"                : "org.grobid.trainer.FigureTrainer",
-        "train_table"                 : "org.grobid.trainer.TableTrainer",
-        "train_citation"              : "org.grobid.trainer.CitationTrainer",
-        "train_date"                  : "org.grobid.trainer.DateTrainer",
-        "train_segmentation"          : "org.grobid.trainer.SegmentationTrainer",
-        "train_reference_segmentation": "org.grobid.trainer.ReferenceSegmenterTrainer",
-        "train_ebook_model"           : "org.grobid.trainer.EbookTrainer",
-        "train_patent_citation"       : "org.grobid.trainer.PatentParserTrainer",
-        "train_funding_acknowledgement" : "org.grobid.trainer.FundingAcknowledgementTrainer"
+        "train_name_header"            : "org.grobid.trainer.NameHeaderTrainer",
+        "train_name_citation"          : "org.grobid.trainer.NameCitationTrainer",
+        "train_affiliation_address"    : "org.grobid.trainer.AffiliationAddressTrainer",
+        "train_shorttext"              : "org.grobid.trainer.ShorttextTrainer",
+        "train_figure"                 : "org.grobid.trainer.FigureTrainer",
+        "train_table"                  : "org.grobid.trainer.TableTrainer",
+        "train_citation"               : "org.grobid.trainer.CitationTrainer",
+        "train_date"                   : "org.grobid.trainer.DateTrainer",
+        "train_reference_segmentation" : "org.grobid.trainer.ReferenceSegmenterTrainer",
+        "train_ebook_model"            : "org.grobid.trainer.EbookTrainer",
+        "train_patent_citation"        : "org.grobid.trainer.PatentParserTrainer",
+        "train_funding_acknowledgement": "org.grobid.trainer.FundingAcknowledgementTrainer"
+    ]
+
+    def complexTrainerTasks = [
+        "train_header"                        : ["org.grobid.trainer.HeaderTrainer", ""],
+        "train_header_article_light"          : ["org.grobid.trainer.HeaderTrainer", "article/light"],
+        "train_header_article_light_ref"      : ["org.grobid.trainer.HeaderTrainer", "article/light-ref"],
+        "train_header_ietf"                   : ["org.grobid.trainer.HeaderTrainer", "sdo/ietf"],
+        "train_segmentation"                  : ["org.grobid.trainer.SegmentationTrainer", ""],
+        "train_segmentation_article_light"    : ["org.grobid.trainer.SegmentationTrainer", "article/light"],
+        "train_segmentation_article_light_ref": ["org.grobid.trainer.SegmentationTrainer", "article/light-ref"],
+        "train_segmentation_ietf"             : ["org.grobid.trainer.SegmentationTrainer", "sdo/ietf"],
+        "train_fulltext"                      : ["org.grobid.trainer.FulltextTrainer", ""],
+        "train_fulltext_article_light"        : ["org.grobid.trainer.FulltextTrainer", "article/light"],
+        "train_fulltext_article_light_ref"    : ["org.grobid.trainer.FulltextTrainer", "article/light-ref"],
     ]
 
     def libraries = ""
     if (Os.isFamily(Os.FAMILY_MAC)) {
         if (Os.OS_ARCH.equals("aarch64")) {
-            libraries = "${file("../grobid-home/lib/mac_arm-64").absolutePath}"    
+            libraries = "${file("../grobid-home/lib/mac_arm-64").absolutePath}"
         } else {
             libraries = "${file("../grobid-home/lib/mac-64").absolutePath}"
         }
     } else if (Os.isFamily(Os.FAMILY_UNIX)) {
         libraries = "${file("../grobid-home/lib/lin-64/jep").absolutePath}:" +
             "${file("../grobid-home/lib/lin-64").absolutePath}:"
-    } else  {
+    } else {
         throw new RuntimeException("Unsupported platform!")
     }
-    
+
     trainerTasks.each { taskName, mainClassName ->
         tasks.create(name: taskName, type: JavaExec, group: 'modeltraining') {
             main = mainClassName
             classpath = sourceSets.main.runtimeClasspath
-            if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+            def javaLibraryPath = getJavaLibraryPath()
+            if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
                 jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
-            systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+            } else {
+                jvmArgs '-Xmx3072m'
+            }
+            systemProperty "java.library.path", "${javaLibraryPath}"
+        }
+    }
+
+    complexTrainerTasks.each { taskName, mainClassNameAndArgs ->
+        tasks.create(name: taskName, type: JavaExec, group: 'modeltraining') {
+            main = mainClassNameAndArgs[0]
+            classpath = sourceSets.main.runtimeClasspath
+            def javaLibraryPath = getJavaLibraryPath()
+            if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+                jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+            } else {
+                jvmArgs '-Xmx3072m'
+            }
+            systemProperty "java.library.path", "${javaLibraryPath}"
+            args mainClassNameAndArgs[1]
         }
     }
 
@@ -555,49 +582,59 @@ project(":grobid-trainer") {
     task(jatsEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
-        args 'nlm', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
+        args 'nlm', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0'), getArg('flavor', '')
+        def javaLibraryPath = getJavaLibraryPath()
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+        systemProperty "java.library.path", "${System.getProperty('java.library.path')}:" + libraries
     }
 
     task(teiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
-        args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
-        if(JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+        args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0'), getArg('flavor', '')
+        def javaLibraryPath = getJavaLibraryPath()
+        
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+        systemProperty "java.library.path", "${javaLibraryPath}"
     }
 
     task(PrepareDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'data', getArg('p2t', '.')
-        if(JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+        def javaLibraryPath = getJavaLibraryPath()
+
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+
+        systemProperty "java.library.path", "${javaLibraryPath}"
     }
 
     task(EvaluateDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'eval', getArg('p2t', '.')
-        if(JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+
+        def javaLibraryPath = getJavaLibraryPath()
+
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+
+        systemProperty "java.library.path", "${javaLibraryPath}"
     }
 }
 

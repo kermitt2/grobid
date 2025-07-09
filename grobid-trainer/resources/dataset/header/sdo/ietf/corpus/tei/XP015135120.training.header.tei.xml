@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="XP015135120"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	LISP Working Group<lb/> A. Rodriguez-Natal<lb/>
+	<note type="doctype">Internet-Draft<lb/></note>
+
+	Cisco Systems<lb/> Intended status: Experimental<lb/> V. Ermagan<lb/> Expires: March 14, 2020<lb/> Google<lb/> J. Leong<lb/> F. Maino<lb/> Cisco Systems<lb/> A. Cabellos-Aparicio<lb/> Technical University of Catalonia<lb/> S. Barkai<lb/> Nexar Inc.<lb/> D. Farinacci<lb/> lispers.net<lb/> M. Boucadair<lb/> C. Jacquenet<lb/> Orange<lb/> S. Secci<lb/> Cnam<lb/>
+	<date>September 11, 2019<lb/></date>
+
+	<docTitle>
+	<titlePart>Publish/Subscribe Functionality for LISP<lb/></titlePart>
+	</docTitle>
+
+	<idno>draft-ietf-lisp-pubsub-04<lb/></idno>
+
+	<div type="abstract">Abstract<lb/> This document specifies an extension to the use of Map-Request to<lb/> enable Publish/Subscribe (PubSub) operation for LISP.<lb/></div>
+
+	<note type="other">Status of This Memo<lb/> This Internet-Draft is submitted in full conformance with the<lb/> provisions of BCP 78 and BCP 79.<lb/> Internet-Drafts are working documents of the Internet Engineering<lb/> Task Force (IETF). Note that other groups may also distribute<lb/> working documents as Internet-Drafts. The list of current Internet-<lb/>Drafts is at https://datatracker.ietf.org/drafts/current/.<lb/> Internet-Drafts are draft documents valid for a maximum of six months<lb/> and may be updated, replaced, or obsoleted by other documents at any<lb/> time. It is inappropriate to use Internet-Drafts as reference<lb/> material or to cite them other than as &quot;work in progress.&quot;<lb/> This Internet-Draft will expire on March 14, 2020.<lb/></note>
+
+	Rodriguez-Natal, et al. Expires March 14, 2020<lb/> [Page 1]<lb/>
+	<note type="doctype">Internet-Draft<lb/></note>
+
+	LISP-PubSub<lb/> September 2019<lb/> Copyright Notice<lb/>
+	<note type="copyright">Copyright (c) 2019 IETF Trust and the persons identified as the<lb/> document authors. All rights reserved.<lb/> This document is subject to BCP 78 and the IETF Trust&apos;s Legal<lb/> Provisions Relating to IETF Documents<lb/> (https://trustee.ietf.org/license-info) in effect on the date of<lb/> publication of this document. Please review these documents<lb/> carefully, as they describe your rights and restrictions with respect<lb/> to this document. Code Components extracted from this document must<lb/> include Simplified BSD License text as described in Section 4.e of<lb/> the Trust Legal Provisions and are provided without warranty as<lb/> described in the Simplified BSD License.<lb/></note>
+
+	<byline>
+	<docAuthor>Vina Ermagan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Google<lb/></affiliation>
+	</byline>
+
+	<address>USA<lb/></address>
+
+	<email>Email: ermagan@gmail.com<lb/></email>
+
+	<byline>
+	<docAuthor>Johnson Leong<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Cisco Systems<lb/></affiliation>
+	</byline>
+
+	<address>170 Tasman Drive<lb/> San Jose, CA<lb/> USA<lb/></address>
+
+	<email>Email: joleong@cisco.com<lb/></email>
+
+	<byline>
+	<docAuthor>Fabio Maino<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Cisco Systems<lb/></affiliation>
+	</byline>
+
+	<address>170 Tasman Drive<lb/> San Jose, CA<lb/> USA<lb/></address>
+
+	<email>Email: fmaino@cisco.com<lb/></email>
+
+	<byline>
+	<docAuthor>Albert Cabellos-</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Aparicio<lb/></affiliation>
+	</byline>
+
+	<address>Technical University of Catalonia<lb/> Barcelona<lb/> Spain<lb/></address>
+
+	<email>Email: acabello@ac.upc.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Sharon Barkai<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Nexar Inc.<lb/></affiliation>
+	</byline>
+
+	<email>Email: sharon.barkai@getnexar.com<lb/></email>
+
+	<byline>
+	<docAuthor>Dino Farinacci<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>lispers.net<lb/></affiliation>
+	</byline>
+
+	<address>San Jose, CA<lb/> USA<lb/></address>
+
+	<byline>
+	<docAuthor>Mohamed Boucadair<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Orange<lb/></affiliation>
+	</byline>
+
+	<address>Rennes 35000<lb/> France<lb/></address>
+
+	<email>Email: mohamed.boucadair@orange.com<lb/></email>
+
+	<byline>
+	<docAuthor>Christian Jacquenet<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Orange<lb/></affiliation>
+	</byline>
+
+	<address>Rennes 35000<lb/> France<lb/></address>
+
+	<email>Email: christian.jacquenet@orange.com<lb/></email>
+
+	<byline>
+	<docAuthor>Stefano Secci<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Cnam<lb/></affiliation>
+	</byline>
+
+	<address>France</address>
+
+		</front>
+	</text>
+</tei>

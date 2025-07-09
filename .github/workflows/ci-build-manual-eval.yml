@@ -1,0 +1,52 @@
+name: Build and push the Grobid end to end evaluation docker image
+
+on:
+  workflow_dispatch:
+    inputs:
+#      input_tag:
+#        type: string
+#        description: Tag of the docker image to evaluate
+#        required: true
+#        default: "latest-full"
+      custom_tag:
+        type: string
+        description: Docker image tag
+        required: true
+        default: "latest"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17.0.10+7'
+        distribution: 'temurin'
+        cache: 'gradle'
+    - name: Build with Gradle
+      run: ./gradlew build -x test
+
+  docker-build-full:
+    needs: [ build ]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create more disk space
+        run: sudo rm -rf /usr/share/dotnet && sudo rm -rf /opt/ghc && sudo rm -rf "/usr/local/share/boost" && sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      - uses: actions/checkout@v4
+      - name: Build and push
+        id: docker_build
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME_LFOPPIANO }}
+          password: ${{ secrets.DOCKERHUB_TOKEN_LFOPPIANO }}
+          image: lfoppiano/grobid-evaluation
+          registry: docker.io
+          pushImage: true
+          tags: latest, ${{ github.event.inputs.custom_tag}}
+          dockerfile: Dockerfile.evaluation
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}

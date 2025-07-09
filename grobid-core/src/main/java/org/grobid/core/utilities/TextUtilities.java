@@ -76,7 +76,9 @@ public class TextUtilities {
     static public final Pattern urlPattern0 = Pattern
         .compile("(?i)(https?|ftp)\\s?:\\s?//\\s?[-A-Z0-9+&@#/%?=~_()|!:,.;]*[-A-Z0-9+&@#/%=~_()|]");
     static public final Pattern urlPattern = Pattern
-        .compile("(?i)(https?|ftp)\\s{0,2}:\\s{0,2}\\/\\/\\s{0,2}[-A-Z0-9+&@#\\/%?=~_()|!:.;]*[-A-Z0-9+&@#\\/%=~_()]");
+        .compile("(?i)(https?|ftp)\\s{0,2}:\\s{0,2}//\\s{0,2}[-A-Z0-9+&@#/%?=~_()|!:.;]*[-A-Z0-9+&@#/%=~_()]");
+    static public final Pattern urlPattern1 = Pattern
+        .compile("(?i)(https?|ftp)\\s{0,2}:\\s{0,2}//\\s{0,2}[-A-Z0-9+&@#/%?=~_()|!:.;]*[-A-Z0-9+&@#/%=~_()]|www\\s{0,2}\\.\\s{0,2}[-A-Z0-9+&@#/%?=~_()|!:.;]*[-A-Z0-9+&@#/%=~_()]");
 
     // a regular expression for identifying email pattern in text
     // TODO: maybe find a better regex (better == more robust, not more "standard")
@@ -1210,13 +1212,9 @@ public class TextUtilities {
 
     public static boolean filterLine(String line) {
         boolean filter = false;
-        if ((line == null) || (line.length() == 0))
+        if (StringUtils.isEmpty(line)) {
             filter = true;
-        else if (line.contains("@IMAGE") || line.contains("@PAGE")) {
-            filter = true;
-        } else if (line.contains(".pbm") || line.contains(".ppm") ||
-            line.contains(".svg") || line.contains(".jpg") ||
-            line.contains(".png")) {
+        } else if (line.contains("@IMAGE") || line.contains("@PAGE")) {
             filter = true;
         }
         return filter;

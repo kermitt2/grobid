@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="XP015134703"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	TLS<lb/> Y. Nir<lb/>
+	<note type="doctype">Internet-Draft<lb/></note>
+
+	DellEMC<lb/> Intended status: Standards Track<lb/>
+	<date>August 12, 2019<lb/></date>
+
+	Expires: February 13, 2020<lb/> 
+
+	<docTitle>
+	<titlePart>A Flags Extension for TLS 1.3<lb/></titlePart>
+	</docTitle>
+
+	<idno>draft-ietf-tls-tlsflags-00<lb/></idno>
+
+	<div type="abstract">Abstract<lb/> A number of extensions are proposed in the TLS working group that<lb/> carry no interesting information except the 1-bit indication that a<lb/> certain optional feature is supported. Such extensions take 4 octets<lb/> each. This document defines a flags extension that can provide such<lb/> indications at an average marginal cost of 1 bit each. More<lb/> precisely, it provides as many flag extensions as needed at 4 + the<lb/> order of the last set bit divided by 8.<lb/></div>
+
+	<note type="other">Status of This Memo<lb/> This Internet-Draft is submitted in full conformance with the<lb/> provisions of BCP 78 and BCP 79.<lb/> Internet-Drafts are working documents of the Internet Engineering<lb/> Task Force (IETF). Note that other groups may also distribute<lb/> working documents as Internet-Drafts. The list of current Internet-<lb/>Drafts is at https://datatracker.ietf.org/drafts/current/.<lb/> Internet-Drafts are draft documents valid for a maximum of six months<lb/> and may be updated, replaced, or obsoleted by other documents at any<lb/> time. It is inappropriate to use Internet-Drafts as reference<lb/> material or to cite them other than as &quot;work in progress.&quot;<lb/> This Internet-Draft will expire on February 13, 2020.<lb/></note>
+
+	Copyright Notice<lb/>
+	<note type="copyright">Copyright (c) 2019 IETF Trust and the persons identified as the<lb/> document authors. All rights reserved.<lb/> This document is subject to BCP 78 and the IETF Trust&apos;s Legal<lb/> Provisions Relating to IETF Documents<lb/> (https://trustee.ietf.org/license-info) in effect on the date of<lb/> publication of this document. Please review these documents<lb/> carefully, as they describe your rights and restrictions with respect<lb/> to this document. Code Components extracted from this document must<lb/> include Simplified BSD License text as described in Section 4.e of<lb/></note>
+
+	<byline>
+	<docAuthor>Yoav Nir<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>DellEMC<lb/></affiliation>
+	</byline>
+
+	<address>9 Andrei Sakharov St<lb/> Haifa 3190500<lb/> Israel<lb/></address>
+
+	<email>Email: ynir.ietf@gmail.com</email>
+
+		</front>
+	</text>
+</tei>
