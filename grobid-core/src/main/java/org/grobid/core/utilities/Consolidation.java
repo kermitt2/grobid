@@ -509,7 +509,7 @@ public class Consolidation {
                                     || postValidation(theBiblio, oneRes)
                                 ) {
                                     oneRes.setLabeledTokens(theBiblio.getLabeledTokens());
-                                    oneRes.setSource(CONSOLIDATION_SOURCE_CONSOLIDATED);
+                                    oneRes.setStatus(CONSOLIDATION_SOURCE_CONSOLIDATED);
                                     // We set the consolidation here 
                                     results.put(getRank(), oneRes);
                                     if (cntManager != null) {

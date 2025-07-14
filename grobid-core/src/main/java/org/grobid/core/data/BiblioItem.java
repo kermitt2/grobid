@@ -383,7 +383,7 @@ public class BiblioItem {
     CopyrightsLicense copyrightsLicense = null;
 
     // Source (whether the data was consolidated)
-    private String source = CONSOLIDATION_SOURCE_EXTRACTED;
+    private String status = CONSOLIDATION_SOURCE_EXTRACTED;
 
     // All the tokens that are considered noise will be collected here
     private List<String> discardedPieces = new ArrayList<>();
@@ -2254,7 +2254,7 @@ public class BiblioItem {
             if (withCoords)
                 tei.append(TEIFormatter.getCoordsAttribute(coordinates, withCoords)).append(" ");
 
-            tei.append("source=\"" + getSource() + "\" ").append(" ");
+            tei.append("status=\"" + getStatus() + "\" ").append(" ");
 
             if (!StringUtils.isEmpty(language)) {
                 if (n == -1) {
@@ -4396,7 +4396,7 @@ public class BiblioItem {
                 bib.setFullAuthors(bibo.getFullAuthors());
             }
         }
-        bib.setSource(bibo.getSource());
+        bib.setStatus(bibo.getStatus());
     }
 
 	/**
@@ -4566,11 +4566,11 @@ public class BiblioItem {
         this.discardedPiecesTokens.add(pieceToken);
     }
 
-    public String getSource() {
-        return source;
+    public String getStatus() {
+        return status;
     }
 
-    public void setSource(String source) {
-        this.source = source;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
