@@ -32,7 +32,7 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.grobid.core.utilities.Consolidation.CONSOLIDATION_SOURCE_EXTRACTED;
+import static org.grobid.core.utilities.Consolidation.CONSOLIDATION_STATUS_EXTRACTED;
 
 /**
  * Class for representing and exchanging a bibliographical item.
@@ -383,7 +383,7 @@ public class BiblioItem {
     CopyrightsLicense copyrightsLicense = null;
 
     // Source (whether the data was consolidated)
-    private String status = CONSOLIDATION_SOURCE_EXTRACTED;
+    private String status = CONSOLIDATION_STATUS_EXTRACTED;
 
     // All the tokens that are considered noise will be collected here
     private List<String> discardedPieces = new ArrayList<>();

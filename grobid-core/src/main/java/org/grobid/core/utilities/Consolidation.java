@@ -37,8 +37,8 @@ public class Consolidation {
     private FunderDeserializer funderDeserializer = null;
     private CntManager cntManager = null;
 
-    public static String CONSOLIDATION_SOURCE_CONSOLIDATED = "consolidated";
-    public static String CONSOLIDATION_SOURCE_EXTRACTED = "extracted";
+    public static String CONSOLIDATION_STATUS_CONSOLIDATED = "consolidated";
+    public static String CONSOLIDATION_STATUS_EXTRACTED = "extracted";
 
 
     public enum GrobidConsolidationService {
@@ -509,7 +509,7 @@ public class Consolidation {
                                     || postValidation(theBiblio, oneRes)
                                 ) {
                                     oneRes.setLabeledTokens(theBiblio.getLabeledTokens());
-                                    oneRes.setStatus(CONSOLIDATION_SOURCE_CONSOLIDATED);
+                                    oneRes.setStatus(CONSOLIDATION_STATUS_CONSOLIDATED);
                                     // We set the consolidation here 
                                     results.put(getRank(), oneRes);
                                     if (cntManager != null) {
