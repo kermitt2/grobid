@@ -2,7 +2,7 @@
 
 ## Using Grobid from the cloud  
 
-The simpler way to play with Grobid is to use the [Grobid space](https://huggingface.co/spaces/lfoppiano/grobid) or [Grobid space mirror](https://huggingface.co/spaces/lfoppiano/grobid) where a light instance of Grobid is deployed.
+The simpler way to play with Grobid is to use the [Grobid space](https://huggingface.co/spaces/lfoppiano/grobid) or [Grobid space mirror](https://huggingface.co/spaces/lfoppiano/grobid2) where a light instance of Grobid is deployed.
 You can use it to process a PDF file, or to test the Grobid web service. 
 The space is free and does not require any authentication.
 
