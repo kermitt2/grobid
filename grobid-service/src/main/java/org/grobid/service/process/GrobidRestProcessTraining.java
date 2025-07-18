@@ -3,7 +3,14 @@ package org.grobid.service.process;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
+import org.apache.commons.lang3.StringUtils;
+import org.grobid.core.engines.Engine;
+import org.grobid.core.engines.ProcessEngine;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.factory.GrobidPoolingFactory;
+import org.grobid.core.main.batch.GrobidMainArgs;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.IOUtilities;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.GrobidModel;
@@ -22,6 +29,11 @@ import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.StreamingOutput;
 
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.security.DigestInputStream;
+import java.security.MessageDigest;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 import java.util.NoSuchElementException;
@@ -32,6 +44,8 @@ import java.util.concurrent.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
+
+import javax.xml.bind.DatatypeConverter;
 
 
 @Singleton
@@ -423,5 +437,103 @@ public class GrobidRestProcessTraining {
         
         return response;
     }
+
+    public Response createTraining(final InputStream inputStream, final String filename, final GrobidModels.Flavor flavor) {
+        Response response = null;
+        String retVal = null;
+        File originFile = null;
+        Engine engine = null;
+        String outputPath = null;
+        try {
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
+            }
+
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md);
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
+            if (originFile == null) {
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
+            }
+
+            // set the path for the asset files
+            outputPath = GrobidProperties.getTempPath().getPath() + File.separator + KeyGen.getKey();
+
+            Files.createDirectories(Path.of(outputPath));
+            engine.createTraining(originFile, outputPath, outputPath, -1, flavor);
+
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            ZipOutputStream out = new ZipOutputStream(outputStream);
+
+            File outputPathDir = new File(outputPath);
+            if (outputPathDir.exists()) {
+                File[] files = outputPathDir.listFiles();
+                if (files != null) {
+                    byte[] buffer = new byte[1024];
+                    for (final File currFile : files) {
+                        try {
+                            ZipEntry ze = new ZipEntry(currFile.getName());
+                            out.putNextEntry(ze);
+                            FileInputStream in = new FileInputStream(currFile);
+                            int len;
+                            while ((len = in.read(buffer)) > 0) {
+                                out.write(buffer, 0, len);
+                            }
+                            in.close();
+                            out.closeEntry();
+                        } catch (IOException e) {
+                            throw new GrobidServiceException("IO Exception when zipping", e, Status.INTERNAL_SERVER_ERROR);
+                        }
+
+                    }
+                }
+            }
+            out.finish();
+
+            String outputFilename = StringUtils.replaceIgnoreCase(filename, "pdf", "zip");
+
+            response = Response
+                .ok()
+                .type("application/zip")
+                .entity(outputStream.toByteArray())
+                .header("Content-Disposition", "attachment; filename=\""+ outputFilename +"\"")
+                .build();
+            out.close();
+
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
+        } finally {
+            if (originFile != null)
+                IOUtilities.removeTempFile(originFile);
+
+            if (outputPath != null) {
+                IOUtilities.removeTempDirectory(outputPath);
+            }
+
+            if (engine != null) {
+                GrobidPoolingFactory.returnEngine(engine);
+            }
+        }
+
+        return response;
+    }
+//        GrobidMainArgs pGbdArgs = new GrobidMainArgs();
+//        pGbdArgs.setPath2Input(inputPath);
+//
+//        try(ProcessEngine processEngine = new ProcessEngine()) {
+//            processEngine.createTraining(pGbdArgs);
+//        }
+//    }
 }
 
