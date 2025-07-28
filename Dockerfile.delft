@@ -119,7 +119,7 @@ ENV JAVA_OPTS=-Xmx4g
 # See tag of builder image in [Dockerfile tag](https://github.com/docker-library/docs/blob/master/eclipse-temurin/README.md#simple-tags) to find JAVA_HOME to copy from builder image.
 COPY --from=builder /opt/java/openjdk ${JAVA_HOME}
 
-# install jep 
+# install jep
 RUN pip3 install jep==4.0.3
 
 
@@ -127,15 +127,17 @@ ENV LD_LIBRARY_PATH=/usr/local/lib/python3.8/dist-packages/jep:grobid-home/lib/l
 # remove libjep.so because we are providing our own version in the virtual env above
 RUN rm /opt/grobid/grobid-home/lib/lin-64/jep/libjep.so
 
+ARG TARGETARCH
+
 # Add Tini
 ENV TINI_VERSION v0.19.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-${TARGETARCH} /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-s", "--"]
 
 WORKDIR /opt/grobid
 
-# preload embeddings, for GROBID all the RNN models use glove-840B (default for the script), ELMo is currently not loaded 
+# preload embeddings, for GROBID all the RNN models use glove-840B (default for the script), ELMo is currently not loaded
 # to be done: mechanism to download GROBID fine-tuned models based on SciBERT if selected (but not good enough for the moment)
 COPY --from=builder /opt/grobid-source/grobid-home/scripts/preload_embeddings.py .
 COPY --from=builder /opt/grobid-source/grobid-home/config/resources-registry.json .
