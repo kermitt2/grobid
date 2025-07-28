@@ -46,6 +46,6 @@ jobs:
           registry: docker.io
           pushImage: true
           tags:  |
-            latest-develop, ${{ github.event.inputs.custom_tag}}
+            latest-crf, latest-develop, ${{ github.event.inputs.custom_tag}}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
