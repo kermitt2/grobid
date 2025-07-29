@@ -196,9 +196,9 @@
 
 			<page>25 <lb/></page>
 
-			<div type="annex">AUTHOR CONTRIBUTIONS <lb/>F.C. conceived the study. Y.Z. and Y.H. developed the network methodology and <lb/>performed all computational experiments. J.S., Y.Z., Y.H., Y.H., and W.M. performed <lb/>data analysis. F.C., Y.Z. and Y.H. and J.S. wrote and critically revised the manuscript <lb/>with contributions from other co-authors. <lb/></div>
+			<div type="contribution">AUTHOR CONTRIBUTIONS <lb/>F.C. conceived the study. Y.Z. and Y.H. developed the network methodology and <lb/>performed all computational experiments. J.S., Y.Z., Y.H., Y.H., and W.M. performed <lb/>data analysis. F.C., Y.Z. and Y.H. and J.S. wrote and critically revised the manuscript <lb/>with contributions from other co-authors. <lb/></div>
 
-			<div type="annex">Competing Interests: The content of this publication does not necessarily reflect <lb/>the views of the Cleveland Clinic. The authors declare no competing interests. <lb/></div>
+			<div type="conflict">Competing Interests: The content of this publication does not necessarily reflect <lb/>the views of the Cleveland Clinic. The authors declare no competing interests. <lb/></div>
 
 			<div type="availability">Data and Code Availability: All codes and predicted repurposable drugs can be <lb/>freely accessed at: https://github.com/ChengF-Lab/2019-nCoV <lb/></div>
 

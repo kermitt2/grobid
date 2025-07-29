@@ -86,9 +86,9 @@
 		
 		<back>	 
 			
-			<div type="annex">Competing interests <lb/> The authors declare that they have no competing interests. <lb/></div> 
+			<<div type="conflict">Competing interests <lb/> The authors declare that they have no competing interests. <lb/></div>
 			
-			<div type="annex">Authors&apos; contributions <lb/> AM: Main author, involved in preliminary work and all <lb/>data collection and analysis <lb/>MA: Data collection, involved in preliminary lymphocyte <lb/>investigation <lb/>A Mania: Involved in preliminary work and biopsy data <lb/>collection <lb/>SL: Main embryologist in the PGD case <lb/>PS: Main physician in the case <lb/>JD: PGD director, involved in all aspects of this case and <lb/>editing the manuscript. <lb/> Consent <lb/> Written informed consent was obtained from the patient <lb/>for publication of this case report and accompanying <lb/>images. A copy of the written consent is available for <lb/>review by the Editor-in-Chief of this journal. <lb/></div> 
+			<<div type="contribution">Authors&apos; contributions <lb/> AM: Main author, involved in preliminary work and all <lb/>data collection and analysis <lb/>MA: Data collection, involved in preliminary lymphocyte <lb/>investigation <lb/>A Mania: Involved in preliminary work and biopsy data <lb/>collection <lb/>SL: Main embryologist in the PGD case <lb/>PS: Main physician in the case <lb/>JD: PGD director, involved in all aspects of this case and <lb/>editing the manuscript. <lb/> Consent <lb/> Written informed consent was obtained from the patient <lb/>for publication of this case report and accompanying <lb/>images. A copy of the written consent is available for <lb/>review by the Editor-in-Chief of this journal. <lb/></div>
 			
 			<div type="annex">Additional material <lb/></div>
 

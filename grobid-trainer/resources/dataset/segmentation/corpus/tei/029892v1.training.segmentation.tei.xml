@@ -64,11 +64,11 @@
 
 			<div type="annex">List of abbreviations <lb/>DMSO: dimethyl sulfoxide, PTw: 1x PBS + 0.1% Tween-20, PTx: 1x PBS + 0.2% <lb/>Triton X-100, en: engrailed, hh: hedgehog, ptc: patched, smo: smoothened <lb/></div>
 
-			<div type="annex">Competing interests <lb/>The authors declare that they have no competing interests. <lb/></div>
+			<<div type="conflict">Competing interests <lb/>The authors declare that they have no competing interests. <lb/></div>
 
 			<page>15 <lb/></page>
 
-			<div type="annex">Authors&apos; contributions <lb/>BCV and AH designed the study. BCV performed the experiments and analyzed the <lb/>data. BCV and AH and wrote the manuscript. Both authors read and approved the <lb/>final manuscript. <lb/></div>
+			<<div type="contribution">Authors&apos; contributions <lb/>BCV and AH designed the study. BCV performed the experiments and analyzed the <lb/>data. BCV and AH and wrote the manuscript. Both authors read and approved the <lb/>final manuscript. <lb/></div>
 
 			<div type="acknowledgement">Acknowledgements <lb/>We thank Chema Martín-Durán for crucial discussions and help with in situ <lb/>hybridization experiments, Carmen Andrikou and Kevin Pang for improving the man-<lb/>uscript, all members of S9 Lab for continuous support, and the staff of Friday Harbor <lb/>Labs and Espeland Marine Biological Station for the help with collections. Alessandro <lb/>Minelli for comments on an earlier draft. The study was funded by the core budget of <lb/>the Sars Centre and received support from the Meltzer Research Fund. <lb/></div>
 

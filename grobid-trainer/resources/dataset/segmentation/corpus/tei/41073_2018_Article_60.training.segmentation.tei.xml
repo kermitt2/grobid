@@ -76,13 +76,13 @@
 
 			<div type="availability">Availability of data and materials <lb/>Not applicable <lb/></div>
 
-			<div type="annex">Author&apos;s contributions <lb/>The author read and approved the final manuscript. <lb/></div>
+			<<div type="contribution">Author&apos;s contributions <lb/>The author read and approved the final manuscript. <lb/></div>
 
 			<div type="annex">Ethics approval and consent to participate <lb/>Not applicable <lb/></div>
 
 			<div type="annex">Consent for publication <lb/>Not applicable <lb/></div>
 
-			<div type="annex">Competing interests <lb/>The author declares that he has no competing interests. <lb/></div>
+			<<div type="conflict">Competing interests <lb/>The author declares that he has no competing interests. <lb/></div>
 
 			<div type="annex">Publisher&apos;s Note <lb/>Springer Nature remains neutral with regard to jurisdictional claims in <lb/>published maps and institutional affiliations. <lb/></div>
 

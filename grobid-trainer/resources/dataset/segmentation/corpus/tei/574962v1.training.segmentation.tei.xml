@@ -36,9 +36,9 @@
 
 			<div type="acknowledgement">Acknowledgments We thank K. Shiroguchi and K. Kinoshita for helpful comments. We thank M. Marti-<lb/>Renom and M. Di Stefano for stimulative discussions. We thank I. Hiratani for critical reading of this <lb/>manuscript. We also thank Nature Research Editing Service for English language editing. This work was <lb/>supported by JSPS KAKENHI Grant Numbers 16H01408 and 18H04720 (to S.S.). <lb/></div>
 
-			<div type="annex">Author Contributions S.S., M.N. and T.S. conceived the mathematical concept to define the chromosome <lb/>contacts. S.S. and S.O. designed the study. S.O. supervised the study. S.S., M.N. and T.S. performed <lb/>mathematical calculations. S.S. and Y.To. developed the optimization algorithm. S.S. and Y.To. wrote the <lb/>codes. S.S., R.N. and Y.Ta. analysed the Hi-C data. S.S. and H.O. analysed the movements of genome loci. <lb/>S.S. wrote the manuscript. <lb/></div>
+			<div type="contribution">Author Contributions S.S., M.N. and T.S. conceived the mathematical concept to define the chromosome <lb/>contacts. S.S. and S.O. designed the study. S.O. supervised the study. S.S., M.N. and T.S. performed <lb/>mathematical calculations. S.S. and Y.To. developed the optimization algorithm. S.S. and Y.To. wrote the <lb/>codes. S.S., R.N. and Y.Ta. analysed the Hi-C data. S.S. and H.O. analysed the movements of genome loci. <lb/>S.S. wrote the manuscript. <lb/></div>
 
-			<div type="annex">Competing Financial Interests The authors declare no competing financial interests. <lb/></div>
+			<<div type="conflict">Competing Financial Interests The authors declare no competing financial interests. <lb/></div>
 
 			<page>8 <lb/></page>
 
