@@ -76,7 +76,8 @@
 	Funding: 
 	<note type="funding">RR is funded by the DCOMM project<lb/> (Deictic Communication -www.dcomm.eu). This<lb/> project has received funding from the European<lb/> Union&apos;s Horizon 2020 research and innovation<lb/> programme under the Marie Sklodowska-Curie<lb/> Actions grant agreement No 676063. The funders<lb/> had no role in study design, data collection and<lb/> analysis, decision to publish, or preparation of the<lb/> manuscript.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>

@@ -73,7 +73,8 @@
 	Funding:
 	<note type="funding">This work was supported by grants from<lb/> National Institutes of Health (MH083911 and<lb/> AG045656) and an Endowment Fund from<lb/> Pennsylvania State University to G.C.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>

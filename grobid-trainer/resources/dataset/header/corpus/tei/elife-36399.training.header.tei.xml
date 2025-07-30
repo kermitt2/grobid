@@ -28,7 +28,8 @@
 	<email>acasade1@jhu.edu</email>
 
 	(AC)<lb/> † These authors contributed<lb/> equally to this work; author order<lb/> was determined both<lb/> alphabetically and in order of<lb/> increasing seniority.<lb/> 
-	Competing interests: The<lb/> authors declare that no<lb/> competing interests exist.<lb/> Funding: See page 10<lb/> 
+	Competing interests:
+<note type="conflict">The<lb/> authors declare that no<lb/> competing interests exist.<lb/> Funding: See page 10<lb/>
 
 	Reviewing editor:
 	<editor>Peter A<lb/> Rodgers</editor>, 
@@ -75,9 +76,10 @@
 	<idno>http://orcid.org/0000-0002-9402-9167<lb/></idno>
 
 	Author contributions:
-	<keyword>Nichole A Broderick, Arturo<lb/> Casadevall, Conceptualization, Data curation, Formal<lb/> analysis, Investigation, Methodology, Writing-original<lb/> draft, Writing-review and editing<lb/></keyword>
+	<note type="contribution">Nichole A Broderick, Arturo<lb/> Casadevall, Conceptualization, Data curation, Formal<lb/> analysis, Investigation, Methodology, Writing-original<lb/> draft, Writing-review and editing<lb/></note>
 
-	Competing interests: The authors declare that no<lb/> competing interests exist.<lb/>
+	Competing interests:
+    <note type="conflict">The authors declare that no<lb/> competing interests exist.<lb/></note>
 	<note type="submission">Received 05 March 2018<lb/> Accepted 09 January 2019<lb/></note>
 
 	Published

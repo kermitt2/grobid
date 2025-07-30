@@ -84,7 +84,8 @@
 
 	<note type="funding">Funding: This project was funded by the Australian<lb/> Research Council (https://www.arc.gov.au/) grant<lb/> number DP120103994 awarded to RAH. JJH and<lb/> NDN are supported by Australian Postgraduate<lb/> Awards. The funders had no role in study design,<lb/> data collection and analysis, decision to publish, or<lb/> preparation of the manuscript.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>

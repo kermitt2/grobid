@@ -112,7 +112,8 @@
 	Funding: 
 	<note type="funding">This work was supported by the Swiss<lb/> National Science Foundation (https://www.snf.ch/<lb/> en) grant number 200021_178768 awarded to SA.<lb/> The funders had no role in study design, data<lb/> collection and analysis, decision to publish, or<lb/> preparation of the manuscript.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.<lb/> 
+	Competing interests:
+            <note type="conflict">The authors have declared<lb/> that no competing interests exist.<lb/></note>
 
 	<title level="j">PLOS ONE</title>
 		</front>
