@@ -116,7 +116,7 @@
 
 			<div type="funding">Funding <lb/>This research was supported by a VICI grant to D.W., from the Netherlands Organization for <lb/>Scientific Research (NWO; 865.14.001). <lb/></div>
 
-			<<div type="contribution">Authors&apos; contributions <lb/>S.K.M. and D.W. conceived the research. S.K.M. performed analysis. D.W supervised the <lb/>research and acquired funding. S.K.M. and D.W. discussed and interpreted the results and <lb/>wrote the manuscript. <lb/></div>
+			<div type="contribution">Authors&apos; contributions <lb/>S.K.M. and D.W. conceived the research. S.K.M. performed analysis. D.W supervised the <lb/>research and acquired funding. S.K.M. and D.W. discussed and interpreted the results and <lb/>wrote the manuscript. <lb/></div>
 
 			<div type="acknowledgement">Acknowledgements <lb/>The authors would like to thank the 1000 plant transcriptomes (OneKP) and Marine Micro <lb/>Eukaryotic Transcriptome Sequencing Project (MMETSP) consortiums for providing <lb/></div>
 

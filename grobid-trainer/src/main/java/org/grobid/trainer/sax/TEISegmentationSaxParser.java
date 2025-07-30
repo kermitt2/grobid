@@ -37,6 +37,8 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		annexes (<annex>): div type="annex" (optionally under back)
 		data availability (<availability>): div type="availability"
 		acknowledgement (<acknowledgement>): div type="acknowledgement" (optionally under back)
+		conflict of interest / declaration of interest (<conflict>): div type="conflict"
+		authors contribution (<contribution>): div type="contribution"
  	*/
 
     private static final Logger logger = LoggerFactory.getLogger(TEISegmentationSaxParser.class);
@@ -194,6 +196,14 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                             } else if (value.equals("acknowledgement") || value.equals("acknowledgements") || value.equals("acknowledgment")
                                 || value.equals("acknowledgments")) {
 								currentTag = "<acknowledgement>";
+								upperTag = currentTag;
+								upperQname = "div";
+                            } else if (value.equals("conflict") || value.equals("conflicts")) {
+								currentTag = "<conflict>";
+								upperTag = currentTag;
+								upperQname = "div";
+                            } else if (value.equals("contribution") || value.equals("contributions")) {
+								currentTag = "<contribution>";
 								upperTag = currentTag;
 								upperQname = "div";
                             } else if (value.equals("toc")) {

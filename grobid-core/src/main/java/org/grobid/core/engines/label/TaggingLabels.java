@@ -29,6 +29,8 @@ public class TaggingLabels {
 
     public final static String AVAILABILITY_LABEL = "<availability>";
     public final static String FUNDING_LABEL = "<funding>";
+    public final static String CONFLICT_OF_INTEREST_LABEL = "<conflict>";
+    public final static String AUTHOR_CONTRIBUTION_LABEL = "<contribution>";
 
     public static final String CITATION_MARKER_LABEL = "<citation_marker>";
     public static final String TABLE_MARKER_LABEL = "<table_marker>";

@@ -80,9 +80,9 @@
 
 			<div type="annex">Additional file <lb/>Additional file 1: Table S1. Strains and plasmids used in this study. <lb/>Table S2. List of primers used in this study. Table S3. Differential gene <lb/>expression profiles of E. coli 129 genes. Figure S1. Verification of rpoS, ymdB, <lb/>and rnc mutants. PCR validation of (A) Keio-ΔrpoS or (B) Keio-ΔymdB and <lb/>ΔymdB. (C) Schematic representations of PCR regions. (D) Western-blot <lb/>analysis verifying RNase III mutation. Figure S2. Dependency of <lb/>YmdB-mediated down-regulation of RNase III activity upon the presence of <lb/>RNase III. Figure S3. Interdependency of RpoS and RNase III for biofilm <lb/>formation. Figure S4. Dependency of YmdB-mediated phenotype upon the <lb/>absence of RpoS and RNase III. (A) Effect of biofilm formation by double <lb/>mutation of RpoS and RNase III. (B) Effect of YmdB-mediated inhibition of <lb/>biofilm formation in double mutation of RNase III and RpoS. <lb/></div>
 
-			<<div type="conflict">Competing interests <lb/>The authors declare that they have no competing interest. <lb/></div>
+			<div type="conflict">Competing interests <lb/>The authors declare that they have no competing interest. <lb/></div>
 
-			<<div type="contribution">Authors&apos; contributions <lb/>TYK, JYL, and KSK conceived of and designed all the experiments in the <lb/>paper, executed experiments, collected, and interpreted the data, and <lb/>drafted the manuscript. All authors read and approved the final manuscript. <lb/></div>
+			<div type="contribution">Authors&apos; contributions <lb/>TYK, JYL, and KSK conceived of and designed all the experiments in the <lb/>paper, executed experiments, collected, and interpreted the data, and <lb/>drafted the manuscript. All authors read and approved the final manuscript. <lb/></div>
 
 			<div type="acknowledgement">Acknowledgements <lb/>We thank Dr. Susan Gottesman for distributing RpoS fusion strain (SG30013). <lb/>This work is supported by the Basic Science Research program through the <lb/>NRF Korea (2010-0023011) to K.S.K. and the KRIBB initiative program. <lb/></div>
 

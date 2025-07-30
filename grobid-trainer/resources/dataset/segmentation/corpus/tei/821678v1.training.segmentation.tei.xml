@@ -182,7 +182,7 @@
 
 			<div type="contribution">Author contributions <lb/>S.R.M. designed the study; E.B carried out cloning, cell culture experiments, bred <lb/>the mice and collected fertility measures; D.M. performed immunostaining of <lb/>spermatocytes and FISH for protein expression and synapsis analysis; E.B <lb/>performed ZCWPW1 ChIP-seq in human cells and G.Z. performed DMC1 ChIP-<lb/>seq in mouse testis; E.B, D.W, D.M, A.G.H (DMC1 ChIP-seq) and S.R.M analysed <lb/>the data; E.B, D.W and S.R.M prepared the manuscript. <lb/></div>
 
-			<<div type="conflict">Competing interests <lb/>The authors declare no competing interests. <lb/></div>
+			<div type="conflict">Competing interests <lb/>The authors declare no competing interests. <lb/></div>
 
 			<div type="availability">Materials &amp; Correspondence <lb/>Code is available at ww.github.com/MyersGroup/Zcwpw1. Other requests should <lb/>be addressed to S.R.M. <lb/></div>
 

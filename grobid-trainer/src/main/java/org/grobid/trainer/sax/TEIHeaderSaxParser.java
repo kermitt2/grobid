@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-import static org.grobid.core.engines.label.TaggingLabels.AVAILABILITY_LABEL;
+import static org.grobid.core.engines.label.TaggingLabels.*;
 
 /**
  * SAX parser for the TEI format header data encoded for training. Normally all training data for the header model 
@@ -32,8 +32,11 @@ public class TEIHeaderSaxParser extends DefaultHandler {
 
     private ArrayList<String> labeled = null; // store line by line the labeled data
 
-    private List<String> endTags = Arrays.asList("titlePart", "note", "docAuthor", "affiliation", "address", "email", "idno",
-        "date", "keywords", "keyword", "reference", "ptr", "div", "editor", "meeting");
+    private List<String> endTags = Arrays.asList(
+        "titlePart", "note", "docAuthor", "affiliation",
+        "address", "email", "idno",
+        "date", "keywords", "keyword",
+        "reference", "ptr", "div", "editor", "meeting");
 
     private List<String> intermediaryTags = Arrays.asList("byline", "front", "lb", "tei", "teiHeader", "fileDesc", "text", "byline", "docTitle", "p");
 
@@ -162,7 +165,11 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                         } else if (value.equals("copyright")) {
                             currentTag = "<copyright>";
                         } else if (value.equals("funding")) {
-                            currentTag = "<funding>";
+                            currentTag = FUNDING_LABEL;
+                        } else if (value.equals("conflict") || value.equals("conflicts")) {
+                            currentTag = CONFLICT_OF_INTEREST_LABEL;
+                        } else if (value.equals("contribution") || value.equals("contributions")) {
+                            currentTag = AUTHOR_CONTRIBUTION_LABEL;
                         } /*else if (value.equals("acknowledgment")) {
                             currentTag = "<note>";
                         }*/ else if (value.equals("document_type") || value.equals("doctype") || value.equals("docType") ||
