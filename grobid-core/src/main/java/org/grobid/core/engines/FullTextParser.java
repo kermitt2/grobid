@@ -278,9 +278,10 @@ public class FullTextParser extends AbstractParser {
 
                 bodyResults = fixFiguresLabellingResults(doc, bodyResults);
 
-                //TODO: double check the way the tables are validated
-
                 // Figures
+
+                postProcessFigureCaptions(bodyFigures, doc);
+
                 long numberFiguresFulltextModel = Arrays.stream(bodyResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + FIGURE_LABEL))
                     .count();
@@ -295,8 +296,6 @@ public class FullTextParser extends AbstractParser {
                 bodyFigures = bodyFigures.stream()
                     .filter(f -> !badBodyFigures.contains(f))
                     .collect(Collectors.toList());
-
-                postProcessFigureCaptions(bodyFigures, doc);
 
                 // Tables
                 bodyTables = processTables(bodyResults, bodyTokenization.getTokenization(), doc);
@@ -347,9 +346,7 @@ public class FullTextParser extends AbstractParser {
                     .filter(r -> r.endsWith("I-" + FIGURE_LABEL))
                     .count();
 
-                List<Figure> badAnnexFigures = annexFigures.stream()
-                    .filter(f -> !f.isCompleteForTEI())
-                    .collect(Collectors.toList());
+                List<Figure> badAnnexFigures = getBadFigures(annexFigures);
 
                 if (CollectionUtils.isNotEmpty(badAnnexFigures)) {
                     LOGGER.info("Number of figures badly formatted or incomplete we identified in Annex: " + badAnnexFigures.size());
@@ -451,7 +448,7 @@ public class FullTextParser extends AbstractParser {
         return badFigures;
     }
 
-    private void postprocesFigureCaptions(List<Figure> figures, Document doc) {
+    private void postProcessFigureCaptions(List<Figure> figures, Document doc) {
         // further parse the caption
         for(Figure figure : figures) {
             if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens()) ) {
@@ -2358,25 +2355,11 @@ public class FullTextParser extends AbstractParser {
             }
 
             results.add(result);
-            result.setId("" + (figureId));
+            result.setId("" + figureId);
             figureId++;
         }
 
         return results;
-    }
-
-    protected void postProcessFigureCaptions(
-        List<Figure> figures,
-        Document doc
-    ) {
-        // further parse the caption
-        for (Figure figure : figures) {
-            if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens())) {
-                Pair<String, List<LayoutToken>> captionProcess = processShort(figure.getCaptionLayoutTokens(), doc);
-                figure.setLabeledCaption(captionProcess.getLeft());
-                figure.setCaptionLayoutTokens(captionProcess.getRight());
-            }
-        }
     }
 
     /**
