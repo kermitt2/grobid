@@ -293,7 +293,7 @@ public class Figure {
                     theGraphicsBox = theGraphicsBox.boundBoxExcludingAnotherPage(graphicObject.getBoundingBox());
                 }
             }
-        } 
+        }
 
         if (theGraphicsBox != null) {
             if (theBoxes == null)
@@ -353,7 +353,7 @@ public class Figure {
                         theGraphicsBox = theGraphicsBox.boundBoxExcludingAnotherPage(graphicObject.getBoundingBox());
                     }
                 }
-            } 
+            }
 
             if (theGraphicsBox != null) {
                 if (theBoxes == null)
@@ -390,7 +390,7 @@ public class Figure {
             if (StringUtils.isNotBlank(labeledCaption)) {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledCaption, captionLayoutTokens);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();
-                
+
                 MarkerType citationMarkerType = null;
                 if (CollectionUtils.isNotEmpty(markerTypes)) {
                     citationMarkerType = markerTypes.get(0);
@@ -409,7 +409,7 @@ public class Figure {
                             List<Node> refNodes = formatter.markReferencesTEILuceneBased(
                                     cluster.concatTokens(),
                                     doc.getReferenceMarkerMatcher(),
-                                    config.isGenerateTeiCoordinates("ref"), 
+                                    config.isGenerateTeiCoordinates("ref"),
                                     false,
                                     citationMarkerType);
                             if (refNodes != null) {
@@ -440,7 +440,7 @@ public class Figure {
                 Element div = XmlBuilderUtils.teiElement("div");
                 div.appendChild(desc);
 
-                Element figDesc = XmlBuilderUtils.teiElement("figDesc");                
+                Element figDesc = XmlBuilderUtils.teiElement("figDesc");
                 figDesc.appendChild(div);
 
                 desc = figDesc;
@@ -544,7 +544,7 @@ public class Figure {
     }
 
     public void addLayoutTokens(List<LayoutToken> layoutTokens) {
-        if (this.layoutTokens == null) 
+        if (this.layoutTokens == null)
             this.layoutTokens = new ArrayList<>();
         this.layoutTokens.addAll(layoutTokens);
     }
