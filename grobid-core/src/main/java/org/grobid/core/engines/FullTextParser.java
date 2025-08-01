@@ -276,36 +276,7 @@ public class FullTextParser extends AbstractParser {
                 bodyFigures = processFigures(bodyResults, bodyTokenization.getTokenization());
                 doc.setFigures(bodyFigures);
 
-                List<org.apache.commons.lang3.tuple.Triple<Figure, Figure, List<List<LayoutToken>>>> updatedFigures = doc.assignGraphicObjectsToFigures();
-                for (Triple<Figure, Figure, List<List<LayoutToken>>> update : updatedFigures) {
-                    List<List<LayoutToken>> difference = update.getRight();
-
-                    long nbDifferences = difference.stream()
-                        .filter(llt -> !llt.isEmpty())
-                        .count();
-
-                    if (nbDifferences > 0) {
-                        // In this case we assume they are figures
-                        String updatedBodyResult = revertDiscardedTokensInMainResults(difference, bodyResults);
-                        bodyResults = updatedBodyResult;
-                    }
-                }
-
-                // further parse the caption
-                for (Figure figure : bodyFigures) {
-                    if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens())) {
-                        Pair<String, List<LayoutToken>> processedCaption = processShort(figure.getCaptionLayoutTokens(), doc);
-                        figure.setLabeledCaption(processedCaption.getLeft());
-                        List<LayoutToken> processedCaptionLayoutTokens = processedCaption.getRight();
-                        if (processedCaptionLayoutTokens.size() != figure.getCaptionLayoutTokens().size()) {
-                            // We might have a problem, we might loose some tokens during the processing
-                            LOGGER.warn("Changes in the figure caption: \noriginal: "
-                                + LayoutTokensUtil.toText(figure.getCaptionLayoutTokens())
-                                + "\nmodified: " + LayoutTokensUtil.toText(processedCaptionLayoutTokens));
-                        }
-                        figure.setCaptionLayoutTokens(processedCaptionLayoutTokens);
-                    }
-                }
+                bodyResults = fixFiguresLabellingResults(doc, bodyResults);
 
                 //TODO: double check the way the tables are validated
 
@@ -314,14 +285,12 @@ public class FullTextParser extends AbstractParser {
                     .filter(r -> r.endsWith("I-" + FIGURE_LABEL))
                     .count();
 
-                List<Figure> badBodyFigures = bodyFigures.stream()
-                    .filter(f -> !f.isCompleteForTEI())
-                    .collect(Collectors.toList());
-
-                if (CollectionUtils.isNotEmpty(badBodyFigures)) {
-                    LOGGER.info("Number of figures badly formatted or incomplete we identified in Body: " + badBodyFigures.size());
-                }
-                bodyResults = revertResultsForBadItems(badBodyFigures, bodyResults, !(bodyFigures.size() > numberFiguresFulltextModel));
+                List<Figure> badBodyFigures = getBadFigures(bodyFigures);
+                bodyResults = revertResultsForBadItems(
+                    bodyFigures,
+                    bodyResults,
+                    !(bodyFigures.size() > numberFiguresFulltextModel)
+                );
 
                 bodyFigures = bodyFigures.stream()
                     .filter(f -> !badBodyFigures.contains(f))
@@ -332,17 +301,15 @@ public class FullTextParser extends AbstractParser {
                 // Tables
                 bodyTables = processTables(bodyResults, bodyTokenization.getTokenization(), doc);
 
+                //We deal with tables considered bad by reverting them as <paragraph>, to reduce the risk them to be
+                // dropped later on.
+
+                //TODO: double check the way the tables are validated
                 long numberTablesFulltextModel = Arrays.stream(bodyResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + TaggingLabels.TABLE_LABEL))
-                    .count();
+                .count();
 
-                List<Table> badBodyTables = bodyTables.stream()
-                    .filter(t -> !(t.isCompleteForTEI() && t.validateTable()))
-                    .collect(Collectors.toList());
-
-                if (CollectionUtils.isNotEmpty(badBodyTables)) {
-                    LOGGER.info("Number of tables badly formatted or incomplete we identified in Body: " + badBodyTables.size());
-                }
+                List<Table> badBodyTables = getBadTables(bodyTables);
                 bodyResults = revertResultsForBadItems(badBodyTables, bodyResults, !(bodyTables.size() > numberTablesFulltextModel));
 
                 bodyTables = bodyTables.stream()
@@ -458,6 +425,66 @@ public class FullTextParser extends AbstractParser {
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
+    }
+
+    @NotNull
+    private static List<Table> getBadTables(List<Table> tables) {
+        List<Table> badTables = tables.stream()
+            .filter(t -> !(t.isCompleteForTEI() && t.validateTable()))
+            .collect(Collectors.toList());
+
+        if (CollectionUtils.isNotEmpty(badTables)) {
+            LOGGER.info("Number of tables badly formatted or incomplete we identified: " + badTables.size());
+        }
+        return badTables;
+    }
+
+    @NotNull
+    private static List<Figure> getBadFigures(List<Figure> figures) {
+        List<Figure> badFigures = figures.stream()
+            .filter(f -> !f.isCompleteForTEI())
+            .collect(Collectors.toList());
+
+        if (CollectionUtils.isNotEmpty(badFigures)) {
+            LOGGER.info("Number of figures badly formatted or incomplete we identified: " + badFigures.size());
+        }
+        return badFigures;
+    }
+
+    private void postprocesFigureCaptions(List<Figure> figures, Document doc) {
+        // further parse the caption
+        for(Figure figure : figures) {
+            if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens()) ) {
+                Pair<String, List<LayoutToken>> processedCaption = processShort(figure.getCaptionLayoutTokens(), doc);
+                figure.setLabeledCaption(processedCaption.getLeft());
+                List<LayoutToken> processedCaptionLayoutTokens = processedCaption.getRight();
+                if (processedCaptionLayoutTokens.size() != figure.getCaptionLayoutTokens().size()) {
+                    // We might have a problem, we might loose some tokens during the processing
+                    LOGGER.warn("Changes in the figure caption: \noriginal: "
+                        + LayoutTokensUtil.toText(figure.getCaptionLayoutTokens())
+                        + "\nmodified: " + LayoutTokensUtil.toText(processedCaptionLayoutTokens));
+                }
+                figure.setCaptionLayoutTokens(processedCaptionLayoutTokens);
+            }
+        }
+    }
+
+    private static String fixFiguresLabellingResults(Document doc, String bodyResults) {
+        List<Triple<Figure, Figure, List<List<LayoutToken>>>> updatedFigures = doc.assignGraphicObjectsToFigures();
+        for(Triple<Figure, Figure, List<List<LayoutToken>>> update: updatedFigures) {
+            List<List<LayoutToken>> difference = update.getRight();
+
+            long nbDifferences = difference.stream()
+                .filter(llt -> !llt.isEmpty())
+                .count();
+
+            if (nbDifferences > 0) {
+                // In this case we assume they are figures
+                String updatedBodyResult = revertDiscardedTokensInMainResults(difference, bodyResults);
+                bodyResults = updatedBodyResult;
+            }
+        }
+        return bodyResults;
     }
 
     static String revertResultsForBadItems(List<? extends Figure> badFiguresOrTables, String resultBody) {
