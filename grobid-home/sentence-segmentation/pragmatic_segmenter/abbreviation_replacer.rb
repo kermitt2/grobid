@@ -10,18 +10,19 @@ module PragmaticSegmenter
 
     attr_reader :text
     def initialize(text:, language: )
-      @text = Text.new(text)
+      @text = text.dup
       @language = language
     end
 
     def replace
-      @text.apply(@language::PossessiveAbbreviationRule,
+      Rule.apply(@text,
+        @language::PossessiveAbbreviationRule,
         @language::KommanditgesellschaftRule,
         @language::SingleLetterAbbreviationRules::All)
 
       @text = search_for_abbreviations_in_string(@text)
       @text = replace_multi_period_abbreviations(@text)
-      @text.apply(@language::AmPmRules::All)
+      Rule.apply(@text, @language::AmPmRules::All)
       replace_abbreviation_as_sentence_boundary(@text)
     end
 

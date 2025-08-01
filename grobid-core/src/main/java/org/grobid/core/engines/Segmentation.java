@@ -16,6 +16,7 @@ import org.grobid.core.layout.*;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.GrobidModels.Flavor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -80,7 +81,11 @@ public class Segmentation extends AbstractParser {
     public Segmentation() {
         super(GrobidModels.SEGMENTATION);
     }
-    
+
+    public Segmentation(Flavor flavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.SEGMENTATION, flavor));
+    }
+
     /**
      * Segment a PDF document into high level zones: cover page, document header,
      * page footer, page header, body, page numbers, biblio section and annexes.
@@ -572,10 +577,10 @@ public class Segmentation extends AbstractParser {
                         currentFontSize = newFontSize;
                     }
 
-                    if (token.getBold())
+                    if (token.isBold())
                         features.bold = true;
 
-                    if (token.getItalic())
+                    if (token.isItalic())
                         features.italic = true;
 
                     // HERE horizontal information

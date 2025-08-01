@@ -1,69 +1,47 @@
 package org.grobid.core.engines;
 
 import com.google.common.collect.Iterables;
-
+import nu.xom.Element;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.MutableTriple;
-import org.apache.commons.io.FileUtils;
-
-import java.nio.charset.StandardCharsets;
-
+import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
-import org.grobid.core.document.Document;
-import org.grobid.core.document.DocumentPiece;
-import org.grobid.core.document.DocumentPointer;
-import org.grobid.core.document.DocumentSource;
-import org.grobid.core.document.TEIFormatter;
+import org.grobid.core.document.*;
+import org.grobid.core.engines.citations.CalloutAnalyzer;
+import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
 import org.grobid.core.engines.label.SegmentationLabels;
-import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
 import org.grobid.core.lang.Language;
-import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.layout.*;
+import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.*;
-import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.grobid.core.utilities.matching.EntityMatcherException;
-import org.grobid.core.engines.citations.CalloutAnalyzer;
-import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
-
+import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
-import java.util.TreeSet;
+import java.io.*;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
-import nu.xom.Element;
 
 import static org.apache.commons.lang3.StringUtils.*;
 import static org.grobid.core.utilities.LabelUtils.postProcessFullTextLabeledText;
@@ -88,36 +66,45 @@ public class FullTextParser extends AbstractParser {
     protected EngineParsers parsers;
 
     public FullTextParser(EngineParsers parsers) {
-        super(GrobidModels.FULLTEXT);
+        this(parsers, null);
+    }
+
+    public FullTextParser(EngineParsers parsers, GrobidModels.Flavor flavor) {
+        super(GrobidModels.getModelFlavor(FULLTEXT, flavor));
         this.parsers = parsers;
         tmpPath = GrobidProperties.getTempPath();
     }
 
+
     public Document processing(File inputPdf,
                                GrobidAnalysisConfig config) throws Exception {
-        DocumentSource documentSource =
-            DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
-                config.getPdfAssetPath() != null, true, false);
-        return processing(documentSource, config);
+        return processing(inputPdf, null, config);
     }
 
-    public Document processingHeaderFunding(File inputPdf,
+    public Document processing(File inputPdf,
+                               String md5Str,
                                GrobidAnalysisConfig config) throws Exception {
-        DocumentSource documentSource =
-            DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
-                config.getPdfAssetPath() != null, true, false);
-        return processingHeaderFunding(documentSource, config);
+        return processing(inputPdf, null, md5Str, config);
     }
 
 	public Document processing(File inputPdf,
+                               GrobidModels.Flavor flavor,
                                String md5Str,
 							   GrobidAnalysisConfig config) throws Exception {
 		DocumentSource documentSource =
 			DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
 				config.getPdfAssetPath() != null, true, false);
         documentSource.setMD5(md5Str);
-		return processing(documentSource, config);
+		return processing(documentSource, flavor, config);
 	}
+
+    public Document processingHeaderFunding(File inputPdf,
+                                            GrobidAnalysisConfig config) throws Exception {
+        DocumentSource documentSource =
+            DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
+                config.getPdfAssetPath() != null, true, false);
+        return processingHeaderFunding(documentSource, config);
+    }
 
     public Document processingHeaderFunding(File inputPdf,
                                String md5Str,
@@ -130,13 +117,27 @@ public class FullTextParser extends AbstractParser {
     }
 
 	/**
-     * Machine-learning recognition of the complete full text structures.
+     * Machine-learning recognition of the complete fulltext structures.
      *
      * @param documentSource input
      * @param config config
      * @return the document object with built TEI
      */
     public Document processing(DocumentSource documentSource,
+                               GrobidAnalysisConfig config) {
+        return processing(documentSource, null, config);
+    }
+
+    /**
+     * Machine-learning recognition of the complete full text structures.
+     *
+     * @param documentSource input
+     * @param flavor optional model flavor
+     * @param config config
+     * @return the document object with built TEI
+     */
+    public Document processing(DocumentSource documentSource,
+                               GrobidModels.Flavor flavor,
                                GrobidAnalysisConfig config) {
         if (tmpPath == null) {
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
@@ -145,9 +146,10 @@ public class FullTextParser extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
+
         try {
 			// general segmentation
-			Document doc = parsers.getSegmentationParser().processing(documentSource, config);
+			Document doc = parsers.getSegmentationParser(flavor).processing(documentSource, config);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
             // header processing
@@ -155,7 +157,7 @@ public class FullTextParser extends AbstractParser {
             Pair<String, LayoutTokenization> featSeg = null;
 
             // using the segmentation model to identify the header zones
-            parsers.getHeaderParser().processingHeaderSection(config, doc, headerResults, false);
+            parsers.getHeaderParser(flavor).processingHeaderSection(config, doc, headerResults, false);
 
             // The commented part below makes use of the PDF embedded metadata (the so-called XMP) if available 
             // as fall back to set author and title if they have not been found. 
@@ -242,13 +244,13 @@ public class FullTextParser extends AbstractParser {
                     }
                 } catch(Exception e) {
                     throw new GrobidException(
-                    "An exception occured while running consolidation on bibliographical references.", e);
+                    "An exception occurred while running consolidation on bibliographical references.", e);
                 }
             }
             doc.setBibDataSets(resCitations);
 
-			// full text processing
-			featSeg = getBodyTextFeatured(doc, documentBodyParts);
+            // full text processing
+            featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String bodyResults = null;
 			LayoutTokenization bodyTokenization = null;
 			List<Figure> bodyFigures = null;
@@ -266,26 +268,56 @@ public class FullTextParser extends AbstractParser {
                 //Correct subsequent I-<figure> or I-<table>
                 bodyResults = LabelUtils.postProcessFulltextFixInvalidTableOrFigure(bodyResults);
 
-				// we apply now the figure and table models based on the fulltext labeled output
-				bodyFigures = processFigures(bodyResults, bodyTokenization.getTokenization(), doc);
+                // we apply now the figure and table models based on the fulltext labeled output
+				bodyFigures = processFigures(bodyResults, bodyTokenization.getTokenization());
+                doc.setFigures(bodyFigures);
 
-                //We deal with figure/tables considered bad by reverting them as <paragraph>,
-                // to reduce the risk them to be dropped later on.
+                List<Triple<Figure, Figure, List<List<LayoutToken>>>> updatedFigures = doc.assignGraphicObjectsToFigures();
+                for(Triple<Figure, Figure, List<List<LayoutToken>>> update: updatedFigures) {
+                    List<List<LayoutToken>> difference = update.getRight();
+
+                    long nbDifferences = difference.stream()
+                        .filter(llt -> !llt.isEmpty())
+                        .count();
+
+                    if (nbDifferences > 0) {
+                        // In this case we assume they are figures
+                        String updatedBodyResult = revertDiscardedTokensInMainResults(difference, bodyResults);
+                        bodyResults = updatedBodyResult;
+                    }
+                }
+
+                // further parse the caption
+                for(Figure figure : bodyFigures) {
+                    if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens()) ) {
+                        Pair<String, List<LayoutToken>> processedCaption = processShort(figure.getCaptionLayoutTokens(), doc);
+                        figure.setLabeledCaption(processedCaption.getLeft());
+                        List<LayoutToken> processedCaptionLayoutTokens = processedCaption.getRight();
+                        if (processedCaptionLayoutTokens.size() != figure.getCaptionLayoutTokens().size()) {
+                            // We might have a problem, we might loose some tokens during the processing
+                            LOGGER.warn("Changes in the figure caption: \noriginal: "
+                                + LayoutTokensUtil.toText(figure.getCaptionLayoutTokens())
+                                + "\nmodified: " + LayoutTokensUtil.toText(processedCaptionLayoutTokens));
+                        }
+                        figure.setCaptionLayoutTokens(processedCaptionLayoutTokens);
+                    }
+                }
 
                 //TODO: double check the way the tables are validated
 
                 // Figures
                 long numberFiguresFulltextModel = Arrays.stream(bodyResults.split("\n"))
-                    .filter(r -> r.endsWith("I-" + TaggingLabels.FIGURE_LABEL))
+                    .filter(r -> r.endsWith("I-" + FIGURE_LABEL))
                 .count();
 
                 List<Figure> badBodyFigures = bodyFigures.stream()
                     .filter(f -> !f.isCompleteForTEI())
                     .collect(Collectors.toList());
 
-                LOGGER.info("Number of figures badly formatted or incomplete we identified in Body: " + badBodyFigures.size());
-                bodyResults = revertResultsForBadItems(badBodyFigures, bodyResults, TaggingLabels.FIGURE_LABEL,
-                     !(bodyFigures.size() > numberFiguresFulltextModel));
+                if (CollectionUtils.isNotEmpty(badFigures)) {
+                    LOGGER.info("Number of figures badly formatted or incomplete we identified in Body: " + badBodyFigures.size());
+                }
+                bodyResults = revertResultsForBadItems(badBodyFigures, bodyResults, !(bodyFigures.size() > numberFiguresFulltextModel));
 
                 bodyFigures = bodyFigures.stream()
                     .filter(f -> !badBodyFigures.contains(f))
@@ -304,9 +336,10 @@ public class FullTextParser extends AbstractParser {
                     .filter(t -> !(t.isCompleteForTEI() && t.validateTable()))
                     .collect(Collectors.toList());
 
-                LOGGER.info("Number of tables badly formatted or incomplete we identified in Body: " + badBodyTables.size());
-                bodyResults = revertResultsForBadItems(badBodyTables, bodyResults, TaggingLabels.TABLE_LABEL,
-                    !(bodyTables.size() > numberTablesFulltextModel));
+                if (CollectionUtils.isNotEmpty(badFigures)) {
+                    LOGGER.info("Number of tables badly formatted or incomplete we identified in Body: " + badBodyTables.size());
+                }
+                bodyResults = revertResultsForBadItems(badBodyTables, bodyResults, !(bodyTables.size() > numberTablesFulltextModel));
 
                 bodyTables = bodyTables.stream()
                     .filter(t-> !badBodyTables.contains(t))
@@ -384,18 +417,27 @@ public class FullTextParser extends AbstractParser {
             // callout in superscript is by error labeled as a numerical reference callout)
             List<MarkerType> markerTypes = null;
 
-            if (bodyResults != null)
+            if (bodyResults != null) {
                 markerTypes = postProcessCallout(bodyResults, bodyTokenization);
+            }
 
             // final combination
-            toTEI(doc, // document
-				bodyResults, annexResults, // labeled data for body and annex
-				bodyTokenization, annexTokenization, // tokenization for body and annex
+            toTEI(
+                doc, // document
+				bodyResults, // labeled data for body
+				annexResults, // and annex
+				bodyTokenization, // tokenization for body
+				annexTokenization, // and annex
 				headerResults, // header
-				bodyFigures, bodyTables, bodyEquations,
-                annexFigures, annexTables, annexEquations,
+				bodyFigures,
+				bodyTables,
+				bodyEquations,
+                annexFigures,
+                annexTables,
+                annexEquations,
 				markerTypes,
-				config);
+				config
+            );
             return doc;
         } catch (GrobidException e) {
 			throw e;
@@ -404,28 +446,41 @@ public class FullTextParser extends AbstractParser {
         }
     }
 
-    static String revertResultsForBadItems(List<? extends Figure> badFiguresOrTables, String resultBody, String itemLabel) {
-        return revertResultsForBadItems(badFiguresOrTables, resultBody, itemLabel, true);
+    static String revertResultsForBadItems(List<? extends Figure> badFiguresOrTables, String resultBody) {
+        return revertResultsForBadItems(badFiguresOrTables, resultBody, true);
     }
 
-    static String revertResultsForBadItems(List<? extends Figure> badFiguresOrTables, String resultBody, String itemLabel, boolean strict) {
-        //LF: we update the resultBody sequence by reverting these tables as <paragraph> elements
+    /**
+     * Revert bad figures or tables (that will likely be dropped later on) to paragraphs.
+     * The algorithm first search for candidate index in the resultBody sequence, then it tries to match the sequence
+     * of tokens of the bad figure or table with the sequence of tokens in the resultBody. If a match is found, then
+     * the figure or table is reverted to a sequence of paragraphs.
+     *
+     * At the moment the algorithm does not consider possible reference markers in the sequence of tokens.
+     */
+    static String revertResultsForBadItems(List<? extends Figure> badFiguresOrTables, String resultBody, boolean strict) {
+        //LF: we update the resultBody sequence by reverting these figure or tables as <paragraph> elements
         if (CollectionUtils.isNotEmpty(badFiguresOrTables)) {
+
             List<List<String>> labelledResultsAsList = Arrays.stream(resultBody.split("\n"))
                 .map(l -> Arrays.stream(l.split("\t")).collect(Collectors.toList()))
                 .collect(Collectors.toList());
 
             for (Figure badItem : badFiguresOrTables) {
+                if (badItem == null) {
+                    continue;
+                }
+                String itemLabel = badItem instanceof Table ? TaggingLabels.TABLE_LABEL : FIGURE_LABEL;
                 // Find the index of the first layoutToken of the table in the tokenization
                 List<LayoutToken> layoutTokenItem = badItem.getLayoutTokens();
                 List<Integer> candidateIndexes = findCandidateIndex(layoutTokenItem, labelledResultsAsList,
                     itemLabel, strict);
                 if (candidateIndexes.isEmpty()) {
-                    LOGGER.info("Cannot find the candidate index for fixing the tables.");
+                    LOGGER.warn("Cannot find the candidate index for fixing the figures/tables. Tokens: " + LayoutTokensUtil.toText(layoutTokenItem));
                     continue;
                 }
 
-                // At this point i have more than one candidate, which can be matched if the same first
+                // At this point I have more than one candidate, which can be matched if the same first
                 // token is repeated in the sequence. The next step is to find the matching figure/table
                 // using a large sequence
 
@@ -450,10 +505,10 @@ public class FullTextParser extends AbstractParser {
                                 break;
                             }
                         }
-                        line.set(line.size() - 1, label.replace(TaggingLabels.TABLE_LABEL, TaggingLabels.PARAGRAPH_LABEL));
+                        line.set(line.size() - 1, label.replace(itemLabel, TaggingLabels.PARAGRAPH_LABEL));
                     }
                 } else {
-                    LOGGER.warn("Cannot find the result index candidate.");
+                    LOGGER.warn("Cannot find the result index candidate for fixing the figure/table. Tokens: " + LayoutTokensUtil.toText(layoutTokenItem));
                 }
             }
 
@@ -465,6 +520,73 @@ public class FullTextParser extends AbstractParser {
         }
         return resultBody;
     }
+
+    static String revertDiscardedTokensInMainResults(List<List<LayoutToken>> layoutTokenPieces, String resultBody) {
+        return revertDiscardedTokensInMainResults(layoutTokenPieces, resultBody, FIGURE_LABEL);
+    }
+
+    static String revertDiscardedTokensInMainResults(List<List<LayoutToken>> layoutTokenPieces, String resultBody, String itemLabel) {
+        //LF: we update the resultBody sequence by reverting the tokens as <paragraph> elements
+        if (CollectionUtils.isNotEmpty(layoutTokenPieces)) {
+            List<List<String>> labelledResultsAsList = Arrays.stream(resultBody.split("\n"))
+                .map(l -> Arrays.stream(l.split("\t")).collect(Collectors.toList()))
+                .collect(Collectors.toList());
+
+            for (List<LayoutToken> tokens: layoutTokenPieces) {
+                // Find the index of the first layoutToken of the table in the tokenization
+                // False because we might have random sequences of tokens within the figures
+                List<Integer> candidateIndexes = findCandidateIndex(tokens, labelledResultsAsList, itemLabel, false);
+                if (candidateIndexes.isEmpty()) {
+                    LOGGER.warn("Cannot find the candidate index for fixing the results. Tokens: " + LayoutTokensUtil.toText(tokens));
+                    continue;
+                }
+
+                // At this point I have more than one candidate, which can be matched if the same first
+                // token is repeated in the sequence. The next step is to find the matching figure/table
+                // using a large sequence
+
+                List<String> sequenceTokenItemWithoutSpaces = tokens.stream()
+                    .map(LayoutToken::getText)
+                    .map(StringUtils::strip)
+                    .filter(StringUtils::isNotBlank)
+                    .collect(Collectors.toList());
+
+                //TODO: reduce candidate indexes after matching one sequence
+                int resultIndexCandidate = consolidateResultCandidateThroughSequence(candidateIndexes, labelledResultsAsList, sequenceTokenItemWithoutSpaces);
+
+                if (resultIndexCandidate > -1) {
+                    boolean first = true;
+                    for (int i = resultIndexCandidate;i < Math.min(resultIndexCandidate + sequenceTokenItemWithoutSpaces.size(), labelledResultsAsList.size()); i++) {
+                        List<String> line = labelledResultsAsList.get(i);
+                        String label = Iterables.getLast(line);
+                        if (first) {
+                            first = false;
+                            if (!label.startsWith("I-")) {
+                                line.set(line.size() - 1, label.replace(itemLabel, "I-" + TaggingLabels.PARAGRAPH_LABEL));
+                                continue;
+                            }
+                        } else {
+                            if (label.startsWith("I-")) {
+                                break;
+                            }
+                        }
+                        line.set(line.size() - 1, label.replace(itemLabel, TaggingLabels.PARAGRAPH_LABEL));
+                    }
+                } else {
+                    LOGGER.warn("Cannot find the result index candidate for fixing the results. Tokens " + LayoutTokensUtil.toText(tokens));
+                }
+            }
+
+            String updatedResultBody = labelledResultsAsList.stream()
+                .map(l -> String.join("\t", l))
+                .collect(Collectors.joining("\n"));
+
+            resultBody = updatedResultBody;
+        }
+        return resultBody;
+    }
+
+
 
     static int consolidateResultCandidateThroughSequence(List<Integer> candidateIndexes, List<List<String>> splitResult, List<String> tokensNoSpaceItem) {
         int resultIndexCandidate = -1;
@@ -494,7 +616,7 @@ public class FullTextParser extends AbstractParser {
      * to the first token of the figure/table
      *
      * strict = True then it will check the items related to I-<table> or I-<figure> first
-     * and then the <table> or <figure> only if there are not candidates
+     * and then the <table> or <figure> only if there are no candidates
      * strict = False is usually necessary if there are more tables than I- token, this because a figure/table could be
      * identified within the sequence initially provided by the fulltext model
      *
@@ -508,13 +630,14 @@ public class FullTextParser extends AbstractParser {
     static List<Integer> findCandidateIndex(List<LayoutToken> layoutTokenItem, List<List<String>> labelledResultsAsList, String itemLabel, boolean strict) {
         LayoutToken firstLayoutTokenItem = layoutTokenItem.get(0);
 
-        List<Integer> candidateIndexes = IntStream.range(0, labelledResultsAsList.size())
-            .filter(i -> labelledResultsAsList.get(i).get(0).equals(firstLayoutTokenItem.getText())
-                && Iterables.getLast(labelledResultsAsList.get(i)).equals("I-" + itemLabel))
-            .boxed()
-            .collect(Collectors.toList());
-
-        if (candidateIndexes.isEmpty() || !strict) {
+        List<Integer> candidateIndexes = new ArrayList<>();
+        if (strict) {
+             candidateIndexes = IntStream.range(0, labelledResultsAsList.size())
+                .filter(i -> labelledResultsAsList.get(i).get(0).equals(firstLayoutTokenItem.getText())
+                    && Iterables.getLast(labelledResultsAsList.get(i)).equals("I-" + itemLabel))
+                .boxed()
+                .collect(Collectors.toList());
+        } else {
             candidateIndexes = IntStream.range(0, labelledResultsAsList.size())
             .filter(i -> labelledResultsAsList.get(i).get(0).equals(firstLayoutTokenItem.getText())
                 && (
@@ -548,7 +671,6 @@ public class FullTextParser extends AbstractParser {
         try {
             // general segmentation
             Document doc = parsers.getSegmentationParser().processing(documentSource, config);
-            SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
             // header processing
             BiblioItem resHeader = new BiblioItem();
@@ -713,7 +835,7 @@ public class FullTextParser extends AbstractParser {
 
 	static public Pair<String, LayoutTokenization> getBodyTextFeatured(Document doc,
                                                                        SortedSet<DocumentPiece> documentBodyParts) {
-		if ((documentBodyParts == null) || (documentBodyParts.size() == 0)) {
+		if (CollectionUtils.isEmpty(documentBodyParts)) {
 			return null;
 		}
 		FeatureFactory featureFactory = FeatureFactory.getInstance();
@@ -722,7 +844,7 @@ public class FullTextParser extends AbstractParser {
         int currentFontSize = -1;
 
 		List<Block> blocks = doc.getBlocks();
-		if ( (blocks == null) || blocks.size() == 0) {
+		if (CollectionUtils.isEmpty (blocks)) {
 			return null;
 		}
 
@@ -1109,10 +1231,10 @@ public class FullTextParser extends AbstractParser {
 	                    currentFontSize = newFontSize;
 	                }
 
-	                if (token.getBold())
+	                if (token.isBold())
 	                    features.bold = true;
 
-	                if (token.getItalic())
+	                if (token.isItalic())
 	                    features.italic = true;
 
 	                if (features.capitalisation == null)
@@ -1239,6 +1361,14 @@ public class FullTextParser extends AbstractParser {
                                    String pathFullText,
                                    String pathTEI,
                                    int id) {
+        return createTraining(inputFile, pathFullText, pathTEI, id, null);
+    }
+
+    public Document createTraining(File inputFile,
+                                   String pathFullText,
+                                   String pathTEI,
+                                   int id,
+                                   GrobidModels.Flavor flavor) {
         if (tmpPath == null)
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
         if (!tmpPath.exists()) {
@@ -1264,13 +1394,13 @@ public class FullTextParser extends AbstractParser {
             doc.produceStatistics();
 
             String fulltext = //getAllTextFeatured(doc, false);
-                    parsers.getSegmentationParser().getAllLinesFeatured(doc);
+                    parsers.getSegmentationParser(flavor).getAllLinesFeatured(doc);
             //List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
             List<LayoutToken> tokenizations = doc.getTokenizations();
 
             // we write first the full text untagged (but featurized with segmentation features)
             String outPathFulltext = pathFullText + File.separator + pdfFileName.replaceAll("(?i)\\.pdf$", ".training.segmentation");
-            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), StandardCharsets.UTF_8);
+            Writer writer = new OutputStreamWriter(new FileOutputStream(outPathFulltext, false), StandardCharsets.UTF_8);
             writer.write(fulltext + "\n");
             writer.close();
 
@@ -1284,8 +1414,8 @@ public class FullTextParser extends AbstractParser {
             FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), StandardCharsets.UTF_8);
 
             if (isNotBlank(fulltext)) {
-                String rese = parsers.getSegmentationParser().label(fulltext);
-                StringBuffer bufferFulltext = parsers.getSegmentationParser().trainingExtraction(rese, tokenizations, doc);
+                String rese = parsers.getSegmentationParser(flavor).label(fulltext);
+                StringBuffer bufferFulltext = parsers.getSegmentationParser(flavor).trainingExtraction(rese, tokenizations, doc);
 
                 // write the TEI file to reflect the extact layout of the text as extracted from the pdf
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
@@ -1299,7 +1429,7 @@ public class FullTextParser extends AbstractParser {
                 writer.close();
             }
 
-            doc = parsers.getSegmentationParser().processing(documentSource,
+            doc = parsers.getSegmentationParser(flavor).processing(documentSource,
                 GrobidAnalysisConfig.defaultInstance());
 
             // REFERENCE SEGMENTER MODEL
@@ -1503,7 +1633,7 @@ public class FullTextParser extends AbstractParser {
                         headerTokenizations.add(tokenizationsFull.get(i));
                     }
                 }
-                Pair<String, List<LayoutToken>> featuredHeader = parsers.getHeaderParser().getSectionHeaderFeatured(doc, documentHeaderParts);
+                Pair<String, List<LayoutToken>> featuredHeader = parsers.getHeaderParser(flavor).getSectionHeaderFeatured(doc, documentHeaderParts);
                 String header = featuredHeader.getLeft();
 
                 if ((header != null) && (header.trim().length() > 0)) {
@@ -1513,12 +1643,12 @@ public class FullTextParser extends AbstractParser {
                     writer.write(header + "\n");
                     writer.close();
 
-                    String rese = parsers.getHeaderParser().label(header);
+                    String rese = parsers.getHeaderParser(flavor).label(header);
                     BiblioItem resHeader = new BiblioItem();
-                    resHeader = parsers.getHeaderParser().resultExtraction(rese, headerTokenizations, resHeader);
+                    resHeader = parsers.getHeaderParser(flavor).resultExtraction(rese, headerTokenizations, resHeader);
 
                     // buffer for the header block
-                    StringBuilder bufferHeader = parsers.getHeaderParser().trainingExtraction(rese, headerTokenizations);
+                    StringBuilder bufferHeader = parsers.getHeaderParser(flavor).trainingExtraction(rese, headerTokenizations);
                     Language lang = LanguageUtilities.getInstance().runLanguageId(bufferHeader.toString());
                     if (lang != null) {
                         doc.setLanguage(lang.getLang());
@@ -1728,9 +1858,6 @@ public class FullTextParser extends AbstractParser {
     /**
      * Extract results from a labelled full text in the training format without any string modification.
      *
-     * @param result reult
-     * @param tokenizations toks
-     * @return extraction
      */
     private StringBuilder trainingExtraction(String result,
                                             List<LayoutToken> tokenizations) {
@@ -2163,7 +2290,7 @@ public class FullTextParser extends AbstractParser {
     /**
      * Process figures identified by the full text model
      */
-    protected List<Figure> processFigures(String rese, List<LayoutToken> layoutTokens, Document doc) {
+    protected List<Figure> processFigures(String rese, List<LayoutToken> layoutTokens) {
         return processFigures(rese, layoutTokens, doc, 0);
     }
 
@@ -2172,7 +2299,7 @@ public class FullTextParser extends AbstractParser {
 
         int figureId = startFigureID;
 
-        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, layoutTokens, true);
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(FULLTEXT, rese, layoutTokens, true);
 
         for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
 				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.FIGURE))) {
@@ -2204,8 +2331,6 @@ public class FullTextParser extends AbstractParser {
             figureId ++;
         }
 
-        doc.setFigures(results);
-		doc.assignGraphicObjectsToFigures();
         return results;
     }
 
@@ -2369,7 +2494,7 @@ public class FullTextParser extends AbstractParser {
 									    Document doc,
                                         int startTableID) {
 		List<Table> results = new ArrayList<>();
-		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
+		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(FULLTEXT, rese, tokenizations, true);
 
         int tableId = startTableID;
 		for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
@@ -2567,7 +2692,7 @@ public class FullTextParser extends AbstractParser {
 									List<LayoutToken> tokenizations,
 									Document doc) {
 		List<Equation> results = new ArrayList<>();
-		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, rese, tokenizations, true);
+		TaggingTokenClusteror clusteror = new TaggingTokenClusteror(FULLTEXT, rese, tokenizations, true);
 		List<TaggingTokenCluster> clusters = clusteror.cluster();
 
 		Equation currentResult = null;
@@ -2635,7 +2760,7 @@ public class FullTextParser extends AbstractParser {
 
         List<LayoutToken> tokenizations = layoutTokenization.getTokenization();
 
-        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, result, tokenizations);
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(FULLTEXT, result, tokenizations);
         String tokenLabel = null;
         List<TaggingTokenCluster> clusters = clusteror.cluster();
 
@@ -2896,10 +3021,27 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 }
             }
 
-            tei.append(teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, fundings, config));
+            tei.append(teiFormatter.toTEIHeader(
+                resHeader,
+                null,
+                resCitations,
+                markerTypes,
+                fundings,
+                config)
+            );
 
-            tei = teiFormatter.toTEIBody(tei, bodyLabellingResult, resHeader, resCitations,
-                    layoutTokenization, bodyFigures, bodyTables, bodyEquations, markerTypes, doc, config);
+            tei = teiFormatter.toTEIBody(
+                tei,
+                bodyLabellingResult,
+                resHeader,
+                resCitations,
+                layoutTokenization,
+                bodyFigures,
+                bodyTables,
+                bodyEquations,
+                markerTypes,
+                doc,
+                config);
 
             tei.append("\t\t<back>\n");
 
@@ -2908,7 +3050,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append(annexStatement);
             }
 
-            if (fundings != null && fundings.size() >0) {
+            if (CollectionUtils.isNotEmpty(fundings)) {
                 tei.append("\n\t\t\t<listOrg type=\"funding\">\n");
                 for(Funding funding : fundings) {
                     if (funding.isNonEmptyFunding())
@@ -2917,7 +3059,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append("\t\t\t</listOrg>\n");
             }
 
-            if (affiliations != null && affiliations.size() >0) {
+            if (CollectionUtils.isNotEmpty(affiliations)) {
 
                 // check if we have at least one acknowledged research infrastructure here
                 List<Affiliation> filteredInfrastructures = new ArrayList<>();
@@ -3158,7 +3300,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append(annexStatement);
             }
 
-            if (fundings != null && fundings.size() >0) {
+            if (CollectionUtils.isNotEmpty(fundings)) {
                 tei.append("\n\t\t\t<listOrg type=\"funding\">\n");
                 for(Funding funding : fundings) {
                     if (funding.isNonEmptyFunding())
@@ -3167,7 +3309,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append("\t\t\t</listOrg>\n");
             }
 
-            if (affiliations != null && affiliations.size() >0) {
+            if (CollectionUtils.isNotEmpty(affiliations)) {
 
                 // check if we have at least one acknowledged research infrastructure here
                 List<Affiliation> filteredInfrastructures = new ArrayList<>();
@@ -3255,7 +3397,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                                 TaggingLabels.FIGURE_MARKER, TaggingLabels.EQUATION_LABEL);
 
     public static List<LayoutTokenization> getDocumentFullTextTokens(List<TaggingLabel> labels, String labeledResult, List<LayoutToken> tokenizations) {
-        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledResult, tokenizations);
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(FULLTEXT, labeledResult, tokenizations);
         List<TaggingTokenCluster> clusters = clusteror.cluster();
         List<LayoutTokenization> labeledTokenSequences = new ArrayList<LayoutTokenization>();
         LayoutTokenization currentTokenization = null;

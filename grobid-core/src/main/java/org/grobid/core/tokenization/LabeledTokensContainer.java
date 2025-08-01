@@ -1,6 +1,7 @@
 package org.grobid.core.tokenization;
 
 import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.layout.LayoutToken;
 
@@ -47,7 +48,7 @@ public class LabeledTokensContainer {
     }
 
     public String getFullLabel() {
-        return isBeginning() ? GenericTaggerUtils.START_ENTITY_LABEL_PREFIX + taggingLabel.getLabel()
+        return isBeginning() ? TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX + taggingLabel.getLabel()
                 : taggingLabel.getLabel();
     }
 

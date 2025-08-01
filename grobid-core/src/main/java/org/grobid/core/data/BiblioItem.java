@@ -6,7 +6,6 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.grobid.core.data.util.AuthorEmailAssigner;
 import org.grobid.core.data.util.ClassicAuthorEmailAssigner;
 import org.grobid.core.data.util.EmailSanitizer;
-import org.grobid.core.data.CopyrightsLicense;
 import org.grobid.core.document.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
@@ -22,7 +21,6 @@ import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.GrobidModels;
-import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
 
 import java.net.URLEncoder;
@@ -33,6 +31,8 @@ import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.grobid.core.utilities.Consolidation.CONSOLIDATION_STATUS_EXTRACTED;
 
 /**
  * Class for representing and exchanging a bibliographical item.
@@ -381,6 +381,13 @@ public class BiblioItem {
 
     // Copyrights/license information object
     CopyrightsLicense copyrightsLicense = null;
+
+    // Source (whether the data was consolidated)
+    private String status = CONSOLIDATION_STATUS_EXTRACTED;
+
+    // All the tokens that are considered noise will be collected here
+    private List<String> discardedPieces = new ArrayList<>();
+    private List<List<LayoutToken>> discardedPiecesTokens = new ArrayList<>();
 
     public static final List<String> confPrefixes = Arrays.asList("Proceedings of", "proceedings of",
             "In Proceedings of the", "In: Proceeding of", "In Proceedings, ", "In Proceedings of",
@@ -1282,6 +1289,14 @@ public class BiblioItem {
 
     public void setInstitution(String inst) {
         institution = StringUtils.normalizeSpace(inst);
+    }
+
+    public void setNoteOrConcatenateIfNotEmpty(String note) {
+        if (StringUtils.isBlank(this.note)) {
+            this.note = StringUtils.normalizeSpace(note);
+        } else {
+            this.note += " " + StringUtils.normalizeSpace(note);
+        }
     }
 
     public void setNote(String not) {
@@ -2238,6 +2253,9 @@ public class BiblioItem {
             tei.append(" ");
             if (withCoords)
                 tei.append(TEIFormatter.getCoordsAttribute(coordinates, withCoords)).append(" ");
+
+            tei.append("status=\"" + getStatus() + "\" ").append(" ");
+
             if (!StringUtils.isEmpty(language)) {
                 if (n == -1) {
                     tei.append("xml:lang=\"" + language + ">\n");
@@ -4378,6 +4396,7 @@ public class BiblioItem {
                 bib.setFullAuthors(bibo.getFullAuthors());
             }
         }
+        bib.setStatus(bibo.getStatus());
     }
 
 	/**
@@ -4521,5 +4540,37 @@ public class BiblioItem {
 
     public CopyrightsLicense getCopyrightsLicense() {
         return this.copyrightsLicense;
+    }
+
+    public List<String> getDiscardedPieces() {
+        return discardedPieces;
+    }
+
+    public void setDiscardedPieces(List<String> discardedPieces) {
+        this.discardedPieces = discardedPieces;
+    }
+
+    public void addDiscardedPiece(String piece) {
+        this.discardedPieces.add(piece);
+    }
+
+    public List<List<LayoutToken>> getDiscardedPiecesTokens() {
+        return discardedPiecesTokens;
+    }
+
+    public void setDiscardedPiecesTokens(List<List<LayoutToken>> discardedPiecesTokens) {
+        this.discardedPiecesTokens = discardedPiecesTokens;
+    }
+
+    public void addDiscardedPieceTokens(List<LayoutToken> pieceToken) {
+        this.discardedPiecesTokens.add(pieceToken);
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

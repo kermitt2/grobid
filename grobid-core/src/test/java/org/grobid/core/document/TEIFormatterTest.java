@@ -1,8 +1,12 @@
 package org.grobid.core.document;
 
 import nu.xom.Element;
+import nu.xom.Node;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.data.Figure;
+import org.grobid.core.data.FigureTableType;
 import org.grobid.core.data.Note;
+import org.grobid.core.data.Table;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LayoutTokensUtil;
@@ -10,9 +14,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+import static org.grobid.core.data.FigureTableType.TABLE;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
 
 public class TEIFormatterTest {
@@ -71,6 +78,303 @@ public class TEIFormatterTest {
             .generateURLRef("http:// github.com/ lfoppiano/ grobid-bla", tokens, false);
 
         assertThat(node.toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"url\" target=\"http://github.com/lfoppiano/grobid-bla\">http:// github.com/ lfoppiano/ grobid-bla</ref>"));
+    }
+
+    @Test
+    public void testMarkReferencesFigureTEI() throws Exception {
+        String input = "3C and 3D";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+
+        List<LayoutToken> tokensWithOffset = tokens.stream()
+            .peek(t -> t.setOffset(t.getOffset() + 51393))
+            .collect(Collectors.toList());
+
+        Figure f1 = new Figure();
+        f1.setLabel(new StringBuilder("1"));
+        Figure f2 = new Figure();
+        f2.setLabel(new StringBuilder("2"));
+        Figure f3 = new Figure();
+        f3.setLabel(new StringBuilder(""));
+
+        List<Figure> figures = List.of(f1, f2, f3);
+
+
+        List<Node> nodes = new TEIFormatter(null, null)
+            .markReferencesFigureTEI(input, tokensWithOffset,
+                figures, false);
+
+        assertThat(nodes, hasSize(4));
+        assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">3C</ref>"));
+        assertThat(nodes.get(1).toXML(), is(" and"));
+        assertThat(nodes.get(2).toXML(), is(" "));
+        assertThat(((Element) nodes.get(3)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">3D</ref>"));
+    }
+
+    @Test
+    public void testMarkReferencesFigureTEI_truncatedRef_andSeparator_referenceAtBeginning() throws Exception {
+        String input = "3D and";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+
+        List<LayoutToken> tokensWithOffset = tokens.stream()
+            .peek(t -> t.setOffset(t.getOffset() + 51393))
+            .collect(Collectors.toList());
+
+        Figure f1 = new Figure();
+        f1.setLabel(new StringBuilder("1"));
+        Figure f2 = new Figure();
+        f2.setLabel(new StringBuilder("2"));
+        Figure f3 = new Figure();
+        f3.setLabel(new StringBuilder(""));
+
+        List<Figure> figures = List.of(f1, f2, f3);
+
+
+        List<Node> nodes = new TEIFormatter(null, null)
+            .markReferencesFigureTEI(input, tokensWithOffset,
+                figures, false);
+
+        assertThat(nodes, hasSize(2));
+        assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">3D</ref>"));
+        assertThat(nodes.get(1).toXML(), is(" and"));
+    }
+
+    @Test
+    public void testMarkReferencesFigureTEI_truncatedRef_referenceAtTheEnd() throws Exception {
+        String input = "and 3D";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+
+        List<LayoutToken> tokensWithOffset = tokens.stream()
+            .peek(t -> t.setOffset(t.getOffset() + 51393))
+            .collect(Collectors.toList());
+
+        Figure f1 = new Figure();
+        f1.setLabel(new StringBuilder("1"));
+        Figure f2 = new Figure();
+        f2.setLabel(new StringBuilder("2"));
+        Figure f3 = new Figure();
+        f3.setLabel(new StringBuilder(""));
+
+        List<Figure> figures = List.of(f1, f2, f3);
+
+
+        List<Node> nodes = new TEIFormatter(null, null)
+            .markReferencesFigureTEI(input, tokensWithOffset,
+                figures, false);
+
+        assertThat(nodes, hasSize(3));
+        assertThat(nodes.get(0).toXML(), is("and"));
+        assertThat(nodes.get(1).toXML(), is(" "));
+        assertThat(((Element) nodes.get(2)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">3D</ref>"));
+    }
+
+    @Test
+    public void testMarkReferencesFigureTEI_truncatedRef_referenceAtBeginning() throws Exception {
+        String input = "5, & ";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        List<LayoutToken> tokensWithOffset = tokens.stream()
+            .peek(t -> t.setOffset(t.getOffset() + 51393))
+            .collect(Collectors.toList());
+
+        Figure f1 = new Figure();
+        f1.setLabel(new StringBuilder("1"));
+        Figure f2 = new Figure();
+        f2.setLabel(new StringBuilder("2"));
+        Figure f3 = new Figure();
+        f3.setLabel(new StringBuilder(""));
+
+        List<Figure> figures = List.of(f1, f2, f3);
+
+
+        List<Node> nodes = new TEIFormatter(null, null)
+            .markReferencesFigureTEI(input, tokensWithOffset, figures, false);
+
+        assertThat(nodes, hasSize(6));
+        assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">5</ref>"));
+        assertThat(nodes.get(1).toXML(), is(","));
+        assertThat(nodes.get(2).toXML(), is(" "));
+        assertThat(nodes.get(3).toXML(), is("&amp;"));
+        assertThat(nodes.get(4).toXML(), is(""));
+        assertThat(nodes.get(5).toXML(), is(" "));
+    }
+
+    @Test
+    public void testMarkReferencesFigureTEI_truncatedRefWithComma_referenceAtTheEnd() throws Exception {
+        String input = ", 3D";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+
+        List<LayoutToken> tokensWithOffset = tokens.stream()
+            .peek(t -> t.setOffset(t.getOffset() + 51393))
+            .collect(Collectors.toList());
+
+        Figure f1 = new Figure();
+        f1.setLabel(new StringBuilder("1"));
+        Figure f2 = new Figure();
+        f2.setLabel(new StringBuilder("2"));
+        Figure f3 = new Figure();
+        f3.setLabel(new StringBuilder(""));
+
+        List<Figure> figures = List.of(f1, f2, f3);
+
+
+        List<Node> nodes = new TEIFormatter(null, null)
+            .markReferencesFigureTEI(input, tokensWithOffset, figures, false);
+
+        assertThat(nodes, hasSize(3));
+        assertThat(nodes.get(0).toXML(), is(","));
+        assertThat(nodes.get(1).toXML(), is(" "));
+        assertThat(((Element) nodes.get(2)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">3D</ref>"));
+    }
+
+    @Test
+    public void testMarkReferencesFigureTEI_truncatedRefWithComma_referenceAtBeginning() throws Exception {
+        String input = "5, ";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+
+        List<LayoutToken> tokensWithOffset = tokens.stream()
+            .peek(t -> t.setOffset(t.getOffset() + 51393))
+            .collect(Collectors.toList());
+
+        Figure f1 = new Figure();
+        f1.setLabel(new StringBuilder("1"));
+        Figure f2 = new Figure();
+        f2.setLabel(new StringBuilder("2"));
+        Figure f3 = new Figure();
+        f3.setLabel(new StringBuilder(""));
+
+        List<Figure> figures = List.of(f1, f2, f3);
+
+
+        List<Node> nodes = new TEIFormatter(null, null)
+            .markReferencesFigureTEI(input, tokensWithOffset, figures, false);
+
+        assertThat(nodes, hasSize(4));
+        assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"figure\">5</ref>"));
+        assertThat(nodes.get(1).toXML(), is(","));
+        assertThat(nodes.get(2).toXML(), is(""));
+        assertThat(nodes.get(3).toXML(), is(" "));
+    }
+
+    @Test
+    public void testMarkReferencesTableTEI() throws Exception {
+        String input = "3C and 3D";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        List<LayoutToken> tokensWithOffset = tokens.stream()
+            .peek(t -> t.setOffset(t.getOffset() + 51393))
+            .collect(Collectors.toList());
+
+        Table t1 = new Table();
+        t1.setLabel(new StringBuilder("1"));
+        Table t2 = new Table();
+        t2.setLabel(new StringBuilder("2"));
+        Table t3 = new Table();
+        t3.setLabel(new StringBuilder(""));
+
+        List<Table> tables = List.of(t1, t2, t3);
+
+
+        List<Node> nodes = new TEIFormatter(null, null)
+            .markReferencesTableTEI(input, tokensWithOffset,
+                tables, false);
+        assertThat(nodes, hasSize(4));
+        assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"table\">3C</ref>"));
+        assertThat(nodes.get(1).toXML(), is(" and"));
+        assertThat(nodes.get(2).toXML(), is(" "));
+        assertThat(((Element) nodes.get(3)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"table\">3D</ref>"));
+    }
+
+    @Test
+    public void testMarkReferencesTableTEI_truncatedRef_referenceAtTheEnd() throws Exception {
+        String input = "and 3D";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        List<LayoutToken> tokensWithOffset = tokens.stream()
+            .peek(t -> t.setOffset(t.getOffset() + 51393))
+            .collect(Collectors.toList());
+
+        Table t1 = new Table();
+        t1.setLabel(new StringBuilder("1"));
+        Table t2 = new Table();
+        t2.setLabel(new StringBuilder("2"));
+        Table t3 = new Table();
+        t3.setLabel(new StringBuilder(""));
+
+        List<Table> tables = List.of(t1, t2, t3);
+
+        List<Node> nodes = new TEIFormatter(null, null)
+            .markReferencesTableTEI(input, tokensWithOffset, tables,
+                false);
+        assertThat(nodes, hasSize(3));
+        assertThat(nodes.get(0).toXML(), is("and"));
+        assertThat(nodes.get(1).toXML(), is(" "));
+        assertThat(((Element) nodes.get(2)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"table\">3D</ref>"));
+    }
+
+    @Test
+    public void testMarkReferencesTableTEI_truncatedRef_referenceAtBeginning() throws Exception {
+        String input = "5, & ";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        List<LayoutToken> tokensWithOffset = tokens.stream()
+            .peek(t -> t.setOffset(t.getOffset() + 51393))
+            .collect(Collectors.toList());
+
+        Table t1 = new Table();
+        t1.setLabel(new StringBuilder("1"));
+        Table t2 = new Table();
+        t2.setLabel(new StringBuilder("2"));
+        Table t3 = new Table();
+        t3.setLabel(new StringBuilder(""));
+
+        List<Table> tables = List.of(t1, t2, t3);
+
+        List<Node> nodes = new TEIFormatter(null, null)
+            .markReferencesTableTEI(input, tokensWithOffset, tables,
+                false);
+
+        assertThat(nodes, hasSize(6));
+        assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"table\">5</ref>"));
+        assertThat(nodes.get(1).toXML(), is(","));
+        assertThat(nodes.get(2).toXML(), is(" "));
+        assertThat(nodes.get(3).toXML(), is("&amp;"));
+        assertThat(nodes.get(4).toXML(), is(""));
+        assertThat(nodes.get(5).toXML(), is(" "));
+    }
+
+    @Test
+    public void testMarkReferencesTableTEI_truncatedRef2_referenceAtBeginning() throws Exception {
+        String input = "5 , & ";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        List<LayoutToken> tokensWithOffset = tokens.stream()
+            .peek(t -> t.setOffset(t.getOffset() + 51393))
+            .collect(Collectors.toList());
+
+        Table t1 = new Table();
+        t1.setLabel(new StringBuilder("1"));
+        Table t2 = new Table();
+        t2.setLabel(new StringBuilder("2"));
+        Table t3 = new Table();
+        t3.setLabel(new StringBuilder(""));
+
+        List<Table> tables = List.of(t1, t2, t3);
+
+        List<Node> nodes = new TEIFormatter(null, null)
+            .markReferencesTableTEI(input, tokensWithOffset, tables, false);
+
+        assertThat(nodes, hasSize(6));
+        assertThat(((Element) nodes.get(0)).toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"table\">5</ref>"));
+        assertThat(nodes.get(1).toXML(), is(" ,"));
+        assertThat(nodes.get(2).toXML(), is(" "));
+        assertThat(nodes.get(3).toXML(), is("&amp;"));
+        assertThat(nodes.get(4).toXML(), is(""));
+        assertThat(nodes.get(5).toXML(), is(" "));
     }
 
 

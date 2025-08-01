@@ -27,9 +27,9 @@ From a development installation, you can also build and install the service as a
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.1.zip
-mv grobid-service-0.8.1 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.1.zip
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.2.zip
+mv grobid-service-0.8.2 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.2.zip
 ./grobid-service/bin/grobid-service
 ```
 
@@ -135,12 +135,15 @@ Extract the header of the input PDF document, normalize it and convert it into a
 
 `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the header metadata and inject DOI only) or `3` (consolidate using only extracted DOI, if extracted, and do not try to consolidate using any other metadata).
 
-| method     | request type          | response type       | parameters               | requirement    | description                                                                                                                                                                                                                                      |
-|------------|-----------------------|---------------------|--------------------------|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| POST, PUT  | `multipart/form-data` | `application/xml`   | `input`                  | required       | PDF file to be processed                                                                                                                                                                                                                         |
-|            |                       |                     | `consolidateHeader`      | optional       | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the header and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted) . |
-|            |                       |                     | `includeRawAffiliations` | optional       | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).                                                                           |
-|            |                       |                     | `includeRawCopyrights`   | optional       | `includeRawCopyrights` is a boolean value, `0` (default, do not include raw copyrights/license string in the result) or `1` (include raw copyrights/license string in the result).                                                               |
+| method    | request type          | response type     | parameters               | requirement      | description                                                                                                                                                                                                                                      |
+|-----------|-----------------------|-------------------|--------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| POST, PUT | `multipart/form-data` | `application/xml` | `input`                  | required         | PDF file to be processed                                                                                                                                                                                                                         |
+|           |                       |                   | `consolidateHeader`      | optional         | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the header and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted) . |
+|           |                       |                   | `includeRawAffiliations` | optional         | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).                                                                           |
+|           |                       |                   | `includeRawCopyrights`   | optional         | `includeRawCopyrights` is a boolean value, `0` (default, do not include raw copyrights/license string in the result) or `1` (include raw copyrights/license string in the result).                                                               |
+|           |                       |                   | `start`                  | optional         | Start page number of the PDF to be considered, previous pages will be skipped/ignored, integer with first page starting at `1`, (default `-1`, start from the first page of the PDF)                                                             |
+|           |                       |                   | `end`                    | optional         | End page number of the PDF to be considered, next pages will be skipped/ignored, integer with first page starting at `1` (default `2`, end with the last page of the PDF)                                                                        |
+
 
 Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of XML TEI. 
 
@@ -192,6 +195,7 @@ Convert the complete input document into TEI XML format (header, body and biblio
 |           |                       |                      | `generateIDs`            | optional        | if supplied as a string equal to `1`, it generates uniqe identifiers for each text component                                                                                                                                                                       |
 |           |                       |                      | `start`                  | optional        | Start page number of the PDF to be considered, previous pages will be skipped/ignored, integer with first page starting at `1`, (default `-1`, start from the first page of the PDF)                                                                               |
 |           |                       |                      | `end`                    | optional        | End page number of the PDF to be considered, next pages will be skipped/ignored, integer with first page starting at `1` (default `-1`, end with the last page of the PDF)                                                                                         |
+|           |                       |                      | `flavor`                 | optional        | Indicate which flavor to apply for structuring the document. Useful when the default structuring cannot be applied to a specific document (e.g. the body is empty. More technical details and available flavor names in the [dedicated page](Grobid-specialized-processes.md). |
 
 Response status codes:
 
@@ -832,11 +836,11 @@ Get a model in the form of an archive (`.zip`), given a model name.
 
 Response status codes:
 
-|     HTTP Status code |   reason                                               |
-|---                   |---                                                     |
-|         200          |     Successful operation.                              |
-|         400          |     Wrong request, missing or invalid model name, invalid architecture name, missing header  |
-|         500          |     Indicate an internal service error, further described by a provided message           |
+| HTTP Status code      | reason                                                                                    |
+|-----------------------|-------------------------------------------------------------------------------------------|
+| 200                   | Successful operation.                                                                     |
+| 400                   | Wrong request, missing or invalid model name, invalid architecture name, missing header   |
+| 500                   | Indicate an internal service error, further described by a provided message               |
 
 
 You can test this service with the **cURL** command lines, for instance retrieving the zipped CRF date model binaries with a POST query:
@@ -849,6 +853,34 @@ or with a GET query:
 ```bash
 curl -v -X GET localhost:8070/api/model?model=date > model.zip
 ```
+
+#### Create training data 
+
+Generate the training data for the grobid models for a PDF document provided in input. 
+The service will return a ZIP archive with the training data in TEI XML format which may need to be corrected, because it can be used.
+
+
+| method    | request type          | response type         | parameters | requirement     | description                                                            |
+|-----------|-----------------------|-----------------------|------------|-----------------|------------------------------------------------------------------------|
+| POST      | application/form-data | application/zip       | input      | required        | A PDF document                                                         |
+|           |                       |                       | flavor     | optional        | The name of the flavor that could be used to create the training data  |
+
+Response status codes:
+
+| HTTP Status code      | reason                                                                                  |
+|-----------------------|-----------------------------------------------------------------------------------------|
+| 200                   | Successful operation.                                                                   |
+| 400                   | Wrong request, missing or invalid model name, invalid architecture name, missing header |
+| 500                   | Indicate an internal service error, further described by a provided message             |
+
+You can test this service with the **cURL** command lines, for instance starting the training of the CRF date model and producing an evaluation based on an holdout set:
+```bash
+curl --location 'http://localhost:8070/api/createTraining' \
+--form 'input=@"PATH_DOCUMENT"'
+--output output_name.zip
+```
+
+The zip file will contain the training data as described in the [general principles](General-principles.md) of GROBID training data.
 
 ## Parallel mode
 

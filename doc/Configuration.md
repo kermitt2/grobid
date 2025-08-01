@@ -17,14 +17,14 @@ The GROBID home is the path where all the runtime GROBID resources are located (
   grobidHome: "grobid-home"
 ```
 
-By default temporary files are currently written under `grobid-home/tmp`:
+By default, temporary files are currently written under `grobid-home/tmp`:
 
 ```yml
   # path relative to the grobid-home path (e.g. tmp for grobid-home/tmp) or absolute path (/tmp)
   temp: "tmp"
 ```
 
-By default native libraries are currently written under `grobid-home/lib`:
+By default, native libraries are currently written under `grobid-home/lib`:
 
 ```yml
   # normally nothing to change here, path relative to the grobid-home path (e.g. grobid-home/lib)
@@ -72,7 +72,7 @@ Optionally a proxy can be defined, which will be used when calling CrossRef REST
 
 ### CORS
 
-CORS for the GROBID web API service can be configurated by the following yaml part: 
+CORS for the GROBID web API service can be configured by the following yaml part: 
 
 ```yml
   # CORS configuration for the GROBID web API service

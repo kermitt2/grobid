@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="XP015135013"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	SFC WG<lb/> CJ. Bernardos<lb/>
+	<note type="doctype">Internet-Draft<lb/></note>
+
+	UC3M<lb/> Intended status: Informational<lb/> A. Rahman<lb/> Expires: March 10, 2020<lb/> A. Mourad<lb/> InterDigital<lb/>
+	<date>September 7, 2019<lb/></date>
+
+	<docTitle>
+	<titlePart>Service Function Chaining Use Cases in Fog RAN<lb/></titlePart>
+	</docTitle>
+
+	<idno>draft-bernardos-sfc-fog-ran-06<lb/></idno>
+
+	<div type="abstract">Abstract<lb/> Fog Radio Access Networks (RAN) refers to the part of the RAN that is<lb/> virtualized at the very edge of the network, even at the end-user<lb/> device. Fog RAN support is considered critical for the 5G mobile<lb/> network architectures currently being developed in various research,<lb/> standardization and industry forums. Since fog RAN builds on top of<lb/> virtualization and can involve several virtual functions running on<lb/> different virtualized resources, Service function chaining (SFC)<lb/> support for the fog RAN will be critical. This document describes<lb/> the overall fog RAN approach and also gives some use cases. Finally<lb/> it proposes some requirements to be considered in the development of<lb/> the SFC architecture and related protocols.<lb/></div>
+
+	<note type="other">Status of This Memo<lb/> This Internet-Draft is submitted in full conformance with the<lb/> provisions of BCP 78 and BCP 79.<lb/> Internet-Drafts are working documents of the Internet Engineering<lb/> Task Force (IETF). Note that other groups may also distribute<lb/> working documents as Internet-Drafts. The list of current Internet-<lb/>Drafts is at https://datatracker.ietf.org/drafts/current/.<lb/> Internet-Drafts are draft documents valid for a maximum of six months<lb/> and may be updated, replaced, or obsoleted by other documents at any<lb/> time. It is inappropriate to use Internet-Drafts as reference<lb/> material or to cite them other than as &quot;work in progress.&quot;<lb/> This Internet-Draft will expire on March 10, 2020.<lb/></note>
+
+	Copyright Notice<lb/>
+	<note type="copyright">Copyright (c) 2019 IETF Trust and the persons identified as the<lb/> document authors. All rights reserved.<lb/></note>
+
+	Bernardos, et al.<lb/> Expires March 10, 2020<lb/> [Page 1]<lb/>
+	<note type="doctype">Internet-Draft<lb/></note>
+
+	Fog RAN SFC<lb/> September 2019<lb/>
+	
+	<note type="copyright">This document is subject to BCP 78 and the IETF Trust&apos;s Legal<lb/> Provisions Relating to IETF Documents<lb/> (https://trustee.ietf.org/license-info) in effect on the date of<lb/> publication of this document. Please review these documents<lb/> carefully, as they describe your rights and restrictions with respect<lb/> to this document. Code Components extracted from this document must<lb/> include Simplified BSD License text as described in Section 4.e of<lb/> the Trust Legal Provisions and are provided without warranty as<lb/> described in the Simplified BSD License.<lb/></note>
+
+	<byline>
+	<docAuthor>Carlos J. Bernardos<lb/></docAuthor>
+	</byline> 
+
+	<byline>
+	<affiliation>Universidad Carlos III de Madrid<lb/></affiliation>
+	</byline>
+
+	<address>Av. Universidad, 30<lb/> Leganes, Madrid 28911<lb/> Spain<lb/></address>
+
+	<phone>Phone: +34 91624 6236<lb/></phone>
+	<email>Email: cjbc@it.uc3m.es<lb/></email> 
+	URI:<lb/> http://www.it.uc3m.es/cjbc/<lb/>
+
+	<byline>
+	<docAuthor>Akbar Rahman<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>InterDigital Communications, LLC<lb/></affiliation>
+	</byline>
+
+	<address>1000 Sherbrooke Street West, 10th floor<lb/> Montreal, Quebec H3A 3G4<lb/> Canada<lb/></address>
+
+	<email>Email: Akbar.Rahman@InterDigital.com<lb/></email>
+	URI:<lb/> http://www.InterDigital.com/<lb/> 
+
+	<byline>
+	<docAuthor>Alain Mourad<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>InterDigital Europe<lb/></affiliation>
+	</byline>
+
+	<email>Email: Alain.Mourad@InterDigital.com<lb/></email> 
+	URI:<lb/> http://www.InterDigital.com/
+
+		</front>
+	</text>
+</tei>

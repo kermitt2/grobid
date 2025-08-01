@@ -15,7 +15,7 @@ public class GrobidTestUtils {
     }
 
     /**
-     * Utility method to generate a hypotetical result from wapiti.
+     * Utility method to generate a hypothetical result from wapiti.
      * Useful for testing the extraction of the sequence labeling.
      *
      * @param labels label maps. A list of Triples, containing label (left), start_index (middle) and end_index exclusive (right)
