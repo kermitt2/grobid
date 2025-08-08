@@ -8,9 +8,9 @@ GROBID can be instantiated and run using Docker. Using two equivalent docker hub
 
 For convenience, we provide two docker images:
 
-- a **full image** (using the convention `{version}-full` e.g. `grobid/grobid:{version}-full` or `lfoppiano/grobid:{version}-full`) (10GB) able to run both Deep Learning and CRF models: this image includes all the required python and TensorFlow libraries, GPU support and all DL model resources. It can provide more accurate results, notably for reference extraction/parsing and citation context identification. Depending on the availability of a GPU (recommended) or not, some Deep Learning models might introduce much slower runtime and significantly higher memory usage. This image is considerably larger than a CRF-only image. The full image contains Python and TensorFlow/Pytorch libraries (more than 3GB) and pre-loaded embeddings (around 5GB), but we recommend to use it.
+- a **full image** (using the convention `{version}-full` e.g. `grobid/grobid:{version}-full` or `lfoppiano/grobid:{version}-full`) (~8GB) able to run both Deep Learning and CRF models: this image includes all the required python and TensorFlow libraries, GPU support and all DL model resources. It can provide more accurate results, notably for reference extraction/parsing and citation context identification. Depending on the availability of a GPU (recommended) or not, some Deep Learning models might introduce much slower runtime and significantly higher memory usage. This image is considerably larger than a CRF-only image. The full image contains Python and TensorFlow/Pytorch libraries (more than 3GB) and pre-loaded embeddings (around 5GB), but we recommend to use it.
 
-- a **lightweight image** (using the convention `{version}-crf` e.g. `grobid/grobid:{version}-crf` or `lfoppiano/grobid:{version}-crf`) with only CRF models (300MB): this image offers best performance in terms of runtime and memory usage, as well as limiting the size of the image, but it does not use some of the best performing models by accuracy. If possible, use the above full image. 
+- a **lightweight image** (using the convention `{version}-crf` e.g. `grobid/grobid:{version}-crf` or `lfoppiano/grobid:{version}-crf`) with only CRF models (~500MB): this image offers best performance in terms of runtime and memory usage, as well as limiting the size of the image, but it does not use some of the best performing models by accuracy. If possible, use the above full image. 
 
 Note that these provided docker images are currently only for amd64 CPU host machines. These images can run on MacOS/arm64, but only emulated (so quite slower). They will not run on linux/arm64 host machines. We will try to build multi-arch build images in the next versions. 
 
@@ -236,7 +236,7 @@ Without this requirement, the image might default to CPU, even if GPU are availa
 For being able to use both CRF and Deep Learning models, use the dockerfile `./Dockerfile.delft`. The only important information then is the version which will be checked out from the tags.
 
 ```bash
-docker build -t grobid/grobid:0.8.2 --build-arg GROBID_VERSION=0.8.2 --file Dockerfile.delft .
+docker build -t grobid/grobid:0.8.2-full --build-arg GROBID_VERSION=0.8.2 --file Dockerfile.delft .
 ```
 
 Similarly, if you want to create a docker image from the current master, development version:
@@ -276,7 +276,7 @@ docker container ls
 For building a CRF-only image, the dockerfile to be used is `./Dockerfile.crf`. The only important information then is the version which will be checked out from the tags.
 
 ```bash
-docker build -t grobid/grobid:0.8.2 --build-arg GROBID_VERSION=0.8.2 --file Dockerfile.crf .
+docker build -t grobid/grobid:0.8.2-crf --build-arg GROBID_VERSION=0.8.2 --file Dockerfile.crf .
 ```
 
 Similarly, if you want to create a docker image from the current master, development version:
