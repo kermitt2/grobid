@@ -3051,6 +3051,66 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append(availabilityStmt.toString());
             }
 
+            // conflict of interest statements in header
+            StringBuilder conflictOfInterestStmt = new StringBuilder();
+            if (StringUtils.isNotBlank(resHeader.getAvailabilityStmt())) {
+                List<LayoutToken> headerAvailabilityStatementTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_CONFLICT_OF_INTEREST);
+                Pair<String, List<LayoutToken>> headerConflictOfInterestProcessed = processShort(headerAvailabilityStatementTokens, doc);
+                if (headerConflictOfInterestProcessed != null) {
+                    conflictOfInterestStmt = teiFormatter.processTEIDivSection("conflict",
+                        "\t\t\t",
+                        headerConflictOfInterestProcessed.getLeft(),
+                        headerConflictOfInterestProcessed.getRight(),
+                        resCitations,
+                        config);
+                }
+                if (conflictOfInterestStmt.length() > 0) {
+                    tei.append(conflictOfInterestStmt.toString());
+                }
+            }
+
+            // conflict of interest statements in non-header part
+            conflictOfInterestStmt = getSectionAsTEI("conflict",
+                "\t\t\t",
+                doc,
+                SegmentationLabels.CONFLICT_OF_INTEREST,
+                teiFormatter,
+                resCitations,
+                config);
+            if (conflictOfInterestStmt.length() > 0) {
+                tei.append(conflictOfInterestStmt.toString());
+            }
+
+            // author contribution statements in header
+            StringBuilder authorContribution = new StringBuilder();
+            if (StringUtils.isNotBlank(resHeader.getAvailabilityStmt())) {
+                List<LayoutToken> headerAvailabilityStatementTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_AUTHOR_CONTRIBUTION);
+                Pair<String, List<LayoutToken>> headerAuthorContributionProcessed = processShort(headerAvailabilityStatementTokens, doc);
+                if (headerAuthorContributionProcessed != null) {
+                    authorContribution = teiFormatter.processTEIDivSection("contribution",
+                        "\t\t\t",
+                        headerAuthorContributionProcessed.getLeft(),
+                        headerAuthorContributionProcessed.getRight(),
+                        resCitations,
+                        config);
+                }
+                if (authorContribution.length() > 0) {
+                    tei.append(authorContribution.toString());
+                }
+            }
+
+            // availability statements in non-header part
+            authorContribution = getSectionAsTEI("contribution",
+                "\t\t\t",
+                doc,
+                SegmentationLabels.AUTHOR_CONTRIBUTION,
+                teiFormatter,
+                resCitations,
+                config);
+            if (authorContribution.length() > 0) {
+                tei.append(authorContribution.toString());
+            }
+
 			tei = teiFormatter.toTEIAnnex(tei, annexLabellingResult, resHeader, resCitations,
 				tokenizationsAnnex, markerTypes, doc, config);
 
