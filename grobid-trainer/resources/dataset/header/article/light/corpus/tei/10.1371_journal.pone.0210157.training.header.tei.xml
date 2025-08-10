@@ -69,7 +69,8 @@
 	Funding:
 	<note type="funding">This study was supported by the Center<lb/> for Veterinary Health Sciences, Oklahoma State<lb/> University, to CCL; and Oklahoma Agricultural<lb/> Experiment Station, to UD. The funders had no role<lb/> in study design, data collection and analysis,<lb/> decision to publish, or preparation of the<lb/> manuscript.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>

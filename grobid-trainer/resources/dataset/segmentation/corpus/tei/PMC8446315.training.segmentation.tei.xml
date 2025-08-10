@@ -120,7 +120,9 @@
 
 			<div type="acknowledgement">ACKNOWLEDGMENTS <lb/>The authors are grateful to Dr. Cheng Zhang for sending a <lb/>PDB file containing structure of FPR1 homology model with <lb/>docked fMLF peptide. <lb/></div>
 
-			<div type="conflict">CONFLICT OF INTEREST <lb/>The authors declare no conflict of interest. <lb/>AUTHOR CONTRIBUTIONS <lb/>L. Crocetti, M.P. Giovannoni, and C. Vergelli designed <lb/>the compounds and wrote the manuscript; N. Cantini, G. <lb/>Guerrini, and A. Cilibrizzi synthesized the compounds and <lb/>checked the final version of the manuscript. In vitro stud-<lb/>ies and pharmacological section were performed by L.N. <lb/>Kirpotina, I.A. Schepetkin, and M.T. Quinn. Molecular <lb/></div>
+			<div type="conflict">CONFLICT OF INTEREST <lb/>The authors declare no conflict of interest. <lb/></div>
+
+            <div type="contribution">AUTHOR CONTRIBUTIONS <lb/>L. Crocetti, M.P. Giovannoni, and C. Vergelli designed <lb/>the compounds and wrote the manuscript; N. Cantini, G. <lb/>Guerrini, and A. Cilibrizzi synthesized the compounds and <lb/>checked the final version of the manuscript. In vitro stud-<lb/>ies and pharmacological section were performed by L.N. <lb/>Kirpotina, I.A. Schepetkin, and M.T. Quinn. Molecular <lb/></div>
 				
 			<body>F I G U R E 1 7 A surface of FPR2 <lb/>receptor is shown together with the poses. <lb/>Ordinary and magnified view of the same <lb/>surface from the front and rear (opposite) <lb/>sides of the receptor are shown where <lb/>the hole is clearly visible (rear side). <lb/>WKYMVm peptide is shown in black <lb/></body>
 			
@@ -128,7 +130,7 @@
 			
 			<note place="headnote">VERGELLI Et aL. <lb/></note>
 			
-			<div type="annex">docking was performed by A.I. Khlebnikov. Crystallographic <lb/>analysis and related section were performed by P. Rossi and <lb/>P. Paoli. All authors participated in revisions and have given <lb/>approval of the final manuscript version. <lb/></div>
+			<div type="contribution">docking was performed by A.I. Khlebnikov. Crystallographic <lb/>analysis and related section were performed by P. Rossi and <lb/>P. Paoli. All authors participated in revisions and have given <lb/>approval of the final manuscript version. <lb/></div>
 
 			<front>ORCID <lb/>Gabriella Guerrini <lb/>https://orcid. <lb/>org/0000-0001-6711-7965 <lb/></front>
 

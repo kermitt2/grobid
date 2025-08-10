@@ -64,7 +64,9 @@
 
 			<div type="acknowledgement">ACKNOWLEDGMENTS <lb/>We acknowledge funding by the ERC Advanced grant NEUROMEM, Well-<lb/>come, and the European Union&apos;s Horizon 2020 research and innovation pro-<lb/>gramme under grant agreement no. 785907 Human Brain Project SGA2. We <lb/>thank Daniel Bush, James Bisby, Sofie Meyer, Alexandra Constantinescu, <lb/>Jesse Geerts, and Talfan Evans for comments and useful discussions. <lb/></div>
 
-			<div type="contribution">AUTHOR CONTRIBUTIONS <lb/>A.B. conceptualized, designed, and implemented the model in code, created <lb/>visualizations, and wrote the paper. N.B conceptualized the model, wrote the <lb/>paper, and secured funding. <lb/>DECLARATION OF INTERESTS <lb/>The authors declare no competing interests. <lb/></div>
+			<div type="contribution">AUTHOR CONTRIBUTIONS <lb/>A.B. conceptualized, designed, and implemented the model in code, created <lb/>visualizations, and wrote the paper. N.B conceptualized the model, wrote the <lb/>paper, and secured funding. <lb/></div>
+
+            <div type="conflict">DECLARATION OF INTERESTS <lb/>The authors declare no competing interests. <lb/></div>
 
 			<front>Received: September 28, 2018 <lb/>Revised: December 23, 2018 <lb/>Accepted: January 30, 2019 <lb/>Published: March 7, 2019 <lb/></front>
 

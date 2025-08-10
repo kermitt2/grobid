@@ -75,7 +75,8 @@
 	Funding:
 	<note type="funding">This work was funded by the Ministry of<lb/> Science and Technology (MOST 104-2313-B-002<lb/> -014 -MY3) of Taiwan (https://www.most.gov.tw/)<lb/> to YL. The funder had no role in study design, data<lb/> collection and analysis, decision to publish, or<lb/> preparation of the manuscript.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>

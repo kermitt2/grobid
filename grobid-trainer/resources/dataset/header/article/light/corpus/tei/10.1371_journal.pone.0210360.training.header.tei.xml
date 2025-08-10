@@ -72,7 +72,8 @@
 	Funding: 
 	<note type="funding">The study was supported by a grant from<lb/> the Faculty of Tropical Medicine, Mahidol<lb/> University. The funders had no role in study<lb/> design, data collection and analysis, decision to<lb/> publish, or preparation of the manuscript.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>
