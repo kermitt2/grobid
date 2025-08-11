@@ -9,6 +9,10 @@ site_description: Documentation for GROBID
 docs_dir: doc
 extra_css:
   - css/custom.css
+
+extra_javascript:
+    - doc/readthedocs-search.js
+
 plugins:
     - search
 nav:
