@@ -11,14 +11,16 @@ The space is free and does not require any authentication.
 
 ## Running Grobid locally
 
-> [!TIP] 
-> The standard way to run Grobid locally is to use [Docker](https://docs.docker.com/engine/understanding-docker/) for starting a Grobid server. 
+{% callout type="check" %}
+The standard way to run Grobid locally is to use [Docker](https://docs.docker.com/engine/understanding-docker/) for starting a Grobid server. 
+{% /callout %}
 
 For installing Docker on your system, please visit the official Docker documentation [here](https://docs.docker.com/get-docker/).
 
 Grobid docker images are available on both at [Docker Grobid Hub](https://hub.docker.com/r/grobid/grobid) (`grobid/grobid`) and [Docker lfoppiano Hub (mirror)](https://hub.docker.com/r/lfoppiano/grobid) (`lfoppiano/grobid`) repositories using the same tag naming conventions.
-> [!IMPORTANT] 
-> The `lfoppiano/grobid` without any suffix (e.g. `lfoppiano/grobid:0.7.2`) was used for the CRF image. From version 0.8.2, the tag without any suffix will refer to the full image. To avoid problems, please use the `grobid/grobid` repository instead.
+{% callout type="caution" %}
+The `lfoppiano/grobid` without any suffix (e.g. `lfoppiano/grobid:0.7.2`) was used for the CRF image. From version 0.8.2, the tag without any suffix will refer to the full image. To avoid problems, please use the `grobid/grobid` repository instead.
+{% /callout %}
 
 For convenience, we provide two Grobid docker images:
 
