@@ -2,7 +2,7 @@
 
 ## Getting the GROBID project source
 
-For building GROBID yourself, a JDK must be installed on your machine. We tested the tool successfully from **JDK 1.11** up version **JDK 1.17**. Other recent JDK versions should work correctly. 
+For building GROBID yourself, a JDK must be installed on your machine. We tested the tool successfully from **JDK 1.11** up version **JDK 1.17**. Other recent JDK versions should work, however they haven't been tested.
 
 Note: Java/JDK 8 is not supported anymore from Grobid version `0.8.0` and the minimum requirement for Java is JDK 1.11.
 

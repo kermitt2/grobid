@@ -1,5 +1,14 @@
 <h1>Troubleshooting</h1>
 
+### Timeout and 408 errors
+
+Occasionally, [people have reported](https://github.com/kermitt2/grobid/issues/1234) timeout issues when using Grobid, especially when processing large quantities of PDF files locally. This can happen if the server takes too long to respond, leading to a 408 Request Timeout error. 
+
+To resolve this issue there are several options: 
+ - Check that you are running the proper image for your hardware. If you are not sure, use the image `grobid/grobid:0.8.2-crf` which is the most lightweight and fastest image. 
+ - Make sure you don't send too many requests at the same time, as this can overload the server. If you are using the Grobid python client, you can set the `n` parameter to a lower value (e.g. 1 or 2) to limit the number of concurrent requests.
+ - Increase the timeout value in your client. If you are using the Grobid python client, you can set the `timeout` parameter to a higher value (e.g. 90 seconds) in the `config.json` to give the server more time to respond.
+
 ### Error in the logs
 
 The logs of Grobid are located in `logs/grobid-service.log`, the console log from gradle are usually not very useful to understand the problem. 

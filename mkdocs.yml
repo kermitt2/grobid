@@ -1,11 +1,23 @@
 site_name: GROBID Documentation
 repo_url: https://github.com/kermitt2/grobid/
 repo_name: GitHub
-theme: readthedocs
+
+theme:
+  name: material
+
 site_description: Documentation for GROBID
 docs_dir: doc
 extra_css:
   - css/custom.css
+
+extra_javascript:
+    - doc/readthedocs-search.js
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 plugins:
     - search
 nav:
