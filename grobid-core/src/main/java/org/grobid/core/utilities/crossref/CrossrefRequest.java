@@ -85,16 +85,21 @@ public class CrossrefRequest<T extends Object> extends Observable {
 	public void execute() {
 		if (params == null) {
             // this should not happen
-            CrossrefRequestListener.Response<T> message = new CrossrefRequestListener.Response<T>();
+            CrossrefRequestListener.Response<T> message = new CrossrefRequestListener.Response<>();
             message.setException(new Exception("Empty list of parameter, cannot build request to the consolidation service"), this.toString());
             notifyListeners(message);
             return;
         }
 
         CloseableHttpClient httpclient = null;
+        int timeout = GrobidProperties.getConsolidationTimeout() * 1000; // Convert to milliseconds
         RequestConfig requestConfig = RequestConfig.custom()
-                                .setCookieSpec(CookieSpecs.STANDARD)
-                                .build();
+                .setCookieSpec(CookieSpecs.STANDARD)
+                .setConnectTimeout(timeout)
+                .setSocketTimeout(timeout)
+                .setConnectionRequestTimeout(timeout)
+                .build();
+
         if (GrobidProperties.getProxyHost() != null) {
             HttpHost proxy = new HttpHost(GrobidProperties.getProxyHost(), GrobidProperties.getProxyPort());
             DefaultProxyRoutePlanner routePlanner = new DefaultProxyRoutePlanner(proxy);
@@ -145,9 +150,9 @@ public class CrossrefRequest<T extends Object> extends Observable {
 
             if (GrobidProperties.getCrossrefMailto() != null) {
             	httpget.setHeader("User-Agent", 
-            		"GROBID/0.6.1 (https://github.com/kermitt2/grobid; mailto:" + GrobidProperties.getCrossrefMailto() + ")");
+            		"GROBID/0.8.2 (https://github.com/kermitt2/grobid; mailto:" + GrobidProperties.getCrossrefMailto() + ")");
 			} else {
-				httpget.setHeader("User-Agent", "GROBID/0.6.1 (https://github.com/kermitt2/grobid)");
+				httpget.setHeader("User-Agent", "GROBID/0.8.2 (https://github.com/kermitt2/grobid)");
 			}
             
 			// set the authorization token for the Metadata Plus service if available

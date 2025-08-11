@@ -753,10 +753,18 @@ public class GrobidProperties {
     }
 
     /**
+     * Get the timeout in seconds for consolidation service requests.
+     * @return timeout in seconds
+     */
+    public static int getConsolidationTimeout() {
+        return grobidConfig.grobid.consolidation.timeoutSec;
+    }
+
+    /**
      * Returns if the execution context is stand alone or server.
      *
      * @return the context of execution. Return false if the property value is
-     * not readable.
+     * null or empty.
      */
     public static boolean isContextExecutionServer() {
         return contextExecutionServer;

@@ -90,10 +90,11 @@ public class Consolidation {
      * Hidden constructor
      */
     private Consolidation() {
-        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON)
+        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) {
             client = GluttonClient.getInstance();
-        else
+        } else {
             client = CrossrefClient.getInstance();
+        }
         workDeserializer = new WorkDeserializer();
         funderDeserializer = new FunderDeserializer();
     }
@@ -264,11 +265,16 @@ public class Consolidation {
                 doiQuery = false;
             }
 
-            client.pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(0) {
+            client.pushRequest(
+                "works",
+                arguments,
+                workDeserializer,
+                threadId,
+                new CrossrefRequestListener<BiblioItem>(0) {
 
                 @Override
                 public void onSuccess(List<BiblioItem> res) {
-                    if ((res != null) && (res.size() > 0) ) {
+                    if (CollectionUtils.isNotEmpty(res)) {
                         // we need here to post-check that the found item corresponds
                         // correctly to the one requested in order to avoid false positive
                         for(BiblioItem oneRes : res) {
