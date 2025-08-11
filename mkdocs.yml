@@ -1,7 +1,7 @@
 site_name: GROBID Documentation
 repo_url: https://github.com/kermitt2/grobid/
 repo_name: GitHub
-theme: readthedocs
+theme: material
 site_description: Documentation for GROBID
 docs_dir: doc
 extra_css:
