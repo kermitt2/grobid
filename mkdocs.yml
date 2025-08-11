@@ -13,6 +13,11 @@ extra_css:
 extra_javascript:
     - doc/readthedocs-search.js
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 plugins:
     - search
 nav:
