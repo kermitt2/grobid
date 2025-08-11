@@ -44,6 +44,7 @@ public class GrobidConfig {
 
     public static class ConsolidationParameters {
         public String service;
+        public int timeoutSec = 60;
         public HostParameters glutton;
         public CrossrefParameters crossref;
     }

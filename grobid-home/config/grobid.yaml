@@ -27,6 +27,11 @@ grobid:
     # "glutton" for https://github.com/kermitt2/biblio-glutton
     service: "crossref"
     #service: "glutton"
+    timeoutSec: 60
+    # timeout for the REST API call, reduce it if you want to reduce
+    # the waiting time for the Grobid service.
+    # NOTE: setting a low timeout and then hammer CrossRef will get you banned,
+    #   so be careful and polite with this setting!
     glutton:
       #url: "https://cloud.science-miner.com/glutton"
       url: "http://localhost:8080" 
@@ -57,7 +62,7 @@ grobid:
   
   # maximum concurrency allowed to GROBID server for processing parallel requests - change it according to your CPU/GPU capacities
   # for a production server running only GROBID, set the value slightly above the available number of threads of the server
-  # to get best performance and security
+  # to get the best performance and security
   concurrency: 10
   # when the pool is full, for queries waiting for the availability of a Grobid engine, this is the maximum time wait to try 
   # to get an engine (in seconds) - normally never change it
