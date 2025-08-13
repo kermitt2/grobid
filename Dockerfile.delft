@@ -33,7 +33,7 @@ COPY build.gradle ./
 COPY settings.gradle ./
 
 # git
-# COPY .git/ ./.git
+COPY .git/ ./.git
 
 # source
 COPY grobid-home/ ./grobid-home/
