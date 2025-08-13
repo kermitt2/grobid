@@ -13,7 +13,7 @@
 # -------------------
 # build builder image
 # -------------------
-FROM eclipse-temurin:17.0.15_6-jdk AS builder
+FROM eclipse-temurin:21-jdk AS builder
 
 USER root
 
@@ -31,7 +31,7 @@ COPY build.gradle ./
 COPY settings.gradle ./
 
 # git
-COPY .git/ ./.git
+# COPY .git/ ./.git
 
 # source
 COPY grobid-home/ ./grobid-home/
@@ -66,7 +66,7 @@ RUN rm -rf grobid-source
 # -------------------
 # build runtime image
 # -------------------
-FROM eclipse-temurin:17.0.15_6-jre
+FROM eclipse-temurin:21-jre
 
 RUN apt-get update && \
     apt-get -y upgrade && \
