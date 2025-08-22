@@ -44,9 +44,9 @@
 
 			<body>synchronized by developmental stage to within two hours. To <lb/>make this data comparable to our experimental groups, in which <lb/>egg-laying occurred over 24h, we corresponded the <lb/>developmental stages of the FlyBase data to our developmental <lb/>stage time course (fig 4b), linearly interpolated the expression <lb/>values and applied a 24h sliding window average to the <lb/>interpolated data, mimicking the dispersion effects of our longer <lb/>egg-collection window. <lb/></body>
 
-			<div type="annex">Conflict of interest <lb/>The authors have no financial interests related to this work. <lb/></div>
+			<div type="conflict">Conflict of interest <lb/>The authors have no financial interests related to this work. <lb/></div>
 
-			<div type="annex">Author Contributions <lb/>JFA and BLdB designed the experiments, JFA, SMB, CJ, BLdB, <lb/>JG, and KSK carried out the experiments, JFA and BLdB <lb/>analysed the data. JFA, SMB, AGC, BLdB, DLH and KSK, <lb/>wrote the manuscript. <lb/></div>
+			<div type="contribution">Author Contributions <lb/>JFA and BLdB designed the experiments, JFA, SMB, CJ, BLdB, <lb/>JG, and KSK carried out the experiments, JFA and BLdB <lb/>analysed the data. JFA, SMB, AGC, BLdB, DLH and KSK, <lb/>wrote the manuscript. <lb/></div>
 
 			<div type="acknowledgement">Acknowledgements <lb/>We are grateful to Ian Dworkin, Mia Levene, Noah Zaitlen, and <lb/>Eric Stone for comments, discussions and helpful feedback on <lb/>the manuscript. This work was supported by grants: NIH R01 <lb/>AI064950 to A.G.C., Harvard Society of Fellows Fellowship and <lb/>Harvard Milton Funds to J.F.A, and the Rowland Junior <lb/>Fellowship to B.L.d.B. <lb/></div>
 
