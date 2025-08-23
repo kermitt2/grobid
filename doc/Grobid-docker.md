@@ -6,9 +6,12 @@ GROBID can be instantiated and run using Docker. Using two equivalent docker hub
  - [Docker hub Grobid repository](https://hub.docker.com/r/grobid/grobid/tags)
  - [Docker hub Grobid mirror repository](https://hub.docker.com/r/lfoppiano/grobid/)
 
+!!! warning "TLDR"
+If you need only fulltext (no citations, no bibliographical information, no statements), for RAG/LLM preprocessing/search, use the lightweight image. Otherwise, use the full image.  
+
 For convenience, we provide two docker images:
 
-- a **full image** (using the convention `{version}-full` e.g. `grobid/grobid:{version}-full` or `lfoppiano/grobid:{version}-full`) (~8GB) able to run both Deep Learning and CRF models: this image includes all the required python and TensorFlow libraries, GPU support and all DL model resources. It can provide more accurate results, notably for reference extraction/parsing and citation context identification. Depending on the availability of a GPU (recommended) or not, some Deep Learning models might introduce much slower runtime and significantly higher memory usage. This image is considerably larger than a CRF-only image. The full image contains Python and TensorFlow/Pytorch libraries (more than 3GB) and pre-loaded embeddings (around 5GB), but we recommend to use it.
+- a **full image** (using the convention `{version}-full` e.g. `grobid/grobid:{version}-full` or `lfoppiano/grobid:{version}-full`) (~8GB) able to run both Deep Learning and CRF models (**recommended to run it with a GPU**): this image includes all the required python and TensorFlow libraries, GPU support and all DL model resources. It can provide more accurate results, notably for reference extraction/parsing and citation context identification. Depending on the availability of a GPU (recommended) or not, some Deep Learning models might introduce much slower runtime and significantly higher memory usage. This image is considerably larger than a CRF-only image. The full image contains Python and TensorFlow/Pytorch libraries (more than 3GB) and pre-loaded embeddings (around 5GB), but we recommend to use it.
 
 - a **lightweight image** (using the convention `{version}-crf` e.g. `grobid/grobid:{version}-crf` or `lfoppiano/grobid:{version}-crf`) with only CRF models (~500MB): this image offers best performance in terms of runtime and memory usage, as well as limiting the size of the image, but it does not use some of the best performing models by accuracy. If possible, use the above full image. 
 

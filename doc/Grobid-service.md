@@ -4,7 +4,7 @@ The GROBID Web API provides a simple and efficient way to use the tool. A servic
 
 ## Start the server with Docker
 
-This is the recommended and standard way to run the Grobid web services, see [here](Run-Grobid.md). 
+This is the recommended and standard way to run the Grobid web services, see [here](getting_started.md). 
 
 ## Start a development server with Gradle
 

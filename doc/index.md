@@ -1,7 +1,7 @@
-<h1>GROBID Documentation</h1>
+# GROBID Documentation
 
 
-<h3>About</h3>
+## About
 
 * [Introduction](Introduction.md)
 
@@ -11,9 +11,9 @@
 
 * [License](License.md)
 
-<h3>User manual</h3>
+## User manual
 
-* [Getting Started](Run-Grobid.md)
+* [Getting Started](getting_started.md) (**Starting point**)
 
 * [Use GROBID as a service](Grobid-service.md)
 
@@ -43,19 +43,19 @@
 
 * [FAQ](Frequently-asked-questions.md)
 
-<h3>Benchmarking</h3>
+## Benchmarks
 
-* [Description](Benchmarking.md)
+* [Description](benchmarks/Benchmarking.md)
 
-* [Evaluation PubMed Central](Benchmarking-pmc.md)
+* [Evaluation PubMed Central](benchmarks/Benchmarking-pmc.md)
 
-* [Evaluation bioRxiv](Benchmarking-biorxiv.md)
+* [Evaluation bioRxiv](benchmarks/Benchmarking-biorxiv.md)
 
-* [Evaluation PLOS](Benchmarking-plos.md)
+* [Evaluation PLOS](benchmarks/Benchmarking-plos.md)
 
-* [Evaluation eLife](Benchmarking-elife.md)
+* [Evaluation eLife](benchmarks/Benchmarking-elife.md)
 
-<h3>Annotation guidelines</h3>
+## Annotation guidelines
 
 * [General principles](training/General-principles.md)
 
@@ -71,7 +71,7 @@
 
 * [Date model](training/date.md)
 
-<h3>Developer notes</h3>
+## Developer notes
 
 * [Notes for the Grobid Developers](Notes-grobid-developers.md)
 
