@@ -6,8 +6,8 @@ GROBID can be instantiated and run using Docker. Using two equivalent docker hub
  - [Docker hub Grobid repository](https://hub.docker.com/r/grobid/grobid/tags)
  - [Docker hub Grobid mirror repository](https://hub.docker.com/r/lfoppiano/grobid/)
 
-!!! warning "TLDR"
-    If you need only fulltext (no citations, no bibliographical information, no statements), for RAG/LLM preprocessing/search, use the lightweight image. Otherwise, use the full image.  
+!!! tip "TLDR"
+    If you need only fulltext (no citations, no bibliographical information, no statements), for RAG/LLM preprocessing/search, use the lightweight image. Otherwise, use the full image. For more customized needs, you can reach out. 
 
 For convenience, we provide two docker images:
 
