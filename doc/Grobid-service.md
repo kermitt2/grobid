@@ -45,7 +45,7 @@ The directory `grobid-installation` should have the following structure:
 
 You can check whether the service is up and running by opening the following URL:
 
-* <http://yourhost:8070/api/version> will return you the current version
+* <http://yourhost:8070/api/version> will return you the current version, and the github revision (commit hash) of the running service
 * <http://yourhost:8070/api/isalive> will return `true`/`false` whether the service is up and running
 
 The service provides also an admin console, reachable at <http://yourhost:8071> where some additional checks like ping, metrics, hearthbeat are available.
@@ -103,7 +103,7 @@ All these clients will take advantage of the multi-threading for scaling PDF bat
 
 On your browser, the welcome page of the service console is available at the URL <http://localhost:8070>.
 
-On the service console, the RESTful API can be tested under the `TEI` tab for service returning a TEI document, under the `PDF` tab for services returning annotations relative to PDF or an annotated PDF and under the `Patent` tab for patent-related services:
+On the service console, the REST API can be tested under the `TEI` tab for service returning a TEI document, under the `PDF` tab for services returning annotations relative to PDF or an annotated PDF and under the `Patent` tab for patent-related services:
 
 ![Example of GROBID Service console usage](img/grobid-rest-example.png)
 
@@ -856,7 +856,7 @@ curl -v -X GET localhost:8070/api/model?model=date > model.zip
 
 ## Parallel mode
 
-The Grobid RESTful API provides a very efficient way to use the library out of the box, because the service exploits multithreading.
+The Grobid REST API provides a very efficient way to use the library out of the box, because the service exploits multithreading.
 
 As Grobid is thread-safe and manages a pool of parser instances, it is advised to use several threads to call the REST service for scaling the processing to large collections of documents. This improves considerably the performance of the services for PDF processing because documents can be processed while other are uploading.
 

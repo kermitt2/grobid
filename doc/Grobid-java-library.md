@@ -1,7 +1,7 @@
 !!! warning "Deprecated method for running grobid"
     Considering the global trend to move toward Python, we decided to stop maintaining this library, as part of the open source Grobid application. The library is, nevertheless, open source and can be updated by the community. The use of the REST client and the docker image remain the recommended way to use Grobid. For any custom development you can contact [us](https://github.com/lfoppiano) via email.   
 
-The [RESTful API](Grobid-service.md) provides a simple and efficient way to use and deploy GROBID. For this, the Docker image is the simplest way to use and deploy Grobid. 
+The [REST API](Grobid-service.md) provides a simple and efficient way to use and deploy GROBID. For this, the Docker image is the simplest way to use and deploy Grobid. 
 
 As an alternative, the present page explains how to embed Grobid directly in your Java application. The user will need a local `grobid-home` which contains all the models, resources, etc. in addition to the Grobid Java libraries. The `grobid-home` must be downloaded from the Github release of Grobid matching the version of the used Grobid Java library. 
 

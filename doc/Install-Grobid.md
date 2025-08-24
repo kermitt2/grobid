@@ -1,4 +1,4 @@
-<h1>Install a GROBID development environment</h1>>
+# Install a GROBID development environment
 
 ## Getting the GROBID project source
 
@@ -34,7 +34,8 @@ Or download directly the zip file:
 
 ## Build GROBID from the source
 
-**Please make sure that Grobid is installed in a path with no parent directories containing spaces.**
+!!! tip
+    Please make sure that Grobid is installed in a path with no parent directories containing spaces.
 
 ### Build GROBID with Gradle 
 
