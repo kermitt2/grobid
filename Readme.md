@@ -9,10 +9,8 @@
 [![Docker Hub](https://img.shields.io/docker/pulls/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Docker Pulls")
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/kermitt2/grobid)
 
-## Getting Started
-
-Start testing and experimenting [here](https://grobid.readthedocs.io/en/update-documentation/Run-Grobid/). 
-Visit the [GROBID documentation](https://grobid.readthedocs.io) for more detailed information.
+> [!TIP]
+> Getting started [here](https://grobid.readthedocs.io/getting_started).
 
 ## Summary
 
