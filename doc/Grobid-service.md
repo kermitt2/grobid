@@ -77,6 +77,37 @@ grobid:
   modelPreload: true
 ```  
 
+## Errors handling
+
+The structure of errors is organised as follows: 
+
+| HTTP Status code  | reason                                                                                    |
+|-------------------|-------------------------------------------------------------------------------------------|
+| 200               | Successful operation.                                                                     |
+| 204               | Process was completed, but no content could be extracted and structured                   |
+| 400               | Wrong request, missing parameters, missing header                                         |
+| 500               | Indicate an internal service error, further described by a provided message               |
+| 503               | The service is not available, which usually means that all the threads are currently used |
+
+However, in the case of error 500, for historical reasons, it is not always a critical internal error, but it's an information related to the input data or the processing. 
+
+There are four type of errors:
+
+| Error Code                   | Description                                                                                                                       | Possible Cause / Suggested Action                                                       |
+|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| `BAD_INPUT_DATA`             | The input data is not correct (e.g., unreadable or missing PDF).                                                                  | Check that the PDF is valid and supplied in the request.                                |
+| `PDFALTO_CONVERSION_FAILURE` | The PDF could not be converted by pdfalto (damaged file or pdfalto bug).                                                          | Try opening the PDF manually; if valid, report the issue with the file.                 |
+| `NO_BLOCKS`                  | The PDF contains no text blocks (likely a scanned document without OCR, only images).                                             | Ensure the PDF has selectable text; consider running OCR if it is image-only.           |
+| `TOO_MANY_BLOCKS`            | The PDF has too many text blocks; Grobid avoids processing very large documents for safety.                                       | Try splitting the document or processing fewer pages at a time.                         |
+| `TOO_MANY_TOKENS`            | The PDF contains too many tokens (words); Grobid avoids processing very large documents for safety.                               | Try splitting the document or processing fewer pages at a time.                         |
+| `TIMEOUT`                    | The PDF took too long to process and was stopped.                                                                                 | Try with a smaller or simpler document; check server resources.                         |
+| `GENERAL`                    | A general internal error occurred (possible bug in Grobid).                                                                       | Check logs for details; report the issue with relevant files and logs.                  |
+
+!!! tip
+    - “Blocks” refer to logical text regions detected in the PDF (e.g., paragraphs, headers).  
+    - “Tokens” refer to individual words or symbols.  
+    - For `GENERAL` errors, please provide as much detail as possible when reporting.
+
 ## CORS (Cross-Origin Resource Share)
 
 By default, Grobid allows API access from any origin.
