@@ -85,6 +85,10 @@ See [here](https://github.com/kermitt2/grobid/issues/101) the open issue.
 
 ## Frequently asked questions 
 
+### How do I know if the GPU is being used? 
+
+If you are using the full Docker image (e.g. `grobid/grobid:0.8.2-full`), the GPU will be automatically detected on Linux if available, however to make sure we recommend to use `nvtop` (similar to `htop` for CPU).
+
 ### When running processing a large quantity of files, I see many `503` errors
 
 The `503` status returned by GROBID is not an error, and does not mean that the server has issues. On the contrary, this is the mechanism to avoid the service from collapsing and to keep it up alive and running according to its capacity for days.
@@ -97,7 +101,7 @@ Exploiting the `503` mechanism is already implemented in the different GROBID cl
 
 The exact server configuration will depend on the service you want to call, the models selected in the Grobid configuration file (`grobid-home/config/grobid.yaml`) and the availability of GPU. We consider here the complete full text processing of PDF (`processFulltextDocument`). 
 
-1) Using CRF models only, for example via the lightweight Docker image (https://hub.docker.com/r/lfoppiano/grobid/tags) 
+1) Using lightweight image (CRF models only) without the needs of GPUs (docker image: `grobid/grobid:{version}-crf`): 
 
 - in `grobid/grobid-home/config/grobid.yaml` set the parameter `concurrency` to your number of available threads at server side or slightly higher (e.g. 16 to 20 for a 16 threads-machine)
 
@@ -107,13 +111,14 @@ These settings will ensure that CPU are fully used when processing a large set o
 
 For example, with these settings, we processed with `processFulltextDocument` around 10.6 PDF per second (around 915,000 PDF per day, around 20M pages per day) with the node.js client during one week on a 16 CPU machine (16 threads, 32GB RAM, no SDD). It ran without any crash during 7 days at this rate. We processed 11.3M PDF in a bit less than 7 days with two 16-CPU servers in one of our projects. 
 
-Note: if your server has 8-10 threads available, you can use the default settings of the docker image, otherwise you will need to modify the configuration file to tune the parameters, as [documented](Configuration.md).
+!!! tip 
+    If your server has 8-10 threads available, you can use the default settings of the docker image, otherwise you will need to modify the configuration file to tune the parameters, as [documented](Configuration.md).
 
-2) Using Deep Learning models, for example via the full Docker image (<https://hub.docker.com/r/grobid/grobid/tags>) 
+2) Using the full image (with Deep Learning models, docker image: `grobid/grobid:{version}-full`):
 
 2.1) If the server has a GPU
 
-In case the server has a GPU, which has its own memory, the Deep Learning inferences are automatically parallelized on this GPU, without impacting the CPU and RAM memmory. The settings given above in 1) can normally be use similarly.
+In case the server has a GPU, which has its own memory, the Deep Learning inferences are automatically parallelized on this GPU, without impacting the CPU and RAM memory. The settings given above in 1) can normally be use similarly.
 
 2.2) If the server has CPU only
 

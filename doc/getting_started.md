@@ -1,4 +1,11 @@
-<h1>Getting started</h1>
+# Getting started
+
+## TL;DR
+
+- **Consolidation:** Grobid can merge and reconcile extracted bibliographic data from multiple sources (e.g., PDF, references, metadata). Use consolidation for improved accuracy, especially when high-quality metadata is important.
+- **Deep Learning & GPU:** Grobid’s best accuracy relies on deep learning models, which benefit from GPU acceleration. Use the full Docker image and a GPU for optimal results on large or complex documents.
+- **Docker:** The easiest way to run Grobid is via Docker. Choose the full image for maximum accuracy (with deep learning and GPU support), or the lightweight image for speed and minimal resource usage.
+
 
 ## Using Grobid from the cloud  
 
@@ -6,7 +13,8 @@ The simpler way to play with Grobid is to use the [Grobid space](https://hugging
 You can use it to process a PDF file, or to test the Grobid web service. 
 The space is free and does not require any authentication.
 
-**NOTE**: This grobid space is not intended for production use, it is only a demonstration of Grobid capabilities. For production use, please deploy a local version or contact us.
+!!! warning "Grobid space is for demonstration only"
+    This grobid space is not intended for production use, it is only a demonstration of Grobid capabilities. For production use, please deploy a local version or contact us.
 
 
 ## Running Grobid locally
@@ -42,4 +50,3 @@ More documentation on the Docker images can be found [here](Grobid-docker.md).
 From there, you can check on your browser if the service works fine by accessing the welcome page of the service console, available at the URL <http://localhost:8070>. The GROBID server can be used via the [web service](Grobid-service.md). 
 
 ## Next steps
-
