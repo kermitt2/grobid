@@ -21,15 +21,11 @@
 
 * [Manage GROBID with containers (Docker)](Grobid-docker.md)
 
-* [Use GROBID in batch mode](Grobid-batch.md)
-
 * [GROBID configuration](Configuration.md)
 
 * [GROBID specialized processes](Grobid-specialized-processes.md)
 
-* [Troubleshooting and known issues](Troubleshooting.md)
-
-* [Use Grobid library in third party Java applications](Grobid-java-library.md)
+* [Troubleshooting and FAQ](Frequently-asked-questions.md)
 
 * [TEI encoding of results](TEI-encoding-of-results.md)
 
@@ -41,7 +37,9 @@
 
 * [End-to-end evaluation](End-to-end-evaluation.md)
 
-* [FAQ](Frequently-asked-questions.md)
+* [Grobid in batch mode](Grobid-batch.md) (deprecated)
+
+* [Use Grobid library in third party Java applications](Grobid-java-library.md) (deprecated)
 
 ## Benchmarks
 

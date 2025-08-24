@@ -41,3 +41,5 @@ More documentation on the Docker images can be found [here](Grobid-docker.md).
 
 From there, you can check on your browser if the service works fine by accessing the welcome page of the service console, available at the URL <http://localhost:8070>. The GROBID server can be used via the [web service](Grobid-service.md). 
 
+## Next steps
+
