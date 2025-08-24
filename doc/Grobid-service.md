@@ -867,11 +867,11 @@ Get a model in the form of an archive (`.zip`), given a model name.
 
 Response status codes:
 
-|     HTTP Status code |   reason                                               |
-|---                   |---                                                     |
-|         200          |     Successful operation.                              |
-|         400          |     Wrong request, missing or invalid model name, invalid architecture name, missing header  |
-|         500          |     Indicate an internal service error, further described by a provided message           |
+| HTTP Status code      | reason                                                                                    |
+|-----------------------|-------------------------------------------------------------------------------------------|
+| 200                   | Successful operation.                                                                     |
+| 400                   | Wrong request, missing or invalid model name, invalid architecture name, missing header   |
+| 500                   | Indicate an internal service error, further described by a provided message               |
 
 
 You can test this service with the **cURL** command lines, for instance retrieving the zipped CRF date model binaries with a POST query:
@@ -884,6 +884,34 @@ or with a GET query:
 ```bash
 curl -v -X GET localhost:8070/api/model?model=date > model.zip
 ```
+
+#### Create training data 
+
+Generate the training data for the grobid models for a PDF document provided in input. 
+The service will return a ZIP archive with the training data in TEI XML format which may need to be corrected, because it can be used.
+
+
+| method    | request type          | response type         | parameters | requirement     | description                                                            |
+|-----------|-----------------------|-----------------------|------------|-----------------|------------------------------------------------------------------------|
+| POST      | application/form-data | application/zip       | input      | required        | A PDF document                                                         |
+|           |                       |                       | flavor     | optional        | The name of the flavor that could be used to create the training data  |
+
+Response status codes:
+
+| HTTP Status code      | reason                                                                                  |
+|-----------------------|-----------------------------------------------------------------------------------------|
+| 200                   | Successful operation.                                                                   |
+| 400                   | Wrong request, missing or invalid model name, invalid architecture name, missing header |
+| 500                   | Indicate an internal service error, further described by a provided message             |
+
+You can test this service with the **cURL** command lines, for instance starting the training of the CRF date model and producing an evaluation based on an holdout set:
+```bash
+curl --location 'http://localhost:8070/api/createTraining' \
+--form 'input=@"PATH_DOCUMENT"'
+--output output_name.zip
+```
+
+The zip file will contain the training data as described in the [general principles](General-principles.md) of GROBID training data.
 
 ## Parallel mode
 
