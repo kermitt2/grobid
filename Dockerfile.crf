@@ -13,13 +13,13 @@
 # -------------------
 # build builder image
 # -------------------
-FROM eclipse-temurin:17.0.15_6-jdk AS builder
+FROM ubuntu:plucky AS builder
 
 USER root
 
 RUN apt-get update && \
     apt-get -y upgrade && \
-    apt-get -y --no-install-recommends install unzip git
+    apt-get -y --no-install-recommends install unzip git openjdk-24-jdk
 
 WORKDIR /opt/grobid-source
 
@@ -61,11 +61,11 @@ RUN rm -rf grobid-source
 # -------------------
 # build runtime image
 # -------------------
-FROM eclipse-temurin:17.0.15_6-jre
+FROM ubuntu:plucky
 
 RUN apt-get update && \
     apt-get -y upgrade && \
-    apt-get -y --no-install-recommends install libxml2 libfontconfig && \
+    apt-get -y --no-install-recommends install libxml2 libfontconfig openjdk-24-jre && \
     rm -rf /var/lib/apt/lists/*
 
 ARG TARGETARCH
