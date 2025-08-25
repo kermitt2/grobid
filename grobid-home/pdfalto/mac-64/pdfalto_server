@@ -1,38 +1,49 @@
 #!/bin/bash
 
-# Timeout.
-timeout=20   # 20 seconds
-# Interval between checks if the process is still alive.
+# Timeout in seconds
+timeout=20
+# Interval between checks if the process is still alive
 interval=1
-# Delay between posting the SIGTERM signal and destroying the process by SIGKILL.
+# Delay between posting the SIGTERM signal and destroying the process by SIGKILL
 delay=0
-# Default limit for the memory usage by this bash script
+# Default memory limit (not applied on macOS ARM)
 memory_limit=6242304
 
-command=${0:0:${#0}-7}
+# Extract the base command name by removing "_server" suffix
+command=${0%_server}
 args=("$@")
 pdfalto_params=()
 
-for ((n=0; n<="$#";n++)); do
-   case ${args[n]} in
-         --timeout)
+# Process command line arguments
+for ((n=0; n<"$#"; n++)); do
+   case "${args[n]}" in
+        --timeout)
 	        timeout=${args[n+1]}
             ((n++))
             ;;
-         --ulimit) 
-          memory_limit=${args[n+1]}
-              ((n++))
-              ;;
-         *)
-            pdfalto_params+=" ${args[n]}"
+        --ulimit)
+            memory_limit=${args[n+1]}
+            ((n++))
+            ;;
+        *)
+            # Properly handle arguments with spaces
+            if [[ -n "${args[n]}" ]]; then
+                pdfalto_params+=("${args[n]}")
+            fi
             ;;
    esac
 done
 
-# Limit the memory usage by this bash script
-ulimit -Sv $memory_limit
+# Check if command exists and is executable
+if [[ ! -x "$command" ]]; then
+    echo "Error: Command '$command' not found or not executable" >&2
+    exit 1
+fi
 
-# kill -0 pid   Exit code indicates if a signal may be sent to $pid process.
+# Memory limiting not applied on macOS ARM as it handles memory differently
+# and ulimit -Sv doesn't work the same way as on Linux
+
+# Start background process to monitor and enforce timeout
 (
     ((t = timeout))
 
@@ -42,11 +53,12 @@ ulimit -Sv $memory_limit
         ((t -= interval))
     done
 
-    # Be nice, post SIGTERM first.
-    # The 'exit 0' below will be executed if any preceeding command fails.
+    # Be nice, post SIGTERM first
+    # The 'exit 0' below will be executed if any preceding command fails
     kill -s SIGTERM $$ && kill -0 $$ || exit 0
     sleep $delay
     kill -s SIGKILL $$
 ) 2> /dev/null &
 
-exec $command $pdfalto_params
+# Execute the actual command with parameters
+exec "$command" "${pdfalto_params[@]}"
