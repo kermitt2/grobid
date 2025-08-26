@@ -28,8 +28,8 @@ public class JEPThreadPool {
 
     private int POOL_SIZE = 1;
 
-    private ExecutorService executor;
-    private Map<Long, Jep> jepInstances;
+    private final ExecutorService executor;
+    private final ConcurrentMap<Long, Jep> jepInstances;
 
     private static volatile JEPThreadPool instance;
 
@@ -57,6 +57,12 @@ public class JEPThreadPool {
         executor = Executors.newSingleThreadExecutor();
         // each of these threads is associated to a JEP instance
         jepInstances = new ConcurrentHashMap<>();
+
+        // Add a shutdown hook to close all JEP instances when the JVM exits
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            LOGGER.info("JVM shutdown detected, closing all JEP instances");
+            shutdown();
+        }));
     }
 
     private File getAndValidateDelftPath() {
@@ -128,7 +134,7 @@ public class JEPThreadPool {
                     try {
                         jep.close();
                     } catch (JepException e) {
-                        LOGGER.error("failed to close JEP instance", e);
+                        LOGGER.error("Failed to close JEP instance", e);
                     }
                 } else {
                     LOGGER.error("JEP initialisation failed");
@@ -176,4 +182,48 @@ public class JEPThreadPool {
         return future.get();
     }
 
+    /**
+     * Close the JEP instance for the current thread and remove it from the map.
+     * This should be called when the thread is done using JEP to free resources.
+     */
+    public synchronized void closeCurrentJEPInstance() {
+        long threadId = Thread.currentThread().getId();
+        Jep jep = jepInstances.remove(threadId);
+        if (jep != null) {
+            try {
+                LOGGER.info("Closing JEP instance for thread " + threadId);
+                jep.close();
+            } catch (JepException e) {
+                LOGGER.error("Failed to close JEP instance for thread " + threadId, e);
+            }
+        }
+    }
+
+    /**
+     * Close all JEP instances and shutdown the executor.
+     * This should be called when the application is shutting down.
+     */
+    public synchronized void shutdown() {
+        LOGGER.info("Shutting down JEPThreadPool");
+        // Close all JEP instances
+        for (Map.Entry<Long, Jep> entry : jepInstances.entrySet()) {
+            try {
+                LOGGER.info("Closing JEP instance for thread " + entry.getKey());
+                entry.getValue().close();
+            } catch (JepException e) {
+                LOGGER.error("Failed to close JEP instance for thread " + entry.getKey(), e);
+            }
+        }
+        jepInstances.clear();
+
+        // Shutdown the executor
+        executor.shutdown();
+        try {
+            if (!executor.awaitTermination(5, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
+        }
+    }
 }
