@@ -123,8 +123,6 @@ public class DeLFTModel {
             Jep jep = JEPThreadPool.getInstance().getJEPInstance();
             StringBuilder labelledData = new StringBuilder();
             try {
-                //System.out.println(this.data);
-
                 // load and tag
                 this.setJepStringValueWithFileFallback(jep, "input", this.data);
                 jep.eval("x_all, f_all = load_data_crf_string(input)");
@@ -184,10 +182,14 @@ public class DeLFTModel {
             } finally {
                 // No need to close the JEP instance here as it's managed by the pool
                 // and will be reused for other tasks
-                // cleaning
-                jep.eval("del input");
-                jep.eval("del x_all");
-                jep.eval("del f_all");
+                try {
+                    jep.eval("del input");
+                    jep.eval("del x_all");
+                    jep.eval("del f_all");
+                } catch (JepException e) {
+                    LOGGER.error("DeLFT model labelling via JEP failed during cleanup. ", e);
+                }
+
             }
             //System.out.println(labelledData.toString());
             return labelledData.toString();
@@ -298,22 +300,26 @@ public class DeLFTModel {
                 //print("training runtime: %s seconds " % (runtime))
 
                 // saving the model
-                System.out.println(this.modelPath.getAbsolutePath());
+                LOGGER.info("Saving the model at " + this.modelPath.getAbsolutePath());
                 jep.eval("model.save('" + this.modelPath.getAbsolutePath() + "')");
 
-                // cleaning
-                jep.eval("del x_all");
-                jep.eval("del y_all");
-                jep.eval("del f_all");
-                jep.eval("del x_train");
-                jep.eval("del x_valid");
-                jep.eval("del y_train");
-                jep.eval("del y_valid");
-                jep.eval("del model");
             } catch (JepException e) {
                 LOGGER.error("DeLFT model training via JEP failed", e);
             } catch (GrobidException e) {
                 LOGGER.error("GROBID call to DeLFT training via JEP failed", e);
+            } finally {
+                try {
+                    jep.eval("del x_all");
+                    jep.eval("del y_all");
+                    jep.eval("del f_all");
+                    jep.eval("del x_train");
+                    jep.eval("del x_valid");
+                    jep.eval("del y_train");
+                    jep.eval("del y_valid");
+                    jep.eval("del model");
+                } catch (JepException e) {
+                    LOGGER.error("DeLFT model labelling via JEP failed during cleanup. ", e);
+                }
             }
         }
     }

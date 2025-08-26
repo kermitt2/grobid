@@ -218,12 +218,15 @@ public class JEPThreadPool {
 
         // Shutdown the executor
         executor.shutdown();
+        Thread.currentThread().interrupt();
         try {
             if (!executor.awaitTermination(5, TimeUnit.SECONDS)) {
                 executor.shutdownNow();
+                Thread.currentThread().interrupt();
             }
         } catch (InterruptedException e) {
             executor.shutdownNow();
+            Thread.currentThread().interrupt();
         }
     }
 }
