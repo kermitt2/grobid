@@ -448,6 +448,28 @@ public class FieldSpecification {
             .add("//funding-statement//text()");
         fulltextFields.add(fundingFulltextField);
         fulltextLabels.add("funding_stmt");
+
+        FieldSpecification conflictFulltextField = new FieldSpecification();
+        conflictFulltextField.fieldName = "conflict_stmt";
+        conflictFulltextField.isTextual = true;
+        conflictFulltextField.grobidPath.add("//div[@type=\"conflict\"]//text()");
+        //PLOs JATS uses fn-type="con" for contribution and fn-type="conflict" for conflict of interest
+        conflictFulltextField.nlmPath.add("//fn[@fn-type=\"con\"]//text()");
+        conflictFulltextField.nlmPath.add("//fn[@fn-type=\"conflict\"]//text()");
+        conflictFulltextField.nlmPath.add("//sec[@type=\"conflict\"]//text()");
+        conflictFulltextField.nlmPath.add("//sec[@sec-type=\"COI-statement\"]//text()");
+        fulltextFields.add(conflictFulltextField);
+        fulltextLabels.add("conflict_stmt");
+
+        FieldSpecification contributionFulltextField = new FieldSpecification();
+        contributionFulltextField.fieldName = "contribution_stmt";
+        contributionFulltextField.isTextual = true;
+        contributionFulltextField.grobidPath.add("//div[@type=\"contribution\"]//text()");
+        contributionFulltextField.nlmPath.add("//fn[@fn-type=\"con\"]//text()");
+        contributionFulltextField.nlmPath.add("//fn-group[@content-type=\"author-contribution\"]//text()");
+        contributionFulltextField.nlmPath.add("//sec[@sec-type=\"contribution\"]//text()");
+        fulltextFields.add(contributionFulltextField);
+        fulltextLabels.add("contribution_stmt");
     }
 
     public static String grobidCitationContextId = "//ref[@type=\"bibr\"]/@target";
