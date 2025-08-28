@@ -105,9 +105,9 @@ The following table provides the Grobid error codes, the related HTTPS error and
 | `PDFALTO_CONVERSION_FAILURE`  | 500 (Internal Server Error) | The PDF could not be converted by pdfalto (damaged file or pdfalto bug).                            | Try opening the PDF manually; if valid, report the issue with the file.                    |
 
 !!! tip
-    - “Blocks” refer to logical text regions detected in the PDF (e.g., paragraphs, headers).  
-    - “Tokens” refer to individual words or symbols.  
-    - For `GENERAL` errors, please provide as much detail as possible when reporting.
+    - "Blocks" refer to logical text regions detected in the PDF (e.g., paragraphs, headers).  
+    - "Tokens" refer to individual words or symbols.  
+    - When reporting issues related to the error of type `GENERAL`, please provide as much detail as possible: input PDF document, log files.
 
 ## CORS (Cross-Origin Resource Share)
 
