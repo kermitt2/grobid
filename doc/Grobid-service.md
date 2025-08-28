@@ -99,7 +99,7 @@ The following table provides the Grobid error codes, the related HTTPS error and
 | `TOO_MANY_BLOCKS`             | 500 (Internal Server Error) | The PDF has too many text blocks; Grobid avoids processing very large documents for safety.         | Try splitting the document or processing fewer pages at a time.                            |
 | `TOO_MANY_TOKENS`             | 500 (Internal Server Error) | The PDF contains too many tokens (words); Grobid avoids processing very large documents for safety. | Try splitting the document or processing fewer pages at a time.                            |
 | `TIMEOUT`                     | 500 (Internal Server Error) | The PDF took too long to process and was stopped.                                                   | Try with a smaller or simpler document; check server resources.                            |
-| `TAGGING_ERROR`               | 500 (Internal Server Error) | The CRF/Wapiti tagging process failed (model mismatch or tagging engine error).                     | Check model compatibility between grobid-home and grobid-core; verify model files.         |
+| `TAGGING_ERROR`               | 500 (Internal Server Error) | The DeLFT/CRF tagging process failed (model mismatch or tagging engine error).                      | Check model compatibility between grobid-home and grobid-core; verify model files.         |
 | `PARSING_ERROR`               | 500 (Internal Server Error) | The PDF parsing process failed (XML parsing, vector graphics processing, or file structure issues). | Check PDF file integrity; verify XML structure; report with specific file and logs.        |
 | `GENERAL`                     | 500 (Internal Server Error) | A general internal error occurred (possible bug in Grobid).                                         | Check logs for details; report the issue with relevant files and logs.                     |
 | `PDFALTO_CONVERSION_FAILURE`  | 500 (Internal Server Error) | The PDF could not be converted by pdfalto (damaged file or pdfalto bug).                            | Try opening the PDF manually; if valid, report the issue with the file.                    |
@@ -107,6 +107,7 @@ The following table provides the Grobid error codes, the related HTTPS error and
 !!! tip
     - "Blocks" refer to logical text regions detected in the PDF (e.g., paragraphs, headers).  
     - "Tokens" refer to individual words or symbols.  
+    - "Tagging" refers to the process of assiging labels to tokens using statistical models.
     - When reporting issues related to the error of type `GENERAL`, please provide as much detail as possible: input PDF document, log files.
 
 ## CORS (Cross-Origin Resource Share)
