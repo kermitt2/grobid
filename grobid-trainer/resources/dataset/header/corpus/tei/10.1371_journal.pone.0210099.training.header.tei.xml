@@ -70,7 +70,8 @@
 	Funding:
 	<note type="funding">The authors received funding from Bio-<lb/>Rad/DiaMed for blood sample testing (JS, MP, NA)<lb/> and from Ortho Clinical Diagnostics for speaking<lb/> engagements (NA). The funders had no role in<lb/> study design, data collection and analysis, decision<lb/> to publish, or preparation of the manuscript.<lb/></note>
 
-	Competing interests: This work was supported by<lb/> Bio-Rad DiaMed. This does not alter the adherence<lb/> to all PLOS ONE policies on sharing data and<lb/> materials.<lb/>
+	Competing interests:
+    <note type="conflict">This work was supported by<lb/> Bio-Rad DiaMed. This does not alter the adherence<lb/> to all PLOS ONE policies on sharing data and<lb/> materials.<lb/></note>
 
 		</front>
 	</text>

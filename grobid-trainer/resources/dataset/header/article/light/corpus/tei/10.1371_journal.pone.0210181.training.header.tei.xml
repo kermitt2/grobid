@@ -79,7 +79,8 @@
 
 	<note type="funding">report or decision to submit the paper for<lb/> publication. This study was supported by the NIHR<lb/> Biomedical Research Centre at University Hospitals<lb/> Bristol NHS Foundation Trust and the University of<lb/> Bristol. The views expressed in this publication are<lb/> those of the authors and not necessarily those of<lb/> the NHS, the National Institute for Health Research<lb/> or the Department of Health and Social Care.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>
