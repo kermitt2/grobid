@@ -107,8 +107,8 @@ The following table provides the Grobid error codes, the related HTTPS error and
 !!! tip
     - "Blocks" refer to logical text regions detected in the PDF (e.g., paragraphs, headers).  
     - "Tokens" refer to individual words or symbols.  
-    - "Tagging" refers to the process of assiging labels to tokens using statistical models.
-    - When reporting issues related to the error of type `GENERAL`, please provide as much detail as possible: input PDF document, log files.
+    - "Tagging" refers to the process of assigning labels to tokens using statistical models.
+    - When **reporting issues** related to the error of type `GENERAL`, please **provide as much detail as possible**, such as input PDF document, log files.
 
 ## CORS (Cross-Origin Resource Share)
 
