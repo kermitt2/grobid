@@ -1,10 +1,11 @@
-<h1>Install a GROBID development environment</h1>>
+# Install a GROBID development environment
 
 ## Getting the GROBID project source
 
-For building GROBID yourself, a JDK must be installed on your machine. We tested the tool successfully from **JDK 1.11** up version **JDK 1.17**. Other recent JDK versions should work correctly. 
+For building GROBID yourself, a JDK must be installed on your machine. We tested the tool successfully from **JDK 1.11** up version **JDK 1.17**. Other recent JDK versions should work, however they haven't been tested.
 
-Note: Java/JDK 8 is not supported anymore from Grobid version `0.8.0` and the minimum requirement for Java is JDK 1.11.
+!!! warn "JDK 8 support" 
+    Java/JDK 8 is not supported anymore from Grobid version `0.8.0` and the minimum requirement for Java is JDK 1.11.
 
 ### Latest stable release
 
@@ -33,7 +34,8 @@ Or download directly the zip file:
 
 ## Build GROBID from the source
 
-**Please make sure that Grobid is installed in a path with no parent directories containing spaces.**
+!!! tip
+    Please make sure that Grobid is installed in a path with no parent directories containing spaces.
 
 ### Build GROBID with Gradle 
 
