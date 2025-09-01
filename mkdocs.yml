@@ -57,11 +57,11 @@ nav:
     - 'Grobid in batch mode': 'Grobid-batch.md'
     - 'Use Grobid library in third party Java applications': 'Grobid-java-library.md'
   - Benchmarking:
-    - 'Description': 'Benchmarking.md'
-    - 'PubMed Central': 'Benchmarking-pmc.md'
-    - 'bioRxiv': 'Benchmarking-biorxiv.md'
-    - 'PLOS': 'Benchmarking-plos.md'
-    - 'eLife': 'Benchmarking-elife.md'
+    - 'Description': 'benchmarks/Benchmarking.md'
+    - 'PubMed Central': 'benchmarks/Benchmarking-pmc.md'
+    - 'bioRxiv': 'benchmarks/Benchmarking-biorxiv.md'
+    - 'PLOS': 'benchmarks/Benchmarking-plos.md'
+    - 'eLife': 'benchmarks/Benchmarking-elife.md'
   - Annotation guidelines:
     - 'General principles': 'training/General-principles.md'
     - 'Segmentation model': 'training/segmentation.md'
