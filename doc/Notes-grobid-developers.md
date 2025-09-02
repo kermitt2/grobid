@@ -12,10 +12,12 @@ This is a summary of the steps I used to run Grobid using DL natively on Linux:
 4. git clone https://github.com/kermitt2/delft (delft should be in the parent directory)
 
 Assuming that: 
+
 1. Conda is installed (if not, I installed [this](https://github.com/conda-forge/miniforge/releases/tag/24.9.2-0) - check the version, might be old) 
 2. The environment `delft` has been created with either `python=3.8` (e.g. `conda create --name delft python=3.8` or ) or `python=3.9` (e.g. `conda create --name delft python=3.9`) 
 
 Then continue here: 
+
 1. cd grobid
 2. `pip install delft==0.3.3` (with `delft==0.3.4` you also need to install Blingfire `pip install blingfire`)
 3. `pip install jep=4.2.2` (jep 4.1.1 cannot be installed, jep 4.0.2 does not work)
