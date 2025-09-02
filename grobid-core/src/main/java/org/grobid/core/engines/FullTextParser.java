@@ -288,7 +288,7 @@ public class FullTextParser extends AbstractParser {
 
                 List<Figure> badBodyFigures = getBadFigures(bodyFigures);
                 bodyResults = revertResultsForBadItems(
-                    bodyFigures,
+                    badBodyFigures,
                     bodyResults,
                     !(bodyFigures.size() > numberFiguresFulltextModel)
                 );
