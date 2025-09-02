@@ -10,7 +10,7 @@
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/kermitt2/grobid)
 
 > [!TIP]
-> Getting started [here](https://grobid.readthedocs.io/getting_started).
+> Getting started [here](https://grobid.readthedocs.io/en/latest/getting_started/).
 
 ## Summary
 
