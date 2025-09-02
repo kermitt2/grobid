@@ -365,7 +365,7 @@ public class FullTextParser extends AbstractParser {
                 int startTableID = bodyTables != null ? bodyTables.size() : 0;
                 annexTables = processTables(annexResults, annexTokenization, doc, startTableID);
 
-                long numberTablesInAnnex = Arrays.stream(bodyResults.split("\n"))
+                long numberTablesInAnnex = Arrays.stream(annexResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + TaggingLabels.TABLE_LABEL))
                     .count();
 
