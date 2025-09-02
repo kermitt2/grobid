@@ -103,7 +103,8 @@
 
 	<div type="abstract">these patients also inhibits exogenous ACE2 activity. These findings are consistent with the<lb/> hypothesis that ACE2 antibodies develop after SARS-CoV-2 infection and decrease ACE2<lb/> activity. This could lead to an increase in the abundance of Ang II, which causes a proinflam-<lb/>matory state that triggers symptoms of PASC.<lb/> for Medical Sciences The funders had no role in<lb/> study design, data collection and analysis, decision<lb/> to publish, or preparation of the manuscript.<lb/></div>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>

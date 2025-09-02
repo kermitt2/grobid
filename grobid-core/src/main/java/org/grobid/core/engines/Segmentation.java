@@ -54,6 +54,9 @@ public class Segmentation extends AbstractParser {
 		    acknowledgement <acknowledgement>,
 		   	availability <availability>,
 		   	funding <funding>,
+		   	conflict of interest / declaration of interest <conflict>,
+		   	author contribution <contribution>,
+		   	funding <funding>,
             other <other>,
 		    toc <toc> -> not yet used because not yet training data for this
 	*/

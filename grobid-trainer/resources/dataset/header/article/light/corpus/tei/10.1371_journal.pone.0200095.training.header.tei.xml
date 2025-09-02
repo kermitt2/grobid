@@ -88,7 +88,8 @@
 	Funding:
 	<note type="funding">The post-doctoral research fellowship<lb/> was funded by the Department of Agriculture-<lb/>Bureau of Agricultural Research (DA-BAR) and<lb/> University of the Philippines Diliman, Natural<lb/> Sciences Research Institute (UP NSRI) and the<lb/> Next Generation Sequencing by the project of Dr.<lb/> Doo-Sang Park through the National Research<lb/> Foundation of Korea (NRF-2016M3A9A5919255).<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>
