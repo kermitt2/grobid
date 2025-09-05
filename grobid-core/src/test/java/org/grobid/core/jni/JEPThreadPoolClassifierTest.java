@@ -18,20 +18,9 @@ public class JEPThreadPoolClassifierTest {
     private JEPThreadPoolClassifier threadPool;
     private static final AtomicInteger taskCounter = new AtomicInteger(0);
 
-    @BeforeClass
-    public static void setUpClass() {
-        // Ensure we start with a clean state
-        // Note: In a real test environment, you might want to reset the singleton
-    }
-
     @AfterClass
     public static void tearDownClass() {
-        // Clean up any remaining instances
-        try {
-            JEPThreadPoolClassifier.getInstance().shutdown();
-        } catch (Exception e) {
-            // Ignore cleanup errors in tests
-        }
+        JEPThreadPoolClassifier.getInstance().shutdown();
     }
 
     @Before
@@ -42,12 +31,7 @@ public class JEPThreadPoolClassifierTest {
 
     @After
     public void tearDown() {
-        // Clean up after each test
-        try {
-            threadPool.closeCurrentJEPInstance();
-        } catch (Exception e) {
-            // Ignore cleanup errors
-        }
+        threadPool.closeCurrentJEPInstance();
     }
 
     @Test

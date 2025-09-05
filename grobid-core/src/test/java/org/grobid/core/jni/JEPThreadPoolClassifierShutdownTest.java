@@ -12,8 +12,6 @@ public class JEPThreadPoolClassifierShutdownTest {
 
     @Test
     public void testShutdown() {
-        // This test verifies that shutdown doesn't throw exceptions
-        // In a real environment, this would close all JEP instances and shutdown the executor
         JEPThreadPoolClassifier threadPool = JEPThreadPoolClassifier.getInstance();
         try {
             threadPool.shutdown();
@@ -24,8 +22,6 @@ public class JEPThreadPoolClassifierShutdownTest {
 
     @Test
     public void testCloseCurrentJEPInstance() {
-        // This test verifies that closeCurrentJEPInstance doesn't throw exceptions
-        // In a real environment, this would close the JEP instance for the current thread
         JEPThreadPoolClassifier threadPool = JEPThreadPoolClassifier.getInstance();
         try {
             threadPool.closeCurrentJEPInstance();

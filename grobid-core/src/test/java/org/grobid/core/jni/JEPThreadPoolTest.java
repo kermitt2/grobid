@@ -1,6 +1,9 @@
 package org.grobid.core.jni;
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -18,20 +21,9 @@ public class JEPThreadPoolTest {
     private JEPThreadPool threadPool;
     private static final AtomicInteger taskCounter = new AtomicInteger(0);
 
-    @BeforeClass
-    public static void setUpClass() {
-        // Ensure we start with a clean state
-        // Note: In a real test environment, you might want to reset the singleton
-    }
-
     @AfterClass
     public static void tearDownClass() {
-        // Clean up any remaining instances
-        try {
-            JEPThreadPool.getInstance().shutdown();
-        } catch (Exception e) {
-            // Ignore cleanup errors in tests
-        }
+        JEPThreadPool.getInstance().shutdown();
     }
 
     @Before
@@ -42,12 +34,7 @@ public class JEPThreadPoolTest {
 
     @After
     public void tearDown() {
-        // Clean up after each test
-        try {
-            threadPool.closeCurrentJEPInstance();
-        } catch (Exception e) {
-            // Ignore cleanup errors
-        }
+        threadPool.closeCurrentJEPInstance();
     }
 
     @Test
@@ -55,7 +42,7 @@ public class JEPThreadPoolTest {
         // Test that getInstance() always returns the same instance
         JEPThreadPool instance1 = JEPThreadPool.getInstance();
         JEPThreadPool instance2 = JEPThreadPool.getInstance();
-        
+
         assertNotNull("Instance should not be null", instance1);
         assertSame("Should return the same instance", instance1, instance2);
     }
@@ -63,14 +50,14 @@ public class JEPThreadPoolTest {
     @Test
     public void testRunTask() throws InterruptedException {
         final AtomicBoolean taskExecuted = new AtomicBoolean(false);
-        
+
         Runnable task = () -> {
             taskExecuted.set(true);
             taskCounter.incrementAndGet();
         };
 
         threadPool.run(task);
-        
+
         assertTrue("Task should have been executed", taskExecuted.get());
         assertEquals("Task counter should be incremented", 1, taskCounter.get());
     }
@@ -78,14 +65,14 @@ public class JEPThreadPoolTest {
     @Test
     public void testCallTask() throws InterruptedException, ExecutionException {
         final String expectedResult = "test result";
-        
+
         Callable<String> task = () -> {
             taskCounter.incrementAndGet();
             return expectedResult;
         };
 
         String result = threadPool.call(task);
-        
+
         assertEquals("Should return expected result", expectedResult, result);
         assertEquals("Task counter should be incremented", 1, taskCounter.get());
     }
@@ -94,7 +81,7 @@ public class JEPThreadPoolTest {
     public void testMultipleTasks() throws InterruptedException, ExecutionException {
         final int numTasks = 5;
         final AtomicInteger completedTasks = new AtomicInteger(0);
-        
+
         // Run multiple tasks
         for (int i = 0; i < numTasks; i++) {
             final int taskId = i;
@@ -104,7 +91,7 @@ public class JEPThreadPoolTest {
             };
             threadPool.run(task);
         }
-        
+
         assertEquals("All tasks should be completed", numTasks, completedTasks.get());
         assertEquals("Task counter should reflect all tasks", numTasks, taskCounter.get());
     }
@@ -161,9 +148,9 @@ public class JEPThreadPoolTest {
         final int numThreads = 3;
         final AtomicInteger successfulTasks = new AtomicInteger(0);
         final AtomicInteger failedTasks = new AtomicInteger(0);
-        
+
         Thread[] threads = new Thread[numThreads];
-        
+
         for (int i = 0; i < numThreads; i++) {
             threads[i] = new Thread(() -> {
                 try {
@@ -177,17 +164,17 @@ public class JEPThreadPoolTest {
                 }
             });
         }
-        
+
         // Start all threads
         for (Thread thread : threads) {
             thread.start();
         }
-        
+
         // Wait for all threads to complete
         for (Thread thread : threads) {
             thread.join(5000); // 5 second timeout
         }
-        
+
         assertEquals("All tasks should succeed", numThreads, successfulTasks.get());
         assertEquals("No tasks should fail", 0, failedTasks.get());
         assertEquals("Task counter should reflect all tasks", numThreads, taskCounter.get());
@@ -196,7 +183,7 @@ public class JEPThreadPoolTest {
     @Test
     public void testTaskExecutionOrder() throws InterruptedException {
         final StringBuilder executionOrder = new StringBuilder();
-        
+
         // Submit tasks in order
         for (int i = 0; i < 3; i++) {
             final int taskId = i;
@@ -206,7 +193,7 @@ public class JEPThreadPoolTest {
             };
             threadPool.run(task);
         }
-        
+
         assertEquals("Tasks should execute in order", "012", executionOrder.toString());
         assertEquals("Task counter should reflect all tasks", 3, taskCounter.get());
     }
@@ -215,7 +202,7 @@ public class JEPThreadPoolTest {
     public void testLongRunningTask() throws InterruptedException, ExecutionException {
         final long startTime = System.currentTimeMillis();
         final long expectedDuration = 100; // 100ms
-        
+
         Callable<String> longTask = () -> {
             Thread.sleep(expectedDuration);
             taskCounter.incrementAndGet();
@@ -224,7 +211,7 @@ public class JEPThreadPoolTest {
 
         String result = threadPool.call(longTask);
         long actualDuration = System.currentTimeMillis() - startTime;
-        
+
         assertEquals("Should return expected result", "completed", result);
         assertTrue("Task should take at least the expected duration", actualDuration >= expectedDuration);
         assertEquals("Task counter should be incremented", 1, taskCounter.get());
@@ -239,7 +226,7 @@ public class JEPThreadPoolTest {
         } catch (NullPointerException e) {
             // Expected
         }
-        
+
         // Test with null Callable
         try {
             threadPool.call(null);
@@ -255,7 +242,7 @@ public class JEPThreadPoolTest {
     public void testInterruptedTask() throws InterruptedException {
         final AtomicBoolean taskStarted = new AtomicBoolean(false);
         final AtomicBoolean taskInterrupted = new AtomicBoolean(false);
-        
+
         Runnable longTask = () -> {
             taskStarted.set(true);
             try {
@@ -274,17 +261,17 @@ public class JEPThreadPoolTest {
                 taskInterrupted.set(true);
             }
         });
-        
+
         taskThread.start();
-        
+
         // Wait for task to start
         Thread.sleep(100);
         assertTrue("Task should have started", taskStarted.get());
-        
+
         // Interrupt the task
         taskThread.interrupt();
         taskThread.join(2000);
-        
+
         assertTrue("Task should have been interrupted", taskInterrupted.get());
     }
 }
