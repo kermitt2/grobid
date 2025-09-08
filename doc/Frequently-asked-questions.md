@@ -11,6 +11,15 @@ For historical reasons, there are certain error 500 responses that are not criti
 
 If you are using the full Docker image (e.g. `grobid/grobid:0.8.2-full`), the GPU will be automatically detected on Linux if available; however, to be sure, we recommend using `nvtop` (similar to `htop` for CPU).
 
+## How to avoid DeLFT TF to allocate the full GPU memory
+
+By default, TensorFlow allocates all the GPU memory when it starts. 
+This can be changed by setting the environment variable `TF_FORCE_GPU_ALLOW_GROWTH` to `true` before starting GROBID.
+With docker, for example you can this command: 
+
+```shell
+docker run -d -it --init --gpus "device=0" -e TF_FORCE_GPU_ALLOW_GROWTH='true' grobid/grobid:0.8.2-full
+```
 
 ## When processing a large quantity of files, I see many `503` errors
 
