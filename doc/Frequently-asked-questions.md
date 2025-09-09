@@ -18,7 +18,7 @@ This can be changed by setting the environment variable `TF_FORCE_GPU_ALLOW_GROW
 With docker, for example you can this command: 
 
 ```shell
-docker run -d -it --init --gpus "device=0" -e TF_FORCE_GPU_ALLOW_GROWTH='true' grobid/grobid:0.8.2-full
+docker run --rm --gpus all --init --ulimit core=0 -e TF_FORCE_GPU_ALLOW_GROWTH='true' -p 8070:8070 grobid/grobid:0.8.2-full
 ```
 
 ## When processing a large quantity of files, I see many `503` errors
