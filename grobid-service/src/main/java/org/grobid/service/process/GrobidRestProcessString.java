@@ -323,6 +323,11 @@ public class GrobidRestProcessString {
 
 			if (biblioItems == null || biblioItems.size() == 0) {
 				response = Response.status(Status.NO_CONTENT).build();
+			} else if (biblioItems.size() != citations.size()) {
+				LOGGER.error("Not all citation strings parsed");
+			    response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+			} else if (biblioItems.size() == 0) {
+				response = Response.status(Status.NO_CONTENT).build();
 			} else if (expectedResponseType == ExpectedResponseType.BIBTEX) {
 				StringBuilder responseContent = new StringBuilder();
 				int n = 0;
@@ -345,6 +350,10 @@ public class GrobidRestProcessString {
                     "<body/>\n\t\t<back>\n\t\t\t<div>\n\t\t\t\t<listBibl>\n");
 				int n = 0;
 				for(BiblioItem biblioItem : biblioItems) {
+					if (biblioItem == null) {
+						// insert an empty BiblioItem in reponse
+						biblioItem = new BiblioItem();
+					}
 					responseContent.append(biblioItem.toTEI(n, config));
 					responseContent.append("\n");
 					n++;
