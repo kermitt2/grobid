@@ -740,12 +740,13 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response processAnnotatePDF(
         @FormDataParam(INPUT) InputStream inputStream,
-        @FormDataParam("name") String fileName,
+        @FormDataParam(INPUT) FormDataBodyPart inputBodyPart,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidateHeader,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_CITATIONS) String consolidateCitations,
         @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations,
         @DefaultValue("0") @FormDataParam(INCLUDE_RAW_CITATIONS) String includeRawCitations,
         @FormDataParam("type") int type) throws Exception {
+        String fileName = inputBodyPart.getFormDataContentDisposition().getFileName();
         int consolHeader = validateConsolidationParam(consolidateHeader);
         int consolCitations = validateConsolidationParam(consolidateCitations);
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
@@ -860,10 +861,11 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response createTraining_post(
         @FormDataParam(INPUT) InputStream inputStream,
-        @FormDataParam("name") String fileName,
+        @FormDataParam(INPUT) FormDataBodyPart inputBodyPart,
         @FormDataParam(FLAVOR) String flavor
     ) {
         GrobidModels.Flavor validatedModelFlavor = validateModelFlavor(flavor);
+        String fileName = inputBodyPart.getFormDataContentDisposition().getFileName();
         return restProcessTraining.createTraining(
             inputStream, fileName, validatedModelFlavor
         );
