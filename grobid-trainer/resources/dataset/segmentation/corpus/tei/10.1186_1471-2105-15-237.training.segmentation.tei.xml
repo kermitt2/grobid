@@ -38,7 +38,11 @@
 
 			<div type="availability">Availability and requirements <lb/>Project name: simulate_PCR <lb/>Project home page: http://sourceforge.net/projects/ <lb/>simulatepcr <lb/>Operating system(s): Platform independent <lb/>Programming language: PERL <lb/>Other requirements: Installed and in path: blastdb, <lb/>blastn, blastdbcmd, and NCBI efetch utility if amplicon <lb/>annotation is desired <lb/>License: BSD <lb/>Any restrictions to use by non-academics: none <lb/></div>
 
-			<div type="annex">Additional files <lb/>Additional file 1: Primer and probe design parameters, and Table S1 <lb/>listing species or sequence elements from nt that the antibiotic <lb/>resistance primers are predicted to detect. <lb/>Additional file 2: Primer and probe sequences for HIV-1. <lb/>Additional file 3: Primer and probe sequences for Coronaviridae. <lb/>Additional file 4: Primer and probe sequences for selected <lb/>antibiotic resistance genes. <lb/>Competing interests <lb/>The authors declare that they have no competing interests. <lb/>Authors&apos; contributions <lb/>SNG wrote the code and SNG and TS wrote the manuscript. Both authors <lb/>read and approved the final manuscript. <lb/></div>
+			<div type="annex">Additional files <lb/>Additional file 1: Primer and probe design parameters, and Table S1 <lb/>listing species or sequence elements from nt that the antibiotic <lb/>resistance primers are predicted to detect. <lb/>Additional file 2: Primer and probe sequences for HIV-1. <lb/>Additional file 3: Primer and probe sequences for Coronaviridae. <lb/>Additional file 4: Primer and probe sequences for selected <lb/>antibiotic resistance genes. <lb/></div>
+
+            <div type="conflict">Competing interests <lb/>The authors declare that they have no competing interests. <lb/></div>
+
+            <div type="contribution">Authors&apos; contributions <lb/>SNG wrote the code and SNG and TS wrote the manuscript. Both authors <lb/>read and approved the final manuscript. <lb/></div>
 
 			<div type="acknowledgement">Acknowledgements <lb/>We would like to thank our colleagues in the Pathogen Bioinformatics Group <lb/>at LLNL and anonymous reviewers for helpful suggestions and catching <lb/>bugs in previous versions of the code. <lb/></div>
 

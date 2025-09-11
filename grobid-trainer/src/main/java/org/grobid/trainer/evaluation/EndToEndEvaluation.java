@@ -1,44 +1,42 @@
 package org.grobid.trainer.evaluation;
 
+import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
+import me.tongfei.progressbar.ProgressBar;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModels;
-import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.exceptions.*;
 import org.grobid.core.engines.Engine;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.factory.GrobidFactory;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.UnicodeUtil;
-import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.factory.GrobidPoolingFactory;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.trainer.evaluation.utilities.FieldSpecification;
 import org.grobid.trainer.evaluation.utilities.FieldSpecificationFlavors;
 import org.grobid.trainer.evaluation.utilities.NamespaceContextMap;
-import org.grobid.trainer.evaluation.utilities.FieldSpecification;
-
-import java.io.*;
-import java.nio.file.Paths;
-import java.util.*;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.stream.Collectors;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.collections4.CollectionUtils;
-
-import org.w3c.dom.*;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathFactory;
-import javax.xml.parsers.*;
-import org.xml.sax.*;
-
-import javax.xml.xpath.XPathConstants;
-
-import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 import scala.Option;
 
-import me.tongfei.progressbar.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.SAXParserFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FilenameFilter;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.concurrent.*;
 
 //import org.apache.log4j.xml.DOMConfigurator;
 
@@ -95,7 +93,7 @@ public class EndToEndEvaluation {
                 engine = Engine.getEngine(true);
                 GrobidAnalysisConfig config =
                     GrobidAnalysisConfig.builder()
-                        .consolidateHeader(1)
+                        .consolidateHeader(0)
                         .consolidateCitations(0)
                         .consolidateFunders(0)
                         .withPreprocessImages(true)
@@ -157,7 +155,7 @@ public class EndToEndEvaluation {
 
             engine = GrobidFactory.getInstance().createEngine();
         } catch (Exception e) {
-			e.printStackTrace();
+            e.printStackTrace();
         }
 
         // initialize the field specifications and label list
@@ -279,17 +277,17 @@ public class EndToEndEvaluation {
         // evaluation of the run
         long start = System.currentTimeMillis();
 
-        if (CollectionUtils.isNotEmpty(headerFields)) {
-            report.append("\n======= Header metadata ======= \n");
-            reportMD.append("\n## Header metadata \n");
-            report.append(evaluationRun(GROBID, HEADER, reportMD));
-        }
-
-        if (CollectionUtils.isNotEmpty(citationsFields)) {
-            report.append("\n======= Citation metadata ======= \n");
-            reportMD.append("\n## Citation metadata \n");
-            report.append(evaluationRun(GROBID, CITATION, reportMD));
-        }
+//        if (CollectionUtils.isNotEmpty(headerFields)) {
+//            report.append("\n======= Header metadata ======= \n");
+//            reportMD.append("\n## Header metadata \n");
+//            report.append(evaluationRun(GROBID, HEADER, reportMD));
+//        }
+//
+//        if (CollectionUtils.isNotEmpty(citationsFields)) {
+//            report.append("\n======= Citation metadata ======= \n");
+//            reportMD.append("\n## Citation metadata \n");
+//            report.append(evaluationRun(GROBID, CITATION, reportMD));
+//        }
 
         if (CollectionUtils.isNotEmpty(fulltextFields)) {
             report.append("\n======= Fulltext structures ======= \n");
@@ -421,7 +419,7 @@ public class EndToEndEvaluation {
         Stats levenshteinStats = new Stats();
         Stats ratcliffObershelpStats = new Stats();
 
-        Stats availabilityRatioStat = new Stats();
+        Stats documentLevelStatementsRatioStat = new Stats();
 
         List<String> labels = null;
         List<FieldSpecification> fields = null;
@@ -470,7 +468,7 @@ public class EndToEndEvaluation {
 
         if (StringUtils.containsIgnoreCase(xmlInputPath, "pmc")) {
             // remove availability and funding statements from PMC (not covered, and it would make metrics not comparable over time)
-            removeFieldsFromEvaluation(Arrays.asList("availability_stmt", "funding_stmt"), fulltextFields, fulltextLabels);
+            removeFieldsFromEvaluation(Arrays.asList("availability_stmt", "funding_stmt", "conflict_stmt", "contribution_stmt"), fulltextFields, fulltextLabels);
         }
 
         File input = new File(xmlInputPath);
@@ -559,7 +557,7 @@ public class EndToEndEvaluation {
                         if (this.flavor != null) {
                             fileSuffix = ".fulltext." + flavor.getPlainLabel() + ".tei.xml";
                         } else {
-                             fileSuffix = ".fulltext.tei.xml";
+                            fileSuffix = ".fulltext.tei.xml";
                         }
 
                         // results are produced in a TEI file
@@ -1480,8 +1478,8 @@ System.out.println("grobid: " + grobidResult);*/
                             boolean allGoodLevenshtein = true;
                             boolean allGoodRatcliffObershelp = true;
 
-                            boolean grobidAvailabilityStatement = false;
-                            boolean goldAvailabilityStatement = false;
+                            Map<String, Boolean> grobidDocumentLevelStatements = new HashMap<>();
+                            Map<String, Boolean> goldDocumentLevelStatements = new HashMap<>();
 
                             for (FieldSpecification field : fields) {
                                 String fieldName = field.fieldName;
@@ -1541,39 +1539,44 @@ System.out.println("grobid: " + grobidResult);*/
 							}
 							System.out.println("");*/
 
-                                // Workaround to avoid having two different lists with the same content
-                                // Probably to be extended to other fields if does not cause
-                                if (fieldName.equals("availability_stmt")) {
-                                    if (CollectionUtils.isNotEmpty(grobidResults)) {
-                                        List<String> grobidResults2 = new ArrayList<>();
-                                        grobidResults2.add(grobidResults.stream().collect(Collectors.joining(" ")).replace("  ", " "));
-                                        grobidResults = grobidResults2;
-                                        grobidAvailabilityStatement = true;
-                                    }
+                                if (field.computeDocumentLevelMetrics) {
                                     if (CollectionUtils.isNotEmpty(goldResults)) {
-                                        List<String> goldResults2 = new ArrayList<>();
-                                        goldResults2.add(goldResults.stream().collect(Collectors.joining(" ")).replace("  ", " "));
-                                        goldResults = goldResults2;
-                                        goldAvailabilityStatement = true;
+                                        goldDocumentLevelStatements.put(fieldName, true);
+                                    }
+
+                                    if (CollectionUtils.isNotEmpty(grobidResults)) {
+                                        grobidDocumentLevelStatements.put(fieldName, true);
                                     }
                                 }
 
-                                // we compare the two result sets
+                                // Workaround to avoid having two different lists with the same content
+                                // Probably to be extended to other fields if does not cause
+                                if (field.mergeMultipleValues) {
+                                    if (CollectionUtils.isNotEmpty(goldResults)) {
+                                        List<String> goldResults2 = new ArrayList<>();
+                                        goldResults2.add(String.join(" ", goldResults).replace("  ", " "));
+                                        goldResults = goldResults2;
+//                                        System.out.print("\n\n---- GOLD ----");
+//                                        for (String goldResult : goldResults) {
+//                                            System.out.print("\n" + goldResult);
+//                                        }
+//                                        System.out.print("\n--------");
+                                    }
 
-							/*if (fieldName.equals("availability_stmt")) {
-								if (goldResults.size() > 0) {
-									System.out.print("\n\n---- GOLD ----");
-									for (String goldResult : goldResults) {
-										System.out.print("\n" + goldResult);
-									}
-								}
-								if (grobidResults.size() > 0) {
-									System.out.print("\n---- GROBID ----");
-									for (String grobidResult : grobidResults) {
-										System.out.print("\n" + grobidResult);
-									}
-								}
-							}*/
+                                    if (CollectionUtils.isNotEmpty(grobidResults)) {
+                                        List<String> grobidResults2 = new ArrayList<>();
+                                        grobidResults2.add(String.join(" ", grobidResults).replace("  ", " "));
+                                        grobidResults = grobidResults2;
+
+//                                        System.out.print("\n---- GROBID ----");
+//                                        for (String grobidResult : grobidResults) {
+//                                            System.out.print("\n" + grobidResult);
+//                                        }
+//                                        System.out.print("\n--------");
+                                    }
+                                    // we compare the two result sets
+                                }
+
 
                                 // prepare first the grobidResult set for soft match
                                 List<String> grobidSoftResults = new ArrayList<>();
@@ -1713,19 +1716,37 @@ System.out.println("grobid: " + grobidResult);*/
                                 p++;
                             }
 
-                            // document level ratio for availability statements
-                            if (grobidAvailabilityStatement)
-                                availabilityRatioStat.incrementObserved("availability_stmt");
+                            // document level ratio for statements
+                            Set<String> combinedStatements = new HashSet<>();
+                            combinedStatements.addAll(grobidDocumentLevelStatements.keySet());
+                            combinedStatements.addAll(goldDocumentLevelStatements.keySet());
 
-                            if (goldAvailabilityStatement)
-                                availabilityRatioStat.incrementExpected("availability_stmt");
+                            for (String localFieldName : combinedStatements) {
+                                boolean grobidStatement = false;
+                                boolean goldStatement = false;
+                                if (grobidDocumentLevelStatements.containsKey(localFieldName)) {
+                                    grobidStatement = grobidDocumentLevelStatements.get(localFieldName);
+                                    if (grobidStatement) {
+                                        documentLevelStatementsRatioStat.incrementObserved(localFieldName);
+                                    }
+                                }
 
-                            if (grobidAvailabilityStatement && !goldAvailabilityStatement)
-                                availabilityRatioStat.incrementFalsePositive("availability_stmt");
+                                if (goldDocumentLevelStatements.containsKey(localFieldName)) {
+                                    goldStatement = goldDocumentLevelStatements.get(localFieldName);
+                                    if (goldStatement) {
+                                        documentLevelStatementsRatioStat.incrementExpected(localFieldName);
+                                    }
+                                }
+
+                                if (grobidStatement && !goldStatement) {
+                                    documentLevelStatementsRatioStat.incrementFalsePositive(localFieldName);
+                                }
 
 
-                            if (!grobidAvailabilityStatement && goldAvailabilityStatement)
-                                availabilityRatioStat.incrementFalseNegative("availability_stmt");
+                                if (!grobidStatement && goldStatement)
+                                    documentLevelStatementsRatioStat.incrementFalseNegative(localFieldName);
+
+                            }
                         }
                     } else if (runType == this.PDFX) {
                         // TBD
@@ -1924,8 +1945,8 @@ System.out.println("grobid: " + grobidResult);*/
         if (sectionType == this.FULLTEXT) {
             report.append("\n===== Document-level ratio results =====\n");
             reportMD.append("\n**Document-level ratio results**\n");
-            report.append(EvaluationUtilities.computeMetrics(availabilityRatioStat));
-            reportMD.append(EvaluationUtilities.computeMetricsMD(availabilityRatioStat));
+            report.append(EvaluationUtilities.computeMetrics(documentLevelStatementsRatioStat));
+            reportMD.append(EvaluationUtilities.computeMetricsMD(documentLevelStatementsRatioStat));
         }
 
         return report.toString();
@@ -2002,11 +2023,11 @@ System.out.println("grobid: " + grobidResult);*/
      * @param args Command line arguments.
      */
     public static void main(String[] args) {
-    	//DOMConfigurator is called to force logger to use the xml configuration file
+        //DOMConfigurator is called to force logger to use the xml configuration file
         //DOMConfigurator.configure("src/main/resources/log4j.xml");
 
-		if (args.length > 5 || args.length == 0) {
-			System.err.println("usage: command [path to the (gold) evaluation XML dataset] Run[0|1] fileRatio[0.0-1.0]");
+        if (args.length > 5 || args.length == 0) {
+            System.err.println("usage: command [path to the (gold) evaluation XML dataset] Run[0|1] fileRatio[0.0-1.0]");
             return;
         }
 

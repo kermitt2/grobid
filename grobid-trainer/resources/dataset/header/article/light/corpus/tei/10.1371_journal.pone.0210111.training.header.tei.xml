@@ -76,7 +76,9 @@
 	Funding:
 	<note type="funding">This research was supported by a<lb/> National Health &amp; Medical Research Council<lb/> (NHMRC) (https://www.nhmrc.gov.au/) Project<lb/> Grant (ID 1010536), a Strategic Research<lb/> Partnership Grant (CSR 11-02) from Cancer<lb/> Council NSW to the Newcastle Cancer Control<lb/> Collaborative (New-3C) (https://www.<lb/> cancercouncil.com.au/) (https://www.cancer.nsw.<lb/> gov.au/), and infrastructure funding from the<lb/> Hunter Medical Research Institute (HMRI) (https://<lb/> hmri.org.au/). MC is supported by a NHMRC<lb/> Translating Research Into Practice fellowship<lb/> (APP1073031), AB is supported by a NHMRC Early<lb/> Career Fellowship (APP1073317) and a Cancer<lb/> Institute New South Wales Early Career Fellowship<lb/> (13/ECF/1-37). The funders had no role in study<lb/> design, data collection and analysis, decision to<lb/> publish, or preparation of the manuscript.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
+
 		</front>
 	</text>
 </tei>

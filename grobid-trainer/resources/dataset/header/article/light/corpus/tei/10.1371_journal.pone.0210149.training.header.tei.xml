@@ -82,7 +82,8 @@
 	Funding:
 	<note type="funding">We thank the National Science<lb/> Foundation, and the US Environmental Protection<lb/> Agency through a supplemental award (GRH), for<lb/> their support of this research through the Triangle,<lb/> NC, Urban Long Term Research Area-Exploratory<lb/> award (BCS-0948229). The funders had no role in<lb/> study design, data collection, and analysis,<lb/> decision to publish, or preparation of the<lb/> manuscript.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>
