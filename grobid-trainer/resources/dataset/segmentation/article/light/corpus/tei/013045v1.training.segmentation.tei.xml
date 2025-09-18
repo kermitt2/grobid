@@ -48,9 +48,9 @@
 
 			<div type="availability">at ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/browser/forge_11. <lb/>FORGE has been successfully been installed and run on Mac OSX 10.8.4 and Red <lb/>Hat Linux. <lb/>Links <lb/>Web tool <lb/>http://browser.1000genomes.org/Homo_sapiens/UserData/Forge <lb/>Web documentation <lb/>http://www.1000genomes.org/forge-analysis-11 <lb/>Results Gallery <lb/>http://www.1000genomes.org/forge-gwas-catalog-example-gallery11 <lb/>Source Code and Database <lb/>https://github.com/iandunham/Forge <lb/>ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/browser/forge_11 <lb/></div>
 
-			<div type="annex">Competing Interests <lb/>The authors declare that they have no competing interests. <lb/></div>
+			<div type="conflict">Competing Interests <lb/>The authors declare that they have no competing interests. <lb/></div>
 
-			<div type="annex">Authors&apos; contributions <lb/>ID and EB designed the analysis and wrote the paper. ID wrote software and ran <lb/>analysis. SM conducted the clustering of cell types by DNase I regions. EK <lb/>implemented the web interface. VI provided statistical advice and discussion. <lb/></div>
+			<div type="contribution">Authors&apos; contributions <lb/>ID and EB designed the analysis and wrote the paper. ID wrote software and ran <lb/>analysis. SM conducted the clustering of cell types by DNase I regions. EK <lb/>implemented the web interface. VI provided statistical advice and discussion. <lb/></div>
 
 			<div type="acknowledgement">Acknowledgements <lb/>Many thanks to Jan Quell for initial implementation of the pdf graphic and to <lb/>Ramnath Vaidyanathan and @timelyportfolio for assistance with rCharts. We <lb/>thank Prof Ajay Shah and Marc-Philip Hitz for comments on the results of cardiac <lb/>phenotypes, and Graham Ritchie, and Nicole Soranzo for discussions. <lb/></div>
 

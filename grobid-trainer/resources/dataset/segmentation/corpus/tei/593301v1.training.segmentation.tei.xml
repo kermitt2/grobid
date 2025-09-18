@@ -174,7 +174,7 @@
 
 			<div type="availability">Availability of data and material. The datasets generated and/or analysed <lb/>during the current study are available in the NCBI repository (BioProject <lb/>number: PRJNA529503). The ResPipe pipeline is available under a GPC <lb/>licence at: https://gitlab.com/hsgweon/ResPipe. <lb/></div>
 
-			<div type="annex">Competing interests. The authors declare that they have no competing <lb/>interests. <lb/></div>
+			<div type="conflict">Competing interests. The authors declare that they have no competing <lb/>interests. <lb/></div>
 
 			<div type="funding">Funding. This work was funded by the Antimicrobial Resistance Cross-<lb/>council Initiative supported by the seven research councils [NE/N019989/1 <lb/></div>
 
@@ -184,7 +184,7 @@
 
 			<div type="funding">and NE/N019660/1]. DWC, TEAP, and ASW are affiliated to the National <lb/>Institute for Health Research Health Protection Research Unit (NIHR HPRU) <lb/>in Healthcare Associated Infections and Antimicrobial Resistance at University <lb/>of Oxford in partnership with Public Health England (PHE) [grant HPRU-2012-<lb/>10041]. The views expressed are those of the author(s) and not necessarily <lb/>those of the NHS, the NIHR, the Department of Health or Public Health <lb/>England. This work is supported by the NIHR Oxford Biomedical Research <lb/>Centre. The funders had no role in the design of the study, analyses, <lb/>interpretation of the data or writing of the manuscript. <lb/></div>
 
-			<div type="annex">Authors&apos; contributions. NS and HSG designed the study, with input from all <lb/>authors. DSR, MB and MA collected samples. ATH and DSR performed the <lb/>laboratory work (culture, DNA extractions). RS performed PacBio long-read <lb/>sequencing; Illumina sequencing was undertaken at the Wellcome Trust <lb/>Centre for Human Genetics as part of a collaborative agreement. HSG <lb/>developed ResPipe with input from NS; HSG and JS implemented ResPipe in <lb/>NextFlow. NDM, LS, and HSG performed the data processing and <lb/>bioinformatics analyses. HSG, LS, JS and NS drafted the manuscript. All <lb/>authors read, improved and approved the final manuscript. <lb/></div>
+			<div type="contribution">Authors&apos; contributions. NS and HSG designed the study, with input from all <lb/>authors. DSR, MB and MA collected samples. ATH and DSR performed the <lb/>laboratory work (culture, DNA extractions). RS performed PacBio long-read <lb/>sequencing; Illumina sequencing was undertaken at the Wellcome Trust <lb/>Centre for Human Genetics as part of a collaborative agreement. HSG <lb/>developed ResPipe with input from NS; HSG and JS implemented ResPipe in <lb/>NextFlow. NDM, LS, and HSG performed the data processing and <lb/>bioinformatics analyses. HSG, LS, JS and NS drafted the manuscript. All <lb/>authors read, improved and approved the final manuscript. <lb/></div>
 
 			<div type="acknowledgement">Acknowledgements. The REHAB consortium includes (bracketed individuals <lb/>included in main author list): (Abuoun M), (Anjum M), (Bailey MJ), Barker L, <lb/>Brett H, (Bowes MJ), Chau K, (Crook DW), (De Maio N), Gilson D, (Gweon <lb/>HS), (Hubbard ATM), (Hoosdally S), Kavanagh J, Jones H, (Peto TEA), (Read <lb/>DS), (Sebra R), (Shaw LP), Sheppard AE, Smith R, Stubberfield E, (Swann J), <lb/>(Walker AS), Woodford N. This publication made use of the PubMLST <lb/>website (https://pubmlst.org/) developed by Keith Jolley (45) and sited at the <lb/></div>
 
@@ -194,7 +194,7 @@
 
 			<div type="acknowledgement">University of Oxford. The development of that website was funded by the <lb/>Wellcome Trust. <lb/></div>
 
-			<div type="annex">Conflict of interests. The authors declare they have no conflict of interest. <lb/></div>
+			<div type="conflict">Conflict of interests. The authors declare they have no conflict of interest. <lb/></div>
 
 			<note place="headnote">Gweon et al. <lb/></note>
 

@@ -58,7 +58,8 @@
 	Funding: 
 	<note type="funding">This work was supported by the Stowers Institute for Medical Research. The funder had no role in study design, data collection and analysis, decision to<lb/> publish, or preparation of the manuscript.<lb/> </note>
 
-	Competing Interests: The authors have declared that no competing interests exist.<lb/>
+	Competing interests:
+    <note type="conflict">The authors have declared that no competing interests exist.<lb/></note>
 
 	* E-mail:
 	<email>hym@stowers.org<lb/></email>

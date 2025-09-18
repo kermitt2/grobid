@@ -54,7 +54,7 @@
 
 			<div type="funding">VII. FINANCIAL SUPPORT <lb/>This work was performed as part of an internship by <lb/>ASR sponsored by Genentech, Inc., DNA Way, South San <lb/>Francisco, CA <lb/>, United States. JDC acknowledges sup-<lb/>port from the Sloan Kettering Institute and NIH grant P <lb/>CA <lb/>. DLM appreciates financial support from National <lb/>Science Foundation (CHE <lb/>). <lb/></div>
 
-			<div type="annex">VIII. CONFLICT OF INTEREST STATEMENT <lb/>DLM and JDC are members of the Scientific Advisory Board <lb/>for Schrödinger, LLC. <lb/></div>
+			<div type="conflict">VIII. CONFLICT OF INTEREST STATEMENT <lb/>DLM and JDC are members of the Scientific Advisory Board <lb/>for Schrödinger, LLC. <lb/></div>
 
 			<div type="acknowledgement">IX. ACKNOWLEDGMENTS <lb/>The authors acknowledge Christopher Bayly (OpenEye Sci-<lb/>entific) and Robert Abel (Schrödinger) for their contributions <lb/>to discussions on compound selection; Joseph Pease (Genen-<lb/>tech) for discussions of the experimental approach and aid in <lb/>compound selection; Delia Li (Genentech) for her assistance <lb/>in performing experimental work; Alberto Gobbi (Genentech), <lb/>Man-Ling Lee (Genentech), and Ignacio Aliagas (Genentech) <lb/>for helpful feedback on experimental issues; Andreas Klamt <lb/>(Cosmologic) and Jens Reinisch (Cosmologic) for invigorating <lb/>discussions regarding experimental data; Patrick Grinaway <lb/>(MSKCC) for helpful discussions on analysis procedures; and <lb/>Anthony Nicholls (OpenEye) for originating and supporting <lb/>earlier iterations of SAMPL challenges. <lb/></div>
 
