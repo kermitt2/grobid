@@ -589,7 +589,7 @@ project(":grobid-trainer") {
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path", "${System.getProperty('java.library.path')}:" + libraries
+        systemProperty "java.library.path", "${javaLibraryPath}"
     }
 
     task(teiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {

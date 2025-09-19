@@ -4,14 +4,13 @@
 [![Coverage Status](https://coveralls.io/repos/kermitt2/grobid/badge.svg)](https://coveralls.io/r/kermitt2/grobid)
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
 [![GitHub release](https://img.shields.io/github/release/kermitt2/grobid.svg)](https://github.com/kermitt2/grobid/releases/)
-[![Demo grobid.science-miner.com](https://img.shields.io/website-up-down-green-red/https/grobid.science-miner.com.svg)](https://grobid.science-miner.com)
+[![Demo lfoppiano-grobid.hf.space](https://img.shields.io/website-up-down-green-red/https/lfoppiano-grobid.hf.space.svg)](https://lfoppiano-grobid.hf.space)
 [![Docker Hub](https://img.shields.io/docker/pulls/grobid/grobid.svg)](https://hub.docker.com/r/grobid/grobid/ "Docker Pulls")
 [![Docker Hub](https://img.shields.io/docker/pulls/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Docker Pulls")
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/kermitt2/grobid)
 
-## GROBID documentation
-
-Visit the [GROBID documentation](https://grobid.readthedocs.io) for more detailed information.
+> [!TIP]
+> Getting started [here](https://grobid.readthedocs.io/en/latest/getting_started/).
 
 ## Summary
 

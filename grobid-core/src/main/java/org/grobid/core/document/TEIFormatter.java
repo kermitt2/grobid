@@ -278,8 +278,8 @@ public class TEIFormatter {
             // We introduce something more meaningful with TEI customization to encode copyrights information:
             // - @resp with value "publisher", "authors", "unknown", we add a comment to clarify that @resp
             //   should be interpreted as the copyrights owner
-            // - license related to copyrights exception is encoded via <licence>  
-            // (note: I have no clue what can mean "free" as status for a document - there are always some sort of 
+            // - license related to copyrights exception is encoded via <licence>
+            // (note: I have no clue what can mean "free" as status for a document - there are always some sort of
             // restrictions like moral rights even for public domain documents)
             if (copyrightsLicense != null) {
                 tei.append("\t\t\t\t<availability ");
@@ -1186,7 +1186,7 @@ public class TEIFormatter {
     protected List<Note> getTeiNotes(Document doc) {
         // There are two types of structured notes currently supported, foot notes and margin notes.
         // We consider that head notes are always only presentation matter and are never references
-        // in a text body. 
+        // in a text body.
 
         SortedSet<DocumentPiece> documentNoteParts = doc.getDocumentPart(SegmentationLabels.FOOTNOTE);
         List<Note> notes = getTeiNotes(doc, documentNoteParts, Note.NoteType.FOOT);
@@ -1292,7 +1292,7 @@ public class TEIFormatter {
         notes.add(localNote);
 
         // add possible subsequent notes concatenated in the same note sequence (this is a common error,
-        // which is addressed here by heuristics, it may not be necessary in the future with a better 
+        // which is addressed here by heuristics, it may not be necessary in the future with a better
         // segmentation model using more footnotes training data)
         if (currentNumber != -1) {
             String nextLabel = " " + (currentNumber+1);
@@ -1302,7 +1302,7 @@ public class TEIFormatter {
 
             int nextFootnoteLabelIndex = footText.indexOf(nextLabel);
             if (nextFootnoteLabelIndex != -1) {
-                // optionally we could restrict here to superscript numbers 
+                // optionally we could restrict here to superscript numbers
                 // review local note
                 localNote.setText(footText.substring(0, nextFootnoteLabelIndex));
                 int pos = 0;
@@ -1344,7 +1344,7 @@ public class TEIFormatter {
                                     List<MarkerType> markerTypes,
                                     GrobidAnalysisConfig config) throws Exception {
         // pattern is <note n="1" place="foot" xml:id="foot_1">
-        // or 
+        // or
         // pattern is <note n="1" place="margin" xml:id="margin_1">
 
         // if no note label is found, no @n attribute but we generate a random xml:id (not be used currently)
@@ -1358,7 +1358,7 @@ public class TEIFormatter {
 
             addXmlId(desc, note.getIdentifier());
 
-            // this is a paragraph element for storing text content of the note, which is 
+            // this is a paragraph element for storing text content of the note, which is
             // better practice than just putting the text under the <note> element
             Element pNote = XmlBuilderUtils.teiElement("p");
             if (config.isGenerateTeiIds()) {
@@ -1487,6 +1487,9 @@ public class TEIFormatter {
                                     BiblioItem biblio,
                                     List<BibDataSet> bds,
                                     List<LayoutToken> tokenizations,
+                                    List<Figure> figures,
+                                    List<Table> tables,
+                                    List<Equation> equations,
                                     List<MarkerType> markerTypes,
                                     Document doc,
                                     GrobidAnalysisConfig config) throws Exception {
@@ -1496,7 +1499,7 @@ public class TEIFormatter {
 
         buffer.append("\t\t\t<div type=\"annex\">\n");
         buffer = toTEITextPiece(buffer, result, biblio, bds, true,
-                new LayoutTokenization(tokenizations), null, null, null, null,
+                new LayoutTokenization(tokenizations), figures, tables, equations, null,
                 markerTypes, doc, config);
         buffer.append("\t\t\t</div>\n");
 
@@ -1906,7 +1909,7 @@ public class TEIFormatter {
                     boolean footNoteCallout = false;
 
                     if (refNodes.size() == 1 && (refNodes.get(0) instanceof Text)) {
-                        // filtered out superscript reference marker (based on the defined citationMarkerType) might 
+                        // filtered out superscript reference marker (based on the defined citationMarkerType) might
                         // be foot note callout - se we need in this particular case to try to match existing notes
                         // similarly as within paragraph
                         if (citationMarkerType == null || citationMarkerType != MarkerType.SUPERSCRIPT_NUMBER) {
@@ -2049,7 +2052,7 @@ public class TEIFormatter {
     }
 
     public void segmentIntoSentences(Element curParagraph, List<LayoutToken> curParagraphTokens, GrobidAnalysisConfig config, String lang, List<PDFAnnotation> annotations) {
-        // in order to avoid having a sentence boundary in the middle of a ref element 
+        // in order to avoid having a sentence boundary in the middle of a ref element
         // (which is frequent given the abbreviation in the reference expression, e.g. Fig.)
         // we only consider for sentence segmentation texts under <p> and skip the text under <ref>.
         if (curParagraph == null)
@@ -2159,7 +2162,7 @@ int k = 0;
 for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
     if (k < theSentences.size())
         System.out.println(k + " sentence segmented text-only: " + text.substring(theSentences.get(k).start, theSentences.get(k).end));
-    else 
+    else
         System.out.println("no text-only sentence at index " + k);
     System.out.print(k + " layout token segmented sentence: ");
     System.out.println(segmentedParagraphToken);
