@@ -96,7 +96,7 @@ public abstract class AbstractTrainer implements Trainer {
         File dirModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath()).getParentFile();
         if (!dirModelPath.exists()) {
             LOGGER.warn("Cannot find the destination directory " + dirModelPath.getAbsolutePath() + " for the model " + model.getModelName() + ". Creating it.");
-            dirModelPath.mkdir();
+            dirModelPath.mkdirs();
             //throw new GrobidException("Cannot find the destination directory " + dirModelPath.getAbsolutePath() + " for the model " + model.toString());
         }
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
@@ -170,6 +170,10 @@ public abstract class AbstractTrainer implements Trainer {
 
         // if we are here, that means that training succeeded
         renameModels(oldModelPath, tempModelPath);
+
+        if (split == 1.0) {
+            return "Split ratio is 1.0, no evaluation performed.";
+        }
 
         return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger()).toString();
     }

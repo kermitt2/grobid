@@ -6,4 +6,4 @@ The documentation is distributed under [CC-0](https://creativecommons.org/public
 
 If you contribute to GROBID, you agree to share your contribution following these licenses. 
 
-Main author and contact: Patrice Lopez (<patrice.lopez@science-miner.com>)
+Main author and contacts: Patrice Lopez (<patrice.lopez@science-miner.com>), Luca Foppiano (<luca@sciencialab.com>)

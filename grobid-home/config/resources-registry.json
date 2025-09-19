@@ -9,7 +9,7 @@
             "format": "vec", 
             "lang": "en",
             "item": "word",
-            "url": "http://nlp.stanford.edu/data/wordvecs/glove.840B.300d.zip"
+            "url": "https://huggingface.co/stanfordnlp/glove/resolve/main/glove.840B.300d.zip"
         },
         {
             "name": "fasttext-crawl",

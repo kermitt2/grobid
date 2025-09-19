@@ -1,14 +1,14 @@
 package org.grobid.core.main.batch;
 
+import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.ProcessEngine;
+import org.grobid.core.main.GrobidHomeFinder;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.Utilities;
+
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
-
-import org.grobid.core.engines.ProcessEngine;
-import org.grobid.core.main.GrobidHomeFinder;
-import org.grobid.core.main.LibraryLoader;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.Utilities;
 
 /**
  * The entrance point for starting grobid from command line and perform batch processing
@@ -167,6 +167,21 @@ public class GrobidMain {
 				if (currArg.equals("-r")) {
 					gbdArgs.setRecursive(true);
 					continue;
+				}
+
+                if (currArg.equals("-flavor")) {
+					final String command = pArgs[i + 1];
+
+                    GrobidModels.Flavor flavor = GrobidModels.Flavor.fromLabel(command);
+					if (flavor != null) {
+                        System.out.println("Setting model flavor to: " + flavor);
+						gbdArgs.setModelFlavor(flavor);
+						i++;
+						continue;
+					} else {
+                        System.out.println("No model flavor, using the default models");
+						break;
+					}
 				}
 			}
 		}

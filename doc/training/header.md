@@ -2,7 +2,7 @@
 
 ## Introduction
 
-For the following guidelines, it is expected that training data has been generated as explained [here](../Training-the-models-of-Grobid/#generation-of-training-data).
+For the following guidelines, it is expected that training data has been generated as explained [here](../Training-the-models-of-Grobid.md#generation-of-training-data).
 
 In Grobid, the document "header" corresponds to the bibliographical/metadata information sections about the document. This is typically all the information at the beginning of the article (often called the "front", title, authors, publication information, affiliations, abstrac, keywords, correspondence information, submission information, etc.), before the start of the document body (e.g. typically before the introduction section), but not only. Some of these elements can be located in the footnotes of the first page (e.g. affiliation of the authors), or at the end of the article (full list of authors, detailed affiliation and contact, how to cite, copyrights/licence and Open Access information). 
 
@@ -36,7 +36,8 @@ Note that the mark-up follows approximatively the [TEI](http://www.tei-c.org) wh
 
 Encoding the header section is challenging because of the variety of information that can appear in these parts, sometimes in unexpected imbricated manners. In addition, some information are often redundant (for example authors and affiliations mentioned two times with different level of details). These annotation guidelines are thus particularly important to follow to ensure stable encoding practices in the complete training data and to avoid the machine learning models to learn contradictory labelling, resulting in poorer performance and less valuable training data. 
 
-> Note: It is recommended to study the existing training documents for the header model first to see some examples of how these elements should be used.
+!!! tip
+    It is recommended to study the existing training documents for the header model first to see some examples of how these elements should be used.
 
 ## Analysis
 

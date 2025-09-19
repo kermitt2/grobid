@@ -138,6 +138,9 @@
 													</label>
 												</td>
 												<td>
+													<label class="checkbox" id="includeRawCopyrightsBlock" style="display: inherit;">
+														<input type="checkbox" id="includeRawCopyrights" name="includeRawCopyrights" value="1">Include raw copyrights</input>
+													</label>
 												</td>
 											</tr>
 											<tr>
@@ -151,8 +154,15 @@
 														<input type="checkbox" id="teiCoordinates" name="teiCoordinates" value="ref">Add coordinates</input>
 													</label>
 												</td>
-												<td>
-												</td>
+                                                <td class="checkbox" id="flavorBlock" style="display: inherit;">
+                                                    Flavor:
+                                                    <select id="flavor" name="flavor">
+                                                        <option value="" selected>No flavor</option>
+                                                        <option value="sdo/ietf" >SDO IETF</option>
+                                                        <option value="article/light" >Light</option>
+                                                        <option value="article/light-ref">Light with references</option>
+                                                    </select>
+                                                </td>
 											</tr>
 										</table>
 									</div>
@@ -336,7 +346,7 @@
 	    </div>  
 		
 		<footer>
-		  <p><span style="color:#848484;">&copy; Grobid contributors 2024 </span></p>
+		  <p><span style="color:#848484;">&copy; Grobid contributors 2025 </span></p>
 		  </footer>
 		</div>
 		

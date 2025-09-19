@@ -1,7 +1,7 @@
-<h1>GROBID Documentation</h1>
+# GROBID Documentation
 
 
-<h3>About</h3>
+## About
 
 * [Introduction](Introduction.md)
 
@@ -11,9 +11,9 @@
 
 * [License](License.md)
 
-<h3>User manual</h3>
+## User manual
 
-* [Run GROBID](Run-Grobid.md)
+* [Getting Started](getting_started.md) (**Starting point**)
 
 * [Use GROBID as a service](Grobid-service.md)
 
@@ -21,13 +21,11 @@
 
 * [Manage GROBID with containers (Docker)](Grobid-docker.md)
 
-* [Use GROBID in batch mode](Grobid-batch.md)
-
 * [GROBID configuration](Configuration.md)
 
-* [Troubleshooting and known issues](Troubleshooting.md)
+* [GROBID specialized processes](Grobid-specialized-processes.md)
 
-* [Use Grobid library in third party Java applications](Grobid-java-library.md)
+* [Troubleshooting and FAQ](Frequently-asked-questions.md)
 
 * [TEI encoding of results](TEI-encoding-of-results.md)
 
@@ -39,21 +37,23 @@
 
 * [End-to-end evaluation](End-to-end-evaluation.md)
 
-* [FAQ](Frequently-asked-questions.md)
+* [Grobid in batch mode](Grobid-batch.md) (deprecated)
 
-<h3>Benchmarking</h3>
+* [Use Grobid library in third party Java applications](Grobid-java-library.md) (deprecated)
 
-* [Description](Benchmarking.md)
+## Benchmarks
 
-* [Evaluation PubMed Central](Benchmarking-pmc.md)
+* [Description](benchmarks/Benchmarking.md)
 
-* [Evaluation bioRxiv](Benchmarking-biorxiv.md)
+* [Evaluation PubMed Central](benchmarks/Benchmarking-pmc.md)
 
-* [Evaluation PLOS](Benchmarking-plos.md)
+* [Evaluation bioRxiv](benchmarks/Benchmarking-biorxiv.md)
 
-* [Evaluation eLife](Benchmarking-elife.md)
+* [Evaluation PLOS](benchmarks/Benchmarking-plos.md)
 
-<h3>Annotation guidelines</h3>
+* [Evaluation eLife](benchmarks/Benchmarking-elife.md)
+
+## Annotation guidelines
 
 * [General principles](training/General-principles.md)
 
@@ -69,7 +69,7 @@
 
 * [Date model](training/date.md)
 
-<h3>Developer notes</h3>
+## Developer notes
 
 * [Notes for the Grobid Developers](Notes-grobid-developers.md)
 

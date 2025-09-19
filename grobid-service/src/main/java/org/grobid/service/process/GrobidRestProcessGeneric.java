@@ -60,13 +60,4 @@ public class GrobidRestProcessGeneric {
 
         return response;
     }
-
-    /**
-     * Returns a string containing GROBID version.
-     *
-     * @return a response object containing version as string.
-     */
-    public Response getVersion() {
-        return Response.status(Status.OK).entity(GrobidProperties.getVersion()).build();
-    }
 }

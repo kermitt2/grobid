@@ -6,6 +6,7 @@ import net.sf.saxon.om.SequenceIterator;
 import net.sf.saxon.trans.XPathException;
 import org.apache.commons.io.FileUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Figure;
 import org.grobid.core.data.Table;
 import org.grobid.core.document.Document;
@@ -64,7 +65,7 @@ public class FigureTableVisualizer {
         return blacklistedPages;
     }
 
-    private static void processPdfFile(File input, File outputFolder) throws Exception {
+    private static void processPdfFile(File input, File outputFolder, GrobidModels.Flavor flavor) throws Exception {
         inputPdf = input;
         annotated = false;
         annotatedFigure = false;
@@ -99,7 +100,7 @@ public class FigureTableVisualizer {
 
         blacklistedPages = getVectorGraphicPages(pdfaltoDirectory);
 
-        Document teiDoc = engine.fullTextToTEIDoc(documentSource, config);
+        Document teiDoc = engine.fullTextToTEIDoc(documentSource, flavor, config);
 
         PDDocument out = annotateFigureAndTables(
                 document, copiedFile, teiDoc,

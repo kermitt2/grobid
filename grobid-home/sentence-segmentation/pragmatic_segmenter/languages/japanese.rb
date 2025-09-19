@@ -17,7 +17,7 @@ module PragmaticSegmenter
         private
 
         def remove_newline_in_middle_of_word
-          @text.apply NewLineInMiddleOfWordRule
+          Rule.apply @text, NewLineInMiddleOfWordRule
         end
       end
 

@@ -3,17 +3,15 @@ package org.grobid.core.utilities;
 import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Funder;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.crossref.CrossrefClient;
 import org.grobid.core.utilities.crossref.CrossrefRequestListener;
-import org.grobid.core.utilities.crossref.WorkDeserializer;
 import org.grobid.core.utilities.crossref.FunderDeserializer;
+import org.grobid.core.utilities.crossref.WorkDeserializer;
 import org.grobid.core.utilities.glutton.GluttonClient;
-import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scala.Option;
@@ -38,6 +36,10 @@ public class Consolidation {
     private WorkDeserializer workDeserializer = null;
     private FunderDeserializer funderDeserializer = null;
     private CntManager cntManager = null;
+
+    public static String CONSOLIDATION_STATUS_CONSOLIDATED = "consolidated";
+    public static String CONSOLIDATION_STATUS_EXTRACTED = "extracted";
+
 
     public enum GrobidConsolidationService {
         CROSSREF("crossref"),
@@ -115,7 +117,7 @@ public class Consolidation {
 
     /**
      * Try to consolidate one bibliographical object with crossref metadata lookup web services based on
-     * core metadata
+     * core metadata. In practice, this method is used for consolidating header metadata.  
      */
     public BiblioItem consolidate(BiblioItem bib, String rawCitation, int consolidateMode) throws Exception {
         final List<BiblioItem> results = new ArrayList<>();
@@ -125,6 +127,7 @@ public class Consolidation {
             theDOI = cleanDOI(theDOI);
         }
         final String doi = theDOI;
+        String halId = bib.getHalId();
         String aut = bib.getFirstAuthorSurname();
         String title = bib.getTitle();
         String journalTitle = bib.getJournal();
@@ -170,6 +173,13 @@ public class Consolidation {
                         arguments = new HashMap<String,String>();
                     arguments.put("query.bibliographic", rawCitation);
                 }
+            }
+            if (StringUtils.isNotBlank(halId)) {
+                // call based on the identified HAL ID
+                if (arguments == null)
+                    arguments = new HashMap<String,String>();
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF)
+                    arguments.put("halid", halId);
             }
             if (StringUtils.isNotBlank(aut)) {
                 // call based on partial metadata
@@ -309,16 +319,18 @@ public class Consolidation {
 
 
     /**
-     * Try tp consolidate a list of bibliographical objects in one operation with consolidation services
+     * Try tp consolidate a list of bibliographical objects in one operation with consolidation services.
+     * In practice this method is used for consolidating the metadata of all the extracted bibliographical 
+     * references. 
      */
     public Map<Integer,BiblioItem> consolidate(List<BibDataSet> biblios) {
         if (CollectionUtils.isEmpty(biblios))
             return null;
-        final Map<Integer,BiblioItem> results = new HashMap<Integer,BiblioItem>();
+        final Map<Integer,BiblioItem> results = new HashMap<>();
         // init the results
         int n = 0;
         for(n=0; n<biblios.size(); n++) {
-            results.put(Integer.valueOf(n), null);
+            results.put(n, null);
         }
         n = 0;
         long threadId = Thread.currentThread().getId();
@@ -333,6 +345,8 @@ public class Consolidation {
             if (StringUtils.isNotBlank(doi)) {
                 doi = BiblioItem.cleanDOI(doi);
             }
+            // first we get the exploitable metadata
+            String halId = theBiblio.getHalId();
             String aut = theBiblio.getFirstAuthorSurname();
             String title = theBiblio.getTitle();
             String journalTitle = theBiblio.getJournal();
@@ -380,6 +394,13 @@ public class Consolidation {
                 // call based on the identified DOI
                 arguments = new HashMap<String,String>();
                 arguments.put("doi", doi);
+            }
+            if (StringUtils.isNotBlank(halId)) {
+                // call based on the identified HAL ID
+                if (arguments == null)
+                    arguments = new HashMap<String,String>();
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF)
+                    arguments.put("halid", halId);
             }
             if (StringUtils.isNotBlank(rawCitation)) {
                 // call with full raw string
@@ -474,19 +495,23 @@ public class Consolidation {
                     doiQuery = false;
                 }
 
-                client.<BiblioItem>pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(n) {
+                client.pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<>(n) {
 
                     @Override
                     public void onSuccess(List<BiblioItem> res) {
-                        if ((res != null) && (res.size() > 0) ) {
+                        if (CollectionUtils.isNotEmpty(res) ) {
                             // for CrossRef API we need here to post-validate if the found item corresponds
                             // to the one requested in order to avoid false positive
                             // Glutton has its own validation mechanisms
                             for(BiblioItem oneRes : res) {
-                                if ((GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) ||
-                                    postValidation(theBiblio, oneRes)) {
+                                if (
+                                    GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON
+                                    || postValidation(theBiblio, oneRes)
+                                ) {
                                     oneRes.setLabeledTokens(theBiblio.getLabeledTokens());
-                                    results.put(Integer.valueOf(getRank()), oneRes);
+                                    oneRes.setStatus(CONSOLIDATION_STATUS_CONSOLIDATED);
+                                    // We set the consolidation here 
+                                    results.put(getRank(), oneRes);
                                     if (cntManager != null) {
                                         cntManager.i(ConsolidationCounters.CONSOLIDATION_SUCCESS);
                                         if (doiQuery)
@@ -577,7 +602,7 @@ public class Consolidation {
         // CrossRef does not manage stopwords in funder search and has no usable term frequency, so we need
         // to remove basic stopwords in the query to have something manageable from CrossRef
         String funderNameString = funder.getFullName();
-        if (funderNameString == null || funderNameString.length() == 0)
+        if (StringUtils.isEmpty(funderNameString))
             return null;
 
         funderNameString = TextUtilities.removeFieldStopwords(funderNameString);
@@ -630,7 +655,7 @@ public class Consolidation {
     public Map<Integer,Funder> consolidateFunders(List<Funder> funders) {
         if (CollectionUtils.isEmpty(funders))
             return null;
-        final Map<Integer,Funder> results = new HashMap<Integer,Funder>();
+        final Map<Integer,Funder> results = new HashMap<>();
         // init the results
         int n = 0;
         for(n=0; n<funders.size(); n++) {
@@ -646,7 +671,7 @@ public class Consolidation {
             // CrossRef does not manage stopwords in funder search and has no usable term frequency, so we need
             // to remove basic stopwords in the query to have something manageable from CrossRef
             String funderNameString = funder.getFullName();
-            if (funderNameString == null || funderNameString.length() == 0)
+            if (StringUtils.isEmpty(funderNameString))
                 return null;
 
             funderNameString = TextUtilities.removeFieldStopwords(funderNameString);
@@ -660,7 +685,7 @@ public class Consolidation {
                     @Override
                     public void onSuccess(List<Funder> res) {
                         List<Funder> localResults = new ArrayList<>();
-                        if ((res != null) && (res.size() > 0) ) {
+                        if (CollectionUtils.isNotEmpty(res) ) {
                             // we need here to post-check the candidates in a pairwise comparison 
                             // in order to avoid false positive
                             for(Funder oneRes : res) {
@@ -671,7 +696,7 @@ public class Consolidation {
                                 if (oneRes.getFullName() != null) {
                                     String localFullName = oneRes.getFullName();
                                     localFullName = TextUtilities.removeFieldStopwords(localFullName);
-                                    if (localFullName.toLowerCase().equals(arguments.get("query").toLowerCase())) {
+                                    if (localFullName.equalsIgnoreCase(arguments.get("query"))) {
                                         localResults.add(oneRes);
                                         break;
                                     } else if (ratcliffObershelpDistance(localFullName, arguments.get("query"), false)>0.9) {

@@ -1,13 +1,39 @@
 site_name: GROBID Documentation
 repo_url: https://github.com/kermitt2/grobid/
 repo_name: GitHub
-theme: readthedocs
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
 site_description: Documentation for GROBID
 docs_dir: doc
+extra_css:
+  - css/custom.css
+
+extra_javascript:
+    - doc/readthedocs-search.js
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 plugins:
     - search
-theme:
-    name: readthedocs
 nav:
   - Home: 'index.md'
   - About:
@@ -16,26 +42,26 @@ nav:
     - 'References': 'References.md'
     - 'Licence': 'License.md'
   - User manual:
-    - 'Run GROBID': 'Run-Grobid.md'
+    - 'Getting started': 'getting_started.md'
     - 'GROBID service': 'Grobid-service.md'
     - 'Build GROBID from source': 'Install-Grobid.md'
     - 'GROBID with containers': 'Grobid-docker.md'
-    - 'GROBID batch mode': 'Grobid-batch.md'
     - 'GROBID configuration': 'Configuration.md'
-    - 'Troubleshooting and known issues': 'Troubleshooting.md'
-    - 'Java library': 'Grobid-java-library.md'
+    - 'GROBID specialized processes': 'Grobid-specialized-processes.md'
     - 'TEI encoding of results': 'TEI-encoding-of-results.md'
     - 'Coordinates of structures in the PDF': 'Coordinates-in-PDF.md'
     - 'Adding a consolidation service': 'Consolidation.md'
     - 'Training the GROBID models': 'Training-the-models-of-Grobid.md'
     - 'End-to-end evaluation': 'End-to-end-evaluation.md'
-    - 'Frequently asked Questions': 'Frequently-asked-questions.md'
+    - 'Troubleshooting and FAQ': 'Frequently-asked-questions.md'
+    - 'Grobid in batch mode': 'Grobid-batch.md'
+    - 'Use Grobid library in third party Java applications': 'Grobid-java-library.md'
   - Benchmarking:
-    - 'Description': 'Benchmarking.md'
-    - 'PubMed Central': 'Benchmarking-pmc.md'
-    - 'bioRxiv': 'Benchmarking-biorxiv.md'
-    - 'PLOS': 'Benchmarking-plos.md'
-    - 'eLife': 'Benchmarking-elife.md'
+    - 'Description': 'benchmarks/Benchmarking.md'
+    - 'PubMed Central': 'benchmarks/Benchmarking-pmc.md'
+    - 'bioRxiv': 'benchmarks/Benchmarking-biorxiv.md'
+    - 'PLOS': 'benchmarks/Benchmarking-plos.md'
+    - 'eLife': 'benchmarks/Benchmarking-elife.md'
   - Annotation guidelines:
     - 'General principles': 'training/General-principles.md'
     - 'Segmentation model': 'training/segmentation.md'

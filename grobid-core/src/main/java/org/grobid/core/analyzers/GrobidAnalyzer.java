@@ -5,8 +5,8 @@ import org.grobid.core.layout.LayoutToken;
 
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.LayoutTokensUtil;
-import org.wipo.nlp.textboundaries.ReTokenizer;
-import org.wipo.nlp.textboundaries.ReTokenizerFactory;
+import org.grobid.nlp.textboundaries.ReTokenizer;
+import org.grobid.nlp.textboundaries.ReTokenizerFactory;
 
 import java.util.List;
 import java.util.ArrayList;

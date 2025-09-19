@@ -1,0 +1,43 @@
+name: General report
+description: Create a report to help us improve
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! Before creating a new issue, make sure you had a look at the [official documentation](https://grobid.readthedocs.com) or with the **experimental** [Mendable Q/A chat](https://www.mendable.ai/demo/723cfc12-fdd6-4631-9a9e-21b80241131b). **NOTE**: the suggested method of running grobid is through Docker (https://grobid.readthedocs.io/en/latest/Grobid-docker/).
+  - type: input
+    id: grobid_version
+    attributes:
+      label: Grobid version
+      description: Which grobid version are you using? Is it via Docker or natively? With Deep Learning models or only the lightweight CRF models? 
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating System and architecture (arm64, amd64, x86, etc.)
+      description: Please remember that Windows is not supported and Mac OS arm64 is still experimental.
+    validations:
+      required: false
+  - type: input
+    id: java
+    attributes:
+      label: What is your Java version
+      description: "java --version"
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log and information
+      description: In case of build or run errors, please submit the error while running gradlew with ``--stacktrace`` and ``--info`` for better log traces (e.g. `./gradlew run --stacktrace --info`) or attach the log file `logs/grobid-service.log` or the console log.
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Further information
+      description: Please give us any information that could be of help
+    validations:
+      required: false
+  

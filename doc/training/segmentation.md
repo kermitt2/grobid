@@ -2,7 +2,7 @@
 
 ## Introduction
 
-For the following guidelines, it is expected that training data has been generated as explained [here](../Training-the-models-of-Grobid/#generation-of-training-data).
+For the following guidelines, it is expected that training data has been generated as explained [here](../Training-the-models-of-Grobid.md#generation-of-training-data).
 
 The following TEI elements are used by the segmentation model:
 
@@ -23,7 +23,8 @@ It is necessary to identify these above substructures when interrupting the `<bo
 
 Note that the mark-up follows overall the [TEI](http://www.tei-c.org). 
 
-> Note: It is highly recommended to study the existing training documents for the segmentation model first to see some examples of how these elements should be used.
+!!! tip
+    It is highly recommended to study the existing training documents for the segmentation model first to see some examples of how these elements should be used.
 
 ## Analysis
 
@@ -91,7 +92,8 @@ survival <lb/></front>
 
 ```
 
-> Note: In general, whether the `<lb/>` (line break) element is inside or outside the `<front>` or other elements is of no importance. However as indicated [here](General-principles/#correcting-pre-annotated-files), the <lb/> element should not be removed and should follow the stream of text. 
+!!! tip
+    In general, whether the `<lb/>` (line break) element is inside or outside the `<front>` or other elements is of no importance. However as indicated [here](General-principles.md#correcting-pre-annotated-files), the <lb/> element should not be removed and should follow the stream of text. 
 
 The following screenshot shows an example where an article starts mid-page, the end of the preceding one occupying the upper first third of the page. As this content does not belong to the article in question, don't add any elements and remove any `<front>` or `<body>` elements that could appear in the preceding article.
 
@@ -106,7 +108,8 @@ Additional and supporting information sections, which are located **after the bo
 * `<div type="availability">` for data and code availability statement annex 
 * `<div type="funding">` for funding information annex 
 
-> Note: Different section of annex type should be segmented in separated `<div type="annex">` to capture the start and end of the different section blocks. 
+!!! tip
+    Different section of annex type should be segmented in separated `<div type="annex">` to capture the start and end of the different section blocks. 
 
 Supplementary texts, supplementary figures and tables, and any similar appendix should be all encoded under `<div type="annex">`. 
 

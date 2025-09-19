@@ -1,24 +1,25 @@
-<h1>Install a GROBID development environment</h1>>
+# Install a GROBID development environment
 
 ## Getting the GROBID project source
 
-For building GROBID yourself, a JDK must be installed on your machine. We tested the tool successfully from **JDK 1.11** up version **JDK 1.17**. Other recent JDK versions should work correctly. 
+For building GROBID yourself, a JDK must be installed on your machine. We tested the tool successfully from **JDK 1.11** up version **JDK 1.17**. Other recent JDK versions should work, however they haven't been tested.
 
-Note: Java/JDK 8 is not supported anymore from Grobid version `0.8.0` and the minimum requirement for Java is JDK 1.11.
+!!! warn "JDK 8 support" 
+    Java/JDK 8 is not supported anymore from Grobid version `0.8.0` and the minimum requirement for Java is JDK 1.11.
 
 ### Latest stable release
 
-The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.8.0``` which can be downloaded as follow: 
+The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.8.2``` which can be downloaded as follow: 
 ```bash
-> wget https://github.com/kermitt2/grobid/archive/0.8.0.zip
-> unzip 0.8.0.zip
+> wget https://github.com/kermitt2/grobid/archive/0.8.2.zip
+> unzip 0.8.2.zip
 ```
 
 or using the [docker](Grobid-docker.md) container. 
 
 ### Current development version
 
-The current development version is ```0.8.1-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
+The current development version is ```0.8.3-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
 
 Clone source code from github:
 ```bash
@@ -33,7 +34,8 @@ Or download directly the zip file:
 
 ## Build GROBID from the source
 
-**Please make sure that Grobid is installed in a path with no parent directories containing spaces.**
+!!! tip
+    Please make sure that Grobid is installed in a path with no parent directories containing spaces.
 
 ### Build GROBID with Gradle 
 
