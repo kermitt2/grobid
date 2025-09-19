@@ -48,7 +48,7 @@ module PragmaticSegmenter
 
     attr_reader :text
     def initialize(text:)
-      @text = Text.new(text)
+      @text = text.dup
     end
 
     def add_line_break
@@ -68,13 +68,13 @@ module PragmaticSegmenter
     def format_numbered_list_with_parens
       replace_parens_in_numbered_list
       add_line_breaks_for_numbered_list_with_parens
-      @text.apply(ListMarkerRule)
+      Rule.apply(@text, ListMarkerRule)
     end
 
     def format_numbered_list_with_periods
       replace_periods_in_numbered_list
       add_line_breaks_for_numbered_list_with_periods
-      @text.apply(SubstituteListPeriodRule)
+      Rule.apply(@text, SubstituteListPeriodRule)
     end
 
     def format_alphabetical_lists
@@ -93,7 +93,7 @@ module PragmaticSegmenter
 
     def add_line_breaks_for_numbered_list_with_periods
       if @text.include?('♨') && @text !~ /♨.+\n.+♨|♨.+\r.+♨/ && @text !~ /for\s\d{1,2}♨\s[a-z]/
-        @text.apply(SpaceBetweenListItemsFirstRule, SpaceBetweenListItemsSecondRule)
+        Rule.apply(@text, SpaceBetweenListItemsFirstRule, SpaceBetweenListItemsSecondRule)
       end
     end
 
@@ -105,7 +105,7 @@ module PragmaticSegmenter
 
     def add_line_breaks_for_numbered_list_with_parens
       if @text.include?('☝') && @text !~ /☝.+\n.+☝|☝.+\r.+☝/
-        @text.apply(SpaceBetweenListItemsThirdRule)
+        Rule.apply(@text, SpaceBetweenListItemsThirdRule)
       end
     end
 

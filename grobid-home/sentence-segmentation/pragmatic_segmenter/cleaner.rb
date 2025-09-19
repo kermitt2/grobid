@@ -11,7 +11,7 @@ module PragmaticSegmenter
 
     attr_reader :text, :doc_type
     def initialize(text:, doc_type: nil, language: Languages::Common)
-      @text = Text.new(text)
+      @text = text.dup
       @doc_type = doc_type
       @language = language
     end
@@ -37,10 +37,10 @@ module PragmaticSegmenter
       replace_newlines
       replace_escaped_newlines
 
-      @text.apply(HTML::All)
+      Rule.apply(@text, HTML::All)
 
       replace_punctuation_in_brackets
-      @text.apply(InlineFormattingRule)
+      Rule.apply(@text, InlineFormattingRule)
       clean_quotations
       clean_table_of_contents
       check_for_no_space_in_between_sentences
@@ -72,7 +72,7 @@ module PragmaticSegmenter
       if word =~ regex
         unless URL_EMAIL_KEYWORDS.any? { |web| word =~ /#{web}/ }
           unless abbreviations.any? { |abbr| word =~ /#{abbr}/i }
-            new_word = word.dup.apply(rule)
+            new_word = Rule.apply(word.dup, rule)
             txt.gsub!(/#{Regexp.escape(word)}/, new_word)
           end
         end
@@ -92,45 +92,45 @@ module PragmaticSegmenter
     end
 
     def remove_newline_in_middle_of_word
-      @text.apply NewLineInMiddleOfWordRule
+      Rule.apply @text, NewLineInMiddleOfWordRule
     end
 
     def replace_escaped_newlines
-      @text.apply EscapedNewLineRule, EscapedCarriageReturnRule,
+      Rule.apply @text, EscapedNewLineRule, EscapedCarriageReturnRule,
         TypoEscapedNewLineRule, TypoEscapedCarriageReturnRule
     end
 
     def replace_double_newlines
-      @text.apply DoubleNewLineWithSpaceRule, DoubleNewLineRule
+      Rule.apply @text, DoubleNewLineWithSpaceRule, DoubleNewLineRule
     end
 
     def replace_newlines
       if doc_type.eql?('pdf')
         remove_pdf_line_breaks
       else
-        @text.apply NewLineFollowedByPeriodRule,
+        Rule.apply @text, NewLineFollowedByPeriodRule,
           ReplaceNewlineWithCarriageReturnRule
       end
     end
 
     def remove_pdf_line_breaks
-      @text.apply NewLineFollowedByBulletRule,
+      Rule.apply @text, NewLineFollowedByBulletRule,
 
         PDF::NewLineInMiddleOfSentenceRule,
         PDF::NewLineInMiddleOfSentenceNoSpacesRule
     end
 
     def clean_quotations
-      @text.apply QuotationsFirstRule, QuotationsSecondRule
+      Rule.apply @text, QuotationsFirstRule, QuotationsSecondRule
     end
 
     def clean_table_of_contents
-      @text.apply TableOfContentsRule, ConsecutivePeriodsRule,
+      Rule.apply @text, TableOfContentsRule, ConsecutivePeriodsRule,
         ConsecutiveForwardSlashRule
     end
 
     def clean_consecutive_characters
-      @text.apply ConsecutivePeriodsRule, ConsecutiveForwardSlashRule
+      Rule.apply @text, ConsecutivePeriodsRule, ConsecutiveForwardSlashRule
     end
   end
 end

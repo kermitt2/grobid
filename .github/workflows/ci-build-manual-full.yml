@@ -44,7 +44,7 @@ jobs:
           image: lfoppiano/grobid
           registry: docker.io
           pushImage: true
-          tags: latest-full, ${{ github.event.inputs.custom_tag}}
+          tags: latest-develop, latest-full, ${{ github.event.inputs.custom_tag}}
           dockerfile: Dockerfile.delft
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}

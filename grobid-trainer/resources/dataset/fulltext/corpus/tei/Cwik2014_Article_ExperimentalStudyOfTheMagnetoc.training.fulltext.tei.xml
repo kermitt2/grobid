@@ -38,7 +38,9 @@
 
 			<p>Figure <ref type="figure">4</ref> shows the temperature dependences of the spe-<lb/>cific heat of Dy 1-x Er x Co 2 measured in zero magnetic field.<lb/> It can be seen that sharp peaks associated with the first-order<lb/> magnetic phase transitions take place. The Curie temper-<lb/>atures decrease from 140 K for DyCo 2 down to 86 K<lb/> for Dy 0.5 Er 0.5 Co 2 . Moreover, for x = 0.3 and 0.5 in the<lb/> low temperature region (see inset of Fig. <ref type="figure">4</ref>) additional<lb/> peak is observed. A possible mechanism for the relatively<lb/> small smooth step-like anomaly in C P (T) plots at low tem-<lb/>peratures might be a spin reorientation in the R-electron<lb/> subsystem, which is similar than that observed for HoCo 2<lb/> (T SR = 15 K) and NdCo 2 (T SR = 43 K) <ref type="biblio">[15]</ref>. It is assumed<lb/></p>
 
-			<figure>Fig. 1 Magnetization isotherms<lb/> of Dy 0.6 Ho 0.4 Co 2 measured at<lb/> several selected temperatures<lb/> near T C<lb/> Fig. 2 Belov-Arrott plots for<lb/> Ho 0.6 Er 0.4 Co 2<lb/></figure>
+			<figure>Fig. 1 Magnetization isotherms<lb/> of Dy 0.6 Ho 0.4 Co 2 measured at<lb/> several selected temperatures<lb/> near T C<lb/> </figure>
+				
+			<figure>Fig. 2 Belov-Arrott plots for<lb/> Ho 0.6 Er 0.4 Co 2<lb/></figure>
 
 			<p>that the spin reorientation in those two compounds is driven<lb/> by an interplay of molecular and crystal fields, thus, giv-<lb/>ing rise to the change of easy magnetization direction from<lb/> [1 0 0] to [1 1 0] with decreasing temperature. The spin<lb/> reorientation transition was observed in all R 1-x R x Co 2 solid<lb/> solutions and can be understood as an effect of competition<lb/> between the magnetocrystalline anisotropies of the Co and<lb/> R sublattices.<lb/></p>
 
@@ -52,7 +54,9 @@
 
 			<p>where the first term represents the electronic heat capac-<lb/>ity and the second term corresponds to the phonon Debye<lb/> contribution; γ is the Sommerfeld coefficient, D is the<lb/> Debye temperature, N = 3 is the number of atoms per<lb/> formula unit; R is the universal gas constant; and x ≡<lb/> ω/k B T.<lb/></p>
 
-			<figure>Fig. 3 Temperature<lb/> dependences of a and b Landau<lb/> coefficients a(T), b(T) and c(T)<lb/> for Dy 0.5 Ho 0.5 Co 2<lb/> Fig. 4 Temperature<lb/> dependences of the specific heat<lb/> C P (T) of Dy 1-x Er x Co 2<lb/> (0.0 ≤ x ≤ 0.5) measured in zero<lb/> magnetic field. The inset shows<lb/> low temperature range near spin<lb/> reorientation temperature<lb/></figure>
+			<figure>Fig. 3 Temperature<lb/> dependences of a and b Landau<lb/> coefficients a(T), b(T) and c(T)<lb/> for Dy 0.5 Ho 0.5 Co 2<lb/> </figure>
+				
+			<figure>Fig. 4 Temperature<lb/> dependences of the specific heat<lb/> C P (T) of Dy 1-x Er x Co 2<lb/> (0.0 ≤ x ≤ 0.5) measured in zero<lb/> magnetic field. The inset shows<lb/> low temperature range near spin<lb/> reorientation temperature<lb/></figure>
 
 			<p>The C el+ph (T) dependence for each of the investigated<lb/> R 1-x R x Co 2 compounds was calculated by (<ref type="formula">4</ref>) and as exam-<lb/>ple, the temperature dependences of the heat capacity<lb/> C P (T), the sum of electronic and phonon C el+ph (T) and<lb/> magnetic contributions C mag (T) for the Dy 0.7 Er 0.3 Co 2 com-<lb/>pound measured in zero magnetic field is shown in Fig. <ref type="figure">5</ref>.<lb/> For Dy 0.7 Er 0.3 Co 2 , the best fitting for the wide temper-<lb/>ature range could be obtained by fixing the parameter<lb/> γ˜42 mJ/molK 2 , while the Debye temperature fluctuates<lb/> around 245 K. The values of γ and Debye temperature of<lb/> all R 1-x R x Co 2 with changing composition are presented in<lb/> Table <ref type="table">1</ref>. The inset in Fig. <ref type="figure">5</ref> shows temperature dependences<lb/> of the specific heat of Dy 0.7 Er 0.3 Co 2 measured in magnetic<lb/> fields. It is seen that the maximum of peaks in the C P (T)<lb/> dependences measured in magnetic fields shifts to the high-<lb/>temperature range and gradually decreases with increasing<lb/> magnetic field.<lb/></p>
 
@@ -60,7 +64,9 @@
 
 				<formula>T ad = -<lb/> T<lb/> C H<lb/> S H<lb/> (<label>5</label>)<lb/></formula>
 
-			<figure>Fig. 5 Total specific heat<lb/> capacity C tot (T) of<lb/> Dy 0.7 Er 0.3 Co 2 measured in zero<lb/> magnetic field The calculated<lb/> sum of electronic and phonon<lb/> contributions C el+ph as well as<lb/> estimated magnetic contribution<lb/> C mag . The inset shows C P (T)<lb/> curve measured in zero and 0.5-,<lb/> 1-and 1.5-T magnetic fields for<lb/> Dy 0.7 Er 0.3 Co 2<lb/> Fig. 6 The maximum value of<lb/> T ad vs. T for R 1-x R x Co 2<lb/> compounds<lb/></figure>
+			<figure>Fig. 5 Total specific heat<lb/> capacity C tot (T) of<lb/> Dy 0.7 Er 0.3 Co 2 measured in zero<lb/> magnetic field The calculated<lb/> sum of electronic and phonon<lb/> contributions C el+ph as well as<lb/> estimated magnetic contribution<lb/> C mag . The inset shows C P (T)<lb/> curve measured in zero and 0.5-,<lb/> 1-and 1.5-T magnetic fields for<lb/> Dy 0.7 Er 0.3 Co 2<lb/> </figure>
+				
+			<figure>Fig. 6 The maximum value of<lb/> T ad vs. T for R 1-x R x Co 2<lb/> compounds<lb/></figure>
 
 			<p>where C H is the experimental dependence of heat capacity<lb/> measured in magnetic field, and<lb/></p>
 

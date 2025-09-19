@@ -4,7 +4,7 @@ The GROBID Web API provides a simple and efficient way to use the tool. A servic
 
 ## Start the server with Docker
 
-This is the recommended and standard way to run the Grobid web services, see [here](Run-Grobid.md). 
+This is the recommended and standard way to run the Grobid web services, see [here](getting_started.md). 
 
 ## Start a development server with Gradle
 
@@ -27,9 +27,9 @@ From a development installation, you can also build and install the service as a
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.1.zip
-mv grobid-service-0.8.1 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.1.zip
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.2.zip
+mv grobid-service-0.8.2 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.2.zip
 ./grobid-service/bin/grobid-service
 ```
 
@@ -45,7 +45,7 @@ The directory `grobid-installation` should have the following structure:
 
 You can check whether the service is up and running by opening the following URL:
 
-* <http://yourhost:8070/api/version> will return you the current version
+* <http://yourhost:8070/api/version> will return you the current version, and the github revision (commit hash) of the running service
 * <http://yourhost:8070/api/isalive> will return `true`/`false` whether the service is up and running
 
 The service provides also an admin console, reachable at <http://yourhost:8071> where some additional checks like ping, metrics, hearthbeat are available.
@@ -77,6 +77,39 @@ grobid:
   modelPreload: true
 ```  
 
+## Errors handling
+
+The structure of errors is organised as follows: 
+
+| HTTP Status code  | reason                                                                                    |
+|-------------------|-------------------------------------------------------------------------------------------|
+| 200               | Successful operation.                                                                     |
+| 204               | Process was completed, but no content could be extracted and structured                   |
+| 400               | Wrong request, missing parameters, missing header                                         |
+| 500               | Indicate an internal service error, further described by a provided message               |
+| 503               | The service is not available, which usually means that all the threads are currently used |
+
+However, there are some specific errors related to the processing that should be considered. 
+The following table provides the Grobid error codes, the related HTTPS error and a description and suggestion/explanation:   
+
+| Error Code                    | HTTP Status Code            | Description                                                                                         | Possible Cause / Suggested Action                                                          |
+|-------------------------------|-----------------------------|-----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| `BAD_INPUT_DATA`              | 500 (Internal Server Error) | The input data is not correct (e.g., unreadable or missing PDF).                                    | Check that the PDF is valid and supplied in the request.                                   |
+| `NO_BLOCKS`                   | 500 (Internal Server Error) | The PDF contains no text blocks (likely a scanned document without OCR, only images).               | Ensure the PDF has selectable text; consider running OCR if it is image-only.              |
+| `TOO_MANY_BLOCKS`             | 500 (Internal Server Error) | The PDF has too many text blocks; Grobid avoids processing very large documents for safety.         | Try splitting the document or processing fewer pages at a time.                            |
+| `TOO_MANY_TOKENS`             | 500 (Internal Server Error) | The PDF contains too many tokens (words); Grobid avoids processing very large documents for safety. | Try splitting the document or processing fewer pages at a time.                            |
+| `TIMEOUT`                     | 500 (Internal Server Error) | The PDF took too long to process and was stopped.                                                   | Try with a smaller or simpler document; check server resources.                            |
+| `TAGGING_ERROR`               | 500 (Internal Server Error) | The DeLFT/CRF tagging process failed (model mismatch or tagging engine error).                      | Check model compatibility between grobid-home and grobid-core; verify model files.         |
+| `PARSING_ERROR`               | 500 (Internal Server Error) | The PDF parsing process failed (XML parsing, vector graphics processing, or file structure issues). | Check PDF file integrity; verify XML structure; report with specific file and logs.        |
+| `GENERAL`                     | 500 (Internal Server Error) | A general internal error occurred (possible bug in Grobid).                                         | Check logs for details; report the issue with relevant files and logs.                     |
+| `PDFALTO_CONVERSION_FAILURE`  | 500 (Internal Server Error) | The PDF could not be converted by pdfalto (damaged file or pdfalto bug).                            | Try opening the PDF manually; if valid, report the issue with the file.                    |
+
+!!! tip
+    - "Blocks" refer to logical text regions detected in the PDF (e.g., paragraphs, headers).  
+    - "Tokens" refer to individual words or symbols.  
+    - "Tagging" refers to the process of assigning labels to tokens using statistical models.
+    - When **reporting issues** related to the error of type `GENERAL`, please **provide as much detail as possible**, such as input PDF document, log files.
+
 ## CORS (Cross-Origin Resource Share)
 
 By default, Grobid allows API access from any origin.
@@ -103,7 +136,7 @@ All these clients will take advantage of the multi-threading for scaling PDF bat
 
 On your browser, the welcome page of the service console is available at the URL <http://localhost:8070>.
 
-On the service console, the RESTful API can be tested under the `TEI` tab for service returning a TEI document, under the `PDF` tab for services returning annotations relative to PDF or an annotated PDF and under the `Patent` tab for patent-related services:
+On the service console, the REST API can be tested under the `TEI` tab for service returning a TEI document, under the `PDF` tab for services returning annotations relative to PDF or an annotated PDF and under the `Patent` tab for patent-related services:
 
 ![Example of GROBID Service console usage](img/grobid-rest-example.png)
 
@@ -836,11 +869,11 @@ Get a model in the form of an archive (`.zip`), given a model name.
 
 Response status codes:
 
-|     HTTP Status code |   reason                                               |
-|---                   |---                                                     |
-|         200          |     Successful operation.                              |
-|         400          |     Wrong request, missing or invalid model name, invalid architecture name, missing header  |
-|         500          |     Indicate an internal service error, further described by a provided message           |
+| HTTP Status code      | reason                                                                                    |
+|-----------------------|-------------------------------------------------------------------------------------------|
+| 200                   | Successful operation.                                                                     |
+| 400                   | Wrong request, missing or invalid model name, invalid architecture name, missing header   |
+| 500                   | Indicate an internal service error, further described by a provided message               |
 
 
 You can test this service with the **cURL** command lines, for instance retrieving the zipped CRF date model binaries with a POST query:
@@ -854,9 +887,37 @@ or with a GET query:
 curl -v -X GET localhost:8070/api/model?model=date > model.zip
 ```
 
+#### Create training data 
+
+Generate the training data for the grobid models for a PDF document provided in input. 
+The service will return a ZIP archive with the training data in TEI XML format which may need to be corrected, because it can be used.
+
+
+| method    | request type          | response type         | parameters | requirement     | description                                                            |
+|-----------|-----------------------|-----------------------|------------|-----------------|------------------------------------------------------------------------|
+| POST      | application/form-data | application/zip       | input      | required        | A PDF document                                                         |
+|           |                       |                       | flavor     | optional        | The name of the flavor that could be used to create the training data  |
+
+Response status codes:
+
+| HTTP Status code      | reason                                                                                  |
+|-----------------------|-----------------------------------------------------------------------------------------|
+| 200                   | Successful operation.                                                                   |
+| 400                   | Wrong request, missing or invalid model name, invalid architecture name, missing header |
+| 500                   | Indicate an internal service error, further described by a provided message             |
+
+You can test this service with the **cURL** command lines, for instance starting the training of the CRF date model and producing an evaluation based on an holdout set:
+```bash
+curl --location 'http://localhost:8070/api/createTraining' \
+--form 'input=@"PATH_DOCUMENT"'
+--output output_name.zip
+```
+
+The zip file will contain the training data as described in the [general principles](General-principles.md) of GROBID training data.
+
 ## Parallel mode
 
-The Grobid RESTful API provides a very efficient way to use the library out of the box, because the service exploits multithreading.
+The Grobid REST API provides a very efficient way to use the library out of the box, because the service exploits multithreading.
 
 As Grobid is thread-safe and manages a pool of parser instances, it is advised to use several threads to call the REST service for scaling the processing to large collections of documents. This improves considerably the performance of the services for PDF processing because documents can be processed while other are uploading.
 

@@ -36,7 +36,8 @@ Note that the mark-up follows approximatively the [TEI](http://www.tei-c.org) wh
 
 Encoding the header section is challenging because of the variety of information that can appear in these parts, sometimes in unexpected imbricated manners. In addition, some information are often redundant (for example authors and affiliations mentioned two times with different level of details). These annotation guidelines are thus particularly important to follow to ensure stable encoding practices in the complete training data and to avoid the machine learning models to learn contradictory labelling, resulting in poorer performance and less valuable training data. 
 
-> Note: It is recommended to study the existing training documents for the header model first to see some examples of how these elements should be used.
+!!! tip
+    It is recommended to study the existing training documents for the header model first to see some examples of how these elements should be used.
 
 ## Analysis
 

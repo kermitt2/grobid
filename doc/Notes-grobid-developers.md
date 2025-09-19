@@ -1,22 +1,49 @@
-<h1>Notes for the Grobid developers</h1>
+# Notes for the Grobid developers
 
 This page contains a set of notes for the Grobid developers: 
 
-### Release
+## Deep learning models on Linux with Conda 
+
+This is a summary of the steps I used to run Grobid using DL natively on Linux: 
+
+1. cd grobid
+2. rm -rf grobid-home/lib/lin-64/jep
+3. cd ..
+4. git clone https://github.com/kermitt2/delft (delft should be in the parent directory)
+
+Assuming that: 
+
+1. Conda is installed (if not, I installed [this](https://github.com/conda-forge/miniforge/releases/tag/24.9.2-0) - check the version, might be old) 
+2. The environment `delft` has been created with either `python=3.8` (e.g. `conda create --name delft python=3.8` or ) or `python=3.9` (e.g. `conda create --name delft python=3.9`) 
+
+Then continue here: 
+
+1. cd grobid
+2. `pip install delft==0.3.3` (with `delft==0.3.4` you also need to install Blingfire `pip install blingfire`)
+3. `pip install jep=4.2.2` (jep 4.1.1 cannot be installed, jep 4.0.2 does not work)
+4. if Grobid has not yet been updated, update the JEP version to 4.2.2 in `build.gradle` 
+4. `export LD_PRELOAD=${CONDA_PREFIX}/lib/libpython3.9.so` (or libpython3.8.so if you use python 3.8)
+5. `export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX`
+
+[//]: # (5. `export LD_LIBRARY_PATH=${CONDA_PREFIX}/lib:$LD_LIBRARY_PATH`)
+6. Change any model in the grobid config to use delft instead of wapiti (e.g. header model)
+7. `./gradlew run`
+
+### Release 
 
 With the end of JCenter, the fact that the repo is too large for JitPack and that we are technically not ready to move back to the bureaucratic Maven Central yet, we currently publish the Grobid library artefacts ourselves... with the Grobid DIY repository :) 
 The idea anyway is that people will use Grobid with the Docker image, the service and usually not via the Java library artefacts. If they use the Java library, they will likely simply rebuild from the repo, because in this scenario they will likely want to massage the tool and they need a local `grobid-home`. 
 
-In order to make a new release:  
+To make a new release:  
 
-+ tag the project branch to be releases, for instance a version `0.8.1`: 
++ tag the project branch to be releases, for instance a version `0.8.2`: 
 
 ```
-> git tag 0.8.1
-> git push origin 0.8.1
+> git tag 0.8.2
+> git push origin 0.8.2
 ```
 
-+ create a github release: the easiest is to use the GitHub web interface
++ create a Github release: the easiest is to use the GitHub web interface
 
 + do something to publish the Java artefacts... currently just uploading them on AWS S3 
 
@@ -35,7 +62,7 @@ In order to make a new release:
 
 ```
 dependencies {
-    implementation 'org.grobid:grobid-core:0.8.1'
+    implementation 'org.grobid:grobid-core:0.8.2'
 }
 ```
 
@@ -55,7 +82,7 @@ for maven projects:
     <dependency>
         <groupId>org.grobid</groupId>
         <artifactId>grobid-core</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.2</version>
     </dependency>
 ```
 
