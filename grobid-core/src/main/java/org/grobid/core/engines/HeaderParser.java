@@ -296,7 +296,7 @@ public class HeaderParser extends AbstractParser {
                 // DOI pass
                 List<String> dois = doc.getDOIMatches();
                 if (isNotEmpty(dois) && dois.size() == 1) {
-                    if (dois.get(0).length() > resHeader.getDOI().length()) {
+                    if (dois.get(0).length() > StringUtils.length(resHeader.getDOI())) {
                         resHeader.setDOI(dois.get(0));
                     }
                 }
