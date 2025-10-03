@@ -260,6 +260,8 @@ public class FullTextParser extends AbstractParser {
             List<Figure> bodyFigures = null;
             List<Table> bodyTables = null;
             List<Equation> bodyEquations = null;
+            long numberFiguresFulltextModel = 0;
+            long numberTablesFulltextModel = 0;
             if (featSeg != null && isNotBlank(featSeg.getLeft())) {
                 // if featSeg is null, it usually means that the fulltext body is not found in the
                 // document segmentation
@@ -282,7 +284,7 @@ public class FullTextParser extends AbstractParser {
 
                 postProcessFigureCaptions(bodyFigures, doc);
 
-                long numberFiguresFulltextModel = Arrays.stream(bodyResults.split("\n"))
+                numberFiguresFulltextModel = Arrays.stream(bodyResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + FIGURE_LABEL))
                     .count();
 
@@ -304,7 +306,7 @@ public class FullTextParser extends AbstractParser {
                 // dropped later on.
 
                 //TODO: double check the way the tables are validated
-                long numberTablesFulltextModel = Arrays.stream(bodyResults.split("\n"))
+                numberTablesFulltextModel = Arrays.stream(bodyResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + TaggingLabels.TABLE_LABEL))
                 .count();
 
@@ -339,8 +341,7 @@ public class FullTextParser extends AbstractParser {
                 annexResults = label(annexFeatures);
                 //System.out.println(rese);
 
-                int startFigureID = bodyFigures != null ? bodyFigures.size() : 0;
-                annexFigures = processFigures(annexResults, annexTokenization, startFigureID);
+                annexFigures = processFigures(annexResults, annexTokenization, (int) (numberFiguresFulltextModel + 1));
 
                 long numberFiguresInAnnex = Arrays.stream(annexResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + FIGURE_LABEL))
@@ -362,8 +363,8 @@ public class FullTextParser extends AbstractParser {
                     .collect(Collectors.toList());
                 postProcessFigureCaptions(annexFigures, doc);
 
-                int startTableID = bodyTables != null ? bodyTables.size() : 0;
-                annexTables = processTables(annexResults, annexTokenization, doc, startTableID);
+
+                annexTables = processTables(annexResults, annexTokenization, doc, (int) (numberTablesFulltextModel + 1));
 
                 long numberTablesInAnnex = Arrays.stream(annexResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + TaggingLabels.TABLE_LABEL))
