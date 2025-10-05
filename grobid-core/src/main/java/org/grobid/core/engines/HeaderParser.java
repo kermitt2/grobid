@@ -1423,7 +1423,12 @@ public class HeaderParser extends AbstractParser {
                 buffer.append("</note>\n");
             } else if (lastTag0.equals("<availability>")) {
                 buffer.append("</note>\n");
+            } else if (lastTag0.equals("<conflict>")) {
+                buffer.append("</note>\n");
+            } else if (lastTag0.equals("<contribution>")) {
+                buffer.append("</note>\n");
             }
+
         }
     }
 

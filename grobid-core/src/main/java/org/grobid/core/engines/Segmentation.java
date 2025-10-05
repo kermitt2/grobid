@@ -1151,6 +1151,12 @@ public class Segmentation extends AbstractParser {
             } else if (lastTag0.equals("<availability>")) {
                 buffer.append("</div>\n\n");
                 res = true;
+            } else if (lastTag0.equals("<conflict>")) {
+                buffer.append("</div>\n\n");
+                res = true;
+            } else if (lastTag0.equals("<contribution>")) {
+                buffer.append("</div>\n\n");
+                res = true;
             } else if (lastTag0.equals("<funding>")) {
                 buffer.append("</div>\n\n");
                 res = true;
