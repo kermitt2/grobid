@@ -1330,6 +1330,12 @@ public class HeaderParser extends AbstractParser {
                 output = writeField(buffer, s1, lastTag0, s2, "<availability>", "<note type=\"availability\">", addSpace);
             }
             if (!output) {
+                output = writeField(buffer, s1, lastTag0, s2, "<conflict>", "<note type=\"conflict\">", addSpace);
+            }
+            if (!output) {
+                output = writeField(buffer, s1, lastTag0, s2, "<contribution>", "<note type=\"contribution\">", addSpace);
+            }
+            if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<other>", "", addSpace);
             }
 

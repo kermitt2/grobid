@@ -967,6 +967,12 @@ public class Segmentation extends AbstractParser {
                 if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<funding>", "<div type=\"funding\">", addSpace, 3);
                 }
+                if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<conflict>", "<div type=\"conflict\">", addSpace, 3);
+                }
+                if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<contribution>", "<div type=\"contribution\">", addSpace, 3);
+                }
                 lastTag = s1;
 
                 if (!st.hasMoreTokens()) {
