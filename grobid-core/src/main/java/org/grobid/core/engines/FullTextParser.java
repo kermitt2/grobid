@@ -389,7 +389,12 @@ public class FullTextParser extends AbstractParser {
 
                 postProcessTableCaptions(annexTables, doc);
 
-                annexEquations = processEquations(annexResults, annexTokenization, doc);
+                annexEquations = processEquations(
+                    annexResults,
+                    annexTokenization,
+                    doc,
+                    CollectionUtils.size(bodyEquations)
+                );
             }
 
             // post-process reference and footnote callout to keep them consistent (e.g. for example avoid that a footnote
@@ -2575,8 +2580,11 @@ public class FullTextParser extends AbstractParser {
      * Create training data for the table as identified by the full text model.
      * Return the pair (TEI fragment, sequence labeling raw data).
      */
-    protected Pair<String, String> processTrainingDataTables(String rese,
-                                                             List<LayoutToken> tokenizations, String id) {
+    protected Pair<String, String> processTrainingDataTables(
+        String rese,
+        List<LayoutToken> tokenizations,
+        String id
+    ) {
         StringBuilder tei = new StringBuilder();
         StringBuilder featureVector = new StringBuilder();
         int nb = 0;
@@ -2702,12 +2710,21 @@ public class FullTextParser extends AbstractParser {
     /**
      * Process equations identified by the full text model
      */
-    protected List<Equation> processEquations(String rese,
-                                              List<LayoutToken> tokenizations,
-                                              Document doc) {
+    protected List<Equation> processEquations(String rese, List<LayoutToken> layoutTokens, Document doc) {
+        return processEquations(rese, layoutTokens, doc, 0);
+    }
+
+    protected List<Equation> processEquations(
+        String rese,
+        List<LayoutToken> tokenizations,
+        Document doc,
+        int startEquationID
+    ) {
         List<Equation> results = new ArrayList<>();
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(FULLTEXT, rese, tokenizations, true);
         List<TaggingTokenCluster> clusters = clusteror.cluster();
+
+        int equationID = startEquationID;
 
         Equation currentResult = null;
         TaggingLabel lastLabel = null;
@@ -2722,7 +2739,7 @@ public class FullTextParser extends AbstractParser {
                 lastLabel = clusterLabel;
                 if (currentResult != null) {
                     results.add(currentResult);
-                    currentResult.setId("" + (results.size() - 1));
+                    currentResult.setId(String.valueOf(equationID));
                     currentResult = null;
                 }
                 continue;
@@ -2735,13 +2752,13 @@ public class FullTextParser extends AbstractParser {
                 currentResult = new Equation();
             if ((!currentResult.getContent().isEmpty()) && (!currentResult.getLabel().isEmpty())) {
                 results.add(currentResult);
-                currentResult.setId("" + (results.size() - 1));
+                currentResult.setId(String.valueOf(equationID));
                 currentResult = new Equation();
             }
             if (clusterLabel.equals(TaggingLabels.EQUATION)) {
                 if (!currentResult.getContent().isEmpty()) {
                     results.add(currentResult);
-                    currentResult.setId("" + (results.size() - 1));
+                    currentResult.setId(String.valueOf(equationID));
                     currentResult = new Equation();
                 }
                 currentResult.appendContent(clusterContent);
@@ -2752,12 +2769,13 @@ public class FullTextParser extends AbstractParser {
             }
 
             lastLabel = clusterLabel;
+            equationID++;
         }
 
         // add last open result
         if (currentResult != null) {
             results.add(currentResult);
-            currentResult.setId("" + (results.size() - 1));
+            currentResult.setId(String.valueOf(equationID));
         }
 
         doc.setEquations(results);

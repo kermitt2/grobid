@@ -1,49 +1,31 @@
 package org.grobid.core.lexicon;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.Set;
-import java.util.StringTokenizer;
-import java.util.regex.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
 import com.google.common.collect.Iterables;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.PDFAnnotation;
 import org.grobid.core.sax.CountryCodeSaxParser;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.OffsetPosition;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.Utilities;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.utilities.*;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.PatternSyntaxException;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static org.grobid.core.utilities.Utilities.convertStringOffsetToTokenOffset;
 
@@ -1207,12 +1189,34 @@ public class Lexicon {
         List<OffsetPosition> characterPositions = characterPositionsAndDestinations.stream()
             .map(Pair::getLeft)
             .collect(Collectors.toList());
-
-        List<OffsetPosition> tokenOffsetPositions = convertStringOffsetToTokenOffset(characterPositions, layoutTokens);
-
-        return IntStream.range(0, tokenOffsetPositions.size())
-            .mapToObj(i -> Pair.of(tokenOffsetPositions.get(i), characterPositionsAndDestinations.get(i).getRight()))
+        List<OffsetPosition> tokenOffsetPositionsWithRegex = convertStringOffsetToTokenOffset(characterPositions, layoutTokens);
+        List<Pair<OffsetPosition, String>> tokenOffsetPositionsAndDestinationsWithRegex = IntStream
+            .range(0, characterPositionsAndDestinations.size())
+            .mapToObj(i -> Pair.of(tokenOffsetPositionsWithRegex.get(i), characterPositionsAndDestinations.get(i).getRight()))
             .collect(Collectors.toList());
+
+        List<Pair<OffsetPosition, String>> tokenOffsetPositionsFromAnyURLs = tokenPositionsAnyURLMatchingPdfAnnotations(layoutTokens, pdfAnnotations);
+
+        // Consolidate the two lists
+        if (CollectionUtils.isEmpty(tokenOffsetPositionsFromAnyURLs)) {
+            return tokenOffsetPositionsAndDestinationsWithRegex;
+        } else {
+            // We add possible URL that weren't bound to any PDF annotations
+            for (Pair<OffsetPosition, String> item : tokenOffsetPositionsAndDestinationsWithRegex) {
+                String dest = item.getRight();
+
+                if (dest == null) {
+                    // if the destination offsets does not overlap any other offsets, we add it
+                    boolean overlaps = tokenOffsetPositionsFromAnyURLs.stream()
+                        .anyMatch(existingItem -> existingItem.getLeft().overlaps(item.getLeft()));
+
+                    if (!overlaps) {
+                        tokenOffsetPositionsFromAnyURLs.add(item);
+                    }
+                }
+            }
+            return tokenOffsetPositionsFromAnyURLs;
+        }
     }
 
     public static OffsetPosition getTokenPositions(int startPos, int endPos, List<LayoutToken> layoutTokens) {
@@ -1226,10 +1230,12 @@ public class Lexicon {
         for (LayoutToken localToken : layoutTokens) {
             if (startPos <= tokenPos && (tokenPos + localToken.getText().length() <= endPos)) {
                 urlTokens.add(localToken);
-                if (startTokenIndex == -1)
+                if (startTokenIndex == -1) {
                     startTokenIndex = tokenIndex;
-                if (tokenIndex > endTokensIndex)
+                }
+                if (tokenIndex > endTokensIndex) {
                     endTokensIndex = tokenIndex;
+                }
             }
             if (tokenPos > endPos) {
                 break;
@@ -1241,6 +1247,172 @@ public class Lexicon {
         return new OffsetPosition(startTokenIndex, endTokensIndex);
     }
 
+    public static OffsetPosition getTokenIndexMatchingURLDestination(List<LayoutToken> urlTokens, String destination) {
+        String urlString = LayoutTokensUtil.toText(urlTokens);
+
+        String joinedNoSpaces = urlString.replaceAll("\\s", "");
+        String destinationNoSpaces = destination.replaceAll("\\s", "");
+
+        // Find the start index in the space-less string
+        int destStartNoSpaces = joinedNoSpaces.indexOf(destinationNoSpaces);
+        if (destStartNoSpaces == -1) {
+            // Not found, handle as needed
+            return new OffsetPosition();
+        }
+
+        int destEndNoSpaces = destStartNoSpaces + destinationNoSpaces.length();
+
+        // Map to token indices
+        int charCount = 0;
+        int indexStart = -1, indexEnd = -1;
+        for (int i = 0; i < urlTokens.size(); i++) {
+            String tokenText = urlTokens.get(i).getText();
+            for (int j = 0; j < tokenText.length(); j++) {
+                if (!Character.isWhitespace(tokenText.charAt(j))) {
+                    if (charCount == destStartNoSpaces && indexStart == -1) {
+                        indexStart = i;
+                    }
+                    if (charCount == destEndNoSpaces - 1) {
+                        indexEnd = i;
+                    }
+                    charCount++;
+                }
+            }
+            if (indexEnd != -1) break;
+        }
+        return new OffsetPosition(indexStart, indexEnd);
+    }
+
+    /**
+     * This method returns the character offsets in relation to the string obtained by the layout tokens.
+     * Notice the absence of the String text parameter.
+     */
+    public static List<Pair<OffsetPosition, String>> tokenPositionsAnyURLMatchingPdfAnnotations(
+        List<LayoutToken> layoutTokens,
+        List<PDFAnnotation> pdfAnnotations) {
+
+        List<Integer> urlsInPage = layoutTokens.parallelStream()
+            .map(LayoutToken::getPage)
+            .distinct()
+            .collect(Collectors.toList());
+
+        Map<String, List<PDFAnnotation>> relevantURIAnnotations = pdfAnnotations.parallelStream()
+            .filter(a ->
+                urlsInPage.contains(a.getPageNumber())
+                    && StringUtils.isNotBlank(a.getDestination())
+                    && a.getType().equals(PDFAnnotation.Type.URI
+                )
+            )
+            .collect(Collectors.groupingBy(PDFAnnotation::getDestination));
+
+        List<PDFAnnotation> mergedAnnotations = new ArrayList<>();
+
+        for (Map.Entry<String, List<PDFAnnotation>> item : relevantURIAnnotations.entrySet()) {
+            List<PDFAnnotation> annotations = item.getValue();
+
+            if (annotations.size() <= 1) {
+                mergedAnnotations.addAll(annotations);
+                continue;
+            }
+
+            PDFAnnotation first = annotations.get(0);
+            int page = annotations.stream().mapToInt(PDFAnnotation::getPageNumber).min().orElse(first.getPageNumber());
+
+            PDFAnnotation merged = new PDFAnnotation();
+            merged.setPageNumber(page);
+            merged.setDestination(first.getDestination());
+            merged.setType(first.getType());
+
+            merged.setBoundingBoxes(annotations.stream()
+                .map(PDFAnnotation::getBoundingBoxes)
+                .filter(Objects::nonNull)
+                .flatMap(List::stream)
+                .collect(Collectors.toList()));
+
+            mergedAnnotations.add(merged);
+        }
+
+        // we calculate the token positions of all the URLs in the layout tokens
+        List<Pair<OffsetPosition, String>> urlPositions = new ArrayList<>();
+        for (PDFAnnotation annotation : mergedAnnotations) {
+            String destination = annotation.getDestination();
+            // Identify the tokens covered by the annotation
+            List<LayoutToken> urlTokens = layoutTokens.stream()
+                .filter(
+                    annotation::cover
+                )
+                .collect(Collectors.toList());
+
+            if (urlTokens.isEmpty()) {
+                continue;
+            }
+
+            // Refine the URL tokens based on the destination URL from the annotation.
+            // Differently from when we recognise the URLs via regex, here we may have to remove characters also in front of the URL.
+            String urlString = LayoutTokensUtil.toText(urlTokens);
+            String urlStringWithoutSpaces = urlString.replaceAll("\\s", "");
+
+            if (urlStringWithoutSpaces.contains(destination)) {
+                // In this case the list of tokens has catches too much, usually this should be limited to a few characters,
+                // but we cannot know it for sure.
+
+                int startUrl = urlString.indexOf(destination);
+                int endDestinationURL = startUrl + destination.length();
+                if (startUrl < 0) {
+                    // If we cannot find the destination in the URL string, we try to find it without spaces
+                    startUrl = urlStringWithoutSpaces.indexOf(destination);
+                    endDestinationURL = startUrl + urlString.length();
+                }
+                OffsetPosition newTokenPositions = getTokenPositions(startUrl, endDestinationURL, urlTokens);
+
+                if (newTokenPositions.end < 0) {
+                    // The difference is within the last token, even if we split the layout tokens, here,
+                    // it won't solve the problem so we limit collateral damage.
+                    newTokenPositions.end = urlTokens.size() - 1;
+                }
+
+                urlTokens = urlTokens.subList(newTokenPositions.start, newTokenPositions.end + 1);
+            }
+
+            //Cleanup edges
+            if (Iterables.getFirst(urlTokens, new LayoutToken()).getText().endsWith("(")) {
+                urlTokens.remove(0);
+            }
+
+            if (CollectionUtils.isEmpty(urlTokens)) {
+                continue;
+            }
+            if (Iterables.getLast(urlTokens).getText().endsWith(")")) {
+                long openedParenthesis = LayoutTokensUtil.toText(urlTokens).chars().filter(ch -> ch == '(').count();
+                long closedParenthesis = LayoutTokensUtil.toText(urlTokens).chars().filter(ch -> ch == ')').count();
+                if (openedParenthesis < closedParenthesis) {
+                    urlTokens.remove(urlTokens.size() - 1);
+                }
+            }
+
+            if (CollectionUtils.isEmpty(urlTokens)) {
+                continue;
+            }
+
+            if (Iterables.getLast(urlTokens).getText().equals(".")) {
+                urlTokens.remove(urlTokens.size() - 1);
+            }
+
+            if (CollectionUtils.isEmpty(urlTokens)) {
+                continue;
+            }
+
+            //Find the token index positions in the layoutTokens object
+            int startTokenIndex = layoutTokens.indexOf(urlTokens.get(0));
+            int endTokenIndex = layoutTokens.indexOf(urlTokens.get(urlTokens.size() - 1));
+            OffsetPosition resultPosition = new OffsetPosition(startTokenIndex, endTokenIndex);
+
+            urlPositions.add(Pair.of(resultPosition, destination));
+        }
+
+        return urlPositions;
+    }
+
     /**
      * This method returns the character offsets in relation to the string obtained by the layout tokens.
      * Notice the absence of the String text parameter.
@@ -1248,6 +1420,7 @@ public class Lexicon {
     public static List<Pair<OffsetPosition, String>> characterPositionsUrlPatternWithPdfAnnotations(
         List<LayoutToken> layoutTokens,
         List<PDFAnnotation> pdfAnnotations) {
+
         List<OffsetPosition> urlPositions = Lexicon.characterPositionsUrlPattern(layoutTokens);
         List<Pair<OffsetPosition, String>> resultPositions = new ArrayList<>();
 
@@ -1347,7 +1520,7 @@ public class Lexicon {
                             }
                         }
 
-                        // We don't match anything after but we added spaces, we should take them back
+                        // We don't match anything after, but we added spaces, we should take them back
                         if (additionalTokens > 0) {
                             urlTokens = urlTokens.subList(0, urlTokens.size() - additionalTokens);
                             endPos -= additionalSpaces;
@@ -1397,13 +1570,22 @@ public class Lexicon {
             OffsetPosition position = new OffsetPosition();
             position.start = startPos;
             position.end = endPos;
+            // LF: if the destination is null, we will use the URL string int he tei construction
             resultPositions.add(Pair.of(position, destination));
         }
         return resultPositions;
     }
 
+    /**
+     * Find and return the PDFAnnotation that best matches the given URL tokens, based on
+     * their coordinates, destination, or the last tokens in the sequence.
+     * This helps refine the association between detected URLs in the text and
+     * their corresponding PDF annotations, improving the accuracy of URL extraction
+     * from PDF documents.
+     */
     @Nullable
     private static PDFAnnotation matchPdfAnnotationsBasedOnCoordinatesDestinationOrLastTokens(List<PDFAnnotation> pdfAnnotations, List<LayoutToken> urlTokens) {
+
         LayoutToken lastToken = urlTokens.get(urlTokens.size() - 1);
         String urlString = LayoutTokensUtil.toText(urlTokens);
 
