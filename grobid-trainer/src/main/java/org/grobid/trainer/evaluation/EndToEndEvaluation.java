@@ -277,17 +277,17 @@ public class EndToEndEvaluation {
         // evaluation of the run
         long start = System.currentTimeMillis();
 
-//        if (CollectionUtils.isNotEmpty(headerFields)) {
-//            report.append("\n======= Header metadata ======= \n");
-//            reportMD.append("\n## Header metadata \n");
-//            report.append(evaluationRun(GROBID, HEADER, reportMD));
-//        }
-//
-//        if (CollectionUtils.isNotEmpty(citationsFields)) {
-//            report.append("\n======= Citation metadata ======= \n");
-//            reportMD.append("\n## Citation metadata \n");
-//            report.append(evaluationRun(GROBID, CITATION, reportMD));
-//        }
+        if (CollectionUtils.isNotEmpty(headerFields)) {
+            report.append("\n======= Header metadata ======= \n");
+            reportMD.append("\n## Header metadata \n");
+            report.append(evaluationRun(GROBID, HEADER, reportMD));
+        }
+
+        if (CollectionUtils.isNotEmpty(citationsFields)) {
+            report.append("\n======= Citation metadata ======= \n");
+            reportMD.append("\n## Citation metadata \n");
+            report.append(evaluationRun(GROBID, CITATION, reportMD));
+        }
 
         if (CollectionUtils.isNotEmpty(fulltextFields)) {
             report.append("\n======= Fulltext structures ======= \n");
