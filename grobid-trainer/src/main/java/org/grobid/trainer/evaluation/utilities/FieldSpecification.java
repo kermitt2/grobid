@@ -460,10 +460,10 @@ public class FieldSpecification {
         conflictFulltextField.computeDocumentLevelMetrics = true;
         conflictFulltextField.grobidPath.add("//div[@type=\"conflict\"]//text()");
         //PLOs JATS uses fn-type="con" for contribution and fn-type="conflict" for conflict of interest
+        conflictFulltextField.nlmPath.add("//fn-group[@content-type=\"competing-interest\"]//text()");
         conflictFulltextField.nlmPath.add("//fn[@fn-type=\"COI\"]//text()");
         conflictFulltextField.nlmPath.add("//fn[@fn-type=\"conflict\"]//text()");
         conflictFulltextField.nlmPath.add("//fn[@type=\"conflict\"]//text()");
-        conflictFulltextField.nlmPath.add("//fn-group[@content-type=\"competing-interest\"]//text()");
         conflictFulltextField.nlmPath.add("//sec[@type=\"conflict\"]//text()");
         conflictFulltextField.nlmPath.add("//sec[@sec-type=\"COI-statement\"]//text()");
         conflictFulltextField.nlmPath.add("//sec[@sec-type=\"conflict\"]//text()");

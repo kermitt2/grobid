@@ -464,6 +464,13 @@ public class EndToEndEvaluation {
         if (StringUtils.containsIgnoreCase(xmlInputPath, "elife")) {
             // keywords are present in the eLife XML, but not in the PDF !
             removeFieldsFromEvaluation(Arrays.asList("keywords"), headerFields, headerLabels);
+
+            // Contributions in eLife are not text elements, but a combination between the author and some text elements,
+            //  since we cannot easily put them together it's better to ignore them for the time being.
+            removeFieldsFromEvaluation(Arrays.asList("contribution_stmt", "conflict_stmt"), fulltextFields, fulltextLabels);
+
+            // Contributions in PLOS are not text elements but attributes in the author list.
+            removeFieldsFromEvaluation(Arrays.asList("contribution_stmt"), fulltextFields, fulltextLabels);
         }
 
         if (StringUtils.containsIgnoreCase(xmlInputPath, "pmc")) {
@@ -1556,11 +1563,11 @@ System.out.println("grobid: " + grobidResult);*/
                                         List<String> goldResults2 = new ArrayList<>();
                                         goldResults2.add(String.join(" ", goldResults).replace("  ", " "));
                                         goldResults = goldResults2;
-//                                        System.out.print("\n\n---- GOLD ----");
-//                                        for (String goldResult : goldResults) {
-//                                            System.out.print("\n" + goldResult);
-//                                        }
-//                                        System.out.print("\n--------");
+                                        System.out.print("\n\n---- GOLD ----");
+                                        for (String goldResult : goldResults) {
+                                            System.out.print("\n" + goldResult);
+                                        }
+                                        System.out.print("\n--------");
                                     }
 
                                     if (CollectionUtils.isNotEmpty(grobidResults)) {
@@ -1568,11 +1575,11 @@ System.out.println("grobid: " + grobidResult);*/
                                         grobidResults2.add(String.join(" ", grobidResults).replace("  ", " "));
                                         grobidResults = grobidResults2;
 
-//                                        System.out.print("\n---- GROBID ----");
-//                                        for (String grobidResult : grobidResults) {
-//                                            System.out.print("\n" + grobidResult);
-//                                        }
-//                                        System.out.print("\n--------");
+                                        System.out.print("\n---- GROBID ----");
+                                        for (String grobidResult : grobidResults) {
+                                            System.out.print("\n" + grobidResult);
+                                        }
+                                        System.out.print("\n--------");
                                     }
                                     // we compare the two result sets
                                 }
