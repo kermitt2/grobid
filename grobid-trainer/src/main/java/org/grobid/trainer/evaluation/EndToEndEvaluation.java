@@ -468,14 +468,16 @@ public class EndToEndEvaluation {
             // Contributions in eLife are not text elements, but a combination between the author and some text elements,
             //  since we cannot easily put them together it's better to ignore them for the time being.
             removeFieldsFromEvaluation(Arrays.asList("contribution_stmt", "conflict_stmt"), fulltextFields, fulltextLabels);
-
-            // Contributions in PLOS are not text elements but attributes in the author list.
-            removeFieldsFromEvaluation(Arrays.asList("contribution_stmt"), fulltextFields, fulltextLabels);
         }
 
         if (StringUtils.containsIgnoreCase(xmlInputPath, "pmc")) {
             // remove availability and funding statements from PMC (not covered, and it would make metrics not comparable over time)
             removeFieldsFromEvaluation(Arrays.asList("availability_stmt", "funding_stmt", "conflict_stmt", "contribution_stmt"), fulltextFields, fulltextLabels);
+        }
+
+        if (StringUtils.containsIgnoreCase(xmlInputPath, "plos")) {
+            // Contributions in PLOS are not text elements but attributes in the author list.
+            removeFieldsFromEvaluation(Arrays.asList("contribution_stmt"), fulltextFields, fulltextLabels);
         }
 
         File input = new File(xmlInputPath);
