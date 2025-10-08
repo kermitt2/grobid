@@ -70,7 +70,7 @@
 
 			<page>15 <lb/></page>
 
-			<div type="annex">Disclosure declaration <lb/>The authors declare no conflict of interest. <lb/></div>
+			<div type="conflict">Disclosure declaration <lb/>The authors declare no conflict of interest. <lb/></div>
 
 			<div type="annex">Supplementary file1 <lb/>An example of cands4.txt file from line 633. <lb/>Supplementary file2 <lb/>An example of plot4.txt file from line 633. <lb/>Supplementary file3 <lb/>Instruction file for running the pipeline. This file is also available on the SIMPLE GitHub repository. <lb/></div>
 

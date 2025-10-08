@@ -60,9 +60,9 @@
 
 			<div type="acknowledgement">Acknowledgements <lb/>The authors thank all members of the Straka lab for feedback and discussion. <lb/></div>
 
-			<div type="annex">Competing interests <lb/>No competing interests are declared. <lb/></div>
+			<div type="conflict">Competing interests <lb/>No competing interests are declared. <lb/></div>
 
-			<div type="annex">Author contributions <lb/>Investigation, Software, Visualization: S.H.; Supervision, Project administration, Funding acquisition: H.S.; <lb/>Conceptualization, Writing: S.H. and H.S. <lb/></div>
+			<div type="contribution">Author contributions <lb/>Investigation, Software, Visualization: S.H.; Supervision, Project administration, Funding acquisition: H.S.; <lb/>Conceptualization, Writing: S.H. and H.S. <lb/></div>
 
 			<div type="funding">Funding <lb/>This study was funded by the German Science Foundation (STR 478/3-1) and the German Federal Ministry of <lb/>Education and Research under the grant number 01 EO 0901. <lb/></div>
 

@@ -81,7 +81,8 @@
 	Funding:
 	<note type="funding">Samenwerkingsverband Noord-<lb/>Nederland (SNN) Program (Project RICIBION-<lb/>Robotic Interventions using CT-Images for<lb/> Biopsies of Lung Nodules) to MO, European<lb/> Research Council (ERC), The European Unions<lb/> Horizon 2020 Research and Innovation program<lb/> (Project ROBOTAR: Robot-Assisted Flexible Needle<lb/> Steering for Targeted Delivery of Magnetic Agents)<lb/> 638428 to SM, and University Medical Center<lb/> Groningen (UMCG). The funders had no role in<lb/> study design, data collection and analysis, decision<lb/> to publish, or preparation of the manuscript.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>

@@ -82,9 +82,9 @@
 
 			<page>19 <lb/></page>
 
-			<div type="annex">Author contributions <lb/>C.L., F.P.C. &amp; O.S. designed the study, developed methods, analysed data and wrote the paper. <lb/>B.R. contributed to method development and wrote the paper. <lb/></div>
+			<div type="contribution">Author contributions <lb/>C.L., F.P.C. &amp; O.S. designed the study, developed methods, analysed data and wrote the paper. <lb/>B.R. contributed to method development and wrote the paper. <lb/></div>
 
-			<div type="annex">Competing financial interests <lb/>C.L. was employed at Microsoft while performing the research. <lb/></div>
+			<div type="conflict">Competing financial interests <lb/>C.L. was employed at Microsoft while performing the research. <lb/></div>
 
 			<div type="annex">Supplementary Information <lb/>Supplementary Tables <lb/> 1. Supplementary Table 1 Tabular summary of significant associations in the NFBC <lb/>datasets identified using alternative LMM methods. <lb/>2. Supplementary Table 2 Tabular summary of cis associations identified in the Geuvadis <lb/>dataset considering alternative multi-trait LMMs and tests. <lb/>3. Supplementary table 3 Tabular summary of the average variance contribution in yeast <lb/>pathways estimated using the variance decomposition model. <lb/>4. Supplementary table 4 Tabular summary of significant associations on the lysine bios. <lb/>yeast pathway. <lb/>Supplementary Figures <lb/>1. Supplementary Figure 1 Q−Q-plots for the multi-trait association tests on the NFBC <lb/>dataset. <lb/>2. Supplementary Figure 2 Sample covariance matrices used in mixed model analyses, <lb/>either estimated from genetic kinship or using the PANAMA model in the human eQTL <lb/>dataset. <lb/>3. Supplementary Figure 3 Power comparison among different trait design tests on the <lb/>human eQTL dataset. <lb/>4. Supplementary Figure 4 Distribution of genomic control for the cis eQTL association <lb/>analyses in the human eQTL dataset. <lb/>5. Supplementary Figure 5 Distribution of the relative position of eQTLs identified using <lb/>alternative multi-trait LMMs in the human eQTL dataset. <lb/></div>
 
