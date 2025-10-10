@@ -19,6 +19,8 @@ The space is free and does not require any authentication.
 !!! warning "Grobid space is for demonstration only"
     This grobid space is not intended for production use, it is only a demonstration of Grobid capabilities. For production use, please deploy a local version or contact us.
 
+!!! tip "Quick AWS grobid deployment"
+    For quickly spin up and down a Grobid instance on Amazon Web Service EC2, you can use look at the at the [aws-grobid](https://github.com/evamaxfield/aws-grobid) project. 
 
 ## Running Grobid locally
 
