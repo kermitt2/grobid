@@ -30,12 +30,5 @@ keywords:
   - "scientific literature"
 identifiers:
   - type: swh
-    value: "swh:1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c"
+    value: "swh:1:dir:5ab2351eb7e97b99b3dc8854dac05edc6099a4c5"
     description: "Software Heritage identifier"
-
-preferred-citation:
-  type: software
-  title: "GROBID"
-  url: "https://github.com/kermitt2/grobid"
-  publisher: "GitHub"
-  year: "2008--2025"
