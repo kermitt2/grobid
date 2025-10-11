@@ -155,6 +155,13 @@ If you want to cite this work, please refer to the present GitHub project, toget
     archivePrefix = {swh},
     eprint = {1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c}
 }
+
+@misc{Grobid,
+    title = {{GROBID}},
+    author = {{GROBID contributors}},
+    url = {https://github.com/kermitt2/grobid},
+    year = {2008--2025}
+}
 ```
 
 See the [GROBID documentation](https://grobid.readthedocs.org/en/latest/References) for more related resources. 
