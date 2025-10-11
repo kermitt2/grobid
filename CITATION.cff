@@ -35,10 +35,7 @@ identifiers:
 
 preferred-citation:
   type: software
-  title: "GROBID: GeneRation Of BIbliographic Data"
+  title: "GROBID"
   url: "https://github.com/kermitt2/grobid"
-  authors:
-    - family-names: "Lopez"
-      given-names: "Patrice"
-    - family-names: "Foppiano"
-      given-names: "Luca"
+  publisher: "GitHub"
+  year: "2008--2025"
