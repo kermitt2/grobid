@@ -32,11 +32,13 @@ identifiers:
   - type: swh
     value: "swh:1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c"
     description: "Software Heritage identifier"
+
 preferred-citation:
   type: software
   title: "GROBID: GeneRation Of BIbliographic Data"
-  howpublished: "https://github.com/kermitt2/grobid"
-  publisher: "GitHub"
-  year: 2008-2025
-  archivePrefix: swh
-  eprint: 1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c
+  url: "https://github.com/kermitt2/grobid"
+  authors:
+    - family-names: "Lopez"
+      given-names: "Patrice"
+    - family-names: "Foppiano"
+      given-names: "Luca"
