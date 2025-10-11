@@ -1,0 +1,41 @@
+name: Update SWHID in CITATION.cff
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+  schedule:
+    - cron: '0 0 * * 0' # weekly
+
+jobs:
+  update-swhid:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get latest SWHID from Software Heritage
+        id: swhid
+        run: |
+          REPO_URL="https://github.com/${{ github.repository }}"
+          API_URL="https://archive.softwareheritage.org/api/1/origin/save/git/url/$(echo $REPO_URL | sed 's/\//%2F/g')/"
+          # Query the SWH API for the latest snapshot
+          curl -s "https://archive.softwareheritage.org/api/1/origin/search/?url=$REPO_URL" > swh.json
+          SWHID=$(jq -r '.results[0].swhid' swh.json)
+          echo "Latest SWHID: $SWHID"
+          echo "swhid=$SWHID" >> $GITHUB_OUTPUT
+
+      - name: Show SWHID in logs
+        run: echo "Latest SWHID is ${{ steps.swhid.outputs.swhid }}"
+
+      # Optionally, update CITATION.cff if SWHID changed
+      # - name: Update CITATION.cff with new SWHID
+      #   run: |
+      #     # Add your script here to update the file
+      #     # Commit and push if changed
+      #     ...
+      #   env:
+      #     SWHID: ${{ steps.swhid.outputs.swhid }}
+
