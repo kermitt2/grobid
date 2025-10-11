@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "GROBID"
+abstract: "GROBID (GeneRation Of BIbliographic Data) is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications."
+authors:
+  - family-names: "Lopez"
+    given-names: "Patrice"
+    email: "patrice.lopez@science-miner.com"
+    orcid: "https://orcid.org/0000-0003-1762-4302"
+  - family-names: "Foppiano"
+    given-names: "Luca"
+    email: "luca@sciencialab.com"
+    orcid: "https://orcid.org/0000-0002-6114-6164"
+repository-code: "https://github.com/kermitt2/grobid"
+url: "https://grobid.readthedocs.io"
+license: Apache-2.0
+version: 0.8.3-SNAPSHOT
+date-released: 2008-01-01
+keywords:
+  - "PDF processing"
+  - "machine learning"
+  - "bibliographic data extraction"
+  - "TEI"
+  - "scholarly documents"
+  - "deep learning"
+  - "CRF"
+  - "natural language processing"
+  - "information extraction"
+  - "scientific literature"
+identifiers:
+  - type: swh
+    value: "swh:1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c"
+    description: "Software Heritage identifier"
+preferred-citation:
+  type: software
+  title: "GROBID: GeneRation Of BIbliographic Data"
+  howpublished: "https://github.com/kermitt2/grobid"
+  publisher: "GitHub"
+  year: 2008-2025
+  archivePrefix: swh
+  eprint: 1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c
