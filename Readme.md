@@ -161,14 +161,15 @@ For example, the BibTeX woudl look like this:
 
 > [!TIP]
 > To fetch the latest SWID you can use the following command line (requires `curl` and `jq`):
-    ```
-    curl -s "https://archive.softwareheritage.org/api/1/origin/https://github.com/kermitt2/grobid/visit/latest/" \
-      -H "Accept: application/json" | jq -r '.snapshot' | \
-      xargs -I {} curl -s "https://archive.softwareheritage.org/api/1/snapshot/{}/" | \
-      jq -r '.branches["refs/heads/master"].target' | \
-      xargs -I {} echo "swh:1:dir:{}"
-    swh:1:dir:324a18113b0c7624a66a21550bd0e8522e328b4e
-    ```
+    
+```
+curl -s "https://archive.softwareheritage.org/api/1/origin/https://github.com/kermitt2/grobid/visit/latest/" \
+  -H "Accept: application/json" | jq -r '.snapshot' | \
+  xargs -I {} curl -s "https://archive.softwareheritage.org/api/1/snapshot/{}/" | \
+  jq -r '.branches["refs/heads/master"].target' | \
+  xargs -I {} echo "swh:1:dir:{}"
+swh:1:dir:324a18113b0c7624a66a21550bd0e8522e328b4e
+```
 
 
 See the [GROBID documentation](https://grobid.readthedocs.org/en/latest/References) for more related resources. 
