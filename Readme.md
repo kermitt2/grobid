@@ -144,9 +144,9 @@ JetBrains provided us with a free licence for the development:
 
 ## How to cite
 
-If you want to cite this work, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier.
+If you want reference this software, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier.
 
-For example, the BibTeX woudl look like this:
+For example, the BibTeX would look like this:
 
 ```bibtex
 @misc{GROBID,
