@@ -107,9 +107,9 @@ public class CrossrefClient implements Closeable {
 				}
 			}
 			Future<?> f = executorService.submit(new CrossrefRequestTask<T>(this, request));
-			List<Future<?>> localFutures = this.futures.get(Long.valueOf(threadId));
+			List<Future<?>> localFutures = this.futures.get(threadId);
 			if (localFutures == null)
-				localFutures = new ArrayList<Future<?>>();
+				localFutures = new ArrayList<>();
 			localFutures.add(f);
 			this.futures.put(threadId, localFutures);
 			logger.debug("add request to thread " + threadId +
