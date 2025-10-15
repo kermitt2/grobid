@@ -8,38 +8,9 @@ Consolidation has two main interests:
 
 * The consolidation service matches the extracted bibliographical references with known publications, and complement the parsed bibliographical references with various metadata, in particular DOI, making possible the creation of a citation graph and to link the extracted references to external services. 
 
-The consolidation includes the CrossRef Funder Registry for enriching the extracted funder information.
+The two consolidations (header and references) are independent, and can be used separately. There are differences in implementation between those elements, which are explained [below](#header-vs-citation-consolidation). 
 
-## Header vs Citation Consolidation
-
-GROBID supports two different types of consolidation:
-
-### Header Consolidation
-Used for consolidating metadata of the main document (header information). This method:
-- Processes a single bibliographic record (the document's own metadata)
-- Uses the `consolidate(BiblioItem bib, String rawCitation, int consolidateMode)` method
-- **Relaxed post-validation**: DOI-based matches are considered safe enough without additional validation for CrossRef
-- **Single result**: Requests only the top result (`rows=1`)
-- **Priority**: DOI queries are trusted more for header metadata
-- **Validation**: Skips fuzzy matching when DOI is available for CrossRef
-
-### Citation Consolidation
-Used for consolidating extracted reference lists from documents. This method:
-- Processes multiple bibliographic records (all references in a document)
-- Uses the `consolidate(List<BibDataSet> biblios)` method
-- **Strict post-validation**: All CrossRef results require fuzzy matching validation
-- **Multiple results**: Processes each reference individually but still only top result per reference
-- **Field preservation**: Maintains original labeled tokens and sets consolidation status
-- **Validation**: Applies Ratcliff/Obershelp similarity matching (>0.8 threshold) for author names
-
-**Key Differences:**
-| Aspect | Header Consolidation | Citation Consolidation |
-|--------|-------------------|----------------------|
-| **Input** | Single BiblioItem | List of BibDataSet objects |
-| **Post-validation** | Relaxed (DOI trusted) | Strict (always fuzzy matching) |
-| **Result processing** | Direct return | Map with index preservation |
-| **Metadata preservation** | Standard | Preserves original tokens and status |
-| **Use case** | Document header metadata | Reference list matching |
+The consolidation includes the CrossRef Funder Registry for enriching the extracted funder information. **Note that this works only for using the Crossref consolidation service**. 
 
 GROBID supports two consolidation services:
 
@@ -178,3 +149,34 @@ Both consolidation services follow a hierarchical approach when querying:
    - biblio-glutton can work with any combination of available fields
 
 This field mapping and prioritization ensures optimal matching accuracy while respecting the capabilities and limitations of each consolidation service.
+
+
+## Header vs Citation Consolidation
+
+### Header Consolidation
+Used for consolidating metadata of the main document (header information). This method:
+- Processes a single bibliographic record (the document's own metadata)
+- Uses the `consolidate(BiblioItem bib, String rawCitation, int consolidateMode)` method
+- **Relaxed post-validation**: DOI-based matches are considered safe enough without additional validation for CrossRef
+- **Single result**: Requests only the top result (`rows=1`)
+- **Priority**: DOI queries are trusted more for header metadata
+- **Validation**: Skips fuzzy matching when DOI is available for CrossRef
+
+### Citation Consolidation
+Used for consolidating extracted reference lists from documents. This method:
+- Processes multiple bibliographic records (all references in a document)
+- Uses the `consolidate(List<BibDataSet> biblios)` method
+- **Strict post-validation**: All CrossRef results require fuzzy matching validation
+- **Multiple results**: Processes each reference individually but still only top result per reference
+- **Field preservation**: Maintains original labeled tokens and sets consolidation status
+- **Validation**: Applies Ratcliff/Obershelp similarity matching (>0.8 threshold) for author names
+
+**Key Differences:**
+
+| Aspect                    | Header Consolidation     | Citation Consolidation               |
+|---------------------------|--------------------------|--------------------------------------|
+| **Input**                 | Single BiblioItem        | List of BibDataSet objects           |
+| **Post-validation**       | Relaxed (DOI trusted)    | Strict (always fuzzy matching)       |
+| **Result processing**     | Direct return            | Map with index preservation          |
+| **Metadata preservation** | Standard                 | Preserves original tokens and status |
+| **Use case**              | Document header metadata | Reference list matching              |
