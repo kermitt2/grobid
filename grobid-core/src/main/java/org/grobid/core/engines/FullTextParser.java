@@ -339,7 +339,7 @@ public class FullTextParser extends AbstractParser {
                 annexResults = label(annexFeatures);
                 //System.out.println(rese);
 
-                annexFigures = processFigures(annexResults, annexTokenization, CollectionUtils.size(bodyFigures));
+                annexFigures = processFigures(annexResults, annexTokenization, CollectionUtils.size(bodyFigures) + 1);
 
                 long numberFiguresInAnnex = Arrays.stream(annexResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + FIGURE_LABEL))
@@ -362,7 +362,7 @@ public class FullTextParser extends AbstractParser {
                 postProcessFigureCaptions(annexFigures, doc);
 
 
-                annexTables = processTables(annexResults, annexTokenization, doc, CollectionUtils.size(bodyTables));
+                annexTables = processTables(annexResults, annexTokenization, doc, CollectionUtils.size(bodyTables) + 1);
 
                 long numberTablesInAnnex = Arrays.stream(annexResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + TaggingLabels.TABLE_LABEL))
