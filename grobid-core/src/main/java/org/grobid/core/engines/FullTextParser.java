@@ -302,6 +302,8 @@ public class FullTextParser extends AbstractParser {
                     .peek(f -> f.setId(String.valueOf(figureIndex.getAndIncrement())))
                     .collect(Collectors.toList());
 
+                doc.setFigures(bodyFigures);
+
                 // Tables
                 bodyTables = processTables(bodyResults, bodyTokenization.getTokenization(), doc);
 
@@ -323,9 +325,11 @@ public class FullTextParser extends AbstractParser {
                     .collect(Collectors.toList());
 
                 postProcessTableCaptions(bodyTables, doc);
+                doc.setTables(bodyTables);
 
                 // Processing equations
-                bodyEquations = processEquations(bodyResults, bodyTokenization.getTokenization(), doc);
+                bodyEquations = processEquations(bodyResults, bodyTokenization.getTokenization());
+                doc.setEquations(bodyEquations);
             } else {
                 LOGGER.debug("Fulltext model: The featured body is empty");
             }
@@ -368,6 +372,7 @@ public class FullTextParser extends AbstractParser {
                     .collect(Collectors.toList());
                 postProcessFigureCaptions(annexFigures, doc);
 
+                doc.setAnnexFigures(annexFigures);
 
                 annexTables = processTables(annexResults, annexTokenization, doc, CollectionUtils.size(bodyTables));
 
@@ -393,13 +398,14 @@ public class FullTextParser extends AbstractParser {
                     .collect(Collectors.toList());
 
                 postProcessTableCaptions(annexTables, doc);
+                doc.setAnnexTables(annexTables);
 
                 annexEquations = processEquations(
                     annexResults,
                     annexTokenization,
-                    doc,
                     CollectionUtils.size(bodyEquations)
                 );
+                doc.setAnnexEquations(annexEquations);
             }
 
             // post-process reference and footnote callout to keep them consistent (e.g. for example avoid that a footnote
@@ -2715,14 +2721,13 @@ public class FullTextParser extends AbstractParser {
     /**
      * Process equations identified by the full text model
      */
-    protected List<Equation> processEquations(String rese, List<LayoutToken> layoutTokens, Document doc) {
-        return processEquations(rese, layoutTokens, doc, 0);
+    protected List<Equation> processEquations(String rese, List<LayoutToken> layoutTokens) {
+        return processEquations(rese, layoutTokens, 0);
     }
 
     protected List<Equation> processEquations(
         String rese,
         List<LayoutToken> tokenizations,
-        Document doc,
         int startEquationID
     ) {
         List<Equation> results = new ArrayList<>();
@@ -2784,8 +2789,6 @@ public class FullTextParser extends AbstractParser {
         results = results.stream()
                 .peek(e -> e.setId(String.valueOf(equationsIndex.getAndIncrement())))
                 .collect(Collectors.toList());
-
-        doc.setEquations(results);
 
         return results;
     }
