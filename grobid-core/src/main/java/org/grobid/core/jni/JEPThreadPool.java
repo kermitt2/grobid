@@ -205,15 +205,44 @@ public class JEPThreadPool {
      */
     public synchronized void shutdown() {
         LOGGER.info("Shutting down JEPThreadPool");
-        // Close all JEP instances
+
+        // Close JEP instances using their creating threads to respect JEP threading constraints
+        List<Callable<Void>> closeTasks = new ArrayList<>();
         for (Map.Entry<Long, Jep> entry : jepInstances.entrySet()) {
+            final long threadId = entry.getKey();
+            final Jep jep = entry.getValue();
+
+            closeTasks.add(() -> {
+                try {
+                    LOGGER.info("Closing JEP instance for thread " + threadId);
+                    jep.close();
+                } catch (JepException e) {
+                    LOGGER.error("Failed to close JEP instance for thread " + threadId, e);
+                }
+                return null;
+            });
+        }
+
+        // Submit all close tasks to the executor and wait for completion
+        if (!closeTasks.isEmpty()) {
             try {
-                LOGGER.info("Closing JEP instance for thread " + entry.getKey());
-                entry.getValue().close();
-            } catch (JepException e) {
-                LOGGER.error("Failed to close JEP instance for thread " + entry.getKey(), e);
+                List<Future<Void>> futures = executor.invokeAll(closeTasks);
+                for (Future<Void> future : futures) {
+                    try {
+                        future.get(1, TimeUnit.SECONDS);
+                    } catch (TimeoutException e) {
+                        LOGGER.warn("JEP instance close operation timed out");
+                        future.cancel(true);
+                    } catch (ExecutionException e) {
+                        LOGGER.error("Error during JEP instance close operation", e.getCause());
+                    }
+                }
+            } catch (InterruptedException e) {
+                LOGGER.warn("Interrupted while waiting for JEP instances to close");
+                Thread.currentThread().interrupt();
             }
         }
+
         jepInstances.clear();
 
         // Shutdown the executor
@@ -224,6 +253,7 @@ public class JEPThreadPool {
             }
         } catch (InterruptedException e) {
             executor.shutdownNow();
+            Thread.currentThread().interrupt();
         }
     }
 }
