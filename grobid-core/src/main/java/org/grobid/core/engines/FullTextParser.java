@@ -1,6 +1,7 @@
 package org.grobid.core.engines;
 
 import com.google.common.collect.Iterables;
+import kotlin.ranges.IntRange;
 import nu.xom.Element;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.FileUtils;
@@ -41,6 +42,7 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -293,9 +295,14 @@ public class FullTextParser extends AbstractParser {
                     !(bodyFigures.size() > numberFiguresFulltextModel)
                 );
 
+                // Filter bad figures and recompute IDs in a single stream operation
+                final AtomicInteger figureIndex = new AtomicInteger(0);
                 bodyFigures = bodyFigures.stream()
                     .filter(f -> !badBodyFigures.contains(f))
+                    .peek(f -> f.setId(String.valueOf(figureIndex.getAndIncrement())))
                     .collect(Collectors.toList());
+
+                doc.setFigures(bodyFigures);
 
                 // Tables
                 bodyTables = processTables(bodyResults, bodyTokenization.getTokenization(), doc);
@@ -311,14 +318,18 @@ public class FullTextParser extends AbstractParser {
                 List<Table> badBodyTables = getBadTables(bodyTables);
                 bodyResults = revertResultsForBadItems(badBodyTables, bodyResults, !(bodyTables.size() > numberTablesFulltextModel));
 
+                final AtomicInteger tableIndex = new AtomicInteger(0);
                 bodyTables = bodyTables.stream()
                     .filter(t -> !badBodyTables.contains(t))
+                    .peek(f -> f.setId(String.valueOf(tableIndex.getAndIncrement())))
                     .collect(Collectors.toList());
 
                 postProcessTableCaptions(bodyTables, doc);
+                doc.setTables(bodyTables);
 
                 // Processing equations
-                bodyEquations = processEquations(bodyResults, bodyTokenization.getTokenization(), doc);
+                bodyEquations = processEquations(bodyResults, bodyTokenization.getTokenization());
+                doc.setEquations(bodyEquations);
             } else {
                 LOGGER.debug("Fulltext model: The featured body is empty");
             }
@@ -361,6 +372,7 @@ public class FullTextParser extends AbstractParser {
                     .collect(Collectors.toList());
                 postProcessFigureCaptions(annexFigures, doc);
 
+                doc.setAnnexFigures(annexFigures);
 
                 annexTables = processTables(annexResults, annexTokenization, doc, CollectionUtils.size(bodyTables));
 
@@ -386,13 +398,14 @@ public class FullTextParser extends AbstractParser {
                     .collect(Collectors.toList());
 
                 postProcessTableCaptions(annexTables, doc);
+                doc.setAnnexTables(annexTables);
 
                 annexEquations = processEquations(
                     annexResults,
                     annexTokenization,
-                    doc,
-                    CollectionUtils.size(bodyEquations) + 1
+                    CollectionUtils.size(bodyEquations)
                 );
+                doc.setAnnexEquations(annexEquations);
             }
 
             // post-process reference and footnote callout to keep them consistent (e.g. for example avoid that a footnote
@@ -2708,14 +2721,13 @@ public class FullTextParser extends AbstractParser {
     /**
      * Process equations identified by the full text model
      */
-    protected List<Equation> processEquations(String rese, List<LayoutToken> layoutTokens, Document doc) {
-        return processEquations(rese, layoutTokens, doc, 0);
+    protected List<Equation> processEquations(String rese, List<LayoutToken> layoutTokens) {
+        return processEquations(rese, layoutTokens, 0);
     }
 
     protected List<Equation> processEquations(
         String rese,
         List<LayoutToken> tokenizations,
-        Document doc,
         int startEquationID
     ) {
         List<Equation> results = new ArrayList<>();
@@ -2748,15 +2760,14 @@ public class FullTextParser extends AbstractParser {
 
             if (currentResult == null)
                 currentResult = new Equation();
+
             if ((!currentResult.getContent().isEmpty()) && (!currentResult.getLabel().isEmpty())) {
                 results.add(currentResult);
-                currentResult.setId(String.valueOf(equationID));
                 currentResult = new Equation();
             }
             if (clusterLabel.equals(TaggingLabels.EQUATION)) {
                 if (!currentResult.getContent().isEmpty()) {
                     results.add(currentResult);
-                    currentResult.setId(String.valueOf(equationID));
                     currentResult = new Equation();
                 }
                 currentResult.appendContent(clusterContent);
@@ -2767,16 +2778,17 @@ public class FullTextParser extends AbstractParser {
             }
 
             lastLabel = clusterLabel;
-            equationID++;
         }
 
         // add last open result
         if (currentResult != null) {
             results.add(currentResult);
-            currentResult.setId(String.valueOf(equationID));
         }
 
-        doc.setEquations(results);
+        final AtomicInteger equationsIndex = new AtomicInteger(startEquationID);
+        results = results.stream()
+                .peek(e -> e.setId(String.valueOf(equationsIndex.getAndIncrement())))
+                .collect(Collectors.toList());
 
         return results;
     }
