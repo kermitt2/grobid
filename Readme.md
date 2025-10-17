@@ -137,9 +137,16 @@ ej-technologies provided us a free open-source license for its Java Profiler. Cl
 
 [![JProfiler](doc/img/jprofiler_medium.png)](http://www.ej-technologies.com/products/jprofiler/overview.html)
 
+JetBrains provided us with a free licence for the development: 
+
+[![JetBrains logo.](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg)](https://jb.gg/OpenSource)
+
+
 ## How to cite
 
-If you want to cite this work, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier. For example, with BibTeX:
+If you want reference this software, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier.
+
+For example, the BibTeX would look like this:
 
 ```bibtex
 @misc{GROBID,
@@ -151,5 +158,18 @@ If you want to cite this work, please refer to the present GitHub project, toget
     eprint = {1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c}
 }
 ```
+
+> [!TIP]
+> To fetch the latest SWID you can use the following command line (requires `curl` and `jq`):
+    
+```
+curl -s "https://archive.softwareheritage.org/api/1/origin/https://github.com/kermitt2/grobid/visit/latest/" \
+  -H "Accept: application/json" | jq -r '.snapshot' | \
+  xargs -I {} curl -s "https://archive.softwareheritage.org/api/1/snapshot/{}/" | \
+  jq -r '.branches["refs/heads/master"].target' | \
+  xargs -I {} echo "swh:1:dir:{}"
+swh:1:dir:324a18113b0c7624a66a21550bd0e8522e328b4e
+```
+
 
 See the [GROBID documentation](https://grobid.readthedocs.org/en/latest/References) for more related resources. 

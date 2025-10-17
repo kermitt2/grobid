@@ -120,7 +120,7 @@ ENV JAVA_OPTS=-Xmx4g
 COPY --from=builder /opt/java/openjdk ${JAVA_HOME}
 
 # install jep 
-RUN pip3 install jep==4.0.3
+RUN pip3 install jep==4.2.2
 
 
 ENV LD_LIBRARY_PATH=/usr/local/lib/python3.8/dist-packages/jep:grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep:${LD_LIBRARY_PATH}
