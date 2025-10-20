@@ -5,6 +5,7 @@ import org.grobid.core.GrobidModels.Flavor;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.trainer.sax.TEISegmentationAAASSaxParser;
 import org.grobid.trainer.sax.TEISegmentationArticleLightRefSaxParser;
 import org.grobid.trainer.sax.TEISegmentationArticleLightSaxParser;
 import org.grobid.trainer.sax.TEISegmentationSaxParser;
@@ -123,6 +124,8 @@ public class SegmentationTrainer extends AbstractTrainer {
                     parser = new TEISegmentationArticleLightSaxParser();
                 } else if (flavor == Flavor.ARTICLE_LIGHT_WITH_REFERENCES) {
                     parser = new TEISegmentationArticleLightRefSaxParser();
+                } else if (flavor == Flavor.ARTICLE_AAAS) {
+                    parser = new TEISegmentationAAASSaxParser();
                 } else {
                     parser = new TEISegmentationSaxParser();
                 }
@@ -155,7 +158,7 @@ for(String label : labeled) {
     temp.append(label);
 }
 FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toString());*/
-                
+
                     int q = 0;
                     BufferedReader bis = new BufferedReader(
                         new InputStreamReader(new FileInputStream(theRawFile), StandardCharsets.UTF_8));

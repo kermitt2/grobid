@@ -157,6 +157,8 @@ public class TrainerRunner {
             trainer = new SegmentationTrainer(Flavor.ARTICLE_LIGHT);
         } else if (model.equals("segmentation-light-ref")) {
             trainer = new SegmentationTrainer(Flavor.ARTICLE_LIGHT_WITH_REFERENCES);
+        } else if (model.equals("segmentation-aaas")) {
+            trainer = new SegmentationTrainer(Flavor.ARTICLE_AAAS);
         } else if (model.equals("segmentation-ietf")) {
             trainer = new SegmentationTrainer(Flavor.IETF);
         } else if (model.equals("reference-segmenter")) {
