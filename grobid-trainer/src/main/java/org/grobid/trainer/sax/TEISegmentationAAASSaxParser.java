@@ -195,6 +195,14 @@ public class TEISegmentationAAASSaxParser extends TEISegmentationSaxParser {
 								currentTag = "<acknowledgement>";
 								upperTag = currentTag;
 								upperQname = "div";
+                            } else if (value.equals("conflict") || value.equals("conflicts")) {
+								currentTag = "<acknowledgement>";
+								upperTag = currentTag;
+								upperQname = "div";
+                            } else if (value.equals("contribution") || value.equals("contributions")) {
+								currentTag = "<acknowledgement>";
+								upperTag = currentTag;
+								upperQname = "div";
                             } else if (value.equals("toc")) {
                                 currentTag = "<toc>";
                                 upperTag = currentTag;
