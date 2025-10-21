@@ -144,13 +144,14 @@ JetBrains provided us with a free licence for the development:
 
 ## How to cite
 
-If you want reference this software, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier.
+If you want to reference this software, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier. 
+Alternatively, you can also cite using the [RRID](https://rrid.site) (Research Resource Identifier) in the text: `Grobid (RRID:SCR_027539)`.
 
-For example, the BibTeX would look like this:
+For example, the BibTeX pointing to the repository would look like this:
 
 ```bibtex
-@misc{GROBID,
-    title = {GROBID},
+@misc{Grobid,
+    title = {Grobid},
     howpublished = {\url{https://github.com/kermitt2/grobid}},
     publisher = {GitHub},
     year = {2008--2025},
