@@ -183,24 +183,24 @@ public class TEISegmentationAAASSaxParser extends TEISegmentationSaxParser {
 								upperTag = currentTag;
 								upperQname = "div";
                             } else if (value.equals("funding")) {
-                                currentTag = "<acknowledgement>";
+                                currentTag = "<annex>";
                                 upperTag = currentTag;
                                 upperQname = "div";
                             } else if (Arrays.asList("availability", "data_availability", "data-availability").contains(value)) {
-                                currentTag = "<acknowledgement>";
+                                currentTag = "<annex>";
                                 upperTag = currentTag;
                                 upperQname = "div";
                             } else if (value.equals("acknowledgement") || value.equals("acknowledgements") || value.equals("acknowledgment")
                                 || value.equals("acknowledgments")) {
-								currentTag = "<acknowledgement>";
+								currentTag = "<annex>";
 								upperTag = currentTag;
 								upperQname = "div";
                             } else if (value.equals("conflict") || value.equals("conflicts")) {
-								currentTag = "<acknowledgement>";
+								currentTag = "<annex>";
 								upperTag = currentTag;
 								upperQname = "div";
                             } else if (value.equals("contribution") || value.equals("contributions")) {
-								currentTag = "<acknowledgement>";
+								currentTag = "<annex>";
 								upperTag = currentTag;
 								upperQname = "div";
                             } else if (value.equals("toc")) {
