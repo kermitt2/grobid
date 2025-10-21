@@ -26,6 +26,7 @@ public enum GrobidModels implements GrobidModel {
     SEGMENTATION("segmentation"),
     SEGMENTATION_ARTICLE_LIGHT("segmentation/article/light"),
     SEGMENTATION_ARTICLE_LIGHT_REF("segmentation/article/light-ref"),
+    SEGMENTATION_ARTICLE_AAAS("segmentation/article/aaas"),
     SEGMENTATION_SDO_IETF("segmentation/sdo/ietf"),
     SEGMENTATION_SDO_3GPP("segmentation/sdo/3gpp"),
     CITATION("citation"),
