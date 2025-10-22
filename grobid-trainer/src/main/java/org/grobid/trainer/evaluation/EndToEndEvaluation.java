@@ -93,7 +93,7 @@ public class EndToEndEvaluation {
                 engine = Engine.getEngine(true);
                 GrobidAnalysisConfig config =
                     GrobidAnalysisConfig.builder()
-                        .consolidateHeader(0)
+                        .consolidateHeader(1)
                         .consolidateCitations(0)
                         .consolidateFunders(0)
                         .withPreprocessImages(true)
@@ -1565,11 +1565,11 @@ System.out.println("grobid: " + grobidResult);*/
                                         List<String> goldResults2 = new ArrayList<>();
                                         goldResults2.add(String.join(" ", goldResults).replace("  ", " "));
                                         goldResults = goldResults2;
-                                        System.out.print("\n\n---- GOLD ----");
-                                        for (String goldResult : goldResults) {
-                                            System.out.print("\n" + goldResult);
-                                        }
-                                        System.out.print("\n--------");
+//                                        System.out.print("\n\n---- GOLD ----");
+//                                        for (String goldResult : goldResults) {
+//                                            System.out.print("\n" + goldResult);
+//                                        }
+//                                        System.out.print("\n--------");
                                     }
 
                                     if (CollectionUtils.isNotEmpty(grobidResults)) {
@@ -1577,11 +1577,11 @@ System.out.println("grobid: " + grobidResult);*/
                                         grobidResults2.add(String.join(" ", grobidResults).replace("  ", " "));
                                         grobidResults = grobidResults2;
 
-                                        System.out.print("\n---- GROBID ----");
-                                        for (String grobidResult : grobidResults) {
-                                            System.out.print("\n" + grobidResult);
-                                        }
-                                        System.out.print("\n--------");
+//                                        System.out.print("\n---- GROBID ----");
+//                                        for (String grobidResult : grobidResults) {
+//                                            System.out.print("\n" + grobidResult);
+//                                        }
+//                                        System.out.print("\n--------");
                                     }
                                     // we compare the two result sets
                                 }
