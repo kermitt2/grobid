@@ -117,6 +117,8 @@ public class FulltextTrainer extends AbstractTrainer{
                     parser = new TEIFulltextArticleLightSaxParser();
                 } else if (flavor == GrobidModels.Flavor.ARTICLE_LIGHT_WITH_REFERENCES) {
                     parser = new TEIFulltextArticleLightRefSaxParser();
+                } else if (flavor == GrobidModels.Flavor.ARTICLE_AAAS) {
+                    parser = new TEIFulltextArticleAaasSaxParser();
                 } else {
                     parser = new TEIFulltextSaxParser();
                 }
