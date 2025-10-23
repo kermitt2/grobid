@@ -525,6 +525,7 @@ project(":grobid-trainer") {
         "train_fulltext"                      : ["org.grobid.trainer.FulltextTrainer", ""],
         "train_fulltext_article_light"        : ["org.grobid.trainer.FulltextTrainer", "article/light"],
         "train_fulltext_article_light_ref"    : ["org.grobid.trainer.FulltextTrainer", "article/light-ref"],
+        "train_fulltext_article_aaas"         : ["org.grobid.trainer.FulltextTrainer", "article/aaas"],
     ]
 
     def libraries = ""

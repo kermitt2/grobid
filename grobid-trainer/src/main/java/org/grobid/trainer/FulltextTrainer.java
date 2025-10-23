@@ -262,7 +262,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
             theFlavor = GrobidModels.Flavor.fromLabel(flavor);
             if (theFlavor == null) {
                 System.out.println("Warning, the flavor is not recognized, " +
-                    "must one one of [article/light, article/light-ref, sdo/ietf], " +
+                    "must one one of [article/light, article/light-ref, article/aaas sdo/ietf], " +
                     "defaulting training with no flavor...");
             }
         }
