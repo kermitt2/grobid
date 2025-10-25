@@ -24,6 +24,8 @@ The following TEI elements are used by the header model:
 * `<note type="copyright">` identifies copyrights statements (copyrights holder, waiver like CC licenses, etc.) ([notes](#copyrights))
 * `<note type="funding">` identifies funding statements (grants, awards, etc.) ([notes](#funding-statements))
 * `<note type="availability">` identifies data and code availability statements  ([notes](#availability-statements))    
+* `<note type="contribution">` identifies the author contribution statements     
+* `<note type="conflict">` identifies conflict of interest statements   
 * `<idno>` for the strong identifiers of the document (DOI, arXiv identifier, PII, etc.) ([notes](#strong-identifiers))
 * `<phone>` for phone number ([notes](#phone-number))
 * `<page>` for identifying a page number present in the header parts (this is the first page of the document) ([notes](#page-number))

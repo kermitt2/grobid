@@ -16,6 +16,8 @@ The following TEI elements are used by the segmentation model:
 * `<div type="toc">` for table of content
 * `<div type="acknowledgment">` for acknowledgment annex
 * `<div type="availability">` for data and code availability statement annex (when not placed in the header)
+* `<div type="conflict">` for conflict of interest statement annex (when not placed in the header)
+* `<div type="contribution">` for author contribution statement annex (when not placed in the header)
 * `<div type="funding">` for funding information annex (when not placed in the header)
 * `<div type="annex">` for any other annexes
 
