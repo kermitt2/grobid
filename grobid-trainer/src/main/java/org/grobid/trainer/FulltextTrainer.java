@@ -117,6 +117,8 @@ public class FulltextTrainer extends AbstractTrainer{
                     parser = new TEIFulltextArticleLightSaxParser();
                 } else if (flavor == GrobidModels.Flavor.ARTICLE_LIGHT_WITH_REFERENCES) {
                     parser = new TEIFulltextArticleLightRefSaxParser();
+                } else if (flavor == GrobidModels.Flavor.ARTICLE_AAAS) {
+                    parser = new TEIFulltextArticleAaasSaxParser();
                 } else {
                     parser = new TEIFulltextSaxParser();
                 }
@@ -260,7 +262,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
             theFlavor = GrobidModels.Flavor.fromLabel(flavor);
             if (theFlavor == null) {
                 System.out.println("Warning, the flavor is not recognized, " +
-                    "must one one of [article/light, article/light-ref, sdo/ietf], " +
+                    "must one one of [article/light, article/light-ref, article/aaas sdo/ietf], " +
                     "defaulting training with no flavor...");
             }
         }

@@ -26,6 +26,7 @@ public enum GrobidModels implements GrobidModel {
     SEGMENTATION("segmentation"),
     SEGMENTATION_ARTICLE_LIGHT("segmentation/article/light"),
     SEGMENTATION_ARTICLE_LIGHT_REF("segmentation/article/light-ref"),
+    SEGMENTATION_ARTICLE_AAAS("segmentation/article/aaas"),
     SEGMENTATION_SDO_IETF("segmentation/sdo/ietf"),
     SEGMENTATION_SDO_3GPP("segmentation/sdo/3gpp"),
     CITATION("citation"),
@@ -37,8 +38,9 @@ public enum GrobidModels implements GrobidModel {
     ENTITIES_CHEMISTRY("entities/chemistry"),
     //	ENTITIES_CHEMISTRY("chemistry"),
     FULLTEXT("fulltext"),
-    FULLTEXT_ARTICLE_LIGHT_REF("fulltext"),
-    FULLTEXT_ARTICLE_LIGHT("fulltext"),
+    FULLTEXT_ARTICLE_LIGHT_REF("fulltext/article/light-ref"),
+    FULLTEXT_ARTICLE_LIGHT("fulltext/article/light"),
+    FULLTEXT_ARTICLE_AAAS("fulltext/article/aaas"),
     SHORTTEXT("shorttext"),
     FIGURE("figure"),
     TABLE("table"),
@@ -80,6 +82,7 @@ public enum GrobidModels implements GrobidModel {
         BLANK("blank"),
         ARTICLE_LIGHT("article/light"),
         ARTICLE_LIGHT_WITH_REFERENCES("article/light-ref"),
+        ARTICLE_AAAS("article/aaas"),
         _3GPP("sdo/3gpp"),
         IETF("sdo/ietf");
 
