@@ -201,9 +201,12 @@ Indication of document types are labelled. These indications depend on the edito
 
 ### Abstract
 
-In case of several abstracts (in particular the same abstract in difference languages), they are all labelled. In case two abstracts are adjacent in term of text stream, they must be tagged into different abstract blocks, and not under a single `<abstract>` tag. 
+In case of several abstracts (in particular the same abstract in difference languages), they are all labelled. 
+When the article includes "Key Points" or "Highlights" section, they should also be labelled as separate abstract blocks.
+In case two abstracts are adjacent in terms of text stream, they must be tagged into different abstract blocks, and not under a single `<abstract>` tag. 
 
-Attention must be paid to exclude functional words like "Abstract", "Summary", etc. from the labelled abstract. These are indications that will be exploited by Grobid to predict the start of the asbtract but it's not seomthing that we want to see in the final extraction result.
+!!! warning "Remember to exclude the abstract title"
+    Attention must be paid to exclude functional words like "Abstract", "Summary", etc. from the labelled abstract. These are indications that will be exploited by Grobid to predict the start of the abstract but it's not something that we want to see in the final extraction result.
 
 ```xml
     Abstract. -
