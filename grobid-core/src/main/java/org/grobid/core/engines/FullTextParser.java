@@ -1,7 +1,6 @@
 package org.grobid.core.engines;
 
 import com.google.common.collect.Iterables;
-import kotlin.ranges.IntRange;
 import nu.xom.Element;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.FileUtils;
@@ -313,7 +312,7 @@ public class FullTextParser extends AbstractParser {
                 //TODO: double check the way the tables are validated
                 long numberTablesFulltextModel = Arrays.stream(bodyResults.split("\n"))
                     .filter(r -> r.endsWith("I-" + TaggingLabels.TABLE_LABEL))
-                .count();
+                    .count();
 
                 List<Table> badBodyTables = getBadTables(bodyTables);
                 bodyResults = revertResultsForBadItems(badBodyTables, bodyResults, !(bodyTables.size() > numberTablesFulltextModel));
@@ -467,8 +466,8 @@ public class FullTextParser extends AbstractParser {
 
     private void postProcessFigureCaptions(List<Figure> figures, Document doc) {
         // further parse the caption
-        for(Figure figure : figures) {
-            if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens()) ) {
+        for (Figure figure : figures) {
+            if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens())) {
                 Pair<String, List<LayoutToken>> processedCaption = processShort(figure.getCaptionLayoutTokens(), doc);
                 figure.setLabeledCaption(processedCaption.getLeft());
                 List<LayoutToken> processedCaptionLayoutTokens = processedCaption.getRight();
@@ -485,7 +484,7 @@ public class FullTextParser extends AbstractParser {
 
     private static String fixFiguresLabellingResults(Document doc, String bodyResults) {
         List<Triple<Figure, Figure, List<List<LayoutToken>>>> updatedFigures = doc.assignGraphicObjectsToFigures();
-        for(Triple<Figure, Figure, List<List<LayoutToken>>> update: updatedFigures) {
+        for (Triple<Figure, Figure, List<List<LayoutToken>>> update : updatedFigures) {
             List<List<LayoutToken>> difference = update.getRight();
 
             long nbDifferences = difference.stream()
@@ -1414,11 +1413,14 @@ public class FullTextParser extends AbstractParser {
         return createTraining(inputFile, pathFullText, pathTEI, id, null);
     }
 
-    public Document createTraining(File inputFile,
-                                   String pathFullText,
-                                   String pathTEI,
-                                   int id,
-                                   GrobidModels.Flavor flavor) {
+    public Document createTraining(
+        File inputFile,
+        String pathFullText,
+        String pathTEI,
+        int id,
+        GrobidModels.Flavor flavor
+    ) {
+
         if (tmpPath == null)
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
         if (!tmpPath.exists()) {
@@ -1455,7 +1457,7 @@ public class FullTextParser extends AbstractParser {
             writer.close();
 
             // also write the raw text as seen before segmentation
-            StringBuffer rawtxt = new StringBuffer();
+            StringBuilder rawtxt = new StringBuilder();
             for (LayoutToken txtline : tokenizations) {
                 rawtxt.append(txtline.getText());
             }
@@ -1597,72 +1599,14 @@ public class FullTextParser extends AbstractParser {
             // FULLTEXT MODEL (body)
             SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
             if (documentBodyParts != null) {
-                Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentBodyParts);
-                if (featSeg != null) {
-                    // if no textual body part found, nothing to generate
+                generateTrainingForFulltextFromArea(inputFile, pathFullText, pathTEI, id, doc, documentBodyParts, pdfFileName, "fulltext");
+            }
 
-
-                    String bodytext = featSeg.getLeft();
-                    List<LayoutToken> tokenizationsBody = featSeg.getRight().getTokenization();
-
-                    // we write the full text untagged
-                    outPathFulltext = pathFullText + File.separator
-                        + pdfFileName.replaceAll("(?i)\\.pdf$", ".training.fulltext");
-                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), StandardCharsets.UTF_8);
-                    writer.write(bodytext + "\n");
-                    writer.close();
-
-                    //              StringTokenizer st = new StringTokenizer(fulltext, "\n");
-                    String rese = label(bodytext);
-                    //System.out.println(rese);
-                    StringBuilder bufferFulltext = trainingExtraction(rese, tokenizationsBody);
-
-                    // write the TEI file to reflect the extract layout of the text as extracted from the pdf
-                    writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
-                        File.separator +
-                        pdfFileName.replaceAll("(?i)\\.pdf$", ".training.fulltext.tei.xml")), false), StandardCharsets.UTF_8);
-                    if (id == -1) {
-                        writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader/>\n\t<text xml:lang=\"en\">\n");
-                    } else {
-                        writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
-                            "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
-                    }
-                    writer.write(bufferFulltext.toString());
-                    writer.write("\n\t</text>\n</tei>\n");
-                    writer.close();
-
-                    // training data for FIGURES
-                    Pair<String, String> trainingFigure = processTrainingDataFigures(rese, tokenizationsBody, inputFile.getName());
-                    if (trainingFigure.getLeft().trim().length() > 0) {
-                        String outPathFigures = pathFullText + File.separator
-                            + pdfFileName.replaceAll("(?i)\\.pdf$", ".training.figure");
-                        writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFigures), false), StandardCharsets.UTF_8);
-                        writer.write(trainingFigure.getRight() + "\n\n");
-                        writer.close();
-
-                        String outPathFiguresTEI = pathTEI + File.separator
-                            + pdfFileName.replaceAll("(?i)\\.pdf$", ".training.figure.tei.xml");
-                        writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFiguresTEI), false), StandardCharsets.UTF_8);
-                        writer.write(trainingFigure.getLeft() + "\n");
-                        writer.close();
-                    }
-
-                    // training data for TABLES
-                    Pair<String, String> trainingTable = processTrainingDataTables(rese, tokenizationsBody, inputFile.getName());
-                    if (trainingTable.getLeft().trim().length() > 0) {
-                        String outPathTables = pathFullText + File.separator
-                            + pdfFileName.replaceAll("(?i)\\.pdf$", ".training.table");
-                        writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTables), false), StandardCharsets.UTF_8);
-                        writer.write(trainingTable.getRight() + "\n\n");
-                        writer.close();
-
-                        String outPathTablesTEI = pathTEI + File.separator
-                            + pdfFileName.replaceAll("(?i)\\.pdf$", ".training.table.tei.xml");
-                        writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTablesTEI), false), StandardCharsets.UTF_8);
-                        writer.write(trainingTable.getLeft() + "\n");
-                        writer.close();
-                    }
-                }
+            // Training data for ANNEX (using fulltext model)
+            // Extract annex content from the segmented results - we need to use the segmentation results
+            SortedSet<DocumentPiece> documentAnnexParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
+            if (documentAnnexParts != null) {
+                generateTrainingForFulltextFromArea(inputFile, pathFullText, pathTEI, id, doc, documentAnnexParts, pdfFileName, "annex");
             }
 
             // HEADER MODEL
@@ -1903,9 +1847,85 @@ public class FullTextParser extends AbstractParser {
         }
     }
 
-    /**
-     * Extract results from a labelled full text in the training format without any string modification.
-     */
+    private void generateTrainingForFulltextFromArea(
+        File inputFile,
+        String pathFullText,
+        String pathTEI,
+        int id,
+        Document doc,
+        SortedSet<DocumentPiece> documentBodyParts,
+        String pdfFileName,
+        String area
+    ) throws IOException {
+
+        Writer writer;
+        String outPathFulltext;
+        Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentBodyParts);
+        if (featSeg != null) {
+            // if no textual body part found, nothing to generate
+            String bodytext = featSeg.getLeft();
+            List<LayoutToken> tokenizationsBody = featSeg.getRight().getTokenization();
+
+            // we write the full text untagged
+            outPathFulltext = pathFullText + File.separator
+                + pdfFileName.replaceAll("(?i)\\.pdf$", ".training." + area);
+            writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), StandardCharsets.UTF_8);
+            writer.write(bodytext + "\n");
+            writer.close();
+
+            //              StringTokenizer st = new StringTokenizer(fulltext, "\n");
+            String rese = label(bodytext);
+            //System.out.println(rese);
+            StringBuilder bufferFulltext = trainingExtraction(rese, tokenizationsBody);
+
+            // write the TEI file to reflect the extract layout of the text as extracted from the pdf
+            writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+                File.separator +
+                pdfFileName.replaceAll("(?i)\\.pdf$", ".training." + area + ".tei.xml")), false), StandardCharsets.UTF_8);
+            if (id == -1) {
+                writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader/>\n\t<text xml:lang=\"en\">\n");
+            } else {
+                writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+                    "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
+            }
+            writer.write(bufferFulltext.toString());
+            writer.write("\n\t</text>\n</tei>\n");
+            writer.close();
+
+            // training data for FIGURES
+            Pair<String, String> trainingFigure = processTrainingDataFigures(rese, tokenizationsBody, inputFile.getName());
+            if (StringUtils.isNotBlank(trainingFigure.getLeft())) {
+                String outPathFigures = pathFullText + File.separator
+                    + pdfFileName.replaceAll("(?i)\\.pdf$", ".training." + area + ".figure");
+                writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFigures), false), StandardCharsets.UTF_8);
+                writer.write(trainingFigure.getRight() + "\n\n");
+                writer.close();
+
+                String outPathFiguresTEI = pathTEI + File.separator
+                    + pdfFileName.replaceAll("(?i)\\.pdf$", ".training." + area + ".figure.tei.xml");
+                writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFiguresTEI), false), StandardCharsets.UTF_8);
+                writer.write(trainingFigure.getLeft() + "\n");
+                writer.close();
+            }
+
+            // training data for TABLES
+            Pair<String, String> trainingTable = processTrainingDataTables(rese, tokenizationsBody, inputFile.getName());
+            if (StringUtils.isNotBlank(trainingTable.getLeft())) {
+                String outPathTables = pathFullText + File.separator
+                    + pdfFileName.replaceAll("(?i)\\.pdf$", ".training." + area + ".table");
+                writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTables), false), StandardCharsets.UTF_8);
+                writer.write(trainingTable.getRight() + "\n\n");
+                writer.close();
+
+                String outPathTablesTEI = pathTEI + File.separator
+                    + pdfFileName.replaceAll("(?i)\\.pdf$", ".training." + area + ".table.tei.xml");
+                writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTablesTEI), false), StandardCharsets.UTF_8);
+                writer.write(trainingTable.getLeft() + "\n");
+                writer.close();
+            }
+        }
+    }
+
     private StringBuilder trainingExtraction(String result,
                                              List<LayoutToken> tokenizations) {
         // this is the main buffer for the whole full text
@@ -2336,7 +2356,7 @@ public class FullTextParser extends AbstractParser {
      * Process figures identified by the full text model
      */
     protected List<Figure> processFigures(String rese, List<LayoutToken> layoutTokens) {
-        return processFigures(rese, layoutTokens,0);
+        return processFigures(rese, layoutTokens, 0);
     }
 
     protected List<Figure> processFigures(String rese, List<LayoutToken> layoutTokens, int startFigureID) {
@@ -2787,8 +2807,8 @@ public class FullTextParser extends AbstractParser {
 
         final AtomicInteger equationsIndex = new AtomicInteger(startEquationID);
         results = results.stream()
-                .peek(e -> e.setId(String.valueOf(equationsIndex.getAndIncrement())))
-                .collect(Collectors.toList());
+            .peek(e -> e.setId(String.valueOf(equationsIndex.getAndIncrement())))
+            .collect(Collectors.toList());
 
         return results;
     }
