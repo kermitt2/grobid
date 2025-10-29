@@ -49,3 +49,21 @@ jobs:
             latest-crf, latest-develop, ${{ github.event.inputs.custom_tag}}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+      - name: Docker Image Summary
+        run: |
+          echo "## 🐳 Docker Image Uploaded Successfully" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Image Details:**" >> $GITHUB_STEP_SUMMARY
+          echo "- **Registry:** docker.io" >> $GITHUB_STEP_SUMMARY
+          echo "- **Image:** lfoppiano/grobid" >> $GITHUB_STEP_SUMMARY
+          echo "- **Type:** CRF-only build" >> $GITHUB_STEP_SUMMARY
+          echo "- **Tags:**" >> $GITHUB_STEP_SUMMARY
+          echo "  - \`latest-crf\`" >> $GITHUB_STEP_SUMMARY
+          echo "  - \`latest-develop\`" >> $GITHUB_STEP_SUMMARY
+          echo "  - \`${{ github.event.inputs.custom_tag }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Digest:** \`${{ steps.docker_build.outputs.digest }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Usage:**" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "docker pull lfoppiano/grobid:${{ github.event.inputs.custom_tag }}" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY

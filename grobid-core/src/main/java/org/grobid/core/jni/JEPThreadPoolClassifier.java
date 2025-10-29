@@ -29,8 +29,8 @@ public class JEPThreadPoolClassifier {
 
     private int POOL_SIZE = 1;
 
-    private ExecutorService executor;
-    private ConcurrentMap<Long, Jep> jepInstances;
+    private final ExecutorService executor;
+    private final ConcurrentMap<Long, Jep> jepInstances;
 
     private static volatile JEPThreadPoolClassifier instance;
 
@@ -58,6 +58,12 @@ public class JEPThreadPoolClassifier {
         executor = Executors.newSingleThreadExecutor();
         // each of these threads is associated to a JEP instance
         jepInstances = new ConcurrentHashMap<>();
+
+        // Add a shutdown hook to close all JEP instances when the JVM exits
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            LOGGER.info("JVM shutdown detected, closing all JEP instances in classifier pool");
+            shutdown();
+        }));
     }
 
     private File getAndValidateDelftPath() {
@@ -89,11 +95,8 @@ public class JEPThreadPoolClassifier {
         jep.eval("import json");
         jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
         jep.eval("from delft.utilities.Embeddings import Embeddings");
-        //jep.eval("from delft.utilities.Utilities import split_data_and_labels");
         jep.eval("import delft.textClassification");
         jep.eval("from delft.textClassification import Classifier");
-        //jep.eval("from delft.textClassification.reader import load_dataseer_corpus_csv");
-        //jep.eval("from delft.textClassification.reader import vectorize as vectorizer");
     }
 
     private Jep createJEPInstance() {
@@ -178,4 +181,48 @@ public class JEPThreadPoolClassifier {
         return future.get();
     }
 
+    /**
+     * Close the JEP instance for the current thread and remove it from the map.
+     * This should be called when the thread is done using JEP to free resources.
+     */
+    public synchronized void closeCurrentJEPInstance() {
+        long threadId = Thread.currentThread().getId();
+        Jep jep = jepInstances.remove(threadId);
+        if (jep != null) {
+            try {
+                LOGGER.info("Closing JEP instance for thread " + threadId);
+                jep.close();
+            } catch (JepException e) {
+                LOGGER.error("Failed to close JEP instance for thread " + threadId, e);
+            }
+        }
+    }
+
+    /**
+     * Close all JEP instances and shutdown the executor.
+     * This should be called when the application is shutting down.
+     */
+    public synchronized void shutdown() {
+        LOGGER.info("Shutting down JEPThreadPoolClassifier");
+        // Close all JEP instances
+        for (Map.Entry<Long, Jep> entry : jepInstances.entrySet()) {
+            try {
+                LOGGER.info("Closing JEP instance for thread " + entry.getKey());
+                entry.getValue().close();
+            } catch (JepException e) {
+                LOGGER.error("Failed to close JEP instance for thread " + entry.getKey(), e);
+            }
+        }
+        jepInstances.clear();
+
+        // Shutdown the executor
+        executor.shutdown();
+        try {
+            if (!executor.awaitTermination(5, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
+        }
+    }
 }

@@ -157,7 +157,7 @@ subprojects {
         // to avoid missing dependencies from the projects that include grobid-core (see 'jar' task in grobid-core)
         localLibs = ['crfpp-1.0.2.jar',
                      'langdetect-1.1-20120112.jar',
-                     'grobid-lucene-analysers-0.0.1.jar',
+                     'grobid-lucene-analysers-0.0.2.jar',
                      'imageio-pnm-1.0.jar',
                      'wapiti-1.5.0.jar']
     }
@@ -192,7 +192,7 @@ subprojects {
         implementation "commons-dbutils:commons-dbutils:1.7"
         implementation "com.google.guava:guava:31.0.1-jre"
         implementation "org.apache.httpcomponents:httpclient:4.5.3"
-        implementation "black.ninia:jep:4.0.2"
+        implementation "black.ninia:jep:4.2.2"
 
         implementation "com.fasterxml.jackson.core:jackson-core:2.14.3"
         implementation "com.fasterxml.jackson.core:jackson-databind:2.14.3"
