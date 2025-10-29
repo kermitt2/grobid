@@ -946,17 +946,17 @@ public class Document implements Serializable {
                 org.apache.commons.lang3.tuple.Pair<List<LayoutToken>, List<List<LayoutToken>>> figureLayoutTokens = getFigureLayoutTokens(f);
                 List<LayoutToken> realCaptionTokens = figureLayoutTokens.getLeft();
                 if (CollectionUtils.isNotEmpty(realCaptionTokens)) {
-                    Figure oldFigure = new Figure();
-                    oldFigure.setLayoutTokens(f.getLayoutTokens());
-                    f.setLayoutTokens(realCaptionTokens);
-                    oldFigure.setTextArea(f.getTextArea());
-                    f.setTextArea(BoundingBoxCalculator.calculate(realCaptionTokens));
-                    oldFigure.setCaption(new StringBuilder(f.getCaption()));
-                    f.setCaption(new StringBuilder(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(realCaptionTokens))));
-                    oldFigure.setCaptionLayoutTokens(f.getCaptionLayoutTokens());
-                    f.setCaptionLayoutTokens(realCaptionTokens);
+//                    Figure oldFigure = new Figure();
+//                    oldFigure.setLayoutTokens(f.getLayoutTokens());
+//                    f.setLayoutTokens(realCaptionTokens);
+//                    oldFigure.setTextArea(f.getTextArea());
+//                    f.setTextArea(BoundingBoxCalculator.calculate(realCaptionTokens));
+//                    oldFigure.setCaption(new StringBuilder(f.getCaption()));
+//                    f.setCaption(new StringBuilder(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(realCaptionTokens))));
+//                    oldFigure.setCaptionLayoutTokens(f.getCaptionLayoutTokens());
+//                    f.setCaptionLayoutTokens(realCaptionTokens);
                     pageFigures.add(f);
-                    differences.add(org.apache.commons.lang3.tuple.Triple.of(oldFigure, f, figureLayoutTokens.getRight()));
+//                    differences.add(org.apache.commons.lang3.tuple.Triple.of(oldFigure, f, figureLayoutTokens.getRight()));
                 }
             }
 
@@ -1293,14 +1293,14 @@ public class Document implements Serializable {
                 result.addAll(previousBlock.getTokens());
 
                 while (it.hasNext()) {
-                    BoundingBox prevBlockCoords = BoundingBox.fromPointAndDimensions(previousBlock.getPageNumber(), previousBlock.getX(), previousBlock.getY(), previousBlock.getWidth(), previousBlock.getHeight());
+//                    BoundingBox prevBlockCoords = BoundingBox.fromPointAndDimensions(previousBlock.getPageNumber(), previousBlock.getX(), previousBlock.getY(), previousBlock.getWidth(), previousBlock.getHeight());
                     newBlockPtr = it.next();
                     Block newBlock = getBlocks().get(newBlockPtr);
-                    BoundingBox newBlockCoords = BoundingBox.fromPointAndDimensions(newBlock.getPageNumber(), newBlock.getX(), newBlock.getY(), newBlock.getWidth(), newBlock.getHeight());
-                    if (newBlockCoords.distanceTo(prevBlockCoords) < 15 || (Math.abs(newBlockCoords.verticalDistanceTo(prevBlockCoords)) == 0 && newBlockCoords.distanceTo(prevBlockCoords) < 20)) {
-                        result.addAll(newBlock.getTokens());
-                        previousBlock = newBlock;
-                    } else {
+//                    BoundingBox newBlockCoords = BoundingBox.fromPointAndDimensions(newBlock.getPageNumber(), newBlock.getX(), newBlock.getY(), newBlock.getWidth(), newBlock.getHeight());
+//                    if (newBlockCoords.distanceTo(prevBlockCoords) < 15 || (Math.abs(newBlockCoords.verticalDistanceTo(prevBlockCoords)) == 0 && newBlockCoords.distanceTo(prevBlockCoords) < 20)) {
+                    result.addAll(newBlock.getTokens());
+//                    previousBlock = newBlock;
+                    /*} else {
                         // LF: The first temporary trick was to iterate to all the following blocks
                         // and place them into the discarded token list of the figure
 //                        f.addDiscardedPieceTokens(b.getTokens());
@@ -1364,7 +1364,7 @@ public class Document implements Serializable {
                         }
                         break;
 
-                    }
+                    }*/
                 }
                 break;
             } else {
