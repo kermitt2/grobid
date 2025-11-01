@@ -4,7 +4,7 @@
 Date: 2025-10-25
 
 ### List of files used for training: 
-
+```
 10.1093$1$gerhis$1$ghaf028.training.segmentation.tei.xml
 10.3249$1$1868-1581-2-2-clark.training.segmentation.tei.xml
 10.5354$1$rti.v1i1.21339.training.segmentation.tei.xml
@@ -26,9 +26,9 @@ Date: 2025-10-25
 10.32361$1$2025170222092.training.segmentation.tei.xml
 10.34767$1$dp.2024.02.02.training.segmentation.tei.xml
 1296-Article Text-4476-1-10-20221017.training.segmentation.tei.xml
-
+```
 ### List of files used for evaluation: 
-
+```
 10.1093$1$gerhis$1$ghae045.training.segmentation.tei.xml
 10.3249$1$1868-1581-1-2-gutbrod.training.segmentation.tei.xml
 10.5771__2699-1284-2020-1-16.training.segmentation.tei.xml
@@ -40,9 +40,9 @@ Date: 2025-10-25
 10.19195$1$0524-4544.337.2.training.segmentation.tei.xml
 10.32361$1$201810011903.training.segmentation.tei.xml
 1294-Article Text-4464-1-10-20221017.training.segmentation.tei.xml
-
+```
 ### Results 
-
+```
 ===== Field-level results =====
 
 label                accuracy     precision    recall       f1           support
@@ -64,3 +64,4 @@ all (macro avg.)     95.03        57.46        59.48        58.08        756
 Total expected instances:   11
 Correct instances:          0
 Instance-level recall:      0
+```
