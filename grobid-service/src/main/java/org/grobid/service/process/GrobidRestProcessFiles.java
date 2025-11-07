@@ -2,7 +2,10 @@ package org.grobid.service.process;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import org.apache.commons.lang3.StringUtils;
+import jakarta.ws.rs.core.HttpHeaders;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
@@ -10,7 +13,6 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
-import org.grobid.core.engines.AbstractParser;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidPoolingFactory;
@@ -28,22 +30,17 @@ import org.grobid.service.util.GrobidRestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import jakarta.ws.rs.core.HttpHeaders;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
-import jakarta.ws.rs.core.Response.Status;
-
+import javax.xml.bind.DatatypeConverter;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.security.DigestInputStream;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
-import java.security.DigestInputStream;
-import java.security.MessageDigest;
-import javax.xml.bind.DatatypeConverter;
 
 /**
  * Web services consuming a file
@@ -195,8 +192,8 @@ public class GrobidRestProcessFiles {
      * extracts only the header and funding information, this still requires a full read and segmentation of the document,
      * but non-relevant parts are skipt.
      *
-     * @param inputStream the data of origin document
-     * @param consolidateHeader consolidation parameter for the header extraction
+     * @param inputStream        the data of origin document
+     * @param consolidateHeader  consolidation parameter for the header extraction
      * @param consolidateFunders consolidation parameter for the funder extraction
      * @return a response object which contains a TEI representation of the header part
      */
@@ -549,19 +546,21 @@ public class GrobidRestProcessFiles {
      * @return a response object mainly contain the TEI representation of the
      * full text
      */
-    public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
-                                                          final GrobidModels.Flavor flavor,
-                                                          final int consolidateHeader,
-                                                          final int consolidateCitations,
-                                                          final int consolidateFunders,
-                                                          final boolean includeRawAffiliations,
-                                                          final boolean includeRawCitations,
-                                                          final boolean includeRawCopyrights,
-                                                          final int startPage,
-                                                          final int endPage,
-                                                          final boolean generateIDs,
-                                                          final boolean segmentSentences,
-                                                          final List<String> teiCoordinates) throws Exception {
+    public Response processStatelessFulltextAssetDocument(
+        final InputStream inputStream,
+        final GrobidModels.Flavor flavor,
+        final int consolidateHeader,
+        final int consolidateCitations,
+        final int consolidateFunders,
+        final boolean includeRawAffiliations,
+        final boolean includeRawCitations,
+        final boolean includeRawCopyrights,
+        final int startPage,
+        final int endPage,
+        final boolean generateIDs,
+        final boolean segmentSentences,
+        final List<String> teiCoordinates
+    ) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;

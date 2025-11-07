@@ -123,13 +123,17 @@ public class Document implements Serializable {
     protected boolean titleMatchNum = false; // true if the section titles of the document are numbered
 
     protected transient List<Figure> figures;
+    protected transient List<Figure> annexFigures;
     protected transient Predicate<GraphicObject> validGraphicObjectPredicate;
 
     // general parameter indicating bounding box margin when considering area
     protected int m;
 
     protected transient List<Table> tables;
+
+    protected transient List<Table> annexTables;
     protected transient List<Equation> equations;
+    protected transient List<Equation> annexEquations;
 
     // the analyzer/tokenizer used for processing this document
     protected transient Analyzer analyzer = GrobidAnalyzer.getInstance();
@@ -1599,5 +1603,29 @@ public class Document implements Serializable {
             return documentSource.getMD5();
         else
             return null;
+    }
+
+    public List<Table> getAnnexTables() {
+        return annexTables;
+    }
+
+    public void setAnnexTables(List<Table> annexTables) {
+        this.annexTables = annexTables;
+    }
+
+    public List<Equation> getAnnexEquations() {
+        return annexEquations;
+    }
+
+    public void setAnnexEquations(List<Equation> annexEquations) {
+        this.annexEquations = annexEquations;
+    }
+
+    public List<Figure> getAnnexFigures() {
+        return annexFigures;
+    }
+
+    public void setAnnexFigures(List<Figure> annexFigures) {
+        this.annexFigures = annexFigures;
     }
 }

@@ -32,6 +32,8 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.grobid.core.utilities.Consolidation.CONSOLIDATION_STATUS_EXTRACTED;
+
 /**
  * Class for representing and exchanging a bibliographical item.
  *
@@ -379,6 +381,9 @@ public class BiblioItem {
 
     // Copyrights/license information object
     CopyrightsLicense copyrightsLicense = null;
+
+    // Source (whether the data was consolidated)
+    private String status = CONSOLIDATION_STATUS_EXTRACTED;
 
     // All the tokens that are considered noise will be collected here
     private List<String> discardedPieces = new ArrayList<>();
@@ -2248,6 +2253,9 @@ public class BiblioItem {
             tei.append(" ");
             if (withCoords)
                 tei.append(TEIFormatter.getCoordsAttribute(coordinates, withCoords)).append(" ");
+
+            tei.append("status=\"" + getStatus() + "\" ").append(" ");
+
             if (!StringUtils.isEmpty(language)) {
                 if (n == -1) {
                     tei.append("xml:lang=\"" + language + ">\n");
@@ -4388,6 +4396,7 @@ public class BiblioItem {
                 bib.setFullAuthors(bibo.getFullAuthors());
             }
         }
+        bib.setStatus(bibo.getStatus());
     }
 
 	/**
@@ -4555,5 +4564,13 @@ public class BiblioItem {
 
     public void addDiscardedPieceTokens(List<LayoutToken> pieceToken) {
         this.discardedPiecesTokens.add(pieceToken);
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

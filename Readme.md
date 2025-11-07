@@ -4,14 +4,13 @@
 [![Coverage Status](https://coveralls.io/repos/kermitt2/grobid/badge.svg)](https://coveralls.io/r/kermitt2/grobid)
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
 [![GitHub release](https://img.shields.io/github/release/kermitt2/grobid.svg)](https://github.com/kermitt2/grobid/releases/)
-[![Demo grobid.science-miner.com](https://img.shields.io/website-up-down-green-red/https/grobid.science-miner.com.svg)](https://grobid.science-miner.com)
+[![Demo lfoppiano-grobid.hf.space](https://img.shields.io/website-up-down-green-red/https/lfoppiano-grobid.hf.space.svg)](https://lfoppiano-grobid.hf.space)
 [![Docker Hub](https://img.shields.io/docker/pulls/grobid/grobid.svg)](https://hub.docker.com/r/grobid/grobid/ "Docker Pulls")
 [![Docker Hub](https://img.shields.io/docker/pulls/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Docker Pulls")
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/kermitt2/grobid)
 
-## GROBID documentation
-
-Visit the [GROBID documentation](https://grobid.readthedocs.io) for more detailed information.
+> [!TIP]
+> Getting started [here](https://grobid.readthedocs.io/en/latest/getting_started/).
 
 ## Summary
 
@@ -40,6 +39,18 @@ In a complete PDF processing, GROBID manages 68 final labels used to build relat
 GROBID includes a comprehensive [web service API](https://grobid.readthedocs.io/en/latest/Grobid-service/), [Docker images](https://grobid.readthedocs.io/en/latest/Grobid-docker/), [batch processing](https://grobid.readthedocs.io/en/latest/Grobid-batch/), a JAVA API, a generic [training and evaluation framework](https://grobid.readthedocs.io/en/latest/Training-the-models-of-Grobid/) (precision, recall, etc., n-fold cross-evaluation), systematic [end-to-end benchmarking](https://grobid.readthedocs.io/en/latest/Benchmarking/) on thousand documents and the semi-automatic generation of training data.
 
 GROBID can be considered as production ready. Deployments in production includes ResearchGate, Semantic Scholar, HAL Research Archive, scite.ai, Academia.edu, Internet Archive Scholar, INIST-CNRS, CERN (Invenio), and many more. The tool is designed for speed and high scalability in order to address the full scientific literature corpus.
+
+## Requirements
+
+- **OpenJDK 21** for building GROBID from source
+- Linux (64 bits) or macOS (Intel and ARM) for native builds
+- [Optional] Python 3.8+ with JEP for Deep Learning models 
+- [Optional] NVIDIA GPU with CUDA support for faster Deep Learning models
+
+> [!TIP]
+> We bump to OpenJDK 21, however some dependencies may require an earlier version, so we might increase the runtime backward compatibility to JDK 17+ in the next release, > 0.8.2. 
+
+For detailed installation instructions, including JDK setup and platform-specific requirements, see the [Installation documentation](doc/Install-Grobid.md).
 
 GROBID should run properly "out of the box" on Linux (64 bits) and macOS (Intel and ARM). We cannot ensure currently support for Windows as we did before (help welcome!).
 
@@ -138,9 +149,16 @@ ej-technologies provided us a free open-source license for its Java Profiler. Cl
 
 [![JProfiler](doc/img/jprofiler_medium.png)](http://www.ej-technologies.com/products/jprofiler/overview.html)
 
+JetBrains provided us with a free licence for the development: 
+
+[![JetBrains logo.](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg)](https://jb.gg/OpenSource)
+
+
 ## How to cite
 
-If you want to cite this work, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier. For example, with BibTeX:
+If you want reference this software, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier.
+
+For example, the BibTeX would look like this:
 
 ```bibtex
 @misc{GROBID,
@@ -152,5 +170,18 @@ If you want to cite this work, please refer to the present GitHub project, toget
     eprint = {1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c}
 }
 ```
+
+> [!TIP]
+> To fetch the latest SWID you can use the following command line (requires `curl` and `jq`):
+    
+```
+curl -s "https://archive.softwareheritage.org/api/1/origin/https://github.com/kermitt2/grobid/visit/latest/" \
+  -H "Accept: application/json" | jq -r '.snapshot' | \
+  xargs -I {} curl -s "https://archive.softwareheritage.org/api/1/snapshot/{}/" | \
+  jq -r '.branches["refs/heads/master"].target' | \
+  xargs -I {} echo "swh:1:dir:{}"
+swh:1:dir:324a18113b0c7624a66a21550bd0e8522e328b4e
+```
+
 
 See the [GROBID documentation](https://grobid.readthedocs.org/en/latest/References) for more related resources. 

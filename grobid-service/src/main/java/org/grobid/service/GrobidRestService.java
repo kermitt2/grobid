@@ -3,15 +3,19 @@ package org.grobid.service;
 import com.codahale.metrics.annotation.Timed;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriInfo;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.AbstractEngineFactory;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.engines.Engine;
 import org.grobid.core.factory.GrobidPoolingFactory;
-
+import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.service.data.ServiceInfo;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
@@ -24,8 +28,6 @@ import org.grobid.service.util.ZipUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.*;
 import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -327,9 +329,9 @@ public class GrobidRestService implements GrobidPaths {
                 inputStream,
                 startPage,
                 endPage,
-                generate,
-                segment,
-                teiCoordinates
+                false,
+                false,
+                new ArrayList<>()
             );
         }
 
@@ -375,7 +377,7 @@ public class GrobidRestService implements GrobidPaths {
         if (consolidate != null) {
             try {
                 consol = Integer.parseInt(consolidate);
-            } catch(Exception e) {
+            } catch (Exception e) {
                 LOGGER.warn("Invalid consolidation parameter (should be an integer): " + consolidate, e);
             }
         }
@@ -738,12 +740,13 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response processAnnotatePDF(
         @FormDataParam(INPUT) InputStream inputStream,
-        @FormDataParam("name") String fileName,
+        @FormDataParam(INPUT) FormDataBodyPart inputBodyPart,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidateHeader,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_CITATIONS) String consolidateCitations,
         @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations,
         @DefaultValue("0") @FormDataParam(INCLUDE_RAW_CITATIONS) String includeRawCitations,
         @FormDataParam("type") int type) throws Exception {
+        String fileName = inputBodyPart.getFormDataContentDisposition().getFileName();
         int consolHeader = validateConsolidationParam(consolidateHeader);
         int consolCitations = validateConsolidationParam(consolidateCitations);
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
@@ -803,8 +806,8 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.TEXT_PLAIN)
     @POST
     public Response processFundingAcknowledgementPost(@FormParam(TEXT) String text,
-        @DefaultValue("0") @FormParam("generateIDs") String generateIDs,
-        @DefaultValue("0") @FormParam("segmentSentences") String segmentSentences) {
+                                                      @DefaultValue("0") @FormParam("generateIDs") String generateIDs,
+                                                      @DefaultValue("0") @FormParam("segmentSentences") String segmentSentences) {
         boolean generate = validateGenerateIdParam(generateIDs);
         boolean segment = validateGenerateIdParam(segmentSentences);
         return restProcessString.processFundingAcknowledgement(text, generate, segment);
@@ -852,12 +855,20 @@ public class GrobidRestService implements GrobidPaths {
         return restProcessTraining.getModel(model, architecture);
     }
 
-    @Path(PATH_GET_FIGURES_AND_TABLES)
+    @Path(PATH_CREATE_TRAINING)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces("application/zip")
     @POST
-    public Response getFiguresAndTables(
-        @FormDataParam(INPUT) InputStream inputStream) throws Exception {
-        return restProcessFiles.getFigures(inputStream);
+    public Response createTraining_post(
+        @FormDataParam(INPUT) InputStream inputStream,
+        @FormDataParam(INPUT) FormDataBodyPart inputBodyPart,
+        @FormDataParam(FLAVOR) String flavor
+    ) {
+        GrobidModels.Flavor validatedModelFlavor = validateModelFlavor(flavor);
+        String fileName = inputBodyPart.getFormDataContentDisposition().getFileName();
+        return restProcessTraining.createTraining(
+            inputStream, fileName, validatedModelFlavor
+        );
     }
+
 }
