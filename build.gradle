@@ -52,7 +52,7 @@ apply plugin: 'jacoco'
 apply plugin: 'com.github.kt3k.coveralls'
 
 jacoco {
-    toolVersion = '0.8.8'
+    toolVersion = '0.8.13'
 }
 
 
@@ -61,12 +61,9 @@ def getGitRevision() {
     try {
         def stdout = new ByteArrayOutputStream()
         println("Checking git under ${rootProject.rootDir}")
-        project.exec {
-            workingDir rootProject.rootDir
-            commandLine 'git', 'describe', '--tags', '--always', '--first-parent'
-            standardOutput = stdout
-        }
-        gitRevision = stdout.toString().trim()
+        def proc = ['git', 'describe', '--tags', '--always', '--first-parent'].execute(null, rootProject.rootDir)
+        proc.waitFor()
+        gitRevision = proc.in.text.trim()
         println "Current Git revision: ${gitRevision}"
     } catch (Exception e) {
         println "Could not get Git revision: ${e}"
@@ -78,8 +75,8 @@ project.ext.gitRevision = getGitRevision()
 
 // Create a task to expose the revision for other tasks
 tasks.register('collectGitRevision') {
-    project.ext.gitRevision = getGitRevision()
     doLast {
+        project.ext.gitRevision = getGitRevision()
         println "Git revision: ${project.ext.gitRevision}"
     }
 }
@@ -130,9 +127,11 @@ subprojects {
     repositories {
         mavenCentral()
         maven {
-            url new File(rootProject.rootDir, "grobid-core/localLibs")
+            url = new File(rootProject.rootDir, "grobid-core/localLibs")
         }
-        maven { url "https://jitpack.io" }
+        maven {
+            url = "https://jitpack.io"
+        }
     }
 
     configurations {
@@ -276,7 +275,7 @@ project("grobid-core") {
     shadowJar {
         archiveClassifier = 'onejar'
         mergeServiceFiles()
-        zip64 true
+        zip64 = true
         manifest {
             attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
         }
@@ -317,7 +316,7 @@ project("grobid-core") {
 
 project("grobid-home") {
     tasks.register('packageGrobidHome', Zip) {
-        zip64 true
+        zip64 = true
         from('.') {
             include("config/*")
             include("language-detection/**")
@@ -398,7 +397,7 @@ project(":grobid-service") {
     shadowJar {
         archiveClassifier = 'onejar'
         mergeServiceFiles()
-        zip64 true
+        zip64 = true
         manifest {
             attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
         }
@@ -468,7 +467,7 @@ project(":grobid-trainer") {
     shadowJar {
         archiveClassifier = 'onejar'
         mergeServiceFiles()
-        zip64 true
+        zip64 = true
         manifest {
             attributes 'Main-Class': 'org.grobid.trainer.TrainerRunner'
         }
@@ -673,7 +672,7 @@ tasks.coveralls {
 }
 
 wrapper {
-    gradleVersion "9.0.0"
+    gradleVersion = "9.0.0"
 }
 
 build.dependsOn project.getSubprojects().collect({ it.getTasks().getByName("build") })
