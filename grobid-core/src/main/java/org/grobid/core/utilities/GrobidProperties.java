@@ -538,9 +538,9 @@ public class GrobidProperties {
      * @return number of threads
      */
     public static Integer getWapitiNbThreads() {
-        Integer nbThreadsConfig = Integer.valueOf(grobidConfig.grobid.wapiti.nbThreads);
-        if (nbThreadsConfig.intValue() == 0) {
-            return Integer.valueOf(Runtime.getRuntime().availableProcessors());
+        Integer nbThreadsConfig = grobidConfig.grobid.wapiti.nbThreads;
+        if (nbThreadsConfig == 0) {
+            return Runtime.getRuntime().availableProcessors();
         }
         return nbThreadsConfig;
     }
@@ -577,8 +577,6 @@ public class GrobidProperties {
 
     /**
      * Sets if a language id shall be used, given in the grobid-property file.
-     *
-     * @param useLanguageId true, if a language id shall be used
      */
     /*public static void setUseLanguageId(final String useLanguageId) {
         setPropertyValue(GrobidPropertyKeys.PROP_USE_LANG_ID, useLanguageId);
@@ -740,8 +738,9 @@ public class GrobidProperties {
      * @return the consolidation service to be used
      */
     public static GrobidConsolidationService getConsolidationService() {
-        if (grobidConfig.grobid.consolidation.service == null)
+        if (grobidConfig.grobid.consolidation.service == null) {
             grobidConfig.grobid.consolidation.service = "crossref";
+        }
         return GrobidConsolidationService.get(grobidConfig.grobid.consolidation.service);
     }
 
@@ -753,11 +752,19 @@ public class GrobidProperties {
     }
 
     /**
-     * Get the timeout in seconds for consolidation service requests.
+     * Get the Crossref timeout in seconds for consolidation service requests.
      * @return timeout in seconds
      */
-    public static int getConsolidationTimeout() {
-        return grobidConfig.grobid.consolidation.timeoutSec;
+    public static int getCrossrefConsolidationTimeout() {
+        return grobidConfig.grobid.consolidation.crossref.timeoutSec;
+    }
+
+    /**
+     * Get the Glutton timeout in seconds for consolidation service requests.
+     * @return timeout in seconds
+     */
+    public static int getGluttonConsolidationTimeout() {
+        return grobidConfig.grobid.consolidation.glutton.timeoutSec;
     }
 
     /**

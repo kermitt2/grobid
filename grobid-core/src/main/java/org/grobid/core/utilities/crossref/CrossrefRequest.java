@@ -92,7 +92,7 @@ public class CrossrefRequest<T extends Object> extends Observable {
         }
 
         CloseableHttpClient httpclient = null;
-        int timeout = GrobidProperties.getConsolidationTimeout() * 1000; // Convert to milliseconds
+        int timeout = GrobidProperties.getCrossrefConsolidationTimeout() * 1000; // Convert to milliseconds
         RequestConfig requestConfig = RequestConfig.custom()
                 .setCookieSpec(CookieSpecs.STANDARD)
                 .setConnectTimeout(timeout)

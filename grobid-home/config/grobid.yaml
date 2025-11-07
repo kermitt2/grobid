@@ -27,22 +27,23 @@ grobid:
     # "glutton" for https://github.com/kermitt2/biblio-glutton
     service: "crossref"
     #service: "glutton"
-    timeoutSec: 60
     # timeout for the REST API call, reduce it if you want to reduce
     # the waiting time for the Grobid service.
     # NOTE: setting a low timeout and then hammer CrossRef will get you banned,
     #   so be careful and polite with this setting!
     glutton:
       #url: "https://cloud.science-miner.com/glutton"
-      url: "http://localhost:8080" 
+      url: "http://localhost:8080"
+      timeoutSec: 60
     crossref:
       mailto: 
-      # to use crossref web API, you need normally to use it politely and to indicate an email address here, e.g. 
-      #mailto: "toto@titi.tutu"
+      # NOTE! To use the Crossref web API, you need normally to use it politely
+      # and to indicate an email address here, e.g. mailto: "toto@titi.tutu"
       token:
       # to use Crossref metadata plus service (available by subscription)
       #token: "yourmysteriouscrossrefmetadataplusauthorizationtokentobeputhere"
-
+      timeoutSec: 10
+      # Timeout for CrossRef API calls (in seconds) - USE with CARE!
   proxy:
     # proxy to be used when doing external call to the consolidation service
     host: 

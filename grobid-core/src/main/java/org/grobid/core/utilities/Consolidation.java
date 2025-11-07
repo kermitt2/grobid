@@ -270,7 +270,7 @@ public class Consolidation {
                 arguments,
                 workDeserializer,
                 threadId,
-                new CrossrefRequestListener<BiblioItem>(0) {
+                new CrossrefRequestListener<>(0) {
 
                 @Override
                 public void onSuccess(List<BiblioItem> res) {
