@@ -122,9 +122,11 @@ COPY --from=builder /opt/java/openjdk ${JAVA_HOME}
 # install jep 
 RUN pip3 install jep==4.2.2
 
-# Get the Python version dynamically and set LD_LIBRARY_PATH accordingly
-ENV PYTHON_VERSION=$(python3 --version | cut -d' ' -f2 | cut -d'.' -f1,2)
+# set python version matching TF base image python version
+ENV PYTHON_VERSION=3.8.10
+# set LD_LIBRARY_PATH accordingly
 ENV LD_LIBRARY_PATH=/usr/local/lib/python${PYTHON_VERSION}/dist-packages/jep:grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep:${LD_LIBRARY_PATH}
+
 # remove libjep.so because we are providing our own version in the virtual env above
 RUN rm /opt/grobid/grobid-home/lib/lin-64/jep/libjep.so
 
