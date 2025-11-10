@@ -62,7 +62,7 @@
 
 			<body>(a) <lb/>(b) <lb/>(c) <lb/>(d) <lb/>(e) <lb/>(f) <lb/>(g) <lb/>(h) <lb/>Fig. 5 Graph Of Accuracy For Xgboost Model Testing With Backward Elimination (BE) (a) Drop+BE+Bayesian, (b) Drop+ <lb/>BE+Random, (c) Mean+ BE+Bayesian, (d) Mean+ BE+Random, (e) Median+ BE+Bayesian, (f) Median+ BE+Random, (g) <lb/>Ffill+ BE+Bayesian, (h) Ffill+ BE+Random <lb/>IV. DISCUSSION <lb/>Several research including [9], had examined the implementation results of seven machine learning algorithms <lb/>including SVM, Decision Tree, Random Forest, Naive Bayes, Logistic Regression, Adaptive Boosting, and Extreme <lb/>Gradient Boosting for predicting liver disease. Among the algorithms, Extreme Gradient was used, which showed the <lb/>highest accuracy reaching 81% [10]. Additionally, XGBoost showed superior accuracy of 95% in predicting hepatitis <lb/>B surface antigen zero-clearance [11]. The use of this model for liver disease prediction obtained the highest accuracy <lb/></body>
 
-			<note place="footnote">Pardede &amp; Nurrohmah <lb/>Journal of Information Systems Engineering and Business Intelligence, 2024, 10 (2), 302-313 <lb/></note>
+			<note place="headnote">Pardede &amp; Nurrohmah <lb/>Journal of Information Systems Engineering and Business Intelligence, 2024, 10 (2), 302-313 <lb/></note>
 
 			<page>312 <lb/></page>
 

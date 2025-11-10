@@ -112,7 +112,7 @@
 
 			<note place="footnote">Nature Genetics <lb/></note>
 
-		    <note place="footnote">Article <lb/>https://doi.org/10.1038/s41588-024-01785-9 <lb/></note>
+		    <note place="headnote">Article <lb/>https://doi.org/10.1038/s41588-024-01785-9 <lb/></note>
 
 			<div type="annex">0 <lb/>500 <lb/>1000 <lb/>1500 <lb/>2000 <lb/>Bladder <lb/>Breast <lb/>Colorectum <lb/>Kidney <lb/>Lung <lb/>Melanoma <lb/>Oesophagus <lb/>Ovary <lb/>Pancreas <lb/>Prostate <lb/>Testis <lb/>Uterus <lb/>Site <lb/>Number <lb/>0 <lb/>10000 <lb/>20000 <lb/>30000 <lb/>40000 <lb/>50000 <lb/>Bladder <lb/>Breast <lb/>Colorectum <lb/>Kidney <lb/>Lung <lb/>Melanoma <lb/>Oesophagus <lb/>Ovary <lb/>Pancreas <lb/>Prostate <lb/>Testis <lb/>Uterus <lb/>Site <lb/>Number <lb/>Genomics England <lb/>NHS England <lb/>Extended Data Fig. 1 | Comparison of number of samples per tumour type in the pan-cancer cohort compared to all cancer diagnosed in England in 2019. Upper <lb/>panel: the 100kGP cohort; lower panel: incidence of the different cancer types reported in the general population. <lb/></div>
 
@@ -136,7 +136,7 @@
 
 			<note place="footnote">Nature Genetics <lb/></note>
 
-		<note place="footnote">Article <lb/>https://doi.org/10.1038/s41588-024-01785-9 <lb/></note>
+		<note place="headnote">Article <lb/>https://doi.org/10.1038/s41588-024-01785-9 <lb/></note>
 
 			<div type="annex">ColoRect-AdenoCA <lb/>Uterus-AdenoCA <lb/>Bladder-TCC <lb/>Breast-DuctalCA <lb/>Breast-LobularCA <lb/>Lung-AdenoCA <lb/>HeadNeck-SCC <lb/>Lung-SCC <lb/>Kidney-CCRCC <lb/>Skin-Melanoma <lb/>CNS-GBM-IDHwt <lb/>Ovary-AdenoCA <lb/>CNS-Oligo <lb/>Prost-AdenoCA <lb/>Connective-Myxofibro <lb/>Panc-AdenoCA <lb/>Stomach-AdenoCA <lb/>BileDuct-AdenoCA <lb/>Connective-Leiomyo <lb/>Eso-AdenoCA <lb/>Lung-LargeCell <lb/>Lung-SmallCell <lb/>Connective-Liposarc <lb/>Connective-SCS <lb/>Kidney-ChRCC <lb/>CNS-Menin <lb/>Kidney-PRCC <lb/>Testis-GCT <lb/>Mes-Mesothelioma <lb/>Connective-Osteosarc <lb/>Connective-SS <lb/>Liver-HCC <lb/>Connective-Chondro <lb/>CNS-Astro <lb/>CNS-GBM-IDHmut <lb/>Extended Data Fig. 5 | Hierarchical clustering of tumour types based on P-value of candidate driver genes across the 35 different tumour types. Clustering <lb/>performed using the hclust function in R. <lb/></div>
 

@@ -22,7 +22,7 @@
 
 			<page>3 <lb/></page>
 
-			<note place="footnote">Environ. Res. Lett. 15 (2020) 034047 <lb/></note>
+			<note place="headnote">Environ. Res. Lett. 15 (2020) 034047 <lb/></note>
 
 			<body>It has already been demonstrated that non-trivial <lb/>biases exist in those CMIP3 and CMIP5 models that do <lb/>not have falling ice radiative effects, with the resulting <lb/>simulations exhibiting excessive precipitation, too-<lb/>weak low-level winds, and underestimated SSS over <lb/>Pacific trade-wind regions (Li et al 2014, 2016, 2018). <lb/>Here we investigate how these biases affect the <lb/>simulated AOD through sensitivity studies performed <lb/>using CESM1 as described in the following section. <lb/>3.2. Sensitivity results from falling ice radiative <lb/>effects using CESM1 <lb/>Using a pair of sensitivity tests turning on or off falling <lb/>ice radiative effects in CESM1-CAM5, we examine the <lb/>Figure 2. (a)-(j) Difference maps between the CMIP5 CGCM simulated and observed estimate of long term annual domain mean <lb/>AOD. (k) Annual domain mean AOD map from satellite MISR and MODIS ((MISR + MODIS)/2; 2001-2005 average). <lb/>Figure 1. Annual (ANN) domain mean AOD for oceanic regions between 45S and 45N from (a) MISR and (b) MODIS, based on the <lb/>means from 2001 to 2005. The AOD difference between satellite observations are shown in (c) MODIS AOD minus MISR AOD. The <lb/>data resolution is 1°× 1°. <lb/></body>
 
@@ -52,7 +52,7 @@
 
 			<page>8 <lb/></page>
 
-			<note place="footnote">Environ. Res. Lett. 15 (2020) 034047 <lb/></note>
+			<note place="headnote">Environ. Res. Lett. 15 (2020) 034047 <lb/></note>
 
 			<div type="acknowledgement">Acknowledgments <lb/>YCC acknowledge RCEC, Academia Sinica for sup-<lb/>porting this study. The authors acknowledge Marcin <lb/>Witek for his review and comments. The contribution <lb/>by JLL, DJD, MJG, JHJ, and OVK to this study was <lb/>carried out at the Jet Propulsion Laboratory, California <lb/>Institute of Technology, under contracts of ATMOS <lb/>COMP 2013 (NNH12ZDA001N-CCST) with the <lb/>National Aeronautics and Space Administration <lb/>(NASA). This work has been supported in part by the <lb/>NASA Making Earth System Data Records for Use in <lb/>Research Environments (MEaSUREs) programs. The <lb/>authors acknowledge PCMDI/DOE and the WCRP&apos;s <lb/>WGCM for their roles in making CMIP3/CMIP5 <lb/>available. MODIS aerosol data were downloaded using <lb/>the GES-DISC Interactive Online Visualization and <lb/>Analysis Infrastructure, a part of the NASA&apos;s Goddard <lb/>Earth Sciences Data and Information Services Center. <lb/>MISR aerosol data (MIL3MAE.004) were obtained <lb/>from the NASA Langley Research Center Atmospheric <lb/>Science Data center (ASDC). <lb/></div>
 
