@@ -411,7 +411,7 @@ public class GrobidProperties {
     }
 
     public static String getGluttonUrl() {
-        if (grobidConfig.grobid.consolidation.glutton.url == null || grobidConfig.grobid.consolidation.glutton.url.trim().length() == 0)
+        if (StringUtils.isEmpty(grobidConfig.grobid.consolidation.glutton.url))
             return null;
         else
             return grobidConfig.grobid.consolidation.glutton.url;
@@ -756,6 +756,10 @@ public class GrobidProperties {
      * @return timeout in seconds
      */
     public static int getCrossrefConsolidationTimeout() {
+        if (grobidConfig.grobid.consolidation.crossref == null) {
+            LOGGER.warn("Crossref consolidation configuration is missing. Using default timeout of 60 seconds.");
+            return 60;
+        }
         return grobidConfig.grobid.consolidation.crossref.timeoutSec;
     }
 
@@ -764,6 +768,10 @@ public class GrobidProperties {
      * @return timeout in seconds
      */
     public static int getGluttonConsolidationTimeout() {
+        if (grobidConfig.grobid.consolidation.glutton == null) {
+            LOGGER.warn("Biblio-glutton consolidation configuration is missing. Using default timeout of 60 seconds.");
+            return 60;
+        }
         return grobidConfig.grobid.consolidation.glutton.timeoutSec;
     }
 

@@ -131,7 +131,7 @@ public class CrossrefClient implements Closeable {
 	 * @param listener		catch response from request
 	 */
 	public <T extends Object> void pushRequest(String model, Map<String, String> params, CrossrefDeserializer<T> deserializer,
-			long threadId, CrossrefRequestListener<T> listener) throws URISyntaxException, ClientProtocolException, IOException {
+			long threadId, CrossrefRequestListener<T> listener) {
 		CrossrefRequest<T> request = new CrossrefRequest<T>(model, params, deserializer);
 		synchronized(this) {
 			this.<T>pushRequest(request, listener, threadId);
