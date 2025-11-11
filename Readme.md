@@ -40,6 +40,18 @@ GROBID includes a comprehensive [web service API](https://grobid.readthedocs.io/
 
 GROBID can be considered as production ready. Deployments in production includes ResearchGate, Semantic Scholar, HAL Research Archive, scite.ai, Academia.edu, Internet Archive Scholar, INIST-CNRS, CERN (Invenio), and many more. The tool is designed for speed and high scalability in order to address the full scientific literature corpus.
 
+## Requirements
+
+- **OpenJDK 21** for building GROBID from source
+- Linux (64 bits) or macOS (Intel and ARM) for native builds
+- [Optional] Python 3.8+ with JEP for Deep Learning models 
+- [Optional] NVIDIA GPU with CUDA support for faster Deep Learning models
+
+> [!TIP]
+> We bump to OpenJDK 21, however some dependencies may require an earlier version, so we might increase the runtime backward compatibility to JDK 17+ in the next release, > 0.8.2. 
+
+For detailed installation instructions, including JDK setup and platform-specific requirements, see the [Installation documentation](doc/Install-Grobid.md).
+
 GROBID should run properly "out of the box" on Linux (64 bits) and macOS (Intel and ARM). We cannot ensure currently support for Windows as we did before (help welcome!).
 
 GROBID uses Deep Learning models relying on the [DeLFT](https://github.com/kermitt2/delft) library, a task-agnostic Deep Learning framework for sequence labelling and text classification, via [JEP](https://github.com/ninia/jep). GROBID can run Deep Learning architectures (RNN or transformers with or without layout feature channels) or with feature engineered CRF (default), or any mixtures of CRF and DL to balance scalability and accuracy. These models use joint text and visual/layout information provided by [pdfalto](https://github.com/kermitt2/pdfalto). 

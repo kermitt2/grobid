@@ -1,19 +1,9 @@
-buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        maven {
-            url 'https://plugins.gradle.org/m2/'
-        }
-        gradlePluginPortal()
-    }
-    dependencies {
-        classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.12.0'
-        classpath "gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0"
-        classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21"
-        classpath "net.researchgate:gradle-release:3.0.2"
-    }
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.0.0' apply false
+    id 'com.gradleup.shadow' version '8.3.8' apply false
+    id 'com.adarshr.test-logger' version '4.0.0' apply false
+    id 'com.github.kt3k.coveralls' version '2.12.2' apply false
+    id 'net.researchgate.release' version '3.1.0' apply false
 }
 
 repositories {
@@ -59,9 +49,10 @@ def getJavaLibraryPath = {
 }
 
 apply plugin: 'jacoco'
+apply plugin: 'com.github.kt3k.coveralls'
 
 jacoco {
-    toolVersion = '0.8.8'
+    toolVersion = '0.8.13'
 }
 
 
@@ -70,12 +61,9 @@ def getGitRevision() {
     try {
         def stdout = new ByteArrayOutputStream()
         println("Checking git under ${rootProject.rootDir}")
-        exec {
-            workingDir rootProject.rootDir
-            commandLine 'git', 'describe', '--tags', '--always', '--first-parent'
-            standardOutput = stdout
-        }
-        gitRevision = stdout.toString().trim()
+        def proc = ['git', 'describe', '--tags', '--always', '--first-parent'].execute(null, rootProject.rootDir)
+        proc.waitFor()
+        gitRevision = proc.in.text.trim()
         println "Current Git revision: ${gitRevision}"
     } catch (Exception e) {
         println "Could not get Git revision: ${e}"
@@ -87,18 +75,13 @@ project.ext.gitRevision = getGitRevision()
 
 // Create a task to expose the revision for other tasks
 tasks.register('collectGitRevision') {
-    project.ext.gitRevision = getGitRevision()
     doLast {
+        project.ext.gitRevision = getGitRevision()
         println "Git revision: ${project.ext.gitRevision}"
     }
 }
 
 allprojects {
-    apply plugin: 'java-library'
-    apply plugin: 'base'
-    apply plugin: 'com.github.kt3k.coveralls'
-    apply plugin: 'com.adarshr.test-logger'
-    apply plugin: 'org.jetbrains.kotlin.jvm'
     apply plugin: 'net.researchgate.release'
 
     group = "org.grobid"
@@ -114,6 +97,8 @@ allprojects {
 subprojects {
     apply plugin: 'java'
     apply plugin: 'maven-publish'
+    apply plugin: 'org.jetbrains.kotlin.jvm'
+    apply plugin: 'com.adarshr.test-logger'
 
     publishing {
         publications {
@@ -127,29 +112,31 @@ subprojects {
         }
     }
 
-    sourceCompatibility = 1.11
-    targetCompatibility = 1.11
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+    }
 
-    tasks.withType(KotlinCompile).configureEach {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
         kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_11
+            jvmTarget = "21"
         }
     }
 
     repositories {
         mavenCentral()
         maven {
-            url new File(rootProject.rootDir, "grobid-core/localLibs")
+            url = new File(rootProject.rootDir, "grobid-core/localLibs")
         }
-        maven { url "https://jitpack.io" }
+        maven {
+            url = "https://jitpack.io"
+        }
     }
 
     configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
         all*.exclude group: 'log4j', module: "log4j"
-        implementation.setCanBeResolved(true)
     }
 
     ext {
@@ -173,9 +160,9 @@ subprojects {
             because("Only needed to run tests in a version of IntelliJ IDEA that bundles older versions")
         }
         testImplementation('org.junit.jupiter:junit-jupiter')
-        testImplementation 'org.easymock:easymock:5.1.0'
-        testImplementation "org.powermock:powermock-api-easymock:2.0.7"
-        testImplementation "org.powermock:powermock-module-junit4:2.0.7"
+        testImplementation 'org.easymock:easymock:5.6.0'
+        testImplementation "org.powermock:powermock-api-easymock:2.0.9"
+        testImplementation "org.powermock:powermock-module-junit4:2.0.9"
         testImplementation "org.xmlunit:xmlunit-matchers:2.10.0"
         testImplementation "org.xmlunit:xmlunit-legacy:2.10.0"
         testImplementation "org.hamcrest:hamcrest-all:1.3"
@@ -203,7 +190,7 @@ subprojects {
     tasks.register('sourceJar', Jar) {
         description = 'A jar that contains source code'
         archiveClassifier = 'sources'
-        from project.sourceSets.main.java
+        from sourceSets.main.allSource
     }
 
     artifacts {
@@ -211,7 +198,7 @@ subprojects {
         archives jar
     }
 
-    test {
+    tasks.withType(Test) {
         useJUnitPlatform()
 
         testLogging.showStandardStreams = true
@@ -223,7 +210,11 @@ subprojects {
 
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED",
-                "--add-opens", "java.base/java.io=ALL-UNNAMED", "--add-opens", "java.xml/jdk.xml.internal=ALL-UNNAMED"
+                "--add-opens", "java.base/java.io=ALL-UNNAMED", 
+                "--add-opens", "java.xml/jdk.xml.internal=ALL-UNNAMED",
+                // PowerMock compatibility with Java 21 - TODO: Replace PowerMock with Mockito/JUnit Jupiter
+                "--add-opens", "java.base/java.lang=ALL-UNNAMED",
+                "--add-opens", "java.base/java.util=ALL-UNNAMED"
         }
         
         systemProperty "java.library.path", "${javaLibraryPath}"
@@ -233,7 +224,7 @@ subprojects {
 /** SUBPROJECTS **/
 
 project("grobid-core") {
-    apply plugin: 'com.github.johnrengelman.shadow'
+    apply plugin: 'com.gradleup.shadow'
     apply plugin: 'jacoco'
 
     configurations {
@@ -284,7 +275,7 @@ project("grobid-core") {
     shadowJar {
         archiveClassifier = 'onejar'
         mergeServiceFiles()
-        zip64 true
+        zip64 = true
         manifest {
             attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
         }
@@ -325,7 +316,7 @@ project("grobid-core") {
 
 project("grobid-home") {
     tasks.register('packageGrobidHome', Zip) {
-        zip64 true
+        zip64 = true
         from('.') {
             include("config/*")
             include("language-detection/**")
@@ -351,9 +342,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 project(":grobid-service") {
     apply plugin: 'application'
     apply plugin: 'jacoco'
-    apply plugin: 'com.github.johnrengelman.shadow'
+    apply plugin: 'com.gradleup.shadow'
 
-    mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
+    application {
+        mainClass = 'org.grobid.service.main.GrobidServiceApplication'
+    }
 
 
     tasks.run {
@@ -404,7 +397,7 @@ project(":grobid-service") {
     shadowJar {
         archiveClassifier = 'onejar'
         mergeServiceFiles()
-        zip64 true
+        zip64 = true
         manifest {
             attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
         }
@@ -436,7 +429,7 @@ project(":grobid-service") {
 }
 
 project(":grobid-trainer") {
-    apply plugin: 'com.github.johnrengelman.shadow'
+    apply plugin: 'com.gradleup.shadow'
     apply plugin: 'jacoco'
 
     dependencies {
@@ -474,7 +467,7 @@ project(":grobid-trainer") {
     shadowJar {
         archiveClassifier = 'onejar'
         mergeServiceFiles()
-        zip64 true
+        zip64 = true
         manifest {
             attributes 'Main-Class': 'org.grobid.trainer.TrainerRunner'
         }
@@ -541,7 +534,7 @@ project(":grobid-trainer") {
 
     trainerTasks.each { taskName, mainClassName ->
         tasks.create(name: taskName, type: JavaExec, group: 'modeltraining') {
-            main = mainClassName
+            mainClass = mainClassName
             classpath = sourceSets.main.runtimeClasspath
             def javaLibraryPath = getJavaLibraryPath()
             if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
@@ -555,7 +548,7 @@ project(":grobid-trainer") {
 
     complexTrainerTasks.each { taskName, mainClassNameAndArgs ->
         tasks.create(name: taskName, type: JavaExec, group: 'modeltraining') {
-            main = mainClassNameAndArgs[0]
+            mainClass = mainClassNameAndArgs[0]
             classpath = sourceSets.main.runtimeClasspath
             def javaLibraryPath = getJavaLibraryPath()
             if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
@@ -580,7 +573,7 @@ project(":grobid-trainer") {
     // ./gradlew PrepareDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
     // ./gradlew EvaluateDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
     task(jatsEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
-        main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
+        mainClass = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'nlm', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0'), getArg('flavor', '')
         def javaLibraryPath = getJavaLibraryPath()
@@ -593,7 +586,7 @@ project(":grobid-trainer") {
     }
 
     task(teiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
-        main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
+        mainClass = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0'), getArg('flavor', '')
         def javaLibraryPath = getJavaLibraryPath()
@@ -607,7 +600,7 @@ project(":grobid-trainer") {
     }
 
     task(PrepareDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
-        main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
+        mainClass = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'data', getArg('p2t', '.')
         def javaLibraryPath = getJavaLibraryPath()
@@ -622,7 +615,7 @@ project(":grobid-trainer") {
     }
 
     task(EvaluateDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
-        main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
+        mainClass = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'eval', getArg('p2t', '.')
 
@@ -662,16 +655,16 @@ tasks.register("codeCoverageReport", JacocoReport) {
     // XML -> coveralls,
     // HTML -> for manual check
     reports {
-        xml.enabled true
-        html.enabled true
-        csv.enabled true
+        xml.required = true
+        html.required = true
+        csv.required = true
     }
 
 }
 
 /** COVERALLS **/
 coveralls {
-    sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
+        sourceDirs = files(subprojects.findAll { it.plugins.hasPlugin('java') }.sourceSets.main.allSource.srcDirs).files.absolutePath
 }
 
 tasks.coveralls {
@@ -679,7 +672,7 @@ tasks.coveralls {
 }
 
 wrapper {
-    gradleVersion "7.2"
+    gradleVersion = "9.0.0"
 }
 
 build.dependsOn project.getSubprojects().collect({ it.getTasks().getByName("build") })
