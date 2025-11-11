@@ -36,7 +36,7 @@ In case you are a lucky Crossref Metadata Plus subscriber, you can set your auth
 ```yaml
 consolidation:
     crossref:
-      token: "YOUR_CROSSREF_PLUS_TOKEN"
+      token: YOUR_CROSSREF_PLUS_TOKEN
       timeoutSec: 10
 ```
 
