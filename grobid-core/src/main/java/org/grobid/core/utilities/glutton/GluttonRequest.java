@@ -79,7 +79,7 @@ public class GluttonRequest<T extends Object> extends Observable {
         CloseableHttpClient httpclient = null;
         
         // Get the configured timeout in milliseconds
-        int timeout = GrobidProperties.getGluttonConsolidationTimeout();
+        int timeout = GrobidProperties.getGluttonConsolidationTimeout() * 1000; // Convert to milliseconds
         RequestConfig requestConfig = RequestConfig.custom()
             .setConnectTimeout(timeout)
             .setSocketTimeout(timeout)
