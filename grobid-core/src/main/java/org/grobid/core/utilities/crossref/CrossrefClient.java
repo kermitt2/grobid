@@ -116,7 +116,7 @@ public class CrossrefClient implements Closeable {
 			localFutures.add(f);
 			this.futures.put(threadId, localFutures);
 			logger.debug("Add request to thread " + threadId +
-					"active threads count is now " + ((ThreadPoolExecutor) executorService).getActiveCount()
+					"; active threads count is now " + ((ThreadPoolExecutor) executorService).getActiveCount()
 			);
 		}
 	}
