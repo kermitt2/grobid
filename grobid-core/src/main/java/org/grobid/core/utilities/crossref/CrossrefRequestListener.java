@@ -1,5 +1,6 @@
 package org.grobid.core.utilities.crossref;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.joda.time.Duration;
 import java.util.List;
 
@@ -89,7 +90,7 @@ public class CrossrefRequestListener<T extends Object> {
 		if (response == null) 
 			System.out.println("Response is null");
 		
-		if (response != null && response.results != null && response.results.size() > 0)
+		if (response != null && CollectionUtils.isNotEmpty(response.results))
 			onSuccess(response.results);
 		
 		if (response.hasError()) {
