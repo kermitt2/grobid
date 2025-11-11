@@ -1,17 +1,15 @@
 package org.grobid.core.utilities.crossref;
 
-import java.io.Closeable;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.concurrent.*;
-
-import org.apache.http.client.ClientProtocolException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.Closeable;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.*;
 
 /**
  * Request pool to get data from api.crossref.org without exceeding limits
@@ -24,7 +22,7 @@ import org.slf4j.LoggerFactory;
  *
  */
 public class CrossrefClient implements Closeable {
-	public static final Logger logger = LoggerFactory.getLogger(CrossrefClient.class);
+	public static final Logger LOGGER = LoggerFactory.getLogger(CrossrefClient.class);
 
 	protected static volatile CrossrefClient instance;
 
@@ -49,7 +47,7 @@ public class CrossrefClient implements Closeable {
      * Creates a new instance.
      */
 	private static synchronized void getNewInstance() {
-		logger.debug("Get new instance of CrossrefClient");
+		LOGGER.debug("Get new instance of CrossrefClient");
 		instance = new CrossrefClient();
 	}
 
@@ -75,7 +73,7 @@ public class CrossrefClient implements Closeable {
 	}
 
 	public static void printLog(CrossrefRequest<?> request, String message) {
-		logger.debug((request != null ? request+": " : "")+message);
+		LOGGER.debug((request != null ? request+": " : "")+message);
 		//System.out.println((request != null ? request+": " : "")+message);
 	}
 
@@ -115,7 +113,7 @@ public class CrossrefClient implements Closeable {
 				localFutures = new ArrayList<>();
 			localFutures.add(f);
 			this.futures.put(threadId, localFutures);
-			logger.debug("Add request to thread " + threadId +
+			LOGGER.debug("Add request to thread " + threadId +
 					"; active threads count is now " + ((ThreadPoolExecutor) executorService).getActiveCount()
 			);
 		}
@@ -132,9 +130,9 @@ public class CrossrefClient implements Closeable {
 	 */
 	public <T extends Object> void pushRequest(String model, Map<String, String> params, CrossrefDeserializer<T> deserializer,
 			long threadId, CrossrefRequestListener<T> listener) {
-		CrossrefRequest<T> request = new CrossrefRequest<T>(model, params, deserializer);
+		CrossrefRequest<T> request = new CrossrefRequest<>(model, params, deserializer);
 		synchronized(this) {
-			this.<T>pushRequest(request, listener, threadId);
+			this.pushRequest(request, listener, threadId);
 		}
 	}
 
@@ -144,7 +142,7 @@ public class CrossrefClient implements Closeable {
 	public void finish(long threadId) {
 		synchronized(this.futures) {
 			try {
-				List<Future<?>> threadFutures = this.futures.get(Long.valueOf(threadId));
+				List<Future<?>> threadFutures = this.futures.get(threadId);
 				if (threadFutures != null) {
 //System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< thread: " + threadId + " / waiting for " + threadFutures.size() + " requests to finish...");
 					for(Future<?> future : threadFutures) {
@@ -157,7 +155,7 @@ public class CrossrefClient implements Closeable {
 			 	// Preserve interrupt status
 			 	Thread.currentThread().interrupt();
 			} catch (ExecutionException ee) {
-				logger.error("CrossRef request execution fails");
+				LOGGER.error("CrossRef request execution fails");
 			}
 		}
 	}
