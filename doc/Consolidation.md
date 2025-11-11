@@ -26,6 +26,7 @@ For using [reliably and politely the CrossRef REST API](https://github.com/Cross
 consolidation:
     crossref:
       mailto: toto@titi.tutu
+      timeoutSec: 10
 ```
 
 Without indicating this email, the service might be unreliable with some query failures over time. The usage of the CrossRef REST API by GROBID respects the query rate indicated by the service dynamically by each response. Therefore, there should not be any issues reported by CrossRef via this email.  
@@ -35,10 +36,27 @@ In case you are a lucky Crossref Metadata Plus subscriber, you can set your auth
 ```yaml
 consolidation:
     crossref:
-      token: yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vY3Jvc3NyZWYub3JnLyIsImF1ZXYZImVuaGFuY2VkY21zIiwianRpIjoiN0M5ODlFNTItMTFEQS00QkY3LUJCRUUtODFCMUM3QzE0OTZEIn0.NYe3-O066sce9R1fjMzNEvP88VqSEaYdBY622FDiG8Uq
+      token: "YOUR_CROSSREF_PLUS_TOKEN"
+      timeoutSec: 10
 ```
 
-According to Crossref, the token will ensure that said requests get directed to a pool of machines that are reserved for "Plus" SLA users (note: of course the above token is fake). 
+According to Crossref, the token will ensure that said requests get directed to a pool of machines that are reserved for "Plus" SLA users (note: of course the above token is fake).
+
+### Timeouts
+
+Both consolidation services support configurable timeouts to control how long GROBID waits for external API responses:
+
+```yaml
+consolidation:
+    crossref:
+      timeoutSec: 100    # timeout in seconds for CrossRef API calls
+    glutton:
+      timeoutSec: 60    # timeout in seconds for biblio-glutton API calls
+```
+
+!!! warning "Be careful when setting low timeout values"
+    Setting too low timeout values may cause request failures. For CrossRef, be particularly careful as aggressive querying with short timeouts and high volume may result in being banned from the service.   
+
 
 ## biblio-glutton
 
@@ -52,5 +70,6 @@ After installing biblio-glutton, you need to select the glutton matching service
 consolidation:
     service: "glutton"
     glutton:
-      url: "http://localhost:8080" 
+      url: "http://localhost:8080"
+      timeoutSec: 60
 ```
