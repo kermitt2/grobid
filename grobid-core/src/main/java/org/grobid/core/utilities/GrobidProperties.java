@@ -538,7 +538,7 @@ public class GrobidProperties {
      * @return number of threads
      */
     public static Integer getWapitiNbThreads() {
-        Integer nbThreadsConfig = grobidConfig.grobid.wapiti.nbThreads;
+        int nbThreadsConfig = grobidConfig.grobid.wapiti.nbThreads;
         if (nbThreadsConfig == 0) {
             return Runtime.getRuntime().availableProcessors();
         }
