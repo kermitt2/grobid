@@ -15,6 +15,8 @@ public class FieldSpecification {
     public List<String> cerminePath = new ArrayList<String>();
 
     public boolean isTextual = false;
+    public boolean computeDocumentLevelMetrics = false;
+    public boolean mergeMultipleValues = false;
 
     /**
      * This static method instantiates the fields with the appropriate paths
@@ -414,6 +416,8 @@ public class FieldSpecification {
         FieldSpecification dataAvailabilityFulltextField = new FieldSpecification();
         dataAvailabilityFulltextField.fieldName = "availability_stmt";
         dataAvailabilityFulltextField.isTextual = true;
+        dataAvailabilityFulltextField.mergeMultipleValues = true;
+        dataAvailabilityFulltextField.computeDocumentLevelMetrics = true;
         dataAvailabilityFulltextField.grobidPath
             .add("//div[@type=\"availability\"]//text()");
         dataAvailabilityFulltextField.nlmPath
@@ -448,6 +452,38 @@ public class FieldSpecification {
             .add("//funding-statement//text()");
         fulltextFields.add(fundingFulltextField);
         fulltextLabels.add("funding_stmt");
+
+        FieldSpecification conflictFulltextField = new FieldSpecification();
+        conflictFulltextField.fieldName = "conflict_stmt";
+        conflictFulltextField.isTextual = true;
+        conflictFulltextField.mergeMultipleValues = true;
+        conflictFulltextField.computeDocumentLevelMetrics = true;
+        conflictFulltextField.grobidPath.add("//div[@type=\"conflict\"]//text()");
+        //PLOs JATS uses fn-type="con" for contribution and fn-type="conflict" for conflict of interest
+        conflictFulltextField.nlmPath.add("//fn-group[@content-type=\"competing-interest\"]//text()");
+        conflictFulltextField.nlmPath.add("//fn[@fn-type=\"COI\"]//text()");
+        conflictFulltextField.nlmPath.add("//fn[@fn-type=\"conflict\"]//text()");
+        conflictFulltextField.nlmPath.add("//fn[@type=\"conflict\"]//text()");
+        conflictFulltextField.nlmPath.add("//sec[@type=\"conflict\"]//text()");
+        conflictFulltextField.nlmPath.add("//sec[@sec-type=\"COI-statement\"]//text()");
+        conflictFulltextField.nlmPath.add("//sec[@sec-type=\"conflict\"]//text()");
+        fulltextFields.add(conflictFulltextField);
+        fulltextLabels.add("conflict_stmt");
+
+        FieldSpecification contributionFulltextField = new FieldSpecification();
+        contributionFulltextField.fieldName = "contribution_stmt";
+        contributionFulltextField.isTextual = true;
+        contributionFulltextField.mergeMultipleValues = true;
+        contributionFulltextField.computeDocumentLevelMetrics = true;
+        contributionFulltextField.grobidPath.add("//div[@type=\"contribution\"]//text()");
+        // Ambiguous in PLOS JATS: fn-type="con" is used for contribution but also for conflict of interest
+        // We added type="contribution" for such cases
+        contributionFulltextField.nlmPath.add("//fn[@type=\"contribution\"]//text()");
+        contributionFulltextField.nlmPath.add("//fn-group[@content-type=\"author-contribution\"]//text()");
+        contributionFulltextField.nlmPath.add("//sec[@sec-type=\"contribution\"]//text()");
+        contributionFulltextField.nlmPath.add("//sec[@type=\"contribution\"]//text()");
+        fulltextFields.add(contributionFulltextField);
+        fulltextLabels.add("contribution_stmt");
     }
 
     public static String grobidCitationContextId = "//ref[@type=\"bibr\"]/@target";

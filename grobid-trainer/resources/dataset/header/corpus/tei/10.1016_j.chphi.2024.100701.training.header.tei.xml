@@ -1,0 +1,899 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="origin4986366784338208491"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Decoding the historical tale: COVID-19 impact on<lb/> haematological malignancy patients-EPICOVIDEHA insights<lb/> from 2020 to 2022<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jon Salmanton-García, a,b,c,eg, * * Francesco Marchesi, d,eg Francesca Farina, e Barbora Weinbergerová, f Federico Itri, g Julio Dávila-Valls, h Sonia Martín-<lb/>Pérez, h Andreas Glenthøj, i Ditte Stampe Hersby, i Maria Gomes Da Silva, j Raquel Nunes Rodrigues, j Alberto López-García, k Raúl Córdoba, k<lb/> Yavuz M. Bilgin, l Iker Falces-Romero, m,n Shaimaa El-Ashwah, o Ziad Emarah, o,p Caroline Besson, q Milena Kohn, q Jaap Van Doesum, r<lb/> Emanuele Ammatuna, r Monia Marchetti, s Jorge Labrador, t Giovanni Paolo Maria Zambrotta, u,v Luisa Verga, u,v Ozren Jaksic, w Marcio Nucci, x<lb/> Klára Piukovics, y Alba Cabirta-Touzón, z Moraima Jiménez, z Elena Arellano, aa Ildefonso Espigado, aa Ola Blennow, ab Anna Nordlander, ab Stef Meers, ac<lb/> Jens Vian Praet, ad Tommaso Francesco Aiello, ae Carolina Garcia-Vidal, ae Nicola S. Fracchiolla, af Mariarita Sciumè, af Guldane Cengiz Seval, ag<lb/> Pavel Žák, ah Caterina Buquicchio, ai Carlo Tascini, aj Stefanie K. Gräfe, ak Martin Schönlein, al Tatjana Adžić-VUKI ČEVI Ć, am Valentina Bonuomo, an<lb/> Chiara Cattaneo, ao Summiya Nizamuddin, ap Martin Čerňan, aq Gaëtan Plantefeve, ar Romane Prin, as Tomas Szotkovski, aq Graham P. Collins, at<lb/> Michelina Dargenio, au Verena Petzer, av Dominik Wolf, av Natasha Čolović, aw Lucia Prezioso, ax Toni Valković, ay,az,ba Francesco Passamonti, bb Gustavo-<lb/>Adolfo Méndez, bc Uluhan Sili, bd Antonio Vena, be Martina Bavastro, be Alessandro Limongelli, be Rafael F. Duarte, bf Marie-Pierre Ledoux, bg<lb/> Milche Cvetanoski, bh Zlate Stojanoski, bh Marina Machado, bi Josip Batinić, az,bj,bk Gabriele Magliano, bl Monika M. Biernat, bm Nikola Pantić, bn<lb/> Christian Bjørn Poulsen, bo Annarosa Cuccaro, bp,bq Maria Ilaria Del Principe, br Austin Kulasekararaj, bs Irati Ormazabal-Vélez, bt Alessandro Busca, bu<lb/> Fatih Demirkan, bv Marriyam Ijaz, ap Nikolai Klimko, bw Igor Stoma, bx Sofya Khostelidi, bw Noemí Fernández, by Ali S. Omrani, bz Rui Bergantim, ca Nick De<lb/> Jonge, cb Guillemette Fouquet, cc Milan Navrátil, cd Ghaith Abu-Zeinah, ce Michail Samarkos, cf Johan Maertens, cg Cristina De Ramón, ch Anna Guidetti, ci<lb/> Ferenc Magyari, cj Tomás José González-López, ck Tobias Lahmer, cl Olimpia Finizio, cm Natasha Ali, cn László Imre Pinczés, cj Esperanza Lavilla-Rubira, co<lb/> Alessandra Romano, cp Maria Merelli, aj Mario Delia, cq Maria Calbacho, cr Joseph Meletiadis, cs Darko Antić, bn José-Ángel Hernández-Rivas, ct<lb/> Joyce Marques De Almeida, cu Murtadha Al-Khabori, cv Martin Hoenigl, cw,cx Maria Chiara Tisi, cy Nina Khanna, cz Aleksandra Barać, bn Noha Eisa, o,da<lb/> Roberta Di Blasi, db Raphaël Liévin, db Carolina Miranda-Castillo, dc Nathan C. Bahr, dd Sylvain Lamure, de Mario Virgilio Papa, df Ayel Yahya, da<lb/> Avinash Aujayeb, dg Jan Novák, dh Nurettin Erben, di María Fernández-Galán, dj José-María Ribera-Santa Susana, dk Ikhwan Rinaldi, dl Rita Fazzi, dm<lb/> Monica Piedimonte, dn Rémy Duléry, do Yung Gonzaga, dp Andrés Soto-Silva, dq Giuseppe Sapienza, dr Alexandra Serris, ds Ľuboš Drgoňa, dt Ana Groh, du<lb/> Laura Serrano, dv Eleni Gavriilaki, dw Athanasios Tragiannidis, dw Juergen Prattes, cw,cx Nicola Coppola, dx Vladimir Otašević, bn Miloš Mladenović, an<lb/> Mirjana Mitrović, bn Bojana Mišković, dy Pavel Jindra, dz Sofia Zompi, bu Maria Vittoria Sacchi, s Carolin Krekeler, ea Evgenii Shumilov, ea<lb/> Maria Stefania Infante, ct Daniel García-Bordallo, co Gökçe Melis Çolak, bd Antonella Cingolani, eb Jiří Mayer, f Marianna Criscuolo, eb Marietta Nygaard, bo<lb/> Michaela Hanáková, ec Luana Fianchi, eb Zdeněk Ráčil, ec,ed Antonio Giordano, eb Martina Quattrone, eb Matteo Bonanni, eb Philipp Koehler, a,b<lb/> Laman Rahimli, a,b Oliver A. Cornely, a,b,c,ee,eh and Livio Pagano, eb,ef,eh, *</docAuthor>
+	</byline>
+
+	on behalf of
+	<note type="group">the EPICOVIDEHA Registry</note>
+
+	<byline>
+	<affiliation>a<lb/> University of Cologne, Faculty of Medicine, and University Hospital Cologne, Institute of Translational Research, Cologne Excellence<lb/>Cluster on Cellular Stress Responses in Aging-Associated Diseases (CECAD),</affiliation>
+	</byline>
+
+	<address>Cologne, Germany</address>
+
+	<byline>
+	<affiliation>b<lb/> University of Cologne, Faculty of Medicine, University Hospital Cologne, Department I of Internal Medicine, Center for Integrated<lb/> Oncology Aachen Bonn Cologne Duesseldorf (CIO ABCD) and Excellence Center for Medical Mycology (ECMM),</affiliation>
+	</byline>
+
+	<address>Cologne, Germany</address>
+
+	<byline>
+	<affiliation>c<lb/> German Centre for Infection Research (DZIF), Partner Site Bonn-Cologne,</affiliation>
+	</byline>
+
+	<address>Cologne, Germany</address>
+
+	<byline>
+	<affiliation>d<lb/> Hematology and Stem Cell Transplant Unit, IRCCS Regina Elena National Cancer Institute,</affiliation>
+	</byline>
+
+	<address>Rome, Italy</address>
+
+	<byline>
+	<affiliation>e<lb/> IRCCS Ospedale San Raffaele,</affiliation>
+	</byline>
+
+	<address>Milan, Italy</address>
+
+	<byline>
+	<affiliation>f<lb/> Masaryk University and University Hospital Brno -Department of Internal Medicine, Hematology and Oncology,</affiliation>
+	</byline>
+
+	<address>Brno, Czech Republic</address>
+
+	<byline>
+	<affiliation>g<lb/> San Luigi Gonzaga Hospital -Orbassano,</affiliation>
+	</byline>
+
+	<address>Orbassano, Italy</address>
+
+	<byline>
+	<affiliation>h<lb/> Hospital Nuestra Señora de Sonsoles,</affiliation>
+	</byline>
+
+	<address>Ávila, Spain</address>
+
+	<byline>
+	<affiliation>i<lb/> Department of Hematology, Copenhagen University Hospital -Rigshospitalet,</affiliation>
+	</byline>
+
+	<address>Copenhagen, Denmark</address>
+
+	<byline>
+	<affiliation>j<lb/> Portuguese Institute of Oncology,</affiliation>
+	</byline>
+
+	<address>Lisbon, Portugal</address>
+
+	<byline>
+	<affiliation>k<lb/> Fundación Jimenez Diaz University Hospital, Health Research Institute IIS-FJD,</affiliation>
+	</byline>
+
+	<address>Madrid, Spain</address>
+
+	<byline>
+	<affiliation>l<lb/> Department of Internal Medicine, ADRZ,</affiliation>
+	</byline>
+
+	<address>Goes, Netherlands</address>
+
+	<byline>
+	<affiliation>m<lb/> Microbiology and Parasitology Department, University Hospital La Paz,</affiliation>
+	</byline>
+
+	<address>Madrid, Spain</address>
+
+	<byline>
+	<affiliation>n<lb/> CIBERINFEC, Instituto de Salud Carlos III,</affiliation>
+	</byline>
+
+	<address>Madrid, Spain</address>
+
+	<byline>
+	<affiliation>o<lb/> Oncology Center, Mansoura University,</affiliation>
+	</byline>
+
+	<address>Mansoura, Egypt<lb/></address>
+
+
+	*Corresponding author.
+
+    <byline>
+        <affiliation>Fondazione Policlinico Universitario A. Gemelli -IRCCS -Università Cattolica del Sacro Cuore,</affiliation>
+    </byline>
+
+    <address>Largo Francesco Vito 1,<lb/> Rome 00168, Italy.<lb/></address>
+
+
+
+	**Corresponding author.
+
+    <byline>
+        <address>University of Cologne, Faculty of Medicine and University Hospital Cologne, Translational Research, Cologne Excellence<lb/> Cluster on Cellular Stress Responses in Aging-Associated Diseases (CECAD),</address>
+    </byline>
+    <address>Herderstrasse 52, Cologne 50931, Germany.<lb/></address>
+
+	E-mail addresses:
+	<email>livio.pagano@unicatt.it</email>
+
+	(L. Pagano),
+	<email>jon.salmanton-garcia@uk-koeln.de</email>
+
+	(J. Salmanton-García). eg<lb/> Shared junior authorship. eh<lb/> Shared senior authorship.<lb/>
+	<reference>www.thelancet.com Vol 71 May, 2024 1</reference>
+
+	<note type="doctype">Articles</note>
+
+	<byline>
+	<affiliation>p<lb/> King Abdullah Medical City,</affiliation>
+	</byline>
+
+	<address>Makkah, Saudi Arabia</address>
+
+	<byline>
+	<affiliation>q<lb/> Centre Hospitalier de Versailles,</affiliation>
+	</byline>
+
+	<address>Le Chesnay, France;</address>
+
+	<byline>
+	<affiliation>Université Paris-Saclay, UVSQ, Inserm, Équipe &quot;Exposome et Hérédité&quot;, CESP,<lb/></affiliation>
+	</byline>
+
+	<address>Villejuif, France</address>
+
+	<byline>
+	<affiliation>r<lb/> University Medical Center Groningen,</affiliation>
+	</byline>
+
+	<address>Groningen, Netherlands</address>
+
+	<byline>
+	<affiliation>s<lb/> Hematology and Transplant Unit, Azienda Ospedaliera SS Antonio e Biagio e Cesare Arrigo,</affiliation>
+	</byline>
+
+	<address>Alessandria, Italy</address>
+
+	<byline>
+	<affiliation>t<lb/> Department of Hematology, Research Unit, Hospital Universitario de Burgos,</affiliation>
+	</byline>
+
+	<address>Burgos, Spain</address>
+
+    <byline>
+        <affiliation>u<lb/> Azienda Ospedaliera San Gerardo -Monza,</affiliation>
+    </byline>
+
+    <address>Monza, Italy<lb/></address>
+
+	<byline>
+	<affiliation>v Università Milano-Bicocca,</affiliation>
+	</byline>
+
+	<address>Milan, Italy</address>
+
+	<byline>
+	<affiliation>w<lb/> University Hospital Dubrava,</affiliation>
+	</byline>
+
+	<address>Zagreb, Croatia<lb/></address>
+
+	<byline>
+	<affiliation>x Department of Internal Medicine, Federal University of Rio de Janeiro and Grupo Oncoclinicas,</affiliation>
+	</byline>
+
+	<address>Rio de Janeiro, Brazil</address>
+
+	<byline>
+	<affiliation>y<lb/> Department of Internal Medicine, South Division Faculty of Medicine University of Szeged,</affiliation>
+	</byline>
+
+	<address>Szeged, Hungary</address>
+
+	<byline>
+	<affiliation>z<lb/> Department of Hematology, Vall d&apos;Hebron Hospital Universitari, Experimental Hematology, Vall d&apos;Hebron Institute of Oncology<lb/> (VHIO), Vall d&apos;Hebron Barcelona Hospital Campus,</affiliation>
+	</byline>
+
+	<address>Barcelona, Spain</address>
+
+	<byline>
+	<affiliation>aa<lb/> Department of Hematology, University Hospital Virgen Macarena -University Hospital Virgen del Rocío, Instituto de Biomedicina de<lb/> Sevilla (IBIS / CSIC), Universidad de Sevilla (Departamento de Medicina),</affiliation>
+	</byline>
+
+	<address>Seville, Spain</address>
+
+	<byline>
+	<affiliation>ab<lb/> Department of Infectious Diseases, Karolinska University Hospital,</affiliation>
+	</byline>
+
+	<address>Stockholm, Sweden</address>
+
+	<byline>
+	<affiliation>ac<lb/> AZ KLINA,</affiliation>
+	</byline>
+
+	<address>Brasschaat, Belgium</address>
+
+	<byline>
+	<affiliation>ad<lb/> Department of Nephrology and Infectious diseases, AZ Sint-Jan Brugge-Oostende AV,</affiliation>
+	</byline>
+
+	<address>Brugge, Belgium</address>
+
+	<byline>
+	<affiliation>ae<lb/> Department of Infectious Diseases, Hospital Clinic de Barcelona, University of Barcelona, IDIBAPS,</affiliation>
+	</byline>
+
+	<address>Barcelona, Spain</address>
+
+	<byline>
+	<affiliation>af<lb/> Hematology Unit, Fondazione IRCCS Ca&apos; Granda Ospedale Maggiore Policlinico,</affiliation>
+	</byline>
+
+	<address>Milan, Italy</address>
+
+	<byline>
+	<affiliation>ag<lb/> Ankara University,</affiliation>
+	</byline>
+
+	<address>Ankara, Turkey</address>
+
+	<byline>
+	<affiliation>ah<lb/> University Hospital Hradec Králové,</affiliation>
+	</byline>
+
+	<address>Hradec Králové, Czech Republic</address>
+
+	<byline>
+	<affiliation>ai<lb/> Ematologia con Trapianto,</affiliation>
+	</byline>
+
+	<address>Ospedale Dimiccoli Barletta, Barletta, Italy</address>
+
+	<byline>
+	<affiliation>aj<lb/> Azienda Sanitaria Universitaria del Friuli Centrale,</affiliation>
+	</byline>
+
+	<address>Udine, Italy</address>
+
+	<byline>
+	<affiliation>ak<lb/> Department of Medicine, University Medical Center Hamburg-Eppendorf,</affiliation>
+	</byline>
+
+	<address>Hamburg, Germany</address>
+
+	<byline>
+	<affiliation>al<lb/> Department of Oncology, Hematology and Bone Marrow Transplantation with Section of Pneumology, University Medical Center<lb/> Hamburg-Eppendorf,</affiliation>
+	</byline>
+
+	<address>Hamburg, Germany</address>
+
+	<byline>
+	<affiliation>am<lb/> COVID hospital &quot;Batajnica&quot;,</affiliation>
+	</byline>
+
+	<address>Belgrade, Serbia<lb/></address>
+
+    <byline>
+        <affiliation>an Policlinico Borgo Roma Verona,</affiliation>
+    </byline>
+
+    <address>Verona, Italy</address>
+
+	<byline>
+	<affiliation>ao<lb/> Hematology Unit, ASST-Spedali Civili,</affiliation>
+	</byline>
+
+	<address>Brescia, Italy</address>
+
+	<byline>
+	<affiliation>ap<lb/> Shaukat Khanum Memorial Cancer Hospital and Research Centre,</affiliation>
+	</byline>
+
+	<address>Lahore, Pakistan</address>
+
+	<byline>
+	<affiliation>aq<lb/> University Hospital Olomouc,</affiliation>
+	</byline>
+
+	<address>Olomouc, Czech Republic</address>
+
+	<byline>
+	<affiliation>ar<lb/> Head ICU and CRC, Centre Hospitalier Victor DUPOUY,</affiliation>
+	</byline>
+
+	<address>Argenteuil, France</address>
+
+	<byline>
+	<affiliation>as<lb/> CRA from CRC Centre Hospitalier Victor DUPOUY,</affiliation>
+	</byline>
+
+	<address>Argenteuil, France</address>
+
+	<byline>
+	<affiliation>at<lb/> Oxford University Hospitals,</affiliation>
+	</byline>
+
+	<address>Oxford, United Kingdom</address>
+
+	<byline>
+	<affiliation>au<lb/> Ospedale Vito Fazzi,</affiliation>
+	</byline>
+
+	<address>Lecce, Italy</address>
+
+	<byline>
+	<affiliation>av<lb/> Department of Hematology and Oncology, Comprehensive Cancer Center Innsbruck (CCCI), Medical University of Innsbruck (MUI),<lb/></affiliation>
+	</byline>
+
+	<address>Innsbruck, Austria</address>
+
+	<byline>
+	<affiliation>aw<lb/> University Clinical Center Serbia,</affiliation>
+	</byline>
+
+	<address>Belgrade, Serbia</address>
+
+	<byline>
+	<affiliation>ax<lb/> Hospital University of Parma -Hematology and Bone Marrow Unit,</affiliation>
+	</byline>
+
+	<address>Parma, Italy</address>
+
+	<byline>
+	<affiliation>ay<lb/> University Hospital Centre Rijeka,</affiliation>
+	</byline>
+
+	<address>Rijeka, Croatia</address>
+
+	<byline>
+	<affiliation>az<lb/> Croatian Cooperative Group for Hematological Diseases (CROHEM),</affiliation>
+	</byline>
+
+	<address>Croatia</address>
+
+	<byline>
+	<affiliation>ba<lb/> Faculty of Medicine and Faculty of Health Studies of University of Rijeka,</affiliation>
+	</byline>
+
+	<address>Rijeka, Croatia</address>
+
+	<byline>
+	<affiliation>bb<lb/> Department of Medicine and Surgery, University of Insubria and ASST Sette Laghi, Ospedale di Circolo of Varese,</affiliation>
+	</byline>
+
+	<address>Varese, Italy</address>
+
+	<byline>
+	<affiliation>bc<lb/> Hospital Escuela de Agudos Dr. Ramón Madariaga,</affiliation>
+	</byline>
+
+	<address>Posadas, Argentina</address>
+
+	<byline>
+	<affiliation>bd<lb/> Department of Infectious Diseases and Clinical Microbiology, School of Medicine, Marmara University,</affiliation>
+	</byline>
+
+	<address>Istanbul, Turkey</address>
+
+	<byline>
+	<affiliation>be<lb/> Ospedale Policlinico San Martino,</affiliation>
+	</byline>
+
+	<address>Genoa, Italy</address>
+
+	<byline>
+	<affiliation>bf<lb/> Hospital Universitario Puerta de Hierro,</affiliation>
+	</byline>
+
+	<address>Majadahonda, Spain</address>
+
+	<byline>
+	<affiliation>bg<lb/> ICANS,</affiliation>
+	</byline>
+
+	<address>Strasbourg, France</address>
+
+	<byline>
+	<affiliation>bh<lb/> University Clinic of Hematology,</affiliation>
+	</byline>
+
+	<address>Skopje, North Macedonia</address>
+
+	<byline>
+	<affiliation>bi<lb/> Clinical Microbiology and Infectious Diseases Department, Hospital General Universitario Gregorio Marañón,</affiliation>
+	</byline>
+
+	<address>Madrid, Spain</address>
+
+	<byline>
+	<affiliation>bj<lb/> University Hospital Centre Zagreb,</affiliation>
+	</byline>
+
+	<address>Zagreb, Croatia</address>
+
+	<byline>
+	<affiliation>bk<lb/> Faculty of Medicine University of Zagreb,</affiliation>
+	</byline>
+
+	<address>Zagreb, Croatia</address>
+
+	<byline>
+	<affiliation>bl<lb/> ASST Grande Ospedale Metropolitano Niguarda,</affiliation>
+	</byline>
+
+	<address>Milan, Italy</address>
+
+	<byline>
+	<affiliation>bm<lb/> Wroclaw Medical University,</affiliation>
+	</byline>
+
+	<address>Wroclaw, Poland<lb/></address>
+
+	<byline>
+	<affiliation>bn University Clinical Center of Serbia,</affiliation>
+	</byline>
+
+	<address>Belgrade, Serbia</address>
+
+	<byline>
+	<affiliation>bo<lb/> Zealand University Hospital,</affiliation>
+	</byline>
+
+	<address>Roskilde, Denmark</address>
+
+	<byline>
+	<affiliation>bp<lb/> Hematology Unit, Center for Translational Medicine, Azienda USL Toscana NordOvest,</affiliation>
+	</byline>
+
+	<address>Livorno, Italy</address>
+
+	<byline>
+	<affiliation>bq<lb/> National Cancer Institute, Fondazione &apos;G. Pascale&apos;, IRCCS, Hematology-Oncology and Stem Cell Transplantation Unit,</affiliation>
+	</byline>
+
+	<address>Naples, Italy</address>
+
+	<note type="doctype">Articles<lb/></note>
+
+	<page>2<lb/></page>
+
+	www.thelancet.com Vol
+
+	<date>71 May, 2024</date>
+
+	<byline>
+	<affiliation>br<lb/> Hematology, Department of Biomedicine and Prevention, University of Rome Tor Vergata,</affiliation>
+	</byline>
+
+	<address>Rome, Italy</address>
+
+	<byline>
+	<affiliation>bs<lb/> Department of Hematological Medicine, King&apos;s College Hospital NHS Foundation Trust,</affiliation>
+	</byline>
+
+	<address>London, United Kingdom</address>
+
+	<byline>
+	<affiliation>bt<lb/> Hospital Universitario de Navarra,</affiliation>
+	</byline>
+
+	<address>Iruña-Pamplona, Spain</address>
+
+	<byline>
+	<affiliation>bu<lb/> Stem Cell Transplant Center, AOU Citta&apos; della Salute e della Scienza,</affiliation>
+	</byline>
+
+	<address>Turin, Italy</address>
+
+	<byline>
+	<affiliation>bv<lb/> Dokuz Eylul University, Division of Hematology,</affiliation>
+	</byline>
+
+	<address>Izmir, Turkey</address>
+
+	<byline>
+	<affiliation>bw<lb/> North-Western State Medical University named after Iliá Ilich Méchnikov,</affiliation>
+	</byline>
+
+	<address>Saint-Petersburg, Russia</address>
+
+	<byline>
+	<affiliation>bx<lb/> Gomel State Medical University,</affiliation>
+	</byline>
+
+	<address>Gomel, Belarus</address>
+
+	<byline>
+	<affiliation>by<lb/> Hospital Universitario Marqués de Valdecilla,</affiliation>
+	</byline>
+
+	<address>Santander, Spain</address>
+
+	<byline>
+	<affiliation>bz<lb/> Hamad Medical Corporation,</affiliation>
+	</byline>
+
+	<address>Doha, Qatar</address>
+
+	<byline>
+	<affiliation>ca<lb/> Centro Hospitalar e Universitário São João,</affiliation>
+	</byline>
+
+	<address>Porto, Portugal</address>
+
+	<byline>
+	<affiliation>cb<lb/> Amsterdam UMC, location VUmc,</affiliation>
+	</byline>
+
+	<address>Amsterdam, Netherlands</address>
+
+	<byline>
+	<affiliation>cc<lb/> Department of Hematology, CH Sud Francilien,</affiliation>
+	</byline>
+
+	<address>Corbeil Essonnes, France</address>
+
+	<byline>
+	<affiliation>cd<lb/> University Hospital Ostrava,</affiliation>
+	</byline>
+
+	<address>Ostrava, Czech Republic</address>
+
+	<byline>
+	<affiliation>ce<lb/> Weill Cornell Medicine,</affiliation>
+	</byline>
+
+	<address>New York, United States</address>
+
+	<byline>
+	<affiliation>cf<lb/> Laikon Hospital, Medical School, National and Kapodistrian University of Athens,</affiliation>
+	</byline>
+
+	<address>Athens, Greece</address>
+
+	<byline>
+	<affiliation>cg<lb/> KU Leuven,</affiliation>
+	</byline>
+
+	<address>Leuven, Belgium</address>
+
+	<byline>
+	<affiliation>ch<lb/> Hospital Universitario de Salamanca,</affiliation>
+	</byline>
+
+	<address>Salamanca, Spain</address>
+
+	<byline>
+	<affiliation>ci<lb/> University of Milan and Fondazione IRCCS Istituto Nazionale Dei Tumori,</affiliation>
+	</byline>
+
+	<address>Milan, Italy</address>
+
+	<byline>
+	<affiliation>cj<lb/> Division of Hematology, Department of Internal Medicine, University of Debrecen,</affiliation>
+	</byline>
+
+	<address>Debrecen, Hungary</address>
+
+	<byline>
+	<affiliation>ck<lb/> Department of Hematology, Hospital Universitario de Burgos,</affiliation>
+	</byline>
+
+	<address>Burgos, Spain</address>
+
+	<byline>
+	<affiliation>cl<lb/> Medizinische Klinik II, Klinikum rechts der Isar, TU München,</affiliation>
+	</byline>
+
+	<address>Munich, Germany</address>
+
+	<byline>
+	<affiliation>cm<lb/> UOC Hematology, AORN Cardarelli,</affiliation>
+	</byline>
+
+	<address>Naples, Italy</address>
+
+	<byline>
+	<affiliation>cn<lb/> Aga Khan University,</affiliation>
+	</byline>
+
+	<address>Karachi, Pakistan</address>
+
+	<byline>
+	<affiliation>co<lb/> Hospital Universitario Lucus Augusti,</affiliation>
+	</byline>
+
+	<address>Lugo, Spain</address>
+
+	<byline>
+	<affiliation>cp<lb/> AOU Policlinico Rodolico San Marco,</affiliation>
+	</byline>
+
+	<address>Catania, Italy</address>
+
+	<byline>
+	<affiliation>cq<lb/> Hematology and Stem Cell Transplantation Unit, AOUC Policlinico,</affiliation>
+	</byline>
+
+	<address>Bari, Italy</address>
+
+	<byline>
+	<affiliation>cr<lb/> Hospital Universitario 12 de Octubre,</affiliation>
+	</byline>
+
+	<address>Madrid, Spain</address>
+
+	<byline>
+	<affiliation>cs<lb/> Clinical Microbiology Laboratory, Medical School, &quot;Attikon&quot; University General Hospital, National and Kapodistrian University of<lb/> Athens,</affiliation>
+	</byline>
+
+	<address>Athens, Greece</address>
+
+	<byline>
+	<affiliation>ct<lb/> Hospital Universitario Infanta Leonor,</affiliation>
+	</byline>
+
+	<address>Madrid, Spain</address>
+
+	<byline>
+	<affiliation>cu<lb/> Istituto Oncologico della Svizzera Italiana,</affiliation>
+	</byline>
+
+	<address>Bellinzona, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>cv Sultan Qaboos University Hospital,</affiliation>
+	</byline>
+
+	<address>Muscat, Oman</address>
+
+	<byline>
+	<affiliation>cw<lb/> Division of Infectious Diseases, ECMM Excellence Center for Clinical Mycology, Department of Internal Medicine, Medical University of<lb/> Graz,</affiliation>
+	</byline>
+
+	<address>Austria<lb/></address>
+
+	<byline>
+	<affiliation>cx BioTechMed,</affiliation>
+	</byline>
+
+	<address>Graz, Austria</address>
+
+	<byline>
+	<affiliation>cy<lb/> San Bortolo Hospital,</affiliation>
+	</byline>
+
+	<address>Vicenza, Italy</address>
+
+	<byline>
+	<affiliation>cz<lb/> University Hospital of Basel,</affiliation>
+	</byline>
+
+	<address>Basel, Switzerland</address>
+
+	<byline>
+	<affiliation>da<lb/> Aseer Central Hospital,</affiliation>
+	</byline>
+
+	<address>Abha, Saudi Arabia</address>
+
+	<byline>
+	<affiliation>db<lb/> Hopital Saint Louis,</affiliation>
+	</byline>
+
+	<address>Paris, France</address>
+
+	<byline>
+	<affiliation>dc<lb/> Hospital Rey Juan Carlos,</affiliation>
+	</byline>
+
+	<address>Móstoles, Spain</address>
+
+	<byline>
+	<affiliation>dd<lb/> University of Kansas Medical Center,</affiliation>
+	</byline>
+
+	<address>Kansas City, United States</address>
+
+	<byline>
+	<affiliation>de<lb/> Department of Clinical Hematology, Montpellier University Hospital, IGMM UMR5535 CNRS, University of Montpellier,</affiliation>
+	</byline>
+
+	<address>Montpellier, France</address>
+
+	<byline>
+	<affiliation>df<lb/> Azienda Ospedaliera Sant&apos;Anna e San Sebastiano,</affiliation>
+	</byline>
+
+	<address>Caserta, Italy</address>
+
+	<byline>
+	<affiliation>dg<lb/> Northumbria Healthcare,</affiliation>
+	</byline>
+
+	<address>Newcastle, United Kingdom</address>
+
+	<byline>
+	<affiliation>dh<lb/> University Hospital of Královské Vinohrady,</affiliation>
+	</byline>
+
+	<address>Prague, Czech Republic</address>
+
+	<byline>
+	<affiliation>di<lb/> Department of Infectious Diseases and Clinical Microbiology, Faculty of Medicine Eskisehir Osmangazi University,</affiliation>
+	</byline>
+
+	<address>Eskisehir, Turkey</address>
+
+	<byline>
+	<affiliation>dj<lb/> Hospital Universitario Virgen del Puerto,</affiliation>
+	</byline>
+
+	<address>Plasencia, Spain</address>
+
+	<byline>
+	<affiliation>dk<lb/> Clinical Hematology Department, ICO-Hospital Germans Trias i Pujol, Josep Carreras Research Institute,</affiliation>
+	</byline>
+
+	<address>Badalona, Spain</address>
+
+	<byline>
+	<affiliation>dl<lb/> Cipto Mangunkusumo General Hospital,</affiliation>
+	</byline>
+
+	<address>Jakarta, Indonesia</address>
+
+	<byline>
+	<affiliation>dm<lb/> Hematology and Stem Cell Transplant Unit, Osperadiela University Pisana Company,</affiliation>
+	</byline>
+
+	<address>Pisa, Italy<lb/></address>
+
+	<byline>
+	<affiliation>dn &quot;Sapienza&quot; University of Rome,</affiliation>
+	</byline>
+
+	<address>Rome, Italy</address>
+
+	<byline>
+	<affiliation>do<lb/> Service d&apos;Hématologie Clinique et de Thérapie Cellulaire, Hôpital Saint Antoine, Assistance Publique-Hôpitaux de Paris, Sorbonne<lb/> Université, Inserm UMRs 938,</affiliation>
+	</byline>
+
+	<address>Paris, France</address>
+
+	<byline>
+	<affiliation>dp<lb/> Instituto Nacional do Cancer,</affiliation>
+	</byline>
+
+	<address>Rio de Janeiro, Brazil</address>
+
+	<byline>
+	<affiliation>dq<lb/> Faculty of Medicine, University of Chile. Infectious Diseases Unity, Salvador Hospital of Santiago,</affiliation>
+	</byline>
+
+	<address>Santiago de Chile, Chile</address>
+
+	<byline>
+	<affiliation>dr<lb/> Azienda ospedaliera &quot;Ospedali Riuniti Villa Sofia-Cervello&quot;,</affiliation>
+	</byline>
+
+	<address>Palermo, Italy</address>
+
+	<byline>
+	<affiliation>ds<lb/> Necker-Enfants Malades Hospitals,</affiliation>
+	</byline>
+
+	<address>Paris, France</address>
+
+	<byline>
+	<affiliation>dt<lb/> Comenius University and National Cancer Institute,</affiliation>
+	</byline>
+
+	<address>Bratislava, Slovakia</address>
+
+	<byline>
+	<affiliation>du<lb/> Universitätsklinikum Frankfurt am Main,</affiliation>
+	</byline>
+
+	<address>Frankfurt am Main, Germany</address>
+
+	<byline>
+	<affiliation>dv<lb/> Hospital Universitario de Cabueñes,</affiliation>
+	</byline>
+
+	<address>Gijón, Spain</address>
+
+	<byline>
+	<affiliation>dw<lb/> General Hospital of Thessaloniki &quot;George Papanikolaou&quot;,</affiliation>
+	</byline>
+
+	<address>Thessaloniki, Greece</address>
+
+	<byline>
+	<affiliation>dx<lb/> Department of Mental Health and Public Medicine, Universitry of Campania,</affiliation>
+	</byline>
+
+	<address>Naples, Italy</address>
+
+	<byline>
+	<affiliation>dy<lb/> Center for Radiology, University Clinical Center of Serbia,</affiliation>
+	</byline>
+
+	<address>Belgrade, Serbia</address>
+
+	<byline>
+	<affiliation>dz<lb/> University Hospital Pilsen,</affiliation>
+	</byline>
+
+	<address>Pilsen, Czech Republic</address>
+
+	<byline>
+	<affiliation>ea<lb/> Department of Medicine A for Hematology, Oncology and Pneumology, University Hospital Münster,</affiliation>
+	</byline>
+
+	<address>Münster, Germany</address>
+
+	<byline>
+	<affiliation>eb<lb/> Hematology Unit, Fondazione Policlinico Universitario Agostino Gemelli -IRCCS,</affiliation>
+	</byline>
+
+	<address>Rome, Italy</address>
+
+	<byline>
+	<affiliation>ec<lb/> Institute of Hematology and Blood Transfusion,</affiliation>
+	</byline>
+
+	<address>Prague, Czech Republic</address>
+
+	<byline>
+	<affiliation>ed<lb/> Department of Physiology, Faculty of Medicine, Masaryk University,</affiliation>
+	</byline>
+
+	<address>Brno, Czech Republic</address>
+
+	<byline>
+	<affiliation>ee<lb/> University of Cologne, Faculty of Medicine and University Hospital Cologne, Clinical Trials Centre Cologne (ZKS Köln),</affiliation>
+	</byline>
+
+	<address>Cologne, Germany</address>
+
+	<byline>
+	<affiliation>ef<lb/> Hematology Unit, Università Cattolica del Sacro Cuore,</affiliation>
+	</byline>
+
+	<address>Rome, Italy</address>
+
+	Summary<lb/>
+	<div type="abstract">Background The COVID-19 pandemic heightened risks for individuals with hematological malignancies due to<lb/> compromised immune systems, leading to more severe outcomes and increased mortality. While interventions<lb/> like vaccines, targeted antivirals, and monoclonal antibodies have been effective for the general population, their<lb/> benefits for these patients may not be as pronounced.<lb/> Methods The EPICOVIDEHA registry (National Clinical Trials Identifier, NCT04733729) gathers COVID-19 data<lb/> from hematological malignancy patients since the pandemic&apos;s start worldwide. It spans various global locations,<lb/> allowing comprehensive analysis over the first three years (2020-2022).<lb/> Findings The EPICOVIDEHA registry collected data from January 2020 to December 2022, involving 8767 COVID-19<lb/> cases in hematological malignancy patients from 152 centers across 41 countries, with 42% being female. Over this<lb/> period, there was a significant reduction in critical infections and an overall decrease in mortality from 29% to 4%.<lb/> However, hospitalization, particularly in the ICU, remained associated with higher mortality rates. Factors<lb/> contributing to increased mortality included age, multiple comorbidities, active malignancy at COVID-19 onset,<lb/> pulmonary symptoms, and hospitalization. On the positive side, vaccination with one to two doses or three or<lb/> more doses, as well as encountering COVID-19 in 2022, were associated with improved survival.<lb/> Interpretation Patients with hematological malignancies still face elevated risks, despite reductions in critical in-<lb/>fections and overall mortality rates over time. Hospitalization, especially in ICUs, remains a significant concern. The<lb/> study underscores the importance of vaccination and the timing of COVID-19 exposure in 2022 for enhanced survival<lb/> in this patient group. Ongoing monitoring and targeted interventions are essential to support this vulnerable<lb/> population, emphasizing the critical role of timely diagnosis and prompt treatment in preventing severe COVID-<lb/>19 cases.<lb/></div>
+
+	Funding
+    <note type="funding">Not applicable.<lb/></note>
+
+	<note type="copyright">Copyright © 2024 Published by Elsevier Ltd. This is an open access article under the CC BY license (http://<lb/> creativecommons.org/licenses/by/4.0/).<lb/></note>
+
+	Keywords:
+	<keyword>Vaccination; ICU; COVID-19; Haematological malignancy; Immunosuppression<lb/></keyword>
+
+	<reference>eClinicalMedicine<lb/> 2024;71: 102553<lb/></reference>
+
+	Published Online
+	<date>18 March 2024<lb/></date>
+
+	<idno>https://doi.org/10.<lb/> 1016/j.eclinm.2024. 102553</idno>
+
+		</front>
+	</text>
+</tei>

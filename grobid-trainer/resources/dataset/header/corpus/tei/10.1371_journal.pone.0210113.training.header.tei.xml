@@ -112,7 +112,8 @@
 	Funding: 
 	<note type="funding">Funding for the study was provided to the<lb/> Human Environments Analysis Laboratory at<lb/> Western University (PI: Gilliland) by the West Elgin<lb/> Community Health Centre on behalf of the South<lb/> West Local Health Integration Network.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>

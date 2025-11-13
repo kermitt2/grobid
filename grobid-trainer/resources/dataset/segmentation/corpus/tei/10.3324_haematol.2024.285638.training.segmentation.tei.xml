@@ -1,0 +1,451 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Outcome of 421 adult patients with Philadelphia-negative acute lymphoblastic leukemia treated under an intensive program inspired by the GIMEMA LAL1913 clinical trial: a Campus ALL study</title>
+      <author>
+        <persName>
+          <forename>Davide</forename>
+          <surname>Lazzarotto</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Marco</forename>
+          <surname>Cerrano</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Cristina</forename>
+          <surname>Papayannidis</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Sabina</forename>
+          <surname>Chiaretti</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Federico</forename>
+          <surname>Mosna</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Nicola</forename>
+          <surname>Fracchiolla</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Patrizia</forename>
+          <surname>Zappasodi</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Silvia</forename>
+          <surname>Imbergamo</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Maria Ilaria</forename>
+          <surname>Del Principe</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Monia</forename>
+          <surname>Lunghi</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Federico</forename>
+          <surname>Lussana</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Matteo</forename>
+          <surname>Piccini</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Monica</forename>
+          <surname>Fumagalli</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Michelina</forename>
+          <surname>Dargenio</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Prassede</forename>
+          <surname>Salutari</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Fabio</forename>
+          <surname>Forghieri</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Teresa Giulia</forename>
+          <surname>Da Molin</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Massimiliano</forename>
+          <surname>Bonifacio</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Matteo</forename>
+          <surname>Olivi</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Fabio</forename>
+          <surname>Giglio</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Silvia</forename>
+          <surname>Trappolini</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Matteo</forename>
+          <surname>Leoncin</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Antonino</forename>
+          <surname>Mule</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Mario</forename>
+          <surname>Delia</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Crescenza</forename>
+          <surname>Pasciolla</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Francesco</forename>
+          <surname>Grimaldi</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Benedetta</forename>
+          <surname>Cambo</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Lidia</forename>
+          <surname>Santoro</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Fabio</forename>
+          <surname>Guolo</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Paola</forename>
+          <surname>Minetto</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Marzia</forename>
+          <surname>Defina</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Patrizia</forename>
+          <surname>Chiusolo</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Matteo</forename>
+          <surname>Fanin</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Endri</forename>
+          <surname>Mauro</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Lara</forename>
+          <surname>Aprile</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Carla</forename>
+          <surname>Mazzone</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Fabio</forename>
+          <surname>Trastulli</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Maria</forename>
+          <surname>Ciccone</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Marco</forename>
+          <surname>De Gobbi</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Alessandro</forename>
+          <surname>Cignetti</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Eleonora</forename>
+          <surname>De Bellis</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Valentina</forename>
+          <surname>Mancini</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Alfonso</forename>
+          <surname>Piciocchi</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Marco</forename>
+          <surname>Vignetti</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Giovanni</forename>
+          <surname>Marsili</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Irene Della</forename>
+          <surname>Starza</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Renato</forename>
+          <surname>Fanin</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Mario</forename>
+          <surname>Luppi</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Felicetto</forename>
+          <surname>Ferrara</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Giovanni</forename>
+          <surname>Pizzolo</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Renato</forename>
+          <surname>Bassan</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Robin</forename>
+          <surname>Foa</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Anna</forename>
+          <surname>Candoni</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="kazuyo">Kazuyo</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-04T15:10:19.511Z">11/4/2025 3:10:19 PM</date>
+        <title>corrections</title>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>Ferrata Storti Foundation (Haematologica)</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.3324/haematol.2024.285638</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Davide Lazzarotto, Marco Cerrano, Cristina Papayannidis, Sabina Chiaretti, Federico Mosna, Nicola Fracchiolla, Patrizia Zappasodi, Silvia Imbergamo, Maria Ilaria Del Principe, Monia Lunghi, Federico Lussana, Matteo Piccini, Monica Fumagalli, Michelina Dargenio, Prassede Salutari, Fabio Forghieri, Teresa Giulia Da Molin, Massimiliano Bonifacio, Matteo Olivi, Fabio Giglio, Silvia Trappolini, Matteo Leoncin, Antonino Mule, Mario Delia, Crescenza Pasciolla, Francesco Grimaldi, Benedetta Cambo, Lidia Santoro, Fabio Guolo, Paola Minetto, Marzia Defina, Patrizia Chiusolo, Matteo Fanin, Endri Mauro, Lara Aprile, Carla Mazzone, Fabio Trastulli, Maria Ciccone, Marco De Gobbi, Alessandro Cignetti, Eleonora De Bellis, Valentina Mancini, Alfonso Piciocchi, Marco Vignetti, Giovanni Marsili, Irene Della Starza, Renato Fanin, Mario Luppi, Felicetto Ferrara, Giovanni Pizzolo, Renato Bassan, Robin Foa, Anna Candoni. (2024). Outcome of 421 adult patients with Philadelphia-negative acute lymphoblastic leukemia treated under an intensive program inspired by the GIMEMA LAL1913 clinical trial: a Campus ALL study. Haematologica, None(None), 0-0. DOI: 10.3324/haematol.2024.285638</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-04T15:10:01.507653Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">eb7768b</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.segmentation</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-04T15:10:01.507653Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+        <front>Haematologica | 109 November 2024 <lb/>3557 <lb/>-Cell Therapy &amp; Immunotherapy <lb/>ARTICLE <lb/>Management of complications of chimeric antigen <lb/>receptor T-cell therapy: a report by the European Society of <lb/>Blood and Marrow Transplantation <lb/>Olaf Penack, 1,2 Christophe Peczynski, 2,3 William Boreland, 2,3 Daniel Wolff, 2,4 Ivan Moiseev, 2,5 <lb/>Hélène Schoemans, 2,6 Christian Koenecke, 2,7 Charlotte Graham 2,8 and Zinaida Peric 2,9 <lb/>1 <lb/>Medical Clinic, Department for Haematology, Oncology and Tumorimmunology, Charité <lb/>Universitätsmedizin Berlin, Berlin, Germany; 2 EBMT Transplant Complications Working Party, <lb/>Department of Hematology, Saint Antoine Hospital, INSERM UMR-S 938, Sorbonne University, <lb/>Paris, France; 3 EBMT Paris study office, Department of Hematology, Saint Antoine Hospital, <lb/>INSERM UMR-S 938, Sorbonne University, Paris, France; 4 Department of Internal Medicine III, <lb/>University Hospital Regensburg, Regensburg, Germany; 5 First Pavlov State Medical University of <lb/>St Petersburg, St Petersburg, Russia; 6 Department of Hematology, University Hospitals Leuven <lb/>and KU Leuven, Leuven, Belgium; 7 Department of Hematology, Medical University Hannover, <lb/>Hannover, Germany; 8 Comprehensive Cancer Center, King&apos;s College London, London, UK and <lb/>9 <lb/>Department of Hematology, University Hospital Center Rijeka, Rijeka, Croatia <lb/>Abstract <lb/>Chimeric antigen receptor (CAR) T cells are in standard clinical use to treat relapsed or refractory hematologic malignancies, <lb/>such as non-Hodgkin lymphoma, multiple myeloma and acute lymphoblastic leukemia. Owing to the rapidly progressing <lb/>field of CAR T-cell therapy and the lack of generally accepted treatment guidelines, we hypothesized significant differenc-<lb/>es between European centers in prevention, diagnosis and management of short-and long-term complications. To capture <lb/>the current CAR T-cell management among European Society for Blood and Marrow Transplantation (EBMT) centers and to <lb/>determine the medical need and specific areas for future clinical research the EBMT Transplant Complications Working <lb/>Party performed a survey among 227 EBMT CAR T-cell centers. We received complete servey answers from 106 centers (47%) <lb/>addressing questions in the areas of product selection, CAR T-cell logistics, management of cytokine release syndrome and <lb/>immune effector cell-associated neurotoxicity syndrome as well as management in later phases including prolonged cyto-<lb/>penias. We identified common patterns in complication management, but also significant variety in clinical management of <lb/>the centers in important aspects. Our results demonstrate a high medical need for treatment harmonization and future <lb/>clinical research in the following areas: treatment of steroid-refractory and very severe cytokine release syndrome/neuro-<lb/>toxicity, treatment of cytopenia, early discharge and outpatient management, as well as immunoglobulin substitution. <lb/></front>
+
+        <body>Introduction <lb/>Chimeric antigen receptor (CAR)-positive T cells entered <lb/>clinical routine in Europe. CAR T cells targeting CD19 (lym-<lb/>phomas, leukemias) or B-cell maturation antigen (multiple <lb/>myeloma) have already become standard treatment for <lb/>relapsed or refractory hematologic malignancies. 1-7,8,9 Table 1 <lb/>shows the products currently approved in Europe and their <lb/>respective indications. We expect that CAR T cells with <lb/>different antigen specificities will be used more widely in <lb/>the near future, as demonstrated by the numerous clinical <lb/>studies that are underway in various tumor entities. <lb/>CAR T cells can be effective even in advanced lines of <lb/>treatment. However, short-and long-term side effects can <lb/>be substantial. Therefore, management of patients under-<lb/>going CAR T-cell therapy requires specialized supportive <lb/>care, which is currently administered in dedicated CAR <lb/>T-cell centers. Clinical management is applied mainly based <lb/>on expert knowledge and small clinical trials. We there-<lb/>fore hypothesized that the results would show significant <lb/>differences in prevention, diagnosis, and management of <lb/>patients undergoing CAR T-cell therapy. In order to deter-<lb/>mine the medical need and specific areas for future clinical <lb/>research, we wanted to describe the current management <lb/>of short-and long term complications associated with CAR <lb/>T-cell therapy in Europe. <lb/>Our main objectives were to descibe: i) in which clini-<lb/>cal setting patients are treated, ii) how severe-and ste-<lb/></body>
+
+        <front>Correspondence: O. Penack <lb/>olaf.penack@charite.de <lb/>Received: <lb/>December 5, 2023. <lb/>Accepted: <lb/>May 21, 2024. <lb/>Early view: <lb/>May 30, 2024. <lb/>https://doi.org/10.3324/haematol.2023.284810 <lb/>©2024 Ferrata Storti Foundation <lb/>Published under a CC BY-NC license <lb/></front>
+
+        <note place="footnote">Haematologica | 109 November 2024 <lb/></note>
+
+        <page>3558 <lb/></page>
+
+        <note place="headnote">ARTICLE -CAR T management <lb/>O. Penack et al. <lb/></note>
+
+        <body>roid-refractory cases of cytokine release syndrome (CRS) <lb/>are managed, iii) which diagnostic procedures and which <lb/>drugs are used in severe immune effector cell-related <lb/>neurotoxicity syndrome (ICANS), iv) how cytopenias after <lb/>CAR T-cell therapy are managed and what role autologous <lb/>hematopoietic stem cell transplantation plays as well as v) <lb/>where and how long-term care of patients after CAR T-cell <lb/>therapy is applied. These main objectives were based on <lb/>areas where we assumed a high medical need because of <lb/>their high likelihood of influencing outcome. <lb/>Methods <lb/>The European Society for Blood and Marrow Transplantation <lb/>(EBMT) is a professional association of transplant centers <lb/>that are required to report regular follow-up on all consec-<lb/>utive stem cell transplantations. Recently, the EBMT registry <lb/>started to collect reports on CAR T-cell patients, through the <lb/>design and implementation of a Cellular Therapy Form (CTF). <lb/>In the CAR T-cell registry of the EBMT a significant fraction <lb/>of commercial CAR T-cell therapies in Europe are registered <lb/>and data on outcome are periodically updated at predefined <lb/>intervals of time, up to 15 years after treatment. Audits are <lb/>routinely performed to determine the accuracy of the data. <lb/>The study was planned and approved by the Transplant Com-<lb/>plications Working Party of the EBMT and by the EBMT board. <lb/>We designed questions as well as answer choices and <lb/>discussed/edited them together with the co-authors. The <lb/>questions and the respective choices of answers are pro-<lb/>vided in the tables of this manuscript. Most question were <lb/>close-ended. However, a couple of questions offered the <lb/>opportunity to provide free text as a response, either to <lb/>provide reasoning or to provide an unlisted, alternative <lb/>answer. The EBMT Transplant Complications Working Party <lb/>then designed an online survey and distributed it among <lb/>the PI from European CAR T-cell centers. The survey was <lb/>launched on February 23, 2023 and was closed on April 27, <lb/>2023. All responses were submitted within this 2-month <lb/>time period. All of the data used in this manuscript was <lb/>collected through the questionnaire prepared in the on-<lb/>line survey tool. We didn&apos;t use any data from the Cellular <lb/>Therapy Form in the EBMT Registry. Responses were an-<lb/>alyzed using descriptive statistics. Continuous variables <lb/>were summarized using median, interquartile range (IQR) <lb/>and range (minimum and maximum). Categorical variables <lb/>were presented using counts and percentages. <lb/>The survey focused on the use of commercially available <lb/>CAR T-cell products in Europe. These were in short: <lb/>i) Tisagenlecleucel (Tisa-Cel, Novartis, CD19) for treatment <lb/>of acute lymphoblastic leukemia, diffuse-large-cell B-cell <lb/>(diffuse LBL) lymphoma and follicular lymphoma. <lb/>ii) Axicabtagene ciloleucel (Axi-Cel, Kite/Gilead, CD19) for <lb/>treatment of diffuse LBCL, high grade B-cell lymphoma, <lb/>primary mediastinal LBCL and follicular lymphoma. <lb/>iii) Lisocabtagene maraleucel (Liso-Cel, BMS, CD19) for <lb/>treatment of diffuse LBCL, primary mediastinal large B-cell <lb/>lymphoma and follicular lymphoma. <lb/>iv) Brexucabtagene autoleucel (Brexu-Cel, Kite/Gilead, CD19) <lb/>for treatment of acute lymphoblastic leukemia, diffuse <lb/>LBCL and mantle cell lymphoma. <lb/>v) Idecabtagene vicleucel (Ide-Cel, BMS, BCMA) for treat-<lb/>ment of multiple yeloma. <lb/>vi) Ciltacabtagene autoleucel (Cilta-Cel, Janssen, BCMA) <lb/>for treatment of multiple myeloma. <lb/>Results <lb/>One hundred and six EBMT CAR T centers completed the <lb/>online survey. We present the results in the following cat-<lb/>egories: product selection (Figure 1), CAR T-cell logistics <lb/>(Figure 2), management of CRS (Figure 3), management of <lb/>ICANS (Figure 4) and management in later phases including <lb/>prolonged cytopenias (Table 1). <lb/>Product selection (Figure 1) <lb/>Most centers (86%) were certified for use of more than one <lb/>CAR T-cell product. A consort diagram is given in Figure <lb/>1. The proportion of responding centers certified for each <lb/>licensed CAR T-cell product are shown. For use of CD19 <lb/>targeting CAR T-cell products, the following percentages <lb/>of centers were certified: Kymriah (Tisa-Cel) 90%, Yescarta <lb/>(Axi-Cel) 84%, Tecartus (Brexu-Cel) 71% and Breyanzi (Li-<lb/>so-Cel) 24%. The overall percentage of centers certified <lb/>for use of the BCMA targeting products used in multiple <lb/>myeloma was lower with 24% for Abecma (Ide-Cel) and <lb/>18% for Carvykti (Cilta-Cel). <lb/>Currently, three products are approved for treatment of LBCL <lb/>(Kymriah, Yescarta and Breyanzi). We were interested how <lb/>centers decide which of these projects they use and asked <lb/>for preferences. The majority of centers (54%) answered that <lb/>they are using more often Yescarta compared to Kymriah <lb/>or Breyanzi; 17% of centers only use Yescarta and also 17% <lb/>use the three products in roughly equal proportions. The <lb/>share of centers using only Kymriah (3%), using Kymriah <lb/>more often than the other products (5%) and using Breyanzi <lb/>more often than the other products (2%) was relatively low. <lb/>The primary factor driving the product selection in LBCL is <lb/>higher effectiveness (81%). Other relevant factors for product <lb/>selection were named to be the production slot availability <lb/>(41%), a better tolerability (35%) and the possibility of cryo-<lb/>preservation (28%). The leukapheresis product that is used <lb/>for production of Kymriah can be cryopreserved as opposed <lb/>to the other products, which are mandate for fresh leuka-<lb/>pheresis products. Cryopreservation therefore can enable <lb/>earlier apheresis, which is an advantage in patients in need <lb/>for immediate lymphoma therapy. <lb/>In multiple myeloma, currently two B-cell maturation an-<lb/>tigen (BCMA) targeting products are approved in Europe <lb/></body>
+
+        <note place="footnote">Haematologica | 109 November 2024 <lb/></note>
+
+        <page>3559 <lb/></page>
+
+        <note place="headnote">ARTICLE -CAR T management <lb/>O. Penack et al. <lb/></note>
+
+        <body>(Abecma and Carvykti) and some of the centers are cer-<lb/>tified for use of both products. Similar to the situation in <lb/>LBCL, we asked how these centers decide which of these <lb/>projects they use: 47% of centers answered that they are <lb/>using exclusively Abecma and 19% use only Carvykti; 13% <lb/>use more often Abecma but sometimes Carvykti and 6% <lb/>the other way around, preferentially using Carvykti but <lb/>sometimes Abecma. Finally, 9% answered that they use <lb/>both products in roughly equal proportions. Different from <lb/>the situation in LBCL, the primary factor driving CAR T-cell <lb/>product selection decisions in multiple myeloma is the <lb/>availability of production slots (56%). The &apos;effectiveness <lb/>of the product&apos; was only rated by 33% of centers as the <lb/>primary reason for product selection, probably reflecting <lb/>the recent/current difficulties with production slots for <lb/>BCMA targeting commercial products. <lb/>Figure 2. Clinical setting for CAR T-cell delivery at European Society for Blood and Marrow Transplantation centers. (A) Sche-<lb/>matic diagram of chimeric antigen recepetor (CAR) T-cell patient journey. (B) Clinical setting for lymphodepletion chemotherapy. <lb/>(C) Clinical setting for CAR T-cell infusion, (D) Usual timing of discharge from hospital in days post CAR T-cell infusion in patients <lb/>without serious complications. Created with BioRender.com. <lb/>A <lb/>B <lb/>C <lb/>D <lb/>Figure 1. Consort diagram of a survey of European Society for Blood and Marrow Transplantation CAR T-cell centers on the man-<lb/>agement of complications of therapy. The proportion of responding centers certified for each licensed chimeric antigen recepe-<lb/>tor (CAR) T-cell product are shown. Created with BioRender.com. EBMT: European Society for Blood and Marrow Transplantation. <lb/></body>
+
+        <note place="footnote">Haematologica | 109 November 2024 <lb/></note>
+
+        <page>3560 <lb/></page>
+
+        <note place="headnote">ARTICLE -CAR T management <lb/>O. Penack et al. <lb/></note>
+
+        <body>CAR T-cell logistics (Figure 2) <lb/>We were specifically interested where patient care takes <lb/>place, before, during and after CAR T-cell administration. <lb/>Roughly 60% of CAR T-cell centers administer the lympho-<lb/>depletion, as well as the infusion of CAR T cells, on regular <lb/>wards (as opposed to intermediate care wards). Interest-<lb/>ingly, 8% of centers answered that lymphodepletion is per-<lb/>formed in the outpatient setting; 27% of centers answered <lb/>that CAR T-cell infusion is usually done on an intermediate <lb/>care ward and 8% answered that it is a decision based on <lb/>patient-related factors to treat on intermediate care ver-<lb/>sus normal ward. Of note, the type of product played no <lb/>relevant role in the decision where to infuse CAR T cells <lb/>in the great majority of centers. <lb/>The majority of centers (53%) discharge patients without <lb/>severe complications from hospital between day +11 and <lb/>day +14 post CAR T infusion; 27% discharge patients even <lb/>later after day +14 post CAR T administration. As expected, <lb/>few centers perform very early discharge before day +8 <lb/>(2%). However, a significant share of centers (18%) discharge <lb/>patients relatively early between day +8 and day +10 after <lb/>CAR T infusion. <lb/>Cytokine release syndrome management (Figure 3) <lb/>We were mainly interested in pharmacologic management <lb/>of CRS because we identified this as an area of broad vari-<lb/>ability of clinical care. The clinical presentation of CRS is <lb/>by far the most important factor for the decision to start <lb/>first-line treatment with tocilizumab, as well as the sec-<lb/>ond-line treatment with steroids. However, the presence <lb/>of comorbidities, the time from CAR T infusion to onset of <lb/>CRS and the type of product administered were additionally <lb/>named as relevant factors contributing to the decision to <lb/>start first-and second-line therapy for CRS. <lb/>We also asked about the management of very severe CRS <lb/>cases. The majority of centers (68%) answered that they <lb/>Figure 3. Survey results regarding the management of cytokine <lb/>release syndrome. CRS: cytokine release syndrome; IL-6: inter-<lb/>leukin 6; CAR: chimeric antigen receptor. <lb/></body>
+
+        <note place="footnote">Haematologica | 109 November 2024 <lb/></note>
+
+        <page>3561 <lb/></page>
+
+        <note place="headnote">ARTICLE -CAR T management <lb/>O. Penack et al. <lb/></note>
+
+        <body>are always waiting for response to steroids before admin-<lb/>istering a third agent (on top of tocilizumab and steroids). <lb/>Only 19% of centers primarily use a third substance together <lb/>with steroids, in very severe CRS cases. <lb/>Anakinra is the third-line CRS therapy of choice in the majority <lb/>of centers (64%). However, the dosages used are variable: 62% <lb/>of centers use 100-200 mg/day, which is the approved dose <lb/>for rheumatoid arthritis; 38% of centers use 300-1,000 mg <lb/>anakinra/day, which is also recommended for more acute and <lb/>severe inflammatory diseases, such as Cryopyrin-associated <lb/>periodic syndrome (CAPS). 10 Other third-line therapies that are <lb/>preferred by the centers are an alternative interleukin 6 (IL-6) <lb/>antibody (12%) and cytokine absorption (3%). Of note, 20% <lb/>of centers answered that they are not using any alternative <lb/>strategies in addition to tocilizumab and steroids. <lb/>Immune effector cell-related neurotoxicity syndrome <lb/>management (Figure 4) <lb/>We first asked for the diagnostic work-up in case ICANS is <lb/>suspected or diagnosed clinically: 90% of centers perform <lb/>magnetic resonance imaging (MRI), 85% request an electro-<lb/>encephalography and approximately 50% do a cerebrospinal <lb/>fluid puncture to determine routine parameters. Similar to <lb/>the management of CRS, the clinical presentation of ICANS <lb/>is the most important factor determining if steroids are <lb/>used or not. Additional relevant factors for steroid treat-<lb/>ment decisions are the presence of comorbidities, time <lb/>from CAR T-cell infusion until ICANS onset and the type <lb/>of CAR-T product administered. <lb/>The majority of centers (70%) answered that they are al-<lb/>ways waiting for response to steroids before administering <lb/>Figure 4. Survey results regarding management of immune effector cell-associated neurotoxicity syndrome. ICANS: immune effec-<lb/>tor cell-associated neurotoxicity syndrome; MRI: magnetic resonance imaging; EEG: electroencephalography; IL-6: interleukin 6. <lb/></body>
+
+        <note place="footnote">Haematologica | 109 November 2024 <lb/></note>
+
+        <page>3562 <lb/></page>
+
+        <note place="headnote">ARTICLE -CAR T management <lb/>O. Penack et al. <lb/></note>
+
+        <body>a third agent (on top of tocilizumab and steroids). Only <lb/>25% of centers primarily use a third substance together <lb/>with steroids, in very severe ICANS cases. Anakinra is the <lb/>drug of choice in patients who are refractory to steroids <lb/>in most centers (70%). Similar to the CRS management <lb/>with anakinra, the dosages used are variable. An alterna-<lb/>tive option for treatment of steroid-refractory ICANS are <lb/>alternative IL-6 antibodies. Interestingly, 20% of centers <lb/>answered that they are not using other drugs/strategies <lb/>on top of steroids in very severe ICANS. <lb/>Management in later phases including management of <lb/>prolonged cytopenias (Table 1) <lb/>Deficiency of immunoglobulin G (IgG) frequently occur in <lb/>patients treated with CD19-or BCMA-targeting CAR T cells. <lb/>We were interested in the center strategies to substitute <lb/>IgG and if these strategies are following European Medicines <lb/>Agency (EMA) guidelines. 11 We found a high variability with <lb/>a significant proportion performing substitution already in <lb/>asymptomatic patients (57% [&lt;IgG 4 g/L in 46% of centers <lb/>and &lt;IgG 3 g/L in 11% of centers]). A significant proportion of <lb/>centers (40%) answered that they only substitute IgG if severe <lb/>infections are observed in combination with IgG deficiency <lb/>following the EMA guidelines. Only 3% of centers would not <lb/>routinely substitute IgG in patients after CAR T-cell therapy. <lb/>In patients without available stem cell back-up (previously <lb/>collected CD34 + autologous stem cells), only 11% of cen-<lb/>ters consider collecting a back-up in patients at high risk <lb/>for prolonged cytopenia; 55% of centers infuse stem cell <lb/>back-ups in patients with severe CAR T-cell associated <lb/>prolonged cytopenia. However, there is no consensus on <lb/>the ideal time point of stem cell administration in this sit-<lb/>uation. A majority regard the best time point after day +45 <lb/>but some investigators also consider earlier time points <lb/>between day +16 to day +45 after CAR T-cell infusion. <lb/>Eighty percent of centers are routinely using granulocyte col-<lb/>ony-stimulating factor (G-CSF) in patients with neutropenia <lb/>after CAR T-cell therapy, but again there is no consensus <lb/>regarding severity of neutropenia as a trigger for G-CSF. <lb/>Fifty percent of centers answered that they are using a <lb/>cutoff at &lt;50x10 9 neutrophils/L and the remaining centers <lb/>use different cutoffs such as &lt;20x10 9 /L or &lt;100x10 9 /L. <lb/>Table 1. Survey results regarding management in later phases including prolonged cytopenias. <lb/>Questions and answer choices <lb/>Percentage of <lb/>answers selected <lb/>Which statements are correct regarding your management of IgG deficiency? <lb/>I substitute IgG in asymptomatic patients at levels &lt;4 g/L <lb/>I substitute IgG in asymptomatic patients at levels &lt;3 g/L <lb/>I substitute IgG exclusively when there is a combination of IgG deficiency and severe infections <lb/>I never substitute IgG after CAR T <lb/>46 <lb/>11 <lb/>40 <lb/>3 <lb/>Do you collect autologous stem cells as a backup prior to CAR T-cell therapy (when there are no backups from <lb/>a previous or planned autoSCT)? <lb/>Never <lb/>Always <lb/>Yes, if cytopenia risk is increased <lb/>88 <lb/>1 <lb/>11 <lb/>Which statements are correct regarding the administration of autoSCT in patients with severe hematotoxicity <lb/>after CAR T in your center? <lb/>I do not administer autologous stem cell transplants in severe hematotoxicity <lb/>First, waiting for a spontaneous improvement and then, if necessary, the administration of autoSCT <lb/>transplants after d+45 is a good strategy <lb/>Giving autoSCT grafts between d+16 and d+45 after CAR T infusion is a good strategy <lb/>Early delivery of autoSCT grafts before d+15 after CAR T infusion is a good strategy <lb/>46 <lb/>42 <lb/>12 <lb/>1 <lb/>Which statements are correct regarding the administration of GCSF when patients have severe neutropenia <lb/>after CAR T? <lb/>I do not administer GCSF in this situation <lb/>I administer GCSF to patients with neutrophils &lt;20x10 9 /L <lb/>I administer GCSF to patients with neutrophils &lt;50x10 9 /L <lb/>I administer GCSF to patients with neutrophils &lt;100x10 9 /L <lb/>19 <lb/>16 <lb/>50 <lb/>14 <lb/>Which methods are you using to measure CAR T-cell persistence in patients peripheral blood? <lb/>I do not measure CAR T-cell persistence <lb/>Flow cytometry <lb/>PCR <lb/>Indirectly by B-cell aplasia <lb/>23 <lb/>59 <lb/>11 <lb/>7 <lb/>IgG: immunoglobulin G; CAR: chimeric antigen receptor; autoSCT: autologous stem cell transplant; d: day; GCSF: granulocyte colony-stimu-<lb/>lating factor; PCR: polymerase chain reaction. <lb/></body>
+
+        <note place="footnote">Haematologica | 109 November 2024 <lb/></note>
+
+        <page>3563 <lb/></page>
+
+        <note place="headnote">ARTICLE -CAR T management <lb/>O. Penack et al. <lb/></note>
+
+        <body>Next, we asked if and how centers measure CAR T-cell <lb/>persistence in peripheral blood. About two thirds of centers <lb/>perform CAR T-cell measurement. Flow cytometry based <lb/>methods are most frequently used, followed by polymerase <lb/>chain reaction-based methods. <lb/>Finally, we were interested if there were any apparent dif-<lb/>ferences in in management of complications according to <lb/>the country in which the institution is based. We therefore <lb/>re-analyzed our data according to different countries but <lb/>focused on the three most contributing countries Germa-<lb/>ny, Italy and France to be able to detect patterns. In none <lb/>of the areas (product selection, logistics, CRS, ICANS and <lb/>later phase) did we find any apparent differences in man-<lb/>agement according to the country of origin. <lb/>Discussion <lb/>In this survey performed among European CAR T-cell cen-<lb/>ters, we found a considerable variety in practice patterns <lb/>of complication management. This reflects the absence of <lb/>generally accepted treatment guidelines as well as the lack <lb/>of extensive clinical data from the relatively small clinical <lb/>trials leading to approval of the CAR T-cell products. With <lb/>more than 100 centers responding to the survey, we had a <lb/>higher response rate than we had assumed. However, on <lb/>the other hand less than 50% of invited centers answered <lb/>raising the question if our results are representative for <lb/>the European real-world setting. In this regard, we can&apos;t be <lb/>sure and we have no opportunity of proving this. We can <lb/>only state that the list of countries in our survey answers is <lb/>representative in that the top countries (Germany, France, <lb/>Italy) are the countries in which most CAR T-cell therapies <lb/>are performed in Europe. 12 A further limitation is that we <lb/>have not gathered data if the described management was <lb/>performed in the framework of institutional clinical stan-<lb/>dards or was based on individual decisions. <lb/>Of note, we focused on the setting of approved therapies. In <lb/>addition a considerable portion of patients undergoing CAR <lb/>T-cell therapy in Europe are currently managed in clinical <lb/>trial investigations with either novel products or approved <lb/>products in new indications. With our collected data we <lb/>can&apos;t comment on this commercial trial setting where the <lb/>management may differ. <lb/>We found distinct drivers for product selection in CD19 + CAR <lb/>T products used for LBCL versus BCMA targeting products <lb/>used for multiple myeloma. Interestingly, we found that in <lb/>LBCL the primary driving factor for product decisions is <lb/>efficacy. This creates a medical need for efforts to collect <lb/>high quality real-world data, because data from the clin-<lb/>ical trials leading to approval of the three products (Ky-<lb/>mriah, Yescarta and Breyanzi) does not allow to compare <lb/>efficacy. First efforts to use real-world data to compare <lb/>the outcome in LBCL patients treated with the different <lb/>products have been undertaken and the evidence basis <lb/>is currently improving. 2,3,13,14 During the period where the <lb/>survey was done (February to April 2023) and before, the <lb/>production slot availability for BCMA targeting products <lb/>was extremely restricted, which explains that in multiple <lb/>myeloma the primary driver for product decision making <lb/>was the production slot availability. <lb/>As expected, the survey documents that outpatient treat-<lb/>ment during CAR T-cell infusion and in the early phase <lb/>after CAR T administration plays no role in the European <lb/>health care setting yet. This is probably due to the strict <lb/>requirements on patient care in many countries. In the <lb/>future, it will be important to lay the structural and reg-<lb/>ulatory basis for early discharge and for outpatient CAR <lb/>T treatment, which has been successfully used in the US <lb/>and other countries. 15 <lb/>Standard primary management of CRS and ICANS is already <lb/>homogeneous. 16 One important area of medical need is to <lb/>homogenize the management of steroid-refractory cases and <lb/>very severe forms of CRS/ICANS. In this regard our survey <lb/>shows that Anakinra, an IL-1 receptor antagonist, is widely <lb/>used in this situation and should be recommended in future <lb/>guidelines. However, more preclinical and clinical data are <lb/>needed to determine the optimal dosing schedule of anak-<lb/>inra in this setting as we found that roughly two thirds of <lb/>centers use relatively low doses (100-200 mg/day) according <lb/>to approved treatment for rheumatoid arthritis. 10 In contrast, <lb/>approximetely one third of centers use higher anakinra doses, <lb/>probably as a reaction to reports that higher doses are needed <lb/>for effective treatment of severe CRS/ICANS. 17 <lb/>There is no generally accepted definition for diagnosis and <lb/>grading of CAR T-cell therapy-related cytopenia preventing <lb/>the establishment of evidence-based standardized treatment <lb/>algorithms. 18-20 We recently found in the EBMT CAR T data-<lb/>base that the cumulative incidence of ≥grade 3 cytopenia <lb/>was 12.1% at 100 days after CD19 + CAR T-cell infusion. 21 In <lb/>~50% of cases there was no resolution of cytopenia until day <lb/>+100, demonstrating the clinical relevance of the problem. An <lb/>attractive opportunity to treat post CAR T-cell cytopenia is <lb/>the administration of stem cell boosts (autologous peripheral <lb/>blood stem cell transplants). 22,23 In the current survey, more <lb/>than 50% of centers answered that they consider stem cell <lb/>boosts in this situation. Our results show that the optimal <lb/>timing of stem cell boosts remains to be determined, as <lb/>demonstrated by a high variety in clinical practice. Of note, <lb/>we found that only a small minority of centers are collecting <lb/>hematopoietic stem cell boosts prior to CAR T-cell therapy, <lb/>probably reflecting logistic challenges including reimburse-<lb/>ment and storage capacity issues. <lb/>Patients after CD19 targeting and BCMA targeting CAR T-cell <lb/>therapies are at high risk for hypo-gammaglobulinaemia <lb/>and increased risk of infections. 24,25 However, there is no <lb/>generally accepted standard for substitution of IgG fitting to <lb/>our result of a high heterogeneity in clinical management. <lb/>In summary, our survey documents the variety in man-<lb/>agement of CAR T-cell-related complications in Europe. A <lb/></body>
+
+        <note place="footnote">Haematologica | 109 November 2024 <lb/></note>
+
+        <page>3564 <lb/></page>
+
+        <note place="headnote">ARTICLE -CAR T management <lb/>O. Penack et al. <lb/></note>
+
+        <body>validation of our results can be attempted by similar surveys <lb/>in other health care settings, e.g., in North America or Asia. <lb/>Our results highlight the need for collection of more clinical <lb/>evidence. A good way to address this need is to integrate <lb/>concepts for complication management in clinical CAR T-cell <lb/>trials. Another good option to collect evidence and improve <lb/>clinical standards is to augment the quality of collected real <lb/>world data and to increase collaborative efforts of harmoni-<lb/>zation. One such example is the GoCART coalition, founded <lb/>by the EBMT and by the European Hematology Association <lb/>(EHA). GoCART is a multi-stakeholder coalition of patient <lb/>representatives, health care professionals, pharmaceutical <lb/>companies, regulators, Health Technology Assessment bodies <lb/>and reimbursement agencies, and medical organizations, <lb/>collaborating to maximize the potential of cellular therapies. <lb/>Specific tasks for EBMT and for GoCART include i) the more <lb/>extensive and exact assessment of CAR T-cell-related com-<lb/>plications in the post-authorization safety studies (PASS) and <lb/>in the EBMT cellular therapy data forms, ii) conduct formal <lb/>workshops by harmonization committees 26 and iii) lobby and <lb/>stand for a more adequate compensation of documentation <lb/>efforts by CAR T-cell centers. <lb/></body>
+
+        <div type="conflict">Disclosures <lb/>OP has received honoraria or travel support from Gilead, <lb/>Jazz, MSD, Novartis, Pfizer and Therakos. He has received <lb/>research support from Incyte and Priothera. He is member of <lb/>advisory boards to Equillium Bio, Jazz, Gilead, Novartis, MSD, <lb/>Omeros, Priothera, Sanofi, Shionogi and SOBI. DW received <lb/>honoraria from Gilead, Novartis, BMS, Behring and Takeda. <lb/>CK received honoraria or travel support from Novartis, Roche, <lb/>Medigene, Janssen, Glaxo Smith Kline, Amgen, BMS, Kite/ <lb/>Gilead and Sanofi-Aventis. The remaining authors have no <lb/>conflicts of interest to disclose. <lb/></div>
+
+        <div type="contribution">Contributions <lb/>OP designed research, analyzed data and wrote the manu-<lb/>script. WB, CP, CK and ZP designed research, analyzed data <lb/>and edited the manuscript. The remaining authors designed <lb/>research and edited the manuscript. <lb/></div>
+
+        <div type="funding">Funding <lb/>OP acknowledges the support of José Carreras Leu-<lb/>kämie-Stiftung (3R/2019, 23R/2021), Deutsche Krebshilfe <lb/>(70113519), Deutsche Forschungsgemeinschaft (PE 1450/7-1, <lb/>PE 1450/9-1, PE 1450/10-1) and Stiftung Charité BIH (BIH_ <lb/>PRO_549, Focus Group Vascular Biomedicine). <lb/></div>
+
+        <div type="availability">Data-sharing statement <lb/>The data that support the findings of this study are available <lb/>on request from the corresponding author. <lb/></div>
+
+        <listBibl>References <lb/>1. Abramson JS, Palomba ML, Gordon LI, et al. Lisocabtagene <lb/>maraleucel for patients with relapsed or refractory large B-cell <lb/>lymphomas (TRANSCEND NHL 001): a multicentre seamless <lb/>design study. Lancet. 2020;396(10254):839-852. <lb/>2. Bachy E, Le Gouill S, Di Blasi R, et al. A real-world comparison <lb/>of tisagenlecleucel and axicabtagene ciloleucel CAR T cells in <lb/>relapsed or refractory diffuse large B cell lymphoma. Nat Med. <lb/>2022;28(10):2145-2154. <lb/>3. Bethge WA, Martus P, Schmitt M, et al. GLA/DRST real-world <lb/>outcome analysis of CAR-T cell therapies for large B-cell <lb/>lymphoma in Germany. Blood. 2022;140(4):348-358. <lb/>4. Kamdar M, Solomon SR, Arnason J, et al. Lisocabtagene <lb/>maraleucel versus standard of care with salvage chemotherapy <lb/>followed by autologous stem cell transplantation as second-<lb/>line treatment in patients with relapsed or refractory large <lb/>B-cell lymphoma (TRANSFORM): results from an interim <lb/>analysis of an open-label, randomised, phase 3 trial. Lancet, <lb/>2022;399(10343):2294-2308. <lb/>5. Locke FL, Ghobadi A, Jacobson CA, et al. Long-term safety and <lb/>activity of axicabtagene ciloleucel in refractory large B-cell <lb/>lymphoma (ZUMA-1): a single-arm, multicentre, phase 1-2 trial. <lb/>Lancet Oncol. 2019;20(1):31-42. <lb/>6. Locke FL, Miklos DB, Jacobson CA, et al. Axicabtagene <lb/>ciloleucel as second-line therapy for large B-cell lymphoma. N <lb/>Engl J Med. 2022;386(7):640-654. <lb/>7. Schuster SJ, Tam CS, Borchmann P, et al. Long-term clinical <lb/>outcomes of tisagenlecleucel in patients with relapsed or <lb/>refractory aggressive B-cell lymphomas (JULIET): a multicentre, <lb/>open-label, single-arm, phase 2 study. Lancet Oncol. <lb/>2021;22(10):1403-1415. <lb/>8. Berdeja JG, Madduri D, Usmani SZ, et al. Ciltacabtagene <lb/>autoleucel, a B-cell maturation antigen-directed chimeric <lb/>antigen receptor T-cell therapy in patients with relapsed or <lb/>refractory multiple myeloma (CARTITUDE-1): a phase 1b/2 <lb/>open-label study. Lancet. 2021;398(10297):314-324. <lb/>9. Munshi NC, Anderson LD, Jr., Shah N, et al. Idecabtagene <lb/>vicleucel in relapsed and refractory multiple myeloma. N Engl J <lb/>Med. 2021;384(8):705-716. <lb/>10. Cvetkovic RS, Keating G. Anakinra. BioDrugs. 2002;16(4):303-311; <lb/>discussion 313-314. <lb/>11. Agency EM. Guideline on core SmPC for human normal <lb/>immunoglobulin for intravenous administration (IVIg). URL: https:// <lb/>www.ema.europa.eu/en/documents/scientific-guideline/guideline-<lb/>core-smpc-human-normal-immunoglobulin-intravenous-<lb/>administration-ivig-rev-5_en.pdf. Accessed January 15th, 2024. <lb/>12. Passweg JR, Baldomero H, Ciceri F, et al. Hematopoietic cell <lb/>transplantation and cellular therapies in Europe 2021. The second <lb/>year of the SARS-CoV-2 pandemic. A report from the EBMT <lb/>activity survey. Bone Marrow Transplant. 2023;58(6):647-658. <lb/>13. Bastos-Oreiro M, Gutierrez A, Reguera JL, et al. Best treatment <lb/>option for patients with refractory aggressive B-cell lymphoma <lb/>in the CAR-T cell era: real-world evidence from GELTAMO/GETH <lb/>Spanish groups. Front Immunol. 2022;13:855730. <lb/>14. Kwon M, Iacoboni G, Reguera JL, et al. Axicabtagene ciloleucel <lb/>compared to tisagenlecleucel for the treatment of aggressive <lb/>B-cell lymphoma. Haematologica. 2023;108(1):110-121. <lb/></listBibl>
+
+        <note place="footnote">Haematologica | 109 November 2024 <lb/></note>
+
+        <page>3565 <lb/></page>
+
+        <note place="headnote">ARTICLE -CAR T management <lb/>O. Penack et al. <lb/></note>
+
+        <listBibl>15. Alexander M, Culos K, Roddy J, et al. Chimeric antigen receptor <lb/>T cell therapy: a comprehensive review of clinical efficacy, <lb/>toxicity, and best practices for outpatient administration. <lb/>Transplant Cell Ther. 2021;27(7):558-570. <lb/>16. Hayden PJ, Roddie C, Bader P, al. Management of adults and <lb/>children receiving CAR T-cell therapy: 2021 best practice <lb/>recommendations of the European Society for Blood and <lb/>Marrow Transplantation (EBMT) and the Joint Accreditation <lb/>Committee of ISCT and EBMT (JACIE) and the European <lb/>Haematology Association (EHA). Ann Oncol. <lb/>2022;33(3):259-275. <lb/>17. Gazeau N, Barba P, Iacoboni G, et al. Safety and efficacy of two <lb/>anakinra dose regimens for refractory CRS or Icans after CAR <lb/>T-cell therapy. Blood. 2021;138(Suppl 1):2816. <lb/>18. Jain T, Knezevic A, Pennisi M, et al. Hematopoietic recovery in <lb/>patients receiving chimeric antigen receptor T-cell therapy for <lb/>hematologic malignancies. Blood Adv. 2020;4(15):3776-3787. <lb/>19. Rejeski K, Perez A, Sesques P, et al. CAR-HEMATOTOX: a model <lb/>for CAR T-cell-related hematologic toxicity in relapsed/refractory <lb/>large B-cell lymphoma. Blood. 2021;138(24):2499-2513. <lb/>20. Sharma N, Reagan PM, Liesveld JL. Cytopenia after CAR-T cell <lb/>therapy -A brief review of a complex problem. <lb/>Cancers (Basel). 2022;14(6):1501. <lb/>21. Penack O, Peczynski C, Koenecke C, et al. Severe cytopenia <lb/>after CD19 CAR T-cell therapy: a retrospective study from the <lb/>EBMT Transplant Complications Working Party. J Immunother <lb/>Cancer. 2023;11(4):e006406. <lb/>22. Gagelmann N, Wulf GG, Duell J, et al. Hematopoietic stem cell <lb/>boost for persistent neutropenia after CAR-T cell therapy: a <lb/>GLA/DRST study. Blood Adv. 2023;7(4):555-559. <lb/>23. Rejeski K, Burchert A, Iacoboni G, et al. Safety and feasibility of <lb/>stem cell boost as a salvage therapy for severe hematotoxicity <lb/>after CD19 CAR T-cell therapy. Blood Adv. 2022;6(16):4719-4725. <lb/>24. Bethge WA, Martus P, Schmitt M, et al. GLA/DRST real-world <lb/>outcome analysis of CAR T-cell therapies for large B-cell <lb/>lymphoma in Germany. Blood. 2022;140(4):349-358. <lb/>25. Dreger P, Holtick U, Subklewe M, et al. Impact of age on outcome <lb/>of CAR-T cell therapies for large B-cell lymphoma: the GLA/DRST <lb/>experience. Bone Marrow Transplant. 2023;58(2):229-232. <lb/>26. Greco R, Alexander T, Del Papa N, et al. Innovative cellular <lb/>therapies for autoimmune diseases: expert-based position <lb/>statement and clinical practice recommendations from the <lb/>EBMT practice harmonization and guidelines committee. <lb/>EClinicalMedicine. 2024;69:102476. </listBibl>
+
+
+	</text>
+
+</TEI>

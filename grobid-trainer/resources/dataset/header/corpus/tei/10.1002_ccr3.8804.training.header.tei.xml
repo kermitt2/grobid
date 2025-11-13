@@ -1,0 +1,117 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Bilateral dens evaginatus and associated cystic pathology: An unusual case report</title>
+      <author>
+        <persName>
+          <forename>Haeseong</forename>
+          <surname>Lee</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Bach</forename>
+          <surname>Le</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Parish</forename>
+          <surname>Sedghizadeh</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T15:32:26.522895Z">12.11.2025 15:32:26</date>
+        <title>grobid.training.header [default]</title>
+        <idno type="fileref">10.1002$1$ccr3.8804</idno>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>Wiley</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.1002/ccr3.8804</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Haeseong Lee, Bach Le, Parish Sedghizadeh. (2024). Bilateral dens evaginatus and associated cystic pathology: An unusual case report. Clinical Case Reports, 12(4), None. DOI: 10.1002/ccr3.8804</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T15:32:26.522895Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T15:32:26.522895Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+    <change when="2025-11-12T15:39:38.852Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>The Bias of the ECB Inflation Projections:<lb/> a State-Dependent Analysis *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Eleonora Granziera †<lb/> Pirkka Jalasjoki ‡<lb/> Maritta Paloviita §<lb/></docAuthor>
+	</byline>
+
+	<date>May 22,2024</date>
+
+	Abstract<lb/>
+	<div type="abstract">We test for state-dependent bias in the European Central Bank&apos;s inflation projections. We<lb/> show that the ECB tends to underpredict when the observed inflation rate at the time of fore-<lb/>casting is higher than an estimated threshold of 1.8%. The bias is most pronounced at interme-<lb/>diate forecasting horizons. This suggests that inflation is projected to revert towards the target<lb/> too quickly. These results cannot be fully explained by the persistence embedded in the fore-<lb/>casting models nor by errors in the exogenous assumptions on interest rates, exchange rates<lb/> or oil prices. The state-dependent bias may be consistent with the aim of managing inflation<lb/> expectations, as published forecasts play a central role in the ECB&apos;s monetary policy commu-<lb/>nication strategy.<lb/></div>
+
+	Keywords:
+	<keyword>Inflation Forecasts, Forecast Evaluation, ECB, Central Bank Communication<lb/> JEL classification: C12, C22, C53, E31, E52<lb/></keyword>
+
+	* The views expressed are those of the authors and do not necessarily reflect those of Norges Bank, the Bank of<lb/> Finland or the Eurosystem. We thank Michael Ehrmann, Juha Kilponen, Jarmo Kontulainen, Barbara Rossi, Tate-<lb/>vik Sekhposyan, Annette Vissing-Jørgensen and seminar and conference participants at the 2022 EEA-ESEM, San<lb/> Francisco FED, De Nederlandsche Bank, Heidelberg Workshop on Survey Data and Probabilistic Expectations, 14th<lb/> International Conference on Computational and Financial Econometrics, 2nd Vienna Workshop on Economic Fore-<lb/>casting, 28th Annual Symposium of the Society for Nonlinear Dynamics and Econometrics, 3rd Forecasting at Central<lb/> Banks Conference, 17th Conference on Real-Time Data Analysis, Methods and Applications. We also thank an anony-<lb/>mous referee from the Norges Bank Working Paper series. We give special thanks to Florens Odendahl, Barbara Rossi<lb/> and Tatevik Sekhposyan for sharing their MATLAB codes. The earlier version of this paper was circulated as BOF<lb/> DP 7/2021 and NB WP 1/2021.<lb/>
+
+	† Corresponding Author. 
+          
+    <byline>
+	<affiliation>Norges Bank;</affiliation>
+	</byline> 
+      
+    email:
+	<email>eleonora.granziera@norges-bank.no<lb/></email>
+
+	<byline>
+	<affiliation>‡ Bank of Finland.</affiliation>
+	</byline>
+
+	Email:
+	<email>pirkka.jalasjoki@bof.fi<lb/></email>
+
+	<byline>
+	<affiliation>§ Bank of Finland</affiliation>
+	</byline>
+    . Email:
+	<email>maritta.paloviita@bof.fi</email>
+
+		</front>
+	</text>
+
+</TEI>

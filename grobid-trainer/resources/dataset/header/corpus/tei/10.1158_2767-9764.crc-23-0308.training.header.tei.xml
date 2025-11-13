@@ -1,0 +1,243 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Inhibition of PRL2 Upregulates PTEN and Attenuates Tumor Growth in &lt;i&gt;Tp53&lt;/i&gt;-deficient Sarcoma and Lymphoma Mouse Models</title>
+      <author>
+        <persName>
+          <forename>Frederick</forename>
+          <surname>Nguele Meke</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Yunpeng</forename>
+          <surname>Bai</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Diego</forename>
+          <surname>Ruiz-Avila</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Colin</forename>
+          <surname>Carlock</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Jinan</forename>
+          <surname>Ayub</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Jinmin</forename>
+          <surname>Miao</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Yanyang</forename>
+          <surname>Hu</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Qinglin</forename>
+          <surname>Li</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Zhong-Yin</forename>
+          <surname>Zhang</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T16:16:50.141Z">12/11/2025 16:16:50</date>
+        <title>corrections</title>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>American Association for Cancer Research (AACR)</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.1158/2767-9764.crc-23-0308</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Frederick Nguele Meke, Yunpeng Bai, Diego Ruiz-Avila, Colin Carlock, Jinan Ayub, Jinmin Miao, Yanyang Hu, Qinglin Li, Zhong-Yin Zhang. (2024). Inhibition of PRL2 Upregulates PTEN and Attenuates Tumor Growth in &lt;i&gt;Tp53&lt;/i&gt;-deficient Sarcoma and Lymphoma Mouse Models. Cancer Research Communications, 4(1), 5-17. DOI: 10.1158/2767-9764.crc-23-0308</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T16:15:55.267121Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T16:15:55.267121Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+
+	<page>1<lb/></page>
+	<docTitle>
+	<titlePart>CALGB 80802 (Alliance): Impact of Sorafenib with and without Doxorubicin on Hepatitis<lb/> C infection in Patients with advanced hepatocellular carcinoma<lb/></titlePart>
+	</docTitle>
+
+	 Running Title: HCV titer and survival analysis in Alliance Phase 3 trial<lb/>
+
+	<byline>
+	<docAuthor>Ghassan K. Abou-Alfa 1,2 , Susan M. Geyer 3 , Andrew B. Nixon 4 , Federico Innocenti 5 , Qian Shi 3 ,<lb/> Priya Kumthekar 6 , Sawyer Jacobson 3 , Imane El Dika 1, 2 , Amin Yaqubie 1 , Juan Lopez 1 , Binhui<lb/> Huang 1 , Yi-Wei Tang 1 , Yujia Wen 7 , Lawrence H Schwartz 8,9 , Anthony B. El-Khoueiry 10 ,<lb/> Jennifer J. Knox 11 , Lakshmi Rajdev 12 , Monica M. Bertagnolli 13 , Jeffrey A. Meyerhardt 14 , Eileen<lb/> M. O&apos;Reilly 1,2 , Alan P. Venook 15<lb/></docAuthor>
+	</byline>
+
+	<!-- This version of PDFAlto removed the small numbers --> 
+	<byline>
+	<affiliation>Memorial Sloan Kettering Cancer Center,</affiliation>
+	</byline>
+
+	<address>New York, NY<lb/></address>
+
+	<byline>
+	<affiliation>Weill Medical College of Cornell University,</affiliation>
+	</byline>
+
+	<address>New York, NY<lb/></address>
+
+	<byline>
+	<affiliation>Alliance Statistics and Data Management Center, Mayo Clinic,</affiliation>
+	</byline>
+
+	<address>Rochester, MN<lb/></address>
+
+	<byline>
+	<affiliation>Duke Cancer Institute, Duke University Health System,</affiliation>
+	</byline>
+
+	<address>Durham, NC<lb/></address>
+
+	<byline>
+	<affiliation>University of North Carolina,</affiliation>
+	</byline>
+
+	<address>Chapel Hill, NC</address>
+
+	(at time of the effort)<lb/>
+			
+	<byline>
+	<affiliation>Alliance for Clinical Trials in Oncology Protocol Office,</affiliation>
+	</byline>
+			
+	<address>Chicago, IL,<lb/></address>
+
+	<byline>
+	<affiliation>University of Chicago,</affiliation>
+	</byline>
+
+	<address>Chicago, IL<lb/></address>
+
+	<byline>
+	<affiliation>Columbia University Medical Center,</affiliation>
+	</byline>
+
+	<address>New York, NY<lb/></address>
+
+	<byline>
+	<affiliation>New York-Presbyterian Hospital,</affiliation>
+	</byline>
+
+	<address>New York, NY<lb/></address>
+
+	<byline>
+	<affiliation>USC Norris Comprehensive Cancer Center,</affiliation>
+	</byline>
+
+	<address>Los Angeles, CA<lb/></address>
+
+	<byline>
+	<affiliation>Princess Margaret Cancer Centre,</affiliation>
+	</byline>
+
+	<address>Toronto, ON, Canada<lb/></address>
+
+	<byline>
+	<affiliation>Lenox Hill Hospital,</affiliation>
+	</byline>
+
+	<address>New York, NY<lb/></address>
+
+	Downloaded from
+	<ptr type="web">http://aacrjournals.org/cancerrescommun/article-pdf/doi/10.1158/2767-9764.CRC-22-0516/3416328/crc-22-0516.pdf</ptr> by guest on
+
+	<date>10 September 2025<lb/></date>
+
+	<byline>
+	<affiliation>13 Brigham and Women&apos;s Hospital,</affiliation>
+	</byline>
+
+	<address>Boston, MA<lb/></address>
+
+	<byline>
+	<affiliation>14 Dana-Farber/Partners Cancer Care,</affiliation>
+	</byline>
+
+	<address>Boston, MA<lb/></address>
+
+	<byline>
+	<affiliation>15 UCSF Helen Diller Family Comprehensive Cancer Center,</affiliation>
+	</byline>
+
+	<address>San Francisco, CA<lb/></address>
+
+	Corresponding Author:<lb/>
+	<byline>
+	<docAuthor>Ghassan Abou-Alfa, MD, MBA<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Memorial Sloan Kettering Cancer Center<lb/></affiliation>
+	</byline>
+
+	<address>300 East 66 th Street<lb/> New York, NY 10065<lb/> United States of America<lb/></address>
+
+	Tel: 
+	<phone>+1 646 824 6566<lb/></phone>
+	Email:
+	<email>abou-alg@mskcc.org<lb/></email>
+
+	Authors Disclosures:<lb/>
+	<note type="conflict">Ghassan K. Abou-Alfa receives research grant support from Arcus, Astra Zeneca, BioNtech,<lb/> BMS, Celgene, Genentech/Roche, Helsinn, Puma, QED, Yiviva; and consulting support from<lb/> Astra Zeneca, Autem, Berry Genomics, Boehringer Ingelheim, Eisai, Exelixis,<lb/> Genentech/Roche, Helio, Incyte, Ipsen, Merck, Newbridge, Novartis, QED, Servier, Yiviva;<lb/> Federico Innocenti receives stocks from AbbVie; Qian Shi receives research grant support<lb/> from Celgene/BMS, Roche/Genentech, Janssen, Novartis; consulting fees from Yiviva,<lb/> Boehringer Ingelheim, Regeneron, Hoosier Cancer Research Network, Kronos Bio; and<lb/> honoraria from Chugai; Priya U. Kumthekar receives research grant support from Novocure,<lb/> Genentech; consulting fees from Enclear Therapies, Biocept, Bioclinica/Clario, Orbus<lb/> Therapeutics; and participates on data safety monitoring board or advisory board of Janssen,<lb/> Affinia Therapeutics, Sintetica, Mirati, Novocure; Anthony B. El-Khoueiry receives<lb/> institutional grant support from Astex, Astrazeneca, Fulgent; receives consulting fees from Merck, Senti Biosciences, Qurient, Tallac, Servier, Exelixis, Agenus, Bristol Myers Squibb,<lb/> Gilead, ABL Bio, Bayer; and receives medical writing services support from Bristol Myers<lb/> Squibb, Exelixis, Genentech, Cytomx, GSK, Pfizer, Zymeworks; Jennifer J. Knox receives<lb/> grant research support from OICR, SU2C, Roche, Ipsen, Merck; and consulting fees from Astra<lb/> Zeneca, Incyte, Roche; Jeffrey Meyerhardt receives consulting fees from Merck and COTA<lb/> Healthcare; Eileen M. O&apos;Reilly receives research grant support from Arcus, Astra Zeneca,<lb/> BioNtech, BMS, Celgene, Genentech/Roche, Helsinn, Puma, QED, Yiviva, and consulting<lb/> support from Astra Zeneca, Autem, Berry Genomics, Boehringer Ingelheim, Eisai, Exelixis,<lb/> Genentech/Roche, Helio, Incyte, Ipsen, Merck, Newbridge, Novartis, QED, Servier, Yiviva;<lb/> Alan P. Venook received grant research support from Bayer; and Susan M. Geyer, Andrew B.<lb/> Nixon, Sawyer B. Jacobson, Imane El Dika, Amin Yaqubie, Juan Lopez, Binhui Huang, Yi-<lb/>Wei Tang, Yujia Wen, Lawrence H. Schwartz, Lakshmi N. Rajdev, Monica M. Bertagnolli,<lb/> reports no conflicts of interest.<lb/></note>
+			
+			
+	Abstract (245/250 words)<lb/>
+	<div type="abstract">Sorafenib blocks NS5A-recruited c-Raf-mediated hepatitis C virus (HCV) replication and gene<lb/> expression. Release of Raf-1-Ask-1 dimer and inhibition of Raf-1 via sorafenib putatively differ<lb/> in the presence or absence of doxorubicin. CALGB 80802 (Alliance) randomized phase III trial<lb/> of doxorubicin plus sorafenib versus sorafenib in patients with advanced hepatocellular<lb/> carcinoma (HCC), showed no improvement in median overall survival (OS). Whether HCV viral<lb/> load impacts therapy and if any correlation between HCV titers and outcome based on HCV was<lb/> studied. In HCV patients, HCV titer levels were evaluated at baseline and at multiple post-<lb/>baseline time points until disease progression or treatment discontinuation. HCV titer levels were<lb/> evaluated in relation to OS and progression-free survival (PFS). Among 53 patients with baseline<lb/> HCV data, 12 patients had undetectable HCV (HCV-UN). Post-baseline HCV titer levels did not<lb/> significantly differ between treatment arms. One patient in each arm went from detectable to<lb/> HCV-UN with greater than 2 log-fold titer levels reduction. Aside from these two HCV-UN<lb/> patients, HCV titers remained stable on treatment. Patients who had HCV-UN at baseline were<lb/> 3.5 times more likely to progress and/or die from HCC compared to HCV detectable (HR=3.51,<lb/> 95% CI: 1.58 -7.78; p=0.002). HCV titer levels remained unchanged, negating any sorafenib<lb/> impact onto HCV titer levels. Although an overall negative phase III study, patients treated with<lb/> doxorubicin plus sorafenib and sorafenib only, on CALGB 80802 had worse PFS if HCV-UN.<lb/> Higher levels of HCV titers at baseline were associated with significantly improved PFS.<lb/></div>
+
+	<div type="abstract">Significance statement:<lb/> Sorafenib therapy for HCC may impact hepatitis C virus replication and viral gene expression. In<lb/> HCV positive patients accrued to CLAGB 80802 phase III study evaluating the addition of<lb/> doxorubicin to sorafenib, HCV titer levels were evaluated at baseline and different time points.<lb/> Sorafenib did not impact HCV titer levels. Despite an improved PFS in patients with detectable<lb/> higher level HCV titers at baseline, no difference in OS was noted.</div>
+
+		</front>
+	</text>
+
+</TEI>
