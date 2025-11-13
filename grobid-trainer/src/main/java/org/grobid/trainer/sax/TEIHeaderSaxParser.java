@@ -1,5 +1,6 @@
 package org.grobid.trainer.sax;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.TextUtilities;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -29,6 +30,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
     private String fileName = null;
     //public TreeMap<String, String> pdfs = null;
     private String pdfName = null;
+    private boolean inTeiHeader = false; // flag to track when we're inside teiHeader
 
     private ArrayList<String> labeled = null; // store line by line the labeled data
 
@@ -38,15 +40,18 @@ public class TEIHeaderSaxParser extends DefaultHandler {
         "date", "keywords", "keyword",
         "reference", "ptr", "div", "editor", "meeting");
 
-    private List<String> intermediaryTags = Arrays.asList("byline", "front", "lb", "tei", "teiHeader", "fileDesc", "text", "byline", "docTitle", "p");
+    private List<String> intermediaryTags = Arrays.asList("byline", "front", "lb", "tei", "TEI", "teiHeader", "fileDesc", "text", "byline", "docTitle", "p");
 
-    private List<String> ignoredTags = Arrays.asList("location", "version", "web", "degree", "page", "title", "phone", "publisher");  
+    private List<String> ignoredTags = Arrays.asList("location", "version", "web", "degree", "page", "title", "phone", "publisher");
 
     public TEIHeaderSaxParser() {
         labeled = new ArrayList<>();
     }
 
     public void characters(char[] buffer, int start, int length) {
+        if (inTeiHeader) {
+            return; // Skip all character data inside teiHeader
+        }
         accumulator.append(buffer, start, length);
     }
 
@@ -71,6 +76,17 @@ public class TEIHeaderSaxParser extends DefaultHandler {
     public void endElement(String uri,
                            String localName,
                            String qName) throws SAXException {
+        if (qName.equals("teiHeader")) {
+            inTeiHeader = false;
+            return; // Exit teiHeader and resume normal processing
+        }
+
+        if (inTeiHeader) {
+            // Skip processing of all other closing tags inside teiHeader
+            return;
+        }
+
+
         if (endTags.contains(qName)) {
             writeData();
             accumulator.setLength(0);
@@ -98,18 +114,35 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                              String qName,
                              Attributes atts)
             throws SAXException {
-        if (qName.equals("lb")) {
-            accumulator.append(" ");
-        } /*else if (qName.equals("space")) {
-            accumulator.append(" ");
-        }*/ else {
-            // add acumulated text as <other>
-            String text = getText();
-            if (text != null) {
-                if (text.length() > 0) {
-                    currentTag = "<other>";
-                    writeData();
+        if (inTeiHeader) {
+            if (qName.equals("fileDesc")) {
+                //We need to get the pdf name from the xml:id attribute
+                for (int i = 0; i < atts.getLength(); i++) {
+                    // Get names and values for each attribute
+                    String name = atts.getQName(i);
+                    String value = atts.getValue(i);
+                    if (StringUtils.equals(name, "xml:id")) {
+                        this.pdfName = value;
+                        return;
+                    }
                 }
+            }
+            return;
+        }
+
+        if (qName.equals("teiHeader")) {
+            inTeiHeader = true;
+            return;
+        } else if (qName.equals("lb")) {
+            accumulator.append(" ");
+        /*} else if (qName.equals("space")) {
+            accumulator.append(" ");*/
+        } else {
+            // add accumulated text as <other>
+            String text = getText();
+            if (StringUtils.isNotEmpty(text)) {
+                currentTag = "<other>";
+                writeData();
             }
             accumulator.setLength(0);
         }
