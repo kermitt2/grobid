@@ -1,6 +1,6 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>
-    <fileDesc>
+    <fileDesc xml:id="_10.1021_acsenvironau.3c00072">
       <titleStmt>
         <title level="a">Exploring Drivers of Historic Mercury Trends in Beluga Whales Using an Ecosystem Modeling Approach</title>
         <author>
@@ -119,7 +119,7 @@
 	Published:
 	<date>May 2, 2024</date>
 
-	<docType>Article<lb/></docType>
+	<note type="docType">Article<lb/></note>
 	<ptr type="web">http://pubs.acs.org/journal/acsodf<lb/></ptr>
 
 	<note type="copyright">© 2024 The Authors. Published by<lb/> American Chemical Society</note>

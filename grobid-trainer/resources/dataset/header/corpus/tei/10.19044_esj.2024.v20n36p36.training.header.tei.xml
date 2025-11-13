@@ -6,11 +6,10 @@
 	<text xml:lang="en">
 		<front>
 <lb/>
-            <!-- how should I annotate this? I would capture the docType, more useful-->
             ESI
-            <docType>Preprints<lb/></docType>
+            <note type="doctype">Preprints<lb/></note>
 
-            <docType>Not Peer-reviewed<lb/></docType>
+            <note type="doctype">Not Peer-reviewed<lb/></note>
 
             <!-- how should I annotate this? no annotation... -->
             www.esipreprints.org
