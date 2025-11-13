@@ -1,0 +1,110 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title level="a">Unknown Title</title>
+      </titleStmt>
+      <editionStmt>
+        <edition>
+          <date when="2025-11-13T14:17:40.443352Z">13.11.2025 14:17:40</date>
+          <title>grobid.training.header [default]</title>
+          <idno type="fileref">2108.04818v1</idno>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+        <date type="publication"/>
+        <idno type="DOI"/>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>. (). Unknown Title. , (), . DOI: None</bibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <appInfo>
+        <application version="1.0" ident="pdf-tei-editor" type="editor">
+          <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+        </application>
+        <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-13T14:17:40.443352Z" type="extractor">
+          <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+          <label type="revision">4ae14a7</label>
+          <label type="flavor">default</label>
+          <label type="variant-id">grobid.training.header</label>
+          <ref target="https://github.com/kermitt2/grobid"/>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <revisionDesc>
+      <change when="2025-11-13T14:17:40.443352Z" status="draft">
+        <desc>Generated with createTraining API</desc>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Graph Approach to Simulate Twitter Activities with Hawkes Processes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ao Qu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Vanderbilt University<lb/></affiliation>
+	</byline>
+
+	<address>Nashville, TN, USA<lb/></address>
+
+	<email>ao.qu@vanderbilt.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Ismael Lemhadri<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Stanford University<lb/></affiliation>
+	</byline>
+
+	<address>Stanford, CA, USA<lb/></address>
+
+	<email>lemhadri@stanford.edu</email>
+
+	ABSTRACT<lb/>
+	<div type="abstract">The rapid growth of social media has been witnessed during recent<lb/> years as a result of the prevalence of the internet. This trend brings<lb/> an increasing interest in simulating social media which can provide<lb/> valuable insights to both academic researchers and businesses. In<lb/> this paper, we present a step-by-step approach of using Hawkes<lb/> process, a self-activating stochastic process, to simulate Twitter<lb/> activities and demonstrate how this model can be utilized to evalu-<lb/>ate the chance of extremely rare web crises. Another goal of this<lb/> research is to introduce a new strategy that implements Hawkes<lb/> process on graph structures. Overall, we intend to extend the cur-<lb/>rent Hawkes process to a wider range of scenarios and, in particular,<lb/> create a more realistic simulation of Twitter activities by incorpo-<lb/>rating the actual user status and following-follower interactions<lb/> between users.<lb/></div>
+
+	<keyword>CCS CONCEPTS<lb/> • Mathematics of computing → Stochastic processes; Maxi-<lb/>mum likelihood estimation; • General and reference → Estima-<lb/>tion.</keyword>
+
+	KEYWORDS<lb/>
+	<keyword>Hawkes Process, Importance Sampling, Social Media Simulation<lb/></keyword>
+
+	ACM Reference Format:<lb/>
+	<reference>Ao Qu and Ismael Lemhadri. 2021. A Graph Approach to Simulate Twitter<lb/> Activities with Hawkes Processes. In 2021 4th International Conference on<lb/> Mathematics and Statistics (ICoMS &apos;21), June 24-26, 2021, Paris, France. ACM,<lb/> New York, NY, USA, 6 pages.</reference>
+
+	<idno>https://doi.org/10.1145/3475827.3475838<lb/></idno>
+
+	<note type="copyright">Permission to make digital or hard copies of all or part of this work for personal or<lb/> classroom use is granted without fee provided that copies are not made or distributed<lb/> for profit or commercial advantage and that copies bear this notice and the full citation<lb/> on the first page. Copyrights for components of this work owned by others than ACM<lb/> must be honored. Abstracting with credit is permitted. To copy otherwise, or republish,<lb/> to post on servers or to redistribute to lists, requires prior specific permission and/or a<lb/> fee. Request permissions from permissions@acm.org.<lb/></note>
+
+	<reference>ICoMS &apos;21, June 24-26, 2021, Paris, France<lb/></reference>
+
+	<note type="copyright">© 2021 Association for Computing Machinery.<lb/></note>
+
+	ACM
+	<idno>ISBN 978-1-4503-8990-7/21/06</idno>
+          
+    . . . $15.00<lb/> 
+          
+    <idno>https://doi.org/10.1145/3475827.3475838<lb/></idno>
+          
+    <idno>arXiv:2108.04818v1 [cs.SI]</idno>
+
+	<date>6 Aug 2021</date>
+
+		</front>
+	</text>
+
+</TEI>

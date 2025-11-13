@@ -1,0 +1,140 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Karyological studies of four species of Lady’s Slipper Orchids (Paphiopedilum) collected in the Bogor Botanical Garden, Indonesia</title>
+      <author>
+        <persName>
+          <forename>Titien Ngatinem</forename>
+          <surname>Praptosuwiryo</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>R. Vitri</forename>
+          <surname>Garvita</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Elizabeth</forename>
+          <surname>Handini</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Izu Andry</forename>
+          <surname>Fijridiyanto</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Joko Ridho</forename>
+          <surname>Witono</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T17:43:38.901641Z">12.11.2025 17:43:38</date>
+        <title>grobid.training.header [default]</title>
+        <idno type="fileref">10.36253$1$caryologia-2232</idno>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>Firenze University Press</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.36253/caryologia-2232</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Titien Ngatinem Praptosuwiryo, R. Vitri Garvita, Elizabeth Handini, Izu Andry Fijridiyanto, Joko Ridho Witono. (2024). Karyological studies of four species of Lady’s Slipper Orchids (Paphiopedilum) collected in the Bogor Botanical Garden, Indonesia. Caryologia, 77(1), 57-64. DOI: 10.36253/caryologia-2232</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T17:43:38.901641Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T17:43:38.901641Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+    <change when="2025-11-12T17:46:32.195Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="it">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>La Strage degli Innocenti della chiesa dei Servi di Siena: proposte di<lb/> lettura per un palinsesto composito<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Il presente lavoro si pone in continuità alle ricerche sull&apos;allestimento<lb/> pittorico parietale trecentesco della cappella Petroni nel transetto<lb/> destro della chiesa dei Servi di Siena e ha per oggetto gli interventi<lb/> d&apos;età moderna ben individuabili sulla parete dipinta. Si è cercato di<lb/> inserire queste interpolazioni seriori entro il contesto della fabbrica<lb/> architettonica a cavallo tra il XV e il XVI secolo, quando l&apos;edificio<lb/> costituiva ancora uno dei principali luoghi di culto cittadini,<lb/> largamente finanziato dalle istituzioni pubbliche. Considerazioni<lb/> di carattere stilistico hanno suggerito, infine, di accostare alcuni<lb/> dei rifacimenti alla produzione pittorica di Domenico Beccafumi,<lb/> collocandoli cronologicamente all&apos;inizio del secondo decennio del<lb/> Cinquecento.<lb/> This study continues the research on the fourteenth-century<lb/> wall painting arrangement in the Petroni Chapel, located in the<lb/> right ale of the transept of the Church of the Servites of Siena,<lb/> focusing on the clearly identifiable modern-age interventions on<lb/> the painted wall. The aim was to contextualize these later additions<lb/> within the architectural production spanning the fifteenth and<lb/> sixteenth centuries, when the building was still one of the main<lb/> places of worship in the city, largely funded by public institutions.<lb/> Stylistic considerations have suggested associating some of the<lb/> refurbishments with the artistic output of Domenico Beccafumi,<lb/> placing them chronologically at the beginning of the second decade<lb/> of the sixteenth century.<lb/></div>
+
+	Keywords:
+	<keyword>Church of the Servites of Siena, modern-age restoration,<lb/> architectural production, Beccafumi, sixteenth-century Sienese painting<lb/></keyword>
+
+	<ptr type="web">https://riviste.fupress.net/index.php/diana/index<lb/></ptr>
+
+	<title level="j">LA DIANA</title>
+          |
+
+	CONTRIBUTIONS<lb/>
+	rivista semestrale della scuola di specializzazione in beni storico artistici dell&apos;università degli studi di siena<lb/>
+
+	<byline>
+	<docAuthor>Vittoria Pipino<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Scuola Normale Superiore di Pisa<lb/> Classe di Lettere<lb/> Corso di perfezionamento in Storia dell&apos;arte<lb/></affiliation>
+	</byline>
+
+	Contact
+	<email>vittoria.pipino@sns.it<lb/></email>
+
+	<reference>LA DIANA | 6 | 2023 95<lb/></reference>
+
+	<note type="doctype">open access<lb/></note>
+
+	Published twice a year<lb/>
+	<idno>ISSN 2784-9597 (online)<lb/></idno>
+
+	<note type="submission">Received 19 April 2024; Accepted 11 June 2024;<lb/></note>
+
+	First Published
+	<date>July 2024<lb/></date>
+
+	<reference>Citation Vittoria Pipino, La Strage degli Innocenti<lb/> della chiesa dei Servi di Siena: proposte di lettura per un<lb/> palinsesto composito, «La Diana», 6, 2023, pp. 95-114.<lb/></reference>
+
+	<idno>DOI 10.36253/ladiana-2888<lb/></idno>
+
+	<note type="copyright">Copyright © 2024 Vittoria Pipino<lb/> This is an open access, peer-reviewed article published<lb/> by Università di Siena (https://riviste.fupress.net/<lb/> index.php/diana/index) and distributed under the<lb/> terms of the Creative Commons Attribution License<lb/> (https://creativecommons.org/licenses/by/4.0/),<lb/> which permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited<lb/></note>
+
+    Data Availability Statement<lb/>
+    <note type="availability">All relevant data are within the paper and its<lb/> Supporting Information files<lb/></note>
+
+    Competing Interests<lb/>
+    <note type="conflict">The Author(s) declare(s) no conflict of interest</note>
+		</front>
+	</text>
+
+</TEI>

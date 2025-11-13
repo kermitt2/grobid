@@ -1,0 +1,149 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Evaluation of innovation efficiency of high-tech enterprise based on DEA and Malmquist index under the background of sustainable development</title>
+      <author>
+        <persName>
+          <forename>Liwei</forename>
+          <surname>Wang</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Tianbo</forename>
+          <surname>Tang</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T16:48:18.056509Z">12.11.2025 16:48:18</date>
+        <title>grobid.training.header [default]</title>
+        <idno type="fileref">10.1108$1$APJIE-10-2023-0190</idno>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>Emerald</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.1108/APJIE-10-2023-0190</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Liwei Wang, Tianbo Tang. (2024). Evaluation of innovation efficiency of high-tech enterprise based on DEA and Malmquist index under the background of sustainable development. Asia Pacific Journal of Innovation and Entrepreneurship, 18(4), 340-354. DOI: 10.1108/APJIE-10-2023-0190</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T16:48:18.056509Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T16:48:18.056509Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+    <change when="2025-11-12T16:56:45.357Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Evaluation of innovation efficiency<lb/> of high-tech enterprise based on<lb/> DEA and Malmquist index<lb/> under the background of<lb/> sustainable development<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Liwei Wang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Shanghai Information Center for Life Sciences,<lb/> Shanghai Institute of Nutrition and Health Chinese Academy of Sciences,<lb/></affiliation>
+	</byline>
+
+	<address>Shanghai, China,</address>
+
+	and<lb/>
+          
+	<byline>
+	<docAuthor>Tianbo Tang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Shanghai Institute for Science of Science,</affiliation>
+	</byline>
+
+	<address>Shanghai, China</address>
+
+	Abstract<lb/>
+	<div type="abstract">Purpose -This paper aims to promote the higher quality development of high-tech enterprises in China.<lb/> While science and technology have greatly promoted human civilization, resources have been excessively<lb/> consumed and the environment has been sharply polluted. Therefore, it is particularly important for current<lb/> enterprises to make use of scientific and technological innovation to maximize the benefits of mankind,<lb/> minimize the loss of nature, and promote the sustainable development of our country.<lb/> Design/methodology/approach -By using DEA-Banker-Charnes-Cooper (BCC) model and DEA-<lb/>Malmquist model, this paper comprehensively examines the innovation efficiency of high-tech enterprises<lb/> from both static and dynamic perspectives, and conducts a provincial comparative study with the panel data<lb/> of ten representative provinces from 2011 to 2020.<lb/> Findings -The research findings are as follows: the rapid number increase of high-tech enterprises in most<lb/> provinces (cities) is accompanied by an ineffective input-output efficiency; the quality of high-tech enterprises<lb/> needs to comprehensively examine both input-output efficiency and total factor productivity; and there is not<lb/> a positive correlation between element investment and innovation performance.<lb/> Research limitations/implications -Because the DEA model used in this paper assumes that the<lb/> improvement direction of invalid units is to ensure that the input ratio of various production factors remains<lb/> unchanged but sometimes the proportion of scientific and technological activities personnel and the total<lb/> research and development investment is not constant. In the future, the nonradial DEA model can be<lb/> considered for further research. Due to historical data statistics, more provinces, cities and longer panel data<lb/> are difficult to obtain. The samples studied in this paper mainly refer to the provinces and cities that ranked<lb/> first in the number of national high-tech enterprises in 2020. Limited by the number of samples, DEA analysis<lb/></div>
+
+	<note type="copyright">© Liwei Wang and Tianbo Tang. Published in Asia Pacific Journal of Innovation and<lb/> Entrepreneurship. Published by Emerald Publishing Limited. This article is published under the<lb/> Creative Commons Attribution (CC BY 4.0) licence. Anyone may reproduce, distribute, translate and<lb/> create derivative works of this article (for both commercial and non-commercial purposes), subject to<lb/> full attribution to the original publication and authors. The full terms of this licence may be seen at<lb/> http://creativecommons.org/licences/by/4.0/legalcode<lb/></note> 
+          
+    Data availability: 
+    <note type="availability">The data set is available from the corresponding author upon request.<lb/></note>
+
+	Conflicts of interest: 
+    <note type="conflict">There are no conflicts of interest regarding the publication of this article.<lb/></note>
+          
+    APJIE<lb/> 18,4 340<lb/>
+	<note type="submission">Received 9 October 2023<lb/> Revised 7 December 2023<lb/> Accepted 26 February 2024<lb/></note>
+
+	<reference>Asia Pacific Journal of Innovation<lb/> and Entrepreneurship<lb/> Vol. 18 No. 4, 2024<lb/> pp. 340-354<lb/></reference>
+
+	<publisher>Emerald Publishing Limited<lb/></publisher>
+          
+	<idno>e-ISSN: 2398-7812<lb/></idno>
+
+	
+	<idno>p-ISSN: 2071-1395<lb/></idno> 
+          
+    <idno>DOI 10.1108/APJIE-10-2023-0190<lb/></idno>
+
+	The current issue and full text archive of this journal is available on Emerald Insight at:<lb/>
+	<ptr type="web">https://www.emerald.com/insight/2398-7812.htm<lb/></ptr>
+
+	Downloaded from
+	<ptr type="web">http://www.emerald.com/apjie/article-pdf/18/4/340/9469426/apjie-10-2023-0190.pdf</ptr>
+    by guest on
+
+	<date>10 September 2025<lb/></date>
+
+	<div type="abstract">failed to select more input and output indicators. In the future, with the accumulation of statistical data, the<lb/> existing efficiency analysis will be further optimized.<lb/> Originality/value -Aiming at the misunderstanding of emphasizing quantity and neglecting quality in<lb/> the cultivation of high-tech enterprises, this paper comprehensively uses DEA-BCC model and DEA<lb/> Malmquist index decomposition method to make a comprehensive comparative study on the development of<lb/> high-tech enterprises in ten representative provinces (cities) from two aspects of static efficiency evaluation<lb/> and dynamic efficiency evaluation.<lb/></div>
+
+	Keywords
+	<keyword>Sustainable development, Innovation efficiency, DEA-BCC model,<lb/> DEA-Malmquist model, High-tech enterprise<lb/></keyword>
+          
+    Paper type 
+          
+    <note type="doctype">Research paper<lb/></note>
+
+	Corresponding author<lb/> 
+          
+    <byline>
+	<docAuthor>Tianbo Tang</docAuthor>
+    </byline>
+          
+    can be contacted at:
+	<email>timbert@163.com</email>
+
+		</front>
+	</text>
+
+</TEI>

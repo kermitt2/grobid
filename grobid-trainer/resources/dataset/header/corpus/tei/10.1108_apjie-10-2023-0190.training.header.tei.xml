@@ -1,0 +1,168 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Exploring lean manufacturing drivers for enhancing circular economy performance in the pharmaceutical industry: a Bayesian best–worst approach</title>
+      <author>
+        <persName>
+          <forename>Sheak</forename>
+          <surname>Salman</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Shah Murtoza</forename>
+          <surname>Morshed</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Md. Rezaul</forename>
+          <surname>Karim</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Rafat</forename>
+          <surname>Rahman</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Sadia</forename>
+          <surname>Hasanat</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Afia</forename>
+          <surname>Ahsan</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T15:59:36.095857Z">12.11.2025 15:59:36</date>
+        <title>grobid.training.header [default]</title>
+        <idno type="fileref">10.1108$1$IJIEOM-10-2023-0074</idno>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>Emerald</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.1108/IJIEOM-10-2023-0074</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Sheak Salman, Shah Murtoza Morshed, Md. Rezaul Karim, Rafat Rahman, Sadia Hasanat, Afia Ahsan. (2024). Exploring lean manufacturing drivers for enhancing circular economy performance in the pharmaceutical industry: a Bayesian best–worst approach. International Journal of Industrial Engineering and Operations Management, 7(1), 68-96. DOI: 10.1108/IJIEOM-10-2023-0074</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T15:59:36.095857Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T15:59:36.095857Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+    <change when="2025-11-12T16:08:36.073Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Exploring lean manufacturing<lb/> drivers for enhancing circular<lb/> economy performance in the<lb/> pharmaceutical industry:<lb/> a Bayesian best-worst approach<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sheak Salman, Shah Murtoza Morshed, Md. Rezaul Karim,<lb/> Rafat Rahman, Sadia Hasanat and Afia Ahsan<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Mechanical and Production Engineering,<lb/> Ahsanullah University of Science and Technology,</affiliation>
+	</byline>
+
+	<address>Dhaka, Bangladesh</address>
+
+	Abstract<lb/>
+	<div type="abstract">Purpose -The imperative to conserve resources and minimize operational expenses has spurred a notable<lb/> increase in the adoption of lean manufacturing within the context of the circular economy across diverse<lb/> industries in recent years. However, a notable gap exists in the research landscape, particularly concerning the<lb/> implementation of lean practices within the pharmaceutical industry to enhance circular economy<lb/> performance. Addressing this void, this study endeavors to identify and prioritize the pivotal drivers<lb/> influencing lean manufacturing within the pharmaceutical sector.<lb/> Findings -The outcome of this rigorous examination highlights that &quot;Continuous Monitoring Process for<lb/> Sustainable Lean Implementation,&quot; &quot;Management Involvement for Sustainable Implementation&quot; and<lb/> &quot;Training and Education&quot; emerge as the most consequential drivers. These factors are deemed crucial for<lb/> augmenting circular economy performance, underscoring the significance of management engagement,<lb/> training initiatives and a continuous monitoring process in fostering a closed-loop practice within the<lb/> pharmaceutical industry.<lb/> Research limitations/implications -The findings contribute valuable insights for decision-makers aiming<lb/> to adopt lean practices within a circular economy framework. Specifically, by streamlining the process of<lb/> developing a robust action plan tailored to the unique needs of the pharmaceutical sector, our study provides<lb/> actionable guidance for enhancing overall sustainability in the manufacturing processes.<lb/> Originality/value -This study represents one of the initial efforts to systematically identify and assess the<lb/> drivers to LM implementation within the pharmaceutical industry, contributing to the emerging body of<lb/> knowledge in this area.<lb/></div>
+
+	Keywords
+	<keyword>Drivers of lean manufacturing, Sustainable lean implementation, Best-worst method (BWM),<lb/> Pharmaceutical industry, Circular economy<lb/></keyword>
+          
+    Paper type 
+          
+    <note type="doctype">Research paper<lb/></note> 
+          
+    IJIEOM<lb/> 7,1
+
+	<page>68<lb/></page>
+          
+	
+	<note type="copyright">© Sheak Salman, Shah Murtoza Morshed, Md. Rezaul Karim, Rafat Rahman, Sadia Hasanat and Afia<lb/> Ahsan.</note>
+          
+    Published in 
+          
+    <title level="j">International Journal of Industrial Engineering and Operations Management.<lb/></title> 
+          
+    Published by <publisher>Emerald Publishing Limited</publisher>. 
+    
+    <note type="copyright">This article is published under the Creative Commons<lb/> Attribution (CC BY 4.0) licence. Anyone may reproduce, distribute, translate and create derivative works<lb/> of this article (for both commercial and non-commercial purposes), subject to full attribution to the<lb/> original publication and authors. The full terms of this licence may be seen at http://creativecommons.<lb/> org/licences/by/4.0/legalcode<lb/></note>
+
+    Funding acknowledgment:
+    <note type="funding">The research received no external funding.<lb/></note>
+
+	Conflict of interest statement: 
+    <note type="conflict">No potential conflict of interest was reported by the author(s).<lb/></note>
+
+    Data availability statement:
+    <note type="availability">Data used are available in this paper.<lb/></note>
+          
+    The current issue and full text archive of this journal is available on Emerald Insight at:<lb/> https://www.emerald.com/insight/2690-6090.htm<lb/>
+
+	<note type="submission">Received 3 October 2023<lb/> Revised 31 December 2023<lb/> Accepted 27 February 2024<lb/></note>
+
+	<reference>International Journal of Industrial<lb/> Engineering and Operations<lb/> Management<lb/> Vol. 7 No. 1, 2025<lb/> pp. 68-96<lb/></reference>
+
+	Emerald Publishing Limited<lb/> 
+	<idno>e-ISSN: 2690-6104<lb/> p-ISSN: 2690-6090<lb/> DOI 10.1108/IJIEOM-10-2023-0074<lb/></idno>
+
+	Downloaded from
+	<ptr type="web">http://www.emerald.com/ijieom/article-pdf/7/1/68/9674929/ijieom-10-2023-0074.pdf</ptr> by guest on
+
+	<date>10 September 2025<lb/></date>
+
+	Corresponding author<lb/> 
+          
+    <byline>
+	<docAuthor>Sheak Salman</docAuthor>
+    </byline> 
+    can be contacted at:
+          
+	<email>salman.ipe@aust.edu<lb/></email>
+
+	For instructions on how to order reprints of this article, please visit our website:<lb/> www.emeraldgrouppublishing.com/licensing/reprints.htm<lb/> Or contact us for further details: permissions@emeraldinsight.com
+
+		</front>
+	</text>
+
+</TEI>

@@ -1,0 +1,134 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Evaluation of Summertime Passive Microwave and Reanalysis Sea‐Ice Concentration in the Central Arctic</title>
+      <author>
+        <persName>
+          <forename>Kexin</forename>
+          <surname>Song</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Peter J.</forename>
+          <surname>Minnett</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T15:54:35.825849Z">12.11.2025 15:54:35</date>
+        <title>grobid.training.header [default]</title>
+        <idno type="fileref">10.1029$1$2023EA003214</idno>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>American Geophysical Union (AGU)</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.1029/2023EA003214</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Kexin Song, Peter J. Minnett. (2024). Evaluation of Summertime Passive Microwave and Reanalysis Sea‐Ice Concentration in the Central Arctic. Earth and Space Science, 11(1), None. DOI: 10.1029/2023EA003214</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T15:54:35.825849Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T15:54:35.825849Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+    <change when="2025-11-12T15:58:22.173Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+    <change when="2025-11-12T16:10:43.005Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	Abstract
+	<div type="abstract">Passive microwave (PM) observations have been used to monitor ice retreat in the Arctic.<lb/> However, various PM sea ice concentration (SIC) algorithms are prone to underestimate ice fraction during<lb/> summer. We evaluated the accuracy of 2002-2019 low SICs in the Central Arctic Ocean of four PM products<lb/> from the University of Bremen, the National Snow and Ice Data Center (NSIDC), and the Ocean and Sea Ice<lb/> Satellite Application Facility (OSI SAF), and two reanalysis data sets from the fifth generation of European<lb/> ReAnalysis (ERA5) and the Modern-Era Retrospective analysis for Research and Applications, Version 2<lb/> (MERRA-2). Three reference fields were used: (a) Moderate Resolution Imaging Spectroradiometer (MODIS)<lb/> and Visible Infrared Imaging Radiometer Suite (VIIRS) true-color composites, (b) MODIS sea ice extent, and<lb/> (c) multi-product ensemble (MPE-SIC) comprising the median of collocated SIC estimates. Our results indicate<lb/> SICs derived from the Advanced Microwave Scanning Radiometer -Earth Observing System (AMSR-E) and<lb/> the Advanced Microwave Scanning Radiometer 2 (AMSR2) high frequency channels have the best accuracy.<lb/> Reanalysis SICs indicate almost identical patterns as their remote sensing inputs. The assessment shows that the<lb/> Bremen (+1.06%) and NSIDC (+0.99%) SICs are higher than the median field, while the OSI-401 (-6.65%)<lb/> and OSI-408 (-4.64%) have negative mean deviations. The mean error of MODIS-derived SIC (-0.80%) is<lb/> smaller than PM SICs. These small mean values belie wide distributions of values. The correlation coefficients<lb/> of pairs of time series of Low sea-Ice Concentration Index range from 0.37 to 0.96.<lb/></div>
+
+	SONG AND MINNETT<lb/>
+	<note type="copyright">© 2024 The Authors. Earth and Space<lb/> Science published by Wiley Periodicals<lb/> LLC on behalf of American Geophysical<lb/> Union.<lb/> This is an open access article under<lb/> the terms of the Creative Commons<lb/> Attribution License, which permits use,<lb/> distribution and reproduction in any<lb/> medium, provided the original work is<lb/> properly cited.<lb/></note>
+
+	<docTitle>
+	<titlePart>Evaluation of Summertime Passive Microwave and Reanalysis<lb/> Sea-Ice Concentration in the Central Arctic<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kexin Song 1,2 and Peter J. Minnett 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Meteorology and Physical Oceanography Graduate Program, Rosenstiel School of Marine, Atmospheric, and Earth Science,<lb/> University of Miami,</affiliation>
+	</byline>
+
+	<address>Miami, FL, USA,</address>
+
+	<byline>
+	<affiliation>2 Now at Department of Natural Resources and the Environment, University of<lb/> Connecticut,</affiliation>
+	</byline>
+
+	<address>Storrs, CT, USA,</address>
+
+	<byline>
+	<affiliation>3 Department of Ocean Sciences, Rosenstiel School of Marine, Atmospheric and Earth Science,<lb/> University of Miami,</affiliation>
+	</byline>
+
+	<address>Miami, FL, USA<lb/></address>
+
+	<div type="abstract">Key Points:<lb/> • We compared Arctic sea ice<lb/> concentration (SIC) using passive<lb/> microwave (PM), optical, and<lb/> reanalysis data sets for the summers of<lb/> 2002-2019<lb/> • The correlation coefficients of<lb/> pairs of time series of Low sea-Ice<lb/> Concentration Index range from 0.37<lb/> to 0.96<lb/> • The average differences between<lb/> multi-product ensemble (MPE-SIC)<lb/> and PM SIC range from -6.65% to<lb/> +1.09%</div>
+
+	<lb/> Correspondence to:<lb/>
+	<byline>
+	<docAuthor>P. J. Minnett,<lb/></docAuthor>
+	</byline>
+
+	<email>pminnett@rsmas.miami.edu<lb/></email>
+
+	Citation:<lb/>
+	<reference>Song, K., &amp; Minnett, P. J. (2024).<lb/> Evaluation of summertime passive<lb/> microwave and reanalysis sea-ice<lb/> concentration in the Central Arctic. Earth<lb/> and Space Science, 11, e2023EA003214.<lb/></reference>
+
+	<idno>https://doi.org/10.1029/2023EA003214<lb/></idno>
+
+	<note type="submission">Received 31 JUL 2023<lb/> Accepted 20 DEC 2023<lb/></note>
+
+	Author Contributions:<lb/> 
+    <note type="contribution">Conceptualization: Kexin Song, Peter<lb/> J. Minnett<lb/> Data curation: Kexin Song<lb/> Investigation: Peter J. Minnett<lb/> Methodology: Kexin Song, Peter J.<lb/> Minnett<lb/> Supervision: Peter J. Minnett<lb/> Validation: Kexin Song, Peter J. Minnett<lb/> Visualization: Kexin Song<lb/> Writing -original draft: Kexin Song<lb/> Writing -review &amp; editing: Kexin<lb/> Song, Peter J. Minnett<lb/></note>
+          
+    <idno>10.1029/2023EA003214<lb/></idno>
+
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<page>1 of 20<lb/></page>
+	<title level="j">Earth and Space Science<lb/></title>
+
+	23335084, 2024, 1, Downloaded from https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2023EA003214 by Cochrane Portugal, Wiley Online Library on [10/09/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+		</front>
+	</text>
+
+</TEI>

@@ -1,0 +1,113 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title level="a">Unknown Title</title>
+      </titleStmt>
+      <editionStmt>
+        <edition>
+          <date when="2025-11-13T14:45:35.607935Z">13.11.2025 14:45:35</date>
+          <title>grobid.training.header [default]</title>
+          <idno type="fileref">23311932.2024.2374940_training</idno>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+        <date type="publication"/>
+        <idno type="DOI"/>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>. (). Unknown Title. , (), . DOI: None</bibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <appInfo>
+        <application version="1.0" ident="pdf-tei-editor" type="editor">
+          <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+        </application>
+        <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-13T14:45:35.607935Z" type="extractor">
+          <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+          <label type="revision">4ae14a7</label>
+          <label type="flavor">default</label>
+          <label type="variant-id">grobid.training.header</label>
+          <ref target="https://github.com/kermitt2/grobid"/>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <revisionDesc>
+      <change when="2025-11-13T14:45:35.607935Z" status="draft">
+        <desc>Generated with createTraining API</desc>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	Soil &amp; Crop SCienCeS | reSearCh artiCle<lb/>
+	<reference>Cogent Food &amp; AgriCulture<lb/> 2024, Vol. 10, no. 1, 2374940<lb/></reference>
+
+	<docTitle>
+	<titlePart>Agronomic performances, yield and nutritional values of lupin grain<lb/> varieties at Gircha research center, Gamo Highlands<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yilkal tadele<lb/> and Seifu Berhanu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>department of Animal Science, Arba Minch university</affiliation>, 
+	</byline>
+
+	<address>Arba Minch, ethiopia</address>
+
+	ABSTRACT<lb/>
+	<div type="abstract">lupin is a multipurpose legume used for food and feed. however, its production is limited to<lb/> the northern and northwest highlands of ethiopia. it is important to evaluate productivity of<lb/> different varieties in different locations of the country. therefore, this experiment aimed to<lb/> evaluate agronomic performances, yield and nutritional values of lupin grain varieties in<lb/> Gamo highlands, southern ethiopia. the field experiment consisting of three treatments<lb/> (varieties) with five replications arranged in randomized complete block design (rCBD). the<lb/> experiment was carried out for two consecutive rainy seasons. Data on plant height, days to<lb/> flowering, days to maturity, number of tillers and pods (plant-1), pod length, seeds per pod,<lb/> grain yield and thousand grains mass (g) was collected. plant height (cm) at maturity for<lb/> sanabor variety (86) was significantly higher (p &lt; 0.05) than plant height of the local (79.7) and<lb/> vitabor (78.9) varieties. Days to flowering was significantly different (p &lt; 0.001) between<lb/> varieties. number of tillers per plant was higher (p &lt; 0.05) for sanabor (7.79) as compared to<lb/> Vitabor (6.11) and local variety (4.74). Straw dry matter yield (t/h) of the local (4.06) and<lb/> sanabor (3.85) varieties were higher than Vitabor (3.41). Grain yield (t/h) of 4.74, 4.08 and 3.75<lb/> were recorded for local, sanabor and Vitabor varieties. the cost benefit analysis indicated that<lb/> growing sanabor variety has the highest net return and profitable. From the biomass<lb/> perspective/feed value, growing the local variety is recommended.<lb/></div>
+
+	<note type="copyright">© 2024 the Author(s). Published by informa uK limited, trading as taylor &amp; Francis group<lb/></note>
+
+	CONTACT 
+          
+    <byline>
+	<docAuthor>Yilkal tadele<lb/></docAuthor>
+	</byline>
+          
+	<email>yilkaltadele@gmail.com<lb/></email>
+
+	<byline>
+	<affiliation>department of Animal Science, Arba Minch university</affiliation>, 
+	</byline>
+
+	<address>Arba Minch, ethiopia</address>.<lb/>
+
+	<idno>https://doi.org/10.1080/23311932.2024.2374940<lb/></idno>
+
+	<note type="copyright">this is an open Access article distributed under the terms of the Creative Commons Attribution license (http://creativecommons.org/licenses/by/4.0/), which permits unre-<lb/>stricted use, distribution, and reproduction in any medium, provided the original work is properly cited. the terms on which this article has been published allow the<lb/> posting of the Accepted Manuscript in a repository by the author(s) or with their consent.<lb/></note>
+
+	ARTICLE HISTORY<lb/>
+	<note type="submission">received 29 May 2024<lb/> revised 25 June 2024<lb/> accepted 26 June 2024</note>
+
+	KEYWORDS<lb/>
+	<keyword>agronomic performance;<lb/> lupin; profitability; yield; variety<lb/></keyword>
+
+	REVIEWING EDITOR<lb/>
+	<editor>Manuel tejada</editor>,<lb/>
+
+	<byline>
+	<affiliation>Universidad de Sevilla</affiliation>,<lb/>
+	</byline>
+
+	<address>Sevilla, Spain</address>
+
+	SUBJECTS<lb/> 
+          
+    <keyword>agriculture &amp;<lb/> environmental Sciences;<lb/> plant &amp; animal ecology; nutrition ORCID<lb/> Yilkal tadele<lb/></keyword>
+          
+	<idno>http://orcid.org/0000-0002-8678-1308</idno>
+
+		</front>
+	</text>
+
+</TEI>

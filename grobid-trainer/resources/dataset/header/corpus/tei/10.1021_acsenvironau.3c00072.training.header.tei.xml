@@ -1,0 +1,141 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title level="a">Exploring Drivers of Historic Mercury Trends in Beluga Whales Using an Ecosystem Modeling Approach</title>
+        <author>
+          <persName>
+            <forename>Emma J.</forename>
+            <surname>Gillies</surname>
+          </persName>
+        </author>
+        <author>
+          <persName>
+            <forename>Mi-Ling</forename>
+            <surname>Li</surname>
+          </persName>
+        </author>
+        <author>
+          <persName>
+            <forename>Villy</forename>
+            <surname>Christensen</surname>
+          </persName>
+        </author>
+        <author>
+          <persName>
+            <forename>Carie</forename>
+            <surname>Hoover</surname>
+          </persName>
+        </author>
+        <author>
+          <persName>
+            <forename>Kristen J.</forename>
+            <surname>Sora</surname>
+          </persName>
+        </author>
+        <author>
+          <persName>
+            <forename>Lisa L.</forename>
+            <surname>Loseto</surname>
+          </persName>
+        </author>
+        <author>
+          <persName>
+            <forename>William W. L.</forename>
+            <surname>Cheung</surname>
+          </persName>
+        </author>
+        <author>
+          <persName>
+            <forename>Hélène</forename>
+            <surname>Angot</surname>
+          </persName>
+        </author>
+        <author>
+          <persName>
+            <forename>Amanda</forename>
+            <surname>Giang</surname>
+          </persName>
+        </author>
+      </titleStmt>
+      <editionStmt>
+        <edition>
+          <date when="2025-10-27T15:01:02.312839Z">27.10.2025 15:01:02</date>
+          <title>grobid.training.header [default]</title>
+          <idno type="fileref">10.1021$1$acsenvironau.3c00072</idno>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <publisher>American Chemical Society (ACS)</publisher>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+        <date type="publication">2024</date>
+        <idno type="DOI">10.1021/acsenvironau.3c00072</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>Emma J. Gillies, Mi-Ling Li, Villy Christensen, Carie Hoover, Kristen J. Sora, Lisa L. Loseto, William W. L. Cheung, Hélène Angot, Amanda Giang. (2024). Exploring Drivers of Historic Mercury Trends in Beluga Whales Using an Ecosystem Modeling Approach. ACS Environmental Au, 4(5), 219-235. DOI: 10.1021/acsenvironau.3c00072</bibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <appInfo>
+        <application version="1.0" ident="pdf-tei-editor" type="editor">
+          <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+        </application>
+        <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-10-27T15:01:02.312839Z" type="extractor">
+          <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+          <label type="revision">eb7768b</label>
+          <label type="flavor">default</label>
+          <label type="variant-id">grobid.training.header</label>
+          <ref target="https://github.com/kermitt2/grobid"/>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <revisionDesc>
+      <change when="2025-10-27T15:01:02.312839Z" status="draft">
+        <desc>Generated with createTraining API</desc>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Electrical Properties of Laser Patterned Schottky Diode with ALD-<lb/>Grown TiO 2 Interlayer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Elanur Dikiciogľu,* M. Burcu Balı, Semran Sagľam, Halil Berberogľu, Ihor Pavlov, Arian Goodarzi,<lb/> and Elif Orhan*<lb/></docAuthor>
+	</byline>
+
+	Cite This:
+	<reference>ACS Omega 2024, 9, 21346-21352<lb/></reference>
+
+	Read Online ACCESS<lb/> Metrics &amp; More<lb/> Article Recommendations<lb/> ABSTRACT:
+	<div type="abstract">Heterojunction formation is the key to adjusting<lb/> the electronic and optoelectronic properties of various semi-<lb/>conductor devices. There have been various reports on the<lb/> formation and importance of semiconducting heterojunction<lb/> devices based on metal oxides. Titanium dioxide (TiO 2 ) is one<lb/> of the metal oxides that has many unique properties. TiO 2 &apos;s<lb/> importance is due to its physical and chemical properties such as<lb/> large band gap, large permittivity, stability, and low leakage current<lb/> density. In this context, we present the electrical properties of the<lb/> metal-insulator-semiconductor (MIS) type-TiO 2 -based Schottky barrier diode (SBD) in the study. To create a thin layer of TiO 2<lb/> on p-type silicon (p-type Si) patterned partially by the laser-induced periodic surface structure (LIPSS) technique, an atomic layer<lb/> deposition (ALD) technique was used in the study. For comparison, the current-voltage (I-V) characteristics of the TiO 2 -based<lb/> laser-patterned (LP) and nonlaser-patterned (non-LP) diodes were measured at 300 K and in the dark at ±5 V. Classical thermionic<lb/> emission (TE) theory and Cheung functions were used to investigate the critical diode parameters of the diodes, including ideality<lb/> factor (n), series resistance (R s ), and barrier height (Φ b ). The n values were obtained as 4.10 and 3.68 from the TE method and<lb/> Cheung functions for the LP diode, respectively. The Φ b values were found as 0.68 and 0.69 eV from the TE method and Cheung<lb/> functions, respectively. According to experimental results, the laser patterning resulted in an increase in the Φ b values and a decrease<lb/> in the n values. After laser patterning, it was observed that the device worked effectively, and the ideality factor and barrier height<lb/> values were improved. This study provides insight into the fabrication and electrical properties of TiO 2 -based heterojunction devices.<lb/></div>
+
+	<note type="submission">Received: February 19, 2024<lb/> Revised: April 17, 2024<lb/> Accepted: April 23, 2024<lb/></note>
+
+	Published:
+	<date>May 2, 2024</date>
+
+	<docType>Article<lb/></docType>
+	<ptr type="web">http://pubs.acs.org/journal/acsodf<lb/></ptr>
+
+	<note type="copyright">© 2024 The Authors. Published by<lb/> American Chemical Society</note>
+
+	<page>21346<lb/></page>
+	<idno>https://doi.org/10.1021/acsomega.4c01585<lb/></idno>
+
+	<reference>ACS Omega 2024, 9, 21346-21352<lb/></reference>
+
+	<note type="copyright">This article is licensed under CC-BY 4.0<lb/></note>
+
+	Downloaded via 87.196.73.201 on September 10, 2025 at 13:43:25 (UTC).<lb/>
+
+	See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+		</front>
+	</text>
+
+</TEI>

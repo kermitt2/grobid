@@ -1,0 +1,136 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Gastric Cancer Showing Rapid Recurrence and Progression: A Case of Gastric Adenocarcinoma With Enteroblastic Differentiation</title>
+      <author>
+        <persName>
+          <forename>Yonghoon</forename>
+          <surname>Choi</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T17:39:55.355814Z">12.11.2025 17:39:55</date>
+        <title>grobid.training.header [default]</title>
+        <idno type="fileref">10.7704$1$kjhugr.2024.0007</idno>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>Korean College of Helicobacter and Upper Gastrointestinal Research</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.7704/kjhugr.2024.0007</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Yonghoon Choi. (2024). Gastric Cancer Showing Rapid Recurrence and Progression: A Case of Gastric Adenocarcinoma With Enteroblastic Differentiation. The Korean Journal of Helicobacter and Upper Gastrointestinal Research, 24(1), 86-90. DOI: 10.7704/kjhugr.2024.0007</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T17:39:55.355814Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T17:39:55.355814Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+    <change when="2025-11-12T17:42:15.608Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">CASE REPORT</note>
+
+	KJHUGR<lb/>
+	<idno>pISSN 1738-3331</idno>
+
+	/
+	<idno>eISSN 2671-826X</idno>
+
+    <idno>https://doi.org/10.7704/kjhugr.2024.0007</idno>
+
+	<reference>Korean J Helicobacter Up Gastrointest Res 2024;24(1):86-90<lb/></reference>
+
+	<ptr type="web">https://www.helicojournal.org<lb/></ptr>
+
+	<note type="submission">Received January 17, 2024<lb/> Revised<lb/> February 9, 2024<lb/> Accepted February 10, 2024<lb/></note>
+
+	Corresponding author<lb/>
+	<byline>
+	<docAuthor>Yonghoon Choi, MD<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Internal Medicine,<lb/> Seoul National University<lb/> Bundang Hospital,<lb/></affiliation>
+	</byline>
+
+	<address>82 Gumi-ro 173beon-gil, Bundang-gu,<lb/> Seongnam 13620, Korea<lb/></address>
+
+	E-mail:
+	<email>89796@snubh.org<lb/></email>
+
+	Availability of Data and Material<lb/>
+	<note type="availability">The datasets generated or analyzed<lb/> during the study are available from the<lb/> corresponding author upon reasonable<lb/> request.<lb/></note>
+
+	Conflicts of Interest<lb/>
+    <note type="conflict">Yonghoon Choi, a contributing editor of<lb/> the Korean Journal of Helicobacter and<lb/> Upper Gastrointestinal Research, was not<lb/> involved in the editorial evaluation or<lb/> decision to publish this article.<lb/></note>
+          
+    Funding Statement
+    <note type="funding">None<lb/></note>
+          
+    Acknowledgements
+    <note type="funding">None<lb/></note>
+
+          
+	<note type="copyright">This is an Open Access article distributed<lb/> under the terms of the Creative Commons<lb/> Attribution Non-Commercial License<lb/> (https://creativecommons.org/licenses/<lb/> by-nc/4.0) which permits unrestricted<lb/> non-commercial use, distribution, and<lb/> reproduction in any medium, provided the<lb/> original work is properly cited.<lb/></note>
+
+	<docTitle>
+	<titlePart>Gastric Cancer Showing Rapid Recurrence<lb/> and Progression: A Case of Gastric<lb/> Adenocarcinoma With Enteroblastic Differentiation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yonghoon Choi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Internal Medicine, Seoul National University Bundang Hospital,</affiliation>
+	</byline>
+
+	<address>Seongnam, Korea<lb/></address>
+
+	<div type="abstract">Gastric adenocarcinoma with enteroblastic differentiation (GAED) is rare and its clinicopatho-<lb/>logical characteristics are not well documented. However, reports indicate that it exhibits more<lb/> aggressive characteristics, including lymph node metastasis or liver metastasis, than a conven-<lb/>tional gastric adenocarcinoma. Herein, we report a case of GAED with rapid recurrence and<lb/> disease progression. A 55-year-old male, diagnosed with gastric cancer (GC), demonstrated<lb/> initial endoscopic findings suggestive of advanced GC. He underwent curative resection since<lb/> there was no evidence of lymph node or distant metastases. The disease was reported as an<lb/> early GC that was confined to the submucosal layer, without evidence of lymph node metasta-<lb/>sis in the final pathological results. However, six months after surgery, multiple hepatic metasta-<lb/>ses were found during abdominal computed tomography; the pathological results were consis-<lb/>tent with metastasis from the GC. Immunohistochemistry of the primary carcinoma pathological<lb/> specimens showed positive results for alpha-fetoprotein and sal-like protein 4, suggesting en-<lb/>teroblastic differentiation, which is thought to be associated with rapid recurrence and disease<lb/> progression.<lb/></div>
+
+	Keywords
+	<keyword>Gastric cancer; Enteroblastic differentiation; Alpha-fetoprotein; Prognosis.<lb/></keyword>
+
+	ORCID iD<lb/>
+	<byline>
+	<docAuthor>Yonghoon Choi<lb/></docAuthor>
+	</byline>
+
+	<idno>https://orcid.org/0000-0002-1331-969X</idno>
+
+		</front>
+	</text>
+
+</TEI>

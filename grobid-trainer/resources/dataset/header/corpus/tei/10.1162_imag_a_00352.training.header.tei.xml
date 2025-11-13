@@ -1,0 +1,161 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">The Cerebellum Is Sensitive to the Lexical Properties of Words During Spoken Language Comprehension</title>
+      <author>
+        <persName>
+          <forename>Hannah</forename>
+          <surname>Mechtenberg</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Christopher C.</forename>
+          <surname>Heffner</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Emily B.</forename>
+          <surname>Myers</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Sara</forename>
+          <surname>Guediche</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T16:31:11.037745Z">12.11.2025 16:31:11</date>
+        <title>grobid.training.header [default]</title>
+        <idno type="fileref">10.1162$1$nol_a_00126</idno>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>MIT Press</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.1162/nol_a_00126</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Hannah Mechtenberg, Christopher C. Heffner, Emily B. Myers, Sara Guediche. (2024). The Cerebellum Is Sensitive to the Lexical Properties of Words During Spoken Language Comprehension. Neurobiology of Language, 5(3), 757-773. DOI: 10.1162/nol_a_00126</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T16:31:11.037745Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T16:31:11.037745Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+    <change when="2025-11-12T16:32:57.783Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+    <note type="doctype">SPECIAL ISSUE</note>
+          
+      :<lb/> 
+          
+    <title level="j">The Role of the Cerebellum in Language Comprehension and Production<lb/></title>
+	
+    <docTitle>
+	<titlePart>The Cerebellum Is Sensitive to the Lexical<lb/> Properties of Words During Spoken<lb/> Language Comprehension<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hannah Mechtenberg 1 , Christopher C. Heffner 2 , Emily B. Myers 1,3 , and Sara Guediche 4<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Psychological Sciences, University of Connecticut,</affiliation>
+	</byline>
+
+	<address>Storrs, CT, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Communicative Sciences and Disorders, University at Buffalo,</affiliation>
+	</byline>
+
+	<address>Buffalo, NY, USA<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Speech, Language and Hearing Sciences, University of Connecticut,</affiliation>
+	</byline>
+
+	<address>Storrs, CT, USA<lb/></address>
+
+	<byline>
+	<affiliation>4 College of Science and Mathematics, Augusta University,</affiliation>
+	</byline>
+
+	<address>Augusta, GA, USA<lb/></address>
+
+	Keywords:
+	<keyword>cerebellum, continuous listening, fMRI, lexical processing, prediction, speech perception</keyword>
+
+	ABSTRACT<lb/>
+	<div type="abstract">Over the past few decades, research into the function of the cerebellum has expanded far<lb/> beyond the motor domain. A growing number of studies are probing the role of specific<lb/> cerebellar subregions, such as Crus I and Crus II, in higher-order cognitive functions including<lb/> receptive language processing. In the current fMRI study, we show evidence for the<lb/> cerebellum&apos;s sensitivity to variation in two well-studied psycholinguistic properties of<lb/> words-lexical frequency and phonological neighborhood density-during passive,<lb/> continuous listening of a podcast. To determine whether, and how, activity in the cerebellum<lb/> correlates with these lexical properties, we modeled each word separately using an<lb/> amplitude-modulated regressor, time-locked to the onset of each word. At the group level,<lb/> significant effects of both lexical properties landed in expected cerebellar subregions: Crus I<lb/> and Crus II. The BOLD signal correlated with variation in each lexical property, consistent<lb/> with both language-specific and domain-general mechanisms. Activation patterns at the<lb/> individual level also showed that effects of phonological neighborhood and lexical frequency<lb/> landed in Crus I and Crus II as the most probable sites, though there was activation seen in<lb/> other lobules (especially for frequency). Although the exact cerebellar mechanisms used<lb/> during speech and language processing are not yet evident, these findings highlight the<lb/> cerebellum&apos;s role in word-level processing during continuous listening.<lb/></div>
+
+	<note type="copyright">a n o p e n a c c e s s<lb/> j o u r n a l<lb/></note>
+
+	Citation:
+	<reference>Mechtenberg, H., Heffner,<lb/> C. C., Myers, E. B., &amp; Guediche, S.<lb/> (2024). The cerebellum is sensitive to<lb/> the lexical properties of words during<lb/> spoken language comprehension.<lb/> Neurobiology of Language, 5(3),<lb/> 757-773.</reference>
+
+	<idno>https://doi.org/10.1162<lb/> /nol_a_00126<lb/></idno>
+
+
+	<idno>DOI:<lb/> https://doi.org/10.1162/nol_a_00126<lb/></idno>
+
+	<note type="submission">Received: 1 February 2023<lb/> Accepted: 30 October 2023<lb/></note>
+
+	Competing Interests:
+	<note type="conflict">The authors have<lb/> declared that no competing interests<lb/> exist.<lb/></note>
+
+	Corresponding Author:<lb/>
+	<byline>
+	<docAuthor>Hannah Mechtenberg<lb/></docAuthor>
+	</byline>
+
+	<email>hannah.mechtenberg@uconn.edu<lb/></email>
+
+	Handling Editor:<lb/>
+	<editor>Julie Fiez<lb/></editor>
+
+	Copyright:
+	<note type="copyright">© 2024<lb/> Massachusetts Institute of Technology<lb/> Published under a Creative Commons<lb/> Attribution 4.0 International<lb/> (CC BY 4.0) license<lb/> The MIT Press<lb/></note>
+
+	Downloaded from
+	<ptr type="web">http://direct.mit.edu/nol/article-pdf/5/3/757/2465633/nol_a_00126.pdf</ptr>
+
+	by guest on
+	<date>10 September 2025</date>
+
+		</front>
+	</text>
+
+</TEI>
