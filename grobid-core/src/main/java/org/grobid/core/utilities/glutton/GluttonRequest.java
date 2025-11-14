@@ -1,39 +1,25 @@
 package org.grobid.core.utilities.glutton;
 
-import org.grobid.core.utilities.GrobidProperties;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Observable;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.http.Header;
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
+import org.apache.http.HttpHost;
 import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.DefaultProxyRoutePlanner;
 import org.apache.http.util.EntityUtils;
-import org.apache.http.HttpHost;
-import org.apache.http.conn.params.*;
-import org.apache.http.impl.conn.*;
-
+import org.grobid.core.exceptions.GrobidResourceException;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.crossref.CrossrefDeserializer;
 import org.grobid.core.utilities.crossref.CrossrefRequestListener;
 import org.grobid.core.utilities.crossref.CrossrefRequestListener.Response;
-import org.grobid.core.utilities.crossref.CrossrefDeserializer;
-import org.grobid.core.utilities.crossref.CrossrefRequest;
-import org.grobid.core.exceptions.GrobidResourceException;
 
-import org.apache.commons.io.IOUtils;
-import java.net.URL;
-import java.io.*;
+import java.io.IOException;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Glutton request
@@ -91,14 +77,26 @@ public class GluttonRequest<T extends Object> extends Observable {
             return;
         }
         CloseableHttpClient httpclient = null;
+        
+        // Get the configured timeout in milliseconds
+        int timeout = GrobidProperties.getGluttonConsolidationTimeout() * 1000; // Convert to milliseconds
+        RequestConfig requestConfig = RequestConfig.custom()
+            .setConnectTimeout(timeout)
+            .setSocketTimeout(timeout)
+            .setConnectionRequestTimeout(timeout)
+            .build();
+            
         if (GrobidProperties.getProxyHost() != null) {
             HttpHost proxy = new HttpHost(GrobidProperties.getProxyHost(), GrobidProperties.getProxyPort());
             DefaultProxyRoutePlanner routePlanner = new DefaultProxyRoutePlanner(proxy);
             httpclient = HttpClients.custom()
                 .setRoutePlanner(routePlanner)
+                .setDefaultRequestConfig(requestConfig)
                 .build();
         } else {
-            httpclient = HttpClients.createDefault();   
+            httpclient = HttpClients.custom()
+                .setDefaultRequestConfig(requestConfig)
+                .build();   
         }
 
         try {

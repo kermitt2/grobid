@@ -30,14 +30,16 @@ grobid:
     glutton:
       #url: "https://cloud.science-miner.com/glutton"
       url: "http://localhost:8080"
+      timeoutSec: 60
     crossref:
       mailto:
-      # to use crossref web API, you need normally to use it politely and to indicate an email address here, e.g.
-      #mailto: "toto@titi.tutu"
+      # NOTE! To use the Crossref web API, you need normally to use it politely
+      # and to indicate an email address here, e.g. mailto: "toto@titi.tutu"
       token:
       # to use Crossref metadata plus service (available by subscription)
       #token: "yourmysteriouscrossrefmetadataplusauthorizationtokentobeputhere"
-
+      timeoutSec: 60
+      # Timeout for CrossRef API calls (in seconds) - USE with CARE!
   proxy:
     # proxy to be used when doing external call to the consolidation service
     host:
@@ -57,7 +59,7 @@ grobid:
 
   # maximum concurrency allowed to GROBID server for processing parallel requests - change it according to your CPU/GPU capacities
   # for a production server running only GROBID, set the value slightly above the available number of threads of the server
-  # to get best performance and security
+  # to get the best performance and security
   concurrency: 10
   # when the pool is full, for queries waiting for the availability of a Grobid engine, this is the maximum time wait to try
   # to get an engine (in seconds) - normally never change it
@@ -112,6 +114,14 @@ grobid:
         nbMaxIterations: 2000
 
     - name: "segmentation-article-light-ref"
+      engine: "wapiti"
+      wapiti:
+        # wapiti training parameters, they will be used at training time only
+        epsilon: 0.0000001
+        window: 50
+        nbMaxIterations: 2000
+
+    - name: "segmentation-sdo-ietf"
       engine: "wapiti"
       wapiti:
         # wapiti training parameters, they will be used at training time only
@@ -176,6 +186,14 @@ grobid:
       delft:
         architecture: "BidLSTM_ChainCRF_FEATURES"
         useELMo: false
+
+    - name: "header-sdo-ietf"
+      engine: "wapiti"
+      wapiti:
+        # wapiti training parameters, they will be used at training time only
+        epsilon: 0.000001
+        window: 30
+        nbMaxIterations: 1500
 
     - name: "reference-segmenter"
       #engine: "wapiti"

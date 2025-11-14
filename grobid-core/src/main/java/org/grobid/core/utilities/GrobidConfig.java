@@ -51,6 +51,7 @@ public class GrobidConfig {
     public static class CrossrefParameters {
         public String mailto;
         public String token;
+        public int timeoutSec = 60;
     }
 
     public static class HostParameters {
@@ -58,6 +59,7 @@ public class GrobidConfig {
         public String host;
         public int port;
         public String url;
+        public int timeoutSec = 60;
     }
     
     public static class DelftParameters {

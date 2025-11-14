@@ -2,6 +2,7 @@ package org.grobid.core.utilities;
 
 import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -90,10 +91,11 @@ public class Consolidation {
      * Hidden constructor
      */
     private Consolidation() {
-        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON)
+        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) {
             client = GluttonClient.getInstance();
-        else
+        } else {
             client = CrossrefClient.getInstance();
+        }
         workDeserializer = new WorkDeserializer();
         funderDeserializer = new FunderDeserializer();
     }
@@ -159,83 +161,67 @@ public class Consolidation {
             cntManager.i(ConsolidationCounters.CONSOLIDATION);
 
         long threadId = Thread.currentThread().getId();
-        Map<String, String> arguments = null;
+        Map<String, String> arguments = new HashMap<>();
 
+        GrobidConsolidationService consolidationService = GrobidProperties.getInstance().getConsolidationService();
         if (StringUtils.isNotBlank(doi)) {
             // call based on the identified DOI
-            arguments = new HashMap<String,String>();
             arguments.put("doi", doi);
         } else if (consolidateMode != 3) {
             if (StringUtils.isNotBlank(rawCitation)) {
                 // call with full raw string            
-                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                    if (arguments == null)
-                        arguments = new HashMap<String,String>();
+                if (consolidationService != GrobidConsolidationService.CROSSREF) {
                     arguments.put("query.bibliographic", rawCitation);
                 }
             }
             if (StringUtils.isNotBlank(halId)) {
                 // call based on the identified HAL ID
-                if (arguments == null)
-                    arguments = new HashMap<String,String>();
-                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF)
+                if (consolidationService != GrobidConsolidationService.CROSSREF)
                     arguments.put("halid", halId);
             }
             if (StringUtils.isNotBlank(aut)) {
                 // call based on partial metadata
-                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                    if (arguments == null)
-                        arguments = new HashMap<String,String>();
+                if (consolidationService != GrobidConsolidationService.CROSSREF) {
                     arguments.put("query.author", aut);
                 }
             }
             if (StringUtils.isNotBlank(title)) {
                 // call based on partial metadata
-                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                    if (arguments == null)
-                        arguments = new HashMap<String,String>();
+                if (consolidationService != GrobidConsolidationService.CROSSREF) {
                     arguments.put("query.title", title);
                 }
             }
             if (StringUtils.isNotBlank(journalTitle)) {
                 // call based on partial metadata
-                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                    if (arguments == null)
-                        arguments = new HashMap<String,String>();
+                if (consolidationService != GrobidConsolidationService.CROSSREF) {
                     arguments.put("query.container-title", journalTitle);
                 }
             }
             if (StringUtils.isNotBlank(volume)) {
                 // call based on partial metadata
-                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                    if (arguments == null)
-                        arguments = new HashMap<String,String>();
+                if (consolidationService != GrobidConsolidationService.CROSSREF) {
                     arguments.put("volume", volume);
                 }
             }
             if (StringUtils.isNotBlank(firstPage)) {
                 // call based on partial metadata
-                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                    if (arguments == null)
-                        arguments = new HashMap<String,String>();
+                if (consolidationService != GrobidConsolidationService.CROSSREF) {
                     arguments.put("firstPage", firstPage);
                 }
             }
             if (StringUtils.isNotBlank(year)) {
                 // publication year metadata, CrossRef has no year query field, they are supported by the query.bibliographic 
                 // field and filter
-                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                    if (arguments == null)
-                        arguments = new HashMap<String,String>();
+                if (consolidationService != GrobidConsolidationService.CROSSREF) {
                     arguments.put("year", year);
                 }
             }
         }
-        if (arguments == null || arguments.size() == 0) {
+        if (MapUtils.isEmpty(arguments)) {
             return null;
         }
 
-        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) {
+        if (consolidationService == GrobidConsolidationService.CROSSREF) {
             if (StringUtils.isBlank(doi) && StringUtils.isBlank(rawCitation) &&
                  (StringUtils.isBlank(aut) || StringUtils.isBlank(title)) ) {
                 // there's not enough information for a crossref request, which might always return a result
@@ -243,9 +229,9 @@ public class Consolidation {
             }
         }
 
-        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) {
+        if (consolidationService == GrobidConsolidationService.CROSSREF) {
             arguments.put("rows", "1"); // we just request the top-one result
-        } else if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) {
+        } else if (consolidationService == GrobidConsolidationService.GLUTTON) {
             // GROBID has already parsed the reference, so no need to redo this in glutton
             arguments.put("parseReference", "false");
         }
@@ -264,11 +250,16 @@ public class Consolidation {
                 doiQuery = false;
             }
 
-            client.pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(0) {
+            client.pushRequest(
+                "works",
+                arguments,
+                workDeserializer,
+                threadId,
+                new CrossrefRequestListener<>(0) {
 
                 @Override
                 public void onSuccess(List<BiblioItem> res) {
-                    if ((res != null) && (res.size() > 0) ) {
+                    if (CollectionUtils.isNotEmpty(res)) {
                         // we need here to post-check that the found item corresponds
                         // correctly to the one requested in order to avoid false positive
                         for(BiblioItem oneRes : res) {
@@ -281,12 +272,12 @@ public class Consolidation {
 
                               For all the other case of matching with CrossRef, we require a post-validation. 
                             */
-                            if ((GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) 
+                            if ((consolidationService == GrobidConsolidationService.GLUTTON)
                                 ||
-                                ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) &&
+                                ( (consolidationService == GrobidConsolidationService.CROSSREF) &&
                                   doiQuery )
                                 ||
-                                ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) &&
+                                ( (consolidationService == GrobidConsolidationService.CROSSREF) &&
                                    postValidation(bib, oneRes)) 
                                ) {
                                 results.add(oneRes);

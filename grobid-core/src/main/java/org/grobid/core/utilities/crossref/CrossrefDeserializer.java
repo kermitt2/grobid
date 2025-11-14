@@ -80,7 +80,7 @@ public abstract class CrossrefDeserializer<T extends Object> extends JsonDeseria
 	}
 	
 	@Override
-	public List<T> deserialize(JsonParser parser, DeserializationContext context) throws IOException, JsonProcessingException {
+	public List<T> deserialize(JsonParser parser, DeserializationContext context) throws IOException {
 		
 		ArrayList<T> res = new ArrayList<T>();
 		
