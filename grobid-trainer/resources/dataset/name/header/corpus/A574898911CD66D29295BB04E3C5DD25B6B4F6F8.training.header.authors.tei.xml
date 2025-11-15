@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>William</forename>
+								 <middlename>J</middlename>.
+								 <surname>Wirostko</surname>,
+								 <roleName>M.D</roleName>.,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								 <forename>Jose</forename>
+								 <middlename>S</middlename>.
+								 <surname>Pulido</surname>,
+								 <roleName>M.D</roleName>.,
+								<marker>*</marker> and
+							</persName>
+							<persName>
+								 <forename>Lloyd</forename>
+								 <middlename>E</middlename>.
+								 <surname>Hendrix</surname>,
+								 <roleName>M.D</roleName>.
+								 <marker>†</marker>
+							</persName>
+							<persName>
+								 <roleName>Dr.</roleName>
+								 <forename>William</forename>
+								 <middlename>J</middlename>.
+								 <surname>Wirostko</surname>,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

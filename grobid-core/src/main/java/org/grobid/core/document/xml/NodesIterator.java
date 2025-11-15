@@ -6,9 +6,6 @@ import nu.xom.Nodes;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/**
- * User: zholudev
- */
 public class NodesIterator implements Iterable<Node>, Iterator<Node> {
     private Nodes nodes;
     private int cur;

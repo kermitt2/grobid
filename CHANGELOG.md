@@ -4,6 +4,272 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.8.2] - 2025-05-11
+
+### Added
+- New model specialization/variants (flavors) mechanism #1151
+- Specialization/variant process for a lightweight processing that covers other types of scientific articles that are not following the general segmentation schema (e.g., corrections, editorial letters, etc.) #1202
+- Additional training data covering additional cases where the Data Availability statements are over multiple pages #1200
+- Added a flag that allows output the raw copyright information in TEI #1181
+- New docker container for running end-to-end evaluation #1255
+- New Grobid client in Go #1159
+- Make the start/end page for header processing customizable #282
+- Return configuration processing parameters in TEI XML response header #1274 
+
+### Changed
+- Update pdfalto recognition of non-standard fonts #1216
+- Revert text that does not belong to graphics as paragraphs instead of dropping it #1266
+- Updated Grobid lucene analyzers for CJK languages #1228
+
+### Fixed
+- Fix URL identification for certain edge cases #1190, #1191, #1185
+- Fix fulltext model training data #1107 
+- Fix header model training data #1128
+- Updated the docker image's packages to reduce the vulnerabilities #1173
+- Fixed a bug in the handling of badly formatted figures/tables #1207
+- Correct replacement in the filenames of the fulltext generated files #1204
+- Fixed full-text block start #1203
+- Fix affiliation missing when using DL affiliation-address model #1166
+- Fixed various security vulnerabilities #1125 #1123 #1205
+- Avoid NPE when iterating over annotations that might have null bounding Boxes #1194
+
+
+## [0.8.1] - 2024-09-14
+
+### Added
+ - Identified URLs are now added in the TEI output #1099
+ - Added DL models for patent processing #1082
+ - Copyrights owner and licenses identification models #1078 
+ - Add research infrastructure recognition for funding processing #1085
+ - Add paragraphs coordinates in the TEI output #1068
+ - Specify the configuration file with DL models enabled for the full docker image #1117
+ - Support for biblio-glutton 0.3 #1086
+
+### Changed
+ - Update affiliation process #1069
+ - Improved the recognition of URLs using (when available) PDF annotations, such as clickable links
+ - Updated TEI schema #1084
+ - Review patent process #1082
+ - Add Kotlin language to support development and testing #1096
+
+### Fixed
+ - Avoid splitting URLs between sentences #1097
+ - Add missing sentence segmentation in funding and acknowledgement #1106
+ - Docker image was optimized to reduce the needed space #1088
+ - Fixed OOBE when processing large quantities of notes #1075
+ - Corrected `<title>` coordinate attribute name #1070
+ - Fix missing coordinates in paragraph continuation #1076
+ - Fixed JSON log output
+ - Fixed notes identification #1124
+ - Fixed extraneous semicolon in the training data #1133
+ - Reduced security vulnerabilities in the dependencies #1136 #1137
+
+## New Contributors
+* @tanaynayak made their first contribution in https://github.com/kermitt2/grobid/pull/1133
+* @vipulg13 made their first contribution in https://github.com/kermitt2/grobid/pull/1137
+
+## [0.8.0] - 2023-11-19
+
+### Added
+
++ Extraction of funder and funding information with a specific new model, see https://github.com/kermitt2/grobid/pull/1046 for details
++ Optional consolidation of funder with CrossRef Funder Registry
++ Identification of acknowledged entities in the acknowledgement section
++ Optional coordinates in title elements
+
+### Changed
+
++ Dropwizard upgrade to 4.0
++ Minimum JDK/JVM requirement for building/running the project is now 1.11
++ Logging now with Logback, removal of Log4j2, optional logs in json format
++ General review of logs
++ Enable Github actions / Disable circleci
+
+### Fixed
+
++ Set dynamic memory limit in pdfalto_server #1038 
++ Logging in files when training models work now as expected
++ Various dependency upgrades
++ Fix #1051 with possible problematic PDF
++ Fix #1036 for pdfalto memory limit 
++ fix readthedocs build #1040 
++ fix for null equation #1030
++ Other minor fixes
+
+## [0.7.3] – 2023-05-13
+
+### Added
+
++ Support for JDK beyond 1.11, tested up to Java 17, thanks to removal of dynamic native library loading after the start of the JVM
++ Incremental training (all models and ML engines), add this option in training command line and training web service (#971)
++ Systematic benchmarking on two new sets: PLOS (1000 artilces) and eLife (984 articles)
++ All end-to-end evaluation datasets are now available from the same place: https://zenodo.org/record/7708580
++ Option to output coordinates in notes and figure/table captions
++ Support for Mac ARM architecture (#975)
++ Play With Docker documentation (#962)
+
+### Changed
+
++ Update to DeLFT version 0.3.3
++ Demo now hosted as HuggingFace space
++ Additional training data, in particular for citation, reference-segmenter, segmentation, header, etc. 
++ Update Deep Learning models (and some of the CRF)
++ The standard analyzer for sub-lexical tokenization is available in grobid-core, and used for the citation model (in particular for improving CJK references) (#990)
++ Update evaluations
+
+### Fixed
+
++ Correct wrong content type in doc for processCitation web service
++ Sentence segmentation applied to notes (#995)
++ Other minor fixes
+
+## [0.7.2] – 2022-10-29
+
+### Added
+
++ Explicit identification of data/code availability statements (#951) and funding statements (#959), including when they are located in the header
++ Link footnote and their "callout" marker in full text (#944)
++ Option to consolidate header only with DOI if a DOI is extracted (#742)
++ "Window" application of RNN model for reference-segmenter to cover long bibliographical sections
++ Add dynamic timeout on pdfalto_server (#926) 
++ A modest Python script to help to find "interesting" error cases in a repo of JATS/PDF pairs, grobid-home/scripts/select_error_cases.py
+
+### Changed
+
++ Update to DeLFT version 0.3.2
++ Some more training data (authors in reference, segmentation, citation, reference-segmenter) (including #961, #864)
++ Update of some models, RNN with feature channels and CRF (segmentation, header, reference-segmenter, citation)
++ Review guidelines for segmentation model
++ Better URL matching, using in particular PDF URL annotation in account
+
+### Fixed
+
++ Fix unexpected figure and table labeling in short texts
++ When matching an ORCID to an author, prioritize Crossref info over extracted ORCID from the PDF (#838)
++ Annotation errors for acknowledgement and other minor stuff
++ Fix for Python library loading for Mac
++ Update docker file to support new CUDA key
++ Do not dehyphenize text in superscript or subscript
++ Allow absolute temporary paths
++ Fix redirected stderr from pdfalto not "gobbled" by the java ProcessBuilder call (#923)
++ Other minor fixes
+
+## [0.7.1] – 2022-04-16
+
+### Added
+
++ Web services for training models (#778)
++ Some additional training data for bibliographical references from arXiv
++ Add a web service to process a list of reference strings, see https://grobid.readthedocs.io/en/processcitationlist/Grobid-service/#apiprocesscitationlist
++ Extended processHeaderDocument to get result in bibTeX
+
+### Changed
+
++ Update to DeLFT version to 0.3.1 and TensorFlow 2.7, with many improvements, see https://github.com/kermitt2/delft/releases/tag/v0.3.0
++ Update of Deep Learning models
++ Update of JEP and add install script
++ Update to new biblio-glutton version 0.2, for improved and faster bibliographical reference matching
++ circleci to replace Travis
++ Update of processFulltextAssetDocument service to use the same parameters as processFulltextDocument
++ Pre-compile regex if not already done
++ Review features for header model
+
+### Fixed
+
++ Improved date normalization (#760)
++ Fix possible issue with coordinates related to reference markers (#908) and sentence (#811)
++ Fix path to bitmap/vector graphics (#836)
++ Fix possible catastrophic regex backtracking (#867)
++ Other minor fixes
+
+## [0.7.0] – 2021-07-17
+
+### Added
+
++ New YAML configuration: all the settings are in one single yaml file, each model can be fully configured independently
++ Improvement of the segmentation and header models (for header, +1 F1-score for PMC evaluation, +4 F1-score for bioRxiv), improvements for body and citations 
++ Add figure and table pop-up visualization on PDF in the console demo
++ Add PDF MD5 digest in the TEI results (service only)
++ Language support packages and xpdfrc file for pdfalto (support of CJK and exotic fonts)
++ Prometheus metrics 
++ BidLSTM-CRF-FEATURES implementation available for more models
++ Addition of a "How GROBID works" page in the documentation
+
+### Changed
+
++ JitPack release (RIP jcenter)
++ Improved DOI cleaning 
++ Speed improvement (around +10%), by factorizing some layout token manipulation
++ Update CrossRef requests implementation to align to the current usage of CrossRef's `X-Rate-Limit-Limit` response parameter
+
+### Fixed
+
++ Fix base url in demo console
++ Add missing pdfalto Graphics information when `-noImage` is used, fix graphics data path in TEI
++ Fix the tendency to merge tables when they are in close proximity
+
+## [0.6.2] – 2021-03-20
+
+### Added
+
++ Docker image covering both Deep Learning and CRF models, with GPU detection and preloading of embeddings
++ For Deep Learning models, labeling is now done by batch: application of the citation DL model is 4 times faster for BidLSTM-CRF (with or without features) and 6 times faster for SciBERT
++ More tests for sentence segmentation
++ Add orcid of persons when available from the PDF or via consolidation (i.e. if in CrossRef metadata) 
++ Add BidLSTM-CRF-FEATURES header model (with feature channel)
++ Add bioRxiv end-to-end evaluation
++ Bounding boxes for optional section titles coordinates
+
+### Changed
+
++ Reduce the size of docker images 
++ Improve end-to-end evaluation: multithreaded processing of PDF, progress bar, output the evaluation report in markdown format
++ Update of several models covering CRF, BidLSTM-CRF and BidLSTM-CRF-FEATURES, mainly improving citation and author recognitions
++ OpenNLP is the default optional sentence segmenter (similar result as Pragmatic Segmenter for scholar documents after benchmarking, but 30 times faster)
++ Refine sentence segmentation to exploit layout information and predicted reference callouts
++ Update jep version to 3.9.1
+
+### Fixed
+
++ Ignore invalid utf-8 sequences
++ Update CrossRef multithreaded calls to avoid using the unreliable time interval returned by the CrossRef REST API service, update usage of `Crossref-Plus-API-Token` and update the deprecated crossref field `query.title`
++ Missing last table or figure when generating training data for the fulltext model
++ Fix an error related to the feature value for the reference callout for the fulltext model
++ Review/correct DeLFT configuration documentation, with a step-by-step configuration documentation
++ Other minor fixes
+
+## [0.6.1] – 2020-08-12
+
+### Added
+
++ Support of line number (typically in preprints)
++ End-to-end evaluation and benchmark for preprints using the bioRxiv 10k dataset 
++ Check whether PDF annotation is orcid and add orcid to author in the TEI result
++ Configuration for making sequence labeling engine (CRF Wapiti or Deep Learning) specific to models
++ Add a developers guide and a FAQ section in the documentation
++ Visualization of formulas on PDF layout in the demo console
++ Feature for subscript/superscript style in fulltext model
+
+### Changed
+
++ New significantly improved header model: with new features, new training data (600 new annotated examples, old training data is entirely removed), new labels and updated data structures in line with the other models
++ Update of the segmentation models with more training data
++ Removal of heuristics related to the header
++ Update to gradle 6.5.1 to support JDK 13 and 14
++ TEI schemas 
++ Windows is not supported in this release
+
+### Fixed
+
++ Preserve affiliations after consolidation of the authors 
++ Environment variable config override for all properties 
++ Unfrequent duplication of the abstract in the TEI result
++ Incorrect merging of affiliations
++ Noisy parentheses in the bibliographical reference markers
++ In the console demo, fix the output filename wrongly taken from the input form when the text form is used
++ Synchronisation of the language detection singleton initialisation in case of multithread environment
++ Other minor fixes
+
 ## [0.6.0] – 2020-04-24
 
 ### Added
@@ -190,7 +456,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 + More robust synchronization of CRF sequence with PDF areas, resulting in improved bounding box calculations for locating annotations in the PDF documents.
 + Improved general robustness thanks to better token alignments.
 
-[Unreleased]: https://github.com/kermitt2/grobid/compare/0.5.6...HEAD
+[Unreleased]: https://github.com/kermitt2/grobid/compare/0.7.0...HEAD
+[0.7.0]: https://github.com/kermitt2/grobid/compare/0.6.2...0.7.0
+[0.6.2]: https://github.com/kermitt2/grobid/compare/0.6.1...0.6.2
+[0.6.1]: https://github.com/kermitt2/grobid/compare/0.6.0...0.6.1
+[0.6.0]: https://github.com/kermitt2/grobid/compare/0.5.6...0.6.0
 [0.5.6]: https://github.com/kermitt2/grobid/compare/0.5.5...0.5.6
 [0.5.5]: https://github.com/kermitt2/grobid/compare/0.5.4...0.5.5
 [0.5.4]: https://github.com/kermitt2/grobid/compare/0.5.3...0.5.4

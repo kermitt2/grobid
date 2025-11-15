@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Parvathi</forename>
+								 <surname>Kumara</surname>
+							</persName>
+							<persName>
+								 <forename>Reddy</forename>
+								 <surname>Thavanati</surname>,
+								 <marker>1</marker>
+							</persName>
+							<persName>
+								 <forename>Kodanda</forename>
+								 <middlename>Reddy</middlename>
+								 <surname>Kanala</surname>,
+								 <marker>2</marker>
+							</persName>
+							<persName>
+								 <forename>Aurora</forename>
+								 <surname>Escoto de Dios</surname>,
+								 <marker>3</marker> and
+							</persName>
+							<persName>
+								 <forename>Jose</forename>
+								 <middlename>Maria</middlename>
+								 <surname>Cantu Garza</surname>
+								 <marker>1</marker>
+							</persName>
+							<persName>
+								 <forename>Parvathi</forename>
+								 <surname>Kumara</surname>
+							</persName>
+							<persName>
+								 <forename>Reddy</forename>
+								 <surname>Thavanati</surname>,
+								 <roleName>PhD, DSc</roleName>,
+							</persName>
+							<persName>
+								 <forename>Huber</forename>
+								 <middlename>R</middlename>.
+								 <surname>Warner</surname>,
+								 <roleName>PhD</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

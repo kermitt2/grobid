@@ -13,9 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Class that creates a tagger from a given model or reuse it if it already
- * exists.
- * 
+ * Class that creates a tagger from a given model or reuse it if it already exists.
  * 
  */
 @Deprecated
@@ -24,8 +22,7 @@ public class ModelMap {
 	/**
 	 * The logger.
 	 */
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(ModelMap.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ModelMap.class);
 
 	/**
 	 * Map that contains all the models loaded in memory.
@@ -33,7 +30,7 @@ public class ModelMap {
 	private static Map<String, Model> models = null;
 
 	/**
-	 * Return a CRFPP tagger created corresponding to the model given in argument.
+	 * Return a model tagger created corresponding to the model given in argument.
 	 * 
 	 * @param grobidModel
 	 *            the model to use for the creation of the tagger.
@@ -56,7 +53,7 @@ public class ModelMap {
 	}
 
 	/**
-	 * Loading of the CRFPP models.
+	 * Loading of the models.
 	 */
 	@Deprecated
 	public static synchronized void initModels() {

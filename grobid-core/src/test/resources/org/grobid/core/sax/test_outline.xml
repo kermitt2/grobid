@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<TOCITEMS nbPages="4">
+    <TOCITEMLIST level="0">
+        <ITEM ID="0">
+            <STRING>A Identification</STRING>
+            <LINK page="2" top="71.0000" bottom="0.0000" left="68.0000" right="0.0000"/>
+        </ITEM>
+        <ITEM ID="1">
+            <STRING>B R&#xE9;sum&#xE9; consolid&#xE9; public.</STRING>
+            <LINK page="2" top="377.000" bottom="0.0000" left="68.0000" right="0.0000"/>
+            <TOCITEMLIST level="1" idItemParent="1">
+                <ITEM ID="2">
+                    <STRING>B.1 R&#xE9;sum&#xE9; consolid&#xE9; public en fran&#xE7;ais</STRING>
+                    <LINK page="2" top="412.000" bottom="0.0000" left="68.0000" right="0.0000"/>
+                </ITEM>
+            </TOCITEMLIST>
+        </ITEM>
+        <ITEM ID="3">
+            <STRING>C M&#xE9;moire scientifique en fran&#xE7;ais</STRING>
+            <LINK page="1" top="71.0000" bottom="0.0000" left="68.0000" right="0.0000"/>
+            <TOCITEMLIST level="1" idItemParent="3">
+                <ITEM ID="4">
+                    <STRING>C.1 R&#xE9;sum&#xE9; du m&#xE9;moire</STRING>
+                    <LINK page="1" top="109.000" bottom="0.0000" left="68.0000" right="0.0000"/>
+                </ITEM>
+                <ITEM ID="5">
+                    <STRING>C.2 Enjeux et probl&#xE9;matique, &#xE9;tat de l&#x2019;art</STRING>
+                    <LINK page="1" top="334.000" bottom="0.0000" left="68.0000" right="0.0000"/>
+                </ITEM>
+                <ITEM ID="6">
+                    <STRING>C.3 Approche scientifique et technique</STRING>
+                    <LINK page="1" top="235.000" bottom="0.0000" left="68.0000" right="0.0000"/>
+                </ITEM>
+                <ITEM ID="7">
+                    <STRING>C.4 R&#xE9;sultats obtenus</STRING>
+                    <LINK page="1" top="264.000" bottom="0.0000" left="68.0000" right="0.0000"/>
+                </ITEM>
+                <ITEM ID="8">
+                    <STRING>C.5 Discussion, conclusion</STRING>
+                    <LINK page="1" top="357.000" bottom="0.0000" left="68.0000" right="0.0000"/>
+                </ITEM>
+                <ITEM ID="9">
+                    <STRING>C.6 R&#xE9;f&#xE9;rences</STRING>
+                    <LINK page="1" top="582.000" bottom="0.0000" left="68.0000" right="0.0000"/>
+                </ITEM>
+            </TOCITEMLIST>
+        </ITEM>
+        <ITEM ID="10">
+            <STRING>D Liste des livrables</STRING>
+            <LINK page="1" top="71.0000" bottom="0.0000" left="68.0000" right="0.0000"/>
+        </ITEM>
+        <ITEM ID="11">
+            <STRING>E Impact du projet</STRING>
+            <LINK page="1" top="649.000" bottom="0.0000" left="68.0000" right="0.0000"/>
+            <TOCITEMLIST level="1" idItemParent="11">
+                <ITEM ID="12">
+                    <STRING>E.1 Indicateurs d&#x2019;impact</STRING>
+                    <LINK page="1" top="368.000" bottom="0.0000" left="68.0000" right="0.0000"/>
+                </ITEM>
+                <ITEM ID="13">
+                    <STRING>E.2 Liste des publications et communications</STRING>
+                    <LINK page="1" top="317.000" bottom="0.0000" left="68.0000" right="0.0000"/>
+                </ITEM>
+                <ITEM ID="14">
+                    <STRING>E.3 Liste des autres valorisations scientifiques</STRING>
+                    <LINK page="1" top="170.000" bottom="0.0000" left="68.0000" right="0.0000"/>
+                </ITEM>
+                <ITEM ID="15">
+                    <STRING>E.4 Bilan et suivi des personnels recrut&#xE9;s en CDD (hors stagiaires)</STRING>
+                    <LINK page="1" top="318.000" bottom="0.0000" left="40.0000" right="0.0000"/>
+                </ITEM>
+            </TOCITEMLIST>
+        </ITEM>
+    </TOCITEMLIST>
+</TOCITEMS>

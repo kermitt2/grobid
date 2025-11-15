@@ -1,0 +1,297 @@
+<?xml version="1.0" ?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<!-- source: https://arxiv.org/pdf/1708.09379.pdf -->
+	<bibl><author>C. J. Hamer</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">195</biblScope>, <biblScope unit="page">503</biblScope> (<date>1982</date>).</bibl>
+	<bibl><author>F. Berruto, L. Giusti, C. Hoelbling and C. Rebbi</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">65</biblScope>, <biblScope unit="page">094516</biblScope> (<date>2002</date>) [<idno type="arxiv">hep-lat/0201010</idno>].</bibl>
+	<bibl><author>K. Hornbostel, S. J. Brodsky and H. C. Pauli</author>, <title level="j">Phys. Rev. D</title> <biblScope unit="volume">41</biblScope>, <biblScope unit="page">3814</biblScope> (<date>1990</date>).</bibl>
+	<bibl><author>G. &apos;t Hooft</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">72</biblScope>, <biblScope unit="page">461</biblScope> (<date>1974</date>).</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/0704.3121.pdf -->
+	<bibl><author>A. G. Riess et al.</author>, <title level="j">Astron. J.</title> <biblScope unit="volume">116</biblScope>, <biblScope unit="page">1009</biblScope> (<date>1998</date>), <idno type="arxiv">astro-ph/9805201</idno>.</bibl>
+	<bibl><author>S. Perlmutter et al.</author>, <title level="j">Astrophys. J.</title> <biblScope unit="volume">517</biblScope>, <biblScope unit="volume">565</biblScope> (<date>1999</date>), <idno type="arxiv">astro-ph/9812133</idno>.</bibl>
+	<bibl><author>E. J. Copeland, M. Sami and S. Tsujikawa</author>, <title level="j">Int. J. Mod. Phys. D</title> <biblScope unit="volume">15</biblScope>, <biblScope unit="page">1753</biblScope> (<date>2006</date>) [<idno type="arxiv">arXiv:hep-th/0603057</idno>].</bibl>
+	<bibl><author>A. Kamenshchik, U. Moschella and V. Pasquier</author>, <title level="j">Phys. Lett. B</title><biblScope unit="volume">511</biblScope> (<date>2001</date>) <biblScope unit="page">265</biblScope>.</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.09376.pdf -->
+	<bibl><author>M. A. Metlitski and T. Grover</author>, <title level="m">Entanglement Entropy of Systems with Spontaneously Broken ContinuousSymmetry</title> ,<idno type="arxiv">1112 .5166</idno>.</bibl>
+	<bibl><author>M. M. Wolf</author>, <title level="a">Violation of the entropic area law for Fermions</title>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">96</biblScope> (<date>2006</date>) <biblScope unit="page">010404</biblScope>, [<idno type="arxiv">quant-ph/0503219</idno>].</bibl>
+	<bibl><author>D. Gioev and I. Klich</author>, <title level="a">Entanglement Entropy of Fermions in Any Dimension and the Widom Conjecture</title>,<title level="j">Physical Review Letters</title> <biblScope unit="volume">96</biblScope> ( <date>Mar.,2006</date> )<biblScope unit="page">100503</biblScope> ,[ <idno type="arxiv">quant-ph/0504151</idno>].</bibl>
+	<bibl><author>B. Swingle</author>, <title level="a">Entanglement Entropy and the Fermi Surface</title>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">105</biblScope> (<date>2010</date>) <biblScope unit="page">050502</biblScope>, [<idno type="arxiv">0908.1724</idno>].</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.09371.pdf -->
+	<bibl><author>J. von Neumann</author>, <title level="m">Mathematical Foundations of Quantum Mechanics</title> (<publisher>Princeton UniversityPress</publisher> ,<pubPlace>USA</pubPlace> ,<date>1955</date> ,<date>1983</date> ).</bibl>
+	<bibl><author>R. Penrose</author>, <title level="m">The Emperor&apos;s New Mind</title> (<publisher>Oxford University Press</publisher>, <pubPlace>UK</pubPlace>, <date>1989</date>).</bibl>
+	<bibl><author>R. Penrose</author>, &quot;<title level="a">On Gravity&apos;s rôle in Quantum State Reduction</title>&quot;, in <title level="m">Physics meets philosophyat the Planck scale</title> ,edited by <editor>C .Callender</editor> ( <publisher>CambridgeUniversity Press</publisher> ,<pubPlace>UK</pubPlace> ,<date>2001</date>) .</bibl>
+	<bibl><author>R. Penrose</author>, &quot;<title level="a">On gravity&apos;s rôle in quantum state reduction</title>&quot;, <title level="j">Gen. Rel. Grav.</title> <biblScope unit="volume">28</biblScope> (<date>1996</date>)<biblScope unit="page">581</biblScope> .<idno type="DOI">doi :10.1007/BF02105068</idno></bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.09385.pdf -->
+	<bibl><author>M. Ackermann et al.</author> (<orgName type="collaboration">Fermi-LAT</orgName>), <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">115</biblScope>, <biblScope unit="page">231301</biblScope>( <date>2015</date>),<idno type="arxiv">1503 .02641</idno>.</bibl>
+	<bibl><author>A. Albert et al.</author> (<orgName type="collaboration">DES</orgName>, <orgName type="collaboration">Fermi-LAT</orgName>), <title level="j">Astrophys. J.</title> <biblScope unit="volume">834</biblScope>, <biblScope unit="volume">110</biblScope>( <date>2017</date>),<idno type="arxiv">1611 .03184</idno>.</bibl>
+	<bibl><author>M. Lisanti, S. Mishra-Sharma, N. L. Rodd, B. R. Safdi, andR .H .Wechsler</author> ( <date>2017</date>),<note>to appear</note> .</bibl>
+	<bibl><author>M. Ackermann et al.</author> (<orgName type="collaboration">Fermi-LAT</orgName>), <title level="j">JCAP</title> <biblScope unit="volume">1509</biblScope>, <biblScope unit="page">008</biblScope> (<date>2015</date>),<idno type="arxiv">1501 .05464</idno>.</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.09128.pdf -->
+	<bibl><author>O. Hen, G. A. Miller, E. Piasetzky, and L. B. Weinstein</author>, <title level="j">Reviews of Modern Physics</title> (<date>2017</date>), <note>toppear</note> ;<idno type="arxiv">arXiv :1611 .09748v4</idno>( <date>2017</date>).</bibl>
+	<bibl><author>C. Ciofi degli Atti</author>, <title level="j">Phys. Rept.</title> <biblScope unit="volume">590</biblScope>, <biblScope unit="page">1</biblScope> (<date>2015</date>).</bibl>
+	<bibl><author>R. B. Wiringa, V. G. J. Stoks and R. Schiavilla</author>, <title level="j">Phys. Rev. C</title><biblScope unit="volume">51</biblScope>, <biblScope unit="page">38</biblScope> (<date>1995</date>).</bibl>
+	<bibl><author>R. Schiavilla, R. B. Wiringa, S. C. Pieper and J. Carlson</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">98</biblScope>, <biblScope unit="page">132501</biblScope> (<date>2007</date>).</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.09386.pdf -->
+	<bibl><author>Abdo, A. A., Ajello, M., Allafort, A., et al.</author> <date>2013</date>, <title level="j">ApJS</title>, <biblScope unit="volume">208</biblScope>, <biblScope unit="page">17</biblScope></bibl>
+	<bibl><author>Acero, F., Ackermann, M., Ajello, M., et al.</author> <date>2015</date>, <title level="j">ApJS</title>, <biblScope unit="volume">218</biblScope>, <biblScope unit="page">23</biblScope> -.<date>2016</date> ,<title level="j">ApJS</title> ,<biblScope unit="volume">223</biblScope> ,<biblScope unit="page">26</biblScope></bibl>
+	<bibl><author>Althaus, L. G., Miller Bertolami, M. M., &amp; Córsico, A. H.</author> <date>2013</date>, <title level="j">A&amp;A</title>,<biblScope unit="volume">557</biblScope> ,<biblScope unit="page">A19</biblScope></bibl>
+	<bibl><author>Arzoumanian, Z., Brazier, A., Burke-Spolaor, S., et al.</author> <date>2015</date>, <note type="report">ArXive -prints</note>,<idno type="arxiv">arXiv :1505.07540</idno></bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.08539.pdf -->
+	<bibl><author>M. Schmaltz and D. Tucker-Smith</author>, &quot;<title level="a">Little Higgs review</title>&quot;, <title level="j">Ann. Rev. Nucl. Part. Sci.</title> <biblScope unit="volume">55</biblScope> (<date>2005</date>)<biblScope unit="page">229</biblScope> ,<idno type="DOI">doi :10.1146/annurev.nucl.55.090704.151502</idno>,<idno type="arxiv">arXiv :hep-ph/0502182</idno>.</bibl>
+	<bibl><author>S. Frixione, P. Nason, and C. Oleari</author>, &quot;<title level="a">Matching NLO QCD computations with Parton Showersimulations :the POWHEG method</title> &quot;,<title level="j">JHEP</title> <biblScope unit="issue">11</biblScope> ( <date>2007</date>)<biblScope unit="page">070</biblScope> ,<idno type="DOI">doi :10.1088/1126-6708/2007/11/070</idno>.</bibl>
+	<bibl><author>S. Alioli, P. Nason, C. Oleari, and E. Re</author>, &quot;<title level="a">A general framework for implementing NLO calculationsin shower Monte Carlo programs :the POWHEG BOX</title> &quot;,<title level="j">JHEP</title> <biblScope unit="issue">06</biblScope> ( <date>2010</date>)<biblScope unit="page">043</biblScope> ,<idno type="DOI">doi :10.1007/JHEP06(2010)043</idno>,<idno type="arxiv">arXiv: 1002.2581</idno>.</bibl>
+	<bibl><author>S. Frixione, P. Nason, and G. Ridolfi</author>, &quot;<title level="a">A positive-weight next-to-leading-order Monte Carlofor heavy flavour hadroproduction</title> &quot;,<title level="j">JHEP</title> <biblScope unit="issue">09</biblScope> ( <date>2007</date>)<biblScope unit="page">126</biblScope> ,<idno type="DOI">doi :10.1088/1126-6708/2007/09/126</idno>,<idno type="arxiv">arXiv: 0707.3088</idno>.</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.08856.pdf -->
+	<bibl><author>S. Fajfer, J. F. Kamenik, and I. Nisandzic</author>, <title level="a">On the B → D * τ ν τ sensitivity to new physics</title>,<title level="j">Phys .Rev .D</title><biblScope unit="volume">85</biblScope> ( <date>2012</date>)<biblScope unit="page">094025</biblScope> ,<idno type="arxiv">arXiv :1203.2654</idno>.</bibl>
+	<bibl><author>D. Bigi and P. Gambino</author>, <title level="a">Revisiting B → Dν</title>, <title level="j">Phys. Rev. D</title><biblScope unit="volume">94</biblScope> (<date>2016</date>) <biblScope unit="page">094008</biblScope>, <idno type="arxiv">arXiv:1606.08030</idno>.</bibl>
+	<bibl><author>M. Tanaka</author>, <title level="a">Charged Higgs effects on exclusive semitauonic B decays</title>, <title level="j">Z. Phys. C</title><biblScope unit="volume">67</biblScope> (<date>1995</date>)<biblScope unit="page">321</biblScope> ,<idno type="arxiv">arXiv :hep-ph/9411405</idno>.</bibl>
+	<bibl><author>W. Buchmüller, R. Rückl, and D. Wyler</author>, <title level="a">Leptoquarks in lepton-quark collisions</title>, <title level="j">Phys. Lett.B</title><biblScope unit="volume">191</biblScope> ( <date>1987</date>)<biblScope unit="volume">442</biblScope> ,[ <note>Erratum-ibid.B448 ( 1999)320</note> ] .</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.09266.pdf -->
+	<bibl><author>Yu. A. Golfand and E. P. Likhtman</author>, <title level="a">Extension of the Algebra of Poincare Group Generators and Violationof p Invariance</title> ,<title level="j">JETP Lett .</title><biblScope unit="volume">13</biblScope> ( <date>1971</date>)<biblScope unit="volume">323</biblScope> ,[ <title level="j">PismaZh .Eksp .Teor .Fiz .</title><biblScope unit="volume">13</biblScope> ( <date>1971</date>)<biblScope unit="volume">452</biblScope> ].</bibl>
+	<bibl><author>J. Wess and B. Zumino</author>, <title level="a">Supergauge Transformations in Four-Dimensions</title>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">70</biblScope> (<date>1974</date>) <biblScope unit="page">39</biblScope>.</bibl>
+	<bibl><author>M. Tanaka</author>, <title level="a">Charged Higgs effects on exclusive semitauonic B decays</title>, <title level="j">Z. Phys. C</title><biblScope unit="volume">67</biblScope> (<date>1995</date>)<biblScope unit="page">321</biblScope> ,<idno type="arxiv">arXiv :hep-ph/9411405</idno>.</bibl>
+	<bibl><author>S. Dimopoulos and H. Georgi</author>, <title level="a">Softly Broken Supersymmetry and SU(5)</title>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">193</biblScope> (<date>1981</date>) <biblScope unit="page">150</biblScope>.</bibl>
+	
+	
+	<!-- source: https://arxiv.org/pdf/1708.08393.pdf -->
+	<bibl><author>Keller S C, Bessell M S, Frebel A, Casey A R, Asplund M, Jacobson H R, Lind K, Norris J E, Yong D,Heger A ,Magic Z ,da Costa G S ,Schmidt B P and Tisserand P</author> <date>2014</date> <title level="j">Nature</title> <biblScope unit="volume">506</biblScope> <biblScope unit="page">463 -466</biblScope>( <note type="report">Preprint</note><idno type="arxiv">1402. 1517</idno>)</bibl>
+	<bibl><author>Ishigaki M N, Tominaga N, Kobayashi C and Nomoto K</author> <date>2014</date> <title level="j">ApJL</title> <biblScope unit="volume">792</biblScope> <biblScope unit="page">L32</biblScope> (<note type="report">Preprint</note> <idno type="arxiv">1404.4817</idno>)</bibl>
+	<bibl><author>Bessell M S, Collet R, Keller S C, Frebel A, Heger A, Casey A R, Masseron T, Asplund M, Jacobson HR ,Lind K ,Marino A F ,Norris J E ,Yong D ,Da Costa G ,Chan C ,Magic Z ,Schmidt B and Tisserand P</author><date>2015</date> <title level="j">ApJL</title> <biblScope unit="volume">806</biblScope> <biblScope unit="page">L16</biblScope> ( <note type="report">Preprint</note> <idno type="arxiv">1505. 03756</idno>)</bibl>
+	<bibl><author>Nordlander T, Amarsi A M, Lind K, Asplund M, Barklem P S, Casey A R, Collet R and Leenaarts J</author><date>2017</date> <title level="j">A&amp;A</title> <biblScope unit="volume">597</biblScope> <biblScope unit="page">A6</biblScope> ( <note>Preprint1609 .07416</note>)</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.08979.pdf -->
+	<bibl><author>S. Elitzur</author>, <title level="j">Phys.Rev. D</title><biblScope unit="volume">12</biblScope>, <biblScope unit="page">3978</biblScope> (<date>1975</date>).</bibl>
+	<bibl><author>E. H. Fradkin and S. H. Shenker</author>, <title level="j">Phys.Rev. D</title><biblScope unit="volume">19</biblScope>, <biblScope unit="page">3682</biblScope> (<date>1979</date>).</bibl>
+	<bibl><author>K. Osterwalder and E. Seiler</author>, <title level="j">Annals Phys</title>. <biblScope unit="volume">110</biblScope>, <biblScope unit="page">440</biblScope> (<date>1978</date>).</bibl>
+	<bibl><author>W. Caudy and J. Greensite</author>, <title level="j">Phys.Rev. D</title><biblScope unit="volume">78</biblScope>, <biblScope unit="page">025018</biblScope> (<date>2008</date>), <idno>arXiv:0712.0999</idno>.</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.09514.pdf -->
+	<bibl><author>Adelberger, E., Dvali, G., Gruzinov, A.</author> <date>2007</date>, &quot;<title level="a">Photon mass destroyed by vortices</title>,&quot; <title level="j">Phys.Rev .Lett .</title><biblScope unit="volume">98</biblScope> ,<biblScope unit="page">010402</biblScope></bibl>
+	<bibl><author>Bellan, P.M.</author>, <date>2012</date>, &quot;<title level="m">Spheromaks</title>.&quot; <publisher>Imperial College Press</publisher>.</bibl>
+	<bibl><author>Bertulani, Carlos A</author>. <date>2013</date>. &quot;<title level="m">Nuclei in the Cosmos</title>&quot; <publisher>World Scientific</publisher>.</bibl>
+	<bibl><author>Binney, J., Merrifield, M.</author> <date>1998</date>. &quot;<title level="m">Galactic Astronomy</title>&quot; <publisher>Princeton University Press</publisher></bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.09353.pdf -->
+	<bibl><author>S. W. Hawking</author>. <title level="a">Particle creation by black holes</title>. <title level="j">Commu-nicationsin Mathematical Physics</title> ,<biblScope unit="volume">43</biblScope> (<biblScope unit="issue">3</biblScope>):<biblScope unit="page">199-220</biblScope>,<date>Aug 1975</date> .<idno type="ISSN">ISSN1432 - 0916</idno>.<idno type="DOI">doi: 10.1007/BF02345020</idno>.URL<ptr type="web">https : //doi.org/10.1007/BF02345020</ptr>.</bibl>
+	<bibl><author>J. D. Bekenstein</author>. <title level="a">Black holes and entropy</title>. <title level="j">Phys. Rev. D</title>, <biblScope unit="volume">7</biblScope>:<biblScope unit="page">2333-2346</biblScope>,<date>Apr 1973</date> .<idno type="DOI">doi :10.1103/PhysRevD.7.2333</idno>.URL <ptr type="web">https: //link.aps.org/doi/10.1103/PhysRevD.7. 2333</ptr>.</bibl>
+	<bibl><author>E. Joos, H. D. Zeh, C. Kiefer, D. Giulini, J. Kupsch, andI .O.Stamatescu</author> .<title level="m">Decoherence and the Appearance of a ClassicalWorld in Quantum Theory</title> . <publisher>Springer</publisher><pubPlace>Berlin Heidelberg</pubPlace> , <date>2003</date>.<idno type="DOI">doi :10 .1007/978-3-662-05328-7</idno>.URL<ptr type="web">https: / /doi.org/10.1007/978-3-662-05328-7</ptr>.</bibl>
+	<bibl><author>W. H. Zurek</author>. <title level="a">Decoherence, einselection, and the quan-tumorigins of the classical</title> .<title level="j">Rev .Mod .Phys .</title>,<biblScope unit="volume">75</biblScope> :<biblScope unit="page">715-775</biblScope>,<date>May2003</date> . <idno type="DOI">doi: 10.1103/RevModPhys.75.715</idno>.URL<ptr type="web">https : //link.aps.org/doi/10.1103/RevModPhys.75.715</ptr>.</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1707.05690.pdf -->
+	<bibl><author>E. V. Shuryak</author>, &quot;<title level="a">Quantum Chromodynamics and the Theory of Superdense Matter</title>,&quot; <title level="j">Phys. Rept.</title> <biblScope unit="volume">61</biblScope> (<date>1980</date>)<biblScope unit="page">71 -158</biblScope>.</bibl>
+	<bibl><author>J.-Y. Ollitrault</author>, &quot;<title level="a">Anisotropy as a signature of transverse collective flow</title>,&quot; <title level="j">Phys. Rev. D</title><biblScope unit="volume">46</biblScope> (<date>1992</date>) <biblScope unit="page">229-245</biblScope>.</bibl>
+	<bibl><author>S. A. Voloshin, A. M. Poskanzer, and R. Snellings</author>, &quot;<title level="a">Collective phenomena in non-central nuclear collisions</title>,&quot;<idno type="arxiv">arXiv :0809.2949</idno>[ <note>nucl-ex</note>].</bibl>
+	<bibl><author>U. Heinz and R. Snellings</author>, &quot;<title level="a">Collective flow and viscosity in relativistic heavy-ion collisions</title>,&quot; <title level="j">Ann. Rev.Nucl .Part .Sci .</title><biblScope unit="volume">63</biblScope> ( <date>2013</date>)<biblScope unit="page">123 -151</biblScope>,<idno type="arxiv">arXiv :1301.2826</idno>[ <note>nucl-th</note>].</bibl>
+
+	<!-- source: https://arxiv.org/pdf/1708.09365.pdf -->
+	<!-- source: 14-1708.09365.training.references.tei.xml -->
+	<bibl><author>Aganagic, M. and Vafa, C.</author>: <title level="a">Mirror symmetry, D-branes and counting holomorphic discs</title>. [<idno type="arxiv">hep-th/0012041</idno>].</bibl>
+	<bibl><author>Aganagic, M., Cheng, M. C. N., Dijkgraaf, R., Krefl, D. and Vafa, C.</author>: <title level="a">Quantum Geometry of Refined Topological Strings</title>.<title level="j">JHEP</title> <biblScope unit="volume">1211</biblScope> ,<biblScope unit="page">019</biblScope> ( <date>2012</date>)[ <idno type="arxiv">arXiv:1105.0630</idno>[ <note>hep-th</note>]].</bibl>
+	<bibl><author>Aganagic, M., Dijkgraaf, D., Klemm, A., Marino, M. and Vafa, C.</author>: <title level="a">Topological strings and integrable hierar-chies</title>.<title level="j">Commun .Math .Phys .</title><biblScope unit="volume">261</biblScope> <biblScope unit="page">451</biblScope> ( <date>2006</date>)[ <idno type="arxiv">hep-th/0312085</idno>].</bibl>
+	<bibl><author>Aganagic, M., Klemm, A., Marino, M. and Vafa, C.</author>: <title level="a">The Topological vertex</title>. <title level="j">Commun. Math. Phys.</title> <biblScope unit="volume">254</biblScope> <biblScope unit="page">425</biblScope> (<date>2005</date>)[ <idno type="arxiv">hep-th/0305132</idno>].</bibl>
+	
+	
+	<!-- source: https://arxiv.org/pdf/1708.09284.pdf -->
+	<!-- source: 15-1708.09284.training.references.tei.xml -->
+	<bibl><author>C. Cassiago, G. La Paglia, U. Pogliano</author>, &quot;<title level="a">Stability evaluation of high-precisionmultifunction instruments for traceability transfer</title> ,&quot;<title level="j">IEEE Trans .Instrum. Meas.</title> Vol. <biblScope unit="volume">50</biblScope>, no. <biblScope unit="issue">6</biblScope>pp . <biblScope unit="page">1206- 1210</biblScope>,<date>Dec. 2000</date>.</bibl>
+	<bibl><orgName>Fluke Corporation</orgName>, <title type="m">752 A Reference Divider Instruction Manual</title>, <note>Revision1</note> ,<date>1984</date> .</bibl>
+	<bibl><orgName>Fluke Corporation</orgName>, <title level="m">720 A Kelvin Varley Voltage Divider Instruction Manual</title>,<note>Revision 2</note> ,<date>1974</date> .</bibl>
+	<bibl><orgName>Agilent Technologies</orgName>, <title level="j">3458A Multimeter -User&apos;s Guide</title>, <note>Revision: B.01</note>,<date>March 2001</date> .</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.08956.pdf -->
+	<!-- source: 16-1708.08956.training.references.tei.xml -->
+	<bibl><author>Vikhlinin, A., Reid, P., Tananbaum, H., Schwartz, D. A., Forman, W. R., Jones, C., Bookbinder, J., Cotroneo,V .,Trolier -McKinstry,S .,Burrows ,D .,Bautz ,M .W .,Heilmann ,R .,Davis ,J .,Bandler ,S .R .,Weisskopf ,M. C. ,andMurray , S. S.</author> ,&quot;<title level="a">SMART -X:SquareMeter Arcsecond Resolution x - rayTelescope</title>, &quot;<title level="m">Proc. SPIE</title><biblScope unit="volume">8443</biblScope>, <biblScope unit="issue">8</biblScope> (<date>2012</date> ) .</bibl>
+	<bibl><author>Gaskin, J. A., Weisskopf, M. C., Vikhlinin, A., Tananbaum, H. D., Bandler, S. R., Bautz, M. W., Burrows, D.N .,Falcone ,A .D .,Harrison ,F .A .,Heilmann ,R .K .,Heinz ,S .,Hopkins ,R .C .,Kilbourne ,C .A .,Kouveliotou ,C. ,Kraft, R. P. ,Kravtsov, A. V. ,McEntaffer, R. L. ,Natarajan, P. ,ODell, S. L. ,Petre, R. ,Prieskorn, Z.R ., Ptak,A .F ., Ramsey,B .D ., Reid,P .B ., Schnell,A .R ., Schwartz,D .A ., andTownsley, L .K .</author>,&quot; <title level="a">TheX- raySurveyor Mission:a concept study</title>, &quot; <title level="m">Proc .SPIE</title><biblScope unit="volume">9601</biblScope> ,<biblScope unit="issue">14</biblScope> ( <date>2015</date>) .</bibl>
+	<bibl><author>Lumb, D. H.</author>, &quot;<title level="a">Simulations and mitigation of pile-up in XMM CCD instruments</title>,&quot; <title level="j">Experimental Astron-omy</title><biblScope unit="volume">10</biblScope> (<biblScope unit="issue">4</biblScope>),<biblScope unit="page">439 -456</biblScope>( <date>2000</date>).</bibl>
+	<bibl>&quot;<title level="m">SIDECAR TM ASIC.</title>&quot; <ptr type="web">http://www.teledyne-si.com/ps-sidecar-asic.html</ptr>.</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.04241.pdf -->
+	<!-- source: 17-1708.04241.training.references.tei.xml -->
+	<bibl><author>R. H. Eather</author>, <title level="m">Majestic Lights: The Aurora in Science, History, and the Arts</title> (<publisher>American GeophysicalUnion</publisher> ,<date>1980</date> ).</bibl>
+	<bibl><author>R. C. Carrington</author>, <title level="j">Mon. Not. R. Astron. Soc.</title> <biblScope unit="volume">20</biblScope>, <biblScope unit="page">13</biblScope> (<date>1859</date>).</bibl>
+	<bibl><author>E. Priest</author>, <title level="m">Magnetohydrodynamics of the Sun</title> (<publisher>Cambridge Univ. Press</publisher>, <date>2014</date>).</bibl>
+	<bibl><author>K. Shibata and T. Magara</author>, <title level="j">Living Rev. Sol. Phys.</title> <biblScope unit="volume">8</biblScope>, <biblScope unit="page">6</biblScope> (<date>2011</date>).</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.09330.pdf -->
+	<!-- source: 18-1708.09330.training.references.tei.xml -->
+	<bibl><author>R. F. Egerton</author>, <title level="m">Electron Energy-Loss Spectroscopy in theElectron Microscope</title> ( <note>ThirdEdition</note> )( <publisher>Springer</publisher>,<pubPlace>New York</pubPlace> ,<date>2011</date>) .</bibl>
+	<bibl><author>D. B. Williams and C. B. Carter</author>, <title level="m">Transmission Electron Microscopy- ATextbook for Materials Science</title> ( <note>SecondEdition</note> )(<publisher>Springer</publisher> ,<pubPlace>NewYork</pubPlace> , <date>2009</date>) .</bibl>
+	<bibl><author>M. Chergui and A. H. Zewail</author>, <title level="j">ChemPhysChem</title> <biblScope unit="volume">10</biblScope>, <biblScope unit="page">28</biblScope> (<date>2009</date>).</bibl>
+	<bibl><author>R. J. D. Miller</author>, <title level="j">Science</title> <biblScope unit="volume">343</biblScope>, <biblScope unit="page">1108</biblScope> (<date>2014</date>).</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.08924.pdf -->
+	<!-- source: 19-1708.08924.training.references.tei.xml -->
+	<bibl><author>Nicolas Laflorencie</author>, &quot;<title level="a">Quantum entanglement in con-densedmatter systems</title> ,&quot;<title level="j">Physics Reports</title> <biblScope unit="volume">646</biblScope> ,<biblScope unit="page">1 - 59</biblScope>( <date>2016</date>),<note>quantumentanglement in condensed matter sys - tems</note>.</bibl>
+	<bibl><author>Luigi Amico, Rosario Fazio, Andreas Osterloh, and VlatkoVedral</author> ,&quot; <title level="a">Entanglementin many -bodysystems</title> ,&quot;<title level="j">Rev .Mod. Phys.</title> <biblScope unit="volume">80</biblScope>, <biblScope unit="page">517- 576</biblScope>(<date>2008</date> ).</bibl>
+	<bibl><author>Mark Srednicki</author>, &quot;<title level="a">Entropy and area</title>,&quot; <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">71</biblScope>,<biblScope unit="page">666 -669</biblScope>( <date>1993</date>).</bibl>
+	<bibl><author>J. Eisert, M. Cramer, and M. B. Plenio</author>, &quot;<title level="a">Colloquium :Area laws for the entanglement entropy</title> ,&quot;<title level="j">Rev .Mod .Phys .</title><biblScope unit="volume">82</biblScope>, <biblScope unit="page">277- 306</biblScope>(<date>2010</date> ).</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1709.00329.pdf -->
+	<!-- source: 20-1709.00329.training.references.tei.xml -->
+	<bibl><author>J.S. Bell</author>. <title level="a">On the Einstein-Podolsky-Rosen paradox</title>. <title level="j">Physics</title>, <biblScope unit="volume">1</biblScope>:<biblScope unit="page">195-200</biblScope>, <date>1964</date>.</bibl>
+	<bibl><author>M Berry</author>. <title level="a">Singular limits</title>. <title level="j">Physics Today</title>, <biblScope unit="volume">55</biblScope>:<biblScope unit="page">10-11</biblScope>, <date>2002</date>.</bibl>
+	<bibl><author>L. Blum, F.Cucker, M.Shub, and S.Smale</author>. <title level="j">Complexity and Real Computation</title>. <publisher>Springer</publisher>, <date>1997</date>.</bibl>
+	<bibl><author>L. Diósi</author>. <title level="a">Models for universal reduction of macroscopic quantum fluctuations</title>. <title level="j">Phys. Rev.</title>, <biblScope unit="volume">A40</biblScope>:<biblScope unit="page">1165-74</biblScope>,<date>1989</date> .</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.09550.pdf -->
+	<!-- source: 21-1708.09550.training.references.tei.xml -->
+	<bibl><author>M. Aldi, and D. Grandini</author>, <title level="a">Generalized contact geometry and T-duality</title>, <title level="j">J. Geom. Phys.</title> <biblScope unit="volume">92</biblScope> (<date>2015</date>) <biblScope unit="page">78-93</biblScope>, [<idno type="arxiv">arXiv:1312.7471</idno>].</bibl>
+	<bibl><author>P. Bouwknegt, J.Evslin ,and V. Mathai</author>, <title level="j">T- duality:topologychangefrom H- flux</title> ,<title level="j">Comm. Math. Phys.</title> <biblScope unit="volume">249</biblScope> (<date>2004</date>) <biblScope unit="page">383-415</biblScope>, [<idno type="arxiv">arXiv:hep-th/0306062</idno>].</bibl>
+	<bibl><author>P. Bouwknegt, J.Evslin ,and V. Mathai</author>, <title level="a">Topologyand H- flux ofT- dual manifolds</title>,<title level="j">Phys .Rev .Lett.</title> <biblScope unit="volume">98</biblScope>( <date>2004</date>) <biblScope unit="page">181601</biblScope> ,[<idno>arXiv :hep -th/0312052</idno>].</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.08237.pdf -->
+	<!-- source: 22-1708.08237.training.references.tei.xml -->
+	<bibl><author>M. Abramowitz and I.A. Stegun</author>, <title level="m">Handbook of Mathematical Functions</title>, <publisher>Dover</publisher> (<pubPlace>New York</pubPlace> <date>1965</date>)</bibl>
+	<bibl><author>S. Atis, S. Saha, H. Auradou, S. Salin, L. Talon</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">110</biblScope>, <biblScope unit="page">148301</biblScope> (<date>2013</date>) [<idno type="arxiv">arXiv:1210.3518</idno>];</bibl>
+	<bibl><author>S. Atis, A.K. Dubey, D. Salin, L. Talon, P. Le Doussal, K.J. Wiese</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">114</biblScope>, <biblScope unit="page">234502</biblScope> (<date>2015</date>)[ <idno type="arxiv">arXiv:1410.1097</idno>].</bibl>
+	<bibl><author>A.L. Barabási and H.E. Stanley</author>, <title level="m">Fractal concepts in surface growth</title>, <publisher>Cambridge University Press</publisher> (<date>1995</date>).</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.08192.pdf -->
+	<!-- source: 23-1708.08192.training.references.tei.xml -->
+	<bibl><author>T. V. Mechelen, Z. Jacob</author>, <title level="j">Optica</title> <biblScope unit="volume">3</biblScope>, <biblScope unit="page">118</biblScope> (<date>2016</date>).</bibl>
+	<bibl><author>X.-L. Qi, R. Li, J. Zang, S.-C. Zhang</author>, <title level="j">Science</title> <biblScope unit="volume">323</biblScope>, <biblScope unit="page">1184</biblScope> (<date>2009</date>).</bibl>
+	<bibl><author>M.-L. Chang, M. Xiao, W.-J. Chen, C. T. Chan</author>, <title level="j">Phys. Rev. B</title> <biblScope unit="volume">95</biblScope>, <biblScope unit="page">125136</biblScope> (<date>2017</date>).</bibl>
+	<bibl><author>L. Lu, et al.</author>, <title level="j">Science</title> <biblScope unit="volume">349</biblScope>, <biblScope unit="page">622</biblScope> (<date>2015</date>).</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.08359.pdf -->
+	<!-- source: 24-1708.08359.training.references.tei.xml -->
+	<bibl><author>V.I. Arnold, V.V. Goryunov, O.V. Lyashko, V.A.Vasilev</author>, <title level="m">Singularity Theory I</title>, <publisher>Springer</publisher><date>1998</date></bibl>
+	<bibl><author>P. Berglund, T. Hübsch</author>, <title level="a">A generalized construction of mirror manifolds</title>, <title level="j">Nucl. Phys. B</title><biblScope unit="volume">393</biblScope>( <date>1993</date>)<biblScope unit="page">377</biblScope> ,<idno>arXiv :hep-th/9201014</idno></bibl>
+	<bibl><author>I. Brunner, N. Carqueville, D. Plencner</author>, <title level="a">Orbifolds and topological defects</title>, <title level="j">Commun. Math.Phys .</title><biblScope unit="volume">332</biblScope> ( <date>2014</date>)<biblScope unit="page">669</biblScope> ,<idno type="arxiv">arXiv :1307.3141</idno>[ <note>hep-th</note>]</bibl>
+	<bibl><author>I. Brunner, N. Carqueville, D. Plencner</author>, <title level="a">Discrete torsion defects</title>, <title level="j">Commun. Math. Phys.</title><biblScope unit="volume">337</biblScope> ( <date>2015</date>)<biblScope unit="page">429</biblScope> ,<idno type="arxiv">arXiv :1404.7497</idno>[ <note>hep-th</note>]</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.08794.pdf -->
+	<!-- source: 25-1708.08794.training.references.tei.xml -->
+	<bibl><author>A. Apte, D. Auroux, and M. Ramaswamy</author>. <title level="a">Variational data assimilation for discrete Burgersequation</title> .<title level="j">Electron .J .Diff .Equ .</title>,<biblScope unit="volume">19</biblScope> :<biblScope unit="page">15-30</biblScope>,<date>2010</date> .</bibl>
+	<bibl><author>L. Arnold</author>. <title level="m">Stochastic differential equations</title>. <publisher>Wiley</publisher>, <date>1974</date>.</bibl>
+	<bibl><author>S. Banerjee, B. P. Carlin, and A. E. Gelfand</author>. <title level="m">Hierarchical modeling and analysis for spatialdata</title> .<publisher>CRC Press</publisher> ,<date>2015</date> .</bibl>
+	<bibl><author>L. Berre, H. Varella, and G. Desroziers</author>. <title level="a">Modelling of flow-dependent ensemble-based background-errorcorrelations using a wavelet formulation in 4D -Varat Météo -France</title>.<title level="j">Quart .J. Roy. Meteor. Soc.</title> ,<biblScope unit="volume">141</biblScope>( <biblScope unit="issue">692</biblScope>):<biblScope unit="page">2803-2812</biblScope>,<date>2015</date>.</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.05775.pdf -->
+	<!-- source: 26-1708.05775.training.references.tei.xml -->
+	<bibl><author>M. Artebani, S.Boissì ere, and A. Sarti</author>. <title level="a">The Berglund-Hübsch-Chiodo-Ruan Mirror Symmetry for K3 surfaces</title>. <title level="j">Journalde Mathématiques Pures et Appliquées</title> ,<biblScope unit="volume">102</biblScope> (<biblScope unit="issue">4</biblScope>):<biblScope unit="page">758-781</biblScope>,<date>2014</date> .</bibl>
+	<bibl><author>M. Artebani, S.Boissì ere, and A. Sarti</author>. <title level="m">Borcea-Voisin Calabi-Yau threefolds and invertible potentials. Mathe-matischeNachrichten</title> ,<biblScope unit="volume">288</biblScope> (<biblScope unit="page">14-15</biblScope>):<biblScope unit="page">1581-1591</biblScope>,<date>2015</date> .</bibl>
+	<bibl><author>P. Berglund and M. Henningson</author>. <title level="a">Landau-Ginzburg orbifolds, mirror symmetry and the elliptic genus</title>. <title level="j">Nuclear PhysicsB</title> ,<biblScope unit="volume">433</biblScope> (<biblScope unit="issue">2</biblScope>):<biblScope unit="page">311-332</biblScope>,<date>1995</date> .</bibl>
+	<bibl><author>Per Berglund and Tristan Hübsch</author>. <title level="a">A generalized construction of mirror manifolds</title>. <title level="j">Nuclear Phys. B</title>, <biblScope unit="volume">393</biblScope>(<biblScope unit="issue">1-2</biblScope>):<biblScope unit="page">377-391</biblScope>,<date>1993</date> .</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.07712.pdf -->
+	<!-- source: 27-1708.07712.training.references.tei.xml -->
+	<bibl><author>Y. Aharonov and D. Bohm</author>, <title level="j">Physical Review</title> <biblScope unit="volume">115</biblScope>, <biblScope unit="page">485</biblScope> (<date>1959</date>).</bibl>
+	<bibl><author>R. D. Mattuck</author>, <title level="m">A guide to Feynman diagrams in the many-bodyproblem</title> ( <publisher>CourierDover Publications</publisher> ,<date>2012</date> ).</bibl>
+	<bibl><author>P. Fazekas</author>, <title level="m">Lecture Notes in Physics</title> <biblScope unit="volume">5</biblScope>, <biblScope unit="page">650</biblScope> (<date>1999</date>).</bibl>
+	<bibl><author>E. C. Stoner</author>, <title level="j">Proceedings of the Royal Society of London. SeriesA -Mathematicaland Physical Sciences</title> <biblScope unit="volume">152</biblScope> ,<biblScope unit="page">672</biblScope> ( <date>1935</date>).</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.08200.pdf -->
+	<!-- source: 28-1708.08200.training.references.tei.xml -->
+	<bibl><author>J. Mitroy and L.-Y. Tang</author>, &quot;<title level="a">Tune-out wavelengths for metastable helium</title>,&quot; <title level="j">Phys. Rev. A</title>, vol.<biblScope unit="volume">88</biblScope> ,p .<biblScope unit="page">052515</biblScope> ,<date>Nov 2013</date> .</bibl>
+	<bibl><author>C. J. Dedman, B. M. Henson, R. I. Khakimov, A. G. Truscott, and R. G. Dall</author>, &quot;<title level="a">Precision temperaturecontrolled filtered laminar air enclosure</title> ,&quot;<title level="j">Measurement Science and Technol -ogy</title>,vol. <biblScope unit="volume">26</biblScope>, no. <biblScope unit="issue">2</biblScope>, p. <biblScope unit="page">027002</biblScope>, <date>2015</date>.</bibl>
+	<bibl><author>W. E. Lamb and R. C. Retherford</author>, &quot;<title level="a">Fine structure of the hydrogen atom by a microwave method</title>,&quot;<title level="j">Phys .Rev .</title>,vol .<biblScope unit="volume">72</biblScope> ,pp .<biblScope unit="page">241 -243</biblScope>,<date>Aug 1947</date> .</bibl>
+	<bibl><author>D. Hanneke, S. Fogwell Hoogerheide, and G. Gabrielse</author>, &quot;<title level="a">Cavity control of a single-electron quantumcyclotron :Measuring the electron magnetic moment</title> ,&quot;<title level="j">Phys .Rev .A</title> ,vol .<biblScope unit="volume">83</biblScope> ,p .<biblScope unit="page">052122</biblScope>, <date>May2011</date> .</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.06214.pdf -->
+	<!-- source: 29-1708.06214.training.references.tei.xml -->
+	<bibl><author>A. Y. Kitaev</author>, <title level="j">Ann. Phys. (N.Y.)</title> <biblScope unit="volume">303</biblScope>, <biblScope unit="page">2</biblScope> (<date>2003</date>).</bibl>
+	<bibl><author>X.-G. Wen</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">66</biblScope>, <biblScope unit="page">802</biblScope> (<date>1991</date>).</bibl>
+	<bibl><author>G. Moore and N. Read</author>, <title level="j">Nucl. Phys. B</title> <biblScope unit="volume">360</biblScope>, <biblScope unit="page">362</biblScope> (<date>1991</date>).</bibl>
+	<bibl><author>M. Freedman, M. Larsen, and Z. Wang</author>, <title level="j">Commun. Math. Phys.</title><biblScope unit="volume">227</biblScope> ,<biblScope unit="page">605</biblScope> ( <date>2002</date>).</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.07414.pdf -->
+	<!-- source: 30-1708.07414.training.references.tei.xml -->
+	<bibl><author>Y. Hosotani</author> <title level="j">Phys. Rev. D</title> <biblScope unit="volume">2022</biblScope> <biblScope unit="page">51</biblScope> (<date>1995</date>)</bibl>
+	<bibl><author>V. P. Gusynin</author> <title level="j">Phys. Rev. D</title> <biblScope unit="volume">52</biblScope> <biblScope unit="page">4747</biblScope> (<date>1995</date>)</bibl>
+	<bibl><author>M. C. Diamantini, G. Guarnaccia and C. A. Trugenberger</author> <idno type="arxiv">arXiv: 1310.2103</idno> [<note>hep-th</note>] (<date>2013</date>)</bibl>
+	<bibl><author>L. C. Garcia de Andrade</author> <idno type="arxiv">arXiv: 1112.4927</idno> [<idno>astro-ph.CO</idno>] (<date>2011</date>)</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.09415.pdf --> <!-- continue here -->
+	<!-- source: 31-1708.09415.training.references.tei.xml -->
+	<bibl><author>H. V. Cane, W. C. Erickson, and N. P. Prestage</author>, &quot;<title level="a">Solar flares, type III radiobursts ,coronal mass ejections ,and energetic particles</title> ,&quot;<title level="j">Journal of Geophysical Research( Space Physics)</title> ,vol. <biblScope unit="volume">107</biblScope>, p. <biblScope unit="page">1315</biblScope>, <date>Oct. 2002</date>.</bibl>
+	<bibl><author>K.-L. Klein and A. Posner</author>, &quot;<title level="a">The onset of solar energetic particle events: promptrelease of deka -MeVprotons and associated coronal activity</title> ,&quot;<title level="j">Astronomy andAstrophysics</title> , vol. <biblScope unit="volume">438</biblScope>, pp. <biblScope unit="page">1029- 1042</biblScope>,<date>Aug. 2005</date>.</bibl>
+	<bibl><author>M. J. Reiner, K.-L. Klein, M. Karlick´yKarlick´y, K. Jiřička, A. Klassen, M. L. Kaiser,and J .-L.Bougeret</author> ,&quot; <title level="a">SolarOrigin of the Radio Attributes of a Complex TypeIII Burst Observed on 11 April 2001</title> , &quot;<title level="j">SolarPhysics</title> , vol. <biblScope unit="volume">249</biblScope>,pp .<biblScope unit="page">337 -354</biblScope> ,<date>Jun.2008</date> .</bibl>
+	<bibl><author>I. H. Cairns and S. F. Fung</author>, &quot;<title level="a">Growth of electron plasma waves above and belowf (p)in the electron foreshock</title> ,&quot;<title level="j">Journal of Geophysical Research</title> ,vol .<biblScope unit="volume">93</biblScope>, pp. <biblScope unit="page">7307- 7317</biblScope>,<date>Jul. 1988</date>.</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.03083.pdf -->
+	<!-- source: 32-1708.03083.training.references.tei.xml -->
+	<bibl><author>Bender C M, Boettcher S</author> <date>1998</date> <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">80</biblScope> <biblScope unit="page">5243</biblScope>;</bibl>
+	<bibl><author>Bender C M</author> <date>2005</date> <title level="j">Contemp. Phys.</title> <biblScope unit="volume">46</biblScope> <biblScope unit="page">277</biblScope>.</bibl>
+	<bibl><author>El-Ganainy R, Makris K G, Christodoulides D N, Musslimani Z H</author> <date>2007</date> <title level="j">Opt. Lett.</title> <biblScope unit="volume">32</biblScope> <biblScope unit="page">2632</biblScope>.</bibl>
+	<bibl><author>Rüter C E, Markis K G, Ramy El-Ganainy, Christodoulides D N, Segev M, Kip D</author> <date>2010</date> <title level="j">Nat. Phys.</title> <biblScope unit="volume">6</biblScope><biblScope unit="page">192195</biblScope> .</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.05631.pdf -->
+	<!-- source: 33-1708.05631.training.references.tei.xml -->
+	<bibl><author>Jacob D Bekenstein</author>. <title level="a">Black holes and the second law</title>. <title level="j">Lettere al Nuovo Cimento</title>, <biblScope unit="volume">4</biblScope>:<biblScope unit="page">737-740</biblScope>, <date>1972</date>.</bibl>
+	<bibl><author>Jacob D Bekenstein</author>. <title level="a">Black holes and entropy</title>. <title level="j">Physical Review D</title>, <biblScope unit="volume">7</biblScope>:<biblScope unit="page">2333-2346</biblScope>, <date>1973</date>.</bibl>
+	<bibl><author>Charles H Bennett</author>. <title level="a">Notes on Landauer&apos;s principle, reversible computation, and Maxwell&apos;s demon</title>.<title level="j">Studies in the History and Philosophy of Modern Physics</title> ,<biblScope unit="volume">34</biblScope> :<biblScope unit="page">501-510</biblScope>,<date>2003</date> .</bibl>
+	<bibl><author>Antoine Bérut, Artak Arakelyan, Artyom Petrosyan, Sergio Ciliberto, Raoul Dillenschneider, andEric Lutz</author> .<title level="a">Experimental verification of Landauer &apos;sprinciple linking information and thermodynamics</title> .<title level="j">Nature</title>, <biblScope unit="volume">483</biblScope>: <biblScope unit="page">187-190</biblScope>,<date>2012</date>.</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1709.00331.pdf -->
+	<!-- source: 34-1709.00331.training.references.tei.xml -->
+	<bibl><author>R. A. Battye and P. M. Sutcliffe</author>, <title level="a">Knots as stable soliton solutions in a three-dimensional classicalfield theory</title> ,<title level="j">Phys .Rev .Lett .</title><biblScope unit="volume">81</biblScope> ( <date>1998</date>),no .<biblScope unit="issue">22</biblScope> ,<biblScope unit="page">4798 -4801</biblScope>.<biblScope unit="volume">2</biblScope> .</bibl>
+	<bibl>,<title level="a">Solitons ,links andknots</title> , <title level="j">R .Soc .Lond .Proc .Ser .A Math. Phys .Eng .Sci .</title><biblScope unit="volume">455</biblScope> (<date>1999</date> ) ,no.<date>1992</date>, <biblScope unit="page">4305- 4331</biblScope>.</bibl>
+	<bibl><author>J. Bergh and J. Löfström</author>, <title level="m">Interpolation spaces. An introduction</title>, <publisher>Springer-Verlag</publisher>, <pubPlace>Berlin</pubPlace>, <date>1976</date>, <title level="s">Grundlehrender Mathematischen Wissenschaften</title> ,No .<biblScope unit="volume">223</biblScope> .</bibl>
+	<bibl><author>J. Bourgain and D. Li</author>, <title level="a">On an endpoint Kato-Ponce inequality</title>, <title level="j">Differential Integral Equations</title> <biblScope unit="volume">27</biblScope>( <date>2014</date>),no .<biblScope unit="volume">11 -12</biblScope>,<biblScope unit="page">1037 -1072</biblScope>.</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.05147.pdf -->
+	<!-- source: 35-1708.05147.training.references.tei.xml -->
+	<bibl><author>E. H. Lieb</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">62</biblScope>, <biblScope unit="page">1201</biblScope> (<date>1989</date>).</bibl>
+	<bibl><author>A. Mielke</author>, <title level="j">J. Phys. A: Math. Gen.</title> <biblScope unit="volume">24</biblScope>, <biblScope unit="page">L73</biblScope> (<date>1991</date>); <biblScope unit="volume">24</biblScope>, <biblScope unit="page">3311</biblScope>( <date>1991</date>).</bibl>
+	<bibl><author>H. Tasaki</author>, <title level="j">Phys. Rev. Lett.</title> <biblScope unit="volume">69</biblScope>, <biblScope unit="page">1608</biblScope> (<date>1992</date>).</bibl>
+	
+	
+	<!-- source: https://arxiv.org/pdf/1708.02847.pdf -->
+	<!-- source: 36-1708.02847.training.references.tei.xml -->
+	<bibl><author>J. Bagger and N. Lambert</author>, <title level="a">Gauge symmetry and supersymmetry of multiple M2-branes gaugetheories</title> .<title level="j">Phys .Rev .D</title> <biblScope unit="volume">77</biblScope> ( <date>2008</date>),<biblScope unit="page">065008</biblScope> .</bibl>
+	<bibl><author>J. Bagger and N. Lambert</author>, <title level="a">Three-algebras and N=6 Chern-Simons gauge theories</title>. <title level="j">Phys. Rev.D</title> <biblScope unit="volume">79</biblScope> ( <date>2009</date>),no .<biblScope unit="issue">2</biblScope> ,<biblScope unit="page">025002</biblScope> ,<biblScope unit="page">8 pp</biblScope> .</bibl>
+	<bibl><author>R. Bai, C. Bai and J. Wang</author>, <title level="a">Realizations of 3-Lie algebras</title>. <title level="j">J. Math. Phys.</title> <biblScope unit="volume">51</biblScope> (<date>2010</date>), <biblScope unit="page">063505</biblScope>.</bibl>
+	<bibl><author>R. Bai, G. Song and Y. Zhang</author>, <title level="a">On classification of n-Lie algebras</title>. <title level="j">Front. Math. China</title> <biblScope unit="volume">6</biblScope> (<date>2011</date>),no .<biblScope unit="issue">4</biblScope> ,<biblScope unit="page">581 -606</biblScope>.</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.00289.pdf -->
+	<!-- source: 37-1708.00289.training.references.tei.xml -->
+	<bibl><author>M. Abouzaid and I. Smith</author>, <title level="m">Khovanov homology from Floer cohomology</title>, <note type="report">preprint</note>, <idno type="arxiv">arXiv:1504.01230</idno>.</bibl>
+	<bibl><author>S. Akbulut and J. D. McCarthy</author>, <title level="a">Casson&apos;s invariant for oriented homology 3-spheres</title>, volume <biblScope unit="volume">36</biblScope> of <title level="s">Mathematical Notes</title>,<publisher>Princeton University Press</publisher> ,<pubPlace>Princeton ,NJ</pubPlace> ,<note>an exposition</note> ,<date>1990</date> .</bibl>
+	<bibl><author>L. Amorim and O. Ben-Bassat</author>, <title level="j">Perversely categorified Lagrangian correspondences</title>, <note type="report">preprint</note>, <idno type="arxiv">arXiv:1601.01536</idno>.</bibl>
+	<bibl><author>M. Atiyah</author>, <title level="a">New invariants of 3-and 4-dimensional manifolds</title>, in <title level="m">The mathematical heritage of Hermann Weyl</title> (<pubPlace>Durham,NC</pubPlace> ,<date>1987</date> ),<publisher>Amer .Math .Soc .</publisher>,<pubPlace>Providence ,RI</pubPlace> ,volume <biblScope unit="volume">48</biblScope> of <title level="s">Proc .Sympos .Pure Math .</title>,pp .<biblScope unit="page">285 -299</biblScope>,<date>1988</date> .</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.02135.pdf -->
+	<!-- source: 38-1708.02135.training.references.tei.xml -->
+	<bibl><author>S. Peggs, et al.</author>, <title level="m">ESS Technical Design Report</title>, <idno type="report">ESS 2013-001</idno>, <ptr type="web">http:// esss.se/scientific-technical-documentation</ptr>( <date>2013</date>).</bibl>
+	<bibl><author>O. Kirstein et al.</author>, <title level="a">Neutron Position Sensitive Detectors for the ESS</title>, <title level="j">Pro-ceedingsof Science</title> ( <biblScope unit="volume">Vertex</biblScope>)( <date>2014</date>)<biblScope unit="page">029</biblScope> .</bibl>
+	<bibl><orgName>BrightnESS</orgName> <note>website</note>, <ptr type="web">https://brightness.esss.se/</ptr>.</bibl>
+	<bibl><author>D. Pfeiffer, F. Resnati, J. Birch, M. Etxegarai, R. Hall-Wilton, C. Höglund, L.Hultman ,I .Llamas -Jansa,E .Oliveri ,E .Oksanen ,L .Robinson ,L .Ro -pelewski,S. Schmidt, C. Streli, P. Thuiner</author>, <title level="a">FirstMeasurements with New High - ResolutionGadolinium-GEM NeutronDetector</title>, <title level="j">Journal ofInstru - mentation</title> <biblScope unit="volume">11</biblScope>(<date>2016</date>) <biblScope unit="page">P05011</biblScope> .<idno type="DOI">doi: 10. 1088/1748-0221/11/05/P05011</idno>.</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/1708.09224.pdf -->
+	<!-- source: 39-1708.09224.training.references.tei.xml -->
+	<bibl><author>S. Coleman</author>, <title level="a">Q-balls</title>, <title level="j">Nucl. Phys.</title> <biblScope unit="volume">B262</biblScope>, <biblScope unit="page">263</biblScope> (<date>1985</date>).</bibl>
+	<bibl><author>A. Cohen, S. Coleman, H. Georgi, and A. Manohar</author>, <title level="a">The evaporationof Q -balls</title>,<title level="j">Nucl .Phys .B</title> <biblScope unit="volume">B272</biblScope> ,<biblScope unit="page">301</biblScope> ( <date>1986</date>).</bibl>
+	<bibl><author>R. Friedberg, T. D. Lee, and A. Sirlin</author>, <title level="a">Class of scalar-fieldsoliton solutions in three space dimensions</title> ,<title level="j">Phys .Rev .D</title><biblScope unit="volume">13</biblScope> , <biblScope unit="page">2739</biblScope>( <date>1976</date> ).</bibl>
+	<bibl><author>A. Kusenko and M. Shaposhnikov</author>, <title level="a">Supersymmetric Q-ballsas dark matter</title> ,<title level="j">Phys .Lett .B</title> <biblScope unit="volume">418</biblScope> ,<biblScope unit="page">46</biblScope> ( <date>1998</date>).</bibl>
+	
+	<!-- source: https://arxiv.org/pdf/0901.1667.pdf -->
+	<!-- source: 40-0901.1667.training.references.tei.xml -->
+	<bibl><author>Alexander, T.</author> <date>2005</date>, <title level="j">Phys. Rep.</title>, <biblScope unit="volume">419</biblScope>, <biblScope unit="page">65</biblScope></bibl>
+	<bibl><author>Alexander, T., &amp; Hopman, C.</author> <date>2003</date>, <title level="j">Astrophys. J. Lett.</title>, <biblScope unit="volume">590</biblScope>, <biblScope unit="page">L29</biblScope></bibl>
+	<bibl>-. <date>2008</date>, <note>ArXiv e-prints</note>, (<idno type="arxiv">arXiv: 0808.3150</idno>)</bibl>
+	<bibl><author>Alexander, T., &amp; Sternberg, A.</author> <date>1999</date>, <title level="j">Astrophys. J.</title>, <biblScope unit="volume">520</biblScope>, <biblScope unit="page">137</biblScope></bibl>
+	
+	
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

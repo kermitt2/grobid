@@ -2,7 +2,11 @@
 
 The GROBID Web API provides a simple and efficient way to use the tool. A service console is available to test GROBID in a human friendly manner. For production and benchmarking, we strongly recommand to use this web service mode on a multi-core machine and to avoid running GROBID in the batch mode.  
 
-## Start the server with Gradle
+## Start the server with Docker
+
+This is the recommended and standard way to run the Grobid web services, see [here](getting_started.md). 
+
+## Start a development server with Gradle
 
 Go under the `grobid/` main directory. Be sure that the GROBID project is built, see [Install GROBID](Install-Grobid.md).
 
@@ -12,21 +16,21 @@ The following command will start the server on the default port __8070__:
 ./gradlew run
 ```
 
-(the Gradle process will hang at 88%, this is normal because the web service is ran sharing the same JVM as Gradle)
+(the Gradle process will hang at something like 88%, this is normal because the web service is ran sharing the same JVM as Gradle)
 
 ## Install and run the service as standalone application
 
-You could also build and install the service as a standalone service (let's supposed the destination directory is grobid-installation) 
+From a development installation, you can also build and install the service as a standalone service - here let's supposed the destination directory is grobid-installation: 
 
 ```console
 ./gradlew clean assemble
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.6.0.zip
-mv grobid-service-0.6.0 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.6.0.zip
-./grobid-service/bin/grobid-service server grobid-service/config/config.yaml
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.2.zip
+mv grobid-service-0.8.2 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.2.zip
+./grobid-service/bin/grobid-service
 ```
 
 The directory `grobid-installation` should have the following structure:
@@ -41,36 +45,81 @@ The directory `grobid-installation` should have the following structure:
 
 You can check whether the service is up and running by opening the following URL:
 
-* <http://yourhost:8070/api/version> will return you the current version
+* <http://yourhost:8070/api/version> will return you the current version, and the github revision (commit hash) of the running service
 * <http://yourhost:8070/api/isalive> will return `true`/`false` whether the service is up and running
 
 The service provides also an admin console, reachable at <http://yourhost:8071> where some additional checks like ping, metrics, hearthbeat are available.
 We recommend, in particular to have a look at the metrics (using the [Metric library](https://metrics.dropwizard.io/3.1.0/getting-started/)) which are providing the rate of execution as well as the throughput of each entry point.
 
+In addition, [Prometheus](https://prometheus.io/) format export metrics are available at <http://yourhost:8071/metrics/prometheus>.  
+
 ## Configure the server
 
-If required, modify the file under `grobid/grobid-service/config/config.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID.
+If required, modify the file under `grobid/grobid-home/config/grobid.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID.
 
-You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. Loading all models at service startup will slow down the start of the server and will use more memories than the lazy mode in case only a few services will be used. For preloading all the models, set the following config parameter to `true`:
+See the [configuration page](Configuration.md) for details on how to set the different parameters of the `grobid.yaml` configuration file. Service and logging parameters are also set in this configuration file.
+
+If Docker is used, see [here](Grobid-docker.md#configure-using-the-yaml-config-file) on how to start a Grobid container with a modified configuration file. 
+
+### Model loading strategy 
+You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. 
+Loading all models at service startup will slow down the start of the server and will use more memories than the lazy mode in case only a few services will be used. 
+
+Preloading all the models at server start is the default setting, but you choose a lazy loading of the model:
 
 ```yaml
 grobid:
-  # how to load the models,
-  # false -> models are loaded when needed (default), avoiding puting in memory models which are not used
-  # true -> all the models are loaded into memory at the server statup, slow the start of the services and models not  
-  # used will take some memory
-  modelPreload: false
-```
+  # for **service only**: how to load the models, 
+  # false -> models are loaded when needed, avoiding putting in memory useless models (only in case of CRF) but slow down 
+  #          significantly the service at first call
+  # true -> all the models are loaded into memory at the server startup (default), slow the start of the services 
+  #         and models not used will take some more memory (only in case of CRF), but server is immediatly warm and ready
+  modelPreload: true
+```  
+
+## Errors handling
+
+The structure of errors is organised as follows: 
+
+| HTTP Status code  | reason                                                                                    |
+|-------------------|-------------------------------------------------------------------------------------------|
+| 200               | Successful operation.                                                                     |
+| 204               | Process was completed, but no content could be extracted and structured                   |
+| 400               | Wrong request, missing parameters, missing header                                         |
+| 500               | Indicate an internal service error, further described by a provided message               |
+| 503               | The service is not available, which usually means that all the threads are currently used |
+
+However, there are some specific errors related to the processing that should be considered. 
+The following table provides the Grobid error codes, the related HTTPS error and a description and suggestion/explanation:   
+
+| Error Code                    | HTTP Status Code            | Description                                                                                         | Possible Cause / Suggested Action                                                          |
+|-------------------------------|-----------------------------|-----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| `BAD_INPUT_DATA`              | 500 (Internal Server Error) | The input data is not correct (e.g., unreadable or missing PDF).                                    | Check that the PDF is valid and supplied in the request.                                   |
+| `NO_BLOCKS`                   | 500 (Internal Server Error) | The PDF contains no text blocks (likely a scanned document without OCR, only images).               | Ensure the PDF has selectable text; consider running OCR if it is image-only.              |
+| `TOO_MANY_BLOCKS`             | 500 (Internal Server Error) | The PDF has too many text blocks; Grobid avoids processing very large documents for safety.         | Try splitting the document or processing fewer pages at a time.                            |
+| `TOO_MANY_TOKENS`             | 500 (Internal Server Error) | The PDF contains too many tokens (words); Grobid avoids processing very large documents for safety. | Try splitting the document or processing fewer pages at a time.                            |
+| `TIMEOUT`                     | 500 (Internal Server Error) | The PDF took too long to process and was stopped.                                                   | Try with a smaller or simpler document; check server resources.                            |
+| `TAGGING_ERROR`               | 500 (Internal Server Error) | The DeLFT/CRF tagging process failed (model mismatch or tagging engine error).                      | Check model compatibility between grobid-home and grobid-core; verify model files.         |
+| `PARSING_ERROR`               | 500 (Internal Server Error) | The PDF parsing process failed (XML parsing, vector graphics processing, or file structure issues). | Check PDF file integrity; verify XML structure; report with specific file and logs.        |
+| `GENERAL`                     | 500 (Internal Server Error) | A general internal error occurred (possible bug in Grobid).                                         | Check logs for details; report the issue with relevant files and logs.                     |
+| `PDFALTO_CONVERSION_FAILURE`  | 500 (Internal Server Error) | The PDF could not be converted by pdfalto (damaged file or pdfalto bug).                            | Try opening the PDF manually; if valid, report the issue with the file.                    |
+
+!!! tip
+    - "Blocks" refer to logical text regions detected in the PDF (e.g., paragraphs, headers).  
+    - "Tokens" refer to individual words or symbols.  
+    - "Tagging" refers to the process of assigning labels to tokens using statistical models.
+    - When **reporting issues** related to the error of type `GENERAL`, please **provide as much detail as possible**, such as input PDF document, log files.
 
 ## CORS (Cross-Origin Resource Share)
 
 By default, Grobid allows API access from any origin.
-The configuration can be modified, for example to restrict origin, methods and header of access, through the YAML configuration file `config/config.yml`:
+The configuration can be modified, for example to restrict origin, methods and header of access, through the YAML configuration file `grobid-home/config/grobid.yaml`:
 
 ```yaml
-corsAllowedOrigins: "grobid.com"
-corsAllowedMethods: "OPTIONS,GET,PUT,POST,DELETE,HEAD"
-corsAllowedHeaders: "X-Requested-With,Content-Type,Accept,Origin"  
+grobid:
+  corsAllowedOrigins: "grobid.com"
+  corsAllowedMethods: "OPTIONS,GET,PUT,POST,DELETE,HEAD"
+  corsAllowedHeaders: "X-Requested-With,Content-Type,Accept,Origin"  
 ```
 
 ## Clients for GROBID Web Services
@@ -81,13 +130,13 @@ We provide clients written in Python, Java, node.js using the GROBID PDF-to-TEI 
 * <a href="https://github.com/kermitt2/grobid-client-java" target="_blank">Java GROBID client</a>
 * <a href="https://github.com/kermitt2/grobid-client-node" target="_blank">Node.js GROBID client</a>
 
-All these clients will take advantage of the multi-threading for scaling PDF batch processing. As a consequence, they will be much more efficient than the [batch command lines](Grobid-batch.md) (which use only one thread) and should be prefered. 
+All these clients will take advantage of the multi-threading for scaling PDF batch processing. As a consequence, they will be much more efficient than the [batch command lines](Grobid-batch.md) (which use only one thread) and should be prefered. The Python client is the more up-to-date and complete and can be adapted for your needs. 
 
 ## Use GROBID test console
 
-On your browser, the welcome page of the Service console is available at the URL <http://localhost:8070>.
+On your browser, the welcome page of the service console is available at the URL <http://localhost:8070>.
 
-On the console, the RESTful API can be tested under the `TEI` tab for service returning a TEI document, under the `PDF` tab for services returning annotations relative to PDF or an annotated PDF and under the `Patent` tab for patent-related services:
+On the service console, the REST API can be tested under the `TEI` tab for service returning a TEI document, under the `PDF` tab for services returning annotations relative to PDF or an annotated PDF and under the `Patent` tab for patent-related services:
 
 ![Example of GROBID Service console usage](img/grobid-rest-example.png)
 
@@ -103,57 +152,83 @@ Still to demostrate [PDF.js] annotation possibilities, by default bibliographica
 
 We describe bellow the provided resources corresponding to the HTTP verbs, to use the grobid web services. All url described bellow are relative path, the root url is `http://<server instance name>/<root context>`
 
-The consolidation parameters (`consolidateHeader` and `consolidateCitations`) indicate if GROBID should try to complete the extracted metadata with an additional external call to [CrossRef API](https://github.com/CrossRef/rest-api-doc). The CrossRef look-up is realized based on the reliable subset of extracted metadata which are supported by this API. Each consolidation parameter is a string which can have three values:
+The consolidation parameters (`consolidateHeader`, `consolidateCitations`, `consolidateFunders`) indicate if GROBID should try to complete the extracted metadata with an additional external call to [CrossRef API](https://github.com/CrossRef/rest-api-doc) or [biblio-glutton](https://github.com/kermitt2/biblio-glutton). The CrossRef and biblio-glutton look-up are realized based on the reliable subset of extracted metadata which are supported by these API. Each consolidation parameter is a string which can have three values:
 
 * `0`, means no consolidation at all is performed: all the metadata will come from the source PDF
-* `1`, means consolidation against CrossRef and update of metadata: when we have a DOI match, the publisher metadata are combined with the metadata extracted from the PDF, possibly correcting them
-* `2`, means consolidation against CrossRef and, if matching, addition of the DOI only
+* `1`, means consolidation against CrossRef/biblio-glutton and update of metadata: when we have a DOI match, the publisher metadata are combined with the metadata extracted from the PDF, possibly correcting them
+* `2`, means consolidation against CrossRef/biblio-glutton and, if matching, addition of the DOI only
+
+The consolidation for header can use a fourth value (`3`), restricting the consolidation to the usage of DOI only, if a DOI has been extracted in the header section. 
 
 ### PDF to TEI conversion services
 
 #### /api/processHeaderDocument
 
-Extract the header of the input PDF document, normalize it and convert it into a TEI XML format.
+Extract the header of the input PDF document, normalize it and convert it into a TEI XML or [BibTeX] format.
 
-`consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only).
+`consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the header metadata and inject DOI only) or `3` (consolidate using only extracted DOI, if extracted, and do not try to consolidate using any other metadata).
 
-|  method   |  request type         |  response type       |  parameters         |  requirement  |  description  |
-|---        |---                    |---                   |---                  |---            |---            |
-| POST, PUT | `multipart/form-data` | `application/xml`    | `input`             | required      | PDF file to be processed |
-|           |                       |                      | `consolidateHeader` | optional      | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only). |
-|           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
+| method    | request type          | response type     | parameters               | requirement      | description                                                                                                                                                                                                                                      |
+|-----------|-----------------------|-------------------|--------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| POST, PUT | `multipart/form-data` | `application/xml` | `input`                  | required         | PDF file to be processed                                                                                                                                                                                                                         |
+|           |                       |                   | `consolidateHeader`      | optional         | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the header and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted) . |
+|           |                       |                   | `includeRawAffiliations` | optional         | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).                                                                           |
+|           |                       |                   | `includeRawCopyrights`   | optional         | `includeRawCopyrights` is a boolean value, `0` (default, do not include raw copyrights/license string in the result) or `1` (include raw copyrights/license string in the result).                                                               |
+|           |                       |                   | `start`                  | optional         | Start page number of the PDF to be considered, previous pages will be skipped/ignored, integer with first page starting at `1`, (default `-1`, start from the first page of the PDF)                                                             |
+|           |                       |                   | `end`                    | optional         | End page number of the PDF to be considered, next pages will be skipped/ignored, integer with first page starting at `1` (default `2`, end with the last page of the PDF)                                                                        |
+
+
+Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of XML TEI. 
+
+However, please bear in mind the following information:
+
+* the TEI XML format is much richer and structured, it should be preferred if there is no particular reason to use BibTeX, so we recommend to always use `Accept: application/xml`.
+* always supply an `Accept` header or the response type may be inconsistent. There is no easy way to supply a default response type in the API. See discussion [#1093](https://github.com/kermitt2/grobid/issues/1093).
 
 
 Response status codes:
 
-|     HTTP Status code |   reason                                               |
-|---                   |---                                                     |
-|         200          |     Successful operation.                              |
-|         204          |     Process was completed, but no content could be extracted and structured |
-|         400          |     Wrong request, missing parameters, missing header  |
-|         500          |     Indicate an internal service error, further described by a provided message           |
-|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+| HTTP Status code  | reason                                                                                    |
+|-------------------|-------------------------------------------------------------------------------------------|
+| 200               | Successful operation.                                                                     |
+| 204               | Process was completed, but no content could be extracted and structured                   |
+| 400               | Wrong request, missing parameters, missing header                                         |
+| 500               | Indicate an internal service error, further described by a provided message               |
+| 503               | The service is not available, which usually means that all the threads are currently used |
 
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 2 seconds for the `processHeaderDocument` service.
 
 You can test this service with the **cURL** command lines, for instance header extraction from a PDF file in the current directory:
 
 ```console
-curl -v --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
+curl -v -H "Accept: application/xml" --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
+```
+
+If you want a simpler result in the BibTeX format:
+
+```console
+curl -v -H "Accept: application/x-bibtex" --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
 ```
 
 #### /api/processFulltextDocument
 
 Convert the complete input document into TEI XML format (header, body and bibliographical section).
 
-|  method   |  request type         |  response type       |  parameters            |  requirement  |  description  |
-|---        |---                    |---                   |---                     |---            |---            |
-| POST, PUT | `multipart/form-data` | `application/xml`    | `input`                | required      | PDF file to be processed |
-|           |                       |                      | `consolidateHeader`    | optional      | `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only). |
-|           |                       |                      | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
-|           |                       |                      | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default, do not include raw reference string in the result) or `1` (include raw reference string in the result). |
-|           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
-|           |                       |                      | `teiCoordinates`       | optional      | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
+|  method   |  request type         |  response type       | parameters               | requirement     | description                                                                                                                                                                                                                                                        |
+|---        |---                    |---                   |--------------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| POST, PUT | `multipart/form-data` | `application/xml`    | `input`                  | required        | PDF file to be processed                                                                                                                                                                                                                                           |
+|           |                       |                      | `consolidateHeader`      | optional        | `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the citation and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted).                |
+|           |                       |                      | `consolidateCitations`   | optional        | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only).                                                                       |
+|           |                       |                      | `consolidatFunders`      | optional        | `consolidateFunders` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the funder and inject DOI only).                                                                           |
+|           |                       |                      | `includeRawCitations`    | optional        | `includeRawCitations` is a boolean value, `0` (default, do not include raw reference string in the result) or `1` (include raw reference string in the result).                                                                                                    |
+|           |                       |                      | `includeRawAffiliations` | optional        | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).                                                                                             |
+|           |                       |                      | `includeRawCopyrights`   | optional        | `includeRawCopyrights` is a boolean value, `0` (default, do not include raw copyrights/license string in the result) or `1` (include raw copyrights/license string in the result).                                                                                 |
+|           |                       |                      | `teiCoordinates`         | optional        | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details                                                                                      |
+|           |                       |                      | `segmentSentences`       | optional        | Paragraphs structures in the resulting TEI will be further segmented into sentence elements <s>                                                                                                                                                                    |
+|           |                       |                      | `generateIDs`            | optional        | if supplied as a string equal to `1`, it generates uniqe identifiers for each text component                                                                                                                                                                       |
+|           |                       |                      | `start`                  | optional        | Start page number of the PDF to be considered, previous pages will be skipped/ignored, integer with first page starting at `1`, (default `-1`, start from the first page of the PDF)                                                                               |
+|           |                       |                      | `end`                    | optional        | End page number of the PDF to be considered, next pages will be skipped/ignored, integer with first page starting at `1` (default `-1`, end with the last page of the PDF)                                                                                         |
+|           |                       |                      | `flavor`                 | optional        | Indicate which flavor to apply for structuring the document. Useful when the default structuring cannot be applied to a specific document (e.g. the body is empty. More technical details and available flavor names in the [dedicated page](Grobid-specialized-processes.md). |
 
 Response status codes:
 
@@ -166,6 +241,8 @@ Response status codes:
 |         503          |     The service is not available, which usually means that all the threads are currently used                       |
 
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 5-10 seconds for the `processFulltextDocument` service.
+
+The optional sentence segmentation in the TEI XML result is based on the algorithm selected in the Grobid configuration file (under `grobid-home/config/grobid.yaml`). As of August 2020, available segmenters are [OpenNLP sentence detector](https://opennlp.apache.org/docs/1.5.3/manual/opennlp.html#tools.sentdetect) (recommended for scientific articles after evaluation) and the [Pragmatic_Segmenter](https://github.com/diasks2/pragmatic_segmenter).
 
 You can test this service with the **cURL** command lines, for instance fulltext extraction (header, body and citations) from a PDF file in the current directory:
 
@@ -189,6 +266,20 @@ Regarding the bibliographical references, it is possible to include the original
 
 ```console
 curl -v --form input=@./thefile.pdf --form includeRawCitations=1 localhost:8070/api/processFulltextDocument
+```
+
+Similar raw strings can be added in the result for affiliation and copyrights/license sections.
+
+Example with requested additional sentence segmentation of the paragraph with bounding box coordinates of the sentence structures:
+
+```console
+curl -v --form input=@./0thefile.pdf  --form segmentSentences=1 --form teiCoordinates=s localhost:8070/api/processFulltextDocument
+```
+
+Example for processing a given PDF from page 3 (included) to the last page (page 1 and 2 will be ignored, by convention the index of the first page of a PDF is `1`):
+
+```console
+curl -v --form input=@./thefile.pdf --form start=3 localhost:8070/api/processFulltextDocument
 ```
 
 #### /api/processReferences
@@ -388,7 +479,7 @@ Parse a raw bibliographical reference (in isolation) and return the correspondin
 
 |  method   |  request type         |  response type    |  parameters            |  requirement  |  description  |
 |---        |---                    |---                |---                     |---            |---            |
-| POST, PUT | `multipart/form-data` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as raw string |
+| POST, PUT | `application/x-www-form-urlencoded` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as raw string |
 |           |                       |                   | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
 |           |                       |                   | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default. do not include raw reference string in the result) or `1` (include raw reference string in the result). |
 
@@ -453,6 +544,31 @@ Results in
 }
 ```
 
+#### /api/processCitationList
+
+Parse a lis of raw bibliographical reference strings and return the corresponding normalized bibliographical references in TEI XML or [BibTeX] format.
+
+|  method   |  request type         |  response type    |  parameters            |  requirement  |  description  |
+|---        |---                    |---                |---                     |---            |---            |
+| POST      | `application/x-www-form-urlencoded` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as a list of raw strings |
+|           |                       |                   | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
+|           |                       |                   | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default. do not include raw reference string in the result) or `1` (include raw reference string in the result). |
+
+Use `Accept: application/x-bibtex` to retrieve BibTeX instead of TEI.
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 1 second for the `processCitationList` service.
+
+
 ### PDF annotation services
 
 #### /api/referenceAnnotations
@@ -467,6 +583,9 @@ For information about how the coordinates are provided, see [Coordinates of stru
 |---        |---                    |---                 |---                     |---            |---            |
 | POST	| multipart/form-data | application/json  	| input | required	| PDF file to be processed, returned coordinates will reference this PDF |
 |           |                       |                    | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
+|           |                       |                    | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default, do not include raw reference string in the result) or `1` (include raw reference string in the result). |
+|           |                       |                    | `includeFiguresTables` | optional      | `includeFiguresTables` is a boolean value `0` (default, do not include figure and table objects and reference annotations) or `1` (include these annotations). |
+
 
 Response status codes:
 
@@ -675,25 +794,150 @@ Response status codes:
 
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the capacities of the server and the size of the input document, we suggest 5-10 seconds for the `citationPatentAnnotations` service.
 
+
+### Training web API
+
+The following web services can be used to launch the training of a particular model (`/api/modelTraining`), monitor traing advancement (`/api/trainingResult`) and retrive a model (`/api/model`).
+
+#### /api/modelTraining
+
+Launch a training for a given model. The service return back a training token (as a string) to be used to follow the advancement of the training and eventually get back the associated evaluation. 
+
+|   method  |  request type       | response type        |  parameters  | requirement   |   description             |
+|---        |---                  |---                   |---           |---            |---                        |
+| POST | application/x-www-form-urlencoded |  application/json |   model      |   required    | name of the model to train  |
+|           |                     |                      | architecture | optional | name of the architecture to use for training the model, possible values are `CRF` (default), `BiLSTM-CRF`, `BiLSMT-CRF-ELMo` |
+|           |                     |                      | type | optional | type of training, `full`, `holdout`, `split`, `nfold`, default is `split` |
+|           |                     |                      | ratio | optional | only considered for `split` training mode, give the ratio (number bewteen 0 and 1) of training and evaluation data when splitting the annotated data, default is `0.9` |
+|           |                     |                      | n | optional | only considered for `nfold` training mode, give the number of folds to be used, default is `10` |
+|           |                     |                      | `incremental` | optional | boolean indicating if the training should be incremental (`1`) starting from the existing model, or not (default, `0`) |
+
+The `type` of training indicates which training and evaluation mode should be used:
+- `full`: the whole available training data is used for training a model
+- `holdout`: train and use a fixed evaluation set for evaluation, present on the server under `grobid-trainer/resources/dataset/[model]/evaluation/` where `model` is the model indicate by the service parameters `model`
+- `split` (default): randomly split the available annotated data into a training and an evaluation set, following the provided ratio (default is 90% for training, 10% for evaluation)
+- `nfold`: n-fold cross-evaluation based on the available annotated data (default is 10-fold)
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         400          |     Wrong request, missing or invalid model name, invalid optional parameter, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+
+
+You can test this service with the **cURL** command lines, for instance starting the training of the CRF date model and producing an evaluation based on an holdout set:
+```bash
+curl -v -X POST -d "model=date" -d "type=holdout" localhost:8070/api/modelTraining
+```
+
+#### /api/trainingResult
+
+Given a training token delivered by the service `modelTraining`, this service gives the possibility of following the advancement of the training and eventually get back the associated evaluation. Depending on the state of the training, the service will returns:
+
+- if the training is ongoing, an indication of advancement as a string
+- it the training is completed, evaluation statistics dependeing on the selected type of training
+
+|   method  |  request type       | response type        |  parameters  | requirement   |   description             |
+|---        |---                  |---                   |---           |---            |---                        |
+| POST |  application/x-www-form-urlencoded |     application/json |   token      |   required    | training token as received by the `modelTraining` service  |
+
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         400          |     Wrong request, missing or invalid training token, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+
+Example for a training associated to the token `Fq2WYPw5M6`:
+```bash
+curl -v -X POST -d "token=Fq2WYPw5M6" localhost:8070/api/trainingResult
+```
+
+#### /api/model
+
+Get a model in the form of an archive (`.zip`), given a model name. 
+
+|   method  |  request type       | response type        |  parameters  | requirement   |   description             |
+|---        |---                  |---                   |---           |---            |---                        |
+| GET/POST |  application/x-www-form-urlencoded |     application/zip |   model      |   required    | name of the model to download  |
+|           |                     |                      | architecture | optional | name of the architecture for the model to be downloaded, possible values are c |
+
+
+Response status codes:
+
+| HTTP Status code      | reason                                                                                    |
+|-----------------------|-------------------------------------------------------------------------------------------|
+| 200                   | Successful operation.                                                                     |
+| 400                   | Wrong request, missing or invalid model name, invalid architecture name, missing header   |
+| 500                   | Indicate an internal service error, further described by a provided message               |
+
+
+You can test this service with the **cURL** command lines, for instance retrieving the zipped CRF date model binaries with a POST query:
+```bash
+curl -v -X POST -d "model=date" "architecture=crf" localhost:8070/api/model > model.zip
+```
+
+or with a GET query:
+
+```bash
+curl -v -X GET localhost:8070/api/model?model=date > model.zip
+```
+
+#### Create training data 
+
+Generate the training data for the grobid models for a PDF document provided in input. 
+The service will return a ZIP archive with the training data in TEI XML format which may need to be corrected, because it can be used.
+
+
+| method    | request type          | response type         | parameters | requirement     | description                                                            |
+|-----------|-----------------------|-----------------------|------------|-----------------|------------------------------------------------------------------------|
+| POST      | application/form-data | application/zip       | input      | required        | A PDF document                                                         |
+|           |                       |                       | flavor     | optional        | The name of the flavor that could be used to create the training data  |
+
+Response status codes:
+
+| HTTP Status code      | reason                                                                                  |
+|-----------------------|-----------------------------------------------------------------------------------------|
+| 200                   | Successful operation.                                                                   |
+| 400                   | Wrong request, missing or invalid model name, invalid architecture name, missing header |
+| 500                   | Indicate an internal service error, further described by a provided message             |
+
+You can test this service with the **cURL** command lines, for instance starting the training of the CRF date model and producing an evaluation based on an holdout set:
+```bash
+curl --location 'http://localhost:8070/api/createTraining' \
+--form 'input=@"PATH_DOCUMENT"'
+--output output_name.zip
+```
+
+The zip file will contain the training data as described in the [general principles](General-principles.md) of GROBID training data.
+
 ## Parallel mode
 
-The Grobid RESTful API provides a very efficient way to use the library out of the box, because the service exploits multithreading.
+The Grobid REST API provides a very efficient way to use the library out of the box, because the service exploits multithreading.
 
 As Grobid is thread-safe and manages a pool of parser instances, it is advised to use several threads to call the REST service for scaling the processing to large collections of documents. This improves considerably the performance of the services for PDF processing because documents can be processed while other are uploading.
 
-Setting the maximum number of parallel processing is done in the property file under `grobid-home/config/grobid.properties`. Adjust this number (default `10`) following the number of cores/threads available on your server:
+Setting the maximum number of parallel processing is done in the GROBID configuration file `grobid-home/config/grobid.yaml`. Adjust this number (default `10`) following the number of cores/threads available on your server:
 
-```INI
-#------------------- start: pooling -------------------
-# Maximum parallel connections allowed
-org.grobid.max.connections=10
+```yaml
+grobid:
+  # maximum concurrency allowed to GROBID server for processing parallel requests - change it according to your CPU/GPU capacities
+  # for a production server running only GROBID, set the value slightly above the available number of threads of the server
+  # to get best performance and security
+  concurrency: 10 
 ```
 
 The threads in GROBID service are managed as a pool. When processing a document, the service will request a thread from this pool, and release it to the pool after completion of the request. If all the threads present in the pool are used, it is possible to set the maximum amount of time (in seconds) the request for a thread will wait before considering that no thread will be available and return a http code `503` to the client:
 
-```INI
-# Maximum time wait to get a connection when the pool is full (in seconds)
-org.grobid.pool.max.wait=1
+```yaml
+grobid:
+  # when the pool is full, for queries waiting for the availability of a Grobid engine, this is the maximum time wait to try 
+  # to get an engine (in seconds) - normally never change it
+  poolMaxWait: 1
 ```
 
 When scaling the service, we think that it is better to maintain this value low (e.g. 1 second) to avoid putting too many open requests on the server.

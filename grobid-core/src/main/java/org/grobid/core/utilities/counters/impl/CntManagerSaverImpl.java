@@ -13,13 +13,6 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
-/**
- * Date: 6/29/12
- * Time: 2:44 PM
- *
- * @author Vyacheslav Zholudev
- */
-
 public class CntManagerSaverImpl implements CntManagerSaver {
     public static final SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
     static {

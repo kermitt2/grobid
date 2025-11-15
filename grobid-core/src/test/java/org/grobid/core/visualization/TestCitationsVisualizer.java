@@ -21,9 +21,6 @@ import com.fasterxml.jackson.core.Versioned;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
-/**
- * @author Clayton Wheeler
- */
 public class TestCitationsVisualizer {
 
     static final ObjectMapper mapper = new ObjectMapper();

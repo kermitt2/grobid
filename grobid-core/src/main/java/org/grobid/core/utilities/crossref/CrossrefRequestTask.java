@@ -5,7 +5,6 @@ import java.util.List;
 /**
  * Task to execute its request at the right time.
  *
- * @author Vincent Kaestle
  */
 public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListener<T> implements Runnable {
 	
@@ -21,9 +20,7 @@ public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListen
 	
 	@Override
 	public void run() {
-		try {	
-			client.checkLimits();
-			
+		try {
 			CrossrefClient.printLog(request, ".. executing");
 			
 			request.addListener(this);

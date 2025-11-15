@@ -1,0 +1,169 @@
+Evaluation metrics produced in 7.821 seconds
+
+======= Header metadata =======
+
+Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
+
+======= Strict Matching ======= (exact matches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              97.48        92.67        92.48        92.57        1941
+first_author         98.76        96.54        96.34        96.44        1941
+title                94.75        84.56        84.25        84.4         1943
+
+all (micro avg.)     97           91.26        91.02        91.14        5825
+all (macro avg.)     97           91.26        91.02        91.14        5825
+
+
+======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              98.11        94.58        94.38        94.48        1941
+first_author         98.88        96.9         96.7         96.8         1941
+title                97.29        92.2         91.87        92.03        1943
+
+all (micro avg.)     98.1         94.56        94.32        94.44        5825
+all (macro avg.)     98.1         94.56        94.32        94.44        5825
+
+
+==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              98.82        96.7         96.5         96.6         1941
+first_author         98.99        97.21        97.01        97.11        1941
+title                99.33        98.35        97.99        98.17        1943
+
+all (micro avg.)     99.04        97.42        97.17        97.29        5825
+all (macro avg.)     99.04        97.42        97.17        97.29        5825
+
+
+= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              98.49        95.72        95.52        95.62        1941
+first_author         98.76        96.54        96.34        96.44        1941
+title                98.68        96.38        96.04        96.21        1943
+
+all (micro avg.)     98.64        96.21        95.97        96.09        5825
+all (macro avg.)     98.64        96.21        95.97        96.09        5825
+
+===== Instance-level results =====
+
+Total expected instances: 1943
+Total correct instances: 1528 (strict)
+Total correct instances: 1693 (soft)
+Total correct instances: 1839 (Levenshtein)
+Total correct instances: 1784 (ObservedRatcliffObershelp)
+
+Instance-level recall:78.64(strict)
+Instance-level recall:87.13(soft)
+Instance-level recall:94.65(Levenshtein)
+Instance-level recall:91.82(RatcliffObershelp)
+
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  UNMATCHED_REF_MARKERS: 75878
+  STYLE_AUTHORS:         23504
+  STYLE_NUMBERED:        50509
+  NO_CANDIDATES:         118036
+  INPUT_REF_STRINGS_CNT: 76103
+  STYLE_OTHER:           2090
+====================================================================================
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.counters.FigureCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  SKIPPED_BAD_STANDALONE_FIGURES:   3262
+  SKIPPED_SMALL_STANDALONE_FIGURES: 2854
+  SKIPPED_BIG_STANDALONE_FIGURES:   408
+====================================================================================
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.label.TaggingLabelImpl
+************************************************************************************
+------------------------------------------------------------------------------------
+  HEADER_DOCTYPE:                      1743
+  AFFILIATION-ADDRESS_POSTCODE:        3082
+  HEADER_DATE:                         1036
+  NAME-HEADER_MIDDLENAME:              6051
+  HEADER_KEYWORD:                      1415
+  NAME-HEADER_SURNAME:                 14331
+  HEADER_FUNDING:                      144
+  HEADER_ADDRESS:                      6144
+  HEADER_AFFILIATION:                  6272
+  FULLTEXT_CITATION_MARKER:            154322
+  HEADER_EMAIL:                        2168
+  FULLTEXT_TABLE_MARKER:               13640
+  FUNDING-ACKNOWLEDGEMENT_AFFILIATION: 2
+  HEADER_GROUP:                        5
+  FULLTEXT_SECTION:                    56310
+  FUNDING-ACKNOWLEDGEMENT_PROGRAMNAME: 12
+  NAME-HEADER_FORENAME:                14670
+  DATE_YEAR:                           982
+  HEADER_MEETING:                      28
+  HEADER_EDITOR:                       137
+  AFFILIATION-ADDRESS_SETTLEMENT:      5927
+  FULLTEXT_EQUATION_MARKER:            374
+  FULLTEXT_FIGURE_MARKER:              35274
+  HEADER_TITLE:                        1958
+  FULLTEXT_EQUATION_LABEL:             2004
+  HEADER_OTHER:                        9680
+  AFFILIATION-ADDRESS_OTHER:           24869
+  AFFILIATION-ADDRESS_LABORATORY:      707
+  FULLTEXT_EQUATION:                   6398
+  AFFILIATION-ADDRESS_MARKER:          3701
+  FULLTEXT_OTHER:                      2
+  HEADER_SUBMISSION:                   1220
+  NAME-HEADER_OTHER:                   18004
+  FUNDING-ACKNOWLEDGEMENT_PROJECTNAME: 22
+  AFFILIATION-ADDRESS_POSTBOX:         231
+  NAME-HEADER_SUFFIX:                  25
+  HEADER_AVAILABILITY:                 5
+  AFFILIATION-ADDRESS_DEPARTMENT:      6728
+  NAME-HEADER_TITLE:                   792
+  FUNDING-ACKNOWLEDGEMENT_INSTITUTION: 46
+  HEADER_WEB:                          296
+  DATE_MONTH:                          981
+  AFFILIATION-ADDRESS_ADDRLINE:        2631
+  FUNDING-ACKNOWLEDGEMENT_PERSON:      72
+  HEADER_ABSTRACT:                     2263
+  HEADER_REFERENCE:                    2500
+  AFFILIATION-ADDRESS_INSTITUTION:     6820
+  FUNDING-ACKNOWLEDGEMENT_GRANTNAME:   25
+  HEADER_AUTHOR:                       4313
+  NAME-HEADER_MARKER:                  8147
+  AFFILIATION-ADDRESS_COUNTRY:         5871
+  DATE_OTHER:                          103
+  FUNDING-ACKNOWLEDGEMENT_OTHER:       758
+  FUNDING-ACKNOWLEDGEMENT_FUNDERNAME:  305
+  FUNDING-ACKNOWLEDGEMENT_GRANTNUMBER: 182
+  AFFILIATION-ADDRESS_REGION:          1842
+  HEADER_PUBNUM:                       1633
+  FULLTEXT_PARAGRAPH:                  423390
+  HEADER_COPYRIGHT:                    2269
+  DATE_DAY:                            979
+====================================================================================
+
+************************************************************************************
+COUNTER: FigureCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  STANDALONE_FIGURES: 2760
+====================================================================================
+====================================================================================

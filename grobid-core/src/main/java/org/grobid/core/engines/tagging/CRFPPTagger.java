@@ -12,10 +12,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
-/**
- * User: zholudev
- * Date: 3/20/14
- */
 public class CRFPPTagger implements GenericTagger {
     public static final Logger LOGGER = LoggerFactory.getLogger(CRFPPTagger.class);
     private final Model model;

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Teresa</forename>
+								 <surname>Buenaventura</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Stavroula</forename>
+								 <surname>Bitsi</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>William</forename>
+								 <middlename>E</middlename>.
+								 <surname>Laughlin</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Thomas</forename>
+								 <surname>Burgoyne</surname>
+								 ID
+								 <marker>2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Zekun</forename>
+								 <surname>Lyu</surname>
+								 <marker>1,3</marker> ,
+							</persName>
+							<persName>
+								 <forename>Affiong</forename>
+								 <middlename>I</middlename>.
+								 <surname>OquaID</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Hannah</forename>
+								 <surname>NormanID</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Emma</forename>
+								 <middlename>R</middlename>.
+								 <surname>McGloneID</surname>
+								 <marker>3</marker> ,
+							</persName>
+							<persName>
+								 <forename>Andrey</forename>
+								 <middlename>S</middlename>.
+								 <surname>KlymchenkoID</surname>
+								 <marker>4</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ivan</forename>
+								 <middlename>R</middlename>.
+								 <surname>Corrêa</surname>,
+								 <roleName>JrID</roleName>
+								 <marker>5</marker> ,
+							</persName>
+							<persName>
+								 <forename>Abigail</forename>
+								 <surname>WalkerID</surname>
+								 <marker>6</marker> ,
+							</persName>
+							<persName>
+								 <forename>Asuka</forename>
+								 <surname>Inoue</surname>
+								 <marker>7</marker> ,
+							</persName>
+							<persName>
+								 <forename>Aylin</forename>
+								 <surname>Hanyaloglu</surname>
+								 <marker>6</marker> ,
+							</persName>
+							<persName>
+								 <forename>Jak</forename>
+								 <surname>GrimesID</surname>
+								 <marker>8,9</marker> ,
+							</persName>
+							<persName>
+								 <forename>Zsombor</forename>
+								 <surname>Koszegi</surname>
+								 <marker>8,9</marker> ,
+							</persName>
+							<persName>
+								 <forename>Davide</forename>
+								 <surname>Calebiro</surname>
+								 <marker>8,9</marker> ,
+							</persName>
+							<persName>
+								 <forename>Guy</forename>
+								 <middlename>A</middlename>.
+								 <surname>Rutter</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Stephen</forename>
+								 <middlename>R</middlename>.
+								 <surname>BloomID</surname>
+								 <marker>3</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ben</forename>
+								 <surname>JonesID</surname>
+								 <marker>3☯*</marker>,
+							</persName>
+							<persName>
+								 <forename>Alejandra</forename>
+								 <surname>TomasID</surname>
+								 <marker>1☯*</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

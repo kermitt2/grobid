@@ -2,7 +2,6 @@ package org.grobid.service;
 
 /**
  * This interface only contains the path extensions for accessing the grobid service.
- * @author Florian, Damien, Patrice
  *
  */
 public interface GrobidPaths {
@@ -30,6 +29,11 @@ public interface GrobidPaths {
 	 * path extension for processing document headers.
 	 */
 	String PATH_HEADER = "processHeaderDocument";
+
+	/**
+	 * path extension for processing document headers and funding information.
+	 */
+	String PATH_HEADER_FUNDING = "processHeaderFundingDocument";
 
 	/**
 	 * path extension for processing document headers HTML.
@@ -107,6 +111,11 @@ public interface GrobidPaths {
 	String PATH_CITATION = "processCitation";
 
 	/**
+	 * path extension for processing a list of isolated citations.
+	 */
+	String PATH_CITATION_LIST = "processCitationList";
+
+	/**
 	 * path extension for processing all the references in a PDF file.
 	 */
 	String PATH_REFERENCES = "processReferences";
@@ -127,6 +136,11 @@ public interface GrobidPaths {
 	String PATH_CITATIONS_PATENT_PDF_ANNOTATION = "citationPatentAnnotations";
 
 	/**
+	 * path extension for the JSON annotation of the funding/acknowledgement section 
+	 **/
+	String PATH_FUNDING_ACKNOWLEDGEMENT = "processFundingAcknowledgement";
+
+	/**
 	 * path extension for processing sha1.
 	 */
 	String PATH_SHA1 = "sha1";
@@ -145,4 +159,22 @@ public interface GrobidPaths {
 	 * path extension for getting version
 	 */
 	String PATH_GET_VERSION = "version";
+
+	/**
+	 * path to retrieve a model 
+	 */
+	String PATH_MODEL = "model";	
+
+	/**
+	 * path for launching the training of a model
+	 */
+	String PATH_MODEL_TRAINING = "modelTraining";		
+
+	/**
+	 * path for getting the advancement of the training of a model or 
+	 * the evaluation metrics of the new model if the training is completed
+	 */
+	String PATH_TRAINING_RESULT = "trainingResult";
+
+    String PATH_CREATE_TRAINING = "createTraining";
 }

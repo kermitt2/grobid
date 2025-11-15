@@ -3,7 +3,6 @@ package org.grobid.core.utilities;
 /**
  * Generate a random key.
  *
- * @author Florian Zipser
  */
 public class KeyGen {
     /**

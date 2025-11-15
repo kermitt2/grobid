@@ -8,7 +8,6 @@ import org.grobid.core.utilities.TextUtilities;
 /**
  * Class for features used for header parsing.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorReferenceSegmenter {
     // default bins for relative position, set experimentally
@@ -40,7 +39,7 @@ public class FeaturesVectorReferenceSegmenter {
     public boolean http = false;
     //public boolean acronym = false;
     public String punctType = null; // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT
-    public boolean containPunct = false;
+    //public boolean containPunct = false;
     public int relativePosition = -1;
 	public int lineLength = 0;
 	public String punctuationProfile = null; // the punctuations of the current line of the token
@@ -101,11 +100,13 @@ public class FeaturesVectorReferenceSegmenter {
         else
             res.append(" 0");
 
+        /* TODO: to review, never set! */ 
         if (firstName)
             res.append(" 1");
         else
             res.append(" 0");
 
+        /* TODO: to review, never set! */ 
         if (locationName)
             res.append(" 1");
         else

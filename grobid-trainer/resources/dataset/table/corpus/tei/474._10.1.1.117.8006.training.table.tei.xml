@@ -1,0 +1,28 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_474._10.1.1.117.8006.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+		<figure type="table">
+
+            <table>DEC Alpha<lb/> HP PA-RISC 1.1<lb/> Technique<lb/> NULL LIFO FIFO NULL LIFO FIFO<lb/> sigprocmask<lb/> 1682<lb/> 3045<lb/> 3363<lb/> 1787 3578 3590<lb/> Dyn/Fault<lb/> 13<lb/> 27<lb/> 24<lb/> 12<lb/> 24<lb/> 27<lb/> Dyn/Jump<lb/> 9<lb/> 16<lb/> 13<lb/> 11<lb/> 21<lb/> 27<lb/> Hyb/Jump<lb/> 6<lb/> 5<lb/> 6<lb/> 5<lb/> 8<lb/> 12<lb/> DI<lb/> 4<lb/> 3<lb/> 4<lb/> 4<lb/> 5<lb/> 12<lb/> CIPL<lb/> 4<lb/> 5<lb/> 6<lb/> 14<lb/> 24<lb/> 29<lb/> splx<lb/> 44<lb/> 89<lb/> 88<lb/> 30<lb/> 63<lb/> 73<lb/> PALcode<lb/> 13<lb/> 13<lb/> 13<lb/> n/a<lb/> n/a<lb/> n/a<lb/> LL/STC<lb/> n/a<lb/> 118<lb/> 118<lb/> n/a<lb/> n/a<lb/> n/a<lb/> </table>
+ 
+            <head>Table <label>1</label>: </head>
+ 
+            <figDesc>Overheads of Different Atomicity Schemes in Cycles</figDesc>
+		</figure>
+
+
+		<figure type="table">
+
+            <table>Throughput [incr/kcyc]<lb/> Load<lb/> PAL<lb/> RF<lb/> IDLE<lb/> 166.0 166.0<lb/> 0%<lb/> BUSY1<lb/> 19.5<lb/> 55.4 +184%<lb/> BUSY2<lb/> 4.2<lb/> 5.1<lb/> +21%<lb/> ETH<lb/> 3.8<lb/> 4.3<lb/> +13%</table>
+
+            <head>Table <label>2</label>: </head>
+ 
+            <figDesc>Measured Overall-Performance</figDesc>
+		</figure>
+
+    </text>
+</tei>
+

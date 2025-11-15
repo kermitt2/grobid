@@ -1,0 +1,95 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_CIKM_2021_1085.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+		<figure type="table">
+            <head>Table <label>1</label>: </head>
+ 
+            <figDesc>Distribution of software citations in the Biomedical domain from [14]<lb/></figDesc>
+
+            <table>types<lb/> examples<lb/> proportion<lb/> mention with reference<lb/> ... was calculated using biosys (Swofford &amp; Selander 1981)...<lb/> 37%<lb/> mention<lb/> ... were analuzed using MapQTL (4.0) software...<lb/> 31%<lb/> device-like<lb/> ... GraphPad prism software (San Diego, CA, USA) was used for data analyses<lb/> 19%<lb/> URL<lb/> ... freely available from http://www.cibiv.at/software/pda/...<lb/> 5%<lb/> mention with website<lb/> ... using BrainSuite2 (http://brainsuite.usc.edu)...<lb/>  5%<lb/> user manual reference</table>
+		</figure>
+
+
+		<figure type="table">
+
+            <head>Table <label>2</label>: </head>
+ 
+            <figDesc>Overview of the annotations in the gold-standard<lb/> Softcite Dataset, with the proportion in permille of anno-<lb/>tated tokens given the total number of tokens of the corpus<lb/> (total of 46,052,050 tokens).<lb/> </figDesc>
+ 
+            <table>annot. types # annot. # tokens ‰tokens<lb/> software name<lb/> 5,172<lb/> 6,396 0.139<lb/> version<lb/> 1,591<lb/> 3,627 0.079<lb/> publisher<lb/> 1,358<lb/> 2,686 0.058<lb/> URL<lb/> 215<lb/> 2,571 0.056<lb/> total<lb/> 8336<lb/> 15,280 0.332</table>
+		</figure>
+
+		<figure type="table">
+
+            <head>Table <label>3</label>: </head>
+ 
+            <figDesc>Summary of scores (P: Precision, R: Recall, F: F1-score) at span level (exact match) against the holdout set (994 complete<lb/> articles). no sampling refers to a training with only paragraphs containing at least one annotation from the 80% remaining<lb/> articles. Paragraphs without annotations (negative sampling) are then added to the training data via random sampling or active<lb/> sample. Bold indicates the best scores for a given field. Reported scores for DL models are averaged over 5 training/runs.<lb/> </figDesc>
+ 
+            <table>model<lb/> under-<lb/>software name<lb/> publisher<lb/> version<lb/> URL<lb/> F1 micro<lb/> sampling<lb/> P<lb/> R<lb/> F<lb/> P<lb/> R<lb/> F<lb/> P<lb/> R<lb/> F<lb/> P<lb/> R<lb/> F<lb/> average<lb/> CRF (custom none<lb/> 29.2 58.5 38.9 41.5 76.6 53.8 51.9 84.9 64.4 18.2 68.6 28.7<lb/> 45.8<lb/> features)<lb/> random<lb/> 66.9 53.7 59.6 70.4 75.1 72.7 79.8 83.6 81.6 34.8 45.7 39.5<lb/> 66.3<lb/> active<lb/> 69.0 52.8 59.8 70.3 73.7 72.0 80.9 82.7 81.8 32.6 42.9 37.0<lb/> 66.2<lb/> BiLSTM-CRF none<lb/> 21.9 68.5 33.2 45.3 82.8 58.5 53.6 90.5 67.3 16.7 57.1 25.8<lb/> 41.9<lb/> random<lb/> 57.1 71.9 63.7 67.4 85.2 75.3 73.0 88.7 80.1 51.0 74.3 60.5<lb/> 69.0<lb/> active<lb/> 62.7 68.5 65.5 69.0 85.2 76.2 63.5 92.6 75.4 63.2 68.6 65.8<lb/> 69.8<lb/> BiLSTM-CRF none<lb/> 20.9 74.5 32.7 45.7 85.7 59.6 58.4 91.8 71.4 14.5 48.6 22.4<lb/> 41.4<lb/> +features<lb/> random<lb/> 54.1 73.6 62.4 68.5 84.2 75.5 72.2 92.2 81.0 50.0 65.7 56.8<lb/> 68.3<lb/> active<lb/> 54.5 73.3 62.5 68.2 85.2 75.7 79.5 92.2 85.4 47.5 80.0 59.6<lb/> 69.3<lb/> BiLSTM-CRF none<lb/> 35.6 74.9 48.2 71.6 79.4 75.3 72.9 88.3 79.8 11.6 80.0 20.3<lb/> 54.5<lb/> +Elmo<lb/> random<lb/> 67.4 63.0 65.1 63.9 83.7 72.5 83.1 84.9 83.9 54.8 48.6 51.5<lb/> 70.2<lb/> active<lb/> 61.9 70.4 65.9 74.1 84.7 79.0 77.7 90.5 83.6 48.0 68.6 56.5<lb/> 71.6<lb/> Bert-base<lb/> none<lb/> 15.1 74.2 25.1 40.2 79.4 53.4 42.1 87.9 56.9 04.5 71.4 08.5<lb/> 30.4<lb/> -CRF<lb/> random<lb/> 52.8 67.8 59.3 61.6 79.0 69.2 65.9 85.3 74.3 15.0 54.3 23.5<lb/> 61.9<lb/> active<lb/> 56.9 67.9 61.9 66.1 78.5 71.8 73.5 85.3 79.0 19.0 54.3 28.2<lb/> 65.3<lb/> SciBert</table>
+		</figure>
+
+
+		<figure type="table">
+
+            <head>Table <label>4</label>: </head>
+ 
+            <figDesc>Evaluation of domain portability. The models have been trained on the PMC sub-collection and are evaluated on the<lb/> Economics domain. The numbers are F1-scores, averaged over 5 training for the indicated DL models.<lb/> </figDesc>
+ 
+            <table>Trained on Biomedicine Evaluated on Economics<lb/> micro-<lb/>models software publisher version URL average<lb/> CRF (custom features)<lb/> 37.9<lb/> 13.7<lb/> 48.6<lb/> 16.0<lb/> 35.9<lb/> BiLSTM-CRF<lb/> 51.0<lb/> 22.0<lb/> 57.8<lb/> 58.3<lb/> 49.1<lb/> BiLSTM-CRF+Elmo<lb/> 53.4<lb/> 19.1<lb/> 57.1<lb/> 53.3<lb/> 51.2<lb/> Bert-base-CRF<lb/> 45.6<lb/> 17.0<lb/> 66.7<lb/> 17.0<lb/> 42.6<lb/> SciBert-CRF<lb/> 58.6<lb/> 34.8<lb/> 80.7<lb/> 46.2<lb/> 57.9<lb/></table>
+
+            <head>Table <label>5</label>: </head>
+
+            <figDesc>Average runtimes of different sequence labeling<lb/> models. The runtimes were obtained on a Ubuntu 18.04<lb/> server Intel i7-4790 (4 CPU), 4.00 GHz with 16 GB memory.<lb/> The runtimes for the Deep Learning architectures are based<lb/> on the same machine with an Nvidia GPU GeForce 1080Ti<lb/> (11 GB). Runtime can be reproduced with a python script in<lb/> the project GitHub repository.<lb/></figDesc>
+
+            <table>model best modality<lb/> layout tokens/s<lb/> CRF CPU threads: 8<lb/> 100,879<lb/> BiLSTM-CRF GPU batch size: 200<lb/> 30,520<lb/> BiLSTM-CRF+Elmo GPU batch size: 7<lb/> 365<lb/> SciBert-CRF GPU batch size: 6<lb/> 5,060</table>
+		</figure>
+
+
+		<figure type="table">
+
+            <head>Table <label>6</label>: </head>
+ 
+            <figDesc>Evaluation of attribute attachment to the correct<lb/> software name, for a total of 2,537 expected attachments.<lb/> </figDesc>
+ 
+            <table>attribute fields precision recall F1-score<lb/> version 99.6<lb/> 98.5<lb/> 99.1<lb/> publisher 99.5<lb/> 98.3<lb/> 98.9<lb/> URL 98.7<lb/> 95.4<lb/> 97.0<lb/> biblio. reference 97.5<lb/> 100<lb/> 98.7<lb/> all (micro-avg) 99.4<lb/> 98.2<lb/> 98.8</table>
+		</figure>
+
+
+		<figure type="table">
+
+            <head>Table <label>7</label>: </head>
+ 
+            <figDesc>Evaluation of the usage prediction for mentioned<lb/> software. Annotated examples are from the Softcite Dataset<lb/> and the scores (P: Precision, R: Recall, F: F1-score) are micro-<lb/>average average over 10-folds. Implementations are realized<lb/> with DeLFT, a library based on Keras/TensorFlow.<lb/> </figDesc>
+ 
+            <table>software annot.<lb/> BidGRU × 10<lb/> SciBERT<lb/> usage count<lb/> P<lb/> R<lb/> F<lb/> P<lb/> R<lb/> F<lb/> used 3736<lb/> 96.5 99.2 97.9 95.6 99.5 97.5<lb/> not used 357<lb/> 86.4 57.6 69.1 88.2 45.4 60.0</table>
+		</figure>
+
+
+		<figure type="table">
+
+            <head>Table <label>8</label>: </head>
+ 
+            <figDesc>Comparison between paragraph-level (default,<lb/> noted ) and document-level (noted doc.) processing with<lb/> and without entity disambiguation filtering (F1-scores on<lb/> holdout set, average of 5 train/runs).<lb/> </figDesc>
+ 
+            <table>fields<lb/> SciBERT-CRF<lb/> SciBERT-CRF +<lb/> entity disambiguation<lb/> doc.<lb/> doc.<lb/> software<lb/> 71.0 74.1 (+3.1) 74.3 (+3.3) 76.7 (+5.7)<lb/> publisher 79.0 76.2 (−2.8) 81.9 (+2,9) 78.3 (−0.7)<lb/> version<lb/> 83.9 84.7 (+0.8) 87.1 (+3.2) 88.3 (+4.4)<lb/> URL<lb/> 54.6 64.9 (+10.3) 55.4 (+0.8) 66.7 (+12,1)<lb/> micro-avg 74.6 76.4 (+1.8) 77.7 (+3.1) 79.1 (+4.5)</table>
+		</figure>
+
+
+		<figure type="table">
+
+            <head>Table <label>9</label>: </head>
+ 
+            <figDesc>Results of a re-harvested version of CORD-19 using<lb/> the metadata file dated 2020-09-11.<lb/> </figDesc>
+ 
+            <table>total count<lb/> total Open Access full texts<lb/> 140,322<lb/> -with at least one annot.<lb/> 60,611<lb/> software names<lb/> 301,193<lb/> -with linked Wikidata ID<lb/> 92,085<lb/> publishers<lb/> 33,861<lb/> versions<lb/> 65,326<lb/> URL<lb/> 14,329<lb/> biblio. references<lb/> 133,186<lb/> -distinct references<lb/> 17,986<lb/> -distinct DOI<lb/> 9,578</table>
+		</figure>
+
+
+
+    </text>
+</tei>
+

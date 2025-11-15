@@ -4,7 +4,8 @@
 
 As mentioned elsewhere (TODO:link), there are several models that are used to analyze the contents of a PDF file. One of them is the `fulltext` model which attempts to recognize and struture items appearing in the body text of an article or a publication.  This is different from for example the `segmentation` model which tries to recognize the general sections (title page, front, body, bibliography) and which is applied before the `fulltext` model.
 
-> Note: Whitespace is not important in the XML that Grobid uses. You can add newline characters and spaces to make the XML document more legible.
+!!! tip "Whitespaces and newlines are allowed" 
+    Whitespace is not important in the XML that Grobid uses. You can add newline characters and spaces to make the XML document more legible.
 
 The `fulltext` model attempts to recognize the following objects:
 
@@ -66,8 +67,8 @@ Paragraphs constitute the main bulk of most typical articles or publications and
   are able to induce autophagy in a breast cancer cell line. 3,4<lb/>
 </p>
 ```
-
-> Note: The `<lb/>` (line break) elements are there because they have been recognized as such in the PDF in the text flow. However the fact that they are located within or outside a tagged paragraph or section title has no impact. Just be sure NOT to modify the order of the text flow and `<lb/>` as mentionned [here](General-principles/#correcting-pre-annotated-files).
+!!! warn "Avoid modify the text flow, while line breaks can be adjusted"
+    The `<lb/>` (line break) elements are there because they have been recognized as such in the PDF in the text flow. However, the fact that they are located within or outside a tagged paragraph or section title has no impact. Just be sure NOT to modify the order of the text flow and `<lb/>` as mentionned [here](General-principles.md#correcting-pre-annotated-files).
 
 Following the TEI, formulas should be on the same hierarchical level as paragraphs, and not be contained inside paragraphs:
 
@@ -190,7 +191,11 @@ The corrected XML (note the `<figure type="table">` element):
 
 ### Formulas
 
-The label of the formula (usually its number) is tagged with the element `<label>`, as illustrated bellow:
+
+The `<formula>` tag is used to identify a formula appearing as an independent block in the text body. This formula often comes with a label, its "reference marker", which can be used for callout to the formula in the text body. Shorter inline formulas are not specifically annotated, they are considered as part of the body.  
+
+The label of a formula is usually a number, but can be any symbols. It is tagged with the element `<label>`, as illustrated bellow:
+
 
 ```xml
 <formula>
@@ -204,10 +209,12 @@ The label of the formula (usually its number) is tagged with the element `<label
   R<lb/>
   R<lb/>
   diag(0, 2, −1, −1),<lb/>
-	<label>(10)</label>
+	(<label>10</label>)
   <lb/>
 </formula>
 ```
+
+Note that `<label>` is tagged inside the formula. `<label>` tags the identifier only and excludes the possible parenthesis and brackets markers surrounding the identifier.
 
 ### List items
 
@@ -265,7 +272,7 @@ Harbaugh and Harbaugh <ref type="biblio">[7]</ref>
 in Lolle et al. <ref type="biblio">1</ref>
 ```
 
-Note that the bracket/parenthesis symbols are included in the tagged content.
+Note that the bracket/parenthesis symbols are **included** in the tagged content.
 
 Bellow, as the label within the brackets fully qualifies the reference, we don't further annotate the callout with the author names:
 
@@ -325,7 +332,7 @@ This was established in<lb/> <ref type="biblio">Thompson v. Lochert (1997)</ref>
 such as receptors for IL-1β <ref type="biblio">(REFS 64,65)</ref>,<lb/> TNF <ref type="biblio">66</ref> and IFNγ <ref type="biblio">67</ref> .
 ```
 
-#### Markers to tables and figures
+#### Markers to tables, figures and formula
 
 The next example shows markers (callouts) to a table and a figure (as noted earlier, whitespace is not of importance for GROBID and can therefore be used liberally, like here to better show the tagging):
 
@@ -335,13 +342,13 @@ The next example shows markers (callouts) to a table and a figure (as noted earl
 	flexion myelopathy admitted to<lb/>
   our hospital
 
-  <ref type="table"> (Table 1) </ref>.
+   (Table <ref type="table">1</ref>).
 
   In all of them, cervical flexion<lb/>
   ...
   alignment in the extended neck position
 
-  <ref type="figure"> (Figure 3) </ref>.<lb/>
+  (Figure <ref type="figure">3</ref>).<lb/>
 
   Cervical MR imaging in the neutral neck position of<lb/>
   five of the six patients showed a straight cervical<lb/>
@@ -354,11 +361,11 @@ An example of callouts to two formulas (and a bibliographical entry):
 <p>Here, Θ(y) denotes ...<lb/>
 the semi-cylindrical drum. The dynamics of the avalanches of eqs.
 
-  <ref type="formula">(1)</ref>
+  (<ref type="formula">1</ref>)
 
   and
 
-  <ref type="formula">(2)</ref>
+  (<ref type="formula">2</ref>)
 
   is centered<lb/>
   around the angle ϕ d = tan b 0
@@ -370,27 +377,27 @@ the semi-cylindrical drum. The dynamics of the avalanches of eqs.
 </p>
 ```
 
-Markers to figure or table must contain enough information to identify precisely to which object we refere to.
+As visible in the examples, markers to figure, table or formula are annotated by including only the key information of the refered object. Brackets, parenthesis, extra wording, extra information are left outside of the tagged text (in contrast to bibliographical markers, where we keep the brackets and parenthesis by convention). 
 Here are some more short examples for figure markers:
 
 ```xml
-<ref type="figure">(Supplementary Fig. 1<lb/> online)</ref>
+(Supplementary Fig. <ref type="figure">1</ref><lb/> online)
 ```
 
 ```xml
-<ref type="figure">(Fig. 5b, left)</ref>
+(Fig. <ref type="figure">5b</ref>, left)
 ```
 
 ```xml
-<ref type="figure">Figure 2</ref> exemplifies
+Figure <ref type="figure">2</ref> exemplifies
 ```
 
 ```xml
-(10.3% of those analysed; <ref type="figure">Fig. 1a</ref>).
+(10.3% of those analysed; Fig. <ref type="figure">1a</ref>).
 ```
 
 As for markers to bibliographical references, we group under the same element a conjunction/list of callouts:
 
 ```xml
-In <ref type="figure">figs. 3 and 4</ref>
+In figs. <ref type="figure">3 and 4</ref>
 ```

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Ben</forename>
+								 <middlename>P</middlename>.
+								 <surname>Haynes</surname>
+								 <marker>1 *</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ophira</forename>
+								 <surname>Ginsburg</surname>
+								 <marker>2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Qiong</forename>
+								 <surname>Gao</surname>
+								 <marker>3</marker> ,
+							</persName>
+							<persName>
+								 <forename>Elizabeth</forename>
+								 <surname>Folkerd</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Maria</forename>
+								 <surname>Afentakis</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Richard</forename>
+								 <surname>Buus</surname>
+								 <marker>1,3</marker> ,
+							</persName>
+							<persName>
+								 <surname>Le</surname>
+								 <surname>Hong Quang</surname>
+								 <marker>4</marker> ,
+							</persName>
+							<persName>	 
+								 <forename>Pham</forename>
+								 <surname>Thi Han</surname>
+								 <marker>5</marker> ,
+							</persName>
+							<persName>	 
+								 <roleName>Pham</roleName>
+								 <surname>Hong Khoa</surname>
+								 <marker>4</marker> ,
+							</persName>
+							<persName>	 
+								 <forename>Nguyen</forename>
+								 <surname>Van Dinh</surname>
+								 <marker>4</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ta</forename>
+								 <surname>Van To</surname>
+								 <marker>5</marker> ,
+							</persName>
+							<persName>
+								 <forename>Mark</forename>
+								 <surname>Clemons</surname>
+							</persName>
+							<persName>
+								 <marker>6</marker> ,
+								 <forename>Chris</forename>
+								 <surname>Holcombe</surname>
+								 <marker>7</marker> ,
+							</persName>
+							<persName>
+								 <forename>Caroline</forename>
+								 <surname>Osborne</surname>
+								 <marker>8</marker> ,
+							</persName>
+							<persName>
+								 <forename>Abigail</forename>
+								 <surname>Evans</surname>
+								 <marker>9</marker> ,
+							</persName>
+							<persName>
+								 <forename>Anthony</forename>
+								 <surname>Skene</surname>
+								 <marker>10</marker> ,
+							</persName>
+							<persName>
+								 <forename>Mark</forename>
+								 <surname>Sibbering</surname>
+								 <marker>11</marker> ,
+							</persName>
+							<persName>
+								 <forename>Clare</forename>
+								 <surname>Rogers</surname>
+								 <marker>12</marker> ,
+							</persName>
+							<persName>
+								 <forename>Siobhan</forename>
+								 <surname>Laws</surname>
+								 <marker>13</marker> ,
+							</persName>
+							<persName>
+								 <forename>Lubna</forename>
+								 <surname>Noor</surname>
+								 <marker>14</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ian</forename>
+								 <middlename>E</middlename>.
+								 <surname>Smith</surname>
+								 <marker>15</marker> and
+							</persName>
+							<persName>
+								 <forename>Mitch</forename>
+								 <surname>Dowsett</surname>
+								 <marker>1,3</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

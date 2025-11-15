@@ -14,13 +14,15 @@
 								<postCode>DK-8830</postCode>
 								<settlement>Tjele</settlement>,
 								<country>Denmark</country>
-							<lb/>
+								<lb/>
 							</address>
+						</affiliation>
+						<affiliation>
 							<orgName type="department">bChemistry Department</orgName>,
 							<orgName type="institution">Royal Veterinary and Agricultural University</orgName>,
 							<address>
 								<postCode>DK-18 71</postCode>
-							<lb/>
+								<lb/>
 								<settlement>Frederiksberg C</settlement>,
 								<country>Denmark</country>
 							</address>

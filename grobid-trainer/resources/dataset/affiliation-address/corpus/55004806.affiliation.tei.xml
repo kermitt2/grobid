@@ -11,9 +11,10 @@
 							<address>
 								<settlement>Cambridge</settlement>
 								<postCode>CB3 0FD</postCode>
+								<country>United Kingdom</country>
 							<lb/>
 							</address>
-							<orgName type="laboratory">United Kingdom RAIN BOW RESEARCH GROUP Computer Laboratory</orgName>
+							<orgName type="laboratory">RAIN BOW RESEARCH GROUP Computer Laboratory</orgName>
 						</affiliation>
 
 						</author>

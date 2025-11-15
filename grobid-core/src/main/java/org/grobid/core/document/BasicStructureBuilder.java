@@ -4,6 +4,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.SortedSetMultimap;
 import com.google.common.collect.TreeMultimap;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import org.grobid.core.data.BibDataSet;
@@ -11,7 +12,6 @@ import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.Cluster;
 import org.grobid.core.layout.LayoutToken;
-//import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,161 +28,27 @@ import java.util.regex.Pattern;
 /**
  * Class for building basic structures in a document item.
  *
- * @author Patrice Lopez
  */
 public class BasicStructureBuilder {
 	private static final Logger LOGGER = LoggerFactory.getLogger(BasicStructureBuilder.class);
 
 	// note: these regular expressions will disappear as a new CRF model is now covering 
 	// the overall document segmentation
-    static public Pattern introduction =
+    /*static public Pattern introduction =
             Pattern.compile("^\\b*(Introduction?|Einleitung|INTRODUCTION|Acknowledge?ments?|Acknowledge?ment?|Background?|Content?|Contents?|Motivations?|1\\.\\sPROBLEMS?|1\\.(\\n)?\\sIntroduction?|1\\.\\sINTRODUCTION|I\\.(\\s)+Introduction|1\\.\\sProblems?|I\\.\\sEinleitung?|1\\.\\sEinleitung?|1\\sEinleitung?|1\\sIntroduction?)",
                     Pattern.CASE_INSENSITIVE);
     static public Pattern introductionStrict =
             Pattern.compile("^\\b*(1\\.\\sPROBLEMS?|1\\.(\\n)?\\sIntroduction?|1\\.(\\n)?\\sContent?|1\\.\\sINTRODUCTION|I\\.(\\s)+Introduction|1\\.\\sProblems?|I\\.\\sEinleitung?|1\\.\\sEinleitung?|1\\sEinleitung?|1\\sIntroduction?)",
                     Pattern.CASE_INSENSITIVE);
     static public Pattern abstract_ = Pattern.compile("^\\b*\\.?(abstract?|résumé?|summary?|zusammenfassung?)",
-            Pattern.CASE_INSENSITIVE);
-    /*static public Pattern keywords = Pattern.compile("^\\b*\\.?(keyword?|key\\s*word?|mots\\s*clefs?)",
-            Pattern.CASE_INSENSITIVE);*/
-    /*static public Pattern references =
-            Pattern.compile("^\\b*(References?|REFERENCES?|Bibliography|BIBLIOGRAPHY|" +
-                    "References?\\s+and\\s+Notes?|References?\\s+Cited|REFERENCE?\\s+CITED|REFERENCES?\\s+AND\\s+NOTES?|Références|Literatur|" +
-                    "LITERATURA|Literatur|Referências|BIBLIOGRAFIA|Literaturverzeichnis|Referencias|LITERATURE CITED|References and Notes)", Pattern.CASE_INSENSITIVE);*/
-    /*static public Pattern header = Pattern.compile("^((\\d\\d?)|([A-Z](I|V|X)*))(\\.(\\d)*)*\\s(\\D+)");*/
-    //    static public Pattern header2 = Pattern.compile("^\\d\\s\\D+");
-    /*static public Pattern figure = Pattern.compile("(figure\\s|fig\\.|sch?ma)", Pattern.CASE_INSENSITIVE);
-    static public Pattern table = Pattern.compile("^(T|t)able\\s|tab|tableau", Pattern.CASE_INSENSITIVE);
-    static public Pattern equation = Pattern.compile("^(E|e)quation\\s");
-    private static Pattern acknowledgement = Pattern.compile("(acknowledge?ments?|acknowledge?ment?)",
             Pattern.CASE_INSENSITIVE);*/
     static public Pattern headerNumbering1 = Pattern.compile("^(\\d+)\\.?\\s");
     static public Pattern headerNumbering2 = Pattern.compile("^((\\d+)\\.)+(\\d+)\\s");
     static public Pattern headerNumbering3 = Pattern.compile("^((\\d+)\\.)+\\s");
     static public Pattern headerNumbering4 = Pattern.compile("^([A-Z](I|V|X)*(\\.(\\d)*)*\\s)");
-//    static public Pattern enumeratedList = Pattern.compile("^|\\s(\\d+)\\.?\\s");
 
     private static Pattern startNum = Pattern.compile("^(\\d)+\\s");
     private static Pattern endNum = Pattern.compile("\\s(\\d)+$");
-
-    /**
-     * Filter out line numbering possibly present in the document. This can be frequent for
-     * document in a review/submission format and degrades strongly the machine learning
-     * extraction results. 
-	 *
-	 * -> Not used !
-     *
-     * @param doc a document
-     * @return if found numbering
-     */
-    public boolean filterLineNumber(Document doc) {
-        // we first test if we have a line numbering by checking if we have an increasing integer
-        // at the begin or the end of each block
-        boolean numberBeginLine = false;
-        boolean numberEndLine = false;
-
-        boolean foundNumbering = false;
-
-        int currentNumber = -1;
-        int lastNumber = -1;
-        int i = 0;
-        for (Block block : doc.getBlocks()) {
-//            Integer ii = i;
-
-            String localText = block.getText();
-            List<LayoutToken> tokens = block.getTokens();
-
-            if ((localText != null) && (tokens != null)) {
-                if (tokens.size() > 0) {
-                    // we get the first and last token iof the block
-                    //String tok1 = tokens.get(0).getText();
-                    //String tok2 = tokens.get(tokens.size()).getText();
-                    localText = localText.trim();
-
-                    Matcher ma1 = startNum.matcher(localText);
-                    Matcher ma2 = endNum.matcher(localText);
-
-                    if (ma1.find()) {
-                        String groupStr = ma1.group(0);
-                        try {
-                            currentNumber = Integer.parseInt(groupStr);
-                            numberBeginLine = true;
-                        } catch (NumberFormatException e) {
-                            currentNumber = -1;
-                        }
-                    } else if (ma2.find()) {
-                        String groupStr = ma2.group(0);
-                        try {
-                            currentNumber = Integer.parseInt(groupStr);
-                            numberEndLine = true;
-                        } catch (NumberFormatException e) {
-                            currentNumber = -1;
-                        }
-                    }
-
-                    if (lastNumber != -1) {
-                        if (currentNumber == lastNumber + 1) {
-                            foundNumbering = true;
-                            break;
-                        }
-                    } else
-                        lastNumber = currentNumber;
-                }
-            }
-            i++;
-
-            if (i > 5) {
-                break;
-            }
-        }
-
-        i = 0;
-        if (foundNumbering) {
-            // we have a line numbering, so we filter them
-            int counter = 1; // we start at 1, if the actual start is 0,
-            // it will remain (as it is negligeable)
-
-            for (Block block : doc.getBlocks()) {
-
-                String localText = block.getText();
-                List<LayoutToken> tokens = block.getTokens();
-
-                if ((localText != null) && (tokens.size() > 0)) {
-
-                    if (numberEndLine) {
-                        Matcher ma2 = endNum.matcher(localText);
-
-                        if (ma2.find()) {
-                            String groupStr = ma2.group(0);
-                            if (groupStr.trim().equals("" + counter)) {
-                                localText = localText.substring(0, localText.length() - groupStr.length());
-                                block.setText(localText);
-                                tokens.remove(tokens.size() - 1);
-                                counter++;
-                            }
-                        }
-
-                    } else if (numberBeginLine) {
-                        Matcher ma1 = endNum.matcher(localText);
-
-                        if (ma1.find()) {
-                            String groupStr = ma1.group(0);
-                            if (groupStr.trim().equals("" + counter)) {
-                                localText = localText.substring(groupStr.length(), localText.length() - 1);
-                                block.setText(localText);
-                                tokens.remove(0);
-                                counter++;
-                            }
-                        }
-
-                    }
-                }
-                i++;
-            }
-        }
-
-        return foundNumbering;
-    }
 
     /**
      * Cluster the blocks following the font, style and size aspects
@@ -233,22 +99,13 @@ public class BasicStructureBuilder {
             doc.getClusters().add(cluster);
         }
 
-    }	
-	
+    }
 
     static public Document generalResultSegmentation(Document doc, String labeledResult, List<LayoutToken> documentTokens) {
         List<Pair<String, String>> labeledTokens = GenericTaggerUtils.getTokensAndLabels(labeledResult);
 
         SortedSetMultimap<String, DocumentPiece> labeledBlocks = TreeMultimap.create();
         doc.setLabeledBlocks(labeledBlocks);
-
-		/*try {
-        	FileUtils.writeStringToFile(new File("/tmp/x1.txt"), labeledResult);
-			FileUtils.writeStringToFile(new File("/tmp/x2.txt"), documentTokens.toString());
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}*/
 
         List<Block> docBlocks = doc.getBlocks();
 		int indexLine = 0;		
@@ -263,7 +120,8 @@ public class BasicStructureBuilder {
 		//DocumentPointer pointerA = DocumentPointer.START_DOCUMENT_POINTER;
 		// the default first block might not contain tokens but only bitmap - in this case we move
 		// to the first block containing some LayoutToken objects
-        while (docBlocks.get(blockIndex).getTokens() == null
+        while (docBlocks.get(blockIndex).getTokens() == null ||
+            docBlocks.get(blockIndex).getNbTokens() == 0
                 //TODO: make things right
 //                || docBlocks.get(blockIndex).getStartToken() == -1
                 ) {
@@ -306,7 +164,7 @@ public class BasicStructureBuilder {
 				Block block = docBlocks.get(blockIndex);
 		        List<LayoutToken> tokens = block.getTokens();
 				String localText = block.getText();
-		        if ( (tokens == null) || (localText == null) || (localText.trim().length() == 0) ) {
+		        if ( (tokens == null) || StringUtils.isBlank(localText) ) {
 					blockIndex++;
 					indexLine = 0;
 					if (blockIndex < docBlocks.size()) {
@@ -316,7 +174,7 @@ public class BasicStructureBuilder {
 		            continue;
 		        }
 				String[] lines = localText.split("[\\n\\r]");
-				if ( (lines.length == 0) || (indexLine >= lines.length)) {
+				if ( (lines.length == 0) || (indexLine >= lines.length) || indexLine> 10000) {
 					blockIndex++;
 					indexLine = 0;
 					if (blockIndex < docBlocks.size()) {
@@ -333,8 +191,9 @@ public class BasicStructureBuilder {
 						continue;
 					}
 
-					if (currentLineStartPos > lastTokenInd)
-						continue;
+					if (currentLineStartPos > lastTokenInd) {
+                        break;
+                    }
 					
 					// adjust the start token position in documentTokens to this non trivial line
 					// first skip possible space characters and tabs at the beginning of the line
@@ -356,7 +215,7 @@ public class BasicStructureBuilder {
 								 }
 								 if ((currentLineStartPos != lastTokenInd) && 
 								 	labeledTokenPair.getLeft().startsWith(documentTokens.get(currentLineStartPos).getText())) {
-									 break;
+									break;
 								 }
 							 }
 							 currentLineStartPos++;
@@ -413,10 +272,10 @@ public class BasicStructureBuilder {
 			currentLineStartPos = currentLineEndPos+2; // one shift for the EOL, one for the next line
             p++;
         }
-		
+
 		if (blockIndex == docBlocks.size()) {
 			// the last labelled piece has still to be added
-			if ((!curPlainLabel.equals(lastPlainLabel)) && (lastPlainLabel != null)) {	
+			if (!StringUtils.equals(curPlainLabel, lastPlainLabel) && lastPlainLabel != null) {
 				if ( (pointerA.getTokenDocPos() <= lastPointer.getTokenDocPos()) && 
 					(pointerA.getTokenDocPos() != -1) ) {
 					labeledBlocks.put(lastPlainLabel, new DocumentPiece(pointerA, lastPointer));
@@ -667,11 +526,11 @@ public class BasicStructureBuilder {
             }
         }
 
-        doc.setBlockHeaders(blockHeaders);
+        /*doc.setBlockHeaders(blockHeaders);
         doc.setBlockFooters(blockFooters);
         doc.setBlockDocumentHeaders(blockDocumentHeaders);
         doc.setBlockReferences(blockReferences);
-        doc.setBlockSectionTitles(blockSectionTitles);
+        doc.setBlockSectionTitles(blockSectionTitles);*/
 
         return doc;
     }

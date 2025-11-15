@@ -1,8 +1,5 @@
 package org.grobid.core.engines.counters;
 
-/**
- * Created by lfoppiano on 25/11/16.
- */
 public class TableRejectionCounters {
 
     public static final Countable CANNOT_PARSE_LABEL_TO_INT = new Countable() {

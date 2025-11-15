@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Mori</forename>
+								 <middlename>K</middlename>.
+								 <marker>1, 2, *</marker> ,
+							</persName>
+							<persName>
+								 <forename>Le</forename>
+								 <surname>Goff</surname>
+							</persName>
+							<persName>
+								 <forename>B</forename>.
+								 <marker>1, 2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Charrier</forename>
+								 <middlename>C</middlename>.
+								 <marker>1, 2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Battaglia</forename>
+								 <middlename>S</middlename>.
+								 <marker>1, 2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Heymann</forename>
+								 <middlename>D</middlename>.
+								 <marker>1, 2,*</marker> ,
+							</persName>
+							<persName>
+								 <forename>Rédini</forename>
+								 <middlename>F</middlename>.
+								 <marker>1, 2</marker>
+							</persName>
+							<persName>
+								 <roleName>Dr</roleName>.
+								 <middlename>D</middlename>.
+								 <surname>HEYMANN</surname> or								 
+							</persName>
+							<persName>
+								<roleName>Dr</roleName>
+								 <forename>K</forename>.
+								 <surname>MORI</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

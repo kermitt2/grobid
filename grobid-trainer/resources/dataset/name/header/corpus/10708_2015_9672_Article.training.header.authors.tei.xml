@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Badreddine</forename>
+								 <surname>Barhoumi</surname>
+								 <marker>1,2,*</marker> ,
+							</persName>
+							<persName>
+								 <forename>Anis</forename>
+								 <surname>Elbarhoumi</surname>
+								 <suffix>II</suffix>
+								 <marker>3</marker> ,
+							</persName>
+							<persName>
+								 <forename>Christelle</forename>
+								 <surname>Clérandeau</surname>
+								 <suffix>Sr</suffix>.
+								 <marker>2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Abdulla</forename>
+								 <middlename>M</middlename>.
+								 <surname>Al-Rawabdeh</surname>
+								 <marker>4</marker> ,
+							</persName>
+							<persName>
+								 <forename>Atef</forename>
+								 <surname>Atyaoui</surname>
+								 <marker>3,5</marker> ,
+							</persName>
+							<persName>
+								 <forename>Soufiane</forename>
+								 <surname>de Touil</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Mohamed</forename>
+								 <middlename>Ridha</middlename>
+								 <surname>Driss</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Jérôme</forename>
+								 <surname>Cachot</surname>
+								 <marker>2</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

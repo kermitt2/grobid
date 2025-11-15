@@ -5,7 +5,6 @@ import java.util.*;
 /**
  * Class for managing citation of patent bibliographical references.
  *
- * @author Patrice Lopez
  */
 public class PriorArtCitation {
     // cited patent, null if not a patent

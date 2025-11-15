@@ -19,9 +19,6 @@ import java.util.List;
 
 import static org.grobid.core.engines.label.TaggingLabels.*;
 
-/**
- * @author Patrice
- */
 class FigureParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FigureParser.class);
 
@@ -35,17 +32,15 @@ class FigureParser extends AbstractParser {
      * the resulting Figure object.
      */
     public Figure processing(List<LayoutToken> tokenizationFigure, String featureVector) {
-
         String res;
         try {
             res = label(featureVector);
         } catch (Exception e) {
-            throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
+            throw new GrobidException("Sequence labeling with figure model fails.", e);
         }
         if (res == null) {
             return null;
         }
-
         return getExtractionResult(tokenizationFigure, res);
     }
 
@@ -75,7 +70,7 @@ class FigureParser extends AbstractParser {
                 //label should also go to head
                 figure.appendHeader(" " + clusterContent + " ");
             } else if (clusterLabel.equals(FIG_OTHER)) {
-
+                figure.addDiscardedPieceTokens(cluster.concatTokens());
             } else if (clusterLabel.equals(FIG_CONTENT)) {
                 figure.appendContent(clusterContent);
             } else {
@@ -95,7 +90,7 @@ class FigureParser extends AbstractParser {
         try {
             res = label(featureVector);
         } catch (Exception e) {
-            LOGGER.error("CRF labeling in FigureParser fails.", e);
+            LOGGER.error("Sequence labeling in FigureParser fails.", e);
         }
         if (res == null) {
             return Pair.of(null, featureVector);

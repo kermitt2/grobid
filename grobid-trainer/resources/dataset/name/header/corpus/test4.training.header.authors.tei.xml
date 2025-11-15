@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Yvonne</forename>
+								 <surname>Ziegler</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Mary</forename>
+								 <middlename>J</middlename>.
+								 <surname>Laws</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Valeria</forename>
+								 <surname>Sanabria Guillen</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Sung</forename>
+								 <middlename>Hoon</middlename>
+								 <surname>Kim</surname>
+								 <marker>2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Parama</forename>
+								 <surname>Dey</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Brandi</forename>
+								 <middlename>P</middlename>.
+								 <surname>Smith</surname>
+								 <marker>3</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ping</forename>
+								 <surname>Gong</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Noah</forename>
+								 <surname>Bindman</surname>
+								 <marker>2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Yuechao</forename>
+								 <surname>Zhao</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Kathryn</forename>
+								 <surname>Carlson</surname>
+								 <marker>2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Mayuri</forename>
+								 <middlename>A</middlename>.
+								 <surname>Yasuda</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Divya</forename>
+								 <surname>Singh</surname>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Zhong</forename>
+								 <surname>Li</surname>
+								 <marker>4</marker> ,
+							</persName>
+							<persName>
+								 <forename>Dorraya</forename>
+								 <surname>El-Ashry</surname>
+								 <marker>5</marker> ,
+							</persName>
+							<persName>
+								 <forename>Zeynep</forename>
+								 <surname>Madak-Erdogan</surname>
+								 <marker>3</marker> ,
+							</persName>
+							<persName>
+								 <forename>John</forename>
+								 <middlename>A</middlename>.
+								 <surname>Katzenellenbogen</surname>
+								 <marker>2</marker> and
+							</persName>
+							<persName>
+								 <forename>Benita</forename>
+								 <middlename>S</middlename>.
+								 <surname>Katzenellenbogen</surname>
+								 <marker>1 *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

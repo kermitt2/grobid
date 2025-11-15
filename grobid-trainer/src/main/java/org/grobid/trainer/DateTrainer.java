@@ -13,10 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-/**
- * @author Patrice Lopez
- * @author Vyacheslav Zholudev
- */
 public class DateTrainer extends AbstractTrainer {
 
 	public DateTrainer() {

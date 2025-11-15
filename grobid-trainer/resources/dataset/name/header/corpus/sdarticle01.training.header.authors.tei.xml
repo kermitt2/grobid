@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Colin</forename>
+								 <surname>van der Heiden</surname>
+								 <marker>a,b, *</marker>,
+							</persName>
+							<persName>
+								 <forename>Kim</forename>
+								 <surname>Melchior</surname>
+								 <marker>a,b</marker> ,
+							</persName>
+							<persName>
+								 <forename>Peter</forename>
+								 <surname>Muris</surname>
+								 <marker>b</marker> ,
+							</persName>
+							<persName>
+								 <forename>S</forename>.
+								 <surname>Bouwmeester</surname>
+								 <marker>b</marker> ,
+							</persName>
+							<persName>
+								 <forename>Arjan</forename>
+								 <middlename>E</middlename>.
+								<middlename>R</middlename>.
+								 <surname>Bos</surname>
+								 <marker>c</marker> ,
+							</persName>
+							<persName>
+								 <forename>Henk</forename>
+								 <middlename>T</middlename>.
+								 <surname>van der Molen</surname>
+								 <marker>b</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

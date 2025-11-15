@@ -1,52 +1,54 @@
-The [RESTful API](Grobid-service.md) provides a simple and efficient way to use and deploy GROBID. 
-As an alternative, the present page explains how to embed Grobid directly in your Java application. 
+!!! warning "Deprecated method for running grobid"
+    Considering the global trend to move toward Python, we decided to stop maintaining this library, as part of the open source Grobid application. The library is, nevertheless, open source and can be updated by the community. The use of the REST client and the docker image remain the recommended way to use Grobid. For any custom development you can contact [us](https://github.com/lfoppiano) via email.   
 
-After [building the project](Install-Grobid.md), two core jar files are created: grobid-core-`<current version>`.onejar.jar 
-and grobid-core-`<current version>`.jar
-	
-A complete working **maven** project example of usage of GROBID Java API can be found here: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). 
-The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTex format.  
+The [REST API](Grobid-service.md) provides a simple and efficient way to use and deploy GROBID. For this, the Docker image is the simplest way to use and deploy Grobid. 
+
+As an alternative, the present page explains how to embed Grobid directly in your Java application. The user will need a local `grobid-home` which contains all the models, resources, etc. in addition to the Grobid Java libraries. The `grobid-home` must be downloaded from the Github release of Grobid matching the version of the used Grobid Java library. 
+
+The first option is to use Grobid Java artefacts available online. A complete working **maven** project example of usage of GROBID Java API can be found here: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). 
+This example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTex format.  
+
+The second option is of course to build yourself Grobid and to use the generated artefacts deployed locally. After [building the project](Install-Grobid.md), two core jar files are created under `grobid-core/build/libs`: grobid-core-`<current version>`.onejar.jar (with all the dependencies in the package) and grobid-core-`<current version>`.jar 
 
 ## Using maven
 
-GROBID releases are uploaded on the [grobid bintray](https://bintray.com/rookies/maven/grobid) repository. 
+The Java artefacts of the latest GROBID release (0.8.2) are uploaded on a DIY repository. 
 
-You need to add the following snippet in your pom.xml in order to configure it:
+You need to add the following snippet in your `pom.xml` in order to configure it:
 
 ```xml
-    <repository>
-        <snapshots>
-            <enabled>false</enabled>
-        </snapshots>
-        <id>bintray-rookies-maven</id>
-        <name>bintray</name>
-        <url>https://dl.bintray.com/rookies/maven</url>
-    </repository>               
+    <repositories>
+        <repository>
+            <id>grobid</id>
+            <name>GROBID DIY repo</name>
+            <url>https://grobid.s3.eu-west-1.amazonaws.com/repo/</url>
+        </repository>
+    </repositories>         
 ```
-  
 
-In this way you after configuring such repository the dependencies will be automatically managed.
-Here an example of grobid-core dependency: 
+Here an example of `grobid-core` dependency: 
+
+```xml
+	<dependency>
+        <groupId>org.grobid</groupId>
+        <artifactId>grobid-core</artifactId>
+        <version>0.8.2</version>
+    </dependency>
+```
+
+If you want to work on a SNAPSHOT development version, you need to download and build the current master yourself, and include in your pom file the path to the local snapshot Grobid jar file, for instance as follow (if necessary replace `0.8.2-SNAPSHOT` by the valid `<current version>`):
+
 ```xml
 	<dependency>
 	    <groupId>org.grobid</groupId>
 	    <artifactId>grobid-core</artifactId>
-	    <version>0.6.0</version>
-	</dependency>
-```
- 
-If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to the Grobid jar file, 
-for instance as follow (if necessary replace `0.6.0` by the valid `<current version>`):
-
-```xml
-	<dependency>
-	    <groupId>org.grobid</groupId>
-	    <artifactId>grobid-core</artifactId>
-	    <version>0.6.0</version>
+	    <version>0.8.2-SNAPSHOT</version>
 	    <scope>system</scope>
-	    <systemPath>${project.basedir}/lib/grobid-core-0.6.0.jar</systemPath>
+	    <systemPath>${project.basedir}/lib/grobid-core-0.8.2-SNAPSHOT.jar</systemPath>
 	</dependency>
 ```
+
+In any cases, you need a local `grobid-home` corresponding to the version of the library. This `grobid-home` must be downloaded from the release available on the Grobid GitHub repo.
 
 ## Using gradle
 
@@ -54,18 +56,15 @@ Add the following snippet in your gradle.build file:
 
 ```groovy
     repositories { 
-        maven { 
-            url "https://dl.bintray.com/rookies/maven" 
-        } 
+        maven { url "https://grobid.s3.eu-west-1.amazonaws.com/repo/" }
     }
 ```
 
 and add the Grobid dependency as well: 
 ```
-    compile 'org.grobid:grobid-core:0.6.0'
-    compile 'org.grobid:grobid-trainer:0.6.0'
+    implement 'org.grobid:grobid-core:0.8.2'
+    implement 'org.grobid:grobid-trainer:0.8.2'
 ```
-
 
 ## API call
 
@@ -92,11 +91,11 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 	    // If the location is customised: 
 	    GrobidHomeFinder grobidHomeFinder = new GrobidHomeFinder(Arrays.asList(pGrobidHome));		
 	    
-	    //The GrobidProperties needs to be instantiate using the correct grobidHomeFinder or it will use the default 
+	    //The grobid yaml config file needs to be instantiate using the correct grobidHomeFinder or it will use the default 
 	    //locations
 		GrobidProperties.getInstance(grobidHomeFinder);
 
-		System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
+		System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.getGrobidHome());
 
 		Engine engine = GrobidFactory.getInstance().createEngine();
 
@@ -110,27 +109,13 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 	} 
 ```
 
-
-
 ## maven Skeleton project example
 
 In the following archive, you can find a __maven__ toy example project integrating Grobid in a third party Java project using maven: [grobid-example](https://github.com/kermitt2/grobid-example). 
 
-Create the grobid-core jar library, under the main project directory `grobid/`:
-```bash
-> ./gradlew clean install 
-```
-
-Copy the Grobid jar library under `grobid-example/lib`:
-
-```bash
-> cp grobid-core/build/libs/grobid-core-<current version>.jar <path_to_grobid_example>/grobid-example/lib
-```
-
-The paths to __grobid-home__ must be changed in the project property file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
+You need a local `grobid-home` installation to run GROBID (the resources are not embedded in the jar due to various reasons, in particular JNI and safety). The paths to __grobid-home__ might need to be changed in the project config file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
 
 		grobid_example.pGrobidHome=/Users/lopez/grobid/grobid-home
-		grobid_example.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.properties
 
 Then you can test the toy project:
 ```bash
@@ -139,4 +124,4 @@ Then you can test the toy project:
 
 ## Javadoc
 
-The javadoc of the Grobid project is available [here](http://grobid.github.io/). All the main methods of the Grobid Java API are currently accessible via the single class [org.grobid.core.engines.Engine](http://grobid.github.io/grobid-core/org/grobid/core/engines/Engine.html). The various test files under `grobid/grobid-core/src/test/java/org/grobid/core/test` further illustrate how to use the Grobid java API.
+The javadoc of the Grobid project is available [here](https://grobid.github.io). All the main methods of the Grobid Java API are currently accessible via the single class [org.grobid.core.engines.Engine](https://grobid.github.io/grobid-core/org/grobid/core/engines/Engine.html). The various test files under `grobid/grobid-core/src/test/java/org/grobid/core/test` further illustrate how to use the Grobid java API.

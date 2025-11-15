@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+ 								<marker>1 2</marker> 							
+ 								 <forename>Anneh</forename>
+								 <middlename>Mohammad</middlename>
+								 <surname>Gharravi</surname>
+								<marker>*</marker>
+							</persName>
+							<persName>
+								 <forename>Mohammad</forename>
+								 <middlename>Reza</middlename>
+								 <marker>3 2</marker>
+								 <surname>Gholami</surname> ,
+							</persName>
+							<persName>
+								<forename>Daryoush</forename>
+								 <middlename>Bijan</middlename>
+								 <surname>Nejad</surname> ,
+							</persName>
+							<persName>	 
+								 <forename>Saeed</forename>							
+								 <surname>Azandeh</surname> ,
+							</persName>
+							<persName>
+								 <roleName>Dr</roleName>.
+								 <forename>Anne</forename>
+								 <middlename>Mohammad</middlename>
+								 <surname>Gharravi</surname>
+							</persName>
+							<persName>
+								<roleName>Dr</roleName>.
+								 <forename>Anneh</forename>
+								 <middlename>Mohammad</middlename>
+								 <surname>Gharravi</surname>
+							</persName>
+							<persName>
+								<roleName>Dr</roleName>.
+								 <forename>Saeed</forename>
+								 <surname>Azandeh</surname>
+							</persName>
+							<persName>
+								<roleName>Dr</roleName>.
+								 <forename>Mohammad</forename>
+								 <middlename>R</middlename>
+								 <surname>Gholami</surname>								 
+							</persName>
+							<persName>
+								<roleName>Dr</roleName>.
+								 <forename>Darioush</forename>
+								 <middlename>B</middlename>
+								 <surname>Nejad</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

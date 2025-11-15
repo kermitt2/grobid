@@ -13,9 +13,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-/**
- * @author Patrice Lopez
- */
 public class TestCitationParser extends EngineTest {
 
     @BeforeClass

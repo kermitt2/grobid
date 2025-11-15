@@ -1,0 +1,40 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl><label>1</label>. D. Acosta et al. (CDF Collabora-<lb/>tion), Phys. Rev. D 71, 032001 (2005)<lb/> [arXiv:hep-ex/0412071].<lb/> </bibl>
+        <bibl><label>2</label>. E. J. Eichten and C. Quigg, Phys. Rev. D<lb/> 49, 5845 (1994); </bibl>
+        <bibl>W. K. Kwong and J. L.<lb/> Rosner, Phys. Rev. D 44, 212 (1991); </bibl>
+        <bibl>S.<lb/> Godfrey, Phys. Rev. D 70, 054017 (2004)<lb/> [arXiv:hep-ph/0406228].<lb/> </bibl>
+        <bibl><label>3</label>. I. F. Allison et al., Phys. Rev. Lett. 94,<lb/> 172001 (2005).<lb/> </bibl>
+        <bibl><label>4</label>. N. Brambilla,<lb/> Y. Sumino and A.<lb/> </bibl>
+        <bibl>Vairo, Phys. Rev. D 65, 034001 (2002)<lb/> [arXiv:hep-ph/0108084].<lb/> </bibl>
+        <bibl><label>5</label>. V. V. Kiselev, A. E. Kovalsky and A. K.<lb/> Likhoded, Nucl. Phys. B 585, 353 (2000)<lb/> [arXiv:hep-ph/0002127]; </bibl>
+        <bibl>M. Beneke and G.<lb/> Buchalla, Phys. Rev. D 53, 4991 (1996)<lb/> [arXiv:hep-ph/9601249].<lb/> </bibl>
+        <bibl><label>6</label>. F. Abe et al. [CDF Collaboration], Phys. Rev.<lb/> Lett. 81, 2432 (1998) [arXiv:hep-ex/9805034].<lb/> </bibl>
+        <bibl><label>7</label>. T. Aaltonen et al. [CDF Collaboration], Phys.<lb/> Rev. Lett. 100, 182002 (2008) [arXiv:hep-<lb/>ex/0712.1506v1].<lb/> </bibl>
+        <bibl><label>8</label>. A. Abulencia et al. [CDF Collaboration],<lb/> Phys. Rev. Lett. 96, 082002 (2006).<lb/> </bibl>
+        <bibl><label>9</label>. V. Abazov et al. [D0 Collaboration] Phys.<lb/> Rev. Lett. 101, 012001 (2008) [arXiv:hep-<lb/>ex/0802.4258].<lb/> </bibl>
+        <bibl><label>10</label>. http://www-cdf.fnal.gov/physics/new/bottom/<lb/> 080327.blessed-BC LT SemiLeptonic/<lb/> </bibl>
+        <bibl><label>11</label>. T. Sjostrand, S. Mrenna, P. Skands, J. High<lb/> Energy Phys. 0605, 026, (2006).<lb/> </bibl>
+        <bibl><label>12</label>. V. M. Abazov et al. [D0 Collaboration],<lb/> arXiv:hep-ex/0805.2614<lb/> </bibl>
+        <bibl><label>13</label>. A. Abulencia et al. [CDF Collabora-<lb/>tion], Phys. Rev. Lett. 97, 242003 (2006)<lb/> [arXiv:hep-ex/0609040v1].<lb/> </bibl>
+        <bibl><label>14</label>. http://www-d0.fnal.gov/Run2Physics/<lb/> WWW/results/prelim/B/B54/<lb/> </bibl>
+        <bibl><label>15</label>. W.-S. Hou, M. Nagashima, and A.<lb/> Soddu, Phys. Rev. D, 76, 016004 (2007)<lb/> [arXiv:hep-ph/0610385]. </bibl>
+        <bibl>W.-S. Hou, M.<lb/> Nagashima, and A. Soddu, Phys. Rev. Lett.<lb/> 95, 141601 (2005) [arXiv:hep-ph/0503072].<lb/> </bibl>
+        <bibl><label>16</label>. Z. Ligeti, M. Papucci, G.Perez, Phys. Rev.<lb/> Lett. 97, 101801 (2006).<lb/> </bibl>
+        <bibl><label>17</label>. A. Lenz, U. Nierste, J. High Energy Phys. 06,<lb/> 072 (2007).<lb/> </bibl>
+        <bibl><label>18</label>. E. Barberio et al. Heavy Flavor Averaging<lb/> Group, 2007, arXiv:hep-ex/0603003.<lb/> </bibl>
+        <bibl><label>19</label>. T. Aaltonen et al. (CDF Collaboration),<lb/> Phys. Rev. Lett. 100, 121803 (2008)<lb/> [arXiv:hep-ex/0712.2348]<lb/> </bibl>
+        <bibl><label>20</label>. A. S. Dighe, I. Dunietz and R. Fleischer, Eur.<lb/> Phys. J. C 6, 647 (1999).<lb/> </bibl>
+        <bibl><label>21</label>. V. Abazov et al. [D0 Collaboration],<lb/> arXiv:hep-ex/0802.2255.<lb/> </bibl>
+        <bibl><label>22</label>. T. Aaltonen et al. (CDF Collaboration),<lb/> Phys. Rev. Lett. 100, 121802 (2008)<lb/> [arXiv:hep-ex/0712.2397]<lb/> </bibl>
+        <bibl><label>23</label>. http://www-cdf.fnal.gov/physics/new/bottom/<lb/> 080207.blessed-bs-lifetime/</bibl>
+        </listBibl>
+    </text>
+</tei>
+

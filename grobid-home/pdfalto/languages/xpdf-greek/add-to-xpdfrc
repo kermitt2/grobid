@@ -1,0 +1,4 @@
+#----- begin Greek support package (2011-aug-15)
+nameToUnicode			/usr/local/share/xpdf/greek/Greek.nameToUnicode
+unicodeMap	ISO-8859-7	/usr/local/share/xpdf/greek/ISO-8859-7.unicodeMap
+#----- end Greek support package

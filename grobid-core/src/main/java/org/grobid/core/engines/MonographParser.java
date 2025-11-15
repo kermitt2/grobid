@@ -36,7 +36,6 @@ import static org.apache.commons.lang3.StringUtils.*;
  * Monographs, here, are NOT magazine volumes, journal issues, newspapers, standalone chapters, standalone scholar articles,
  * tables of content, reference works, dictionaries, encyclopedia volumes, graphic novels.
  *
- * @author Patrice Lopez
  */
 public class MonographParser extends AbstractParser {
     /**
@@ -988,7 +987,7 @@ public class MonographParser extends AbstractParser {
                         }
                     }
 
-                    // we consider the first token of the line as usual lexical CRF token
+                    // we consider the first token of the line as usual lexical token
                     // and the second token of the line as feature
                     StringTokenizer st2 = new StringTokenizer(line, " \t");
                     // alternatively, use a grobid analyser

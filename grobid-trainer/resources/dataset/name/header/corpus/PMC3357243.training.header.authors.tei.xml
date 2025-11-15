@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>MADELYN</forename>
+								 <middlename>L</middlename>.
+								 <surname>WHEELER</surname>,
+								 <roleName>MS, RD, FADA, CD</roleName>
+								 <marker>1</marker>
+							</persName>
+							<persName>
+								 <forename>STEPHANIE</forename>
+								 <middlename>A</middlename>.
+								 <surname>DUNBAR</surname>,
+								 <roleName>MPH</roleName>,
+								 <roleName>RD</roleName>
+								 <marker>2</marker>
+							</persName>
+							<persName>	 
+								 <forename>LINDSAY</forename>
+								 <middlename>M</middlename>.
+								 <surname>JAACKS</surname>,
+								 <roleName>BS</roleName>
+								 <marker>3</marker>
+							</persName>
+							<persName>	 
+								 <forename>WAHIDA</forename>
+								 <surname>KARMALLY</surname>,
+								 <roleName>DRPH, RD, CDE, CLS, FNLA</roleName>
+								 <marker>4</marker>
+							</persName>
+							<persName>	 
+								 <forename>ELIZABETH</forename>
+								 <middlename>J</middlename>.
+								 <surname>MAYER-DAVIS</surname>,
+								 <roleName>MSPH</roleName>,
+								 <roleName>PHD, RD</roleName>
+								 <marker>5</marker>
+							</persName>
+							<persName>	 
+								 <forename>JUDITH</forename>
+								 <surname>WYLIE-ROSETT</surname>,
+								 <roleName>EDD</roleName>,
+								 <roleName>RD</roleName>
+								 <marker>6</marker>
+							</persName>
+							<persName>		 
+								 <forename>WILLIAM</forename>
+								 <middlename>S</middlename>.
+								 <surname>YANCY</surname>
+								 <suffix>JR</suffix>.,
+								 <roleName>MD, MHS</roleName>
+								 <marker>7</marker>
+							</persName>
+							<persName>
+								 <forename>Stephanie</forename>
+								 <middlename>A</middlename>.
+								 <surname>Dunbar</surname>,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

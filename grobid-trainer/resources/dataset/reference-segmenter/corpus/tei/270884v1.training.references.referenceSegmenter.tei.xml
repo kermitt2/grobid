@@ -1,0 +1,30 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1</label>. <lb/> Ryan DP, Hong TS, Bardeesy N. Pancreatic adenocarcinoma. N Engl J Med 2014;371(11):<lb/> 1039-1049.<lb/> </bibl>
+        <bibl><label>2</label>. <lb/> Lutz MP, Zalcberg JR, Ducreux M, Aust D, Bruno MJ, Buchler MW, Delpero JR, Gloor B,<lb/> Glynne-Jones R, Hartwig W, Huguet F, Laurent-Puig P, Lordick F, Maisonneuve P, Mayerle J,<lb/> Martignoni M, Neoptolemos J, Rhim AD, Schmied BM, Seufferlein T, Werner J, van Laethem JL, Otto<lb/> F. 3rd St. Gallen EORTC Gastrointestinal Cancer Conference: Consensus recommendations on<lb/> controversial issues in the primary treatment of pancreatic cancer. Eur J Cancer 2017;79: 41-49.<lb/> </bibl>
+        <bibl><label>3</label>. <lb/> Bockhorn M, Uzunoglu FG, Adham M, Imrie C, Milicevic M, Sandberg AA, Asbun HJ, Bassi<lb/> C, Buchler M, Charnley RM, Conlon K, Cruz LF, Dervenis C, Fingerhutt A, Friess H, Gouma DJ,<lb/> Hartwig W, Lillemoe KD, Montorsi M, Neoptolemos JP, Shrikhande SV, Takaori K, Traverso W,<lb/> Vashist YK, Vollmer C, Yeo CJ, Izbicki JR. Borderline resectable pancreatic cancer: a consensus<lb/> statement by the International Study Group of Pancreatic Surgery (ISGPS). Surgery 2014;155(6): 977-<lb/>988.<lb/> </bibl>
+        <bibl><label>4</label>. <lb/> von Elm E, Altman DG, Egger M, Pocock SJ, Gotzsche PC, Vandenbroucke JP. The<lb/> Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement:<lb/> guidelines for reporting observational studies. J Clin Epidemiol 2008;61(4): 344-349.<lb/> </bibl>
+        <bibl><label>5</label>. <lb/> Verbeke CS, Leitch D, Menon KV, McMahon MJ, Guillou PJ, Anthoney A. Redefining the R1<lb/> resection in pancreatic cancer. Br J Surg 2006;93(10): 1232-1237.<lb/> </bibl>
+        <bibl><label>6</label>. <lb/> Komaya K, Ebata T, Shirai K, Ohira S, Morofuji N, Akutagawa A, Yamaguchi R, Nagino M.<lb/> Recurrence after resection with curative intent for distal cholangiocarcinoma. Br J Surg 2017;104(4):<lb/> 426-433.<lb/> </bibl>
+        <bibl><label>7</label>. <lb/> Kim HJ, Lee WJ, Kang CM, Hwang HK, Bang SM, Song SY, Seong J. Risk Factors Associated<lb/> with Loco-Regional Failure after Surgical Resection in Patients with Resectable Pancreatic Cancer.<lb/> PloS one 2016;11(6): e0157196.<lb/> </bibl>
+        <bibl><label>8</label>. <lb/> Chen FM, Ni JM, Zhang ZY, Zhang L, Li B, Jiang CJ. Presurgical Evaluation of Pancreatic<lb/> Cancer: A Comprehensive Imaging Comparison of CT Versus MRI. AJR Am J Radiol 2016;206(3):<lb/> 526-535.<lb/> </bibl>
+        <bibl><label>9</label>. <lb/> Treadwell JR, Zafar HM, Mitchell MD, Tipton K, Teitelbaum U, Jue J. Imaging Tests for the<lb/> Diagnosis and Staging of Pancreatic Adenocarcinoma: A Meta-Analysis. Pancreas 2016;45(6): 789-<lb/>795.<lb/> </bibl>
+        <bibl><label>10</label>. <lb/> de Geus SW, Evans DB, Bliss LA, Eskander MF, Smith JK, Wolff RA, Miksad RA, Weinstein<lb/> MC, Tseng JF. Neoadjuvant therapy versus upfront surgical strategies in resectable pancreatic cancer:<lb/> A Markov decision analysis. Eur J Surg Oncol 2016;42(10): 1552-1560.<lb/> </bibl>
+        <bibl><label>11</label>. <lb/> Papavasiliou P, Hoffman JP, Cohen SJ, Meyer JE, Watson JC, Chun YS. Impact of preoperative<lb/> therapy on patterns of recurrence in pancreatic cancer. HPB 2014;16(1): 34-39.<lb/> </bibl>
+        <bibl><label>12</label>. <lb/> D&apos;Angelo F, Antolino L, Farcomeni A, Sirimarco D, Kazemi Nava A, De Siena M, Petrucciani<lb/> N, Nigri G, Valabrega S, Aurello P, Ramacciato G. Neoadjuvant treatment in pancreatic cancer:<lb/> Evidence-based medicine? A systematic review and meta-analysis. Medical oncology (Northwood,<lb/> London, England) 2017;34(5): 85.<lb/> </bibl>
+        <bibl><label>13</label>. <lb/> Labori KJ, Lassen K, Hoem D, Gronbech JE, Soreide JA, Mortensen K, Smaaland R, Sorbye<lb/> H, Verbeke C, Dueland S. Neoadjuvant chemotherapy versus surgery first for resectable pancreatic<lb/> cancer (Norwegian Pancreatic Cancer Trial -1 (NorPACT-1)) -study protocol for a national multicentre<lb/> randomized controlled trial. BMC surgery 2017;17(1): 94.<lb/> </bibl>
+        <bibl><label>14</label>. <lb/> Tzeng CW, Fleming JB, Lee JE, Wang X, Pisters PW, Vauthey JN, Varadhachary G, Wolff<lb/> RA, Katz MH. Yield of clinical and radiographic surveillance in patients with resected pancreatic<lb/> adenocarcinoma following multimodal therapy. HPB 2012;14(6): 365-372.<lb/> </bibl>
+        <bibl><label>15</label>. <lb/> Birnbaum DJ, Gaujoux S, Berbis J, Dokmak S, Hammel P, Vullierme MP, Levy P, Sauvanet<lb/> A. Surgery for pancreatic neoplasms: How accurate are our surgical indications? Surgery 2017;162(1):<lb/> 112-119.<lb/> </bibl>
+        <bibl><label>16</label>. <lb/> Asaoka T, Miyamoto A, Maeda S, Tsujie M, Hama N, Yamamoto K, Miyake M, Haraguchi N,<lb/> Nishikawa K, Hirao M, Ikeda M, Sekimoto M, Nakamori S. Prognostic impact of preoperative NLR<lb/> and CA19-9 in pancreatic cancer. Pancreatology 2016;16(3): 434-440.<lb/> </bibl>
+        <bibl><label>17</label>. <lb/> Notta F, Hahn SA, Real FX. A genetic roadmap of pancreatic cancer: still evolving. Gut<lb/> 2017;66(12): 2170-2178.</bibl>
+
+        </listBibl>
+    </text>
+</tei>
+

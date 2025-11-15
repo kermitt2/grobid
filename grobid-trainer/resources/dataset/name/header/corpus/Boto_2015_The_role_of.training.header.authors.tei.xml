@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Roberto</forename>.
+								 <middlename>A</middlename>.
+								 <surname>Boto</surname>
+								 <marker>1,2,3</marker> ,
+							</persName>
+							<persName>
+								 <forename>J</forename>.
+								 <surname>Contreras-García</surname>
+								 <marker>1,2</marker> ,
+							</persName>
+							<persName>
+								 <forename>M</forename>.
+								 <surname>Calatayud</surname>
+								 <marker>1,2,4*</marker>
+							</persName>
+							<persName>
+								 <roleName>Dr</roleName>.
+								 <forename>M</forename>.
+								 <surname>Calatayud</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

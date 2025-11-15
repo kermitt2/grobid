@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>J. E. O&apos;BRIEN</author>. <note type="report">Thèse</note>, <orgName>Harvard University</orgName>, <pubPlace>Cambridge, MA</pubPlace>. <date>1972</date>.</bibl>
+	<bibl><author>B. SOLASTIOUK et X. DEGLISE</author>. <title level="j">Can. J. Chem.</title> <biblScope unit="volume">66</biblScope>, <biblScope unit="page">2188</biblScope> (<date>1988</date>).</bibl>
+	<bibl><author>D. MATTE</author>. <note type="report">Thèse</note>, <orgName>Université de Nancy I</orgName>, <pubPlace>Nancy</pubPlace>. <date>1986</date>.</bibl>
+	<bibl><author>J. CARREL MORRIS</author>. <title level="j">J. Phys. Chem.</title> <biblScope unit="volume">70</biblScope>, <biblScope unit="page">3798</biblScope> (<date>1966</date>).</bibl>
+	<bibl><author>B. SOLASTIOUK</author>.  <note type="report">Thèse</note> de l&apos;<orgName>Institut National Polytechnique de Lorraine</orgName>,<pubPlace>Nancy</pubPlace> .<date>1989</date> .</bibl>
+	<bibl><author>R. A. ROBINSON et R. H. STOKES</author>. <title level="a">Electrolyte solutions. 2 È ed</title>. <pubPlace>Butterworth,London</pubPlace> .<date>1970</date> .</bibl>
+	<bibl><author>D. MATTE, B. SOLASTIOUK, A. MERLIN et X. DEGLISE</author>. <title level="j">Can. J. Chem.</title><biblScope unit="volume">67</biblScope> ,<biblScope unit="page">786</biblScope> ( <date>1989</date>).</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

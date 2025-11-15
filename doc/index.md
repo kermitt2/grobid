@@ -1,27 +1,31 @@
-<h1>GROBID Documentation</h1>
+# GROBID Documentation
 
 
-<h3>About</h3>
+## About
 
 * [Introduction](Introduction.md)
+
+* [How GROBID works](Principles.md)
 
 * [References](References.md)
 
 * [License](License.md)
 
-<h3>User manual</h3>
+## User manual
 
-* [Install GROBID](Install-Grobid.md)
+* [Getting Started](getting_started.md) (**Starting point**)
 
 * [Use GROBID as a service](Grobid-service.md)
 
-* [Use GROBID in batch mode](Grobid-batch.md)
+* [Build a GROBID development environment](Install-Grobid.md)
 
-* [Use GROBID with containers (Docker)](Grobid-docker.md)
+* [Manage GROBID with containers (Docker)](Grobid-docker.md)
 
-* [Troubleshooting and known issues](Troubleshooting.md)
+* [GROBID configuration](Configuration.md)
 
-* [Use Grobid library in third party Java applications](Grobid-java-library.md)
+* [GROBID specialized processes](Grobid-specialized-processes.md)
+
+* [Troubleshooting and FAQ](Frequently-asked-questions.md)
 
 * [TEI encoding of results](TEI-encoding-of-results.md)
 
@@ -33,24 +37,41 @@
 
 * [End-to-end evaluation](End-to-end-evaluation.md)
 
-<h3>Benchmarking</h3>
+* [Grobid in batch mode](Grobid-batch.md) (deprecated)
 
-* [Description](Benchmarking.md)
-* [Evaluation PubMed Central](Benchmarking-pmc.md)
-* [Model-level evaluations](Benchmarking-models.md)
+* [Use Grobid library in third party Java applications](Grobid-java-library.md) (deprecated)
 
-<h3>Annotation guidelines</h3>
+## Benchmarks
+
+* [Description](benchmarks/Benchmarking.md)
+
+* [Evaluation PubMed Central](benchmarks/Benchmarking-pmc.md)
+
+* [Evaluation bioRxiv](benchmarks/Benchmarking-biorxiv.md)
+
+* [Evaluation PLOS](benchmarks/Benchmarking-plos.md)
+
+* [Evaluation eLife](benchmarks/Benchmarking-elife.md)
+
+## Annotation guidelines
 
 * [General principles](training/General-principles.md)
+
 * [Segmentation model](training/segmentation.md)
+
 * [Fulltext model](training/fulltext.md)
+
+* [Header model](training/header.md)
+
 * [Bibliographical reference](training/Bibliographical-references.md)
+
 * [Affiliation-address model](training/affiliation-address.md)
+
 * [Date model](training/date.md)
 
-<h3>Developer notes</h3>
+## Developer notes
 
-* [Developer guide](Developer-guide.md)
+* [Notes for the Grobid Developers](Notes-grobid-developers.md)
 
 * [Using Deep Learning models instead of default CRF](Deep-Learning-models.md)
 

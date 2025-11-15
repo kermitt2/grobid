@@ -1,0 +1,3 @@
+#----- begin Latin2 support package (2011-aug-15)
+unicodeMap	Latin2	/usr/local/share/xpdf/latin2/Latin2.unicodeMap
+#----- end Latin2 support package

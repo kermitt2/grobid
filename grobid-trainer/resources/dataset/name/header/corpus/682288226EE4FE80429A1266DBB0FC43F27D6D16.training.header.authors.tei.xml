@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>L</forename>.
+								 <surname>David</surname>,
+							</persName>
+							<persName>
+								 <forename>O</forename>.
+								 <surname>Cosar</surname>,
+							</persName>
+							<persName>
+								 <forename>V</forename>.
+								 <surname>Chi~</surname>,
+							</persName>
+							<persName>
+								 <forename>A</forename>.
+								 <surname>Negoescu</surname>, and
+							</persName>
+							<persName>
+								 <forename>I</forename>.
+								 <surname>Vla~in</surname>
+								 <roleName>Prof</roleName>.
+								 <roleName>Dr</roleName>.
+							</persName>
+							<persName>
+								 <forename>Onue</forename>
+								 <surname>Cosar</surname>,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

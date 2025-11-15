@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Frank</forename>
+								 <middlename>W</middlename>.
+								 <surname>Licari</surname>,
+								 <roleName>DDS, MPH, MBA</roleName>
+								 <marker>1</marker>;
+							</persName>
+							<persName>
+								 <forename>Caswell</forename>
+								 <middlename>A</middlename>.
+								 <surname>Evans</surname>,
+								 <roleName>DDS, MPH</roleName>
+								 <marker>2</marker>
+							</persName>
+							<persName>
+								 <roleName>Dr</roleName>.
+								 <forename>Caswell</forename>
+								 <middlename>A</middlename>.
+								 <surname>Evans</surname>,
+							</persName>
+							<persName>
+								 <forename>Frank</forename>
+								 <middlename>W</middlename>.
+								 <surname>Licari</surname>
+							</persName>
+							<persName>
+								 <forename>Caswell</forename>
+								 <middlename>A</middlename>.
+								 <surname>Evans</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

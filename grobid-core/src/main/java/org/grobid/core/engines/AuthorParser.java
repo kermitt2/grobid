@@ -9,7 +9,9 @@ import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.engines.tagging.TaggerFactory;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorName;
+import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.PDFAnnotation;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
@@ -28,14 +30,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/**
- * @author Patrice Lopez
- */
 public class AuthorParser {
 	private static Logger LOGGER = LoggerFactory.getLogger(AuthorParser.class);
     private final GenericTagger namesHeaderParser;
     private final GenericTagger namesCitationParser;
+
+    private static final Pattern ET_AL_REGEX_PATTERN = Pattern.compile("et\\.? al\\.?.*$");
 	
     public AuthorParser() {
         namesHeaderParser = TaggerFactory.getTagger(GrobidModels.NAMES_HEADER);
@@ -50,18 +53,18 @@ public class AuthorParser {
             return null;
         }
 
-        input = input.trim().replaceAll("et\\.? al\\.?.*$", " ");
+        input = ET_AL_REGEX_PATTERN.matcher(input.trim()).replaceAll(" ");
 
-        // for language to English for the analyser to avoid any bad surprises
+        // set the language to English for the analyser to avoid any bad surprises
         List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input, new Language("en", 1.0));
-        return processing(tokens, false);
+        return processing(tokens, null, false);
     }
 
     public List<Person> processingCitationLayoutTokens(List<LayoutToken> tokens) throws Exception {
         if (CollectionUtils.isEmpty(tokens)) {
             return null;
         }
-        return processing(tokens, false);
+        return processing(tokens, null, false);
     }
 
     /**
@@ -72,15 +75,15 @@ public class AuthorParser {
             return null;
         }
 
-        input = input.trim().replaceAll("et\\.? al\\.?.*$", " ");
+        input = ET_AL_REGEX_PATTERN.matcher(input.trim()).replaceAll(" ");
 
-        // for language to English for the analyser to avoid any bad surprises
+        // set the language to English for the analyser to avoid any bad surprises
         List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input, new Language("en", 1.0));
-        return processing(tokens, true);
+        return processing(tokens, null, true);
     }
        
-    public List<Person> processingHeaderWithLayoutTokens(List<LayoutToken> inputs) {
-        return processing(inputs, true);
+    public List<Person> processingHeaderWithLayoutTokens(List<LayoutToken> inputs, List<PDFAnnotation> pdfAnnotations) {
+        return processing(inputs, pdfAnnotations, true);
     }
 
     /**
@@ -90,7 +93,7 @@ public class AuthorParser {
      * @param head - if true use the model for header's name, otherwise the model for names in citation
      * @return List of identified Person entites as POJO.
      */
-    public List<Person> processing(List<LayoutToken> tokens, boolean head) {
+    public List<Person> processing(List<LayoutToken> tokens, List<PDFAnnotation> pdfAnnotations, boolean head) {
         if (CollectionUtils.isEmpty(tokens)) {
             return null;
         }
@@ -116,13 +119,43 @@ public class AuthorParser {
                     continue;
                 }
 
+                if(pdfAnnotations != null) {
+                    for (LayoutToken authorsToken : cluster.concatTokens()) {
+                        for (PDFAnnotation pdfAnnotation : pdfAnnotations) {
+                            BoundingBox intersectBox = pdfAnnotation.getIntersectionBox(authorsToken);
+                            if (intersectBox != null) {
+                                BoundingBox authorsBox = BoundingBox.fromLayoutToken(authorsToken);
+                                if (intersectBox.equals(authorsBox)) {
+                                } else {
+                                    double pixPerChar = authorsToken.getWidth() / authorsToken.getText().length();
+                                    int charsCovered = (int) ((intersectBox.getWidth() / pixPerChar) + 0.5);
+                                    if (StringUtils.isNotBlank(pdfAnnotation.getDestination())) {
+                                        Matcher orcidMatcher = TextUtilities.ORCIDPattern.matcher(pdfAnnotation.getDestination());
+                                        if (orcidMatcher.find()) {
+                                            // !! here we consider the annot is at the tail or end of the names
+                                            //LF: sometimes there is no token at the end of the name, and the annotation covers all the name.
+                                            String newToken = authorsToken.getText().substring(0, authorsToken.getText().length() - charsCovered);
+                                            if (StringUtils.isNotBlank(newToken)) {
+                                                authorsToken.setText(newToken);
+                                            }
+                                            aut.setORCID(orcidMatcher.group(1) + "-"
+                                                + orcidMatcher.group(2) + "-" + orcidMatcher.group(3)+ "-" + orcidMatcher.group(4));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } 
+
                 TaggingLabel clusterLabel = cluster.getTaggingLabel();
                 Engine.getCntManager().i(clusterLabel);
                 //String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
                 String clusterContent = StringUtils.normalizeSpace(LayoutTokensUtil.toText(cluster.concatTokens()));
-                if (clusterContent.trim().length() == 0)
+                if (StringUtils.isBlank(clusterContent)) {
                     continue;
-                
+                }
+
                 if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_MARKER)) {
                     // a marker introduces a new author, and the marker could be attached to the previous (usual) 
                     // or following author (rare)
@@ -160,7 +193,7 @@ public class AuthorParser {
                     } else {
                         aut.setTitle(clusterContent);
                     }
-                    aut.addLayoutTokens(cluster.concatTokens());
+                    aut.appendLayoutTokens(cluster.concatTokens());
                 } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_FORENAME) || 
                             clusterLabel.equals(TaggingLabels.NAMES_CITATION_FORENAME)) {
                     if (newMarker) {
@@ -178,7 +211,7 @@ public class AuthorParser {
                     } else {
                         aut.setFirstName(clusterContent);
                     }
-                    aut.addLayoutTokens(cluster.concatTokens());
+                    aut.appendLayoutTokens(cluster.concatTokens());
                 } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_MIDDLENAME) || 
                             clusterLabel.equals(TaggingLabels.NAMES_CITATION_MIDDLENAME)) {
                     if (newMarker) {
@@ -189,7 +222,7 @@ public class AuthorParser {
                     } else {
                         aut.setMiddleName(clusterContent);
                     }
-                    aut.addLayoutTokens(cluster.concatTokens());
+                    aut.appendLayoutTokens(cluster.concatTokens());
                 } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_SURNAME) || 
                             clusterLabel.equals(TaggingLabels.NAMES_CITATION_SURNAME)) {
                     if (newMarker) {
@@ -207,7 +240,7 @@ public class AuthorParser {
                     } else {
                         aut.setLastName(clusterContent);
                     }
-                    aut.addLayoutTokens(cluster.concatTokens());
+                    aut.appendLayoutTokens(cluster.concatTokens());
                 } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_SUFFIX) || 
                             clusterLabel.equals(TaggingLabels.NAMES_CITATION_SUFFIX)) {
                     /*if (newMarker) {
@@ -219,7 +252,7 @@ public class AuthorParser {
                     } else {
                         aut.setSuffix(clusterContent);
                     }
-                    aut.addLayoutTokens(cluster.concatTokens());
+                    aut.appendLayoutTokens(cluster.concatTokens());
                 }
             }
 

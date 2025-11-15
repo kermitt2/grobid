@@ -7,7 +7,6 @@ import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 
 /**
- * Created by zholudev on 11/01/16.
  * Representing label that can be tagged
  */
 public class TaggingLabelImpl implements TaggingLabel {
@@ -55,6 +54,6 @@ public class TaggingLabelImpl implements TaggingLabel {
     @Override
     public String getName() {
         final String tmp = getLabel().replaceAll("[<>]", "");
-        return StringUtils.upperCase(getGrobidModel().getModelName() + "_" + tmp.replace(GenericTaggerUtils.START_ENTITY_LABEL_PREFIX, ""));
+        return StringUtils.upperCase(getGrobidModel().getModelName() + "_" + tmp.replace(TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX, ""));
     }
 }

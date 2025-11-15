@@ -10,9 +10,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-/**
- * @author Patrice Lopez
- */
 public class TestReferencesParser extends EngineTest {
 
     public static final String TEST_RESOURCES_PATH = "./src/test/resources/test";

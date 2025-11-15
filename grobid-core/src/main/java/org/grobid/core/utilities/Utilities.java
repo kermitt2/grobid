@@ -21,19 +21,15 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.google.common.primitives.Doubles;
 import org.apache.commons.lang3.StringUtils;
 
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.layout.LayoutToken;
 
-import static shadedwipo.org.apache.commons.lang3.ArrayUtils.isEmpty;
-
 /**
  * Some utilities methods that I don't know where to put.
  *
- * @author Patrice Lopez
  */
 public class Utilities {
 
@@ -57,70 +53,6 @@ public class Utilities {
 		return dir.delete();
 	}
 
-	/**
-	 * Deletes all files and subdirectories under dir if they are older than a given
-	 * amount of seconds. Returns true if all deletions were successful. If a deletion
-	 * fails, the method stops attempting to delete and returns false.
-	 */
-	public static boolean deleteOldies(File dir, int maxLifeInSeconds) {
-		return deleteOldies(dir, maxLifeInSeconds, true);
-	}
-
-	public static boolean deleteOldies(File dir, int maxLifeInSeconds, boolean root) {
-		Date currentDate = new Date();
-		long currentDateMillisec = currentDate.getTime();
-		boolean empty = true;
-		boolean success = true;
-		long threasholdMillisec =  currentDateMillisec - (maxLifeInSeconds*1000);
-		if (dir.isDirectory()) {
-			File[] children = dir.listFiles();
-			for (int i = 0; i < children.length; i++) {
-				long millisec = children[i].lastModified();
-				if (millisec < threasholdMillisec) {
-					success = deleteOldies(children[i], maxLifeInSeconds, false);
-					if (!success) {
-						return false;
-					}
-				}
-				else
-					empty = false;
-			}
-		}
-		// if the dir is a file or if the directory is empty and it is no the root dir, we delete it
-		if (!root && (empty || (!dir.isDirectory())))
-			success = dir.delete();
-		return success;
-	}
-
-	/**
-	 * Cleaninig of the body of text prior to term extraction. Try to remove the
-	 * pdf extraction garbage and the citation marks.
-	 */
-	public static String cleanBody(String text) {
-		if (text == null)
-			return null;
-		String res = "";
-
-		// clean pdf weird output for math. glyphs
-		Pattern cleaner = Pattern.compile("[-]?[a-z][\\d]+[ ]*");
-		// System.out.println("RegEx Syntax error! There is something wrong with my pattern"
-		// + rs);
-		Matcher m = cleaner.matcher(text);
-		res = m.replaceAll("");
-
-		Pattern cleaner2 = Pattern.compile("[\\w]*[@|#|=]+[\\w]+");
-		// System.out.println("RegEx Syntax error! There is something wrong with my pattern"
-		// + rs);
-		Matcher m2 = cleaner2.matcher(res);
-		res = m2.replaceAll("");
-
-		res = res.replace("Introduction", "");
-
-		// clean citation markers?
-
-		return res;
-	}
-
 	public static String uploadFile(String urlmsg, String path, String name) {
 		try {
 			System.out.println("Sending: " + urlmsg);
@@ -128,7 +60,6 @@ public class Utilities {
 
 			File outFile = new File(path, name);
 			FileOutputStream out = new FileOutputStream(outFile);
-			// Writer out = new OutputStreamWriter(os,"UTF-8");
 
 			// Serve the file
 			InputStream in = url.openStream();
@@ -142,10 +73,8 @@ public class Utilities {
 			in.close();
 			return path + name;
 		} catch (Exception e) {
-			throw new GrobidException(
-					"An exception occured while running Grobid.", e);
+			throw new GrobidException("An exception occured while running Grobid.", e);
 		}
-		// return null;
 	}
 
 	public static String punctuationsSub = "([,;])";
@@ -153,6 +82,7 @@ public class Utilities {
 	/**
 	 * Special cleaning for ZFN extracted data in a BiblioItem
 	 */
+	@Deprecated
 	public static BiblioItem cleanZFNMetadata(BiblioItem item) {
 		// general cleaning: remove brackets, parenthesis, etc.
 
@@ -357,8 +287,13 @@ public class Utilities {
 	public static String getOsNameAndArch() {
 		String osPart = System.getProperty("os.name").replace(" ", "")
 				.toLowerCase().substring(0, 3);
+        if (StringUtils.equals(osPart, "mac")) {
+            if (StringUtils.equals(System.getProperty("os.arch"), "aarch64")){
+                osPart = osPart+"_arm";
+            }
+        }
 		String archPart = System.getProperty("sun.arch.data.model");
-		return String.format("%s-%s", osPart, archPart);
+        return String.format("%s-%s", osPart, archPart);
 	}
 
 	/**
@@ -525,10 +460,13 @@ public class Utilities {
 		return finalResult;
 	}
 
-	public static List<OffsetPosition> convertStringOffsetToTokenOffset(
+	/**
+	 * This version uses general LayoutToken offsets relative to the complete document.
+	 * It supposes that the stringPosition have been identified on the complete document string
+	 */
+	public static List<OffsetPosition> convertStringOffsetToTokenOffsetOld(
 		List<OffsetPosition> stringPosition, List<LayoutToken> tokens) {
 		List<OffsetPosition> result = new ArrayList<OffsetPosition>();
-		int indexText = 0;
         int indexToken = 0;
         OffsetPosition currentPosition = null;
         LayoutToken token = null;
@@ -560,6 +498,66 @@ public class Utilities {
                     }
                 }
                 indexToken++;
+            }
+        }
+        return result;
+	}
+
+	/**
+	 * This version uses actual LayoutToken offsets relative to the tokens present in argument only.
+	 * It supposes that the stringPosition have been identified on the provided tokens only, and not 
+	 * restricted to the complete document.
+	 */
+	public static List<OffsetPosition> convertStringOffsetToTokenOffset(
+		List<OffsetPosition> stringPosition, List<LayoutToken> tokens) {
+		List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+		int indexText = 0;
+        int indexToken = 0;
+        OffsetPosition currentPosition = null;
+        LayoutToken token = null;
+        for(OffsetPosition pos : stringPosition) {
+            while(indexToken < tokens.size()) {
+
+                token = tokens.get(indexToken);
+                if (token.getText() == null) {
+                	indexToken++;
+                	continue;
+                }
+                
+                if (indexText >= pos.start) {
+                    // we have a start
+                    currentPosition = new OffsetPosition(indexToken, indexToken);
+                    // we need an end
+                    boolean found = false;
+                    while(indexToken < tokens.size()) {
+                        token = tokens.get(indexToken);
+
+                        if (token.getText() == null) {
+                        	indexToken++;
+                			continue;
+                        }
+
+                        if (indexText+token.getText().length() >= pos.end) {
+                            // we have an end
+                            currentPosition.end = indexToken;
+                            result.add(currentPosition);
+                            found = true;
+                            break;
+                        }
+                        indexToken++;
+                        indexText += token.getText().length();
+                    }
+                    if (found) {
+                        indexToken++;
+                        indexText += token.getText().length();
+                        break;
+                    } else {
+                        currentPosition.end = indexToken-1;
+                        result.add(currentPosition);
+                    }
+                }
+                indexToken++;
+                indexText += token.getText().length();
             }
         }
         return result;

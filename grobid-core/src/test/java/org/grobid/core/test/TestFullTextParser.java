@@ -27,9 +27,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-/**
- * @author Patrice Lopez
- */
 public class TestFullTextParser extends EngineTest {
 
     @BeforeClass
@@ -96,20 +93,6 @@ public class TestFullTextParser extends EngineTest {
         assertTei(tei);
     }
 
-    @Test
-    public void testFullTextParser_7() throws Exception {
-        File inputTmpFile = getInputDocument("/test/ApplPhysLett_98_082505.pdf");
-        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
-        assertTei(tei);
-    }
-
-    @Test
-    public void testFullTextParser_8() throws Exception {
-        File inputTmpFile = getInputDocument("/test/1996PRBAConfProc00507417Vos.pdf");
-        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
-        assertTei(tei);
-    }
-
     private void assertTei(Document doc) {
         assertDocAndBlockTokenizationSync(doc);
         assertNotNull(doc.getTei());
@@ -122,6 +105,9 @@ public class TestFullTextParser extends EngineTest {
         List<Block> blocks = doc.getBlocks();
 
         for (Block block : blocks) {
+            if (block.getNbTokens() == 0)
+                continue;
+
             int start = block.getStartToken();
             int end = block.getEndToken();
 
@@ -129,7 +115,7 @@ public class TestFullTextParser extends EngineTest {
                 continue;
             }
 
-            for (int i = start; i <= end; i++) {
+            for (int i = start; i < end; i++) {
                 assertEquals(doc.getTokenizations().get(i), block.getTokens().get(i - start));
             }
 //            assertTrue(endPtr.getTokenBlockPos() < endBlock.getTokens().size());

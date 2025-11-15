@@ -1,0 +1,4 @@
+#----- begin Hebrew support package (2011-aug-15)
+unicodeMap	ISO-8859-8	/usr/local/share/xpdf/hebrew/ISO-8859-8.unicodeMap
+unicodeMap	Windows-1255	/usr/local/share/xpdf/hebrew/Windows-1255.unicodeMap
+#----- end Hebrew support package

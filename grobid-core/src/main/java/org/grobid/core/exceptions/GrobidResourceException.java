@@ -2,9 +2,6 @@ package org.grobid.core.exceptions;
 
 public class GrobidResourceException extends GrobidException {
 
-    /**
-     *
-     */
     private static final long serialVersionUID = -3337770841815682150L;
 
     public GrobidResourceException() {

@@ -21,7 +21,6 @@ import java.util.TreeMap;
  * Evaluation of the extraction and parsing of the patent and NPL citations present in the patent
  * description.
  *
- * @author Patrice Lopez
  */
 public class PatentEvaluation {
     private String evaluationPath = null;
@@ -35,9 +34,9 @@ public class PatentEvaluation {
     public PatentEvaluation() {
         evaluationPath = AbstractTrainer.getEvalCorpusBasePath().getAbsolutePath();
         outputPath = GrobidProperties.getInstance().getTempPath().getAbsolutePath();
-        taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
-        taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
-        taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_ALL);
+        //taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
+        //taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
+        taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_CITATION);
     }
 
     /**
@@ -88,11 +87,9 @@ public class PatentEvaluation {
 
         PatentParserTrainer ppt = new PatentParserTrainer();
         //noinspection NullableProblems
-        ppt.createDataSet("test", null, evaluationPath, outputPath, 1);
+        ppt.createDataSet("test", evaluationPath, outputPath, 1);
 
         List<GenericTagger> taggers = new ArrayList<GenericTagger>();
-        taggers.add(taggerNPL);
-        taggers.add(taggerPatent);
         taggers.add(taggerAll);
 
         // note: there is no field for these models
@@ -361,7 +358,7 @@ public class PatentEvaluation {
     }
 
     /**
-     * Evaluation of the extraction against the gold corpus for patent reference resolution.
+     * Evaluation of the extraction against the gold corpus for patent reference resolution (non XML format, realized in 2010).
      * Use in particular for a comparison with Ddoc and ACE.
      * @param path file path
      */

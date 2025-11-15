@@ -23,7 +23,6 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
 /**
  * Class for fast matching of word sequences over text stream.
  *
- * @author Patrice Lopez
  */
 public final class FastMatcher {
     private Map terms = null;
@@ -134,26 +133,27 @@ public final class FastMatcher {
      * Load a set of term to the fast matcher from an input stream
      */
     public int loadTerms(InputStream is, org.grobid.core.analyzers.Analyzer analyzer, boolean caseSensitive) throws IOException {
-        InputStreamReader reader = new InputStreamReader(is, UTF_8);
-        BufferedReader bufReader = new BufferedReader(reader);
-        String line;
         if (terms == null) {
             terms = new HashMap();
         }
-        //Map t = terms;
         int nbTerms = 0;
-        //String token = null;
-        while ((line = bufReader.readLine()) != null) {
-            if (line.length() == 0) continue;
-            line = UnicodeUtil.normaliseText(line);
-            line = StringUtils.normalizeSpace(line);
-            if (!caseSensitive)
-                line = line.toLowerCase();
-            nbTerms += loadTerm(line, analyzer, true);
+        try (InputStreamReader reader = new InputStreamReader(is, UTF_8);
+             BufferedReader bufReader = new BufferedReader(reader)) {
+            String line;
+            while ((line = bufReader.readLine()) != null) {
+                if (line.length() == 0) continue;
+                line = UnicodeUtil.normaliseText(line);
+                line = StringUtils.normalizeSpace(line);
+                if (!caseSensitive)
+                    line = line.toLowerCase();
+                nbTerms += loadTerm(line, analyzer, true);
+            }
+        } finally {
+            // Close the input stream if it's not already closed
+            if (is != null) {
+                is.close();
+            }
         }
-        bufReader.close();
-        reader.close();
-
         return nbTerms;
     }
 
@@ -182,11 +182,8 @@ public final class FastMatcher {
         if (isBlank(term))
             return 0;
         Map t = terms;
-        //StringTokenizer st = new StringTokenizer(term, " \n\t" + TextUtilities.fullPunctuations, false);
-        //while (st.hasMoreTokens()) {
         List<String> tokens = analyzer.tokenize(term, new Language("en", 1.0));
         for(String token : tokens) {
-            //token = st.nextToken();
             if (token.length() == 0) {
                 continue;
             }
@@ -256,10 +253,6 @@ public final class FastMatcher {
                 currentPos++;
                 continue;
             }
-            /*if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
-                currentPos++;
-                continue;
-            }*/
 
             if (!caseSensitive) 
                 token = token.toLowerCase();
@@ -450,7 +443,6 @@ public final class FastMatcher {
      * All the matches are returned.
      *
      * @param text: the text to be processed
-     * @param caseSensitive: ensure case sensitive matching or not
      * @return the list of offset positions of the matches referred to the input string, an empty
      * list if no match have been found
      */
@@ -488,11 +480,6 @@ public final class FastMatcher {
                 currentPos++;
                 continue;
             }
-            //ignore tags
-            /*if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
-                currentPos += token.length();
-                continue;
-            }*/
             if (!caseSensitive) 
                 token = token.toLowerCase();
 
@@ -597,11 +584,6 @@ public final class FastMatcher {
                 currentPos++;
                 continue;
             }
-            //ignore tags
-            /*if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
-                currentPos++;
-                continue;
-            }*/
             String tokenString = token.getText();
             if (!caseSensitive)
                 tokenString = tokenString.toLowerCase();
@@ -710,4 +692,3 @@ public final class FastMatcher {
         return "";
     }
 }
-

@@ -1,6 +1,5 @@
 package org.grobid.core.utilities;
 
-import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.layout.LayoutToken;
@@ -16,17 +15,19 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
+
 /**
  * Class for holding static methods for text processing.
  *
- * @author Patrice Lopez
  */
 public class TextUtilities {
 
-    public static final String punctuations = " •*,:;?.!)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
-    public static final String fullPunctuations = "(（[ •*,:;?.!/)）-−–‐«»„\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
-    public static final String restrictedPunctuations = ",:;?.!/-–«»„\"“”‘’'`*\u2666\u2665\u2663\u2660";
-    public static String delimiters = "\n\r\t\f\u00A0" + fullPunctuations;
+    public static final String punctuations = " •*,:;?.!)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0。、，・";
+    public static final String fullPunctuations = "(（[ •*,:;?.!/)）-−–‐«»„\"“”‘’'`$#@]*\u2666\u2665\u2663\u2660\u00A0。、，・";
+    public static final String restrictedPunctuations = ",:;?.!/-–«»„\"“”‘’'`*\u2666\u2665\u2663\u2660。、，・";
+    public static String delimiters = "\n\r\t\f\u00A0\u200C" + fullPunctuations;
 
     public static final String OR = "|";
     public static final String NEW_LINE = "\n";
@@ -47,6 +48,12 @@ public class TextUtilities {
     public static final String ESC_AND = "&amp;";
     public static final String SLASH = "/";
 
+    // note: be careful of catastrophic backtracking here as a consequence of PDF noise! 
+  
+    private static final String ORCIDRegex =
+        "^\\s*(?:(?:https?://)?orcid.org/)?([0-9]{4})\\-?([0-9]{4})\\-?([0-9]{4})\\-?([0-9]{3}[\\dX])\\s*$";
+    static public final Pattern ORCIDPattern = Pattern.compile(ORCIDRegex);
+
     // the magical DOI regular expression...
     static public final Pattern DOIPattern = Pattern
         .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
@@ -66,9 +73,18 @@ public class TextUtilities {
 
     // a regular expression for identifying url pattern in text
     // TODO: maybe find a better regex (better == more robust, not more "standard")
-    static public final Pattern urlPattern = Pattern
+    static public final Pattern urlPattern0 = Pattern
         .compile("(?i)(https?|ftp)\\s?:\\s?//\\s?[-A-Z0-9+&@#/%?=~_()|!:,.;]*[-A-Z0-9+&@#/%=~_()|]");
+    static public final Pattern urlPattern = Pattern
+        .compile("(?i)(https?|ftp)\\s{0,2}:\\s{0,2}//\\s{0,2}[-A-Z0-9+&@#/%?=~_()|!:.;]*[-A-Z0-9+&@#/%=~_()]");
+    static public final Pattern urlPattern1 = Pattern
+        .compile("(?i)(https?|ftp)\\s{0,2}:\\s{0,2}//\\s{0,2}[-A-Z0-9+&@#/%?=~_()|!:.;]*[-A-Z0-9+&@#/%=~_()]|www\\s{0,2}\\.\\s{0,2}[-A-Z0-9+&@#/%?=~_()|!:.;]*[-A-Z0-9+&@#/%=~_()]");
 
+    // a regular expression for identifying email pattern in text
+    // TODO: maybe find a better regex (better == more robust, not more "standard")
+    static public final Pattern emailPattern = Pattern.compile("\\w+((\\.|-|_|,)\\w+)?\\s?((\\.|-|_|,)\\w+)?\\s?@\\s?\\w+(\\s?(\\.|-)\\s?\\w+)+");
+    // variant: \w+(\s?(\.|-|_|,)\w+)?(\s?(\.|-|_|,)\w+)?\s?@\s?\w+(\s?(\.|\-)\s?\w+)+
+    
     /**
      * Replace numbers in the string by a dummy character for string distance evaluations
      *
@@ -433,7 +449,7 @@ public class TextUtilities {
 
     // ad hoc stopword list for the cleanField method
     public final static List<String> stopwords =
-        Arrays.asList("the", "of", "and", "du", "de le", "de la", "des", "der", "an", "und");
+        Arrays.asList("the", "of", "and", "du", "de le", "de la", "des", "der", "an", "und", "for");
 
     /**
      * Remove useless punctuation at the end and beginning of a metadata field.
@@ -1196,13 +1212,9 @@ public class TextUtilities {
 
     public static boolean filterLine(String line) {
         boolean filter = false;
-        if ((line == null) || (line.length() == 0))
+        if (StringUtils.isEmpty(line)) {
             filter = true;
-        else if (line.contains("@IMAGE") || line.contains("@PAGE")) {
-            filter = true;
-        } else if (line.contains(".pbm") || line.contains(".ppm") ||
-            line.contains(".svg") || line.contains(".jpg") ||
-            line.contains(".png")) {
+        } else if (line.contains("@IMAGE") || line.contains("@PAGE")) {
             filter = true;
         }
         return filter;
@@ -1301,5 +1313,300 @@ public class TextUtilities {
             }
         }
         return true;
+    }
+
+    /**
+     * Remove indicated leading and trailing characters from a string 
+     **/
+    public static String removeLeadingAndTrailingChars(String text, String leadingChars, String trailingChars) {
+        text = StringUtils.stripStart(text, leadingChars);
+        text = StringUtils.stripEnd(text, trailingChars);
+        return text;
+    }
+
+    /**
+     * Remove indicated leading and trailing characters from a string represented as a list of LayoutToken.
+     * Indicated leading and trailing characters must be matching exactly the layout token text content. 
+     **/
+    public static List<LayoutToken> removeLeadingAndTrailingCharsLayoutTokens(List<LayoutToken> tokens, String leadingChars, String trailingChars) {
+        if (tokens == null)
+            return tokens;
+        if (tokens.size() == 0)
+            return tokens;
+
+        int start = 0;
+        for(int i=0; i<tokens.size(); i++) {
+            LayoutToken token = tokens.get(i);
+            if (token.getText() == null || token.getText().length() == 0) {
+                start++;
+                continue;
+            } else if (token.getText().length() > 1) {
+                break;
+            } else if (leadingChars.contains(token.getText())) {
+                start++;
+            } else
+                break;
+        }
+
+        int end = tokens.size();
+        for(int i=end; i>0; i--) {
+            LayoutToken token = tokens.get(i-1);
+            if (token.getText() == null || token.getText().length() == 0) {
+                end--;
+                continue;
+            } else if (token.getText().length() > 1) {
+                break;
+            } else if (trailingChars.contains(token.getText())) {
+                end--;
+            } else
+                break;
+        }
+
+        if (start == end || end < start) {
+            // we return an empty list
+            return new ArrayList<LayoutToken>();
+        }
+
+        return tokens.subList(start, end);
+    }
+
+    /**
+     * Remove ad-hoc list of stopwords for extracted field
+     **/
+    public static String removeFieldStopwords(String text) {
+        List<String> tokens = GrobidAnalyzer.getInstance().tokenize(text);
+        List<String> filteredTokens = new ArrayList<>();
+        for(String token : tokens) {
+            if (!stopwords.contains(token)) {
+                filteredTokens.add(token);
+            }
+        }
+
+        String finalText = String.join("", filteredTokens);
+        finalText = finalText.replace("'s", " ");
+        finalText = finalText.replace(",", " ");
+        finalText = finalText.replace(".", " ");
+        finalText = finalText.replaceAll("( )+", " ");
+        return finalText;
+    }
+
+
+    /**
+     * Detect in a string possible trailing acronyms, introduced in parenthesis after a full name. 
+     * We can typically use it on the affiliation full name, but it can also be applied to longer
+     * texts. 
+     * 
+     * Return a Map with an acronym position and the corresponding full name position
+     **/
+    public static Map<OffsetPosition, OffsetPosition> acronymCandidates(List<LayoutToken> tokens) {
+        Map<OffsetPosition, OffsetPosition> acronyms = null;
+
+        boolean openParenthesis = false;
+        int posParenthesis = -1;
+        int i = 0;
+        LayoutToken acronym = null;
+        for (LayoutToken token : tokens) {
+            if (token.getText() == null) {
+                i++;
+                continue;
+            }
+            if (token.getText().equals("(")) {
+                openParenthesis = true;
+                posParenthesis = i;
+                acronym = null;
+            } else if (token.getText().equals(")")) {
+                openParenthesis = false;
+            } else if (openParenthesis) {
+                if (TextUtilities.isAllUpperCaseOrDigitOrDot(token.getText())) {
+                    acronym = token;
+                } else {
+                    acronym = null;
+                }
+            }
+
+            if ((acronym != null) && (!openParenthesis)) {
+                // check if this possible acronym matches an immediately preceeding term
+                int j = posParenthesis;
+                int k = acronym.getText().length();
+                boolean stop = false;
+                while ((k > 0) && (!stop)) {
+                    k--;
+                    char c = acronym.getText().toLowerCase().charAt(k);
+                    while ((j > 0) && (!stop)) {
+                        j--;
+                        if (tokens.get(j) != null) {
+                            String tok = tokens.get(j).getText();
+                            if (tok.trim().length() == 0 || delimiters.contains(tok))
+                                continue;
+                            boolean numericMatch = false;
+                            if ((tok.length() > 1) && StringUtils.isNumeric(tok)) {
+                                // when the token is all digit, it often appears in full as such in the
+                                // acronym (e.g. GDF15)
+                                String acronymCurrentPrefix = acronym.getText().substring(0, k + 1);
+                                //System.out.println("acronymCurrentPrefix: " + acronymCurrentPrefix);
+                                if (acronymCurrentPrefix.endsWith(tok)) {
+                                    // there is a full number match
+                                    k = k - tok.length() + 1;
+                                    numericMatch = true;
+                                    //System.out.println("numericMatch is: " + numericMatch);
+                                }
+                            }
+
+                            if ((tok.toLowerCase().charAt(0) == c) || numericMatch) {
+                                if (k == 0) {
+                                    if (acronyms == null)
+                                        acronyms = new HashMap<>();
+                                    List<LayoutToken> baseTokens = new ArrayList<>();
+                                    StringBuilder builder = new StringBuilder();
+                                    for (int l = j; l < posParenthesis; l++) {
+                                        builder.append(tokens.get(l));
+                                        baseTokens.add(tokens.get(l));
+                                    }
+
+                                    OffsetPosition acronymPosition = new OffsetPosition();
+                                    acronymPosition.start = acronym.getOffset();
+                                    acronymPosition.end = acronym.getOffset() + acronym.getText().length();
+
+                                    OffsetPosition basePosition = new OffsetPosition();
+                                    basePosition.start = tokens.get(j).getOffset();
+                                    basePosition.end = tokens.get(j).getOffset() + acronym.getText().length();
+
+                                    acronyms.put(acronymPosition, basePosition);
+                                    stop = true;
+                                } else
+                                    break;
+                            } else {
+                                stop = true;
+                            }
+                        }
+                    }
+                }
+                acronym = null;
+                posParenthesis = -1;
+            }
+            i++;
+        }
+        return acronyms;
+    }
+
+    /**
+     * Detect in a short string field a possible trailing acronyms, introduced in parenthesis after a full name. 
+     * We can typically use it on the affiliation full name. 
+     * 
+     * Return the token offset positions of the acronym and the corresponding full name, null otherwise
+     **/
+    public static org.apache.commons.lang3.tuple.Pair<OffsetPosition, OffsetPosition> fieldAcronymCandidate(List<LayoutToken> tokens) {
+        if (tokens == null || tokens.size() == 0) 
+            return null;
+
+        boolean openParenthesis = false;
+        int posParenthesis = -1;
+        int i = 0;
+        LayoutToken acronym = null;
+        int acronymStartIndex = 0;
+        OffsetPosition acronymPosition = null;
+        OffsetPosition basePosition = null;
+        for (LayoutToken token : tokens) {
+            if (token.getText() == null) {
+                i++;
+                continue;
+            }
+            if (token.getText().equals("(")) {
+                openParenthesis = true;
+                posParenthesis = i;
+                acronym = null;
+            } else if (token.getText().equals(")")) {
+                openParenthesis = false;
+            } else if (openParenthesis) {
+                if (TextUtilities.isAllUpperCaseOrDigitOrDot(token.getText())) {
+                    acronym = token;
+                    acronymStartIndex = i;
+                } else {
+                    acronym = null;
+                }
+            }
+
+            if ((acronym != null) && (!openParenthesis)) {
+                acronymPosition = new OffsetPosition();
+                acronymPosition.start = acronymStartIndex;
+                acronymPosition.end = acronymStartIndex + 1;
+
+                int j = posParenthesis;
+                boolean stop =false;
+                while ((j > 0) && (!stop)) {
+                    j--;
+                    String tok = tokens.get(j).getText();
+                    if (tok.trim().length() == 0 || delimiters.contains(tok))
+                        continue;
+                    stop = true;
+                }
+
+                basePosition = new OffsetPosition();
+                basePosition.start = 0;
+                basePosition.end = j+1;
+            }
+
+            i++;
+        }
+
+        if (acronymPosition != null && basePosition != null)
+            return org.apache.commons.lang3.tuple.Pair.of(acronymPosition, basePosition);
+        else
+            return null;
+    }
+
+    public static List<OffsetPosition> matchTokenAndString(List<LayoutToken> layoutTokens, String text, List<OffsetPosition> positions) {
+        List<OffsetPosition> newPositions = new ArrayList<>();
+        StringBuilder accumulator = new StringBuilder();
+        int pos = 0;
+        int textPositionOfToken = 0;
+
+        for (OffsetPosition position : positions) {
+            List<LayoutToken> annotationTokens = layoutTokens.subList(position.start, position.end);
+            boolean first = true;
+            accumulator = new StringBuilder();
+            for (int i = 0; i < annotationTokens.size(); i++) {
+                LayoutToken token = annotationTokens.get(i);
+                if (StringUtils.isEmpty(token.getText()))
+                    continue;
+                textPositionOfToken = text.indexOf(token.getText(), pos);
+                if (textPositionOfToken != -1) {
+                    //We update pos only at the first token of the annotation positions
+                    if (first) {
+                        pos = textPositionOfToken;
+                        first = false;
+                    }
+                    accumulator.append(token);
+                } else {
+                    if (SentenceUtilities.toSkipToken(token.getText())) {
+                        continue;
+                    }
+                    if (StringUtils.isNotEmpty(accumulator)) {
+                        int accumulatorTextLength = accumulator.toString().length();
+                        int start = text.indexOf(accumulator.toString(), pos);
+                        int end = start + accumulatorTextLength;
+                        newPositions.add(new OffsetPosition(start, end));
+                        pos = end;
+                        break;
+                    }
+                    pos = textPositionOfToken;
+                }
+            }
+            if (StringUtils.isNotEmpty(accumulator)) {
+                int annotationTextLength = accumulator.toString().length();
+                int start = text.indexOf(accumulator.toString(), pos);
+                int end = start + annotationTextLength;
+                newPositions.add(new OffsetPosition(start, end));
+                pos = end;
+                accumulator = new StringBuilder();
+            }
+
+        }
+        if (StringUtils.isNotEmpty(accumulator)) {
+            int start = text.indexOf(accumulator.toString(), pos);
+            newPositions.add(new OffsetPosition(start, start + accumulator.toString().length()));
+        }
+
+        return newPositions;
     }
 }

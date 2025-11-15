@@ -15,8 +15,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * User: zholudev
- * Date: 2/26/14
+ *  DEPRECATED ! 
+ *
+ *  A machine learning model is used now to segment references, see org.grobid.core.engines.ReferenceSegmenterParser
+ * 
  */
 public class RegexReferenceSegmenter implements ReferenceSegmenter {
     private static final Pattern m1 = Pattern.compile("((^|\\n)( )*\\[.+?\\])");

@@ -5,7 +5,6 @@ public class GrobidException extends RuntimeException {
 
     private static final long serialVersionUID = -3337770841815682150L;
 
-
     public GrobidException() {
         super();
     }

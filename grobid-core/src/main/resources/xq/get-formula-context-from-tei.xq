@@ -32,5 +32,3 @@ return
         (: coordinates :)
         if (not($coords)) then "" else $coords
 )
-
-

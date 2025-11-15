@@ -28,10 +28,11 @@
 							<address>
 								<settlement>Suita</settlement>,
 								<region>Osaka</region>,
-								<country key="JP">Japan and</country>
-								<lb/>
+								<country key="JP">Japan</country>
 							</address>
 						</affiliation>
+						and
+						<lb/>
 						<affiliation>
 							<marker>3</marker>
 							<orgName type="department">Epidemiology and Prevention Division</orgName>,

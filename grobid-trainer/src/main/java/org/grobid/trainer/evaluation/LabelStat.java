@@ -1,6 +1,8 @@
 package org.grobid.trainer.evaluation;
 
-/** Model the results for each label **/
+/** 
+ *  Model the results for each label 
+ */
 public final class LabelStat {
     private int falsePositive = 0;
     private int falseNegative = 0;
@@ -146,7 +148,7 @@ public final class LabelStat {
     }
 
     public boolean hasChanged() {
-        Boolean oldValue = new Boolean(hasChanged);
+        boolean oldValue = hasChanged;
         hasChanged = false;
         return oldValue;
     }

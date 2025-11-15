@@ -11,6 +11,8 @@ import org.grobid.core.exceptions.GrobidResourceException;
 import jep.Jep;
 import jep.JepConfig;
 import jep.JepException;
+import jep.SubInterpreter;
+import jep.SharedInterpreter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,14 +23,13 @@ import org.slf4j.LoggerFactory;
  * must be reused for all method calls to that JEP instance. For ensuring this,
  * we pool the Jep instances in a singleton class.
  */
-
 public class JEPThreadPool {
     private static final Logger LOGGER = LoggerFactory.getLogger(JEPThreadPool.class);
 
     private int POOL_SIZE = 1;
 
-    private ExecutorService executor;
-    private Map<Long, Jep> jepInstances;
+    private final ExecutorService executor;
+    private final ConcurrentMap<Long, Jep> jepInstances;
 
     private static volatile JEPThreadPool instance;
 
@@ -56,6 +57,12 @@ public class JEPThreadPool {
         executor = Executors.newSingleThreadExecutor();
         // each of these threads is associated to a JEP instance
         jepInstances = new ConcurrentHashMap<>();
+
+        // Add a shutdown hook to close all JEP instances when the JVM exits
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            LOGGER.info("JVM shutdown detected, closing all JEP instances");
+            shutdown();
+        }));
     }
 
     private File getAndValidateDelftPath() {
@@ -72,7 +79,8 @@ public class JEPThreadPool {
     private JepConfig getJepConfig(File delftPath, Path sitePackagesPath) {
         JepConfig config = new JepConfig();
         config.addIncludePaths(delftPath.getAbsolutePath());
-        config.setRedirectOutputStreams(GrobidProperties.isDeLFTRedirectOutput());
+        config.redirectStdout(System.out);
+        config.redirectStdErr(System.err);
         if (sitePackagesPath != null) {
             config.addIncludePaths(sitePackagesPath.toString());
         }
@@ -83,8 +91,6 @@ public class JEPThreadPool {
     private void initializeJepInstance(Jep jep, File delftPath) throws JepException {
         // import packages
         jep.eval("import os");
-        jep.eval("import numpy as np");
-        jep.eval("import keras.backend as K");
         jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
         jep.eval("from delft.utilities.Embeddings import Embeddings");
         jep.eval("import delft.sequenceLabelling");
@@ -103,7 +109,13 @@ public class JEPThreadPool {
                 delftPath,
                 PythonEnvironmentConfig.getInstance().getSitePackagesPath()
             );
-            jep = new Jep(config);
+            //jep = new SubInterpreter(config);
+            try {
+                SharedInterpreter.setConfig(config);
+            } catch(Exception e) {
+                LOGGER.info("JEP interpreter already initialized");
+            }
+            jep = new SharedInterpreter();
             this.initializeJepInstance(jep, delftPath);
             success = true;
             return jep;
@@ -113,12 +125,20 @@ public class JEPThreadPool {
         } catch(GrobidResourceException e) {
             LOGGER.error("DeLFT installation path invalid, JEP initialization failed", e);
             throw new RuntimeException("DeLFT installation path invalid, JEP initialization failed", e);
+        } catch (UnsatisfiedLinkError e) {
+            LOGGER.error("JEP environment not correctly installed or has incompatible binaries, JEP initialization failed", e);
+            throw new RuntimeException("JEP environment not correctly installed or has incompatible binaries, JEP initialization failed", e);
         } finally {
-            if (!success && (jep != null)) {
-                try {
-                    jep.close();
-                } catch (JepException e) {
-                    LOGGER.error("failed to close JEP instance", e);
+            if (!success) {
+                if (jep != null) {
+                    try {
+                        jep.close();
+                    } catch (JepException e) {
+                        LOGGER.error("Failed to close JEP instance", e);
+                    }
+                } else {
+                    LOGGER.error("JEP initialisation failed");
+                    throw new RuntimeException("JEP initialisation failed");
                 }
             }
         }
@@ -148,7 +168,7 @@ public class JEPThreadPool {
     }
 
     public void run(Runnable task) throws InterruptedException {
-        System.out.println("running thread: " + Thread.currentThread().getId());
+        LOGGER.debug("running thread: " + Thread.currentThread().getId());
         Future future = executor.submit(task);
         // wait until done (in ms)
         while (!future.isDone()) {
@@ -162,4 +182,48 @@ public class JEPThreadPool {
         return future.get();
     }
 
+    /**
+     * Close the JEP instance for the current thread and remove it from the map.
+     * This should be called when the thread is done using JEP to free resources.
+     */
+    public synchronized void closeCurrentJEPInstance() {
+        long threadId = Thread.currentThread().getId();
+        Jep jep = jepInstances.remove(threadId);
+        if (jep != null) {
+            try {
+                LOGGER.info("Closing JEP instance for thread " + threadId);
+                jep.close();
+            } catch (JepException e) {
+                LOGGER.error("Failed to close JEP instance for thread " + threadId, e);
+            }
+        }
+    }
+
+    /**
+     * Close all JEP instances and shutdown the executor.
+     * This should be called when the application is shutting down.
+     */
+    public synchronized void shutdown() {
+        LOGGER.info("Shutting down JEPThreadPool");
+        // Close all JEP instances
+        for (Map.Entry<Long, Jep> entry : jepInstances.entrySet()) {
+            try {
+                LOGGER.info("Closing JEP instance for thread " + entry.getKey());
+                entry.getValue().close();
+            } catch (JepException e) {
+                LOGGER.error("Failed to close JEP instance for thread " + entry.getKey(), e);
+            }
+        }
+        jepInstances.clear();
+
+        // Shutdown the executor
+        executor.shutdown();
+        try {
+            if (!executor.awaitTermination(5, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
+        }
+    }
 }

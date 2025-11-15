@@ -11,7 +11,6 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
 public class GrobidDefaultAnalyzerTest {
-
     GrobidDefaultAnalyzer target;
 
     @Before

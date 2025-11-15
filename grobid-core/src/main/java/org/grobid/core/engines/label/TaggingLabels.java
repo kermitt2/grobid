@@ -8,9 +8,6 @@ import org.grobid.core.utilities.Pair;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/**
- * Created by lfoppiano on 25/11/16.
- */
 public class TaggingLabels {
 
     protected static final ConcurrentMap<Pair<GrobidModel, String>, TaggingLabel> cache = new ConcurrentHashMap<>();
@@ -29,6 +26,9 @@ public class TaggingLabels {
     public final static String OTHER_LABEL = "<other>";
 
     //Grobid specific labels
+
+    public final static String AVAILABILITY_LABEL = "<availability>";
+    public final static String FUNDING_LABEL = "<funding>";
 
     public static final String CITATION_MARKER_LABEL = "<citation_marker>";
     public static final String TABLE_MARKER_LABEL = "<table_marker>";
@@ -62,7 +62,6 @@ public class TaggingLabels {
     public final static String INSTITUTION_LABEL = "<institution>";
     public final static String NOTE_LABEL = "<note>";
     public final static String REFERENCE_LABEL = "<reference>";
-    public final static String GRANT_LABEL = "<grant>";
     public final static String COPYRIGHT_LABEL = "<copyright>";
     public final static String AFFILIATION_LABEL = "<affiliation>";
     public final static String ADDRESS_LABEL = "<address>";
@@ -75,11 +74,17 @@ public class TaggingLabels {
     public final static String DEDICATION_LABEL = "<dedication>";
     public final static String SUBMISSION_LABEL = "<submission>";
     public final static String ENTITLE_LABEL = "<entitle>";
-    public final static String INTRO_LABEL = "<intro>";
+    //public final static String INTRO_LABEL = "<intro>";
+    public final static String VERSION_LABEL = "<version>";
+    public final static String DOCTYPE_LABEL = "<doctype>";
+    public final static String DOWNLOAD_LABEL = "<date-download>";
+    public final static String WORKINGGROUP_LABEL = "<group>";
+    public final static String MEETING_LABEL = "<meeting>";
 
     public final static String COLLABORATION_LABEL = "<collaboration>";
     public final static String JOURNAL_LABEL = "<journal>";
     public final static String BOOKTITLE_LABEL = "<booktitle>";
+    public final static String SERIES_LABEL = "<series>";
     public final static String VOLUME_LABEL = "<volume>";
     public final static String ISSUE_LABEL = "<issue>";
     public final static String PAGES_LABEL = "<pages>";
@@ -104,6 +109,30 @@ public class TaggingLabels {
     public final static String GLOSSARY_LABEL = "<glossary>";
     public final static String BACK_LABEL = "<back>";
 
+    public final static String PATENT_CITATION_PL_LABEL = "<refPatent>";
+    public final static String PATENT_CITATION_NPL_LABEL = "<refNPL>";
+
+    public final static String FUNDER_NAME_LABEL = "<funderName>";
+    public final static String FUNDER_ABBRV_NAME_LABEL = "<funderAbbrv>";
+    public final static String PROGRAM_NAME_LABEL = "<programName>";
+    public final static String PROGRAM_ABBRV_NAME_LABEL = "<programAbbrv>";
+    public final static String GRANT_NUMBER_LABEL = "<grantNumber>";
+    public final static String GRANT_NAME_LABEL = "<grantName>";
+    public final static String PROJECT_NAME_LABEL = "<projectName>";
+    public final static String PROJECT_ABBRV_NAME_LABEL = "<projectAbbrv>";
+    public final static String URL_LABEL = "<url>";
+    public final static String PERSON_LABEL = "<person>";
+    public final static String INFRASTRUCTURE_LABEL = "<infrastructure>";
+
+    public final static String DEPARTMENT_LABEL = "<department>";
+    public final static String LABORATORY_LABEL = "<laboratory>";
+    public final static String COUNTRY_LABEL = "<country>";
+    public final static String POSTCODE_LABEL = "<postCode>";
+    public final static String POSTBOX_LABEL = "<postBox>";
+    public final static String REGION_LABEL = "<region>";
+    public final static String SETTLEMENT_LABEL = "<settlement>";
+    public final static String ADDRESSLINE_LABEL = "<addrLine>";
+    
 
     /* title page (secondary title page)
      *       publisher page (publication information, including usually the copyrights info) 
@@ -148,7 +177,7 @@ public class TaggingLabels {
     public static final TaggingLabel HEADER_NOTE = new TaggingLabelImpl(GrobidModels.HEADER, NOTE_LABEL);
     public static final TaggingLabel HEADER_OTHER = new TaggingLabelImpl(GrobidModels.HEADER, OTHER_LABEL);
     public static final TaggingLabel HEADER_REFERENCE = new TaggingLabelImpl(GrobidModels.HEADER, REFERENCE_LABEL);
-    public static final TaggingLabel HEADER_GRANT = new TaggingLabelImpl(GrobidModels.HEADER, GRANT_LABEL);
+    public static final TaggingLabel HEADER_FUNDING = new TaggingLabelImpl(GrobidModels.HEADER, FUNDING_LABEL);
     public static final TaggingLabel HEADER_COPYRIGHT = new TaggingLabelImpl(GrobidModels.HEADER, COPYRIGHT_LABEL);
     public static final TaggingLabel HEADER_AFFILIATION = new TaggingLabelImpl(GrobidModels.HEADER, AFFILIATION_LABEL);
     public static final TaggingLabel HEADER_ADDRESS = new TaggingLabelImpl(GrobidModels.HEADER, ADDRESS_LABEL);
@@ -161,8 +190,16 @@ public class TaggingLabels {
     public static final TaggingLabel HEADER_DEDICATION = new TaggingLabelImpl(GrobidModels.HEADER, DEDICATION_LABEL);
     public static final TaggingLabel HEADER_SUBMISSION = new TaggingLabelImpl(GrobidModels.HEADER, SUBMISSION_LABEL);
     public static final TaggingLabel HEADER_ENTITLE = new TaggingLabelImpl(GrobidModels.HEADER, ENTITLE_LABEL);
-    public static final TaggingLabel HEADER_INTRO = new TaggingLabelImpl(GrobidModels.HEADER, INTRO_LABEL);
+    //public static final TaggingLabel HEADER_INTRO = new TaggingLabelImpl(GrobidModels.HEADER, INTRO_LABEL);
     public static final TaggingLabel HEADER_COLLABORATION = new TaggingLabelImpl(GrobidModels.HEADER, COLLABORATION_LABEL);
+    public static final TaggingLabel HEADER_VERSION = new TaggingLabelImpl(GrobidModels.HEADER, VERSION_LABEL);
+    public static final TaggingLabel HEADER_DOCTYPE = new TaggingLabelImpl(GrobidModels.HEADER, DOCTYPE_LABEL);
+    public static final TaggingLabel HEADER_DOWNLOAD = new TaggingLabelImpl(GrobidModels.HEADER, DOWNLOAD_LABEL);
+    public static final TaggingLabel HEADER_WORKINGGROUP = new TaggingLabelImpl(GrobidModels.HEADER, WORKINGGROUP_LABEL);
+    public static final TaggingLabel HEADER_MEETING = new TaggingLabelImpl(GrobidModels.HEADER, MEETING_LABEL);
+    public static final TaggingLabel HEADER_PUBLISHER = new TaggingLabelImpl(GrobidModels.HEADER, PUBLISHER_LABEL);
+    public static final TaggingLabel HEADER_JOURNAL = new TaggingLabelImpl(GrobidModels.HEADER, JOURNAL_LABEL);
+    public static final TaggingLabel HEADER_AVAILABILITY = new TaggingLabelImpl(GrobidModels.HEADER, AVAILABILITY_LABEL);
 
     public static final TaggingLabel DATE_YEAR = new TaggingLabelImpl(GrobidModels.DATE, DATE_YEAR_LABEL);
     public static final TaggingLabel DATE_MONTH = new TaggingLabelImpl(GrobidModels.DATE, DATE_MONTH_LABEL);
@@ -188,7 +225,6 @@ public class TaggingLabels {
     public static final TaggingLabel CITATION_AUTHOR = new TaggingLabelImpl(GrobidModels.CITATION, AUTHOR_LABEL);
     public static final TaggingLabel CITATION_EDITOR = new TaggingLabelImpl(GrobidModels.CITATION, EDITOR_LABEL);
     public static final TaggingLabel CITATION_DATE = new TaggingLabelImpl(GrobidModels.CITATION, DATE_LABEL);
-    public static final TaggingLabel CITATION_KEYWORD = new TaggingLabelImpl(GrobidModels.CITATION, KEYWORD_LABEL);
     public static final TaggingLabel CITATION_INSTITUTION = new TaggingLabelImpl(GrobidModels.CITATION, INSTITUTION_LABEL);
     public static final TaggingLabel CITATION_NOTE = new TaggingLabelImpl(GrobidModels.CITATION, NOTE_LABEL);
     public static final TaggingLabel CITATION_TECH = new TaggingLabelImpl(GrobidModels.CITATION, TECH_LABEL);
@@ -199,6 +235,8 @@ public class TaggingLabels {
     public static final TaggingLabel CITATION_PUBLISHER = new TaggingLabelImpl(GrobidModels.CITATION, PUBLISHER_LABEL);
     public static final TaggingLabel CITATION_WEB = new TaggingLabelImpl(GrobidModels.CITATION, WEB_LABEL);
     public static final TaggingLabel CITATION_PUBNUM = new TaggingLabelImpl(GrobidModels.CITATION, PUBNUM_LABEL);
+    public static final TaggingLabel CITATION_SERIES = new TaggingLabelImpl(GrobidModels.CITATION, SERIES_LABEL);
+    public static final TaggingLabel CITATION_OTHER = new TaggingLabelImpl(GrobidModels.CITATION, OTHER_LABEL);
 
     public static final TaggingLabel NAMES_HEADER_MARKER = new TaggingLabelImpl(GrobidModels.NAMES_HEADER, MARKER_LABEL);
     public static final TaggingLabel NAMES_HEADER_TITLE = new TaggingLabelImpl(GrobidModels.NAMES_HEADER, TITLE_LABEL);
@@ -212,6 +250,9 @@ public class TaggingLabels {
     public static final TaggingLabel NAMES_CITATION_MIDDLENAME = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, MIDDLENAME_LABEL);
     public static final TaggingLabel NAMES_CITATION_SURNAME = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, SURNAME_LABEL);
     public static final TaggingLabel NAMES_CITATION_SUFFIX = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, SUFFIX_LABEL);
+
+    public static final TaggingLabel PATENT_CITATION_PL = new TaggingLabelImpl(GrobidModels.PATENT_CITATION, PATENT_CITATION_PL_LABEL);
+    public static final TaggingLabel PATENT_CITATION_NPL = new TaggingLabelImpl(GrobidModels.PATENT_CITATION, PATENT_CITATION_NPL_LABEL);
 
     public static final TaggingLabel MONOGRAPH_COVER = new TaggingLabelImpl(GrobidModels.MONOGRAPH, COVER_LABEL);
     public static final TaggingLabel MONOGRAPH_TITLE = new TaggingLabelImpl(GrobidModels.MONOGRAPH, TITLE_LABEL);
@@ -230,6 +271,33 @@ public class TaggingLabels {
     public static final TaggingLabel MONOGRAPH_GLOSSARY = new TaggingLabelImpl(GrobidModels.MONOGRAPH, GLOSSARY_LABEL);
     public static final TaggingLabel MONOGRAPH_BACK = new TaggingLabelImpl(GrobidModels.MONOGRAPH, BACK_LABEL);
     public static final TaggingLabel MONOGRAPH_OTHER = new TaggingLabelImpl(GrobidModels.MONOGRAPH, OTHER_LABEL);
+    
+    public static final TaggingLabel FUNDING_FUNDER_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, FUNDER_NAME_LABEL);
+    public static final TaggingLabel FUNDING_FUNDER_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, FUNDER_ABBRV_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROGRAM_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PROGRAM_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROGRAM_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PROGRAM_ABBRV_NAME_LABEL);
+    public static final TaggingLabel FUNDING_GRANT_NUMBER = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, GRANT_NUMBER_LABEL);
+    public static final TaggingLabel FUNDING_GRANT_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, GRANT_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROJECT_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PROJECT_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROJECT_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PROJECT_ABBRV_NAME_LABEL);
+    public static final TaggingLabel FUNDING_URL = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, URL_LABEL);
+    public static final TaggingLabel FUNDING_PERSON = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PERSON_LABEL);
+    public static final TaggingLabel FUNDING_INSTITUTION = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, INSTITUTION_LABEL);
+    public static final TaggingLabel FUNDING_INFRASTRUCTURE = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, INFRASTRUCTURE_LABEL);
+    public static final TaggingLabel FUNDING_AFFILIATION = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, AFFILIATION_LABEL);
+    public static final TaggingLabel FUNDING_OTHER = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, OTHER_LABEL);
+
+    public static final TaggingLabel AFFILIATION_MARKER = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, MARKER_LABEL);
+    public static final TaggingLabel AFFILIATION_INSTITUTION = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, INSTITUTION_LABEL);
+    public static final TaggingLabel AFFILIATION_DEPARTMENT = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, DEPARTMENT_LABEL);
+    public static final TaggingLabel AFFILIATION_LABORATORY = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, LABORATORY_LABEL);
+    public static final TaggingLabel AFFILIATION_COUNTRY = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, COUNTRY_LABEL);
+    public static final TaggingLabel AFFILIATION_POSTCODE = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, POSTCODE_LABEL);
+    public static final TaggingLabel AFFILIATION_POSTBOX = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, POSTBOX_LABEL);
+    public static final TaggingLabel AFFILIATION_REGION = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, REGION_LABEL);
+    public static final TaggingLabel AFFILIATION_SETTLEMENT = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, SETTLEMENT_LABEL);
+    public static final TaggingLabel AFFILIATION_ADDRESSLINE = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, ADDRESSLINE_LABEL);
+    public static final TaggingLabel AFFILIATION_OTHER = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, OTHER_LABEL);
     
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
@@ -255,14 +323,14 @@ public class TaggingLabels {
         register(HEADER_TITLE);
         register(HEADER_ABSTRACT);
         register(HEADER_AUTHOR);
-        register(HEADER_LOCATION);
-        register(HEADER_DATESUB);
+        //register(HEADER_LOCATION);
+        //register(HEADER_DATESUB);
         register(HEADER_EDITOR);
-        register(HEADER_INSTITUTION);
+        //register(HEADER_INSTITUTION);
         register(HEADER_NOTE);
         register(HEADER_OTHER);
         register(HEADER_REFERENCE);
-        register(HEADER_GRANT);
+        register(HEADER_FUNDING);
         register(HEADER_COPYRIGHT);
         register(HEADER_AFFILIATION);
         register(HEADER_ADDRESS);
@@ -270,13 +338,22 @@ public class TaggingLabels {
         register(HEADER_PUBNUM);
         register(HEADER_KEYWORD);
         register(HEADER_PHONE);
-        register(HEADER_DEGREE);
+        //register(HEADER_DEGREE);
         register(HEADER_WEB);
-        register(HEADER_DEDICATION);
+        //register(HEADER_DEDICATION);
         register(HEADER_SUBMISSION);
-        register(HEADER_ENTITLE);
-        register(HEADER_INTRO);
-        register(HEADER_COLLABORATION);
+        //register(HEADER_ENTITLE);
+        //register(HEADER_INTRO);
+        //register(HEADER_COLLABORATION);
+        //register(HEADER_VERSION);
+        register(HEADER_DOCTYPE);
+        //register(HEADER_DOWNLOAD);
+        register(HEADER_WORKINGGROUP);
+        register(HEADER_MEETING);
+        register(HEADER_PUBLISHER);
+        register(HEADER_JOURNAL);
+        register(HEADER_PAGE);
+        register(HEADER_AVAILABILITY);
 
         //date
         register(DATE_YEAR);
@@ -305,7 +382,6 @@ public class TaggingLabels {
         register(CITATION_AUTHOR);
         register(CITATION_EDITOR);
         register(CITATION_DATE);
-        register(CITATION_KEYWORD);
         register(CITATION_INSTITUTION);
         register(CITATION_NOTE);
         register(CITATION_TECH);
@@ -316,6 +392,8 @@ public class TaggingLabels {
         register(CITATION_PUBLISHER);
         register(CITATION_WEB);
         register(CITATION_PUBNUM);
+        register(CITATION_OTHER);
+        register(CITATION_SERIES);
 
         // person names
         register(NAMES_HEADER_MARKER);
@@ -330,6 +408,10 @@ public class TaggingLabels {
         register(NAMES_CITATION_MIDDLENAME);
         register(NAMES_CITATION_SURNAME);
         register(NAMES_CITATION_SUFFIX);
+
+        // citations in patent
+        register(PATENT_CITATION_PL);
+        register(PATENT_CITATION_NPL);
 
         // monograph
         register(MONOGRAPH_COVER);
@@ -350,9 +432,35 @@ public class TaggingLabels {
         register(MONOGRAPH_BACK);
         register(MONOGRAPH_OTHER);
 
+        // funding-acknowledgement
+        register(FUNDING_FUNDER_NAME);
+        register(FUNDING_FUNDER_ABBRV_NAME);
+        register(FUNDING_PROGRAM_NAME);
+        register(FUNDING_PROGRAM_ABBRV_NAME);
+        register(FUNDING_GRANT_NUMBER);
+        register(FUNDING_GRANT_NAME);
+        register(FUNDING_PROJECT_NAME);
+        register(FUNDING_PROJECT_ABBRV_NAME);
+        register(FUNDING_URL);
+        register(FUNDING_PERSON);
+        register(FUNDING_AFFILIATION);
+        register(FUNDING_INSTITUTION);
+        register(FUNDING_OTHER);
+        register(FUNDING_INFRASTRUCTURE);
 
+        // affiliation-address
+        register(AFFILIATION_MARKER);
+        register(AFFILIATION_INSTITUTION);
+        register(AFFILIATION_DEPARTMENT);
+        register(AFFILIATION_LABORATORY);
+        register(AFFILIATION_COUNTRY);
+        register(AFFILIATION_POSTCODE);
+        register(AFFILIATION_POSTBOX);
+        register(AFFILIATION_REGION);
+        register(AFFILIATION_SETTLEMENT);
+        register(AFFILIATION_ADDRESSLINE);
+        register(AFFILIATION_OTHER);
     }
-
 
     protected TaggingLabels() {
     }

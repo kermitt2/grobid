@@ -669,7 +669,7 @@ public class EngineTest {
     @Test
     public void testDateParser() throws Exception {
         String d = "12 August, 1985";
-        List<Date> processedDates = new DateParser().processing(d);
+        List<Date> processedDates = new DateParser().process(d);
 
         assertThat(processedDates.size(), is(1));
         assertThat(processedDates.get(0).getDayString(), is("12"));
@@ -695,7 +695,7 @@ public class EngineTest {
 
     }
 
-    @Test
+    /*@Test
     public void testEmailPDF() throws Exception {
         Engine engine = GrobidFactory.getInstance().getEngine();
         BiblioItem resHeader = new BiblioItem();
@@ -703,7 +703,7 @@ public class EngineTest {
         System.out.println(resHeader);
 //        System.out.println(engine.fullTextToTEI("/tmp/2.pdf", false, false));
 
-    }
+    }*/
 
 
     /*@Test

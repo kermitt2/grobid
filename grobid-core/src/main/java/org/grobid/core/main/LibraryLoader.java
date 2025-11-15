@@ -1,5 +1,6 @@
 package org.grobid.core.main;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.SystemUtils;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
@@ -11,25 +12,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Set;
 
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
 
-//import org.grobid.core.mock.MockContext;
-
-/**
- * @author Slava, Patrice
- */
 public class LibraryLoader {
 
     private static Logger LOGGER = LoggerFactory.getLogger(LibraryLoader.class);
 
-    //a name of a native CRF++ library without an extension
     public static final String CRFPP_NATIVE_LIB_NAME = "libcrfpp";
     public static final String WAPITI_NATIVE_LIB_NAME = "libwapiti";
     public static final String DELFT_NATIVE_LIB_NAME_LINUX = "libjep";
@@ -37,29 +33,29 @@ public class LibraryLoader {
 
     private static boolean loaded = false;
 
-//    private static boolean isContextMocked = false;
-
     public static void load() {
+
         if (!loaded) {
             LOGGER.info("Loading external native sequence labelling library");
             LOGGER.debug(getLibraryFolder());
 
-            if (GrobidProperties.getGrobidCRFEngine() != GrobidCRFEngine.CRFPP &&
-                GrobidProperties.getGrobidCRFEngine() != GrobidCRFEngine.WAPITI &&
-                GrobidProperties.getGrobidCRFEngine() != GrobidCRFEngine.DELFT) {
-                throw new IllegalStateException("Unsupported sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine());
+            Set<GrobidCRFEngine> distinctModels = GrobidProperties.getInstance().getDistinctModels();
+            for(GrobidCRFEngine distinctModel : distinctModels) {
+                if (distinctModel != GrobidCRFEngine.CRFPP &&
+                    distinctModel != GrobidCRFEngine.WAPITI &&
+                    distinctModel != GrobidCRFEngine.DELFT) {
+                    throw new IllegalStateException("Unsupported sequence labelling engine: " + distinctModel);
+                }
             }
 
             File libraryFolder = new File(getLibraryFolder());
             if (!libraryFolder.exists() || !libraryFolder.isDirectory()) {
-                LOGGER.error("Unable to find a native sequence labelling library: Folder "
-                    + libraryFolder + " does not exist");
+                LOGGER.error("Unable to find a native sequence labelling library: Folder " + libraryFolder + " does not exist");
                 throw new RuntimeException(
-                    "Unable to find a native sequence labelling library: Folder "
-                        + libraryFolder + " does not exist");
+                    "Unable to find a native sequence labelling library: Folder " + libraryFolder + " does not exist");
             }
 
-            if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
+            if (CollectionUtils.containsAny(distinctModels, Collections.singletonList(GrobidCRFEngine.CRFPP))) {
                 File[] files = libraryFolder.listFiles(file -> file.getName().toLowerCase().startsWith(CRFPP_NATIVE_LIB_NAME));
 
                 if (ArrayUtils.isEmpty(files)) {
@@ -73,11 +69,9 @@ public class LibraryLoader {
                 }
 
                 if (files.length > 1) {
-                    LOGGER.error("Unable to load a native CRF++ library: More than 1 library exists in "
-                        + libraryFolder);
+                    LOGGER.error("Unable to load a native CRF++ library: More than 1 library exists in " + libraryFolder);
                     throw new RuntimeException(
-                        "Unable to load a native CRF++ library: More than 1 library exists in "
-                            + libraryFolder);
+                        "Unable to load a native CRF++ library: More than 1 library exists in " + libraryFolder);
                 }
 
                 String libPath = files[0].getAbsolutePath();
@@ -86,19 +80,13 @@ public class LibraryLoader {
                 try {
                     System.load(libPath);
                 } catch (Exception e) {
-                    LOGGER.error("Unable to load a native CRF++ library, although it was found under path "
-                        + libPath);
+                    LOGGER.error("Unable to load a native CRF++ library, although it was found under path " + libPath);
                     throw new RuntimeException(
-                        "Unable to load a native CRF++ library, although it was found under path "
-                            + libPath, e);
+                        "Unable to load a native CRF++ library, although it was found under path " + libPath, e);
                 }
-
             }
-
-            if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.WAPITI ||
-                GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT) {
-                // note: if DeLFT is used, we still make Wapiti available for models not existing in DeLFT (currently segmentation and 
-                // fulltext)
+            
+            if (CollectionUtils.containsAny(distinctModels, Collections.singletonList(GrobidCRFEngine.WAPITI))) {    
                 File[] wapitiLibFiles = libraryFolder.listFiles(new FilenameFilter() {
                     @Override
                     public boolean accept(File dir, String name) {
@@ -110,7 +98,7 @@ public class LibraryLoader {
                     LOGGER.info("No wapiti library in the Grobid home folder");
                 } else {
                     LOGGER.info("Loading Wapiti native library...");
-                    if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT) {
+                    if (CollectionUtils.containsAny(distinctModels, Collections.singletonList(GrobidCRFEngine.DELFT))) {
                         // if DeLFT will be used, we must not load libstdc++, it would create a conflict with tensorflow libstdc++ version
                         // so we temporary rename the lib so that it is not loaded in this case
                         // note that we know that, in this case, the local lib can be ignored because as DeFLT and tensorflow are installed
@@ -122,11 +110,18 @@ public class LibraryLoader {
                             File libstdcppFileNew = new File(libstdcppPath + ".new");
                             libstdcppFile.renameTo(libstdcppFileNew);
                         }
+
+                        String libgccPath = libraryFolder.getAbsolutePath() + File.separator + "libgcc_s.so.1";
+                        File libgccFile = new File(libgccPath);
+                        if (libgccFile.exists()) {
+                            File libgccFileNew = new File(libgccPath + ".new");
+                            libgccFile.renameTo(libgccFileNew);
+                        }
                     }
                     try {
                         System.load(wapitiLibFiles[0].getAbsolutePath());
                     } finally {
-                        if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT) {
+                        if (CollectionUtils.containsAny(distinctModels, Arrays.asList(GrobidCRFEngine.DELFT))) {
                             // restore libstdc++
                             String libstdcppPathNew = libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6.new";
                             File libstdcppFileNew = new File(libstdcppPathNew);
@@ -134,37 +129,32 @@ public class LibraryLoader {
                                 File libstdcppFile = new File(libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6");
                                 libstdcppFileNew.renameTo(libstdcppFile);
                             }
+
+                            // restore libgcc
+                            String libgccPathNew = libraryFolder.getAbsolutePath() + File.separator + "libgcc_s.so.1.new";
+                            File libgccFileNew = new File(libgccPathNew);
+                            if (libgccFileNew.exists()) {
+                                File libgccFile = new File(libraryFolder.getAbsolutePath() + File.separator + "libgcc_s.so.1");
+                                libgccFileNew.renameTo(libgccFile);
+                            }
                         }
                     }
                 }
             }
 
-
-            if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT) {
+            if (CollectionUtils.containsAny(distinctModels, Collections.singletonList(GrobidCRFEngine.DELFT))) {
                 LOGGER.info("Loading JEP native library for DeLFT... " + libraryFolder.getAbsolutePath());
                 // actual loading will be made at JEP initialization, so we just need to add the path in the 
                 // java.library.path (JEP will anyway try to load from java.library.path, so explicit file 
                 // loading here will not help)
                 try {
-                    addLibraryPath(libraryFolder.getAbsolutePath());
 
                     PythonEnvironmentConfig pythonEnvironmentConfig = PythonEnvironmentConfig.getInstance();
                     if (pythonEnvironmentConfig.isEmpty()) {
                         LOGGER.info("No python environment configured");
                     } else {
-                        LOGGER.info("Configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
-                        LOGGER.info("Adding library paths " + Arrays.toString(pythonEnvironmentConfig.getNativeLibPaths()));
-                        for (Path path : pythonEnvironmentConfig.getNativeLibPaths()) {
-                            if (Files.exists(path)) {
-                                addLibraryPath(path.toString());
-                            } else {
-                                LOGGER.warn(path.toString() + " does not exists. Skipping it. ");
-                            }
-                        }
-
                         if (SystemUtils.IS_OS_MAC) {
-//                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + libraryFolder.getAbsolutePath());
-                            System.loadLibrary("python" + pythonEnvironmentConfig.getPythonVersion() + "m");
+                            System.loadLibrary("python" + pythonEnvironmentConfig.getPythonVersion());
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_LINUX) {
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
@@ -178,12 +168,12 @@ public class LibraryLoader {
                 }
             }
 
-
             loaded = true;
             LOGGER.info("Native library for sequence labelling loaded");
         }
     }
 
+    @Deprecated
     public static void addLibraryPath(String pathToAdd) throws Exception {
         Field usrPathsField = ClassLoader.class.getDeclaredField("usr_paths");
         usrPathsField.setAccessible(true);
@@ -200,34 +190,10 @@ public class LibraryLoader {
         usrPathsField.set(null, newPaths);
     }
 
-    //    /**
-//     * Initialize the context with mock parameters if they doesn't already
-//     * exist.
-//     */
-//    protected static void mockContextIfNotSet() {
-//        try {
-//            new InitialContext().lookup("java:comp/env/"
-//                    + GrobidPropertyKeys.PROP_GROBID_HOME);
-//            LOGGER.debug("The property " + GrobidPropertyKeys.PROP_GROBID_HOME
-//                    + " already exists. No mocking of context made.");
-//        } catch (Exception exp) {
-//            LOGGER.debug("The property " + GrobidPropertyKeys.PROP_GROBID_HOME
-//                    + " does not exist. Mocking the context.");
-////            try {
-////                MockContext.setInitialContext();
-////                isContextMocked = true;
-////            } catch (Exception mexp) {
-////                LOGGER.error("Could not mock the context." + mexp);
-////                throw new GrobidException("Could not mock the context.",  mexp);
-////            }
-//        }
-//    }
-//
     public static String getLibraryFolder() {
         GrobidProperties.getInstance();
-        // TODO: change to fetching the basic dir from GrobidProperties object
-        return String.format("%s" + File.separator + "%s", GrobidProperties
-            .getNativeLibraryPath().getAbsolutePath(), Utilities
-            .getOsNameAndArch());
+        return String.format("%s" + File.separator + "%s", 
+            GrobidProperties.getNativeLibraryPath().getAbsolutePath(), 
+            Utilities.getOsNameAndArch());
     }
 }

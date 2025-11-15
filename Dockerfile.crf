@@ -1,0 +1,97 @@
+## Docker GROBID image
+
+## Docker GROBID image using CRF models only - NOTE: you SHOULD use preferably the Deep Learning image
+
+## See https://grobid.readthedocs.io/en/latest/Grobid-docker/
+
+## docker build -t grobid/grobid:GROBID_VERSION --build-arg GROBID_VERSION=GROBID_VERSION .
+## docker run -t --rm -p 8080:8070 -p 8081:8071 {image_name}
+
+# To connect to the container with a bash shell
+# > docker exec -i -t {container_name} /bin/bash
+
+# -------------------
+# build builder image
+# -------------------
+FROM eclipse-temurin:21-jdk AS builder
+
+USER root
+
+RUN apt-get update && \
+    apt-get -y upgrade && \
+    apt-get -y --no-install-recommends install unzip git
+
+WORKDIR /opt/grobid-source
+
+# gradle
+COPY gradle/ ./gradle/
+COPY gradlew ./
+COPY gradle.properties ./
+COPY build.gradle ./
+COPY settings.gradle ./
+
+# git
+COPY .git/ ./.git
+
+# source
+COPY grobid-home/ ./grobid-home/
+COPY grobid-core/ ./grobid-core/
+COPY grobid-service/ ./grobid-service/
+COPY grobid-trainer/ ./grobid-trainer/
+
+# cleaning unused native libraries before packaging
+RUN rm -rf grobid-home/pdf2xml
+RUN rm -rf grobid-home/pdfalto/lin-32
+RUN rm -rf grobid-home/pdfalto/mac-64
+RUN rm -rf grobid-home/pdfalto/mac_arm-64
+RUN rm -rf grobid-home/pdfalto/win-*
+RUN rm -rf grobid-home/lib/lin-32
+RUN rm -rf grobid-home/lib/win-*
+RUN rm -rf grobid-home/lib/mac-64
+
+# cleaning Delft models
+RUN rm -rf grobid-home/models/*-BidLSTM_CRF*
+
+ENV GROBID_SERVICE_OPTS="-Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep"
+
+RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
+
+WORKDIR /opt/grobid
+RUN unzip -o /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip && \
+    mv grobid-service* grobid-service
+RUN unzip -o /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip && \
+    chmod -R 755 /opt/grobid/grobid-home/pdfalto
+RUN rm -rf grobid-source
+
+# -------------------
+# build runtime image
+# -------------------
+FROM eclipse-temurin:21-jre
+
+RUN apt-get update && \
+    apt-get -y upgrade && \
+    apt-get -y --no-install-recommends install libxml2 libfontconfig && \
+    rm -rf /var/lib/apt/lists/*
+
+# Add Tini
+ENV TINI_VERSION=v0.19.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+RUN chmod +x /tini
+ENTRYPOINT ["/tini", "-s", "--"]
+
+WORKDIR /opt/grobid
+
+COPY --from=builder /opt/grobid .
+
+ENV GROBID_SERVICE_OPTS="-Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED"
+
+CMD ["./grobid-service/bin/grobid-service"]
+
+ARG GROBID_VERSION
+
+LABEL \
+    authors="The contributors" \
+    org.label-schema.name="GROBID" \
+    org.label-schema.description="Image with GROBID service" \
+    org.label-schema.url="https://github.com/kermitt2/grobid" \
+    org.label-schema.version=${GROBID_VERSION}

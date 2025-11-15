@@ -14,8 +14,11 @@
 package org.grobid.service.tests;
 
 import com.google.inject.Guice;
-import com.squarespace.jersey2.guice.JerseyGuiceUtils;
 import io.dropwizard.testing.junit.DropwizardAppRule;
+import io.dropwizard.testing.junit5.DropwizardExtensionsSupport;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.core.*;
 import org.apache.commons.io.FileUtils;
 import org.glassfish.jersey.client.JerseyClientBuilder;
 import org.glassfish.jersey.media.multipart.FormDataMultiPart;
@@ -25,20 +28,15 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.service.GrobidPaths;
 import org.grobid.service.GrobidRestService;
 import org.grobid.service.GrobidServiceConfiguration;
+import org.grobid.service.data.ServiceInfo;
 import org.grobid.service.main.GrobidServiceApplication;
 import org.grobid.service.module.GrobidServiceModuleTest;
 import org.grobid.service.util.BibTexMediaType;
 import org.junit.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.core.Form;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.MultivaluedHashMap;
-import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
 
@@ -51,6 +49,8 @@ import static org.junit.Assert.*;
  *
  * @author Florian Zipser
  */
+
+@ExtendWith(DropwizardExtensionsSupport.class)
 public class GrobidRestServiceTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(GrobidRestServiceTest.class);
 
@@ -73,7 +73,7 @@ public class GrobidRestServiceTest {
 
     @Before
     public void setUp() throws IOException {
-        JerseyGuiceUtils.reset();
+//        JerseyGuiceUtils.reset();
 
         GrobidServiceModuleTest testWorkerModule = new GrobidServiceModuleTest() {
             // redefine methods that are needed:
@@ -213,7 +213,9 @@ public class GrobidRestServiceTest {
                 .get();
 
         assertEquals(Response.Status.OK.getStatusCode(), resp.getStatus());
-        assertEquals(GrobidProperties.getVersion(), resp.readEntity(String.class));
+        ServiceInfo responseEntity = resp.readEntity(ServiceInfo.class);
+        assertEquals(GrobidProperties.getVersion(), responseEntity.getVersion());
+        assertEquals(GrobidProperties.getRevision(), responseEntity.getRevision());
     }
 
     @Test
@@ -237,6 +239,7 @@ public class GrobidRestServiceTest {
         assertEquals("@article{-1,\n" +
                 "  author = {Graff},\n" +
                 "  journal = {Expert. Opin. Ther. Targets},\n" +
+                "  date = {2002},\n" +
                 "  year = {2002},\n" +
                 "  pages = {103--113},\n" +
                 "  volume = {6},\n" +
@@ -258,7 +261,9 @@ public class GrobidRestServiceTest {
         assertEquals("@inproceedings{-1,\n" +
                 "  author = {Kolb, S and Wirtz, G},\n" +
                 "  booktitle = {Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)},\n" +
-                "  year = {April 7 - 10, 2014},\n" +
+                "  date = {2014},\n" +
+                "  year = {2014},\n" +
+//                "  year = {April 7 - 10, 2014},\n" +
                 "  address = {Oxford, United Kingdom}\n" +
                 "}\n",
             response.readEntity(String.class));
@@ -278,7 +283,9 @@ public class GrobidRestServiceTest {
         assertEquals("@inproceedings{-1,\n" +
                 "  author = {Kolb, S and Wirtz, G},\n" +
                 "  booktitle = {Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)},\n" +
-                "  year = {April 7 - 10, 2014},\n" +
+                "  date = {2014},\n" +
+                "  year = {2014},\n" +
+//                "  year = {April 7 - 10, 2014},\n" +
                 "  address = {Oxford, United Kingdom},\n" +
                 "  raw = {Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service\n" +
                 "Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE), Oxford, United Kingdom, April 7 - 10, 2014.}\n" +

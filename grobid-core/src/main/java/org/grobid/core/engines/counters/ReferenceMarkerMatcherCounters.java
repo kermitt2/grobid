@@ -1,8 +1,5 @@
 package org.grobid.core.engines.counters;
 
-/**
- * Created by lfoppiano on 25/11/16.
- */
 public class ReferenceMarkerMatcherCounters {
 
     public static final Countable MATCHED_REF_MARKERS = new Countable() {

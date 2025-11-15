@@ -12,7 +12,6 @@ import java.util.*;
  * SAX parser for XML crossref DOI metadata descriptions.
  * See http://www.crossref.org/openurl_info.html
  *
- * @author Patrice Lopez
  */
 public class CrossrefUnixrefSaxParser extends DefaultHandler {
 

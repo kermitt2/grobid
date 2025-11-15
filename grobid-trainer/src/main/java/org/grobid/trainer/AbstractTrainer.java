@@ -37,9 +37,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-/**
- * @author Zholudev, Lopez
- */
 public abstract class AbstractTrainer implements Trainer {
     protected static final Logger LOGGER = LoggerFactory.getLogger(AbstractTrainer.class);
     public static final String OLD_MODEL_EXT = ".old";
@@ -83,29 +80,31 @@ public abstract class AbstractTrainer implements Trainer {
 
     @Override
     public void train() {
+        train(false);
+    }
+
+    @Override
+    public void train(boolean incremental) {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath);
-        GenericTrainer trainer = TrainerFactory.getTrainer();
+        GenericTrainer trainer = TrainerFactory.getTrainer(model);
 
-        if (epsilon != 0.0)
-            trainer.setEpsilon(epsilon);
-        if (window != 0)
-            trainer.setWindow(window);
-        if (nbMaxIterations != 0)
-            trainer.setNbMaxIterations(nbMaxIterations);
+        trainer.setEpsilon(GrobidProperties.getEpsilon(model));
+        trainer.setWindow(GrobidProperties.getWindow(model));
+        trainer.setNbMaxIterations(GrobidProperties.getNbMaxIterations(model));
 
         File dirModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath()).getParentFile();
         if (!dirModelPath.exists()) {
             LOGGER.warn("Cannot find the destination directory " + dirModelPath.getAbsolutePath() + " for the model " + model.getModelName() + ". Creating it.");
-            dirModelPath.mkdir();
+            dirModelPath.mkdirs();
             //throw new GrobidException("Cannot find the destination directory " + dirModelPath.getAbsolutePath() + " for the model " + model.toString());
         }
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
         final File oldModelPath = GrobidProperties.getModelPath(model);
-        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads(), model);
+        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getWapitiNbThreads(), model, incremental);
         // if we are here, that means that training succeeded
         // rename model for CRF sequence labellers (not with DeLFT deep learning models)
-        if (GrobidProperties.getGrobidCRFEngine() != GrobidCRFEngine.DELFT)
+        if (GrobidProperties.getGrobidEngine(this.model) != GrobidCRFEngine.DELFT)
             renameModels(oldModelPath, tempModelPath);
     }
 
@@ -141,9 +140,14 @@ public abstract class AbstractTrainer implements Trainer {
 
     @Override
     public String splitTrainEvaluate(Double split) {
+        return splitTrainEvaluate(split, false);
+    }
+
+    @Override
+    public String splitTrainEvaluate(Double split, boolean incremental) {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath, evalDataPath, split);
-        GenericTrainer trainer = TrainerFactory.getTrainer();
+        GenericTrainer trainer = TrainerFactory.getTrainer(model);
 
         if (epsilon != 0.0)
             trainer.setEpsilon(epsilon);
@@ -162,10 +166,14 @@ public abstract class AbstractTrainer implements Trainer {
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
         final File oldModelPath = GrobidProperties.getModelPath(model);
 
-        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads(), model);
+        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getWapitiNbThreads(), model, incremental);
 
         // if we are here, that means that training succeeded
         renameModels(oldModelPath, tempModelPath);
+
+        if (split == 1.0) {
+            return "Split ratio is 1.0, no evaluation performed.";
+        }
 
         return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger()).toString();
     }
@@ -179,7 +187,7 @@ public abstract class AbstractTrainer implements Trainer {
     public String nFoldEvaluate(int numFolds, boolean includeRawResults) {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath);
-        GenericTrainer trainer = TrainerFactory.getTrainer();
+        GenericTrainer trainer = TrainerFactory.getTrainer(model);
 
         String randomString = randomStringGenerator.generate(10);
 
@@ -226,7 +234,7 @@ public abstract class AbstractTrainer implements Trainer {
             tempFilePaths.add(fold.getRight());
 
             sb.append("Training input data: " + fold.getLeft()).append("\n");
-            trainer.train(getTemplatePath(), new File(fold.getLeft()), tempModelPath, GrobidProperties.getNBThreads(), model);
+            trainer.train(getTemplatePath(), new File(fold.getLeft()), tempModelPath, GrobidProperties.getWapitiNbThreads(), model, false);
             sb.append("Evaluation input data: " + fold.getRight()).append("\n");
 
             //TODO: find a better solution!!
@@ -518,7 +526,7 @@ public abstract class AbstractTrainer implements Trainer {
     }
 
     protected static File getFilePath2Resources() {
-        File theFile = new File(GrobidProperties.get_GROBID_HOME_PATH().getAbsoluteFile() + File.separator + ".." + File.separator
+        File theFile = new File(GrobidProperties.getGrobidHome().getAbsoluteFile() + File.separator + ".." + File.separator
             + "grobid-trainer" + File.separator + "resources");
         if (!theFile.exists()) {
             theFile = new File("resources");
@@ -554,8 +562,12 @@ public abstract class AbstractTrainer implements Trainer {
     }
 
     public static void runTraining(final Trainer trainer) {
+        runTraining(trainer, false);
+    }
+
+    public static void runTraining(final Trainer trainer, boolean incremental) {
         long start = System.currentTimeMillis();
-        trainer.train();
+        trainer.train(incremental);
         long end = System.currentTimeMillis();
 
         System.out.println("Model for " + trainer.getModel() + " created in " + (end - start) + " ms");
@@ -584,10 +596,14 @@ public abstract class AbstractTrainer implements Trainer {
     }
 
     public static String runSplitTrainingEvaluation(final Trainer trainer, Double split) {
+        return runSplitTrainingEvaluation(trainer, split, false);
+    }
+
+    public static String runSplitTrainingEvaluation(final Trainer trainer, Double split, boolean incremental) {
         long start = System.currentTimeMillis();
         String report = "";
         try {
-            report = trainer.splitTrainEvaluate(split);
+            report = trainer.splitTrainEvaluate(split, incremental);
 
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while evaluating Grobid.", e);

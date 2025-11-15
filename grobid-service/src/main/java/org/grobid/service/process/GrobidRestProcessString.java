@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
-import javax.ws.rs.core.HttpHeaders;
-import javax.inject.Inject;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
+import jakarta.ws.rs.core.HttpHeaders;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
 
 import com.google.inject.Singleton;
 import org.grobid.core.data.Affiliation;
@@ -23,7 +23,6 @@ import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.util.BibTexMediaType;
 import org.grobid.service.util.ExpectedResponseType;
 import org.grobid.service.util.GrobidRestUtils;
-//import org.grobid.service.util.GrobidServiceProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -217,13 +216,19 @@ public class GrobidRestProcessString {
 			affiliation = affiliation.replaceAll("\\t", " ");
 			List<Affiliation> affiliationList = engine.processAffiliation(affiliation);
 
-			if (affiliationList != null) {				
-				for(Affiliation affi : affiliationList) {
-					if (retVal == null) {
-						retVal = "";
+			if (affiliationList != null) {
+				if (retVal == null) {
+					retVal = "";
+				}
+				if (affiliationList.size() == 1) {
+					retVal += Affiliation.toTEI(affiliationList.get(0),0);
+				} else {
+					retVal += "<xml>\n";
+					for(Affiliation affi : affiliationList) {
+						retVal += Affiliation.toTEI(affi,1);
 					}
-					retVal += affi.toTEI();
-				}	
+					retVal += "</xml>\n";
+				}
 			}
 			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();
@@ -250,15 +255,15 @@ public class GrobidRestProcessString {
 	}
 
 	/**
-	 * Parse a raw sequence of affiliations and return the corresponding
-	 * normalized affiliations with address.
+	 * Parse a raw reference string and return the corresponding
+	 * structured reference affiliations in the requested format.
 	 * 
 	 * @param citation
-	 *			string of the raw sequence of affiliation+address
+	 *			string of the raw reference
 	 * @param expectedResponseType
-	 *            states which media type the caller expected
-	 * @return a response object containing the structured xml representation of
-	 *         the affiliation
+	 *            states which media type the caller expected (xml tei or bibtex)
+	 * @return a response object containing the structured representation of
+	 *         the reference
 	 */
 	public Response processCitation(String citation, GrobidAnalysisConfig config, ExpectedResponseType expectedResponseType) {
 		LOGGER.debug(methodLogIn());
@@ -279,6 +284,74 @@ public class GrobidRestProcessString {
 			} else {
 				response = Response.status(Status.OK)
                             .entity(biblioItem.toTEI(-1, config))
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			if (engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Parse a list of raw sequence of reference strings and return the corresponding
+	 * normalized bilbiographical objects in the same order and in the reuqested format
+	 * 
+	 * @param citation
+	 *			list of strings of the raw sequence of reference strings
+	 * @param expectedResponseType
+	 *            states which media type the caller expected (xml tei or bibtex)
+	 * @return a response object containing the structured representation of
+	 *         the references
+	 */
+	public Response processCitationList(List<String> citations, GrobidAnalysisConfig config, ExpectedResponseType expectedResponseType) {
+		LOGGER.debug(methodLogIn());
+		Response response;
+		Engine engine = null;
+		try {
+			engine = Engine.getEngine(true);
+			List<BiblioItem> biblioItems = engine.processRawReferences(citations, config.getConsolidateCitations());		
+
+			if (biblioItems == null || biblioItems.size() == 0) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else if (expectedResponseType == ExpectedResponseType.BIBTEX) {
+				StringBuilder responseContent = new StringBuilder();
+				int n = 0;
+				for(BiblioItem biblioItem : biblioItems) {
+					responseContent.append(biblioItem.toBibTeX(""+n, config));
+					responseContent.append("\n");
+					n++;
+				}
+				response = Response.status(Status.OK)
+							.entity(responseContent.toString())
+							.header(HttpHeaders.CONTENT_TYPE, BibTexMediaType.MEDIA_TYPE + "; charset=UTF-8")
+							.build();
+			} else {
+				StringBuilder responseContent = new StringBuilder();
+				// add some TEI envelop
+				responseContent.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+                    "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
+                    "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+                responseContent.append("\t<teiHeader/>\n\t<text>\n\t\t<front/>\n\t\t" +
+                    "<body/>\n\t\t<back>\n\t\t\t<div>\n\t\t\t\t<listBibl>\n");
+				int n = 0;
+				for(BiblioItem biblioItem : biblioItems) {
+					responseContent.append(biblioItem.toTEI(n, config));
+					responseContent.append("\n");
+					n++;
+				}
+				responseContent.append("\t\t\t\t</listBibl>\n\t\t\t</div>\n\t\t</back>\n\t</text>\n</TEI>\n");
+				response = Response.status(Status.OK)
+                            .entity(responseContent.toString())
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
                             .build();
 			}
@@ -327,6 +400,56 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(result)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			if (engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Parse a text corresponding to an acknowledgement and or funding section and return the extracted 
+	 * entities: funding, person, organization, project name.
+	 * 
+	 * @param text
+	 *            string of the patent description text to be processed
+	 * 
+	 * @return a response object containing the JSON representation of
+	 *         the acknowledgement / funding section
+	 */
+	public Response processFundingAcknowledgement(String text, boolean generateIDs, boolean segmentSentences) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		Engine engine = null;
+		try {
+			engine = Engine.getEngine(true);
+					
+			text = text.replaceAll("\\t", " ");
+			// starts conversion process
+            GrobidAnalysisConfig config =
+                GrobidAnalysisConfig.builder()
+                    .generateTeiIds(generateIDs)
+                    .withSentenceSegmentation(segmentSentences)
+                    .build();
+
+			String result = engine.processFundingAcknowledgement(text, config);
+
+			if (result == null) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else {
+				response = Response.status(Status.OK)
+                            .entity(result)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
                             .build();
 			}
 		} catch (NoSuchElementException nseExp) {

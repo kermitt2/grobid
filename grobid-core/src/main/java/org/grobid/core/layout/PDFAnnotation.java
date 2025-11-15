@@ -7,7 +7,6 @@ import java.util.List;
  * Class for representing an annotation present in a PDF source file. Annotations are area in the PDF document 
  * associated with an action (URI for external web link, goto for internal document link).
  *
- * @author Patrice Lopez
  */
 public class PDFAnnotation {
     private String destination = null;
@@ -46,7 +45,7 @@ public class PDFAnnotation {
 
 	public void addBoundingBox(BoundingBox box) {
         if (boundingBoxes == null) {
-        	boundingBoxes = new ArrayList<BoundingBox>();
+        	boundingBoxes = new ArrayList<>();
         };
 		boundingBoxes.add(box);
     }
@@ -76,11 +75,7 @@ public class PDFAnnotation {
     }
 
     public boolean isNull() {
-        if ( (boundingBoxes == null) && (startToken == -1) && (endToken == -1) && (type == null) ) {
-            return true;
-        }
-        else 
-            return false;
+        return (boundingBoxes == null) && (startToken == -1) && (endToken == -1) && (type == null);
     }
 
 	public String getDestination() {
@@ -99,7 +94,7 @@ public class PDFAnnotation {
                 ", endToken=" + endToken +
                 ", type=" + type;
         if (boundingBoxes != null)
-            res += ", boundingBoxes=" + boundingBoxes.toString() + '}';
+            res += ", boundingBoxes=" + boundingBoxes + '}';
         return res;
     }
 	
@@ -114,7 +109,7 @@ public class PDFAnnotation {
 		// do we have an entity annotation at this location?
 		// we need to check the coordinates
 		int pageToken = token.getPage();
-		if (pageToken == pageNumber) {
+		if (pageToken == pageNumber && boundingBoxes != null) {
 			BoundingBox tokenBox = BoundingBox.fromLayoutToken(token);
 			for(BoundingBox box : boundingBoxes) {
 				if (box.intersect(tokenBox)) {
@@ -125,7 +120,7 @@ public class PDFAnnotation {
 						break;
 					}
 					double areaToken = tokenBox.area();
-					// the bounding box of the insection 
+					// the bounding box of the intersection
 					BoundingBox intersectionBox = box.boundingBoxIntersection(tokenBox);
 					if (intersectionBox != null) {
 						double intersectionArea = intersectionBox.area();
@@ -139,4 +134,27 @@ public class PDFAnnotation {
 		}
 		return res;
 	}
+
+    /**
+     * Return the intersection box between token and annotation
+     */
+    public BoundingBox getIntersectionBox(LayoutToken token) {
+        if (token == null)
+            return null;
+        BoundingBox intersectBox = null;
+        int pageToken = token.getPage();
+        if (pageToken == pageNumber && boundingBoxes != null) {
+            BoundingBox tokenBox = BoundingBox.fromLayoutToken(token);
+            for(BoundingBox box : boundingBoxes) {
+                if (box.intersect(tokenBox)) {
+                    if (box.contains(tokenBox)) {
+                        intersectBox = tokenBox;
+                        break;
+                    }
+                    intersectBox = box.boundingBoxIntersection(tokenBox);
+                }
+            }
+        }
+        return intersectBox;
+    }
 }

@@ -18,7 +18,6 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
- * Created by zholudev on 18/12/15.
  * Dealing with layout tokens
  */
 public class LayoutTokensUtil {
@@ -180,8 +179,8 @@ public class LayoutTokensUtil {
 
         for (int i = 0; i < tokens.size(); i++) {
             LayoutToken currentToken = tokens.get(i);
-            //the current token is dash checking what's around
-            if (currentToken.getText().equals("-")) {
+            //the current token is dash (and is neither subscript nor superscript) checking what's around
+            if (currentToken.getText().equals("-") && !(currentToken.isSubscript() || currentToken.isSuperscript())) {
                 if (doesRequireDehypenisation(tokens, i)) {
                     //Cleanup eventual additional spaces before the hypen that have been already written to the output
                     int z = output.size() - 1;

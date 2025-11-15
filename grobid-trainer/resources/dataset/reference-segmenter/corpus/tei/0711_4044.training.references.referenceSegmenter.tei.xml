@@ -1,0 +1,44 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>[1]</label> B. Cooper, Ph.D. thesis, University College London, 2006;<lb/> </bibl>
+        <bibl>A. Messina, Ph.D. thesis, Universita `di Roma &apos;&apos;La<lb/> Sapienza&apos;&apos;, 2004.<lb/> </bibl>
+        <bibl><label>[2]</label> We use a cylindrical coordinate system along the proton<lb/> direction in which () is the polar (azimuthal) angle. We<lb/> define ÿ lntan=2, p T p sin, E T E sin,<lb/> E 6 T ÿj<lb/> P<lb/> i E i<lb/> T ni j where ni is a unit vector in the azimu-<lb/>thal plane that points from the beamline to the ith calo-<lb/>rimeter tower, and m W<lb/> T<lb/> 2E ele<lb/> T E 6 T 1 ÿ cosE ele<lb/> T ;E 6 T<lb/> q<lb/> .<lb/> </bibl>
+        <bibl><label>[3]</label> T. Affolder et al. (CDF Collaboration), Phys. Rev. D 63,<lb/> 072003 (2001); </bibl>
+        <bibl>F. Abe et al. (CDF Collaboration), Phys.<lb/> Rev. Lett. 81, 1367 (1998).<lb/> </bibl>
+        <bibl><label>[4]</label> V. M. Abazov et al. (D0 Collaboration), Phys. Lett. B 658,<lb/> 112 (2008).<lb/> </bibl>
+        <bibl><label>[5]</label> A. Abulencia et al. (CDF Collaboration), Phys. Rev. D 74,<lb/> 071103(R) (2006).<lb/> </bibl>
+        <bibl><label>[6]</label> D. Acosta et al. (CDF Collaboration), Phys. Rev. D 71,<lb/> 032001 (2005).<lb/> </bibl>
+        <bibl><label>[7]</label> A. Abulencia et al. (CDF Collaboration), J. Phys. G 34,<lb/> 2457 (2007).<lb/> </bibl>
+        <bibl><label>[8]</label> A. Abulencia et al. (CDF Collaboration), Phys. Rev. D 74,<lb/> 072006 (2006).<lb/> </bibl>
+        <bibl><label>[9]</label> F. Abe et al. (CDF Collaboration), Phys. Rev. D 45, 1448<lb/> (1992).<lb/> </bibl>
+        <bibl><label>[10]</label> A. Bhatti et al., Nucl. Instrum. Methods Phys. Res.,<lb/> Sect. A 566, 375 (2006).<lb/> </bibl>
+        <bibl><label>[11]</label> W.-M. Yao et al., J. Phys. G 33, 1 (2006).<lb/> </bibl>
+        <bibl><label>[12]</label> M. S. Neubauer (CDF and D0 Collaborations), arXiv:hep-<lb/>ex/0605066; </bibl>
+        <bibl>A. Abulencia et al. (CDF Collaboration),<lb/> Phys. Rev. Lett. 97, 082004 (2006).<lb/> </bibl>
+        <bibl><label>[13]</label> M. L. Mangano et al., J. High Energy Phys. 07 (2003) 001.<lb/> </bibl>
+        <bibl><label>[14]</label> T. Sjostrand, S. Mrenna, and P. Skands, J. High Energy<lb/> Phys. 05 (2006) 026.<lb/> </bibl>
+        <bibl><label>[15]</label> D. Acosta et al. (CDF Collaboration), Phys. Rev. D 70,<lb/> 072002 (2004).<lb/> </bibl>
+        <bibl><label>[16]</label> G. Corcella et al., J. High Energy Phys. 01 (2001) 010.<lb/> </bibl>
+        <bibl><label>[17]</label> F. Maltoni and T. Stelzer, J. High Energy Phys. 02 (2003)<lb/> 027.<lb/> </bibl>
+        <bibl><label>[18]</label> T. Gleisberg et al., J. High Energy Phys. 02 (2004) 056; </bibl>
+        <bibl>N.<lb/> Lavesson and L. Lonnblad, J. High Energy Phys. 07<lb/> (2005) 054; </bibl>
+        <bibl>C. G. Papadopoulos and M. Worek, Eur.<lb/> Phys. J. C 50, 843 (2007).<lb/> </bibl>
+        <bibl><label>[19]</label> S. Catani et al., J. High Energy Phys. 11 (2001) 063;<lb/> </bibl>
+        <bibl>F. Krauss, J. High Energy Phys. 08 (2002) 015.<lb/> </bibl>
+        <bibl><label>[20]</label> L. Lonnblad, J. High Energy Phys. 05 (2002) 046.<lb/> </bibl>
+        <bibl><label>[21]</label> M. L. Mangano et al., J. High Energy Phys. 01 (2007) 013.<lb/> </bibl>
+        <bibl><label>[22]</label> S. Mrenna and P. Richardson, J. High Energy Phys. 05<lb/> (2004) 040.<lb/> </bibl>
+        <bibl><label>[23]</label> J. Alwall et al., arXiv:0706.2569.<lb/> </bibl>
+        <bibl><label>[24]</label> J. Pumplin et al., J. High Energy Phys. 07 (2002) 012.<lb/> </bibl>
+        <bibl><label>[25]</label> H. L. Lai et al., Eur. Phys. J. C 12, 375 (2000).<lb/> </bibl>
+        <bibl><label>[26]</label> J. Campbell and R. K. Ellis, Phys. Rev. D 65, 113007<lb/> (2002).<lb/> </bibl>
+        <bibl><label>[27]</label> S. D. Ellis and D. E. Soper, Phys. Rev. D 48, 3160 (1993).<lb/> </bibl>
+        <bibl><label>[28]</label> J. M. Campbell, J. W. Huston, and W. J. Stirling, Rep.<lb/> Prog. Phys. 70, 89 (2007).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

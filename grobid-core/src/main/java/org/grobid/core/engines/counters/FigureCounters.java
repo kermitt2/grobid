@@ -1,8 +1,5 @@
 package org.grobid.core.engines.counters;
 
-/**
- * Created by lfoppiano on 25/11/16.
- */
 public class FigureCounters {
     public static final Countable TOO_MANY_FIGURES_PER_PAGE = new Countable() {
         @Override

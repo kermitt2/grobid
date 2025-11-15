@@ -2,6 +2,7 @@ package org.grobid.trainer;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.utilities.GrobidProperties;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -24,6 +25,11 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 public class AbstractTrainerIntegrationTest {
 
     private AbstractTrainer target;
+
+    @BeforeClass
+    public static void init() {
+        GrobidProperties.getInstance();
+    }
 
     @BeforeClass
     public static void beforeClass() throws Exception {

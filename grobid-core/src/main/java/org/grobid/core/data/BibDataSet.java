@@ -6,7 +6,6 @@ import org.grobid.core.engines.config.GrobidAnalysisConfig;
 /**
  * Structure for representing the different information for a citation and its different context of citation.
  *
- * @author Patrice Lopez
  */
 public class BibDataSet {
     public enum Counters {

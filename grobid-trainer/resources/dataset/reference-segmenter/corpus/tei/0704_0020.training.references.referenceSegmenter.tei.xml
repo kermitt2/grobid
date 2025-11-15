@@ -1,0 +1,51 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>[1]</label> W.-M. Yao et al., J. Phys. G 33, 1 (2006).<lb/> </bibl>
+        <bibl><label>[2]</label> Charge conjugate states are implied throughout this analy-<lb/>sis.<lb/> </bibl>
+        <bibl><label>[3]</label> J. G. Koerner and G. A. Schuler, Z. Phys. C 46, 93 (1990);<lb/> </bibl>
+        <bibl>F. J. Gilman and R. L. Singleton, Jr., Phys. Rev. D 41, 142<lb/> (1990).<lb/> </bibl>
+        <bibl><label>[4]</label> G. S. Huang et al. (CLEO Cllaboration), Phys. Rev. Lett.<lb/> 94, 011802 (2005).<lb/> </bibl>
+        <bibl><label>[5]</label> J. M. Link et al. (FOCUS Collaboration), Phys. Lett. B<lb/> 607, 233 (2005).<lb/> </bibl>
+        <bibl><label>[6]</label> L. Widhalm et al. (BELLE Collaboration), Phys. Rev.<lb/> Lett. 97, 061804 (2006).<lb/> </bibl>
+        <bibl><label>[7]</label> T. Becher and R. J. Hill, Phys. Lett. B 633, 61 (2006).<lb/> </bibl>
+        <bibl><label>[8]</label> C. G. Boyd and M. J. Savage, Phys. Rev. D 56, 303 (1997),<lb/> and references therein.<lb/> </bibl>
+        <bibl><label>[9]</label> C. G. Boyd, B. Grinstein, and R. F. Lebed, Nucl. Phys.<lb/> B461, 493 (1996).<lb/> </bibl>
+        <bibl><label>[10]</label> The variation of V with u m s =m c is small, since<lb/> V 0:33 1:02 V 0.<lb/> </bibl>
+        <bibl><label>[11]</label> D. Becirevic and A. B. Kaidalov, Phys. Lett. B 478, 417<lb/> (2000).<lb/> </bibl>
+        <bibl><label>[12]</label> M. Wirbel, B. Stech, and M. Bauer, Z. Phys. C 29, 637<lb/> (1985); </bibl>
+        <bibl>J. G. Ko ¨rner and G. A. Schuler, Z. Phys. C 38, 511<lb/> (1988); 41, 690(E) (1988); </bibl>
+        <bibl>M. Bauer and M. Wirbel, Z.<lb/> Phys. C 42, 671 (1989); </bibl>
+        <bibl>J. G. Ko ¨rner, K. Schilcher, M.<lb/> Wirbel, and Y. L. Wu, Z. Phys. C 48, 663 (1990); </bibl>
+        <bibl>W. Jaus,<lb/> Phys. Rev. D 41, 3394 (1990); 53, 1349 (1996); </bibl>
+        <bibl>R.<lb/> Aleksan, A. Le Yaouanc, L. Oliver, O. Pe `ne, and J. C.<lb/> Raynal, Phys. Rev. D 51, 6235 (1995); </bibl>
+        <bibl>I. L. Grach, I. M.<lb/> Narodetskii, and S. Simula, Phys. Lett. B 385, 317 (1996);<lb/> </bibl>
+        <bibl>H. M. Choi and C. R. Ji, Phys. Lett. B 460, 461 (1999); </bibl>
+        <bibl>D.<lb/> Melikhov and B. Stech, Phys. Rev. D 62, 014006 (2000);<lb/> </bibl>
+        <bibl>G. Amoros, S. Noguera, and J. Portoles, Eur. Phys. J. C 27,<lb/> 243 (2003); </bibl>
+        <bibl>W. Y. Wang, Y. L. Wu, and M. Zhong, Phys.<lb/> Rev. D 67, 014024 (2003); </bibl>
+        <bibl>S. Fajfer and J. Kamenik, Phys.<lb/> Rev. D 71, 014020 (2005).<lb/> </bibl>
+        <bibl><label>[13]</label> N. Isgur, D. Scora, B. Grinstein, and M. B. Wise, Phys.<lb/> Rev. D 39, 799 (1989).<lb/> </bibl>
+        <bibl><label>[14]</label> D. Scora and N. Isgur, Phys. Rev. D 52, 2783 (1995).<lb/> </bibl>
+        <bibl><label>[15]</label> T. M. Aliev, V. L. Eletsky, and Ya. I. Kogan, Sov. J. Nucl.<lb/> Phys. 40, 527 (1984); </bibl>
+        <bibl>P. Ball, V. M. Braun, and H. G.<lb/> Dosch, Phys. Rev. D 44, 3567 (1991).<lb/> </bibl>
+        <bibl><label>[16]</label> A. Khodjamirian, R. Ru ¨ckl, S. Weinzierl, C. W. Winhart,<lb/> and O. Yakovlev, Phys. Rev. D 62, 114002 (2000).<lb/> </bibl>
+        <bibl><label>[17]</label> J. M. Flynn and C. T. Sachrajda, in Heavy Flavours, edited<lb/> by A. J. Buras and M. Linder (World Scientific, Singapore,<lb/> 1998), 2nd ed. Published in Adv. Ser. Dir. High Energy<lb/> Phys. 15, 402 (1998).<lb/> </bibl>
+        <bibl><label>[18]</label> A. Abada et al., Nucl. Phys. B619, 565 (2001).<lb/> </bibl>
+        <bibl><label>[19]</label> C. Aubin et al., Phys. Rev. Lett. 94, 011601 (2005).<lb/> </bibl>
+        <bibl><label>[20]</label> B. Aubert et al. (BABAR Collaboration), Nucl. Instrum.<lb/> Methods Phys. Res., Sect. A 479, 1 (2002).<lb/> </bibl>
+        <bibl><label>[21]</label> B. Aubert et al. (BABAR Collaboration), Phys. Rev. D 66,<lb/> 032003 (2002).<lb/> </bibl>
+        <bibl><label>[22]</label> S. Agostinelli et al., Nucl. Instrum. Methods A 506, 250<lb/> (2003).<lb/> </bibl>
+        <bibl><label>[23]</label> T. Sjo ¨strand, Comput. Phys. Commun. 82, 74 (1994).<lb/> </bibl>
+        <bibl><label>[24]</label> E. Barberio and Z. Was, Comput. Phys. Commun. 79, 291<lb/> (1994).<lb/> </bibl>
+        <bibl><label>[25]</label> J. M. Link et al. (FOCUS Collaboration), Phys. Lett. B<lb/> 544, 89 (2002).<lb/> </bibl>
+        <bibl><label>[26]</label> G. C. Fox and S. Wolfram, Phys. Rev. Lett. 41, 1581<lb/> (1978).<lb/> </bibl>
+        <bibl><label>[27]</label> A. Hocker and V. Kartvelishvili, Nucl. Instrum. Methods<lb/> Phys. Res., Sect. A 372, 469 (1996).<lb/> </bibl>
+        <bibl><label>[28]</label> M. Artuso et al. (CLEO Collaboration), Phys. Rev. D 70,<lb/> 112001 (2004).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -6,17 +6,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.utilities.Triple;
-import org.wipo.analyzers.wipokr.utils.StringUtil;
+import org.grobid.analyzers.grobidkr.utils.StringUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 import java.util.regex.Pattern;
 
-/**
- * User: zholudev
- * Date: 4/2/14
- */
 public class GenericTaggerUtils {
 
     // Deprecated, please use the constants from TaggingLabels

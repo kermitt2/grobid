@@ -9,10 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 /**
- * Usage of CRF++ in GROBID is deprecated.
- * 
- * User: zholudev
- * Date: 3/20/14
+ * Note: Usage of CRF++ in GROBID is deprecated.
  *
  * @deprecated use WapitiTrainer or DelftTrainer (requires http://github.com/kermitt2/delft)
  */
@@ -33,6 +30,11 @@ public class CRFPPGenericTrainer implements GenericTrainer {
 
     @Override
     public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model) {
+        train(template, trainingData, outputModel, numThreads, model, false);
+    }
+
+    @Override
+    public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model, boolean incremental) {
         crfppTrainer.train(template.getAbsolutePath(), trainingData.getAbsolutePath(), outputModel.getAbsolutePath(), numThreads);
         if (!crfppTrainer.what().isEmpty()) {
             LOGGER.warn("CRF++ Trainer warnings:\n" + crfppTrainer.what());

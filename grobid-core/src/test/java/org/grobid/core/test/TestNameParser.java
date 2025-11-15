@@ -12,9 +12,6 @@ import org.grobid.core.factory.GrobidFactory;
 import org.junit.AfterClass;
 import org.junit.Test;
 
-/**
- *  @author Patrice Lopez
- */
 public class TestNameParser extends EngineTest{
 
     @AfterClass

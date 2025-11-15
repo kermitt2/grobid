@@ -8,10 +8,6 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * User: zholudev
- * Date: 10/8/14
- */
 public class EmailSanitizerTest {
     EmailSanitizer sanitizer = new EmailSanitizer();
 

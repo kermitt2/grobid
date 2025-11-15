@@ -2,7 +2,7 @@ package org.grobid.service.exceptions.mapper;
 
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response;
 
 public class GrobidStatusToHttpStatusMapper {
     public static Response.Status getStatusCode(GrobidExceptionStatus status) {
@@ -19,7 +19,7 @@ public class GrobidStatusToHttpStatusMapper {
                 return Response.Status.CONFLICT;
             case NO_BLOCKS:
                 return Response.Status.BAD_REQUEST;
-            case PDFTOXML_CONVERSION_FAILURE:
+            case PDFALTO_CONVERSION_FAILURE:
                 return Response.Status.INTERNAL_SERVER_ERROR;
             case TOO_MANY_TOKENS:
                 return Response.Status.CONFLICT;

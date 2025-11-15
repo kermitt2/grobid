@@ -1,0 +1,20 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_422._p451-lacroute.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+		<figure type="table">
+
+            <table>Data set<lb/> brainsmall<lb/> headsmall<lb/> brain<lb/> head<lb/> Size (voxels)<lb/> 128x128x109<lb/> 128x128x113<lb/> 256x256x167<lb/> 256x256x225<lb/> Parallel projection ( § 3.1)<lb/> Avg.<lb/> Min/Max<lb/> Mere.<lb/> 0.4 s. 0.37-0.48 s.<lb/> 4 Mb.<lb/> 0.4<lb/> 0.35-0.43<lb/> 2<lb/> 1.1<lb/> 0.91-1.39<lb/> 19<lb/> 1.2<lb/> 1.04-1.33<lb/> 13<lb/> Perspective projection ( §3.2)<lb/> Fast classification ( §3.3)<lb/> Avg.<lb/> Min/Max<lb/> Mem.<lb/> Avg.<lb/> Min/Max<lb/> Mem.<lb/> 1.0 s. 0.84-1.13 s.<lb/> 4 Mb. 0.7 s. 0.61-0.84 s.<lb/> 8 Mb.<lb/> 0.9<lb/> 0.82-1.00<lb/> 2<lb/> 0.8<lb/> 0.72-0.87<lb/> 8<lb/> 3.0<lb/> 2.44-2.98<lb/> 19<lb/> 2.4<lb/> 1.91-2.91<lb/> 46<lb/> 3.3<lb/> 2.99-3.68<lb/> 13<lb/> 2.8<lb/> 2.43-3.23<lb/> 61<lb/> </table>
+ 
+            <head>Table <label>1</label>: </head>
+ 
+            <figDesc>Rendering time and memory usage on an SGI Indigo workstation. Times are in seconds and include shading, resampling,<lb/> projection and warping. The fast classification times include rendering with a parallel projection. The &quot;Mem.&quot; field is the total size of<lb/> the data structures used by each algorithm.</figDesc>
+		</figure>
+
+
+    </text>
+</tei>
+

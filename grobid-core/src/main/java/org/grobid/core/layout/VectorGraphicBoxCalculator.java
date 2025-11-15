@@ -19,28 +19,22 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
- * Created by zholudev on 29/01/16.
  * Workign with vector graphics
  */
 public class VectorGraphicBoxCalculator {
+    private static final Logger LOGGER = LoggerFactory.getLogger(VectorGraphicBoxCalculator.class);
 
     public static final int MINIMUM_VECTOR_BOX_AREA = 3000;
-    public static final int VEC_GRAPHICS_FILE_SIZE_LIMIT = 10 * 1024 * 1024;
+    public static final int VEC_GRAPHICS_FILE_SIZE_LIMIT = 100 * 1024 * 1024;
 
     public static Multimap<Integer, GraphicObject> calculate(Document document) throws IOException, XPathException {
 
         Multimap<Integer, Block> blockMultimap = HashMultimap.create();
-
         Multimap<Integer, GraphicObject> result = LinkedHashMultimap.create();
-
-        //for (Block b : document.getBlocks()) {
-//            if (visualizeBlocks) {
-//                AnnotationUtil.annotatePage(document, b.getPageNumber() + "," + b.getX() + "," + b.getY() +
-//                        "," + b.getWidth() + "," + b.getHeight(), 0);
-//                blockMultimap.put(b.getPageNumber(), b);
-//            }
-        //}
 
         for (int pageNum = 1; pageNum <= document.getPages().size(); pageNum++) {
             BoundingBox mainPageArea = document.getPage(pageNum).getMainArea();
@@ -49,8 +43,10 @@ public class VectorGraphicBoxCalculator {
             File vecFile = new File(document.getDocumentSource().getXmlFile().getAbsolutePath() + "_data", "image-" + pageNum + ".svg");
             if (vecFile.exists()) {
                 if (vecFile.length() > VEC_GRAPHICS_FILE_SIZE_LIMIT) {
-                    throw new GrobidException("The vector file " + vecFile + " is too large to be processed, size: " + vecFile.length());
+                    LOGGER.error("The vector file " + vecFile + " is too large to be processed, size: " + vecFile.length());
+                    continue;
                 }
+
                 XQueryProcessor pr = new XQueryProcessor(vecFile);
 
                 SequenceIterator it = pr.getSequenceIterator(q);
@@ -71,9 +67,7 @@ public class VectorGraphicBoxCalculator {
                     boxes.add(e);
                 }
 
-
                 List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
-
                 for (int i = 0; i < remainingBoxes.size(); i++) {
                     Collection<Block> col = blockMultimap.get(pageNum);
                     for (Block bl : col) {
@@ -89,7 +83,6 @@ public class VectorGraphicBoxCalculator {
                 }
 
                 remainingBoxes = mergeBoxes(remainingBoxes);
-
                 for (BoundingBox b : remainingBoxes) {
                     if (b.area() > MINIMUM_VECTOR_BOX_AREA) {
                         result.put(pageNum, new GraphicObject(b, GraphicObjectType.VECTOR_BOX));
@@ -100,7 +93,6 @@ public class VectorGraphicBoxCalculator {
         }
         return result;
     }
-
 
     public static List<BoundingBox> mergeBoxes(List<BoundingBox> boxes) {
         boolean allMerged = false;

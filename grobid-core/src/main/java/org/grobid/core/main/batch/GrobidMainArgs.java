@@ -1,9 +1,9 @@
 package org.grobid.core.main.batch;
 
+import org.grobid.core.GrobidModels;
+
 /**
  * Class containing args of the batch {@link GrobidMain}.
- * 
- * @author Damien, Patrice
  * 
  */
 public class GrobidMainArgs {
@@ -31,6 +31,12 @@ public class GrobidMainArgs {
 	private boolean consolidateHeader = true;
 
 	private boolean consolidateCitation = false;
+
+	private boolean segmentSentences = false;
+
+	private boolean addElementId = false;
+
+    private GrobidModels.Flavor modelFlavor = null;
 
 	/**
 	 * @return the path2grobidHome
@@ -209,4 +215,41 @@ public class GrobidMainArgs {
 		teiCoordinates = pTeiCoordinates;
 	}
 
+	/**
+	 * @return true if output a subset of the xml:id attributes must be added automatically to the resulting TEI XML elements
+	 */
+	public final boolean getAddElementId() {
+		return addElementId;
+	}
+
+	/**
+	 * @param pAddElementId
+	 *            add xml:id attribute automatically on elements in the resulting TEI XML
+	 */
+	public final void setAddElementId(final boolean pAddElementId) {
+		addElementId = pAddElementId;
+	}
+
+	/**
+	 * @return true if we add sentence segmentation level structures for paragraphs in the TEI XML result 
+	 */
+	public final boolean getSegmentSentences() {
+		return segmentSentences;
+	}
+
+	/**
+	 * @param pSegmentSentences
+	 *            add sentence segmentation level structures for paragraphs in the TEI XML result 
+	 */
+	public final void setSegmentSentences(final boolean pSegmentSentences) {
+		segmentSentences = pSegmentSentences;
+	}
+
+    public GrobidModels.Flavor getModelFlavor() {
+        return modelFlavor;
+    }
+
+    public void setModelFlavor(GrobidModels.Flavor modelFlavor) {
+        this.modelFlavor = modelFlavor;
+    }
 }

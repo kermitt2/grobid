@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zholudev on 12/01/16.
  * Cluster of related tokens
  */
 public class TaggingTokenCluster {

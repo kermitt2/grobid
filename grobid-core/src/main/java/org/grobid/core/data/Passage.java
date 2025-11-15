@@ -3,7 +3,6 @@ package org.grobid.core.data;
 /**
  * Class for managing passage of citations.
  *
- * @author Patrice Lopez
  */
 public class Passage {
     private int pageBegin = -1;

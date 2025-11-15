@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Israel</forename>
+								 <surname>Orbach</surname>,
+								 <roleName>PhD</roleName>,
+							</persName>
+							<persName>
+								 <forename>Hanna</forename>
+								 <surname>Bar-Joseph</surname>,
+								 <roleName>PhD</roleName>, and
+							</persName>
+							<persName>
+								 <forename>Nirit</forename>
+								 <surname>Dror</surname>,
+								 <roleName>MA</roleName>
+							</persName>
+							<persName>
+								 <forename>Israel</forename>
+								 <surname>Orbach</surname>,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

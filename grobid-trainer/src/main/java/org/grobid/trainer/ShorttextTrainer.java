@@ -16,7 +16,6 @@ import java.util.StringTokenizer;
 /**
  * Trainer class for the short text model, e.g. for abstracts
  *
- * @author Patrice Lopez
  */
 public class ShorttextTrainer extends AbstractTrainer{
 

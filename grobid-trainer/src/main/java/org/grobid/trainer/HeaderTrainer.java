@@ -4,30 +4,38 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
-import org.grobid.trainer.sax.TEIHeaderSaxParser;
+import org.grobid.trainer.sax.*;
+import org.grobid.core.GrobidModels.Flavor;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
-
-/**
- * @author Patrice Lopez
- */
 public class HeaderTrainer extends AbstractTrainer{
+
+    private final GrobidModels.Flavor flavor;
 
     public HeaderTrainer() {
         super(GrobidModels.HEADER);
+        this.flavor = null;
     }
 
+    public HeaderTrainer(Flavor flavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.HEADER, flavor));
+        this.flavor = flavor;
+    }
 
-	@Override
+    @Override
     public int createCRFPPData(File corpusPath, File trainingOutputPath) {
-        return addFeaturesHeaders(corpusPath.getAbsolutePath() + "/tei", 
-						  		corpusPath.getAbsolutePath() + "/headers", 
-								trainingOutputPath, null, 1.0);
+        return addFeaturesHeaders(
+            corpusPath.getAbsolutePath() + "/tei",
+            corpusPath.getAbsolutePath() + "/raw",
+            trainingOutputPath,
+            null,
+            1.0
+        );
     }
 
 	/**
@@ -49,7 +57,7 @@ public class HeaderTrainer extends AbstractTrainer{
 							final File evalOutputPath, 
 							double splitRatio) {
 		return addFeaturesHeaders(corpusDir.getAbsolutePath() + "/tei", 
-								corpusDir.getAbsolutePath() + "/headers", 
+								corpusDir.getAbsolutePath() + "/raw", 
 								trainingOutputPath, 
 								evalOutputPath, 
 								splitRatio);	
@@ -85,14 +93,13 @@ public class HeaderTrainer extends AbstractTrainer{
             // we process all tei files in the output directory
             File[] refFiles = pathh.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
-                    return name.endsWith(".tei") | name.endsWith(".tei.xml");
+                    return name.endsWith(".tei") || name.endsWith(".tei.xml");
                 }
             });
 
             if (refFiles == null)
                 return 0;
 
-//            TreeMap<String, String> pdfs = new TreeMap<String, String>();
             nbExamples = refFiles.length;
             System.out.println(nbExamples + " tei files");
  
@@ -116,16 +123,20 @@ public class HeaderTrainer extends AbstractTrainer{
                 String name = teifile.getName();
                 //System.out.println(name);
 
-                TEIHeaderSaxParser parser2 = new TEIHeaderSaxParser();
-                parser2.setFileName(name);
-                //parser2.pdfs = pdfs;
+                TEIHeaderSaxParser parser;
+                if (flavor == Flavor.ARTICLE_LIGHT || flavor == Flavor.ARTICLE_LIGHT_WITH_REFERENCES) {
+                    parser = new TEIHeaderArticleLightSaxParser();
+                } else {
+                    parser = new TEIHeaderSaxParser();
+                }
+
                 // get a factory
                 SAXParserFactory spf = SAXParserFactory.newInstance();
                 //get a new instance of parser
                 SAXParser par = spf.newSAXParser();
-                par.parse(teifile, parser2);
+                par.parse(teifile, parser);
 
-                ArrayList<String> labeled = parser2.getLabeledResult();
+                List<String> labeled = parser.getLabeledResult();
 
                 //System.out.println(labeled);
                 //System.out.println(parser2.getPDFName()+"._");
@@ -135,21 +146,30 @@ public class HeaderTrainer extends AbstractTrainer{
                 File[] refFiles2 = refDir2.listFiles();
                 for (File aRefFiles2 : refFiles2) {
                     String localFileName = aRefFiles2.getName();
-                    if (localFileName.equals(parser2.getPDFName() + ".header")) {
-                        headerFile = localFileName;
-                        break;
-                    }
-
-                    if ((localFileName.startsWith(parser2.getPDFName() + "._")) &
-                            (localFileName.endsWith(".header"))) {
-                        headerFile = localFileName;
-                        break;
+                    if (parser.getPDFName() != null) {
+                        if (localFileName.equals(parser.getPDFName() + ".header") ||
+                            localFileName.equals(parser.getPDFName() + ".training.header")) {
+                            headerFile = localFileName;
+                            break;
+                        }
+                        if ((localFileName.startsWith(parser.getPDFName() + "._")) &&
+                                (localFileName.endsWith(".header") || localFileName.endsWith(".training.header") )) {
+                            headerFile = localFileName;
+                            break;
+                        }
+                    } 
+                    if (headerFile == null) {
+                        if (localFileName.equals(name.replace(".tei.xml", ""))) {                            
+                            headerFile = localFileName;
+                        }
                     }
                 }
 
-                if (headerFile == null)
+                if (headerFile == null) {
+                    System.out.println("raw header file not found for " + name);
                     continue;
-                //System.out.println(headerFile);
+                }
+
                 String pathHeader = headerPath + File.separator + headerFile;
                 int p = 0;
                 BufferedReader bis = new BufferedReader(
@@ -158,7 +178,6 @@ public class HeaderTrainer extends AbstractTrainer{
                 StringBuilder header = new StringBuilder();
 
                 String line;
-//                String lastTag = null;
                 while ((line = bis.readLine()) != null) {
                     header.append(line);
                     int ii = line.indexOf(' ');
@@ -169,7 +188,7 @@ public class HeaderTrainer extends AbstractTrainer{
                         // has been gnerated by a recent version of grobid
                         token = UnicodeUtil.normaliseTextAndRemoveSpaces(token);
                     }
-//                    boolean found = false;
+
                     // we get the label in the labelled data file for the same token
                     for (int pp = p; pp < labeled.size(); pp++) {
                         String localLine = labeled.get(pp);
@@ -183,20 +202,16 @@ public class HeaderTrainer extends AbstractTrainer{
                             if (localToken.equals(token)) {
                                 String tag = st.nextToken();
                                 header.append(" ").append(tag);
-//                                lastTag = tag;
-//                                found = true;
                                 p = pp + 1;
                                 pp = p + 10;
-                            }
+                            } /*else {
+                                System.out.println("feature:"+token + " / tei:" + localToken);
+                            }*/
                         }
                         if (pp - p > 5) {
                             break;
                         }
                     }
-                    /*if (!found) {
-                             if (lastTag != null)
-                                 header.append(lastTag);
-                         }*/
                     header.append("\n");
                 }
                 bis.close();
@@ -208,7 +223,6 @@ public class HeaderTrainer extends AbstractTrainer{
                 String lastLabel = null;
                 String lastLastLabel = null;
                 String previousLine = null;
-//                String previousPreviousLine = null;
 
                 while (sto.hasMoreTokens()) {
                     String linee = sto.nextToken();
@@ -256,8 +270,7 @@ public class HeaderTrainer extends AbstractTrainer{
                     lastLastLabel = lastLabel;
                     lastLabel = label;
                 }
-                //if (lastLabel == null)
-                //	previousLine += " <note>";
+
                 if (lastLabel != null) {
                     header2.append(previousLine);
                     header2.append("\n");
@@ -277,14 +290,18 @@ public class HeaderTrainer extends AbstractTrainer{
 
             if (writer2 != null) {
 				writer2.close();
-				os2.close();
+                if (os2 != null) {
+                    os2.close();
+                }
 			}
-			
+
 			if (writer3 != null) {
 				writer3.close();
-				os3.close();
+                if (os3 != null) {
+                    os3.close();
+                }
 			}
-			
+
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
@@ -295,12 +312,28 @@ public class HeaderTrainer extends AbstractTrainer{
      * Command line execution.
      *
      * @param args Command line arguments.
-     * @throws Exception 
      */
     public static void main(String[] args) throws Exception {
-    	GrobidProperties.getInstance();
-        AbstractTrainer.runTraining(new HeaderTrainer());
-        System.out.println(AbstractTrainer.runEvaluation(new HeaderTrainer()));
+        // if we have a parameter, it gives the flavor refinement to consider
+        Flavor theFlavor = null;
+        if (args.length > 0) {
+            String flavor = args[0];
+            theFlavor = GrobidModels.Flavor.fromLabel(flavor);
+            if (theFlavor == null) {
+                System.out.println("Warning, the flavor is not recognized, " +
+                    "must one one of " + Flavor.getLabels() + ", defaulting training to no collection...");
+            }
+        }
+
+        GrobidProperties.getInstance();
+        if (theFlavor == null) {
+            AbstractTrainer.runTraining(new HeaderTrainer());
+            System.out.println(AbstractTrainer.runEvaluation(new HeaderTrainer()));
+        } else {
+            AbstractTrainer.runTraining(new HeaderTrainer(theFlavor));
+            System.out.println(AbstractTrainer.runEvaluation(new HeaderTrainer(theFlavor)));
+        }
+
         System.exit(0);
     }
 }

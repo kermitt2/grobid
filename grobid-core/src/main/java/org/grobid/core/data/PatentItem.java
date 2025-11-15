@@ -2,11 +2,11 @@ package org.grobid.core.data;
 
 import java.util.List;
 import org.grobid.core.layout.BoundingBox;
+import org.grobid.core.utilities.TextUtilities;
 
 /**
  * Class for managing patent bibliographical references.
  *
- * @author Patrice Lopez
  */
 public class PatentItem implements Comparable<PatentItem> {
     // attribute
@@ -25,7 +25,7 @@ public class PatentItem implements Comparable<PatentItem> {
 	
     // scores
     private double conf = 1.0;
-    private String confidence = null;
+    //private String confidence = null;
 
     // position in document
     private int offset_begin = 0;
@@ -84,9 +84,9 @@ public class PatentItem implements Comparable<PatentItem> {
         return conf;
     }
 
-    public String getConfidence() {
+    /*public String getConfidence() {
         return confidence;
-    }
+    }*/
 
     public int getOffsetBegin() {
         return offset_begin;
@@ -240,7 +240,7 @@ public class PatentItem implements Comparable<PatentItem> {
 				+ ", kindCode=" + kindCode + ", application=" + application
 				+ ", provisional=" + provisional + ", reissued=" + reissued
 				+ ", plant=" + plant + ", design=" + design + ", conf=" + conf
-				+ ", confidence=" + confidence + ", offset_begin="
+				+ ", offset_begin="
 				+ offset_begin + ", offset_end=" + offset_end + ", offset_raw="
 				+ offset_raw + ", context=" + context + "]";
 	}
@@ -317,17 +317,17 @@ public class PatentItem implements Comparable<PatentItem> {
 		else {
 			biblStruct.append("national");
 		}
-		biblStruct.append("\">"+authority+"</orgName></authority>");
-		biblStruct.append("<idno type=\"docNumber\" subtype=\"epodoc\">"+number_epodoc+"</idno>");
-		biblStruct.append("<idno type=\"docNumber\" subtype=\"original\">"+number_wysiwyg+"</idno>");
+		biblStruct.append("\">"+TextUtilities.HTMLEncode(authority)+"</orgName></authority>");
+		biblStruct.append("<idno type=\"docNumber\" subtype=\"epodoc\">"+TextUtilities.HTMLEncode(number_epodoc)+"</idno>");
+		biblStruct.append("<idno type=\"docNumber\" subtype=\"original\">"+TextUtilities.HTMLEncode(number_wysiwyg)+"</idno>");
 		
 		if ((kindCode != null) || (date != null)) {
 			biblStruct.append("<imprint>");
 			if (kindCode != null) {
-				biblStruct.append("<classCode scheme=\"kindCode\">"+kindCode+"</classCode>");
+				biblStruct.append("<classCode scheme=\"kindCode\">"+TextUtilities.HTMLEncode(kindCode)+"</classCode>");
 			}
 			if (date != null) {
-				biblStruct.append("<date>"+date+"</date>");
+				biblStruct.append("<date>"+TextUtilities.HTMLEncode(date)+"</date>");
 			}
 			biblStruct.append("</imprint>");
 		}

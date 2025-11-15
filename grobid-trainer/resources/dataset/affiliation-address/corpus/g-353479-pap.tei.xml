@@ -9,8 +9,9 @@
 					<analytic>
 						<author>
 					
-							<marker>a</marker>) 
-								<affiliation>
+							
+							<affiliation>
+								<marker>a</marker>) 
 								<orgName type="institution">Institute of Physics and Nuclear Engineering</orgName>,
 								<address>
 									<settlement>Bucharest</settlement>,
@@ -19,8 +20,9 @@
 								</address>
 							</affiliation>
 					
-							<marker>b</marker>) 
+							
 							<affiliation>
+								<marker>b</marker>) 
 								<orgName type="institution">Academy of Romanian Scientists</orgName>,
 								<address>
 									<addrLine>54 Splaiul Independentei</addrLine>,
@@ -30,8 +32,9 @@
 								</address>
 							</affiliation>
 					
-							<marker>c</marker>)
+							
 							<affiliation>
+								<marker>c</marker>)
 								<orgName type="department">Institut für Theoretische Physik</orgName>
 								der
 								<orgName type="institution">Universität Tubingen</orgName>,<lb/>

@@ -2,6 +2,7 @@ package org.grobid.trainer;
 
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.GrobidModels.Flavor;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -13,11 +14,28 @@ import java.util.List;
 /**
  * Training application for training a target model.
  *
- * @author Patrice Lopez
  */
 public class TrainerRunner {
 
-    private static final List<String> models = Arrays.asList("affiliation", "chemical", "date", "citation", "ebook", "fulltext", "header", "monograph", "name-citation", "name-header", "patent");
+    private static final List<String> models = Arrays.asList(
+        "affiliation",
+        "chemical",
+        "date",
+        "citation",
+        "ebook",
+        "fulltext",
+        "header",
+        "header-light",
+        "header-light-ref",
+        "header-ietf",
+        "monograph", "name-citation",
+        "name-header",
+        "patent",
+        "segmentation",
+        "segmentation-light",
+        "segmentation-light-ref",
+        "segmentation-ietf"
+    );
     private static final List<String> options = Arrays.asList("0 - train", "1 - evaluate", "2 - split, train and evaluate", "3 - n-fold evaluation");
 
     private enum RunType {
@@ -54,6 +72,7 @@ public class TrainerRunner {
         double split = 0.0;
         int numFolds = 0;
         String outputFilePath = null;
+        boolean incremental = false;
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("-gH")) {
                 if (i + 1 == args.length) {
@@ -86,6 +105,9 @@ public class TrainerRunner {
                 }
                 outputFilePath = args[i + 1];
 
+            } else if (args[i].equals("-i")) {
+                incremental = true;
+
             }
         }
 
@@ -117,33 +139,47 @@ public class TrainerRunner {
             trainer = new FulltextTrainer();
         } else if (model.equals("header")) {
             trainer = new HeaderTrainer();
+        } else if (model.equals("header-ietf")) {
+            trainer = new HeaderTrainer(Flavor.IETF);
+        } else if (model.equals("header-light")) {
+            trainer = new HeaderTrainer(Flavor.ARTICLE_LIGHT);
+        } else if (model.equals("header-light-ref")) {
+            trainer = new HeaderTrainer(Flavor.ARTICLE_LIGHT_WITH_REFERENCES);
         } else if (model.equals("name-citation")) {
             trainer = new NameCitationTrainer();
         } else if (model.equals("name-header")) {
             trainer = new NameHeaderTrainer();
-        } else if (model.equals("patent")) {
+        } else if (model.equals("patent-citation")) {
             trainer = new PatentParserTrainer();
         } else if (model.equals("segmentation")) {
             trainer = new SegmentationTrainer();
+        } else if (model.equals("segmentation-light")) {
+            trainer = new SegmentationTrainer(Flavor.ARTICLE_LIGHT);
+        } else if (model.equals("segmentation-light-ref")) {
+            trainer = new SegmentationTrainer(Flavor.ARTICLE_LIGHT_WITH_REFERENCES);
+        } else if (model.equals("segmentation-ietf")) {
+            trainer = new SegmentationTrainer(Flavor.IETF);
         } else if (model.equals("reference-segmenter")) {
             trainer = new ReferenceSegmenterTrainer();
         } else if (model.equals("figure")) {
             trainer = new FigureTrainer();
         } else if (model.equals("table")) {
             trainer = new TableTrainer();
+        } else if (model.equals("funding-acknowledgement")) {
+            trainer = new FundingAcknowledgementTrainer();
         } else {
             throw new IllegalStateException("The model " + model + " is unknown.");
         }
 
         switch (mode) {
             case TRAIN:
-                AbstractTrainer.runTraining(trainer);
+                AbstractTrainer.runTraining(trainer, incremental);
                 break;
             case EVAL:
                 System.out.println(AbstractTrainer.runEvaluation(trainer));
                 break;
             case SPLIT:
-                System.out.println(AbstractTrainer.runSplitTrainingEvaluation(trainer, split));
+                System.out.println(AbstractTrainer.runSplitTrainingEvaluation(trainer, split, incremental));
                 break;
             case EVAL_N_FOLD:
                 if(numFolds == 0) {
@@ -155,7 +191,7 @@ public class TrainerRunner {
                         System.err.println("Output file exists. ");
                     }
                 } else {
-                    String results = AbstractTrainer.runNFoldEvaluation(trainer, numFolds);
+                    String results = AbstractTrainer.runNFoldEvaluation(trainer, numFolds, incremental);
                     System.out.println(results);
                 }
                 break;

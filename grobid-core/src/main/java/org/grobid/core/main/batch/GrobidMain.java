@@ -1,19 +1,18 @@
 package org.grobid.core.main.batch;
 
+import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.ProcessEngine;
+import org.grobid.core.main.GrobidHomeFinder;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.Utilities;
+
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
-import org.grobid.core.engines.ProcessEngine;
-import org.grobid.core.main.GrobidHomeFinder;
-import org.grobid.core.main.LibraryLoader;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.Utilities;
-
 /**
  * The entrance point for starting grobid from command line and perform batch processing
  * 
- * @author Florian, Damien, Patrice
  */
 public class GrobidMain {
 
@@ -67,16 +66,19 @@ public class GrobidMain {
 	 */
 	protected static String getHelp() {
 		final StringBuffer help = new StringBuffer();
-		help.append("HELP GROBID\n");
-		help.append("-h: displays help\n");
-		help.append("-gH: gives the path to grobid home directory.\n");
-		help.append("-dIn: gives the path to the directory where the files to be processed are located, to be used only when the called method needs it.\n");
-		help.append("-dOut: gives the path to the directory where the result files will be saved. The default output directory is the curent directory.\n");
-		help.append("-s: is the parameter used for process using string as input and not file.\n");
-		help.append("-r: recursive directory processing, default processing is not recursive.\n");
-		help.append("-ignoreAssets: do not extract and save the PDF assets (bitmaps, vector graphics), by default the assets are extracted and saved.\n");
-		help.append("-teiCoordinates: output a subset of the identified structures with coordinates in the original PDF, by default no coordinates are present.\n");
-		help.append("-exe: gives the command to execute. The value should be one of these:\n");
+		help.append("\nHELP for GROBID batch\n\n");
+		help.append("Command line arguments:\n");
+		help.append("  -h:\n \tdisplays help\n");
+		help.append("  -gH:\n \tgives the path to grobid home directory.\n");
+		help.append("  -dIn:\n \tgives the path to the directory where the files to be processed are located, to be used only when the called method process files.\n");
+		help.append("  -dOut:\n \tgives the path to the directory where the result files will be saved. The default output directory is the curent directory.\n");
+		help.append("  -s:\n \tgives a string as input to be processed, to be used only when the called method process a string.\n");
+		help.append("  -r:\n \trecursive directory processing, default processing is not recursive.\n");
+		help.append("  -ignoreAssets:\n \tdo not extract and save the PDF assets (bitmaps, vector graphics), by default the assets are extracted and saved.\n");
+		help.append("  -teiCoordinates:\n \toutput a subset of the identified structures with coordinates in the original PDF, by default no coordinates are present.\n");
+		help.append("  -addElementId:\n \tadd xml:id attribute automatically to the XML elements in the resulting TEI XML, by default no xml:id are added.\n");
+		help.append("  -segmentSentences:\n \tadd sentence segmentation level structures for paragraphs in the TEI XML result, by default no sentence segmentation is present.\n");
+		help.append("  -exe:\n \tgives the command to execute. The value should be one of these:\n");
 		help.append("\t" + availableCommands + "\n");
 		return help.toString();
 	}
@@ -150,13 +152,36 @@ public class GrobidMain {
 					gbdArgs.setSaveAssets(false);
 					continue;
 				}
+				if (currArg.equals("-addElementId")) {
+					gbdArgs.setAddElementId(true);
+					continue;
+				}
 				if (currArg.equals("-teiCoordinates")) {
 					gbdArgs.setTeiCoordinates(true);
+					continue;
+				}
+				if (currArg.equals("-segmentSentences")) {
+					gbdArgs.setSegmentSentences(true);
 					continue;
 				}
 				if (currArg.equals("-r")) {
 					gbdArgs.setRecursive(true);
 					continue;
+				}
+
+                if (currArg.equals("-flavor")) {
+					final String command = pArgs[i + 1];
+
+                    GrobidModels.Flavor flavor = GrobidModels.Flavor.fromLabel(command);
+					if (flavor != null) {
+                        System.out.println("Setting model flavor to: " + flavor);
+						gbdArgs.setModelFlavor(flavor);
+						i++;
+						continue;
+					} else {
+                        System.out.println("No model flavor, using the default models");
+						break;
+					}
 				}
 			}
 		}

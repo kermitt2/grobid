@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * Class for representing the layout information associated to a PDF object.
  *
- * @author Patrice Lopez
  */
 public class LayoutToken implements Comparable<LayoutToken>, Serializable {
 	

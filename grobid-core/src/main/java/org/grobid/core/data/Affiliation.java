@@ -2,14 +2,17 @@ package org.grobid.core.data;
 
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.utilities.LayoutTokensUtil;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Class for representing and exchanging affiliation information.
  *
- * @author Patrice Lopez
  */
 public class Affiliation {
 
@@ -30,12 +33,22 @@ public class Affiliation {
 
     private String addressString = null; // unspecified address field
     private String affiliationString = null; // unspecified affiliation field
-    private String rawAffiliationString = null; // raw affiliation text (excluding marker)
+    private String rawAffiliationString = null; // raw affiliation+address text (excluding marker)
 
     private boolean failAffiliation = true; // tag for unresolved affiliation attachment
 
+    private boolean isInfrastructure = false; // if true, the affiliation is a research infrastructure
+
+    private List<LayoutToken> layoutTokens = null;
+
+    // map of model labels to LayoutToken
+    private Map<String, List<LayoutToken>> labeledTokens;
+
     // an identifier for the affiliation independent from the marker, present in the TEI result
     private String key = null;
+
+    // default indo-european delimiters, should be moved to language specific analysers
+    public static String delimiters = " \n\t" + TextUtilities.fullPunctuations + "。、，・";
 
     public Affiliation() {
     }
@@ -57,6 +70,8 @@ public class Affiliation {
         addrLine = aff.getAddrLine();
         affiliationString = aff.getAffiliationString();
         rawAffiliationString = aff.getRawAffiliationString();
+        layoutTokens = aff.getLayoutTokens();
+        isInfrastructure = aff.isInfrastructure();
     }
 
     public String getAcronym() { 
@@ -144,6 +159,7 @@ public class Affiliation {
     }
 
     public void setCountry(String s) {
+        s = TextUtilities.removeLeadingAndTrailingChars(s, "[({.,])}: \n","[({.,])}: \n");
         country = s;
     }
 
@@ -160,10 +176,12 @@ public class Affiliation {
     }
 
     public void setRegion(String s) {
+        s = TextUtilities.removeLeadingAndTrailingChars(s, "[({.,])}: \n","[({.,])}: \n");
         region = s;
     }
 
     public void setSettlement(String s) {
+        s = TextUtilities.removeLeadingAndTrailingChars(s, "[({.,])}: \n","[({.,])}: \n");
         settlement = s;
     }
 
@@ -177,6 +195,7 @@ public class Affiliation {
 
     public void setRawAffiliationString(String s) {
         rawAffiliationString = s;
+        rawAffiliationString = rawAffiliationString.replaceAll("( )+", " ");
     }
 
     public void setInstitutions(List<String> affs) {
@@ -209,6 +228,17 @@ public class Affiliation {
         laboratories.add(TextUtilities.cleanField(aff, true));
     }
 
+    public boolean isInfrastructure() {
+        return this.isInfrastructure;
+    }
+
+    public void setInfrastructure(boolean boolValue) {
+        this.isInfrastructure = boolValue;
+    }
+
+    /**
+     * DEPRECATED
+     **/
     public void extendFirstInstitution(String theExtend) {
         if (institutions == null) {
             institutions = new ArrayList<String>();
@@ -220,6 +250,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendLastInstitution(String theExtend) {
         if (institutions == null) {
             institutions = new ArrayList<String>();
@@ -231,6 +264,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendFirstDepartment(String theExtend) {
         if (departments == null) {
             departments = new ArrayList<String>();
@@ -242,6 +278,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendLastDepartment(String theExtend) {
         if (departments == null) {
             departments = new ArrayList<String>();
@@ -253,6 +292,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendFirstLaboratory(String theExtend) {
         if (laboratories == null) {
             laboratories = new ArrayList<String>();
@@ -264,6 +306,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendLastLaboratory(String theExtend) {
         if (laboratories == null) {
             laboratories = new ArrayList<String>();
@@ -275,18 +320,40 @@ public class Affiliation {
         }
     }
 
-    public boolean notNull() {
-        return !((departments == null) &
-                (institutions == null) &
-                (laboratories == null) &
-                (country == null) &
-                (postCode == null) &
-                (postBox == null) &
-                (region == null) &
-                (settlement == null) &
-                (addrLine == null) &
-                (affiliationString == null) &
+    public boolean isNotNull() {
+        return !((departments == null) &&
+                (institutions == null) &&
+                (laboratories == null) &&
+                (country == null) &&
+                (postCode == null) &&
+                (postBox == null) &&
+                (region == null) &&
+                (settlement == null) &&
+                (addrLine == null) &&
+                (affiliationString == null)  &&
+                (rawAffiliationString == null) &&
                 (addressString == null));
+    }
+
+    public boolean isNotEmptyAffiliation() {
+        return !((departments == null) &&
+                (institutions == null) &&
+                (laboratories == null) &&
+                (affiliationString == null) &&
+                (rawAffiliationString == null));
+    }
+
+    public boolean hasAddress() {
+        if (country != null || 
+            postCode != null ||
+            postBox != null ||
+            settlement != null ||
+            addrLine != null ||
+            region != null ||
+            addressString != null) {
+            return true;
+        } else 
+            return false;
     }
 
     public void setFailAffiliation(boolean b) {
@@ -301,12 +368,26 @@ public class Affiliation {
         this.key = key;
     }
 
+    public List<LayoutToken> getLayoutTokens() {
+        return this.layoutTokens;
+    }
+
+    public void setLayoutTokens(List<LayoutToken> tokens) {
+        this.layoutTokens = tokens;
+    }
+
+    public void appendLayoutTokens(List<LayoutToken> tokens) {
+        if (this.layoutTokens == null)
+            this.layoutTokens = new ArrayList<>();
+        this.layoutTokens.addAll(tokens);
+    }
+
     public void clean() {
         if (departments != null) {
             List<String> newDepartments = new ArrayList<String>();
             for (String department : departments) {
                 String dep = TextUtilities.cleanField(department, true);
-                if (dep.length() > 2) {
+                if (dep != null && dep.length() > 2) {
                     newDepartments.add(dep);
                 }
             }
@@ -317,7 +398,7 @@ public class Affiliation {
             List<String> newInstitutions = new ArrayList<String>();
             for (String institution : institutions) {
                 String inst = TextUtilities.cleanField(institution, true);
-                if (inst.length() > 1) {
+                if (inst != null && inst.length() > 1) {
                     newInstitutions.add(inst);
                 }
             }
@@ -328,7 +409,7 @@ public class Affiliation {
             List<String> newLaboratories = new ArrayList<String>();
             for (String laboratorie : laboratories) {
                 String inst = TextUtilities.cleanField(laboratorie, true);
-                if (inst.length() > 2) {
+                if (inst != null && inst.length() > 2) {
                     newLaboratories.add(inst);
                 }
             }
@@ -337,138 +418,224 @@ public class Affiliation {
 
         if (country != null) {
             country = TextUtilities.cleanField(country, true);
-			if (country.endsWith(")")) {
+			if (country != null && country.endsWith(")")) {
 				// for some reason the ) at the end of this field is not removed
 				country = country.substring(0,country.length()-1);
 			}
-            if (country.length() < 2)
+            if (country != null && country.length() < 2)
                 country = null;
         }
         if (postCode != null) {
             postCode = TextUtilities.cleanField(postCode, true);
-            if (postCode.length() < 2)
+            if (postCode != null && postCode.length() < 2)
                 postCode = null;
         }
         if (postBox != null) {
             postBox = TextUtilities.cleanField(postBox, true);
-            if (postBox.length() < 2)
+            if (postBox != null && postBox.length() < 2)
                 postBox = null;
         }
         if (region != null) {
             region = TextUtilities.cleanField(region, true);
-            if (region.length() < 2)
+            if (region != null && region.length() < 2)
                 region = null;
         }
         if (settlement != null) {
             settlement = TextUtilities.cleanField(settlement, true);
-            if (settlement.length() < 2)
+            if (settlement != null && settlement.length() < 2)
                 settlement = null;
         }
         if (addrLine != null) {
             addrLine = TextUtilities.cleanField(addrLine, true);
-            if (addrLine.length() < 2)
+            if (addrLine != null && addrLine.length() < 2)
                 addrLine = null;
         }
         if (addressString != null) {
             addressString = TextUtilities.cleanField(addressString, true);
-            if (addressString.length() < 2)
+            if (addressString != null && addressString.length() < 2)
                 addressString = null;
         }
         if (affiliationString != null) {
             affiliationString = TextUtilities.cleanField(affiliationString, true);
-            if (affiliationString.length() < 2)
+            if (affiliationString != null && affiliationString.length() < 2)
                 affiliationString = null;
         }
         if (marker != null) {
             marker = TextUtilities.cleanField(marker, true);
-			marker = marker.replace(" ", "");
+            if (marker != null)
+    			marker = marker.replace(" ", "");
         }
     }
 
-    public String toTEI() {
-        StringBuilder tei = new StringBuilder();
-        if (!notNull()) {
-            return null;
-        } else {
-            tei.append("<affiliation");
-            if (key != null)
-                tei.append(" key=\"").append(key).append("\"");
-            tei.append(">");
-
-            if (departments != null) {
-                if (departments.size() == 1) {
-                    tei.append("<orgName type=\"department\">").append(TextUtilities.HTMLEncode(departments.get(0))).append("</orgName>");
-                } else {
-                    int q = 1;
-                    for (String depa : departments) {
-                        tei.append("<orgName type=\"department\" key=\"dep").append(q).append("\">").append(TextUtilities.HTMLEncode(depa)).append("</orgName>");
-                        q++;
-                    }
-                }
-            }
-
-            if (laboratories != null) {
-                if (laboratories.size() == 1) {
-                    tei.append("<orgName type=\"laboratory\">").append(TextUtilities.HTMLEncode(laboratories.get(0))).append("</orgName>");
-                } else {
-                    int q = 1;
-                    for (String labo : laboratories) {
-                        tei.append("<orgName type=\"laboratory\" key=\"lab").append(q).append("\">").append(TextUtilities.HTMLEncode(labo)).append("</orgName>");
-                        q++;
-                    }
-                }
-            }
-
-            if (institutions != null) {
-                if (institutions.size() == 1) {
-                    tei.append("<orgName type=\"institution\">").append(TextUtilities.HTMLEncode(institutions.get(0))).append("</orgName>");
-                } else {
-                    int q = 1;
-                    for (String inst : institutions) {
-                        tei.append("<orgName type=\"institution\" key=\"instit").append(q).append("\">").append(TextUtilities.HTMLEncode(inst)).append("</orgName>");
-                        q++;
-                    }
-                }
-            }
-
-            if ((getAddressString() != null) |
-                    (getAddrLine() != null) |
-                    (getPostBox() != null) |
-                    (getPostCode() != null) |
-                    (getSettlement() != null) |
-                    (getRegion() != null) |
-                    (getCountry() != null)) {
-                tei.append("<address>");
-                if (getAddressString() != null) {
-                    tei.append("<addrLine>").append(TextUtilities.HTMLEncode(getAddressString())).append("</addrLine>");
-                }
-                if (getAddrLine() != null) {
-                    tei.append("<addrLine>").append(TextUtilities.HTMLEncode(getAddrLine())).append("</addrLine>");
-                }
-                if (getPostBox() != null) {
-                    tei.append("<postBox>").append(TextUtilities.HTMLEncode(getPostBox())).append("</postBox>");
-                }
-                if (getPostCode() != null) {
-                    tei.append("<postCode>").append(TextUtilities.HTMLEncode(getPostCode())).append("</postCode>");
-                }
-                if (getSettlement() != null) {
-                    tei.append("<settlement>").append(TextUtilities.HTMLEncode(getSettlement())).append("</settlement>");
-                }
-                if (getRegion() != null) {
-                    tei.append("<region>").append(TextUtilities.HTMLEncode(getRegion())).append("</region>");
-                }
-                if (getCountry() != null) {
-                    Lexicon lexicon = Lexicon.getInstance();
-                    String code = lexicon.getCountryCode(getCountry());
-                    tei.append("<country");
-                    if (code != null)
-                        tei.append(" key=\"").append(code).append("\"");
-                    tei.append(">").append(TextUtilities.HTMLEncode(getCountry())).append("</country>");
-                }
-                tei.append("</address>");
-            }
-            tei.append("</affiliation>");
+    /**
+     * Return the number of overall structure members (address included)
+     */
+    public int nbStructures() {
+        int nbStruct = 0;
+        if (departments != null) {
+            nbStruct += departments.size();
         }
+        if (institutions != null) {
+            nbStruct += institutions.size();
+        }
+        if (laboratories != null) {
+            nbStruct += laboratories.size();
+        }
+        if (country != null) {
+            nbStruct++;
+        }
+        if (postCode != null) {
+            nbStruct++;
+        }
+        if (postBox != null) {
+            nbStruct++;
+        }
+        if (region != null) {
+            nbStruct++;
+        }
+        if (settlement != null) {
+            nbStruct++;
+        }
+        if (addrLine != null) {
+            nbStruct++;
+        }
+        if (marker != null) {
+            nbStruct++;
+        }
+        return nbStruct;
+    }
+
+    public static String toTEI(Affiliation aff, int nbTag) {
+        return toTEI(aff, nbTag, null);
+    }
+
+    public static String toTEI(Affiliation aff, int nbTag, GrobidAnalysisConfig config) {
+        StringBuffer tei = new StringBuffer();
+        TextUtilities.appendN(tei, '\t', nbTag + 1);
+
+        boolean withAffCoords = (config != null) && 
+                                (config.getGenerateTeiCoordinates() != null) && 
+                                (config.getGenerateTeiCoordinates().contains("affiliation"));
+        boolean orgNameCoords = (config != null) && 
+                                (config.getGenerateTeiCoordinates() != null) && 
+                                (config.getGenerateTeiCoordinates().contains("orgName"));
+
+        tei.append("<affiliation");
+        if (aff.getKey() != null)
+            tei.append(" key=\"").append(aff.getKey()).append("\"");
+        if (withAffCoords) {
+            String coords = LayoutTokensUtil.getCoordsString(aff.getLayoutTokens());
+            if (coords != null && coords.length()>0) {
+                tei.append(" coords=\"" + coords + "\"");
+            }
+        }
+        tei.append(">\n");
+
+        if (aff.getDepartments() != null) {
+            if (aff.getDepartments().size() == 1) {
+                TextUtilities.appendN(tei, '\t', nbTag + 2);
+                tei.append("<orgName type=\"department\">" +
+                        TextUtilities.HTMLEncode(aff.getDepartments().get(0)) + "</orgName>\n");
+            } else {
+                int q = 1;
+                for (String depa : aff.getDepartments()) {
+                    TextUtilities.appendN(tei, '\t', nbTag + 2);
+                    tei.append("<orgName type=\"department\" key=\"dep" + q + "\">" +
+                            TextUtilities.HTMLEncode(depa) + "</orgName>\n");
+                    q++;
+                }
+            }
+        }
+
+        if (aff.getLaboratories() != null) {
+            if (aff.getLaboratories().size() == 1) {
+                TextUtilities.appendN(tei, '\t', nbTag + 2);
+                tei.append("<orgName type=\"laboratory\">" +
+                        TextUtilities.HTMLEncode(aff.getLaboratories().get(0)) + "</orgName>\n");
+            } else {
+                int q = 1;
+                for (String labo : aff.getLaboratories()) {
+                    TextUtilities.appendN(tei, '\t', nbTag + 2);
+                    tei.append("<orgName type=\"laboratory\" key=\"lab" + q + "\">" +
+                            TextUtilities.HTMLEncode(labo) + "</orgName>\n");
+                    q++;
+                }
+            }
+        }
+
+        if (aff.getInstitutions() != null) {
+            if (aff.getInstitutions().size() == 1) {
+                TextUtilities.appendN(tei, '\t', nbTag + 2);
+                tei.append("<orgName type=\"institution\">" +
+                        TextUtilities.HTMLEncode(aff.getInstitutions().get(0)) + "</orgName>\n");
+            } else {
+                int q = 1;
+                for (String inst : aff.getInstitutions()) {
+                    TextUtilities.appendN(tei, '\t', nbTag + 2);
+                    tei.append("<orgName type=\"institution\" key=\"instit" + q + "\">" +
+                            TextUtilities.HTMLEncode(inst) + "</orgName>\n");
+                    q++;
+                }
+            }
+        }
+
+        if (
+                aff.getAddrLine() != null ||
+                aff.getPostBox() != null ||
+                aff.getPostCode() != null ||
+                aff.getSettlement() != null ||
+                aff.getRegion() != null ||
+                aff.getCountry() != null
+            ) {
+            TextUtilities.appendN(tei, '\t', nbTag + 2);
+            
+            tei.append("<address>\n");
+            /*if (aff.getAddressString() != null) {
+                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddressString()) +
+                        "</addrLine>\n");
+            }*/
+            if (aff.getAddrLine() != null) {
+                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddrLine()) +
+                        "</addrLine>\n");
+            }
+            if (aff.getPostBox() != null) {
+                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                tei.append("<postBox>" + TextUtilities.HTMLEncode(aff.getPostBox()) +
+                        "</postBox>\n");
+            }
+            if (aff.getPostCode() != null) {
+                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                tei.append("<postCode>" + TextUtilities.HTMLEncode(aff.getPostCode()) +
+                        "</postCode>\n");
+            }
+            if (aff.getSettlement() != null) {
+                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                tei.append("<settlement>" + TextUtilities.HTMLEncode(aff.getSettlement()) +
+                        "</settlement>\n");
+            }
+            if (aff.getRegion() != null) {
+                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                tei.append("<region>" + TextUtilities.HTMLEncode(aff.getRegion()) +
+                        "</region>\n");
+            }
+            if (aff.getCountry() != null) {
+                String code = Lexicon.getInstance().getCountryCode(aff.getCountry());
+                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                tei.append("<country");
+                if (code != null)
+                    tei.append(" key=\"" + code + "\"");
+                tei.append(">" + TextUtilities.HTMLEncode(aff.getCountry()) +
+                        "</country>\n");
+            }
+
+            TextUtilities.appendN(tei, '\t', nbTag + 2);
+            tei.append("</address>\n");
+        }
+
+        TextUtilities.appendN(tei, '\t', nbTag + 1);
+        tei.append("</affiliation>\n");
 
         return tei.toString();
     }
@@ -492,9 +659,32 @@ public class Affiliation {
                 ", addressString='" + addressString + '\'' +
                 ", affiliationString='" + affiliationString + '\'' +
                 ", rawAffiliationString='" + rawAffiliationString + '\'' +
-                ", failAffiliation=" + failAffiliation +
+                ", failAffiliation=" + failAffiliation + '\'' +
+                ", isInfrastructure=" + isInfrastructure + 
                 '}';
     }
 
-    
+    public void addLabeledResult(TaggingLabel label, List<LayoutToken> tokenizations) {
+        if (labeledTokens == null)
+            labeledTokens = new TreeMap<>();
+
+        List<LayoutToken> theTokenList = null;
+        if (tokenizations == null)
+            theTokenList = new ArrayList<>();
+        else 
+            theTokenList = tokenizations;
+
+        List<LayoutToken> theExistingTokenList = labeledTokens.get(label.getLabel());
+        if (theExistingTokenList != null) {
+            theExistingTokenList.addAll(theTokenList);
+            theTokenList = theExistingTokenList;
+        }
+
+        labeledTokens.put(label.getLabel(), theTokenList);
+    }
+
+    public List<LayoutToken> getLabeledResult(TaggingLabel label) {
+        return labeledTokens.get(label.getLabel());
+    }
+
 }

@@ -3,7 +3,9 @@ package org.grobid.service.process;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
+import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
@@ -23,17 +25,20 @@ import org.grobid.service.util.GrobidRestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
+import jakarta.ws.rs.core.HttpHeaders;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
 import java.io.*;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+import java.security.DigestInputStream;
+import java.security.MessageDigest;
+import javax.xml.bind.DatatypeConverter;
 
 /**
  * Web services consuming a file
@@ -56,10 +61,55 @@ public class GrobidRestProcessFiles {
      * @param consolidate consolidation parameter for the header extraction
      * @return a response object which contains a TEI representation of the header part
      */
+     public Response processStatelessHeaderDocument(
+        final InputStream inputStream,
+        final int consolidate,
+        final boolean includeRawAffiliations,
+        final boolean includeRawCopyrights,
+        ExpectedResponseType expectedResponseType
+    ) {
+         return processStatelessHeaderDocument(
+             inputStream,
+             consolidate,
+             includeRawAffiliations,
+             includeRawCopyrights,
+             false,
+             0,
+             2,
+             expectedResponseType
+         );
+     }
+
+     public Response processStatelessHeaderDocument(
+        final InputStream inputStream,
+        final int consolidate,
+        final boolean includeRawAffiliations,
+        final boolean includeRawCopyrights,
+        int startPage,
+        int endPage,
+        ExpectedResponseType expectedResponseType
+    ) {
+         return processStatelessHeaderDocument(
+             inputStream,
+             consolidate,
+             includeRawAffiliations,
+             includeRawCopyrights,
+             false,
+             startPage,
+             endPage,
+             expectedResponseType
+         );
+     }
+
     public Response processStatelessHeaderDocument(
         final InputStream inputStream,
         final int consolidate,
-        final boolean includeRawAffiliations
+        final boolean includeRawAffiliations,
+        final boolean includeRawCopyrights,
+        final boolean includeDiscardedText,
+        int startPage,
+        int endPage,
+        ExpectedResponseType expectedResponseType
     ) {
         LOGGER.debug(methodLogIn());
         String retVal = null;
@@ -74,19 +124,121 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md); 
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
+
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
                     "The input file cannot be written. ", Status.INTERNAL_SERVER_ERROR);
             } 
 
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
+
+            BiblioItem result = new BiblioItem();
+
             // starts conversion process
             retVal = engine.processHeader(
                 originFile.getAbsolutePath(),
+                md5Str,
                 consolidate,
                 includeRawAffiliations,
-                null
+                includeRawCopyrights,
+                includeDiscardedText,
+                startPage,
+                endPage,
+                result
+            );
+
+            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                response = Response.status(Response.Status.NO_CONTENT).build();
+            } else if (expectedResponseType == ExpectedResponseType.BIBTEX) {
+                response = Response.status(Response.Status.OK)
+                    .entity(result.toBibTeX("-1"))
+                    .header(HttpHeaders.CONTENT_TYPE, BibTexMediaType.MEDIA_TYPE + "; charset=UTF-8")
+                    .build();
+            } else {
+                response = Response.status(Response.Status.OK)
+                    .entity(retVal)
+                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                    .build();
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
+        } finally {
+            if (originFile != null)
+                IOUtilities.removeTempFile(originFile);
+
+            if (engine != null) {
+                GrobidPoolingFactory.returnEngine(engine);
+            }
+        }
+
+        LOGGER.debug(methodLogOut());
+        return response;
+    }
+
+    /**
+     * Uploads the origin document which shall be extracted into TEI and
+     * extracts only the header and funding information, this still requires a full read and segmentation of the document,
+     * but non-relevant parts are skipt.
+     *
+     * @param inputStream the data of origin document
+     * @param consolidateHeader consolidation parameter for the header extraction
+     * @param consolidateFunders consolidation parameter for the funder extraction
+     * @return a response object which contains a TEI representation of the header part
+     */
+    public Response processStatelessHeaderFundingDocument(
+        final InputStream inputStream,
+        final int consolidateHeader,
+        final int consolidateFunders,
+        final boolean includeRawAffiliations,
+        final boolean includeRawCopyrights,
+        final boolean includeDiscardedText
+    ) {
+        LOGGER.debug(methodLogIn());
+        String retVal = null;
+        Response response = null;
+        File originFile = null;
+        Engine engine = null;
+        try {
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
+            }
+
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md); 
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
+
+            if (originFile == null) {
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written. ", Status.INTERNAL_SERVER_ERROR);
+            } 
+
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
+
+            // starts conversion process
+            retVal = engine.processHeaderFunding(
+                originFile,
+                md5Str,
+                consolidateHeader,
+                consolidateFunders,
+                includeRawAffiliations,
+                includeRawCopyrights,
+                includeDiscardedText
             );
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
@@ -97,6 +249,7 @@ public class GrobidRestProcessFiles {
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
                     .build();
             }
+
         } catch (NoSuchElementException nseExp) {
             LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
@@ -130,18 +283,24 @@ public class GrobidRestProcessFiles {
      *                             PDF, -1 for the last page (default)
      * @param generateIDs          if true, generate random attribute id on the textual elements of
      *                             the resulting TEI
+     * @param segmentSentences     if true, return results with segmented sentences
      * @return a response object mainly contain the TEI representation of the
      * full text
      */
     public Response processFulltextDocument(final InputStream inputStream,
-                                          final int consolidateHeader,
-                                          final int consolidateCitations,
-                                          final boolean includeRawAffiliations,
-                                          final boolean includeRawCitations,
-                                          final int startPage,
-                                          final int endPage,
-                                          final boolean generateIDs,
-                                          final List<String> teiCoordinates) throws Exception {
+                                        final GrobidModels.Flavor flavor,
+                                        final int consolidateHeader,
+                                        final int consolidateCitations,
+                                        final int consolidateFunders,
+                                        final boolean includeRawAffiliations,
+                                        final boolean includeRawCitations,
+                                        final boolean includeRawCopyrights,
+                                        final boolean includeDiscardedText,
+                                        final int startPage,
+                                        final int endPage,
+                                        final boolean generateIDs,
+                                        final boolean segmentSentences,
+                                        final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
 
         String retVal = null;
@@ -156,27 +315,38 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md); 
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
                     "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
             } 
 
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
+
             // starts conversion process
             GrobidAnalysisConfig config =
                 GrobidAnalysisConfig.builder()
                     .consolidateHeader(consolidateHeader)
                     .consolidateCitations(consolidateCitations)
+                    .consolidateFunders(consolidateFunders)
                     .includeRawAffiliations(includeRawAffiliations)
                     .includeRawCitations(includeRawCitations)
+                    .includeRawCopyrights(includeRawCopyrights)
+                    .includeDiscardedText(includeDiscardedText)
                     .startPage(startPage)
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
                     .generateTeiCoordinates(teiCoordinates)
+                    .withSentenceSegmentation(segmentSentences)
+                    .flavor(flavor)
                     .build();
 
-            retVal = engine.fullTextToTEI(originFile, config);
+            retVal = engine.fullTextToTEI(originFile, flavor, md5Str, config);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Response.Status.NO_CONTENT).build();
@@ -199,6 +369,78 @@ public class GrobidRestProcessFiles {
 
             if (originFile != null)
               IOUtilities.removeTempFile(originFile);
+        }
+
+        LOGGER.debug(methodLogOut());
+        return response;
+    }
+
+    public Response processFulltextDocumentBlank(final InputStream inputStream,
+                                                 final int startPage,
+                                                 final int endPage,
+                                                 final boolean generateIDs,
+                                                 final boolean segmentSentences,
+                                                 final List<String> teiCoordinates) throws Exception {
+        LOGGER.debug(methodLogIn());
+
+        String retVal = null;
+        Response response = null;
+        File originFile = null;
+        Engine engine = null;
+        try {
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
+            }
+
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md);
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
+            if (originFile == null) {
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
+            }
+
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
+
+            // starts conversion process
+            GrobidAnalysisConfig config =
+                GrobidAnalysisConfig.builder()
+                    .startPage(startPage)
+                    .endPage(endPage)
+                    .generateTeiIds(generateIDs)
+                    .generateTeiCoordinates(teiCoordinates)
+                    .withSentenceSegmentation(segmentSentences)
+                    .build();
+
+            retVal = engine.fullTextToBlank(originFile, md5Str, config);
+
+            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                response = Response.status(Response.Status.NO_CONTENT).build();
+            } else {
+                response = Response.status(Response.Status.OK)
+                    .entity(retVal)
+                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                    .build();
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
+        } finally {
+            if (engine != null) {
+                GrobidPoolingFactory.returnEngine(engine);
+            }
+
+            if (originFile != null)
+                IOUtilities.removeTempFile(originFile);
         }
 
         LOGGER.debug(methodLogOut());
@@ -277,17 +519,26 @@ public class GrobidRestProcessFiles {
      *                             PDF, -1 for the last page (default)
      * @param generateIDs          if true, generate random attribute id on the textual elements of
      *                             the resulting TEI
+     * @param segmentSentences     if true, return results with segmented sentences
      * @return a response object mainly contain the TEI representation of the
      * full text
      */
-    public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
-                                                          final int consolidateHeader,
-                                                          final int consolidateCitations,
-                                                          final boolean includeRawAffiliations,
-                                                          final boolean includeRawCitations,
-                                                          final int startPage,
-                                                          final int endPage,
-                                                          final boolean generateIDs) throws Exception {
+    public Response processStatelessFulltextAssetDocument(
+        final InputStream inputStream,
+        final GrobidModels.Flavor flavor,
+        final int consolidateHeader,
+        final int consolidateCitations,
+        final int consolidateFunders,
+        final boolean includeRawAffiliations,
+        final boolean includeRawCitations,
+        final boolean includeRawCopyrights,
+        final int startPage,
+        final int endPage,
+        final boolean generateIDs,
+        final boolean segmentSentences,
+        final List<String> teiCoordinates
+    ) throws Exception {
+
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -302,7 +553,11 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md); 
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
@@ -312,31 +567,36 @@ public class GrobidRestProcessFiles {
             // set the path for the asset files
             assetPath = GrobidProperties.getTempPath().getPath() + File.separator + KeyGen.getKey();
 
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
+
             // starts conversion process
             GrobidAnalysisConfig config =
                 GrobidAnalysisConfig.builder()
                     .consolidateHeader(consolidateHeader)
                     .consolidateCitations(consolidateCitations)
+                    .consolidateFunders(consolidateFunders)
                     .includeRawAffiliations(includeRawAffiliations)
                     .includeRawCitations(includeRawCitations)
+                    .includeRawCopyrights(includeRawCopyrights)
                     .startPage(startPage)
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
+                    .generateTeiCoordinates(teiCoordinates)
                     .pdfAssetPath(new File(assetPath))
+                    .withSentenceSegmentation(segmentSentences)
+                    .flavor(flavor)
                     .build();
 
-            retVal = engine.fullTextToTEI(originFile, config);
+            retVal = engine.fullTextToTEI(originFile, flavor, md5Str, config);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Status.NO_CONTENT).build();
             } else {
 
-                response = Response.status(Status.OK).type("application/zip").build();
-
-                ByteArrayOutputStream ouputStream = new ByteArrayOutputStream();
-                ZipOutputStream out = new ZipOutputStream(ouputStream);
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                ZipOutputStream out = new ZipOutputStream(outputStream);
                 out.putNextEntry(new ZipEntry("tei.xml"));
-                out.write(retVal.getBytes(Charset.forName("UTF-8")));
+                out.write(retVal.getBytes(StandardCharsets.UTF_8));
                 // put now the assets, i.e. all the files under the asset path
                 File assetPathDir = new File(assetPath);
                 if (assetPathDir.exists()) {
@@ -368,7 +628,7 @@ public class GrobidRestProcessFiles {
                 response = Response
                     .ok()
                     .type("application/zip")
-                    .entity(ouputStream.toByteArray())
+                    .entity(outputStream.toByteArray())
                     .header("Content-Disposition", "attachment; filename=\"result.zip\"")
                     .build();
                 out.close();
@@ -431,7 +691,8 @@ public class GrobidRestProcessFiles {
             List<PatentItem> patents = new ArrayList<>();
             List<BibDataSet> articles = new ArrayList<>();
             retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(),
-                                                           articles, patents, consolidate, includeRawCitations);
+                                                           articles, patents, consolidate, 
+                                                           includeRawCitations);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Status.NO_CONTENT).build();
@@ -550,15 +811,21 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md); 
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
                     "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
             } 
 
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
+
             // starts conversion process
-            List<BibDataSet> bibDataSetList = engine.processReferences(originFile, consolidate);
+            List<BibDataSet> bibDataSetList = engine.processReferences(originFile, md5Str, consolidate);
 
             if (bibDataSetList.isEmpty()) {
                 response = Response.status(Status.NO_CONTENT).build();
@@ -702,7 +969,8 @@ public class GrobidRestProcessFiles {
     public Response processPDFReferenceAnnotation(final InputStream inputStream,
                                                   final int consolidateHeader,
                                                   final int consolidateCitations,
-                                                  final boolean includeRawCitations) throws Exception {
+                                                  final boolean includeRawCitations,
+                                                  final boolean includeFiguresTables) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         File originFile = null;
@@ -715,12 +983,18 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md); 
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
                     "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
             } 
+
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
 
             List<String> elementWithCoords = new ArrayList<>();
             elementWithCoords.add("ref");
@@ -728,21 +1002,19 @@ public class GrobidRestProcessFiles {
             GrobidAnalysisConfig config = new GrobidAnalysisConfig
                 .GrobidAnalysisConfigBuilder()
                 .generateTeiCoordinates(elementWithCoords)
+                .consolidateHeader(consolidateHeader)
                 .consolidateCitations(consolidateCitations)
                 .includeRawCitations(includeRawCitations)
-                .generateTeiCoordinates(elementWithCoords)
                 .build();
 
-            DocumentSource documentSource = DocumentSource.fromPdf(originFile);
             Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-            String json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
+            String json = CitationsVisualizer.getJsonAnnotations(teiDoc, null, includeFiguresTables);
 
             if (json != null) {
                 response = Response
                     .ok()
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
                     .entity(json)
-
                     .build();
             } else {
                 response = Response.status(Status.NO_CONTENT).build();
@@ -862,7 +1134,7 @@ public class GrobidRestProcessFiles {
         DocumentSource documentSource = 
             DocumentSource.fromPdf(originFile, config.getStartPage(), config.getEndPage(), true, true, false);
 
-        Document teiDoc = engine.fullTextToTEIDoc(documentSource, config);
+        Document teiDoc = engine.fullTextToTEIDoc(documentSource, null, config);
 
         documentSource = 
             DocumentSource.fromPdf(originFile, config.getStartPage(), config.getEndPage(), true, true, false);
@@ -893,7 +1165,7 @@ public class GrobidRestProcessFiles {
         } else if (type == GrobidRestUtils.Annotation.FIGURE) {
             out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(),
                 teiDoc, true, true, true, false, false);
-        }
+        } 
         return out;
     }
 }

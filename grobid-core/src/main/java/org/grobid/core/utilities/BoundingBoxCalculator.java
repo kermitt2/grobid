@@ -9,7 +9,6 @@ import org.grobid.core.layout.LayoutToken;
 import java.util.List;
 
 /**
- * Created by zholudev on 18/08/15.
  * Utilities to calculate bounding boxes from coordinates
  */
 public class BoundingBoxCalculator {

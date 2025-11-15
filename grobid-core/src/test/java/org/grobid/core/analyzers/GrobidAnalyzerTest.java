@@ -1,6 +1,8 @@
 package org.grobid.core.analyzers;
 
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.lang.Language;
+import org.grobid.core.utilities.UnicodeUtil;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -45,4 +47,100 @@ public class GrobidAnalyzerTest {
         assertThat(target.tokenizeWithLayoutToken(""), hasSize(0));
     }
 
+    @Test
+    public void testTokenize_Korean() {
+        String input = "최지수. 윤석민 (2019), 가짜뉴스 거버넌스: 정부규제, 자율규제, 공동규제 모형에 대한 비교를 중심으로, 사이버커뮤니케이션학보, 제36권 제1호, 127-180쪽.";
+        input = UnicodeUtil.normaliseText(input);
+        List<String> tokensStr = target.tokenize(input, new Language("ko"));
+        assertThat(tokensStr, hasSize(35));
+
+        List<LayoutToken> tokens = target.tokenizeWithLayoutToken(input, new Language("ko"));
+        assertThat(tokens, hasSize(35));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("ko"));
+        assertThat(tokens, hasSize(35));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("ko"));
+        assertThat(tokens, hasSize(35));
+
+        tokensStr = target.tokenize(input, new Language("ko"));
+        tokensStr = target.retokenizeSubdigits(tokensStr);
+        assertThat(tokensStr, hasSize(36));
+
+        tokensStr = target.tokenize(input, new Language("ko"));
+        tokens = target.retokenizeSubdigitsWithLayoutToken(tokensStr);
+        assertThat(tokens, hasSize(36));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("ko"));
+        tokens = target.retokenizeSubdigitsFromLayoutToken(tokens);
+        assertThat(tokens, hasSize(36));
+    }
+
+    @Test
+    public void testTokenize_Japanese() {
+        String input = "오다쇼고(小田省吾), 京城尊都の 由來こ 基の 城壁に就て</title>, 朝鮮 제197호, 1931";
+        input = UnicodeUtil.normaliseText(input);
+        List<String> tokensStr = target.tokenize(input, new Language("jp"));
+        assertThat(tokensStr, hasSize(23));
+
+        List<LayoutToken> tokens = target.tokenizeWithLayoutToken(input, new Language("jp"));
+        assertThat(tokens, hasSize(23));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("jp"));
+        assertThat(tokens, hasSize(23));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("jp"));
+        assertThat(tokens, hasSize(23));
+
+        tokensStr = target.tokenize(input, new Language("jp"));
+        tokensStr = target.retokenizeSubdigits(tokensStr);
+        assertThat(tokensStr, hasSize(25));
+
+        tokensStr = target.tokenize(input, new Language("jp"));
+        tokens = target.retokenizeSubdigitsWithLayoutToken(tokensStr);
+        assertThat(tokens, hasSize(25));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("jp"));
+        tokens = target.retokenizeSubdigitsFromLayoutToken(tokens);
+        assertThat(tokens, hasSize(25));
+    }
+
+    @Test
+    public void testTokenize_Chinese() {
+        String input = "郭宏奇. 中藥辨証治療灼口綜合征臨床觀察. 疾病監測与控制雜誌2009;8:484-5.";
+        input = UnicodeUtil.normaliseText(input);
+        List<String> tokensStr = target.tokenize(input, new Language("zh"));
+        assertThat(tokensStr, hasSize(35));
+
+        List<LayoutToken> tokens = target.tokenizeWithLayoutToken(input, new Language("zh"));
+        assertThat(tokens, hasSize(35));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("zh"));
+        assertThat(tokens, hasSize(35));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("zh"));
+        assertThat(tokens, hasSize(35));
+
+        tokensStr = target.tokenize(input, new Language("zh"));
+        tokensStr = target.retokenizeSubdigits(tokensStr);
+        assertThat(tokensStr, hasSize(35));
+
+        tokensStr = target.tokenize(input, new Language("zh"));
+        tokens = target.retokenizeSubdigitsWithLayoutToken(tokensStr);
+        assertThat(tokens, hasSize(35));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("zh"));
+        tokens = target.retokenizeSubdigitsFromLayoutToken(tokens);
+        assertThat(tokens, hasSize(35));
+    }
+
+    @Test
+    public void testReTokenize_Korean() {
+        String input = "미국의 애플사의 미국 출원 2012/012710.";
+        List<LayoutToken> tokens = target.tokenizeWithLayoutToken(input, new Language("ko"));
+        assertThat(tokens, hasSize(8));
+
+        tokens = target.retokenizeFromLayoutToken(tokens);
+        assertThat(tokens, hasSize(12));
+    }
 }

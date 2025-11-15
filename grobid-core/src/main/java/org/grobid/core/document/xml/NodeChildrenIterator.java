@@ -12,9 +12,6 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-/**
- * User: zholudev
- */
 public class NodeChildrenIterator implements Iterable<Node>, Iterator<Node> {
     private static class BlacklistElementNamePredicate implements Predicate<Node> {
         private Set<String> blacklistElements = new HashSet<>();

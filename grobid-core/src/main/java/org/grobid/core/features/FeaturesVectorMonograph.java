@@ -6,7 +6,6 @@ import org.grobid.core.utilities.TextUtilities;
 /**
  * Class for features used for high level segmentation of a monograph.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorMonograph {
     public LayoutToken token = null; // not a feature, reference value

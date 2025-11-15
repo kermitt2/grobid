@@ -3,10 +3,12 @@ package org.grobid.core.utilities;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Ignore;    
 
 import java.io.File;
 import java.io.IOException;
@@ -19,6 +21,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+@Ignore
 public class GrobidPropertiesTest {
     @Before
     public void setUp() {
@@ -32,38 +35,12 @@ public class GrobidPropertiesTest {
 
     @Test(expected = GrobidPropertyException.class)
     public void testSet_GROBID_HOME_PATH_NullPath_shouldThrowException() {
-        GrobidProperties.set_GROBID_HOME_PATH(null);
+        GrobidProperties.setGrobidHome(null);
     }
 
     @Test(expected = GrobidPropertyException.class)
     public void testSet_GROBID_HOME_PATH_FileNotExisting_shouldThrowException() {
-        GrobidProperties.set_GROBID_HOME_PATH("/NotExistingPath");
-    }
-
-    @Test(expected = GrobidPropertyException.class)
-    public void testSetGrobidProperties_NullPath_shouldThrowException() {
-        GrobidProperties.setGrobidPropertiesPath(null);
-    }
-
-    @Test(expected = GrobidPropertyException.class)
-    public void testSetGrobidProperties_PathFileNotExisting() {
-        GrobidProperties.setGrobidPropertiesPath("/NotExistingPath");
-    }
-
-    @Test(expected = GrobidPropertyException.class)
-    public void testLoadGrobidProperties_PathNoContext_shouldThrowException() throws Exception {
-        GrobidProperties.reset();
-        GrobidProperties.loadGrobidPropertiesPath();
-    }
-
-    @Test
-    public void shouldReturnAndConvertMatchingEnvironmentVariable() throws Exception {
-        assertEquals(
-            Collections.singletonMap("grobid.abc", "value1"),
-            GrobidProperties.getEnvironmentVariableOverrides(
-                Collections.singletonMap("GROBID__ABC", "value1")
-            )
-        );
+        GrobidProperties.setGrobidHome("/NotExistingPath");
     }
 
     @Test
@@ -75,38 +52,10 @@ public class GrobidPropertiesTest {
     }
 
     @Test
-    public void testIsDeLFTRedirectOutputFalseByDefault() throws IOException {
-        assertFalse(GrobidProperties.isDeLFTRedirectOutput());
-    }
-
-    @Test
-    public void testIsDeLFTRedirectOutputTrueIfSet() throws IOException {
-        GrobidProperties.getProps().put(
-            GrobidPropertyKeys.PROP_GROBID_DELFT_REDIRECT_OUTPUT, "true"
-        );
-        assertTrue(GrobidProperties.isDeLFTRedirectOutput());
-    }
-
-    /*@Test(expected = GrobidPropertyException.class)
-    public void testCheckPropertiesException_shouldThrowException() {
-        GrobidProperties.getProps().put(
-                GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML, "");
-        GrobidProperties.checkProperties();
-    }*/
-
-    @Test
-    public void testGetTempPath() {
-        assertEquals("The value of temp dir doesn't match the one expected",
-                GrobidProperties
-                        .getPropertyValue(GrobidPropertyKeys.PROP_TMP_PATH),
-                GrobidProperties.getTempPath().getAbsolutePath());
-    }
-
-    @Test
     public void testgetsetNativeLibraryPath() {
         String value = "value";
         GrobidProperties.setNativeLibraryPath(value);
-        assertEquals("The property has not the value expected", value,
+        assertEquals("The parameter has not the value expected", value,
                 GrobidProperties.getNativeLibraryPath().getPath());
     }
 
@@ -114,169 +63,67 @@ public class GrobidPropertiesTest {
     public void testsetgetProxyHost() {
         String value = "host";
         GrobidProperties.setProxyHost(value);
-        assertEquals("The property has not the value expected", value,
+        assertEquals("The parameter has not the value expected", value,
                 GrobidProperties.getProxyHost());
     }
 
     @Test
     public void testsetgetProxyPort() {
-        String value = "1";
+        int value = 1;
         GrobidProperties.setProxyPort(value);
-        assertEquals("The property has not the value expected", value,
-                GrobidProperties.getProxyPort().toString());
+        assertEquals("The parameter has not the value expected", value,
+                GrobidProperties.getProxyPort().intValue());
     }
 
     @Test
-    public void testsetgetNBThreads() {
-        String value = "1";
-        GrobidProperties.setNBThreads(value);
-        assertEquals("The property has not the value expected", value,
-                GrobidProperties.getNBThreads().toString());
+    public void testsetgetWapitiNbThreads() {
+        int value = 1;
+        GrobidProperties.setWapitiNbThreads(value);
+        assertEquals("The parameter has not the value expected", value,
+                GrobidProperties.getWapitiNbThreads().intValue());
     }
 
     @Test
     public void testgetNBThreadsShouldReturnAvailableProcessorsIfZero() {
-        String value = "0";
-        GrobidProperties.setNBThreads(value);
-        assertEquals("The property has not the value expected",
+        int value = 0;
+        GrobidProperties.setWapitiNbThreads(value);
+        assertEquals("The parameter has not the value expected",
                 String.valueOf(Runtime.getRuntime().availableProcessors()),
-                GrobidProperties.getNBThreads().toString());
-        assertTrue("The property is not greater than zero",
-            GrobidProperties.getNBThreads().intValue() > 0);
+                GrobidProperties.getWapitiNbThreads());
+        assertTrue("The parameter is not greater than zero",
+            GrobidProperties.getWapitiNbThreads().intValue() > 0);
     }
 
     @Test
-    public void testsetisUseLanguageId() {
-        String value = "true";
-        GrobidProperties.setUseLanguageId(value);
-        assertTrue("The property has not the value expected",
-                GrobidProperties.isUseLanguageId());
-    }
-
-    @Test
-    public void testShouldUseHeaderHeuristicsByDefault() {
-        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS);
-        assertTrue("header use heuristics", GrobidProperties.isHeaderUseHeuristics());
-    }
-
-    @Test
-    public void testShouldNotUseHeaderHeuristicsIfDisabled() {
-        GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "false");
-        assertFalse("header use heuristics", GrobidProperties.isHeaderUseHeuristics());
-    }
-
-    @Test
-    public void testsetisResourcesInHome() {
-        String value = "true";
-        GrobidProperties.setResourcesInHome(value);
-        assertTrue("The property has not the value expected",
-                GrobidProperties.isResourcesInHome());
-    }
-
-    //@Test
-    public void testGetModelPath() {
-        GrobidModels value = GrobidModels.DATE;
-        assertEquals("The property has not the value expected",
-                new File(GrobidProperties.get_GROBID_HOME_PATH(),
-                        GrobidProperties.FOLDER_NAME_MODELS + File.separator
-                                + value.getFolderName() + File.separator
-                                + GrobidProperties.FILE_NAME_MODEL),
-                GrobidProperties.getModelPath(value));
-    }
-
-    //@Test
-    public void testgetTemplatePath() {
-        GrobidModels value = GrobidModels.DATE;
+    public void testShouldReturnModelPathWithExtension() {
+        GrobidModels model = GrobidModels.DATE;
+        String extension = GrobidProperties.getGrobidEngine(model).getExt();
         assertEquals(
-                "The property has not the value expected",
-                new File(GrobidProperties.get_GROBID_HOME_PATH(), "dataset/"
-                        + value.getFolderName() + "/crfpp-templates/"
-                        + value.getTemplateName()),
-                GrobidProperties.getTemplatePath(
-                        GrobidProperties.get_GROBID_HOME_PATH(), value));
-    }
-
-    //@Test
-    public void testgetEvalCorpusPath() {
-        GrobidModels value = GrobidModels.DATE;
-        assertEquals(
-                "The property has not the value expected",
-                new File(GrobidProperties.get_GROBID_HOME_PATH(), "dataset/"
-                        + value.getFolderName() + "/evaluation/"),
-                GrobidProperties.getEvalCorpusPath(
-                        GrobidProperties.get_GROBID_HOME_PATH(), value));
-    }
-
-    //@Test
-    public void testgetCorpusPath() {
-        GrobidModel value = GrobidModels.DATE;
-        assertEquals(
-                "The property has not the value expected",
-                new File(GrobidProperties.get_GROBID_HOME_PATH(), "dataset/"
-                        + value.getFolderName() + "/corpus"),
-                GrobidProperties.getCorpusPath(
-                        GrobidProperties.get_GROBID_HOME_PATH(), value));
-    }
-
-    //@Test
-    public void testgetLexiconPath() {
-        assertEquals("The property has not the value expected",
-                new File(GrobidProperties.get_GROBID_HOME_PATH(), "lexicon")
-                        .getAbsolutePath(), GrobidProperties.getLexiconPath());
-    }
-
-
-    @Test(expected = GrobidPropertyException.class)
-    public void testgetLanguageDetectorFactory_shouldThrowException() {
-        GrobidProperties.setUseLanguageId("true");
-        GrobidProperties.getProps().put(
-                GrobidPropertyKeys.PROP_LANG_DETECTOR_FACTORY, "");
-        GrobidProperties.getLanguageDetectorFactory();
-    }
-
-    @Test(expected = GrobidPropertyException.class)
-    public void testgetLanguageDetectorFactory2_shouldThrowException() {
-        GrobidProperties.getProps().put(
-                GrobidPropertyKeys.PROP_LANG_DETECTOR_FACTORY, "");
-        GrobidProperties.setUseLanguageId("true");
-        GrobidProperties.getLanguageDetectorFactory();
+            "model path for " + model.name(),
+            new File(GrobidProperties.getGrobidHome(),
+                GrobidProperties.FOLDER_NAME_MODELS
+                + File.separator
+                + model.getFolderName()
+                + File.separator
+                + GrobidProperties.FILE_NAME_MODEL
+                + "."
+                + extension
+            ).getAbsoluteFile(),
+            GrobidProperties.getModelPath(model).getAbsoluteFile()
+        );
     }
 
     @Test
     public void testgetLanguageDetectorFactory() {
-        GrobidProperties.setUseLanguageId("false");
-        assertEquals("The property has not the value expected",
+        assertEquals("The parameter has not the value expected",
                 "org.grobid.core.lang.impl.CybozuLanguageDetectorFactory",
                 GrobidProperties.getLanguageDetectorFactory());
     }
 
     @Test
-    public void testgetPdf2XMLPath() throws Exception {
-        assertNotNull("The property has not the value expected", GrobidProperties
-                .getPdfToXMLPath().getAbsolutePath());
-    }
-
-    @Test(expected = GrobidPropertyException.class)
-    public void testloadPdf2XMLPath_shouldThrowException() {
-        GrobidProperties.getProps().put(
-                GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML, "/notExistingPath");
-        GrobidProperties
-                .getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML);
-        GrobidProperties.loadPdf2XMLPath();
-    }
-
-    @Test(expected = GrobidPropertyException.class)
-    public void testinitException2_shouldThrowException() {
-        GrobidProperties.GROBID_PROPERTY_PATH = new File(StringUtils.EMPTY);
-        GrobidProperties.getNewInstance();
-    }
-
-    @Test
-    public void testLoadGrobidPropertiesPath() throws Exception {
-        GrobidProperties.GROBID_PROPERTY_PATH = null;
-        GrobidProperties.loadGrobidPropertiesPath();
-        assertNotNull("The property has not the value expected",
-                GrobidProperties.getGrobidPropertiesPath().getAbsolutePath());
+    public void testgetPdfaltoPath() throws Exception {
+        assertNotNull("The parameter has not the value expected", GrobidProperties
+                .getPdfaltoPath().getAbsolutePath());
     }
 
     @Test

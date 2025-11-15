@@ -6,7 +6,6 @@ import org.grobid.core.utilities.TextUtilities;
 /**
  * Class for features used for figure/table parsing.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorFigure {
     public LayoutToken token = null; // not a feature, reference value

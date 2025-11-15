@@ -1,9 +1,5 @@
 package org.grobid.core.utilities;
 
-/**
- * User: zholudev
- * Date: 2/17/14
- */
 public class ElementCounterItem<T> {
     private T item;
     private Integer cnt;

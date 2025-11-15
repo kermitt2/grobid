@@ -16,7 +16,7 @@
  */
 
 /**
- * @author Bruno Pouliquen
+ * @author Bruno Pouliquen @ WIPO
  */
 
 package org.grobid.core.analyzers;

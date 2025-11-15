@@ -23,7 +23,7 @@ import org.grobid.core.sax.TextSaxParser;
  *  batch SOAP envelope.
  *
  */
- 
+
  public class OPSService {
 	
 	public OPSService() {}
@@ -116,8 +116,13 @@ import org.grobid.core.sax.TextSaxParser;
 			spf.setValidating(false);
 			spf.setFeature("http://xml.org/sax/features/namespaces", false);
 			spf.setFeature("http://xml.org/sax/features/validation", false);
+			spf.setFeature("http://xml.org/sax/features/external-general-entities", false);
+			spf.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+			spf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
 			//get a new instance of parser
-			XMLReader reader = XMLReaderFactory.createXMLReader();
+			XMLReader reader = spf.newSAXParser().getXMLReader();
+			reader.setFeature("http://xml.org/sax/features/external-general-entities", false);
+			reader.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
 			reader.setEntityResolver(new EntityResolver() {
 				public InputSource resolveEntity(String publicId, String systemId) {
 					return new InputSource(

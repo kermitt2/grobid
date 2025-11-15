@@ -5,10 +5,6 @@ package org.grobid.core.data;
  */
 public class DataSetContext {
     public String context;
-    /*
-        RgPath of citation/formula/table/figure reference within @context
-     */
-
     private String documentCoords;
     private String teiId;
 

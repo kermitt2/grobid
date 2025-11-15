@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Hongxin</forename>
+								 <surname>Guan</surname>
+								 <marker>1☯</marker> ,
+							</persName>
+							<persName>
+								 <forename>Youwang</forename>
+								 <surname>Wang</surname>
+								 <marker>2,3☯</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ting</forename>
+								 <surname>Yu</surname>
+                                 <marker>1☯</marker> ,
+							</persName>
+							<persName>
+								 <forename>Yini</forename>
+                                 <surname>Huang</surname>
+                                 <marker>1,4☯</marker> ,
+							</persName>
+							<persName>
+								 <forename>Mianhuan</forename>
+                                 <surname>Li</surname>
+                                 <marker>1,5</marker> ,
+							</persName>
+							<persName>
+								 <forename>Abdullah</forename>
+								 <middlename>F</middlename>.
+								 <middlename>U</middlename>.
+								 <middlename>H</middlename>.
+                                 <surname>Saeed</surname> ID
+                                 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Vanja</forename>
+                                 <surname>Perčulija</surname> ID
+                                 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Daliang</forename>
+                                 <surname>Li</surname>
+                                 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Jia</forename>
+                                 <surname>Xiao</surname>
+                                 <marker>1,5</marker> ,
+							</persName>
+							<persName>
+								 <forename>Dongmei</forename>
+                                 <surname>Wang</surname>
+                                ID
+                                <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ping</forename>
+                                 <surname>Zhu</surname>
+								 ID
+								 <marker>2,3 *</marker>,
+							</persName>
+							<persName>
+								 <forename>Songying</forename>
+								 <surname>Ouyang</surname> ID
+								 <marker>1,2,4 *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -64,12 +64,9 @@ public class TEIAuthorSaxParser extends DefaultHandler {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-        if ((
-                (qName.equals("forename")) | (qName.equals("middlename")) | (qName.equals("title")) |
-                        (qName.equals("suffix")) |
-                        (qName.equals("surname")) | (qName.equals("lastname")) | (qName.equals("marker")) |
-                        (qName.equals("roleName"))
-        ) & (currentTag != null)) {
+        if ((qName.equals("firstname") || qName.equals("forename") || qName.equals("middlename") || qName.equals("title") ||
+                qName.equals("suffix") || qName.equals("surname") || qName.equals("lastname") || qName.equals("marker") ||
+                qName.equals("roleName")) & (currentTag != null)) {
             String text = getText();
             writeField(text);
         } else if (qName.equals("lb")) {
@@ -107,7 +104,7 @@ public class TEIAuthorSaxParser extends DefaultHandler {
             currentTag = "<title>";
         } else if (qName.equals("marker")) {
             currentTag = "<marker>";
-        } else if ((qName.equals("surname")) | (qName.equals("lastname"))) {
+        } else if (qName.equals("surname") || qName.equals("lastname")) {
             currentTag = "<surname>";
         } else if (qName.equals("middlename")) {
             currentTag = "<middlename>";

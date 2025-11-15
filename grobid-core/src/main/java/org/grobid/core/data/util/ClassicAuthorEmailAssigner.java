@@ -6,14 +6,9 @@ import org.grobid.core.utilities.TextUtilities;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * User: zholudev
- * Date: 10/8/14
- */
 public class ClassicAuthorEmailAssigner implements AuthorEmailAssigner {
 
     @Override
-
     public void assign(List<Person> fullAuthors, List<String> emails) {
         List<Integer> winners = new ArrayList<Integer>();
 
@@ -56,7 +51,6 @@ public class ClassicAuthorEmailAssigner implements AuthorEmailAssigner {
                         }
                     }
                 }
-
             }
         }
     }

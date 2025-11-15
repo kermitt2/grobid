@@ -5,9 +5,6 @@ import org.grobid.core.factory.GrobidFactory;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
-/**
- * User: zholudev Date: 11/21/11 Time: 7:17 PM
- */
 public abstract class EngineTest {
     protected static Engine engine;
 

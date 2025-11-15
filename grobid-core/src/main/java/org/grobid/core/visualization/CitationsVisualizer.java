@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.google.common.collect.Multimap;
 import net.sf.saxon.trans.XPathException;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.cos.COSArray;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -23,6 +24,8 @@ import org.grobid.core.data.DataSetContext;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Person;
 import org.grobid.core.data.Equation;
+import org.grobid.core.data.Figure;
+import org.grobid.core.data.Table;
 import org.grobid.core.document.Document;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.Page;
@@ -85,7 +88,7 @@ public class CitationsVisualizer {
                 if (!StringUtils.isEmpty(biblio.getDOI())) {
                     theUrl = "https://dx.doi.org/" + biblio.getDOI();
                 } else if (!StringUtils.isEmpty(biblio.getArXivId())) {
-                    theUrl = "https://arxiv.org/" + biblio.getArXivId();
+                    theUrl = "https://arxiv.org/abs/" + biblio.getArXivId();
                 } else if (!StringUtils.isEmpty(biblio.getWeb())) {
                     theUrl = biblio.getWeb();
                 }
@@ -160,14 +163,19 @@ public class CitationsVisualizer {
 
         Long pageNum = Long.valueOf(split[0], 10) - 1;
         PDPage page = document.getDocumentCatalog().getPages().get(pageNum.intValue());
-        PDRectangle mediaBox = page.getMediaBox();
+
+        PDRectangle mediaBox = page.getCropBox();
         if (mediaBox == null) {
             mediaBox = page.getMediaBox();
             // this will look for the main media box of the page up in the PDF element hierarchy
             if (mediaBox == null) {
-                // we tried our best given PDFBox
-                LOGGER.warn("Media box for page " + pageNum.intValue() + " not found.");
-                return;
+                // last hope
+                mediaBox = page.getArtBox();
+                if (mediaBox == null) {
+                    // we tried our best given PDFBox
+                    LOGGER.warn("Media box for page " + pageNum.intValue() + " not found.");
+                    return;
+                }
             }
         }
 
@@ -261,6 +269,9 @@ public class CitationsVisualizer {
         stream.close();
     }
 
+    public static String getJsonAnnotations(Document teiDoc, List<String> resolvedBibRefUrl) throws IOException, XPathException {
+        return getJsonAnnotations(teiDoc, resolvedBibRefUrl, false);
+    }
 
     /**
      *  Produce JSON annotations with PDF coordinates for web based PDF rendering. Annotations
@@ -271,9 +282,13 @@ public class CitationsVisualizer {
      *
      *  @param teiDoc the Document object resulting from the full document structuring
      *  @param resolvedBibRefUrl the list of URL to be added to the bibliographical reference
-     *  annotations, if null the bib. ref. annotations are not associated to external URL.
+     *                           annotations, if null the bib. ref. annotations are not associated 
+     *                           to external URL.
+     *  @param addFiguresTables if true, also annotate figure and table areas, plus the callout 
+     *                          to figures and tables
+     *  
      */
-    public static String getJsonAnnotations(Document teiDoc, List<String> resolvedBibRefUrl) throws IOException, XPathException {
+    public static String getJsonAnnotations(Document teiDoc, List<String> resolvedBibRefUrl, boolean addFiguresTables) throws IOException, XPathException {
         StringWriter refW = new StringWriter();
         JsonGenerator jsonRef = jFactory.createGenerator(refW);
         //jsonRef.useDefaultPrettyPrinter();
@@ -325,7 +340,7 @@ public class CitationsVisualizer {
                 } else if (!StringUtils.isEmpty(biblio.getDOI())) {
                     theUrl = "https://dx.doi.org/" + biblio.getDOI();
                 } else if (!StringUtils.isEmpty(biblio.getArXivId())) {
-                    theUrl = "https://arxiv.org/" + biblio.getArXivId();
+                    theUrl = "https://arxiv.org/abs/" + biblio.getArXivId();
                 } else if (!StringUtils.isEmpty(biblio.getWeb())) {
                     theUrl = biblio.getWeb();
                 }
@@ -391,10 +406,6 @@ public class CitationsVisualizer {
 
         jsonRef.writeFieldName("refMarkers");
         jsonRef.writeRawValue(markW.toString());
-        
-
-
-
 
 
         // for the same price, we add the formulas
@@ -406,50 +417,51 @@ public class CitationsVisualizer {
         totalMarkers2 = 0;
         int totalFormulas = 0;
 
-
         jsonRef.writeArrayFieldStart("formulas");
         contexts = DataSetContextExtractor.getFormulaReferences(tei);
-        for (Equation formula : teiDoc.getEquations()) {
-            String teiId = formula.getTeiId();
-            totalFormulas++;
-            jsonRef.writeStartObject();
-            jsonRef.writeStringField("id", teiId);
-            
-            jsonRef.writeArrayFieldStart("pos");
-            if (formula.getCoordinates() != null) {
-                for (BoundingBox b : formula.getCoordinates()) {
-                    // reference string
-                    jsonRef.writeStartObject();
-                    b.writeJsonProps(jsonRef);
-                    jsonRef.writeEndObject();
-                }
-            }
-            jsonRef.writeEndArray(); // pos
-            jsonRef.writeEndObject(); // formula element
+        if (CollectionUtils.isNotEmpty(teiDoc.getEquations())) {
+            for (Equation formula : teiDoc.getEquations()) {
+                String teiId = formula.getTeiId();
+                totalFormulas++;
+                jsonRef.writeStartObject();
+                jsonRef.writeStringField("id", teiId);
 
-            // reference markers for this formula
-            for (DataSetContext c : contexts.get(teiId)) {
-                //System.out.println(c.getContext());
-                String mrect = c.getDocumentCoords();
-                if ((mrect != null) && (mrect.trim().length()>0)) {
-                    for (String coords : mrect.split(";")) {
-                        if ((coords == null) || (coords.length() == 0))
-                            continue;
-                        //annotatePage(document, coords, teiId.hashCode(), 1.0f);
-                        jsonMark.writeStartObject();
-                        jsonMark.writeStringField("id", teiId);
-                        BoundingBox b2 = BoundingBox.fromString(coords);
-                        b2.writeJsonProps(jsonMark);
-                        jsonMark.writeEndObject();
-                        totalMarkers1++;
+                jsonRef.writeArrayFieldStart("pos");
+                if (formula.getCoordinates() != null) {
+                    for (BoundingBox b : formula.getCoordinates()) {
+                        // reference string
+                        jsonRef.writeStartObject();
+                        b.writeJsonProps(jsonRef);
+                        jsonRef.writeEndObject();
+                    }
+                }
+                jsonRef.writeEndArray(); // pos
+                jsonRef.writeEndObject(); // formula element
+
+                // reference markers for this formula
+                for (DataSetContext c : contexts.get(teiId)) {
+                    //System.out.println(c.getContext());
+                    String mrect = c.getDocumentCoords();
+                    if ((mrect != null) && (mrect.trim().length() > 0)) {
+                        for (String coords : mrect.split(";")) {
+                            if ((coords == null) || (coords.length() == 0))
+                                continue;
+                            //annotatePage(document, coords, teiId.hashCode(), 1.0f);
+                            jsonMark.writeStartObject();
+                            jsonMark.writeStringField("id", teiId);
+                            BoundingBox b2 = BoundingBox.fromString(coords);
+                            b2.writeJsonProps(jsonMark);
+                            jsonMark.writeEndObject();
+                            totalMarkers1++;
+                        }
                     }
                 }
             }
         }
         jsonRef.writeEndArray(); // formulas
     
-        // remaining reference markers which have not been solved with an actual full 
-        // bibliographical reference object 
+        // remaining formula markers which have not been solved with an actual full 
+        // formula object 
         for (DataSetContext c : contexts.get("")) {
             String mrect = c.getDocumentCoords();
             if ((mrect != null) && (mrect.trim().length()>0)) {
@@ -474,6 +486,163 @@ public class CitationsVisualizer {
         LOGGER.debug("totalFormulas: " + totalBib);
         LOGGER.debug("totalFormulaMarkers1: " + totalMarkers1);
         LOGGER.debug("totalFormulaMarkers2: " + totalMarkers2);
+
+
+        // if requested, for the same price, we add the figures+tables
+        if (addFiguresTables) {
+            markW = new StringWriter();
+            jsonMark = jFactory.createGenerator(markW);
+            jsonMark.writeStartArray();
+
+            totalMarkers1 = 0;
+            totalMarkers2 = 0;
+            int totalFigures = 0;
+
+            jsonRef.writeArrayFieldStart("figures");
+            contexts = DataSetContextExtractor.getFigureReferences(tei);
+            for (Figure figure : teiDoc.getFigures()) {
+                String teiId = figure.getTeiId();
+                totalFigures++;
+                jsonRef.writeStartObject();
+                jsonRef.writeStringField("id", teiId);
+                
+                jsonRef.writeArrayFieldStart("pos");
+                if (figure.getCoordinates() != null) {
+                    for (BoundingBox b : figure.getCoordinates()) {
+                        // reference string
+                        jsonRef.writeStartObject();
+                        b.writeJsonProps(jsonRef);
+                        jsonRef.writeEndObject();
+                    }
+                }
+                jsonRef.writeEndArray(); // pos
+                jsonRef.writeEndObject(); // figure element
+
+                // reference markers for this figure
+                for (DataSetContext c : contexts.get(teiId)) {
+                    //System.out.println(c.getContext());
+                    String mrect = c.getDocumentCoords();
+                    if ((mrect != null) && (mrect.trim().length()>0)) {
+                        for (String coords : mrect.split(";")) {
+                            if ((coords == null) || (coords.length() == 0))
+                                continue;
+                            //annotatePage(document, coords, teiId.hashCode(), 1.0f);
+                            jsonMark.writeStartObject();
+                            jsonMark.writeStringField("id", teiId);
+                            BoundingBox b2 = BoundingBox.fromString(coords);
+                            b2.writeJsonProps(jsonMark);
+                            jsonMark.writeEndObject();
+                            totalMarkers1++;
+                        }
+                    }
+                }
+            }
+            jsonRef.writeEndArray(); // figures
+        
+            // remaining reference markers which have not been solved with an actual  
+            // figure object 
+            for (DataSetContext c : contexts.get("")) {
+                String mrect = c.getDocumentCoords();
+                if ((mrect != null) && (mrect.trim().length()>0)) {
+                    for (String coords : mrect.split(";")) {
+                        if (coords.trim().length() == 0)
+                            continue;
+                        //annotatePage(document, coords, 0, 1.0f);
+                        BoundingBox b = BoundingBox.fromString(coords);
+                        jsonMark.writeStartObject();
+                        b.writeJsonProps(jsonMark);
+                        jsonMark.writeEndObject();
+                        totalMarkers2++;
+                    }
+                }
+            }
+            jsonMark.writeEndArray();
+            jsonMark.close();
+
+            jsonRef.writeFieldName("figureMarkers");
+            jsonRef.writeRawValue(markW.toString());
+
+            LOGGER.debug("totalFigures: " + totalBib);
+            LOGGER.debug("totalFigureMarkers1: " + totalMarkers1);
+            LOGGER.debug("totalFigureMarkers2: " + totalMarkers2);
+
+            // same for tables
+            markW = new StringWriter();
+            jsonMark = jFactory.createGenerator(markW);
+            jsonMark.writeStartArray();
+
+            totalMarkers1 = 0;
+            totalMarkers2 = 0;
+            int totalTables = 0;
+
+            jsonRef.writeArrayFieldStart("tables");
+            contexts = DataSetContextExtractor.getTableReferences(tei);
+            for (Table table : teiDoc.getTables()) {
+                String teiId = table.getTeiId();
+                totalTables++;
+                jsonRef.writeStartObject();
+                jsonRef.writeStringField("id", teiId);
+                
+                jsonRef.writeArrayFieldStart("pos");
+                if (table.getCoordinates() != null) {
+                    for (BoundingBox b : table.getCoordinates()) {
+                        // reference string
+                        jsonRef.writeStartObject();
+                        b.writeJsonProps(jsonRef);
+                        jsonRef.writeEndObject();
+                    }
+                }
+                jsonRef.writeEndArray(); // pos
+                jsonRef.writeEndObject(); // table element
+
+                // reference markers for this table
+                for (DataSetContext c : contexts.get(teiId)) {
+                    //System.out.println(c.getContext());
+                    String mrect = c.getDocumentCoords();
+                    if ((mrect != null) && (mrect.trim().length()>0)) {
+                        for (String coords : mrect.split(";")) {
+                            if ((coords == null) || (coords.length() == 0))
+                                continue;
+                            //annotatePage(document, coords, teiId.hashCode(), 1.0f);
+                            jsonMark.writeStartObject();
+                            jsonMark.writeStringField("id", teiId);
+                            BoundingBox b2 = BoundingBox.fromString(coords);
+                            b2.writeJsonProps(jsonMark);
+                            jsonMark.writeEndObject();
+                            totalMarkers1++;
+                        }
+                    }
+                }
+            }
+            jsonRef.writeEndArray(); // tables
+        
+            // remaining reference markers which have not been solved with an actual full 
+            // table object 
+            for (DataSetContext c : contexts.get("")) {
+                String mrect = c.getDocumentCoords();
+                if ((mrect != null) && (mrect.trim().length()>0)) {
+                    for (String coords : mrect.split(";")) {
+                        if (coords.trim().length() == 0)
+                            continue;
+                        //annotatePage(document, coords, 0, 1.0f);
+                        BoundingBox b = BoundingBox.fromString(coords);
+                        jsonMark.writeStartObject();
+                        b.writeJsonProps(jsonMark);
+                        jsonMark.writeEndObject();
+                        totalMarkers2++;
+                    }
+                }
+            }
+            jsonMark.writeEndArray();
+            jsonMark.close();
+
+            jsonRef.writeFieldName("tableMarkers");
+            jsonRef.writeRawValue(markW.toString());
+
+            LOGGER.debug("totalTables: " + totalBib);
+            LOGGER.debug("totalTableMarkers1: " + totalMarkers1);
+            LOGGER.debug("totalTableMarkers2: " + totalMarkers2);
+        }
 
         jsonRef.writeEndObject();
         jsonRef.close();

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <teiHeader/>
+    <text>
+        <front/>
+        <body/>
+        <back>
+            <listBibl>
+
+<!---  journal  missmatch -->
+<bibl xml:id="_JOSRB5_2020_v9n2_131_063" lang="fr"><author>Patriti, G</author>. <date>1970</date>. <title level="a">Apercu systematique de la faune de siphonophores des zones superficielles et subsuperficielles des eaux du large de Tulear (S.W. de l'Ocean Indien, Madagascar)</title>. <title level="j">Recueil des Travaux de la Station marine d'Endoume</title>. <note>Fascicule hors serie suppl</note> <biblScope unit="volume">10</biblScope>:<biblScope unit="page">285-303</biblScope>.</bibl>
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_E1BMAX_2021_v58n2_419_008" lang="fr"><author>A. Denjoy</author>, <title level="a">Sur les fonctions enti'eres de genre fini</title>, <title level="j">C. R. Acad. Sci.</title> <pubPlace>Paris</pubPlace>, <biblScope unit="volume">45</biblScope> (<date>1907</date>), <biblScope unit="page">106-109</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_E1BMAX_2020_v57n6_1491_002" lang="fr"><author>F. Bruhat and J. Tits</author>, <title level="a">Groupes reductifs sur un corps local</title>, <title level="j">Inst. Hautes Etudes Sci. Publ. Math</title>. No. <biblScope unit="volume">41</biblScope> (<date>1972</date>), <biblScope unit="page">5-251</biblScope>.</bibl>
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_E1BMAX_2020_v57n6_1427_005" lang="fr"><author>R. R. Coifman and Y. Meyer</author>, <title level="a">Commutateurs d'integrales singulieres et operateurs multilineaires</title>, <title level="j">Ann. Inst. Fourier</title>, <pubPlace>Grenoble</pubPlace>. <biblScope unit="volume">28</biblScope> (<date>1978</date>), <biblScope unit="page">177-202</biblScope>.</bibl>
+<!---  title  journal  pubPlace  missmatch -->
+<bibl xml:id="_SMBHBD_2021_v51n2_115_030" lang="fr"><author>Weddell, H. A.</author> <date>1856</date>. <title level="a">Monographie de la famille des Urticacees</title>. <title level="j">Nouvelles Archives du Museum d'Histoire Naturelle</title>, <pubPlace>Paris</pubPlace> <biblScope unit="volume">9</biblScope>: <biblScope unit="page">1-591</biblScope>.</bibl>
+<!---  journal  volume  issue  missmatch -->
+<bibl xml:id="_JOSRB5_2020_v9n4_377_007" lang="fr"><author>Cardot, J</author>. <date>1909</date>. <title level="a">Mousses Nouvelles du Japon et de Coree</title>. <title level="j">Bulletin de la Societe Botanique de Geneve, ser.2</title>, <biblScope unit="volume">1</biblScope>(<biblScope unit="issue">3</biblScope>):<biblScope unit="page">120-132</biblScope>.</bibl>
+<!---  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_JOSRB5_2020_v9n4_377_008" lang="fr"><author>Cardot, J</author>. <date>1911</date>. <title level="a">Mousses Nouvelles du Japon et de Coree</title> <title level="j">Bulletin de la Societe Botanique de Geneve, ser. 2</title>, <biblScope unit="volume">3</biblScope>(<biblScope unit="issue">7</biblScope>): <biblScope unit="page">275-294</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_JOSRB5_2020_v9n4_473_025" lang="fr"><author>Le Calvez, Y</author>. <date>1974</date>. <title level="a">Revision des Foraminiferes de la collection d'Orbigny 1. Foraminiferes des iles Canaries</title>. <title level="j">Cahiers Micropaleontologie</title> <biblScope unit="volume">2</biblScope>:<biblScope unit="page">1-107</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_OOGSB2_2020_v56n3_230_012" lang="fr"><author>Massau J</author>. <date>1900</date>. <title level="a">Memoire sur l'Integration graphique des Equations aux derivees partielles</title>. <title level="j">Annales de l'Association des ingenieurs sortis des ecoles speciales de gand</title>, <biblScope unit="volume">2</biblScope>, <biblScope unit="page">159</biblScope>. (<note>in French</note>).</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_TNTNC6_2020_v22n4_35_002" lang="fr"><publisher>AFTES</publisher> (<date>2004</date>) - <title level="a">GT32-1 recommendations: Prise en compte des risques geotechniques dans les DCE</title>. <title level="j">Revue Tunnels &amp; OS</title>, no. <biblScope unit="volume">185</biblScope>, pp. <biblScope unit="page">316-327</biblScope>.</bibl>
+
+            </listBibl>
+        </back>
+    </text>
+</TEI>

@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Adiwardana, D., Luong, M.-T., So, D., Hall, J., Fiedel, N., Thoppilan, R., Yang, Z., Kulshreshtha, A., Nemade, G., Lu, Y., and Le, Q. V.</author> <title level="a">Towards a human-like open-domain chatbot</title>. <idno type="arXiv">ArXiv, abs/2001.09977</idno>, <date>2020</date>.</bibl>
+	<bibl><author>Bender, E. M., Gebru, T., McMillan-Major, A., and Shmitchell, S.</author> <title level="a">On the dangers of stochastic parrots: Can language models be too big?</title> . In <title level="m">Conference on Fairness, Accountability, and Transparency (FAccT &apos;21)</title>. <publisher>ACM</publisher>, <pubPlace>New York, NY, USA</pubPlace>, <date>2021</date>.</bibl>
+	<bibl><author>Bhardwaj, R., Majumder, N., and Poria, S.</author> <title level="a">Investigating gender bias in bert</title>. <idno type="arXiv">ArXiv, abs/2009.05021</idno>, <date>2020</date>.</bibl>
+	<bibl><author>Bhatia, V., Rawat, P., Kumar, A., and Shah, R.</author> <title level="a">End-to-end resume parsing and finding candidates for a job descrip-tion using bert</title>. <idno type="arXiv">ArXiv, abs/1910.03089</idno>, <date>2019</date>.</bibl>
+	<bibl><author>Blodgett, S. L., Barocas, S., Daum&apos;e, H., and Wallach, H.</author> <title level="a">Language (technology) is power: A critical survey of &quot;bias&quot; in nlp</title>. In <title level="m">ACL</title>, <date>2020</date>.</bibl>
+	<bibl><author>Bolukbasi, T., Chang, K.-W., Zou, J. Y., Saligrama, V., and Kalai, A.</author> <title level="a">Man is to computer programmer as woman is to homemaker? debiasing word embeddings</title>. In <title level="m">NeurIPS</title>, <date>2016</date>.</bibl>
+	<bibl><author>Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., Hesse, C., Chen, M., Sigler, E., Litwin, M., Gray, S., Chess, B., Clark, J., Berner, C., McCandlish, S., Radford, A., Sutskever, I., and Amodei, D.</author> <title level="a">Language models are few-shot learners</title>, <date>2020</date>.</bibl>
+	<bibl><author>Budzianowski, P. and Vulic, I.</author> <title level="a">Hello, it&apos;s GPT-2 -how can I help you? towards the use of pretrained lan-guage models for task-oriented dialogue systems</title>. <idno type="arXiv">CoRR, abs/1907.05774</idno>, <date>2019</date>.</bibl>
+	<bibl><author>Caliskan, A., Bryson, J., and Narayanan, A.</author> <title level="a">Semantics derived automatically from language corpora contain human-like biases</title>. <title level="j">Science</title>, <biblScope unit="volume">356</biblScope>:<biblScope unit="page">183 -186</biblScope>, <date>2017</date>.</bibl>
+	<bibl><author>Crenshaw, K.</author> <title level="a">Demarginalizing the intersection of race and sex: A black feminist critique of antidiscrimination doctrine, feminist theory and antiracist politics</title>. <date>1989</date>.</bibl>
+	<bibl><author>Diaz, M., Johnson, I., Lazar, A., Piper, A., and Gergle, D.</author> <title level="a">Addressing age-related bias in sentiment analysis</title>. <title level="m">Pro-ceedings of the 2018 CHI Conference on Human Factors in Computing Systems</title>, <date>2018</date>.</bibl>
+	<bibl><author>Dinan, E., Fan, A., Williams, A., Urbanek, J., Kiela, D., and Weston, J.</author> <title level="a">Queens are powerful too: Mitigating gen-der bias in dialogue generation</title>. <idno type="arXiv">ArXiv, abs/1911.03842</idno>, <date>2020</date>.</bibl>
+	<bibl><author>Ethayarajh, K.</author> <title level="a">How contextual are contextualized word representations? comparing the geometry of bert, elmo, and GPT-2 embeddings</title>. <idno type="arXiv">CoRR, abs/1909.00512</idno>, <date>2019</date>.</bibl>
+	<bibl><author>Fedus, W., Zoph, B., and Shazeer, N.</author> <title level="a">Switch transform-ers: Scaling to trillion parameter models with simple and efficient sparsity</title>, <date>2021</date>.</bibl>
+	<bibl><author>Foulds, J. and Pan, S.</author> <title level="a">An intersectional definition of fair-ness</title>. <date>2020</date> <title level="m">IEEE 36th International Conference on Data Engineering (ICDE)</title>, pp. <biblScope unit="page">1918-1921</biblScope>, <date>2020</date>.</bibl>
+	<bibl><author>Gonen, H. and Goldberg, Y.</author> <title level="a">Lipstick on a pig: Debiasing methods cover up systematic gender biases in word em-beddings but do not remove them</title>. <idno type="arXiv">ArXiv, abs/1903.03862</idno>, <date>2019</date>.</bibl>
+	<bibl><author>He, P., Liu, X., Gao, J., and Chen, W. Deberta</author>: <title level="a">Decoding-enhanced bert with disentangled attention</title>. <idno type="arXiv">ArXiv, abs/2006.03654</idno>, <date>2020</date>.</bibl>
+	<bibl><publisher>Institute for Genealogical Studies</publisher>. <title level="a">US: Reli-gious Records-Part 2</title>, <date>2020</date>. URL <ptr type="web">https: //www.genealogicalstudies.com/eng/ courses.asp?courseID=209</ptr>.</bibl>
+	<bibl><author>Kennedy, C. J., Bacon, G., Sahn, A., and von Vacano, C.</author> <title level="a">Constructing interval variables via faceted rasch mea-surement and multitask deep learning: a hate speech application</title>. <idno type="arXiv">ArXiv, abs/2009.10277</idno>, <date>2020</date>.</bibl>
+	<bibl><author>Kiritchenko, S. and Mohammad, S. M.</author> <title level="a">Examining gender and race bias in two hundred sentiment analysis systems</title>. In *<title level="m">SEM@NAACL-HLT</title>, <date>2018</date>.</bibl>
+	<bibl><author>Kurita, K., Vyas, N., Pareek, A., Black, A., and Tsvetkov, Y.</author> <title level="m">Measuring bias in contextualized word representations</title>. <idno type="arXiv">ArXiv, abs/1906.07337</idno>, <date>2019</date>.</bibl>
+	<bibl><author>Li, C., Fisher, E. M., Thomas, R., Pittard, S., Hertzberg, V., and Choi, J. D.</author> <title level="a">Competence-level prediction and resume and job description matching using context-aware transformer models</title>. <idno type="arXiv">ArXiv, abs/2011.02998</idno>, <date>2020</date>.</bibl>
+	<bibl><author>Liu, H., Dacon, J., Fan, W., Liu, H., Liu, Z., and Tang, J.</author> <title level="a">Does gender matter? towards fairness in dialogue systems</title>. In <title level="m">COLING</title>, <date>2020</date>.</bibl>
+	<bibl><author>Manning, C. D., Surdeanu, M., Bauer, J., Finkel, J. R., Bethard, S., and McClosky, D.</author> <title level="a">The stanford corenlp natural language processing toolkit</title>. In <title level="m">ACL (System Demonstrations)</title>, pp. <biblScope unit="page">55-60</biblScope>. <publisher>The Association for Com-puter Linguistics</publisher>, <date>2014</date>. <idno type="ISBN">ISBN 978-1-941643-00-6</idno>.</bibl>
+	<bibl><publisher>Pew Research</publisher>. <title level="a">Religious Landscape Study</title>, <date>2020</date>. URL <ptr type="web">https://www.pewforum. org/religious-landscape-study/ religious-tradition/buddhist/</ptr>.</bibl>
+	<bibl><author>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., and Sutskever, I.</author> <title level="a">Language models are unsupervised multitask learners</title>. <date>2019</date>.</bibl>
+	<bibl><author>Sheng, E., Chang, K.-W., Natarajan, P., and Peng, N.</author> <title level="a">The woman worked as a babysitter: On biases in language generation</title>. <idno type="arXiv">ArXiv, abs/1909.01326</idno>, <date>2019</date>.</bibl>
+	<bibl><author>Stanovsky, G., Smith, N. A., and Zettlemoyer, L.</author> <title level="a">Eval-uating gender bias in machine translation</title>. <idno type="arXiv">ArXiv, abs/1906.00591</idno>, <date>2019</date>.</bibl>
+	<bibl><author>Tan, Y. and Celis, L.</author> <title level="a">Assessing social and intersectional bi-ases in contextualized word representations</title>. In <title level="m">NeurIPS</title>, <date>2019</date>.</bibl>
+	<bibl><author>Tatman, R.</author> <title level="a">Gender and dialect bias in youtube&apos;s automatic captions</title>. In <title level="m">EthNLP@EACL</title>, <date>2017</date>.</bibl>
+	<bibl><publisher>US Labor Bureau of Statistics</publisher>. <title level="a">Employed peons by de-tailed occupation, sex, race, and Hispanic or Latino eth-nicity</title>, <date>2019</date>. URL <ptr type="web">https://www.bls.gov/cps/ cpsaat11.htm</ptr>.</bibl>
+	<bibl><author>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., and Polosukhin, I.</author> <title level="a">Attention is all you need</title>. In <editor>NeurIPS</editor>, <date>2017</date>.</bibl>
+	<bibl><author>Wang, A., Singh, A., Michael, J., Hill, F., Levy, O., and Bowman, S. R.</author> <title level="a">Glue: A multi-task benchmark and anal-ysis platform for natural language understanding</title>. In <title level="m">BlackboxNLP@EMNLP</title>, <date>2018</date>.</bibl>
+	<bibl><author>Wang, A., Pruksachatkun, Y., Nangia, N., Singh, A., Michael, J., Hill, F., Levy, O., and Bowman, S. R.</author> <title level="a">Super-glue: A stickier benchmark for general-purpose language understanding systems</title>. In <title level="m">NeurIPS</title>, <date>2019</date>.</bibl>
+	<bibl><author>Wick, M. L., Silverstein, K., Tristan, J., Pocock, A. C., and Johnson, M.</author> <title level="a">Detecting and exorcising statistical demons from language models with anti-models of negative data</title>. <idno type="arXiv">ArXiv, abs/2010.11855</idno>, <date>2020</date>.</bibl>
+	<bibl><author>Yang, Z., Dai, Z., Yang, Y., Carbonell, J., Salakhutdinov, R., and Le, Q. V. </author> <title level="a">Xlnet: Generalized autoregressive pretrain-ing for language understanding</title>. In <editor>NeurIPS</editor>, <date>2019</date>.</bibl>
+	<bibl><author>Zhao, J., Zhou, Y., Li, Z., Wang, W., and Chang, K.-W.</author> <title level="a">Learning gender-neutral word embeddings</title>. In <title level="m">EMNLP</title>, <date>2018</date>.</bibl>
+	<bibl><author>Zhao, J., Wang, T., Yatskar, M., Cotterell, R., Ordonez, V., and Chang, K.-W.</author> <title level="m">Gender bias in contextualized word embeddings</title>. <idno type="arXiv">ArXiv, abs/1904.03310</idno>, <date>2019</date>.</bibl>
+	<bibl><author>Bender, E. M., Gebru, T., McMillan-Major, A., and Shmitchell, S.</author> <title level="a">On the dangers of stochastic parrots: Can language models be too big?</title> In <title level="m">Conference on Fairness, Accountability, and Transparency (FAccT &apos;21)</title>. <publisher>ACM</publisher>, <pubPlace>New York, NY, USA</pubPlace>, <biblScope unit="page">2021</biblScope>.</bibl>
+	<bibl><author>Carlini, N.</author> <title level="a">Privacy Considerations in Large Language Models</title>, <date>2020</date>. URL <ptr type="web">https://ai.googleblog.com/2020/ 12/privacy-considerations-in-large.html/</ptr>.</bibl>
+	<bibl><author>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., and Sutskever, I.</author> <title level="a">Language models are unsupervised multitask learners</title>. <date>2019</date>.</bibl>
+	<bibl><author>Yang, Z., Dai, Z., Yang, Y., Carbonell, J., Salakhutdinov, R., and Le, Q. V.</author> <title level="a">Xlnet: Generalized autoregressive pretraining for language understanding</title>. In <editor>NeurIPS</editor>, <date>2019</date>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Maria</forename>
+								 <surname>Liakata</surname>
+							</persName>
+							<persName>
+								 <forename>Paul</forename>
+								 <surname>Thompson</surname>
+							</persName>
+							<persName>
+								 <forename>Anita</forename>
+								 <surname>de Waard</surname>
+							</persName>
+							<persName>
+								 <forename>Raheel</forename>
+								 <surname>Nawaz</surname>
+							</persName>
+							<persName>	 
+								 <forename>Henk</forename>
+\								 <surname>Pander Maat</surname>
+							</persName>
+							<persName>
+								 <forename>Sophia</forename>
+								 <surname>Ananiadou</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

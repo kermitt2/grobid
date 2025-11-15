@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <teiHeader/>
+    <text>
+        <front/>
+        <body/>
+        <back>
+            <listBibl>
+
+<!---  journal  missmatch -->
+<bibl xml:id="_DHGGCI_2000_v24n4s175_1016_001" lang="de"><author>Schwarz, H. A.</author>, <date>1870</date>, '<title level="a">Uber enen Grenz Bergang Durich Alternirender Verfahren</title>,' <title level="j">Ges. Math. Abhandlungen</title>, Bd. <biblScope unit="volume">1</biblScope>, <pubPlace>Berlin</pubPlace>, <biblScope unit="page">133-143</biblScope>.</bibl>
+<!---  journal  volume  missmatch -->
+<bibl xml:id="_JMGHBV_2000_v17n2_15_048" lang="de"><author>Spath, D., Mussa, S.</author>, <title level="a">ACCOMAT - Die genauigkeitsgeregelte Maschine</title>, <title level="j">Wt Werkstaustechnik</title> <biblScope unit="volume">89</biblScope> Vol. <biblScope unit="issue">5</biblScope>, pp. <biblScope unit="page">235-238</biblScope>, <date>1999</date>.</bibl>
+<!---  author  title  journal  volume  page  issue  missmatch -->
+<bibl xml:id="_JMGHBV_2001_v18n2_119_004" lang="de"><author>齋藤 忍</author>, <title level="a">傾斜パシド軸受で支持された回轉軸の危險速度と安定性</title>、<title level="j">機論</title>、<biblScope unit="volume">47</biblScope>-<biblScope unit="issue">413</biblScope>, c 編, <biblScope unit="page">30-35</biblScope>, <date>1981</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_E1BSAF_2001_v5n3_187_005" lang="de"><author>Remane A</author> (<date>1926</date>) <title level="a">Morphologie und Werwandtschaftsbeziehungen der aberranten Gastrotrichen</title>. <title level="j">I. Z. Wiss</title> <biblScope unit="volume">5</biblScope>: <biblScope unit="page">625-754</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_GOGHBY_2002_v25n2_193_007" lang="de"><author>Bude, Heinz</author> (<date>1997</date>), '<title level="a">Die 'Wir-Schicht' der Generation</title>,' in Berliner <title level="j">Journal fur Soziologie</title>, Vol. <biblScope unit="volume">7</biblScope>, pp. <biblScope unit="page">197-204</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_GOGHBY_2002_v25n2_193_043" lang="de"><author>Weymann, Ansgar</author> (<date>1995</date>) : <title level="a">Modernisierung, Generationenverhaltnisse und die Okonomie der Lebenszeit. Gesellschaftsformen und Generationen im 'Polish Peasant'</title>, In: <title level="j">Soziale Welt</title>, <biblScope unit="volume">46</biblScope>: <biblScope unit="page">369-384</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_GOGHBY_2002_v25n2_193_003" lang="de"><author>Bartels, Inke</author> (<date>2001</date>), '<title level="a">Generation X. Zum inflationaren Gebrauch des Begriffes 'Generation' im aktuellen Mediendiskurs</title>,' <title level="j">Vokus. Volkskundlich- kultur wissenchaftliche Schriften</title>. Vol. <biblScope unit="volume">13</biblScope>. No.<biblScope unit="issue">2</biblScope>, pp. <biblScope unit="page">44-72</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_GOGHBY_2002_v25n2_193_045" lang="de"><author>Wouters, Cas</author> (<date>1986</date>) '<title level="a">Formalization and Informalization: Changing Tension Balances in Civilizing Processes</title>', in <title level="j">Theory, Culture and Society</title> <biblScope unit="volume">3</biblScope>. <biblScope unit="page">1-18</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_E1APAR_2002_v5n1_19_012" lang="de"><author>Schumacher, F</author>. <date>1921</date>. <title level="a">Aphidologische Notizen</title>. <title level="j">Zool. Anz.</title> <biblScope unit="volume">53</biblScope>: <biblScope unit="page">181-186</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_HGCDCF_2002_v5n1_1_009" lang="de"><author>Gerlich, K. and Pahnke, U.</author>(<date>1982</date>) <title level="a">Abtragung der Langkrafte im Eisenbahnbruckenbau</title>, <title level="j">AET</title>(<biblScope unit="volume">37</biblScope>), pp.<biblScope unit="page">19-30</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_KHGGB3_2002_v11n7_705_016" lang="de"><author>Utermohl, H.</author>, <date>1958</date>, <title level="a">Zur Vervollkommnung der quantitativen phytoplankton -Methodik.-</title> <title level="j">Mitt. Internat. Verein. Limnol.</title>, <biblScope unit="volume">9</biblScope>, <biblScope unit="page">1-38</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_DHGJBI_2003_v41n4_143_039" lang="de"><author>Guttmann, E.</author> (<date>1997</date>). <title level="a">Lebensverhaeltnisse von Einpersonenhaushalten. Ergebnis der Einkommens- und Verbrauchsstichprobe 1993</title>. <title level="j">Wirtschaft und Statistik</title>, Nr. <biblScope unit="volume">6</biblScope>, <biblScope unit="page">418-427</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_DHGJBI_2003_v41n4_143_028" lang="de"><author>Bottler, J.</author> (<date>1988</date>). <title level="a">Spezifika von Grosshaushalten - Begruendung einer Wirtschaftslehre des Grosshaushalts</title>. <title level="j">Hauswirtschaftliche Bildung</title>, Nr. <biblScope unit="volume">2</biblScope>, <biblScope unit="page">80-84</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_DHGJBI_2003_v41n4_143_022" lang="de"><author>Alemann, U.V.</author> (<date>1996</date>). <title level="a">Die Vielfalt der Verbaende</title>. <title level="j">Information zur politischen Bildung</title>, Nr. <biblScope unit="volume">253</biblScope>, <biblScope unit="page">1721</biblScope>.</bibl>
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_CKCKBC_2003_v33n6s101_475_004" lang="de"><author>Cohn-Stock F</author>. <title level="a">Die chirugische Immediatregulierung der Kiefer, speziell die chirugische Behandlung der Prognathie</title>. <title level="j">Vischr Zahnheilk Berlin</title> <date>1921</date> : <biblScope unit="volume">37</biblScope> : <biblScope unit="page">320-8</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_DHGGCI_2003_v27n7_1103_001" lang="de"><author>Wolff J.</author>, <date>1869</date>, '<title level="a">Ueber die Bedeutung der Architectur der Spongiosen fur die Frage vom Knochenwachsthum</title>,' <title level="j">Zentralblatt fur die Medizinischen Wissenschaften</title>, pp. <biblScope unit="page">223-234</biblScope>.</bibl>
+<!---  title  journal  pubPlace  missmatch -->
+<bibl xml:id="_KHGGB3_2003_v12n12_1215_033" lang="de"><author>Bauer, G. K.</author>, <date>1976</date>, <title level="a">Landschaftsrahmenplan erholungspark ville, Beitraege zur Landesentwicklung</title>, <title level="j">Koeln</title>, <biblScope unit="volume">35</biblScope>, <biblScope unit="page">149-173</biblScope>.</bibl>
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_HGJHBY_2004_v32n10_118_001" lang="de"><author>Knoller, R.</author>, '<title level="a">Die Gesetze des Lufwiderstandes</title>,' <title level="j">Flug-und Motortechnik</title>(<pubPlace>Wien</pubPlace>), Vol. <biblScope unit="volume">3</biblScope>, No. <biblScope unit="issue">21</biblScope>, <date>1909</date>, pp. <biblScope unit="page">1-7</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_GJBGC4_2005_v21n6_117_011" lang="de"><author>Hofmann, U., Endell, K., and Wilm, D.</author> (<date>1933</date>), '<title level="a">Kristallstruktur und Quellung von Montmorillonit', Das Tonmineral der Bentonittone</title>, <title level="j">Z. Kristallogr</title>, Vol.<biblScope unit="volume">86</biblScope>, pp.<biblScope unit="page">340-348</biblScope>.</bibl>
+<!---  title  journal  pubPlace  missmatch -->
+<bibl xml:id="_E1HKAL_2005_v8n2_97_037" lang="de"><author>Nageli, C</author>. <date>1861</date>. <title level="a">Beitrage zur Morphologie und Systematik der Ceramiaceae</title>. <title level="j">Sitzungsberichte der Koniglichen Bayerischen Akademie der Wissenschaften zu Munchen</title>, <biblScope unit="volume">2</biblScope>, <biblScope unit="page">297-415</biblScope>.</bibl>
+<!---  pubPlace  missmatch -->
+<bibl xml:id="_GCJHBG_2005_v25n1_65_009" lang="de"><author>Petelkau, U</author>. <date>1983</date>. <title level="a">Ursachen, Entstehung und Prinzipien zur Einschankung von Bodenstruckturschaden</title>. <title level="j">Tag.-Ber., Akad. Landwirtsch. Wiss.</title> <pubPlace>DDR. Berlin</pubPlace>. <biblScope unit="volume">215</biblScope>:<biblScope unit="page">39-48</biblScope>.</bibl>
+<!---  issue  missmatch -->
+<bibl xml:id="_DHGCBW_2009_v25n2_123_015" lang="de"><author>Wolgast R.</author>, <title level="a">Flame retarding builing materials</title>, <title level="j">VFDB Zeitschrift Forschung und Technik im Brandshutz</title>, <biblScope unit="volume">12</biblScope>(<biblScope unit="issue">1,2</biblScope>), <pubPlace>Stuttgart</pubPlace>, <date>1963</date>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_HOMHBJ_2009_v98n5_524_061" lang="de"><author>Siebold, F.P. and Zuccarini J. G.</author> <date>1846</date>. <title level="a">Florae Japonicae familiae naturales, adjectis generum et specierum exemplis selectis. Sectio altera. Plantae Dicotyledoneae (Gamopetalae, Monochlmydeae) et Monocotyledoneae</title>. <title level="j">Abhandlungen der Mathemat.-Physikalischen Classe der Koniglich Bayerischen Akademie der Wissenschaften</title> <biblScope unit="volume">4</biblScope>: <biblScope unit="page">125-239</biblScope>.</bibl>
+<!---  title  journal  pubPlace  missmatch -->
+<bibl xml:id="_HOMHBJ_2009_v98n5_524_031" lang="de"><author>Nakai, T</author>. <date>1914</date>. <title level="a">Plantae Novae Coreanae et Japonicae II</title>. <title level="j">Feddes Repertorium Specierum Novarum Regni Vegetabilis. Berlin</title> <biblScope unit="volume">13</biblScope>: <biblScope unit="page">267-278</biblScope>.</bibl>
+<!---  title  journal  volume  pubPlace  missmatch -->
+<bibl xml:id="_DMBRBT_2009_v25n1_65_005" lang="de"><author>Enderlein, G.</author>, <date>1942</date>. <title level="a">Klassifikation der Pyrgotiden</title>. <title level="j">Sitzungsberichte der Gesellschaft Naturforschenden Freunde zu Berlin</title>, <biblScope unit="volume">1941</biblScope>: <biblScope unit="page">98-134</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_DMBRBT_2009_v25n1_5_003" lang="de"><author>Giesbrecht, W.</author>, <date>1899</date>. <title level="a">Die Asterocheriden des Golfes von Neapel</title>. <title level="j">Fauna Flora Golf. Neapel</title>, <biblScope unit="volume">25</biblScope>: <biblScope unit="page">1-217</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_DMBRBT_2009_v25n2_209_002" lang="de"><author>Hendel, F.</author>, <date>1907</date>. <title level="a">Neue und interessante Dipteren aus dem kaiserl. Museum in Wien</title>. <title level="j">Wiener Entomologische Zeitung</title>, <biblScope unit="volume">26</biblScope>: <biblScope unit="page">233-235</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_DMBRBT_2009_v25n3_215_018" lang="de"><author>Pesta, O.</author>, <date>1932</date>. <title level="a">Krebstiere oder Crustacea. 1. Ruderfu..sser oder Copepoda. 3. Unterordnung: Harpacticoida (1 and 2)</title>. <title level="j">Die Tierwelt Deutschlands</title>, vol. <biblScope unit="volume">24</biblScope>, pp. <biblScope unit="page">1-164</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_GJBGC4_2009_v25n1_21_025" lang="de"><author>Szechy, K.</author> (<date>1966</date>), '<title level="a">The art of tunnelling</title>', <title level="j">Akademiai kiado</title>, <pubPlace>Budapest</pubPlace>, pp.<biblScope unit="page">909-924</biblScope>.</bibl>
+<!---  journal  page  missmatch -->
+<bibl xml:id="_HGSMBT_2009_v27n1_100_016" lang="de"><author>Illies J</author>.<date>1966</date>. <title level="a">Katalog der rezenten Plecoptera</title>. <biblScope unit="page">632</biblScope>pp. ln <title level="j">Das Tierreich</title>. <biblScope unit="volume">82</biblScope>. <pubPlace>Berlin</pubPlace>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_OGGHBK_2009_v28n4_83_012" lang="de"><author>Von Stoffert, G</author>., <title level="a">Analyse und einstufung von korperhaltungen bei der arbeit nach der OWAS methode, lecture materials</title> (<note>in English</note>), <title level="j">Zeitschrift fur arbeitswissenschaft</title>, <biblScope unit="volume">39</biblScope>, <biblScope unit="page">31-38</biblScope>, <date>1985</date>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_GGOGB1_2009_v35n2_120_001" lang="de"><author>Einstein A</author> : <title level="a">Zur quantem theorie der strahlung</title>. <title level="j">Phys Zeit</title> <date>1917</date>; <biblScope unit="volume">18</biblScope>:<biblScope unit="page">121</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_SMGHBM_2010_v20n7_1034_028" lang="de"><author>Wunsch, E. and H. G. Heindrich</author>. <date>1963</date>. <title level="a">Zur quantitativen bestimmung der collagenase</title>. <title level="j">Hoppe-Seyler's Physiol. Chem</title>. <biblScope unit="volume">333</biblScope>, <biblScope unit="page">149-151</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_E1CGC2_2011_v2n1_87_020" lang="de"><author>Bischoff W., Bradley P.E., Ferrara C. and Kohler N.</author> <date>2005</date>. '<title level="a">Uberlebensanalyse von Gebaudebest'anden. Das Beispiel Ettlingen</title>. <title level="j">Stadtforschung und Statistik</title>, Vol.<biblScope unit="volume">1</biblScope>, No. <biblScope unit="issue">5</biblScope>, pp. <biblScope unit="page">32-34</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_OOGCBV_2013_v52n3_171_010" lang="de"><author>Holm, A.</author>, <date>1945</date>. <title level="a">Zur Kenntnis der Spinnenfauna des Tornetraskgebietes Ark</title>. <title level="j">Zool.</title> <biblScope unit="volume">36</biblScope>, <biblScope unit="page">1-80</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_DMBRBT_2014_v30n4_235_004" lang="de"><author>De Man JG</author>, <date>1895</date>. <title level="a">Berichtuber die von Herrn Schiffscapitan Storm zu Atjeh, an den westlichen Kusten von Malakka, Borneo und Celebes sowie in der Java-See gesammelten Decapoden und Stomatopoden. (In 6 parts)</title>. <title level="j">Zoologische Jahrbucher, Abtheilung fur Systematik, Geographie und Biologie der Thiere</title>, <biblScope unit="volume">8</biblScope>:<biblScope unit="page">485-609</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_OOGCBV_2014_v53n2_171_016" lang="de"><author>Zerche, L.</author>, <date>1993</date>. <title level="a">Monographie der palaarktischen Coryphiini (Coleoptera, Staphylinidae, Omaliinae). Supplementum 1</title>. <title level="j">Beitr. Ent.</title> <biblScope unit="volume">43</biblScope>, <biblScope unit="page">319-374</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_OJHHBM_2014_v24n6_1053_023" lang="de"><author>Leung, S. K.</author> (<date>1997</date>). <title level="a">On the Role of Creativity Thinking in Problem Posing. in Mathematical Problem Solving and Problem Posing</title>. <title level="j">Zentralblatt fur Didaktik der Mathematik</title>, <biblScope unit="volume">29</biblScope>(<biblScope unit="issue">3</biblScope>).</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_GNHHDL_2014_v42n3_235_009" lang="de"><author>Von Szilvinyi A</author>. <title level="a">Mikrobiologische Boden untersuchungen im Lunzer Bebiet</title>. <title level="j">Zentralblatt fur Bakteriologie Abteilung II. Bakteriologie Abteilung II. Bakteriologie Abteilung II</title> <date>1941</date>;<biblScope unit="volume">103</biblScope>:<biblScope unit="page">133-89</biblScope>.</bibl>
+<!---  journal  volume  issue  missmatch -->
+<bibl xml:id="_HKSJBV_2014_v16n4_379_014" lang="de"><author>Hegemann, W</author> (<date>1996</date>). <title level="a">Neue Entwicklung in der Klaertechnik-Hightech und/oder Einfachtechnik</title>, <title level="j">TU International</title>, Nr. <biblScope unit="volume">34/35</biblScope>, pp. <biblScope unit="page">18-20</biblScope>.</bibl>
+<!---  volume  page  issue  missmatch -->
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_BOGGBY_2014_v38n6_761_021" lang="de"><author>B. W. Flemming</author>, '<title level="a">Zur Kassifikation Subaquatischer, Stromungstransversaler Transportkorper</title>'. <title level="j">Bochumer Geologische Geotechnische Arbeiten</title>, vol. <biblScope unit="volume">29</biblScope>, pp. <biblScope unit="page">44-47</biblScope>, <date>1988</date>, (<note>in Germany</note>).</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_SRMHB8_2014_v51n1_43_019" lang="de"><author>P. Scherrer</author>, '<title level="a">Bestimmung der Grosse und der Inneren Struktur von Kolloidteilchen Mittels Rontgenstrahlen</title> (<note>in German</note>),' <title level="j">Nachrichten von der Gesellschaft der Wissenschaften zu Gottingen, Mathematisch-Physikalische Klasse</title>, <biblScope unit="volume">2</biblScope> <biblScope unit="page">98-100</biblScope> (<date>1918</date>).</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_E1TAAE_2014_v18n2_193_030" lang="de"><author>Rellich F</author> (<date>1930</date>). <title level="a">Ein Satz uber mittlere Konvergenz, Gottingen Nachr</title>., <title level="j">Acta Math</title>. <biblScope unit="volume">141</biblScope>, pp. <biblScope unit="page">165-186</biblScope>.</bibl>
+<!---  page  issue  missmatch -->
+<bibl xml:id="_E1TAAE_2014_v18n2_193_008" lang="de"><author>Cantor G</author> (<date>1883</date>) <title level="a">Uber unendliche lineare Punktmannigfaltigkiet</title>, <title level="j">Math. Annalen</title> <biblScope unit="volume">21</biblScope>, <biblScope unit="issue">51-58</biblScope>, pp. <biblScope unit="page">545-591</biblScope>.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_GHOHDS_2018_v53n1_133_008" lang="de"><author>Hasselmann, K, Barnett TP, Bouws E, Carlson H, Cartwright DE, Enke K, Ewing JA, Gienapp H, Hasselmann DE, Kruseman P, Meerburg A, Muller P, Olbers DJ, Richter K, Sell W, Walden H</author> (<date>1973</date>) <title level="a">Measurements of wind-wave growth and swell decay during the Joint North Sea Wave Project (JONSWAP)</title>. <title level="j">Erganzungsheft zur Deutschen Hydrographischen Zeitschrift Reihe A</title> <biblScope unit="volume">8</biblScope>(<biblScope unit="issue">12</biblScope>), <biblScope unit="page">95</biblScope> p.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_SMBHBD_2019_v49n1_28_064" lang="de"><author>Sojak, J</author>. <date>2004</date>. <title level="a">Potentilla L. (Rosaceae) and related genera in the former USSR (identification key, checklist and figures) Notes on Potentilla XVI. Botanische Jahrbucher fur Systematik</title>, <title level="j">Pflanzengeschichte und Pflanzengeographie</title> <biblScope unit="volume">125</biblScope>: <biblScope unit="page">253-340</biblScope>.</bibl>
+<!---  title  journal  publisher  missmatch -->
+<bibl xml:id="_ORBHBM_2019_v20n3_3_031" lang="de"><author>Ulrich Becker</author>, '<title level="a">Verfassungsrechtliche Vorgaben fur die Krankenversicherung der Rentner - zur Bedeutung des Gleichheitssatzes bei der Bemessung von Sozialversicherungsbeitragen</title>', <title level="j">Neue Zeitschrift fur Sozialrecht</title> (<date>2001</date>).</bibl>
+<!---  title  journal  publisher  missmatch -->
+<bibl xml:id="_ORBHBM_2019_v20n3_3_034" lang="de"><author>Stefan Huster</author>, '<title level="a">Die Beitragsbemessung in der gesetzlichen Krankenversicherung</title>', <title level="j">Juristen Zeitung</title>(<date>2002</date>).</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_ORBHBM_2019_v20n3_47_032" lang="de"><author>Ulsenheimer</author>, <title level="a">Fehlentwicklungen in der Medizin: Verrechtlichung und Okonomisierung</title>, <title level="j">MedR</title>(<date>2015</date>) <biblScope unit="volume">33</biblScope>, <biblScope unit="page">757</biblScope>.</bibl>
+<!---  orgName  missmatch -->
+<bibl xml:id="_SMTMSH_2019_v8n2_80_007" lang="de"><author>Schumann, W. O.</author>, '<title level="a">Uber die strahlungslosen Eigenschwingungen einer leitenden Kugel, die von einer Luftschicht und einer Ionospharenhulle umgeben ist</title>,' <title level="j">Zeitschrift fur Naturforschung A.</title>, <biblScope unit="volume">7</biblScope>(<biblScope unit="issue">2</biblScope>), Aus dem <orgName>Elektrophysikalischen Institut der Technischen Hochschule Munchen</orgName>, pp. <biblScope unit="page">149-154</biblScope>, <date>1952</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_GJMGCK_2019_v5n4_171_015" lang="de"><author>Cheon, Hyun-Soon</author>, <title level="a">Vom knstlich gezeugten zum geklonten menschen-Zur Identitt von knstlich erschaffenen menschen in Phantastikund science-Fiction- Literatur-</title>, <title level="j">Franz Kafka</title>, No. <biblScope unit="issue">36</biblScope>, pp. <biblScope unit="page">99-122</biblScope>, <date>2016</date>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_OMHHBZ_2019_v24n3_114_015" lang="de"><author>W. Zeuch</author>, <title level="a">Neue Verfahren zur Messung des Einspritzgesetzes und Einspritz-Regelmassigkeit von Diesel-Einspritz-pumpen</title>, <title level="j">MZT</title>, Jahr. <biblScope unit="volume">22</biblScope> Heft <biblScope unit="issue">9</biblScope>, <date>1961</date>.</bibl>
+<!---  volume  page  missmatch -->
+<bibl xml:id="_ORBHBM_2019_v20n2_111_027" lang="de"><author>Weilbrock</author>, '<title level="a">Datenschutzrechtliche Aspekte des Aufbaus von Biobanken fur Forschungszwecke</title>'. <title level="j">MedR</title> <date>2003</date>, <biblScope unit="page">77</biblScope>.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_ORBHBM_2020_v21n1_3_027" lang="de"><author>Deutsch</author>, '<title level="a">Schutzbereich und Beweislast der arztlichen Aufklarungspflicht</title>', <title level="j">NJW</title> <date>1984</date>, <biblScope unit="page">1802</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_DBSHBB_2020_v57n4_845_022" lang="de"><author>H. Weyl</author>, <title level="a">Uber die Gleichverteilung von Zahlen mod. Eins</title>, <title level="j">Math. Ann.</title> <biblScope unit="volume">77</biblScope> (<date>1916</date>), no. <biblScope unit="issue">3</biblScope>, <biblScope unit="page">313-352</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_OOGCBV_2020_v59n1_65_017" lang="de"><author>Forel, A.</author>, <date>1912</date>. <title level="a">H. Sauter's Formosa-Ausbeute. Formicidae (Hym.)</title>. <title level="j">Entomol. Mitt</title>. <biblScope unit="volume">1</biblScope>, <biblScope unit="page">45-61</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_KJKHB9_2020_v75n3_401_010" lang="de"><author>Bredt, R.</author> (<date>1896</date>), '<title level="a">Kritische Bemerkungen zur Drehungselastizitat</title>. <title level="j">Z Vereines Deutscher Ingenieure</title>', Band, <biblScope unit="volume">40</biblScope>(<biblScope unit="issue">28</biblScope>), <biblScope unit="page">785-790</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_JORHBK_2020_v35n4_325_018" lang="de"><author>Kolkwitz, R. &amp; Krieger, W</author>. <date>1936</date>. <title level="a">Zur Okologie der Pflanzenwelt, insbesondere der Algen, des Vulkans Pangerango in West-Java. I. Allgemeines (von R. Kolkwitz). II. Die Algenflora des Pangerango (von W. Krieger)</title>. <title level="j">Ber. Deutsch. Bot. Ges.</title> <biblScope unit="volume">54</biblScope>:<biblScope unit="page">65-91</biblScope>.</bibl>
+
+            </listBibl>
+        </back>
+    </text>
+</TEI>

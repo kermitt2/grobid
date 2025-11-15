@@ -1,13 +1,16 @@
 package org.grobid.core.lexicon;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.layout.BoundingBox;
+import org.grobid.core.layout.PDFAnnotation;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.layout.LayoutToken;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -15,9 +18,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertNotNull;
 
-/**
- * @author Patrice Lopez
- */
 public class LexiconIntegrationTest {
     private Lexicon target = null;
 
@@ -385,5 +385,29 @@ public class LexiconIntegrationTest {
         assertThat(positions.get(3).end, is(68));
         assertThat(positions.get(4).start, is(71));
         assertThat(positions.get(4).end, is(79));
+    }
+
+    @Test
+    public void testInEmailPatternLayoutToken() {
+        String piece = "20000 NW Walker Rd, Beaverton, Oregon 97006 \nericwan @ece.ogi.edu, rvdmerwe@ece.ogi.edu \nAbstract \n";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        List<OffsetPosition> positions = target.tokenPositionsEmailPattern(tokens);
+
+        assertThat(positions, hasSize(2));
+        assertThat(positions.get(0).start, is(17));
+        assertThat(positions.get(0).end, is(24));
+        assertThat(positions.get(1).start, is(27));
+        assertThat(positions.get(1).end, is(33));
+    }
+
+    @Test
+    public void testinFunders1Match() throws Exception {
+        final String input = "Thank you Deutsche Forschungsgemeinschaft for the money.";
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        final List<OffsetPosition> positions = target.tokenPositionsFunderNames(tokenisedInput);
+        
+        assertThat(positions, hasSize(1));
+        assertThat(positions.get(0).start, is(4));
+        assertThat(positions.get(0).end, is(6));
     }
 }

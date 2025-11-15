@@ -6,7 +6,6 @@ import java.io.InputStream;
 /**
  * Copyright (c) 2006-2011 Christian Plattner. All rights reserved.
  */
-
 public class StreamGobbler extends InputStream {
     class GobblerThread extends Thread {
         @Override

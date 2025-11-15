@@ -10,7 +10,6 @@ import java.util.Set;
 /**
  * SAX parser for the XML description of country codes in ISO 3166.
  *
- * @author Patrice Lopez
  */
 public class CountryCodeSaxParser extends DefaultHandler {
 

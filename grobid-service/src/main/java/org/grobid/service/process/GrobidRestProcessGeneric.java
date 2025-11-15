@@ -6,14 +6,11 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.core.UriInfo;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
+import jakarta.ws.rs.core.UriInfo;
 
-/**
- * @author Damien, Patrice
- */
 @Singleton
 public class GrobidRestProcessGeneric {
 
@@ -62,14 +59,5 @@ public class GrobidRestProcessGeneric {
                 .type(MediaType.TEXT_HTML).build();
 
         return response;
-    }
-
-    /**
-     * Returns a string containing GROBID version.
-     *
-     * @return a response object containing version as string.
-     */
-    public Response getVersion() {
-        return Response.status(Status.OK).entity(GrobidProperties.getVersion()).build();
     }
 }

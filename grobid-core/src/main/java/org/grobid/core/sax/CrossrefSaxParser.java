@@ -14,7 +14,6 @@ import org.xml.sax.helpers.*;
  * -> This is not used anymore, we use the JSON REST API from 
  *    CrossRef or from biblio-glutton, und das ist auch gut so.
  *
- * @author Patrice Lopez
  */
 public class CrossrefSaxParser extends DefaultHandler {
 

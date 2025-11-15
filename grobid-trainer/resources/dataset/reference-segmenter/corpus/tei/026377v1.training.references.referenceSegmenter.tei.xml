@@ -1,0 +1,48 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Ayers, D. R., R. J. Pereira, A. A. Boligon, F. F. Silva, F. S. Schenkel, V. M. Roso, and L. G.<lb/> Albuquerque. 2013. Linear and Poisson models for genetic evaluation of tick resistance in<lb/> cross-bred Hereford x Nellor cattle. Journal of Animal Breeding and Genetics 130:417-424.<lb/> </bibl>
+        <bibl>Browne, W. J., S. V. Subramanian, K. Jones, and H. Goldstein. 2005. Variance partitioning in<lb/> multilevel logistic models that exhibit overdispersion. Journal of the Royal Statistical Society<lb/> 168:599-613.<lb/> </bibl>
+        <bibl>Bulmer, M. G. 1971. The effect of selection on genetic variability. The American Naturalist<lb/> 105:201-211.<lb/> </bibl>
+        <bibl>Bérénos, C., P. A. Ellis, J. G. Pilkington, and J. M. Pemberton. 2014. Estimating quantitative<lb/> genetic parameters in wild populations: a comparison of pedigree and genomic approaches.<lb/> Molecular Ecology 23:3434-3451.<lb/> </bibl>
+        <bibl>Dempster, E. R. and I. M. Lerner. 1950. Heritability of Threshold Characters. Genetics<lb/> 35:212-236.<lb/> </bibl>
+        <bibl>Falconer, D. S., 1960. Introduction to Quantitative Genetics. Oliver and Boyd.<lb/></bibl> 
+        <bibl>Fisher, R. A. 1918. The correlation between relatives on the supposition of Mendelian inheri-<lb/>tance. Transactions of the Royal Society of Edinburgh 52:399-433.<lb/></bibl> 
+        <bibl>---. 1924. The biometrical study of heredity. Eugenics Review 16:189-210.<lb/></bibl> 
+        <bibl>---, 1930. The Genetical Theory of Natural Selection. Clarendon Press, Oxford.<lb/> </bibl>
+        <bibl>Foulley, J. L. and S. Im. 1993. A marginal quasi-likelihood approach to the analysis of Poisson<lb/> variables with generalized linear mixed models. Genetics Selection Evolution 25:101. URL<lb/> http://www.gsejournal.org/content/25/1/101.<lb/> </bibl>
+        <bibl>Hadfield, J. 2010. MCMC methods for multi-response generalized linear mixed models: The<lb/> MCMCglmm R package. Journal of Statistical Software 33:1-22.<lb/> </bibl>
+        <bibl>Henderson, C. R. 1950. Estimation of genetic parameters. Annals of Mathematical Statistics<lb/> 21:309-310.<lb/></bibl> 
+        <bibl>---, 1973. Proceedings of the Animal Breeding and Genetics Symposium in Honour of Dr.<lb/> Jay L. Lush, chap. Sire evaluation and genetic trends. Published by the American Society of<lb/> Animal Science and the American Dairy Science Association.<lb/> </bibl>
+        <bibl>Houle, D. 1992. Comparing Evolvability and Variability of Quantitative Traits. Genetics<lb/> 130:195-204. URL http://www.genetics.org/content/130/1/195.<lb/> </bibl>
+        <bibl>Kruuk, L. E. B. 2004. Estimating genetic parameters in natural populations using the &apos;animal<lb/> model&apos;. Philosophical Transactions of the Royal Society of London B 359:873-890.<lb/> </bibl>
+        <bibl>Lande, R. 1979. Quantitative genetic analysis of multivariate evolution, applied to brain:body<lb/> size allometry. Evolution 33:402-416.<lb/> </bibl>
+        <bibl>Lande, R. and S. J. Arnold. 1983. The measurement of selection on correlated characters.<lb/> Evolution 37:1210-1226.<lb/> </bibl>
+        <bibl>Lush, J. L., 1937. Animal breeding plans. Iowa State College Press, Ames, Iowa.<lb/></bibl> 
+        <bibl>Lynch, M. and B. Walsh, 1998. Genetics and analysis of quantitative traits. Sinauer, Sunder-<lb/>land, MA.<lb/></bibl> 
+        <bibl>Milot, E., F. M. Mayer, D. H. Nussey, M. Boisvert, F. Pelletier, and D. Reale. 2011. Evidence for<lb/> evolution in response to natural selection in a contemporary human population. Proceedings<lb/> of the National Academy of Sciences 108:17040-17045. URL http://www.pnas.org/cgi/<lb/> doi/10.1073/pnas.1104210108.<lb/> </bibl>
+        <bibl>Morrissey, M. B. 2014. In search of the best methods for multivariate selection analysis.<lb/> Methods in Ecology and Evolution 5:1095-1109.<lb/></bibl> 
+        <bibl>---. 2015. Evolutionary quantitative genetics of non-linear developmental systems. Evolu-<lb/>tion in press.<lb/> </bibl>
+        <bibl>Morrissey, M. B., C. A. Walling, A. J. Wilson, J. M. Pemberton, T. H. Clutton-Brock, and<lb/> L. E. B. Kruuk. 2012. Genetic Analysis of Life-History Constraint and Evolution in a Wild<lb/> Ungulate Population. The American Naturalist 179:E97-E114. URL http://www.jstor.<lb/> org/stable/info/10.1086/664686.<lb/> </bibl>
+        <bibl>Nakagawa, S. and H. Schielzeth. 2010. Repeatability for Gaussian and non Gaussian data: a<lb/> practical guide for biologists. Biological Reviews 85:935-956. URL http://onlinelibrary.<lb/> wiley.com/doi/10.1111/j.1469-185X.2010.00141.x/abstract.<lb/> </bibl>
+        <bibl>Price, G. R. 1970. Selection and covariance. Nature 227:520-521.<lb/> </bibl>
+        <bibl>Robertson, A. 1950. Heritability of Threshold Characters. Genetics 35:212-236.<lb/></bibl> 
+        <bibl>---. 1966. A mathematical model of the culling process in dairy cattle. Animal Production<lb/> 8:95-108.<lb/></bibl> 
+        <bibl>---, 1968. Population Biology and Evolution, chap. The spectrum of genetic variation, Pp.<lb/> 5-16. Syracuse University Press, New York.<lb/> </bibl>
+        <bibl>Roff, D. A., 1997. Evolutionary quantitative genetics. Chapman &amp; Hall, New York, New York<lb/> (US).<lb/> </bibl>
+        <bibl>Stein, C. M. 1973. Estimation of the mean of a multivariate normal distribution. Proceedings<lb/> of the Prague Sumposium on Asymptotic Statistics 1:345-381.<lb/></bibl> 
+        <bibl>de Villemereuil, P., O. Gimenez, and B. Doligez. 2013. Comparing parent-offspring regression<lb/> with frequentist and Bayesian animal models to estimate heritability in wild populations: a<lb/> simulation study for Gaussian and binary traits. Methods in Ecology and Evolution 4:260-<lb/>275. URL http://onlinelibrary.wiley.com.gate1.inist.fr/doi/10.1111/2041-210X.<lb/> 12011/abstract.<lb/> </bibl>
+        <bibl>Walsh, B. and M. Lynch, forthcoming. Evolution and selection of quantitative traits. Sinauer.<lb/></bibl> 
+        <bibl>Wilson, A. J. 2008. Why h2 does not always equal VA/VP? Journal of Evolutionary Bi-<lb/>ology 21:647-650. URL http://onlinelibrary.wiley.com/doi/10.1111/j.1420-9101.<lb/> 2008.01500.x/full.<lb/> </bibl>
+        <bibl>Wilson, A. J., M. B. Morrissey, M. J. Adams, C. A. Walling, F. E. Guinness, J. M. Pemberton,<lb/> T. H. Clutton-Brock, and L. E. B. Kruuk. 2011. Indirect genetics effects and evolutionary<lb/> constraint: an analysis of social dominance in red deer, Cervus elaphus. Journal of Evo-<lb/>lutionary Biology 24:772-783. URL http://onlinelibrary.wiley.com/doi/10.1111/j.<lb/> 1420-9101.2010.02212.x/abstract.<lb/> </bibl>
+        <bibl>Wilson, A. J., D. Reale, M. N. Clements, M. B. Morrissey, C. A. W. E. Postma, L. E. B.<lb/> Kruuk, and D. H. Nussey. 2010. An ecologist&apos;s guide to the animal model. Journal of Animal<lb/> Ecology 79:13-26.<lb/> </bibl>
+        <bibl>Wright, S. 1934. An Analysis of Variability in Number of Digits in an Inbred Strain of Guinea<lb/> Pigs. Genetics 19:506-536.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

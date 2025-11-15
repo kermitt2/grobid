@@ -15,9 +15,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by lfoppiano on 25/11/16.
- */
 public class CntManagerImplTest {
 
     CntManagerImpl target;

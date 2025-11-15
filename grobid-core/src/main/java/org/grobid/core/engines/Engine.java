@@ -1,53 +1,36 @@
-/**
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package org.grobid.core.engines;
 
-import com.google.common.io.Files;
-import org.apache.commons.io.FileUtils;
+import nu.xom.Element;
+import org.apache.commons.lang3.tuple.MutablePair;
+import org.apache.commons.lang3.tuple.MutableTriple;
 import org.apache.commons.lang3.tuple.Pair;
-
+import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.exceptions.GrobidResourceException;
-import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.core.lang.Language;
 import org.grobid.core.utilities.Consolidation;
-import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.counters.impl.CntManagerFactory;
-
 import org.grobid.core.utilities.crossref.CrossrefClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.util.*;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Class for managing the extraction of bibliographical information from PDF
  * documents or raw text.
  *
- * @author Patrice Lopez
  */
 public class Engine implements Closeable {
     private static final Logger LOGGER = LoggerFactory.getLogger(Engine.class);
@@ -136,7 +119,7 @@ public class Engine implements Closeable {
      * @throws IOException
      */
     public List<org.grobid.core.data.Date> processDate(String dateBlock) throws IOException {
-        List<org.grobid.core.data.Date> result = parsers.getDateParser().processing(dateBlock);
+        List<org.grobid.core.data.Date> result = parsers.getDateParser().process(dateBlock);
         return result;
     }
 
@@ -152,7 +135,7 @@ public class Engine implements Closeable {
     }*/
 
     /**
-     * Apply a parsing model for a given single raw reference string based on CRF
+     * Apply a parsing model for a given single raw reference string
      *
      * @param reference   the reference string to be processed
      * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
@@ -164,11 +147,11 @@ public class Engine implements Closeable {
         if (reference != null) {
             reference = reference.replaceAll("\\\\", "");
         }
-        return parsers.getCitationParser().processing(reference, consolidate);
+        return parsers.getCitationParser().processingString(reference, consolidate);
     }
 
     /**
-     * Apply a parsing model for a set of raw reference text based on CRF
+     * Apply a parsing model for a set of raw reference text
      *
      * @param references  the list of raw reference strings to be processed
      * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
@@ -177,44 +160,46 @@ public class Engine implements Closeable {
      * @return the list of recognized bibliographical objects
      */
     public List<BiblioItem> processRawReferences(List<String> references, int consolidate) throws Exception {
-        List<BibDataSet> results = new ArrayList<BibDataSet>();
         List<BiblioItem> finalResults = new ArrayList<BiblioItem>();
         if (references == null || references.size() == 0)
             return finalResults;
-        for (String reference : references) {
-            BiblioItem bib = parsers.getCitationParser().processing(reference, 0);
-            //if ((bib != null) && !bib.rejectAsReference()) 
-            {
-                BibDataSet bds = new BibDataSet();
-                bds.setResBib(bib);
-                bds.setRawBib(reference);
-                results.add(bds);
-            }
-        }
 
+        List<BiblioItem> results = parsers.getCitationParser().processingStringMultiple(references, 0);
         if (results.size() == 0)
             return finalResults;
+
         // consolidation in a second stage to take advantage of parallel calls
-        if (consolidate != 0) {
+        if (consolidate == 0) {
+            return results;
+        } else {
+            // prepare for set consolidation
+            List<BibDataSet> bibDataSetResults = new ArrayList<BibDataSet>();
+            for (BiblioItem bib : results) {
+                BibDataSet bds = new BibDataSet();
+                bds.setResBib(bib);
+                bds.setRawBib(bib.getReference());
+                bibDataSetResults.add(bds);
+            }
+
             Consolidation consolidator = Consolidation.getInstance();
             if (consolidator.getCntManager() == null)
                 consolidator.setCntManager(cntManager);
             Map<Integer,BiblioItem> resConsolidation = null;
             try {
-                resConsolidation = consolidator.consolidate(results);
+                resConsolidation = consolidator.consolidate(bibDataSetResults);
             } catch(Exception e) {
                 throw new GrobidException(
                     "An exception occured while running consolidation on bibliographical references.", e);
             }
             if (resConsolidation != null) {
-                for(int i=0; i<results.size(); i++) {
-                    BiblioItem resCitation = results.get(i).getResBib();
+                for(int i=0; i<bibDataSetResults.size(); i++) {
+                    BiblioItem resCitation = bibDataSetResults.get(i).getResBib();
                     BiblioItem bibo = resConsolidation.get(Integer.valueOf(i));
                     if (bibo != null) {
                         if (consolidate == 1)
                             BiblioItem.correct(resCitation, bibo);
                         else if (consolidate == 2)
-                            BiblioItem.injectDOI(resCitation, bibo);
+                            BiblioItem.injectIdentifiers(resCitation, bibo);
                     }
                     finalResults.add(resCitation);
                 }
@@ -239,7 +224,7 @@ public class Engine implements Closeable {
     }
 
     /**
-     * Apply a parsing model to the reference block of a PDF file based on CRF
+     * Apply a parsing model to the reference block of a PDF file
      *
      * @param inputFile   the path of the PDF file to be processed
      * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
@@ -250,7 +235,23 @@ public class Engine implements Closeable {
      */
     public List<BibDataSet> processReferences(File inputFile, int consolidate) {
         return parsers.getCitationParser()
-            .processingReferenceSection(inputFile, parsers.getReferenceSegmenterParser(), consolidate);
+            .processingReferenceSection(inputFile, null, parsers.getReferenceSegmenterParser(), consolidate);
+    }
+
+    /**
+     * Apply a parsing model to the reference block of a PDF file
+     *
+     * @param inputFile   the path of the PDF file to be processed
+     * @param md5Str      MD5 digest of the PDF file to be processed
+     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @return the list of parsed references as bibliographical objects enriched
+     *         with citation contexts
+     */
+    public List<BibDataSet> processReferences(File inputFile, String md5Str, int consolidate) {
+        return parsers.getCitationParser()
+			.processingReferenceSection(inputFile, md5Str, parsers.getReferenceSegmenterParser(), consolidate);
     }
 
     /**
@@ -328,7 +329,7 @@ public class Engine implements Closeable {
     }
 
     /**
-     * Apply a parsing model for the header of a PDF file based on CRF, using
+     * Apply a parsing model for the header of a PDF file, using
      * first three pages of the PDF
      *
      * @param inputFile   the path of the PDF file to be processed
@@ -343,6 +344,8 @@ public class Engine implements Closeable {
         String inputFile,
         int consolidate,
         boolean includeRawAffiliations,
+        boolean includeRawCopyrights,
+        boolean includeDiscardedText,
         BiblioItem result
     ) {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
@@ -350,30 +353,140 @@ public class Engine implements Closeable {
             .endPage(2)
             .consolidateHeader(consolidate)
             .includeRawAffiliations(includeRawAffiliations)
+            .includeRawCopyrights(includeRawCopyrights)
+            .includeRawCopyrights(includeDiscardedText)
             .build();
-        return processHeader(inputFile, config, result);
+        return processHeader(inputFile, null, config, result);
     }
 
     /**
-     * Apply a parsing model for the header of a PDF file based on CRF, using
+     * Apply a parsing model for the header of a PDF file combined with an extraction and parsing of
+     * funding information (outside the header possibly)
+     *
+     * @param inputFile   the path of the PDF file to be processed
+     * @param consolidateHeader the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param consolidateFunders the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param includeRawAffiliations includes the raw affiliation in the output
+     * @param includeRawCopyrights includes the raw copyright information in the output
+     * @return the TEI representation of the extracted bibliographical
+     *         information
+     */
+    public String processHeaderFunding(
+        File inputFile,
+        int consolidateHeader,
+        int consolidateFunders,
+        boolean includeRawAffiliations,
+        boolean includeRawCopyrights,
+        boolean includeDiscardedText
+    ) throws Exception {
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .consolidateHeader(consolidateHeader)
+            .consolidateFunders(consolidateFunders)
+            .includeRawAffiliations(includeRawAffiliations)
+            .includeRawCopyrights(includeRawCopyrights)
+            .includeDiscardedText(includeDiscardedText)
+            .build();
+        return processHeaderFunding(inputFile, null, config);
+    }
+
+    /**
+     * Apply a parsing model for the header of a PDF file, using
+     * first three pages of the PDF
+     *
+     * @param inputFile   the path of the PDF file to be processed
+     * @param md5Str      MD5 digest of the processed file
+     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param result      bib result
+     * @return the TEI representation of the extracted bibliographical
+     *         information
+     */
+    public String processHeader(
+        String inputFile,
+        String md5Str,
+        int consolidate,
+        boolean includeRawAffiliations,
+        boolean includeRawCopyrights,
+        boolean includeDiscardedText,
+        int startPage,
+        int endPage,
+        BiblioItem result
+    ) {
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .startPage(startPage)
+            .endPage(endPage)
+            .consolidateHeader(consolidate)
+            .includeRawAffiliations(includeRawAffiliations)
+            .includeRawCopyrights(includeRawCopyrights)
+            .includeDiscardedText(includeDiscardedText)
+            .build();
+        return processHeader(inputFile, md5Str, config, result);
+    }
+
+    /**
+     * Apply a parsing model for the header of a PDF file combined with an extraction and parsing of
+     * funding information (outside the header possibly)
+     *
+     * @param inputFile   the path of the PDF file to be processed
+     * @param md5Str      MD5 digest of the processed file
+     * @param consolidateHeader the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param consolidateFunders the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param includeRawAffiliations includes the raw affiliation in the output
+     * @param includeRawCopyrights includes the raw copyright information in the output
+     * @return the TEI representation of the extracted bibliographical
+     *         information
+     */
+    public String processHeaderFunding(
+        File inputFile,
+        String md5Str,
+        int consolidateHeader,
+        int consolidateFunders,
+        boolean includeRawAffiliations,
+        boolean includeRawCopyrights,
+        boolean includeDiscardedText
+    ) throws Exception {
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .consolidateHeader(consolidateHeader)
+            .consolidateFunders(consolidateFunders)
+            .includeRawAffiliations(includeRawAffiliations)
+            .includeRawCopyrights(includeRawCopyrights)
+            .includeDiscardedText(includeDiscardedText)
+            .build();
+        return processHeaderFunding(inputFile, md5Str, config);
+    }
+
+    /**
+     * Apply a parsing model for the header of a PDF file, using
      * dynamic range of pages as header
      *
      * @param inputFile   : the path of the PDF file to be processed
-    <<<<<<< HEAD
-     * //@param consolidate - the consolidation option allows GROBID to exploit Crossref
-     *                    web services for improving header information
-    =======
-    >>>>>>> master
      * @param result      bib result
      *
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
-    public String processHeader(String inputFile, int consolidate, BiblioItem result) {
-        return processHeader(inputFile, GrobidAnalysisConfig.defaultInstance(), result);
+    public String processHeader(String inputFile, BiblioItem result) {
+        return processHeader(inputFile, null, GrobidAnalysisConfig.defaultInstance(), result);
     }
 
     public String processHeader(String inputFile, GrobidAnalysisConfig config, BiblioItem result) {
+        return processHeader(inputFile, null, config, result);
+    }
+
+    public String processHeaderFunding(File inputFile, GrobidAnalysisConfig config) throws Exception {
+        return processHeaderFunding(inputFile, null, config);
+    }
+
+    public String processHeader(String inputFile, String md5Str, GrobidAnalysisConfig config, BiblioItem result) {
         // normally the BiblioItem reference must not be null, but if it is the
         // case, we still continue
         // with a new instance, so that the resulting TEI string is still
@@ -381,42 +494,19 @@ public class Engine implements Closeable {
         if (result == null) {
             result = new BiblioItem();
         }
-
-        Pair<String, Document> resultTEI;
-        if (GrobidProperties.isHeaderUseHeuristics()) {
-            resultTEI = parsers.getHeaderParser().processing2(inputFile, result, config);
-        } else {
-            resultTEI = parsers.getHeaderParser().processing(new File(inputFile), result, config);
-        }
-        Document doc = resultTEI.getRight();
+        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(new File(inputFile), md5Str, result, config);
         return resultTEI.getLeft();
     }
 
-    /**
-     * Use the segmentation model to identify the header section of a PDF file, then apply a parsing model for the
-     * header based on CRF
-     *
-     * @param inputFile   the path of the PDF file to be processed
-     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
-     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
-     *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param result      bib result
-     * @return the TEI representation of the extracted bibliographical information
-     */
-    public String segmentAndProcessHeader(File inputFile, int consolidate, BiblioItem result) {
-        // normally the BiblioItem reference must not be null, but if it is the
-        // case, we still continue
-        // with a new instance, so that the resulting TEI string is still
-        // delivered
-        if (result == null) {
-            result = new BiblioItem();
-        }
-
-        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, result,
-            GrobidAnalysisConfig.builder().consolidateHeader(consolidate).build());
-        Document doc = resultTEI.getRight();
-        //close();
-        return resultTEI.getLeft();
+    public String processHeaderFunding(File inputFile, String md5Str, GrobidAnalysisConfig config) throws Exception {
+        FullTextParser fullTextParser = parsers.getFullTextParser();
+        Document resultDoc;
+        LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
+        long time = System.currentTimeMillis();
+        resultDoc = fullTextParser.processingHeaderFunding(inputFile, md5Str, config);
+        LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: "
+            + (System.currentTimeMillis() - time) + "ms");
+        return resultDoc.getTei();
     }
 
     /**
@@ -445,7 +535,7 @@ public class Engine implements Closeable {
      * the current monograph text model on a new PDF
      *
      * @param inputFile    : the path of the PDF file to be processed
-     * @param pathRaw      : the path where to put the CRF feature file
+     * @param pathRaw      : the path where to put the sequence labeling feature file
      * @param pathTEI      : the path where to put the annotated TEI representation (the
      *                     file to be corrected for gold-level training data)
      * @param id           : an optional ID to be used in the TEI file and the full text
@@ -461,7 +551,7 @@ public class Engine implements Closeable {
      * without tags. This can be used to start from scratch any new model. 
      *
      * @param inputFile    : the path of the PDF file to be processed
-     * @param pathRaw      : the path where to put the CRF feature file
+     * @param pathRaw      : the path where to put the sequence labeling feature file
      * @param pathTEI      : the path where to put the annotated TEI representation (the
      *                     file to be annotated for "from scratch" training data)
      * @param id           : an optional ID to be used in the TEI file and the full text
@@ -476,26 +566,14 @@ public class Engine implements Closeable {
      * the current full text model on a new PDF
      *
      * @param inputFile    : the path of the PDF file to be processed
-     * @param pathRaw      : the path where to put the CRF feature file
+     * @param pathRaw      : the path where to put the sequence labeling feature file
      * @param pathTEI      : the path where to put the annotated TEI representation (the
      *                       file to be corrected for gold-level training data)
      * @param id           : an optional ID to be used in the TEI file, -1 if not used
      */
-    public void createTraining(File inputFile, String pathRaw, String pathTEI, int id) {
-        Document doc = parsers.getFullTextParser().createTraining(inputFile, pathRaw, pathTEI, id);
-    }
-
-    /**
-     * Create training data for a segmentation model on a new PDF
-     *
-     * @param inputFile    : the path of the PDF file to be processed
-     * @param pathRaw      : the path where to put the CRF feature file
-     * @param pathTEI      : the path where to put the annotated TEI representation (the
-     *                       file to be corrected for gold-level training data)
-     * @param id           : an optional ID to be used in the TEI file, -1 if not used
-     */
-    public void createTrainingSegmentation(File inputFile, String pathRaw, String pathTEI, int id) {
-        parsers.getSegmentationParser().createTrainingSegmentation(inputFile, pathRaw, pathTEI, id);
+    public void createTraining(File inputFile, String pathRaw, String pathTEI, int id, GrobidModels.Flavor flavor) {
+        System.out.println(inputFile.getPath());
+        Document doc = parsers.getFullTextParser(flavor).createTraining(inputFile, pathRaw, pathTEI, id, flavor);
     }
 
     /**
@@ -511,28 +589,60 @@ public class Engine implements Closeable {
      */
     public String fullTextToTEI(File inputFile,
                                 GrobidAnalysisConfig config) throws Exception {
-        return fullTextToTEIDoc(inputFile, config).getTei();
+        return fullTextToTEIDoc(inputFile, null,null, config).getTei();
+    }
+
+    public String fullTextToTEI(File inputFile,
+                                GrobidModels.Flavor flavor,
+                                GrobidAnalysisConfig config) throws Exception {
+        return fullTextToTEIDoc(inputFile, flavor, null, config).getTei();
+    }
+
+    /**
+     * //TODO: remove invalid JavaDoc once refactoring is done and tested (left for easier reference)
+     * Parse and convert the current article into TEI, this method performs the
+     * whole parsing and conversion process. If onlyHeader is true, than only
+     * the tei header data will be created.
+     *
+     * @param inputFile            - absolute path to the pdf to be processed
+     * @param md5Str               - MD5 digest of the PDF file to be processed
+     * @param config               - Grobid config
+     * @return the resulting structured document as a TEI string.
+     */
+    public String fullTextToTEI(File inputFile,
+                                GrobidModels.Flavor flavor,
+                                String md5Str,
+                                GrobidAnalysisConfig config) throws Exception {
+        return fullTextToTEIDoc(inputFile, flavor, md5Str, config).getTei();
     }
 
     public Document fullTextToTEIDoc(File inputFile,
+                                    GrobidModels.Flavor flavor,
+                                    String md5Str,
                                      GrobidAnalysisConfig config) throws Exception {
-        FullTextParser fullTextParser = parsers.getFullTextParser();
+        FullTextParser fullTextParser = parsers.getFullTextParser(flavor);
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
         long time = System.currentTimeMillis();
-        resultDoc = fullTextParser.processing(inputFile, config);
+        resultDoc = fullTextParser.processing(inputFile, flavor, md5Str, config);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: "
             + (System.currentTimeMillis() - time) + "ms");
         return resultDoc;
     }
 
-    public Document fullTextToTEIDoc(DocumentSource documentSource,
+    public Document fullTextToTEIDoc(File inputFile,
                                      GrobidAnalysisConfig config) throws Exception {
-        FullTextParser fullTextParser = parsers.getFullTextParser();
+        return fullTextToTEIDoc(inputFile, null, null, config);
+    }
+
+    public Document fullTextToTEIDoc(DocumentSource documentSource,
+                                    GrobidModels.Flavor flavor,
+                                    GrobidAnalysisConfig config) throws Exception {
+        FullTextParser fullTextParser = parsers.getFullTextParser(flavor);
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + documentSource);
         long time = System.currentTimeMillis();
-        resultDoc = fullTextParser.processing(documentSource, config);
+        resultDoc = fullTextParser.processing(documentSource, flavor, config);
         LOGGER.debug("Ending processing fullTextToTEI on " + documentSource + ". Time to process: "
             + (System.currentTimeMillis() - time) + "ms");
         return resultDoc;
@@ -545,14 +655,14 @@ public class Engine implements Closeable {
      * traning data based on an existing model.
      *
      * @param directoryPath - the path to the directory containing PDF to be processed.
-     * @param resultPath    - the path to the directory where the results as XML files
+     * @param resultPath    - the path to the directory where the results as XML file
      *                      shall be written.
      * @param ind           - identifier integer to be included in the resulting files to
      *                      identify the training case. This is optional: no identifier
      *                      will be included if ind = -1
      * @return the number of processed files.
      */
-    public int batchCreateTraining(String directoryPath, String resultPath, int ind) {
+    public int batchCreateTraining(String directoryPath, String resultPath, int ind, GrobidModels.Flavor flavor) {
         try {
             File path = new File(directoryPath);
             // we process all pdf files in the directory
@@ -575,7 +685,7 @@ public class Engine implements Closeable {
             }
             for (final File pdfFile : refFiles) {
                 try {
-                    createTraining(pdfFile, resultPath, resultPath, ind + n);
+                    createTraining(pdfFile, resultPath, resultPath, ind + n, flavor);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
                         + pdfFile.getPath(), exp);
@@ -598,7 +708,7 @@ public class Engine implements Closeable {
      *
      * @param directoryPath - the path to the directory containing PDF to be processed.
      * @param resultPath    - the path to the directory where the results as XML files
-     *                        and CRF feature files shall be written.
+     *                        and the sequence labeling feature files shall be written.
      * @param ind           - identifier integer to be included in the resulting files to
      *                        identify the training case. This is optional: no identifier
      *                        will be included if ind = -1
@@ -649,7 +759,7 @@ public class Engine implements Closeable {
      *
      * @param directoryPath - the path to the directory containing PDF to be processed.
      * @param resultPath    - the path to the directory where the results as XML files
-     *                        and default CRF feature files shall be written.
+     *                        and default sequence labeling feature files shall be written.
      * @param ind           - identifier integer to be included in the resulting files to
      *                        identify the training case. This is optional: no identifier
      *                        will be included if ind = -1
@@ -694,57 +804,6 @@ public class Engine implements Closeable {
     }
 
     /**
-     * Process all the PDF in a given directory with a pdf extraction and
-     * produce blank training data, i.e. TEI files with text only
-     * without tags. This can be used to start from scratch any new model.
-     *
-     * @param directoryPath - the path to the directory containing PDF to be processed.
-     * @param resultPath    - the path to the directory where the results as XML files
-     *                        and default CRF feature files shall be written.
-     * @param ind           - identifier integer to be included in the resulting files to
-     *                        identify the training case. This is optional: no identifier
-     *                        will be included if ind = -1
-     * @return the number of processed files.
-     */
-    public int batchCreateTrainingSegmentation(String directoryPath, String resultPath, int ind) {
-        try {
-            File path = new File(directoryPath);
-            // we process all pdf files in the directory
-            File[] refFiles = path.listFiles(new FilenameFilter() {
-                public boolean accept(File dir, String name) {
-                    System.out.println(name);
-                    return name.endsWith(".pdf") || name.endsWith(".PDF");
-                }
-            });
-
-            if (refFiles == null)
-                return 0;
-
-            System.out.println(refFiles.length + " files to be processed.");
-
-            int n = 0;
-            if (ind == -1) {
-                // for undefined identifier (value at -1), we initialize it to 0
-                n = 1;
-            }
-            for (final File pdfFile : refFiles) {
-                try {
-                    createTrainingSegmentation(pdfFile, resultPath, resultPath, ind + n);
-                } catch (final Exception exp) {
-                    LOGGER.error("An error occured while processing the following pdf: "
-                        + pdfFile.getPath(), exp);
-                }
-                if (ind != -1)
-                    n++;
-            }
-
-            return refFiles.length;
-        } catch (final Exception exp) {
-            throw new GrobidException("An exception occured while running Grobid batch.", exp);
-        }
-    }
-
-    /**
      * Get the TEI XML string corresponding to the recognized header text
      */
     public static String header2TEI(BiblioItem resHeader) {
@@ -756,32 +815,6 @@ public class Engine implements Closeable {
      */
     public static String header2BibTeX(BiblioItem resHeader) {
         return resHeader.toBibTeX();
-    }
-
-    /**
-     * Get the TEI XML string corresponding to the recognized citation section
-     */
-    public static String references2TEI2(String path, List<BibDataSet> resBib) {
-        StringBuilder result = new StringBuilder();
-        result.append("<tei>\n");
-
-        BiblioSet bs = new BiblioSet();
-
-        for (BibDataSet bib : resBib) {
-            BiblioItem bit = bib.getResBib();
-            bit.buildBiblioSet(bs, path);
-        }
-
-        result.append(bs.toTEI());
-        result.append("<listbibl>\n");
-
-        for (BibDataSet bib : resBib) {
-            BiblioItem bit = bib.getResBib();
-            result.append("\n").append(bit.toTEI2(bs));
-        }
-        result.append("\n</listbibl>\n</tei>\n");
-
-        return result.toString();
     }
 
     /**
@@ -882,8 +915,10 @@ public class Engine implements Closeable {
         }
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
-        return parsers.getReferenceExtractor().extractAllReferencesString(text, filterDuplicate,
-            consolidateCitations, includeRawCitations, patentResults, nplResults);
+        List<String> texts = new ArrayList<>();
+        texts.add(text);
+        return parsers.getReferenceExtractor().extractAllReferencesString(texts, filterDuplicate,
+			consolidateCitations, includeRawCitations, patentResults, nplResults);
     }
 
     /**
@@ -1069,6 +1104,87 @@ public class Engine implements Closeable {
     }
 
     /**
+     * Process all the .txt in a given directory to generate pre-labeld training data for
+     * the citation model. Input file expects one raw reference string per line.
+     *
+     * @param directoryPath - the path to the directory containing .txt to be processed.
+     * @param resultPath    - the path to the directory where the results as XML training files
+     *                        shall be written.
+     **/
+    public int batchCreateTrainingCitation(String directoryPath, String resultPath) {
+        try {
+            File path = new File(directoryPath);
+            // we process all pdf files in the directory
+            File[] refFiles = path.listFiles(new FilenameFilter() {
+                public boolean accept(File dir, String name) {
+                    System.out.println(name);
+                    return name.endsWith(".txt");
+                }
+            });
+
+            if (refFiles == null)
+                return 0;
+
+            System.out.println(refFiles.length + " files to be processed.");
+
+            int n = 0;
+            for (final File txtFile : refFiles) {
+                try {
+                    // read file line by line, assuming one reference string per line
+                    List<String> allInput = new ArrayList<>();
+
+                    BufferedReader reader;
+                    try {
+                        reader = new BufferedReader(new FileReader(txtFile));
+                        String line = reader.readLine();
+                        while (line != null) {
+                            allInput.add(line.trim());
+                            line = reader.readLine();
+                        }
+                        reader.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    // process the training generation
+                    StringBuilder bufferReference = parsers.getCitationParser().trainingExtraction(allInput);
+
+                    // write the XML training file
+                    if (bufferReference != null) {
+                        bufferReference.append("\n");
+
+                        Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(resultPath +
+                                File.separator +
+                                txtFile.getName().replace(".txt", ".training.references.tei.xml")), false), StandardCharsets.UTF_8);
+
+                        writerReference.write("<?xml version=\"1.0\" ?>\n<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+                                                "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
+                                                "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+
+                        writerReference.write("\t<teiHeader>\n\t\t<fileDesc xml:id=\"_" + n +
+                            "\"/>\n\t</teiHeader>\n\t<text>\n\t\t<front/>\n\t\t<body/>\n\t\t<back>\n");
+
+                        writerReference.write("<listBibl>\n");
+
+                        writerReference.write(bufferReference.toString());
+
+                        writerReference.write("\t\t</listBibl>\n\t</back>\n\t</text>\n</TEI>\n");
+                        writerReference.close();
+                    }
+                } catch (final Exception exp) {
+                    LOGGER.error("An error occured while processing the following pdf: "
+                        + txtFile.getPath(), exp);
+                }
+                n++;
+            }
+
+            return refFiles.length;
+        } catch (final Exception exp) {
+            throw new GrobidException("An exception occured while running Grobid batch.", exp);
+        }
+    }
+
+    /**
      * Return all the reference titles. Maybe useful for term extraction.
      */
     public String printRefTitles(List<BibDataSet> resBib) throws Exception {
@@ -1082,6 +1198,29 @@ public class Engine implements Closeable {
         }
 
         return accumulated.toString();
+    }
+
+    /**
+     * Process a text corresponding to a funding and/or acknowledgement section
+     * and retun the extracted entities as JSON annotations
+     */
+    public String processFundingAcknowledgement(String text, GrobidAnalysisConfig config) throws Exception {
+        StringBuilder result = new StringBuilder();
+
+        try {
+            MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult =
+                parsers.getFundingAcknowledgementParser().processing(text, config);
+
+            if (localResult == null || localResult.getLeft() == null)
+                result.append(text);
+            else
+                result.append(localResult.getLeft().toXML());
+
+        } catch (final Exception exp) {
+            throw new GrobidException("An exception occurred while running Grobid funding-acknowledgement model.", exp);
+        }
+
+        return result.toString();
     }
 
     @Override
@@ -1113,4 +1252,48 @@ public class Engine implements Closeable {
     public static Engine getEngine(boolean preload) {
         return GrobidPoolingFactory.getEngineFromPool(preload);
     }
+
+
+    public String fullTextToBlank(File inputFile,
+                                GrobidAnalysisConfig config) throws Exception {
+        return fullTextToBlankDoc(inputFile, null, config).getTei();
+    }
+
+
+    public String fullTextToBlank(File inputFile,
+                                String md5Str,
+                                GrobidAnalysisConfig config) throws Exception {
+        return fullTextToBlankDoc(inputFile, md5Str, config).getTei();
+    }
+
+    public Document fullTextToBlankDoc(File inputFile,
+                                     String md5Str,
+                                     GrobidAnalysisConfig config) throws Exception {
+        FullTextBlankParser fullTextBlankParser = parsers.getFullTextBlankParser();
+        Document resultDoc;
+        LOGGER.debug("Starting processing fullTextToBlank on " + inputFile);
+        long time = System.currentTimeMillis();
+        resultDoc = fullTextBlankParser.process(inputFile, md5Str, config);
+        LOGGER.debug("Ending processing fullTextToBlank on " + inputFile + ". Time to process: "
+            + (System.currentTimeMillis() - time) + "ms");
+        return resultDoc;
+    }
+
+    public Document fullTextToBlankDoc(File inputFile,
+                                     GrobidAnalysisConfig config) throws Exception {
+        return fullTextToBlankDoc(inputFile, null, config);
+    }
+
+    public Document fullTextToBlankDoc(DocumentSource documentSource,
+                                     GrobidAnalysisConfig config) throws Exception {
+        FullTextBlankParser fullTextBlankParser = parsers.getFullTextBlankParser();
+        Document resultDoc;
+        LOGGER.debug("Starting processing fullTextToBlank on " + documentSource);
+        long time = System.currentTimeMillis();
+        resultDoc = fullTextBlankParser.process(documentSource, config);
+        LOGGER.debug("Ending processing fullTextToBlank on " + documentSource + ". Time to process: "
+            + (System.currentTimeMillis() - time) + "ms");
+        return resultDoc;
+    }
+
 }

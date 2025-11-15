@@ -6,12 +6,8 @@ import java.util.List;
 /**
  * Class for representing and exchanging a document block. A block is defined here relatively to
  * some properties in the document layout.
- *
- *
- * @author Patrice Lopez
  */
 public class Block {
-    private int nbTokens = 0;
     private String text = null;
     private BoundingBox boundingBox = null;
     /*private double y = 0.0;
@@ -60,35 +56,32 @@ public class Block {
         type = t;
     }
 
-    public void setText(String t) {
-        text = t;
-    }
-
-    public void setNbTokens(int t) {
-        nbTokens = t;
-    }
-
     public Type getType() {
         return type;
     }
 
     public String getText() {
-        if (text.trim().startsWith("@"))
+        if (text != null && text.trim().startsWith("@"))
             return text.trim();
-        else if (tokens == null) {
+        else if (tokens == null)
             return null;
-        }
+        else if (text != null)
+            return text;
         else {
             StringBuilder localText = new StringBuilder();
             for(LayoutToken token : tokens) {
                 localText.append(token.getText());
             }
-            return localText.toString();
+            text = localText.toString();
+            return text;
         }
     }
 
     public int getNbTokens() {
-        return nbTokens;
+        if (tokens == null)
+            return 0;
+        else
+            return tokens.size();
     }
 
     public void setFont(String f) {
@@ -188,7 +181,14 @@ public class Block {
     }
 
     public int getEndToken() {
-        return endToken;
+        if (endToken == -1) {
+            if (tokens == null || tokens.size() == 0) {
+                return getStartToken();
+            } else {
+                return getStartToken() + tokens.size();
+            }   
+        } else 
+            return endToken;
     }
 
     public void setStartToken(int start) {
@@ -216,7 +216,7 @@ public class Block {
     }
 
     public boolean isNull() {
-        if ( (nbTokens == 0) && (startToken == -1) && (endToken == -1) && (type == null) ) {
+        if ( (tokens == null) && (startToken == -1) && (endToken == -1) && (type == null) ) {
             return true;
         }
         else 
@@ -226,7 +226,6 @@ public class Block {
     @Override
     public String toString() {
         String res = "Block{" +
-                "nbTokens=" + nbTokens +
                 ", startToken=" + startToken +
                 ", endToken=" + endToken +
                 ", type=" + type;

@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <teiHeader/>
+    <text>
+        <front/>
+        <body/>
+        <back>
+            <listBibl>
+
+<!---  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n7_169_023" lang="kr"><author>이장원</author>, '<title level="a">중국의 공공외교: 배경, 목표, 전략</title>,' <title level="j">동서연구</title>, 제<biblScope unit="volume">23</biblScope>권, <biblScope unit="issue">2</biblScope>호, pp.<biblScope unit="page">107-108</biblScope>, <date>2011</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_GDGOB9_2020_v64_81_013" lang="kr"><author>오춘희</author> (<date>2003</date>). <title level="a">한국교회 갱신을 위한 기독학교의 가능성과 그 전망</title>. <title level="j">기독교교육정보</title>, <biblScope unit="volume">7</biblScope>, <biblScope unit="page">43-73</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_GJJRBH_2020_v23n4_438_027" lang="kr"><author>이범훈.김경배</author>, <date>2010</date>, '<title level="a">인천 개항장의 장소만들기 실태 분석 및 발전방향 연구</title>,' <title level="j">한국도시설계학회지</title> <biblScope unit="volume">11</biblScope>(<biblScope unit="issue">5</biblScope>), pp.<biblScope unit="page">95-112</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_OSDJBQ_2020_v22n2_19_003" lang="kr"><author>권 진</author>. (<date>2013</date>). <title level="a">현대 패션에 나타난 확장형 소매의 구성 특성 분석</title>. <title level="j">한국디자인문화학회지</title>, <biblScope unit="volume">19</biblScope>(<biblScope unit="issue">3</biblScope>), <biblScope unit="page">29-42</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_SPGHEL_2020_v53n2_200_008" lang="kr"><author>남기호, 장미순, 박희연, 곽원주</author>. <title level="a">Thermophilic bacillus로 제조한 속성 도루묵(Arctoscopus japoncus) 액젓의 이화학적 특성</title>. <title level="j">한국수산과학회지</title>, <biblScope unit="volume">48</biblScope>: <biblScope unit="page">674-680</biblScope> (<date>2015</date>).</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n7_534_006" lang="kr"><author>문영은, 심지수, 박동숙</author>, '<title level="a">내가 좋아하는 먹방 BJ는요</title>,' <title level="j">언론과 사회</title>, 제<biblScope unit="volume">25</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, pp.<biblScope unit="page">58-101</biblScope>, <date>2017</date>.</bibl>
+<!---  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n5_476_055" lang="kr"><author>구정대</author>, '<title level="a">내부마케팅수준이 종사자의 고객지향과 서비스제공수준에 미치는 영향</title>,' <title level="j">대한관광경영학회지</title>, 제<biblScope unit="volume">22</biblScope>권, 제<biblScope unit="issue">3</biblScope>호, pp.<biblScope unit="page">125-142</biblScope>, <date>2007</date>.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n5_222_011" lang="kr"><author>이원진</author>, '<title level="a">개인화인가 계층화인가? 생애사건과 사회계층이 빈곤진입에 미치는 영향</title>,' <title level="j">한국사회학</title>, 제<biblScope unit="volume">45</biblScope>권, 제<biblScope unit="issue">5</biblScope>호, pp.<biblScope unit="page">25-60</biblScope>, <date>2011</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_HSSTBN_2020_v16n2_110_001" lang="kr"><author>정연환</author>, <title level="a">QFD를 활용한 함정 요구조건 관리 방안 연구</title>, <title level="j">한국시스템엔지니어링학회</title>, Vol. <biblScope unit="volume">15</biblScope>, No. <biblScope unit="issue">2</biblScope>, pp <biblScope unit="page">57-65</biblScope>, <date>2019</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_BCCOBB_2021_v16n1_1_021" lang="kr"><author>이양복</author>(<date>2019</date>). <title level="a">벤처기업의 기술혁신역량이 국제화에 미치는 영향</title>. <title level="j">국제경영리뷰</title>, <biblScope unit="volume">23</biblScope>(<biblScope unit="issue">3</biblScope>), <biblScope unit="page">179-200</biblScope>.</bibl>
+<!---  journal  volume  page  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n1_142_001" lang="kr"><author>오인균, 이단비</author>, '<title level="a">디자인 분야에서의 빅데이터(Big Data) 활용방안</title>,' <title level="j">한국디지털디자인학회</title>, 제<biblScope unit="volume">13</biblScope>권, 제<biblScope unit="issue">4</biblScope>호, p.<biblScope unit="page">201</biblScope>, <date>2013</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_NCJDBX_2020_v27n1_1_025" lang="kr"><author>배성우, &amp; 신원식</author>. (<date>2005</date>). <title level="a">CES-D척도의 요인구조분석: 확인적 요인분석 방법의 적용</title>. <title level="j">보건과사회과학</title>, <biblScope unit="volume">18</biblScope>, <biblScope unit="page">165-190</biblScope>.</bibl>
+<!---  journal  volume  page  issue  missmatch -->
+<bibl xml:id="_GJJHBI_2020_v30n1_3_021" lang="kr"><author>이강빈</author>, '<title level="a">국제상사중재에서 중재판정부의 권한과 임시적 처분에 관한 연구</title>', <title level="j">仲裁硏究</title> 제<biblScope unit="volume">18</biblScope>권 제<biblScope unit="issue">2</biblScope>호, <date>2008</date>. 8., p. <biblScope unit="page">103</biblScope>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_TRMDBW_2020_v8_1_022" lang="kr"><author>한지수</author>, <title level="a">미8군쇼 무대를 통한 미국대중음악의 국내 유입 양상</title>, <title level="j">음악과 문화</title>, Vol.<biblScope unit="volume">20</biblScope>, <date>2009</date>, pp.<biblScope unit="page">131-151</biblScope>.</bibl>
+<!---  title  journal  orgName  missmatch -->
+<bibl xml:id="_MHJOCX_2020_v53n3_258_020" lang="kr"><author>유미나</author>, <date>2019</date>, <title level="a">20세기 전반 대중문화의 회화적 형상화, -전주역사박물관 고사인물도 병풍과 동아대박물관 고사인물도 병풍을 중심으로</title>, <title level="j">美術史學</title> <biblScope unit="volume">37</biblScope>, <orgName>한국미술사교육학회</orgName>, pp.<biblScope unit="page">167-197</biblScope>.</bibl>
+<!---  journal  volume  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n12_112_023" lang="kr"><author>김영욱</author>, '<title level="a">뉴스 속성의 정보소스 의존 정도: 행정수도 이전을 둘러싼 언론보도와 정부 제공 이슈속성의 관련성 중심</title>,' <title level="j">한국언론정보학보</title>, 제<biblScope unit="volume">32</biblScope>권, pp.<biblScope unit="page">75-111</biblScope>, <date>2006</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_DHGOB8_2020_v39n2_127_014" lang="kr"><author>박재훈.허철무</author>(<date>2019</date>), <title level="a">연기자의 감정노동이 직무스트레스에 미치는 영향: 감정부조화의 매개효과중심으로</title>, <title level="j">벤처창업연구</title>, <biblScope unit="volume">14</biblScope>(<biblScope unit="issue">5</biblScope>), <biblScope unit="page">127-139</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n12_58_058" lang="kr"><author>이영희</author>, '<title level="a">교사의 조직몰입에 관한 연구동향</title>,' <title level="j">교육행정학연구</title>, 제<biblScope unit="volume">23</biblScope>권, 제<biblScope unit="issue">4</biblScope>호, pp.<biblScope unit="page">29-48</biblScope>, <date>2005</date>.</bibl>
+<!---  journal  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n10_580_026" lang="kr"><author>진윤희, 김성종</author>, '<title level="a">직무자율성이 혁신행동에 미치는 영향: 직무열의의 매개효과를 중심으로</title>,' <title level="j">한국콘텐츠학회논문지</title>, 제<biblScope unit="volume">15</biblScope>권, 제<biblScope unit="issue">1</biblScope>호, pp.<biblScope unit="page">451-461</biblScope>, <date>2015</date>.</bibl>
+<!---  author  title  journal  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n1_378_006" lang="kr"><author>길혜빈, 안숭범</author>, '<title level="a">&lt;Come back home&gt; 뮤직비디오에 나타난 '집'의 의미와 성격-서태지와 아이들, 방탄소년단 작품에 대한 세대론적 접근</title>,' <title level="j">한국콘텐츠학회논문지</title>, 제<biblScope unit="volume">19</biblScope>권, 제<biblScope unit="issue">5</biblScope>호, pp.<biblScope unit="page">24-34</biblScope>, <date>2019</date>.</bibl>
+<!---  journal  doi  missmatch -->
+<bibl xml:id="_BOJGB2_2020_v16n6_71_002" lang="kr"><author>노보혜, 박성연, 지연경</author> (<date>2011</date>). <title level="a">사회경제적 지위, 어머니의 학습관여 및 양육행동과 아동의 자기결정 동기 간의 관계</title>. <title level="j">아동학회지</title>, <biblScope unit="volume">32</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">83-97</biblScope>. doi:<idno type="DOI">10.5723/kjcs.2011.32.4.83</idno>.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n5_585_004" lang="kr"><author>최승묵</author>, '<title level="a">동태적 변이할당분석을 이용한 동북아 지역 국가들의 관광 성장 특성 분석</title>,' <title level="j">관광연구논총</title>, 제<biblScope unit="volume">28</biblScope>집, 제<biblScope unit="issue">4</biblScope>호, pp.<biblScope unit="page">109-129</biblScope>, <date>2016</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_KPGOBR_2020_v23n4_1_017" lang="kr"><author>류미영.한선관</author> (<date>2019</date>). <title level="a">딥러닝 개념을 위한 인공지능 교육 프로그램</title>. <title level="j">정보교육학회논문지</title>. <biblScope unit="volume">23</biblScope>(<biblScope unit="issue">6</biblScope>), <biblScope unit="page">583-590</biblScope>.</bibl>
+<!---  author  title  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n11_249_021" lang="kr"><author>이해나, 한상만, 최아영</author>, '<title level="a">온라인 정보탐색에서 온라인 구매로 연결되는 특성에 관한 탐색적 연구</title>,' <title level="j">한국유통학회</title>, 제<biblScope unit="volume">20</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, pp.<biblScope unit="page">295-318</biblScope>, <date>2015</date>.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n2_337_008" lang="kr"><author>김희강</author>, '<title level="a">새로운 복지국가로서 돌봄국가</title>,' <title level="j">젠더리뷰</title>, 제<biblScope unit="volume">48</biblScope>권, pp.<biblScope unit="page">4-11</biblScope>, <date>2018</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n1_12_017" lang="kr"><author>김태진, 홍정식, 전윤수, 박종율, 안태욱</author>, '<title level="a">랜덤포레스트를 이용한 모기업의 하향 거래처 기업의 분류: 자동차 부품산업의 가치사슬을 중심으로</title>,' <title level="j">한국전자거래학회지</title>, Vol.<biblScope unit="volume">23</biblScope>, No.<biblScope unit="issue">1</biblScope>, pp.<biblScope unit="page">1-22</biblScope>, <date>2018</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_GJJRBH_2020_v23n2_182_001" lang="kr"><author>강동진</author>, <date>2010</date>, '<title level="a">산업유산 재활용을 통한 지역재생 방법론 연구</title>,' <title level="j">한국도시설계학회지</title> <biblScope unit="volume">11</biblScope>(<biblScope unit="issue">1</biblScope>), pp.<biblScope unit="page">157-178</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_OSDJBQ_2020_v22n1_73_015" lang="kr"><author>김윤정, 이유리, 김보람</author> (<date>2014</date>). <title level="a">패션 점포 내 판매원과 다른 고객에 대한 신체적 매력과 자기이미지 일치효과</title>. <title level="j">한국의류학회지</title>, <biblScope unit="volume">38</biblScope>(<biblScope unit="issue">6</biblScope>), <biblScope unit="page">783-795</biblScope>.</bibl>
+<!---  journal  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n12_287_035" lang="kr"><author>김택환</author>, '<title level="a">전문직 은퇴노인의 클래식 음악프로그램 참여 경험의미 탐색: 대학부설 평생교육원을 중심으로</title>,' <title level="j">Andragogy Today</title>, 제<biblScope unit="volume">22</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, pp.<biblScope unit="page">57-82</biblScope>, <date>2019</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_HPJHB4_2020_v26n2_113_001" lang="kr"><author>박종민, 최동수, 황성욱, 정현모</author>, <date>2019</date>, <title level="a">적정 포장설계를 위한 수출용 배의 공진 특성</title>. <title level="j">한국포장학회지</title> <biblScope unit="volume">25</biblScope>(<biblScope unit="issue">3</biblScope>): <biblScope unit="page">125-130</biblScope>.</bibl>
+<!---  author  title  volume  page  issue  missmatch -->
+<bibl xml:id="_DGTSA8_2020_v16n1_79_002" lang="kr"><author>고장혁, 이동호</author>, '<title level="a">정보 유출 탐지를 위한 머신 러닝 기반 내부자 행위 분석 연구</title>,' <title level="j">디지털산업정보학회 논문지</title>, 제<biblScope unit="volume">13</biblScope>권 제<biblScope unit="issue">2</biblScope>호, <date>2017b</date>, pp.<biblScope unit="page">1-11</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_GDGOB9_2020_v64_289_018" lang="kr"><author>장신근</author> (<date>2009a</date>). <title level="a">교회의 민주시민교육</title>, <title level="j">기독교교육논총</title>, <biblScope unit="volume">21</biblScope>, <biblScope unit="page">109-152</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_KHKOCH_2021_v24n1_15_027" lang="kr"><author>정주영</author>(<date>2013</date>). <title level="a">대학교육만족도, 직업가치관, 직업만족도에 관한 구조적 분석</title>, <title level="j">교육행정학연구</title>, <biblScope unit="volume">31</biblScope>(<biblScope unit="issue">1</biblScope>), <biblScope unit="page">53-83</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_GDGOB9_2020_v64_347_005" lang="kr"><author>박은아.송해덕</author> (<date>2014</date>). <title level="a">대학생의 의사소통 역량 향상에 영향을 미치는 학습자 요인 탐색</title>. <title level="j">한국교육문제연구</title>, <biblScope unit="volume">32</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">83-102</biblScope>.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n7_429_021" lang="kr"><author>김경년</author>, '<title level="a">성인의 문해력 상실과 획득에 미치는 연령과 문해 사용의 영향 탐색</title>,' <title level="j">Andragogy Today: Interdisciplinary Journal of Adult &amp; Continuing Education</title>, 제<biblScope unit="volume">22</biblScope>권, 제<biblScope unit="issue">1</biblScope>호, pp.<biblScope unit="page">27-52</biblScope>, <date>2019</date>.</bibl>
+<!---  title  journal  volume  page  issue  orgName  missmatch -->
+<bibl xml:id="_GJJHBI_2020_v30n1_113_024" lang="kr"><author>우광명</author>, '<title level="a">중국 재판외분쟁해결제도의 문제점과 활성화방안에 관한 연구 : 인민조정제도와 중재제도를 중심으로</title>', <title level="j">國際商學</title>, 제<biblScope unit="volume">21</biblScope>권 제<biblScope unit="issue">1</biblScope>호, <orgName>韓國國際商學會</orgName>, <date>2006</date>.</bibl>
+<!---  journal  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n9_615_030" lang="kr"><author>박소희</author>, '<title level="a">진로태도성숙과 심리적 변인들과 관계: 자기효능감, 직업가치, 주도성을 중심으로</title>,' <title level="j">직업능력개발연구</title>, 제<biblScope unit="volume">14</biblScope>권, 제<biblScope unit="issue">3</biblScope>호, pp.<biblScope unit="page">307-331</biblScope>, <date>2011</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_GJOHB6_2020_v36n3_3_001" lang="kr"><author>곽현근</author>, <date>2004</date>, <title level="a">자기효능감에 미치는 동네효과에 관한 탐색적 연구</title>, <title level="j">한국행정학보</title>, <biblScope unit="volume">38</biblScope>(<biblScope unit="issue">6</biblScope>), pp.<biblScope unit="page">1-22</biblScope>.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n4_315_016" lang="kr"><author>하태정, 문선웅</author>, '<title level="a">가격차 모형에 기초한 한국과 중국간 기술무역장벽(TBT) 추정에 관한 연구</title>,' <title level="j">통상정보연구</title>, 제<biblScope unit="volume">16</biblScope>권, 제<biblScope unit="issue">4</biblScope>호, pp.<biblScope unit="page">307-330</biblScope>, <date>2014</date>.</bibl>
+<!---  journal  volume  issue  missmatch -->
+<bibl xml:id="_OTSBB9_2020_v19n1_55_003" lang="kr"><author>권문주, 최연숙, 김태웅</author>, '<title level="a">정보격차 해소 차원에서의 전자정부 서비스 이용촉진 연구:장노년층 사례를 중심으로</title>', <title level="j">한국IT서비스학회지</title>, 제<biblScope unit="volume">9</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, <date>2010</date>, <biblScope unit="page">73-92</biblScope>.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n8_232_014" lang="kr"><author>엄태영</author>, '<title level="a">자활사업 참여자의 경제적 자활 장벽요인에 대한 정서적 자활의 영향에 관한 연구</title>,' <title level="j">사회과학연구</title>, 제<biblScope unit="volume">26</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, pp.<biblScope unit="page">229-248</biblScope>, <date>2010</date>.</bibl>
+<!---  author  title  journal  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n4_1_041" lang="kr"><author>박병언, 임규건</author>, '<title level="a">일반영향요인과 댓글 기반 콘텐츠 네트워크 분석을 통합한 유튜브상의 콘텐츠 확산 영향요인 연구</title>,' <title level="j">지능정보연구</title>, 제<biblScope unit="volume">21</biblScope>권, 제<biblScope unit="issue">3</biblScope>호, pp.<biblScope unit="page">19-36</biblScope>, <date>2016</date>.</bibl>
+<!---  journal  volume  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n12_287_009" lang="kr"><author>장영화</author>, '<title level="a">일본어교육 현황분석을 바탕으로 평생교육으로서의 일본어교육의 과제</title>,' <title level="j">동일어문연구</title>, 제<biblScope unit="volume">24</biblScope>권, pp.<biblScope unit="page">69-81</biblScope>, <date>2009</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n12_498_085" lang="kr"><author>김윤형, 하동현</author>, '<title level="a">호텔산업에서 내부커뮤니케이션이 리더-부하 간의 교환관계(LMX)와 종사원 업무태도에 미치는 영향: 대구, 경북 특급호텔을 중심으로</title>,' <title level="j">International Journal of Tourism and Hospitality Research</title>, 제<biblScope unit="volume">30</biblScope>권, 제<biblScope unit="issue">7</biblScope>호, pp.<biblScope unit="page">19-33</biblScope>, <date>2016</date>.</bibl>
+<!---  author  title  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n4_564_019" lang="kr"><author>전진용</author>, '<title level="a">클라우드 기반 제품디자인 비즈니스 모델의 경제서 평가 모형 설계</title>,' <title level="j">디지털디자인학연구</title>, 제<biblScope unit="volume">15</biblScope>권, 제<biblScope unit="issue">3</biblScope>호, pp.<biblScope unit="page">881-888</biblScope>, <date>2015</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_OSDJBQ_2020_v22n4_127_007" lang="kr"><author>김지우, 김영삼</author>. (<date>2019</date>). <title level="a">라이프 스타일 요인에 따른 웨트슈트(wetsuits) 선택속성, 인구통계적 특성, 구매행동 차이에 관한 연구</title>. <title level="j">한국의류산업학회지</title>, <biblScope unit="volume">21</biblScope>(<biblScope unit="issue">1</biblScope>), <biblScope unit="page">46-58</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_BCCOBB_2020_v15n6_167_029" lang="kr"><author>박강석</author>(<date>2015</date>). <title level="a">중.노년층의 재취업 의지 및 재취업에 영향을 미치는 요인</title>. <title level="j">한국산학기술학회논문지</title>, <biblScope unit="volume">16</biblScope>(<biblScope unit="issue">6</biblScope>), <biblScope unit="page">3845-3857</biblScope>.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n7_19_036" lang="kr"><author>김현, 고석원, 곽혜숙, 차현화</author>, '<title level="a">동화를 활용한 사회적 역할놀이와 동작표상 활동이 유아의 사회적 능력과 언어 능력에 미치는 효과 비교</title>,' <title level="j">미래유아교육학회지</title>, 제<biblScope unit="volume">13</biblScope>권, 제<biblScope unit="issue">4</biblScope>호, pp.<biblScope unit="page">135-160</biblScope>, <date>2006</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_OGSHB2_2020_v23n3_377_023" lang="kr"><author>허난</author> (<date>2015</date>). <title level="a">플립드 러닝(Flipped Learning)에 대한 예비수학교사의 인식 조사</title>. <title level="j">한국학교수학회논문집</title>, <biblScope unit="volume">18</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">449-470</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_BCCOBB_2020_v15n6_167_060" lang="kr"><author>이경준.송희경</author>(<date>2016</date>). <title level="a">중고령자의 노후준비가 삶의 만족도에 미치는 영향에 대한연구: 성별 비교를 중심으로</title>. <title level="j">한국콘텐츠학회</title>, <biblScope unit="volume">16</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">757-769</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_HJJJCF_2020_v25n2_13_015" lang="kr"><author>곽상규, 손기철, 신임희, 김상경, 정현정, 이아진, 조윤정, 김달호</author>. <title level="a">논문 리뷰를 통한 암성 통증에 대한 침을 이용한 양한방 통합치료 효과 연구</title>. <title level="j">한국데이터정보과학회지</title>. <biblScope unit="volume">26</biblScope>(<biblScope unit="issue">6</biblScope>), <biblScope unit="page">1327-1334</biblScope>, <date>2015</date>.</bibl>
+<!---  title  journal  volume  page  missmatch -->
+<bibl xml:id="_MHJOCX_2020_v53n1_106_092" lang="kr"><author>채희국</author>, <date>1980</date>, <title level="a">고구려 수도의 변천과 봉황성-환도에 대하여</title>, <title level="j">력사과학</title> <biblScope unit="volume">2</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_SSGOBY_2020_v51n2_1_004" lang="kr"><author>박정아.장영수</author> (<date>2016</date>), '<title level="a">수산식품인증제도에 대한 소비자 신념이 구매의도 편향성에 미치는 영향: 조미김을 사례로</title>', <title level="j">수산경영론집</title>, <biblScope unit="volume">47</biblScope> (<biblScope unit="issue">3</biblScope>), <biblScope unit="page">71-92</biblScope>.</bibl>
+<!---  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n2_658_009" lang="kr"><author>김용섭</author>, '<title level="a">외국어 교육과 문화 교육 통합을 위한 제언</title>,' <title level="j">한국콘텐츠학회논문지</title>, 제<biblScope unit="volume">13</biblScope>권, 제<biblScope unit="issue">12</biblScope>호, pp.<biblScope unit="page">1069-1078</biblScope>, <date>2013</date>.</bibl>
+<!---  title  journal  volume  orgName  missmatch -->
+<bibl xml:id="_MHJOCX_2020_v53n4_216_010" lang="kr"><author>문창로</author>, <date>2017</date>, <title level="a">문헌자료를 통해 본 삼한의 소도와 제의</title>, <title level="j">百濟學報</title><biblScope unit="volume">22</biblScope>, <orgName>百濟學會</orgName>, pp.<biblScope unit="page">5-32</biblScope>.</bibl>
+<!---  author  title  journal  missmatch -->
+<bibl xml:id="_E1BGBB_2021_v37n2_197_023" lang="kr"><author>정미경</author>. <title level="a">중학생의 자기조절학습 검사개발</title>. <title level="j">교육학연구</title>, <biblScope unit="volume">41</biblScope>(<biblScope unit="issue">4</biblScope>). <biblScope unit="page">157-182</biblScope> (<date>2003</date>).</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_DHGOB8_2020_v39n2_181_003" lang="kr"><author>이경렬․박명진</author>(<date>2016</date>), <title level="a">스크린 유형과 광고주 업종에 따른 온라인 및 모바일 동영상광고의 노출효과 비교연구</title>. <title level="j">브랜드디자인학연구</title>, <biblScope unit="volume">14</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">245-256</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_MHJOCX_2020_v53n1_34_003" lang="kr"><author>이찬희.조지현.김지영</author>, <date>2016</date>, <title level="a">조선시대 예산 목리유적 회격묘의 재질 및 제작특성과 석회의 산지 해석</title>, <title level="j">보존과학회지</title>, Vol.<biblScope unit="volume">32</biblScope>, No.<biblScope unit="issue">4</biblScope>, pp.<biblScope unit="page">471-490</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_GJJOBY_2020_v24n2_49_007" lang="kr"><author>김경호</author>(<date>2013</date>). <title level="a">사회복지학 전공 대학생의 문화간 감수성이 다문화수용성에 미치는 영향: 외국인에 대한 사회적 친밀감의 매개효과 검증</title>. <title level="j">한국사회복지교육</title>, <biblScope unit="volume">22</biblScope>, <biblScope unit="page">77-104</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_JBSTB0_2020_v29n4_101_014" lang="kr"><author>성행남, 조동환</author>, '<title level="a">NCS 정보능력이 대학생들의 진로준비행동에 미치는 영향</title>,' <title level="j">정보시스템연구</title>, 제<biblScope unit="volume">27</biblScope>권, 제<biblScope unit="issue">4</biblScope>호, <date>2018</date>, pp. <biblScope unit="page">189-202</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n2_362_016" lang="kr"><author>김수진, 강희경</author>, '<title level="a">문제중심학습에서 평가주체에 따른 평가 - 튜터평가, 동료평가, 자기평가를 중심으로</title>,' <title level="j">한국산학기술학회논문지</title>, Vol.<biblScope unit="volume">14</biblScope>, No.<biblScope unit="issue">8</biblScope>, pp.<biblScope unit="page">3732-3738</biblScope>, <date>2013</date>.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n12_154_006" lang="kr"><author>이승주, 박소영</author>, '<title level="a">정부의 복지정책에 대한 인식이 증세 태도에 미치는 영향에 관한 연구</title>,' <title level="j">지방정부연구</title>, 제<biblScope unit="volume">23</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, pp.<biblScope unit="page">153-173</biblScope>, <date>2019</date>.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n9_332_014" lang="kr"><author>노정희</author>, '<title level="a">목표지향 행동이론을 적용한 중국 내 한국 유학생의 중국 국내관광 행동의도 분석</title>,' <title level="j">경영교육연구</title>, 제<biblScope unit="volume">31</biblScope>권, 제<biblScope unit="issue">1</biblScope>호, pp.<biblScope unit="page">43-59</biblScope>, <date>2016</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_OTSBB9_2020_v19n1_103_007" lang="kr"><author>백민지, 김남규</author>, '<title level="a">Word2Vec 학습을통한의미기반해외 유사 특허 검색 방안</title>', <title level="j">한국IT서비스학회지</title>, 제<biblScope unit="volume">17</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, <date>2018</date>, <biblScope unit="page">129-142</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_HGKRBZ_2020_n66_105_016" lang="kr"><author>신동희</author>. <date>2020</date>. <title level="a">생산부터 보존까지 기록관리 전반에서 이해하는 기록평가: 미국 뉴욕주 기록관의 사례연구</title>. <title level="j">한국기록관리학회지</title>, <biblScope unit="volume">20</biblScope>(<biblScope unit="issue">1</biblScope>), <biblScope unit="page">177-199</biblScope>.</bibl>
+<!---  title  volume  page  issue  missmatch -->
+<bibl xml:id="_JBSTB0_2020_v29n1_181_015" lang="kr"><author>이웅규</author>, '<title level="a">&lt;튜토리얼&gt;비사용의 연구 주제와 연구 방법론</title>', <title level="j">정보시스템연구</title>, 제<biblScope unit="volume">24</biblScope>권, 제<biblScope unit="issue">3</biblScope>호, <date>2015</date>, pp.<biblScope unit="page">1155-169</biblScope>.</bibl>
+<!---  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n5_23_027" lang="kr"><author>김연철, 이은철</author>, '<title level="a">블렌디드 액션러닝프로그램이 대학생의 자기주도적 학습능력에 미치는 영향</title>,' <title level="j">한국콘텐츠학회논문지</title>, 제<biblScope unit="volume">15</biblScope>권, 제<biblScope unit="issue">11</biblScope>호, pp.<biblScope unit="page">658-671</biblScope>, <date>2015</date>.</bibl>
+<!---  journal  volume  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n7_169_011" lang="kr"><author>문혜정</author>, '<title level="a">공자학원을 통한 중국의 대 아프리카 소프트 파워 전략</title>,' <title level="j">한국아프리카학회지</title>, 제<biblScope unit="volume">55</biblScope>권, pp.<biblScope unit="page">33-58</biblScope>, <date>2018</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_SOJHB6_2020_v5n4_39_012" lang="kr"><author>박중호.변상해.박차규</author>(<date>2008</date>), <title level="a">기업체 회계담당자의 회계윤리수준에 관한 연구</title>, <title level="j">벤처창업연구</title>, <biblScope unit="volume">3</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">43-57</biblScope>.</bibl>
+<!---  author  journal  volume  issue  missmatch -->
+<bibl xml:id="_GSKOBF_2020_v21n1_79_003" lang="kr"><author>김성열, 김훈호</author> <date>2015</date>. '<title level="a">고등학교 체제의 다양화: 양상과 성과, 그리고 과제</title>,' <title level="j">교육연구와 실천</title> (<biblScope unit="volume">81</biblScope>), pp. <biblScope unit="page">27-56</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_KHGOB1_2020_v13n3_330_022" lang="kr"><author>이진석</author>(<date>2019</date>). <title level="a">사회과 교육에서 데이터 시각화를 통한 데이터 리터러시 함양: 2015 교육과정 중, 고등학교사회 교과서 내용 분석을 중심으로</title>. <title level="j">교사교육연구</title>, <biblScope unit="volume">58</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">501-512</biblScope>.</bibl>
+<!---  journal  doi  missmatch -->
+<bibl xml:id="_BOJGB2_2020_v16n2_25_024" lang="kr"><author>전지형</author> (<date>2015</date>). <title level="a">유아교사 인사관리에 대한 원장과 교사의 이야기</title>. <title level="j">유아교육연구</title>, <biblScope unit="volume">35</biblScope>(<biblScope unit="issue">6</biblScope>), <biblScope unit="page">397-419</biblScope>. doi:<idno type="DOI">10.18023/kjece.2015.35.6.019</idno>.</bibl>
+<!---  author  title  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n5_359_012" lang="kr"><author>강현주</author>, '<title level="a">치위생과 학생의 감성지능 및 자아탄력성과 임상실습 스트레스와의 관련성</title>,' <title level="j">한국치위생학회</title>, 제<biblScope unit="volume">16</biblScope>권, 제<biblScope unit="issue">4</biblScope>호, pp,<biblScope unit="page">625-634</biblScope>, <date>2016</date>.</bibl>
+<!---  journal  volume  missmatch -->
+<bibl xml:id="_TRMDBW_2020_v8_29_009" lang="kr"><author>김경화</author>, <title level="a">노이즈 듣기: 20세기의 청각 문화 안에서 소음의 소리 정체성</title>, <title level="j">음악이론연구</title> 제 <biblScope unit="volume">27</biblScope>집, pp.<biblScope unit="page">140- 163</biblScope>.</bibl>
+<!---  title  journal  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n9_107_086" lang="kr"><author>노상은, 전남희</author>, '<title level="a">노인 여가 복지 프로그램의 효과성 검증 연구 동향 분석: 레크리에이션, 치료레크리에이션, 놀이치료</title>,' <title level="j">한국케어메니지먼트연구</title>, 제<biblScope unit="issue">26</biblScope>호, pp.<biblScope unit="page">111-134</biblScope>, <date>2018</date>.</bibl>
+<!---  author  title  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n4_582_002" lang="kr"><author>이동윤</author>, '<title level="a">분단과 갈등, 그리고 통일: 독일, 예멘, 베트남의 갈등관리 사례 비교</title>,' <title level="j">통일정책연구</title>, 제<biblScope unit="volume">11</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, pp.<biblScope unit="page">179-204</biblScope>, <date>2002</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_JBSTB0_2020_v29n3_119_010" lang="kr"><author>송인호</author>, '<title level="a">주택 시장과 거시경제의 관계</title>', <title level="j">부동산 도시연구</title>, 제<biblScope unit="volume">8</biblScope>권, 제<biblScope unit="issue">1</biblScope>호, <date>2015</date>, pp. <biblScope unit="page">47-65</biblScope>.</bibl>
+<!---  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n2_707_004" lang="kr"><author>이형초, 안창일</author>, '<title level="a">인터넷게임 중독의 진단척도 개발</title>,' <title level="j">한국심리학회지: 건강</title>, 제<biblScope unit="volume">7</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, pp.<biblScope unit="page">211-239</biblScope>, <date>2002</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_OTSBB9_2020_v19n1_37_025" lang="kr"><author>유진호</author>, '<title level="a">이용자 피해구제를 위한 사이버보험 활성화 방안</title>', <title level="j">월간손해보험</title>, 제<biblScope unit="issue">592</biblScope>호, <date>2018</date>, <biblScope unit="page">61-65</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_SSGOBY_2020_v51n1_67_014" lang="kr"><author>하동현</author> (<date>2017</date>), '<title level="a">인구감소시대의 지역활성화와 지방분권-일본의 지방소멸론과 지방창생을 소재로</title>', <title level="j">한국지방행정학보</title>, <biblScope unit="volume">14</biblScope> (<biblScope unit="issue">3</biblScope>), <biblScope unit="page">1-27</biblScope>.</bibl>
+<!---  title  volume  page  issue  missmatch -->
+<bibl xml:id="_GHGSBL_2020_v20n1_157_005" lang="kr"><author>김지원.김종영</author> (<date>2013</date>), <title level="a">4대강 개발과 전문성의 정치</title>, <title level="j">환경사회학연구 ECO</title>, 제<biblScope unit="volume">17</biblScope>권 제<biblScope unit="issue">1</biblScope>호, <biblScope unit="page">163-232</biblScope>쪽.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_BOJGB2_2020_v16n2_89_020" lang="kr"><author>양정임</author> (<date>2017b</date>). <title level="a">플립러닝 기반 학습이 대학생 영어성취도에 미치는 영향</title>. <title level="j">인문과학논문집</title>, <biblScope unit="volume">54</biblScope>, <biblScope unit="page">85-97</biblScope>.</bibl>
+<!---  journal  doi  missmatch -->
+<bibl xml:id="_BOJGB2_2020_v16n6_203_033" lang="kr"><author>이수진, 김상옥</author> (<date>2019</date>). <title level="a">유아교사의 성인애착과 직무환경 및 직무만족의 관계에서 행복감의 매개효과</title>. <title level="j">한국보육학회지</title>, <biblScope unit="volume">19</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">171-188</biblScope>. doi:<idno type="DOI">10.21213/kjcec.2019.19.4.171</idno>.</bibl>
+<!---  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n1_31_013" lang="kr"><author>손동진, 김혜경</author>, '<title level="a">소셜 인플루언서를 활용한 디지털 마케팅 전략 연구: 올레드 TV 글로벌 디지털 캠페인 사례를 중심으로</title>,' <title level="j">광고 PR 실학연구</title>, 제<biblScope unit="volume">10</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, pp.<biblScope unit="page">64-95</biblScope>, <date>2017</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n4_564_020" lang="kr"><author>이병엽, 박재열, 유재수</author>, '<title level="a">비용절감 측면에서 클라우드, 빅데이터 서비스를 위한 대용량 데이터 처리 아키텍쳐</title>,' <title level="j">한국콘텐츠학회논문지</title>, 제<biblScope unit="volume">15</biblScope>권 제<biblScope unit="issue">5</biblScope>호, pp.<biblScope unit="page">570-581</biblScope>, <date>2015</date>.</bibl>
+<!---  journal  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n8_19_004" lang="kr"><author>유영돈, 마정미</author>, '<title level="a">사회적 갈등이슈에 대한 전국 7개 일간지 보도 비교: 세종시 갈등 보도 내용분석을 중심으로</title>,' <title level="j">언론과학연구</title>, 제<biblScope unit="volume">15</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, pp.<biblScope unit="page">285-316</biblScope>, <date>2015a</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_DHGOB8_2020_v39n2_113_005" lang="kr"><author>김보영.최정인.유원상</author>(<date>2013</date>), '<title level="a">명품의 원산지와 브랜드 이미지가 소비자의 브랜드 평가에 미치는 영향, 과시소비 성향의 조절효과를 중심으로</title>', <title level="j">한국경영공학회지</title>, <biblScope unit="volume">18</biblScope>(<biblScope unit="issue">2</biblScope>), <biblScope unit="page">145-170</biblScope>.</bibl>
+<!---  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n3_179_023" lang="kr"><author>김상호, 한진만</author>, '<title level="a">한국 영화의 흥행성과 결정요인 분석: 2012 년 개봉 상업영화를 중심으로</title>,' <title level="j">사회과학연구</title>, 제<biblScope unit="volume">53</biblScope>집, 제<biblScope unit="issue">1</biblScope>호, pp.<biblScope unit="page">191-214</biblScope>, <date>2014</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n10_496_003" lang="kr"><author>김태혁, 김병철</author>, '<title level="a">DEA Window 모형을 이용한 동태적 효율성 분석-국내 손해보험회사를 대상으로</title>,' <title level="j">Journal of The Korean Data Analysis Society</title>, 제<biblScope unit="volume">8</biblScope>권, 제<biblScope unit="issue">6</biblScope>호, pp.<biblScope unit="page">2427-2444</biblScope>, <date>2006</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_GSKOBF_2020_v21n4_195_006" lang="kr"><author>김영기, 박성택, 이승준</author> (<date>2009</date>). <title level="a">특허가치평가 요소에 관한 연구</title>. <title level="j">디지털정책연구</title>, <biblScope unit="volume">7</biblScope>(<biblScope unit="issue">2</biblScope>), <biblScope unit="page">63-70</biblScope>.</bibl>
+<!---  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n5_153_014" lang="kr"><author>이도희, 이동규</author>, '<title level="a">질적연구방법론을 활용한 비영리회계 인식의 가설 발견적 접근</title>,' <title level="j">회계와정책연구</title>, 제<biblScope unit="volume">12</biblScope>권, 제<biblScope unit="issue">1</biblScope>호, pp.<biblScope unit="page">281-308</biblScope>, <date>2007</date>.</bibl>
+<!---  author  title  volume  issue  missmatch -->
+<bibl xml:id="_JBSTB0_2020_v29n4_101_015" lang="kr"><author>소정은, 김태성</author>, '<title level="a">학부 경영정보학과와 인접학문 간의 교육만족도 비교</title>,' <title level="j">Journal of Information Technology Applications &amp; Management</title>, 제<biblScope unit="volume">25</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, <date>2018</date>, pp. <biblScope unit="page">91-108</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_BOJGB2_2020_v16n1_115_012" lang="kr"><author>김한나, 서소정</author> (<date>2012</date>). <title level="a">영아기 자녀를 둔 어머니의 애착과 영아 발달간의 관계 연구: 어머니의 양육효능감 매개효과 검증</title>. <title level="j">미래유아교육학회지</title>, <biblScope unit="volume">19</biblScope>(<biblScope unit="issue">1</biblScope>), <biblScope unit="page">307-329</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_KHKOCH_2020_v23n2_31_038" lang="kr"><author>민무숙.이정희</author>(<date>2005</date>). <title level="a">공학 분야 전공 여성들의 교육과 직업경험 분석</title>. <title level="j">교육사회학연구</title>, <biblScope unit="volume">15</biblScope>(<biblScope unit="issue">2</biblScope>), <biblScope unit="page">65-93</biblScope>.</bibl>
+<!---  journal  volume  issue  missmatch -->
+<bibl xml:id="_OTSBB9_2020_v19n3_35_007" lang="kr"><author>김상욱, 유홍준</author>, '<title level="a">직무만족과 이직의사의 행태학적 결정요인 : 전국 패널자료를 사용한 GLM 및 GEE 추정</title>', <title level="j">한국사회학</title>, 제<biblScope unit="volume">36</biblScope>권, 제<biblScope unit="issue">1</biblScope>호, <date>2002</date>, <biblScope unit="page">51-81</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n1_495_021" lang="kr"><author>박보경, 신나나, 윤기봉, 김민주, 김수지, 윤선영</author>, '<title level="a">어머니의 아동기 부모애착, 결혼만족도 및 심리적 안녕감 간의 관계</title>,' <title level="j">아동학회지</title>, 제<biblScope unit="volume">38</biblScope>권, 제<biblScope unit="issue">5</biblScope>호, pp.<biblScope unit="page">67-80</biblScope>, <date>2017</date>.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_NDGJBR_2020_v43n2_75_008" lang="kr"><author>유경준</author>. <title level="a">성별 임금격차의 차이와 차별</title>. <title level="j">KDI 정책연구</title> <biblScope unit="volume">23</biblScope>권 <biblScope unit="issue">1.2</biblScope>호(<date>2001</date>.12): <biblScope unit="page">193-231</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_MHJOCX_2020_v53n1_126_035" lang="kr"><author>박준석.최현모</author>, <date>1961</date>, <title level="a">털코끼리가 발견된 함북 화대군 장덕리 4기층의 층서와 고지리적 환경에 대한 고찰</title>, <title level="j">문화유산</title> (<biblScope unit="issue">4</biblScope>), pp.<biblScope unit="page">55-57</biblScope>.</bibl>
+<!---  author  title  journal  volume  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n3_379_021" lang="kr"><author>이미재, 이연주, 서원석</author>, '<title level="a">지자체의 관광자원 브랜드 자산이 브랜드 충성도에 미치는 영향에 대한 탐색적 연구 -지자체의 관광자원 브랜드를 대상으로</title>,' <title level="j">한국콘텐츠학회논문지</title>, 제<biblScope unit="volume">12</biblScope>권, 제<biblScope unit="issue">10</biblScope>호, pp.<biblScope unit="page">499-509</biblScope>, <date>2012</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_JBSTB0_2020_v29n3_237_009" lang="kr"><author>이종화</author>, '<title level="a">SNS 해시태그를 이용한 감정 단어 일반화 연구</title>,' <title level="j">인터넷전자상거래연구</title> 제<biblScope unit="volume">18</biblScope>권, 제<biblScope unit="issue">4</biblScope>호, <date>2018</date>, pp. <biblScope unit="page">53-63</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_OTSBB9_2020_v19n4_63_004" lang="kr"><author>김미정, 김자미</author>, '<title level="a">한국의 웹 접근성 평가 연구동향 분석</title>', <title level="j">정보처리학회</title>, 제<biblScope unit="volume">7</biblScope>권, 제<biblScope unit="issue">1</biblScope>호, <date>2018</date>, <biblScope unit="page">33-42</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_HKJOBD_2020_v29n1_91_001" lang="kr"><author>김강원. 김발호</author>, '<title level="a">ESS 부가 설치형 REC 가중치 산정에 관한 연구</title>', <title level="j">에너지공학</title>, 제<biblScope unit="volume">23</biblScope>권 제<biblScope unit="issue">4</biblScope>호, <date>2014</date>, pp. <biblScope unit="page">106-111</biblScope>.</bibl>
+<!---  issue  missmatch -->
+<bibl xml:id="_GJOHB6_2020_v36n3_17_010" lang="kr"><author>마강래.강정구.이경수</author>, <date>2019</date>, <title level="a">지방 인구문제 해결을 위한 귀향지원정책의 구상</title>, <title level="j">도시정보</title>, <biblScope unit="issue">10월</biblScope>호, pp.<biblScope unit="page">3-18</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n9_355_007" lang="kr"><author>이수구</author>, '<title level="a">지방정부 사업예산과 성과계획의 연계성 분석: 서울특별시와 부산광역시를 중심으로</title>,' <title level="j">사회과학연구</title>, 제<biblScope unit="volume">35</biblScope>권, 제<biblScope unit="issue">4</biblScope>호, pp.<biblScope unit="page">203-227</biblScope>, <date>2019</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n7_636_011" lang="kr"><author>성정현, 김지혜, 신옥주</author>, '<title level="a">미혼모의 임신출산위기 경험과 위기해소를 위하 지원시스템 개선 방안</title>,' <title level="j">한국사회복지행정학</title>, 제<biblScope unit="volume">17</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, pp.<biblScope unit="page">277-309</biblScope>, <date>2015</date>.</bibl>
+<!---  author  missmatch -->
+<bibl xml:id="_BOJGB2_2020_v16n6_233_002" lang="kr"><author>권혜진</author> (<date>2008</date>). <title level="a">보육교사의 정서노동과 소진: 정서적 부조화의 매개효과에 대한 탐색</title>. <title level="j">인간발달 연구</title>, <biblScope unit="volume">15</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">93-113</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_KHKOCH_2021_v24n1_15_023" lang="kr"><author>이영민.이수영.임정연</author>(<date>2013</date>). <title level="a">4년제 대학 예체능계열 졸업생의 취업준비행동과 취업성과 결정요인 분석</title>. <title level="j">사회과학연구</title>, <biblScope unit="volume">52</biblScope>(<biblScope unit="issue">1</biblScope>), <biblScope unit="page">1-28</biblScope>.</bibl>
+<!---  journal  issue  orgName  missmatch -->
+<bibl xml:id="_KHSBBC_2020_v35n1_127_008" lang="kr"><author>임예준</author>, '<title level="a">인공지능 시대의 전쟁자동화와 인권에 관한 소고 : 국제법상 자율살상무기의 규제를 중심으로</title>', <title level="j">고려법학</title>, 제<biblScope unit="issue">92</biblScope>호, <orgName>고려대학교 법학연구원</orgName>, <date>2019</date>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_OSHSB8_2020_v33n1_79_031" lang="kr"><author>최성운, 황지혜, 김남일</author>. <title level="a">東武遺稿.知風兆를 통해 본 이제마의 군사학적 배경이 그의 의학 사상에 미친 영향</title>. <title level="j">한국의사학회지</title>. <date>2019</date>;<biblScope unit="volume">32</biblScope>(<biblScope unit="issue">2</biblScope>):<biblScope unit="page">29-41</biblScope>.</bibl>
+
+            </listBibl>
+        </back>
+    </text>
+</TEI>

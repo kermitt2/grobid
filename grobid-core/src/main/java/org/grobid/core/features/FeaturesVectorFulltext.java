@@ -6,7 +6,6 @@ import org.grobid.core.utilities.TextUtilities;
 /**
  * Class for features used for fulltext parsing.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorFulltext {
     public LayoutToken token = null; // not a feature, reference value
@@ -45,6 +44,7 @@ public class FeaturesVectorFulltext {
     // how the reference callouts are expressed, if known
     public String calloutType = null; // one of UNKNOWN, NUMBER, AUTHOR
     public boolean calloutKnown = false; // true if the token match a known reference label
+    public boolean superscript = false;
 
     public String printVector() {
         if (string == null) return null;
@@ -155,6 +155,11 @@ public class FeaturesVectorFulltext {
             res.append(" UNKNOWN");
  
         if (calloutKnown)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
+        if (superscript)
             res.append(" 1");
         else
             res.append(" 0");

@@ -12,7 +12,6 @@ import org.grobid.core.layout.LayoutToken;
 /**
  * Class for features used for parsing a block corresponding to affiliation and address.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorAffiliationAddress {
     public String string = null; // lexical feature
@@ -110,8 +109,6 @@ public class FeaturesVectorAffiliationAddress {
         else
             res.append(" 0\n");
 
-
-
         return res.toString();
     }
 
@@ -120,27 +117,33 @@ public class FeaturesVectorAffiliationAddress {
      */
     static public String addFeaturesAffiliationAddress(List<String> lines,
                                                        List<List<LayoutToken>> allTokens,
-                                                       List<List<OffsetPosition>> locationPlaces) throws Exception {
+                                                       List<List<OffsetPosition>> locationPlaces,
+                                                       List<List<OffsetPosition>> countriesPositions) throws Exception {
         if (locationPlaces == null) {
             throw new GrobidException("At least one list of gazetter matches positions is null.");
         }
         if (locationPlaces.size() == 0) {
             throw new GrobidException("At least one list of gazetter matches positions is empty.");
         }
+//System.out.println(lines);
         StringBuffer result = new StringBuffer();
         List<String> block = null;
         boolean isPlace = false;
+        boolean isCountry = false;
         String lineStatus = "LINESTART";
         int locPlace = 0;
         List<OffsetPosition> currentLocationPlaces = locationPlaces.get(locPlace);
+        List<OffsetPosition> currentCountryPlaces = countriesPositions.get(locPlace);
         List<LayoutToken> tokens = allTokens.get(locPlace);
         int currentPosPlaces = 0;
+        int currentPosCountries = 0;
         int mm = 0; // position of the token in the current sentence
         String line = null;
 
         for (int i = 0; i < lines.size(); i++) {
             line = lines.get(i);
 			isPlace = false;
+            isCountry = false;
 			if (line.equals("\n")) {
 				result.append("\n \n");
 				continue;
@@ -178,7 +181,31 @@ public class FeaturesVectorAffiliationAddress {
                 }
             }
 
-            if (line.trim().equals("@newline")) {
+            // check the position of matches for country names
+            skipTest = false;
+            if ((currentCountryPlaces != null) && (currentCountryPlaces.size() > 0)) {
+                if (currentPosCountries == currentCountryPlaces.size() - 1) {
+                    if (currentCountryPlaces.get(currentPosCountries).end < mm) {
+                        skipTest = true;
+                    }
+                }
+                if (!skipTest) {
+                    for (int j = currentPosCountries; j < currentCountryPlaces.size(); j++) {
+                        if ((currentCountryPlaces.get(j).start <= mm) &&
+                                (currentCountryPlaces.get(j).end >= mm)) {
+                            isCountry = true;
+                            currentPosCountries = j;
+                            break;
+                        } else if (currentCountryPlaces.get(j).start > mm) {
+                            isCountry = false;
+                            currentPosCountries = j;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (line.trim().contains("@newline")) {
                 lineStatus = "LINESTART";
                 continue;
             }
@@ -187,37 +214,45 @@ public class FeaturesVectorAffiliationAddress {
                 result.append("\n");
                 lineStatus = "LINESTART";
                 currentLocationPlaces = locationPlaces.get(locPlace);
+                currentCountryPlaces = countriesPositions.get(locPlace);
                 tokens = allTokens.get(locPlace);
                 currentPosPlaces = 0;
+                currentPosCountries = 0;
                 locPlace++;
                 mm = 0;
             } else {
                 // look ahead for line status update
-                if ((i + 1) < lines.size()) {
-                    String nextLine = lines.get(i + 1);
-                    if ((nextLine.trim().length() == 0) || (nextLine.trim().equals("@newline"))) {
+                if (!lineStatus.equals("LINESTART")) {
+                    if ((i + 1) < lines.size()) {
+                        String nextLine = lines.get(i + 1);
+                        if ((nextLine.trim().length() == 0) || (nextLine.trim().contains("@newline"))) {
+                            lineStatus = "LINEEND";
+                        }
+                    } else if ((i + 1) == lines.size()) {
                         lineStatus = "LINEEND";
                     }
-                } else if ((i + 1) == lines.size()) {
-                    lineStatus = "LINEEND";
                 }
 
-                FeaturesVectorAffiliationAddress vector = addFeaturesAffiliationAddress(line, lineStatus, isPlace);
+                FeaturesVectorAffiliationAddress vector = addFeaturesAffiliationAddress(line, lineStatus, isPlace, isCountry);
                 result.append(vector.printVector());
 
                 if (lineStatus.equals("LINESTART")) {
                     lineStatus = "LINEIN";
+                } else if (lineStatus.equals("LINEEND")) {
+                    lineStatus = "LINESTART";
                 }
+
             }
             mm++;
         }
-
+//System.out.println(result.toString());
         return result.toString();
     }
 
     static private FeaturesVectorAffiliationAddress addFeaturesAffiliationAddress(String line,
                                                                                   String lineStatus,
-                                                                                  boolean isPlace) {
+                                                                                  boolean isPlace,
+                                                                                  boolean isCountry) {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
         FeaturesVectorAffiliationAddress featuresVector = new FeaturesVectorAffiliationAddress();
 
@@ -285,13 +320,12 @@ public class FeaturesVectorAffiliationAddress {
             if (featuresVector.punctType == null)
                 featuresVector.punctType = "NOPUNCT";
 
-            if (featureFactory.test_country(word)) {
-                featuresVector.countryName = true;
-            }
-
-            if (isPlace) {
+            if (isPlace) 
                 featuresVector.locationName = true;
-            }
+
+            //if (featureFactory.test_country(word)) 
+            if (isCountry)
+                featuresVector.countryName = true;
 
             featuresVector.wordShape = TextUtilities.wordShape(word);
         }

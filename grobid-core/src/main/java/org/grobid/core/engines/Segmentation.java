@@ -1,6 +1,7 @@
 package org.grobid.core.engines;
 
 import eugfc.imageio.plugins.PNMRegistry;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.FileUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.document.BasicStructureBuilder;
@@ -15,6 +16,7 @@ import org.grobid.core.layout.*;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.GrobidModels.Flavor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,12 +37,11 @@ import static org.apache.commons.lang3.StringUtils.*;
  * page header, document body, bibliographical section, each bibliographical references in
  * the biblio section and finally the possible annexes.
  *
- * @author Patrice Lopez
  */
 public class Segmentation extends AbstractParser {
 
 	/*
-        10 labels for this model:
+        13 labels for this model:
 	 		cover page <cover>, 
 			document header <header>, 
 			page footer <footnote>, 
@@ -51,6 +52,8 @@ public class Segmentation extends AbstractParser {
 			page number <page>,
 			annexes <annex>,
 		    acknowledgement <acknowledgement>,
+		   	availability <availability>,
+		   	funding <funding>,
             other <other>,
 		    toc <toc> -> not yet used because not yet training data for this
 	*/
@@ -78,7 +81,11 @@ public class Segmentation extends AbstractParser {
     public Segmentation() {
         super(GrobidModels.SEGMENTATION);
     }
-    
+
+    public Segmentation(Flavor flavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.SEGMENTATION, flavor));
+    }
+
     /**
      * Segment a PDF document into high level zones: cover page, document header,
      * page footer, page header, body, page numbers, biblio section and annexes.
@@ -105,10 +112,10 @@ public class Segmentation extends AbstractParser {
         } finally {
             // keep it clean when leaving...
             /*if (config.getPdfAssetPath() == null) {
-                // remove the pdf2xml tmp file
+                // remove the pdfalto tmp file
                 DocumentSource.close(documentSource, false, true, true);
             } else*/ {
-                // remove the pdf2xml tmp files, including the sub-directories
+                // remove the pdfalto tmp files, including the sub-directories
                 DocumentSource.close(documentSource, true, true, true);
             }
         }
@@ -158,7 +165,7 @@ public class Segmentation extends AbstractParser {
                 if (files != null) {
                     int nbFiles = 0;
                     for (final File currFile : files) {
-                        if (nbFiles > DocumentSource.PDFTOXML_FILES_AMOUNT_LIMIT)
+                        if (nbFiles > DocumentSource.PDFALTO_FILES_AMOUNT_LIMIT)
                             break;
 
                         String toLowerCaseName = currFile.getName().toLowerCase();
@@ -229,7 +236,7 @@ public class Segmentation extends AbstractParser {
      * Addition of the features at line level for the complete document.
      * <p/>
      * This is an alternative to the token level, where the unit for labeling is the line - so allowing faster
-     * processing and involving less features.
+     * processing and involving fewer features.
      * Lexical features becomes line prefix and suffix, the feature text unit is the first 10 characters of the
      * line without space.
      * The dictionary flags are at line level (i.e. the line contains a name mention, a place mention, a year, etc.)
@@ -318,8 +325,9 @@ public class Segmentation extends AbstractParser {
             mm = 0;
             //endPage = true;
             
-            if ((page.getBlocks() == null) || (page.getBlocks().size() == 0)) 
+            if (CollectionUtils.isEmpty(page.getBlocks())) {
                 continue;
+            }
 
             for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
                 Block block = page.getBlocks().get(blockIndex);
@@ -353,7 +361,7 @@ public class Segmentation extends AbstractParser {
                     for(GraphicObject localImage : localImages) {
                         if (localImage.getType() == GraphicObjectType.BITMAP)
                             graphicBitmap = true;
-                        if (localImage.getType() == GraphicObjectType.VECTOR)
+                        if (localImage.getType() == GraphicObjectType.VECTOR || localImage.getType() == GraphicObjectType.VECTOR_BOX)
                             graphicVector = true;
                     }
                 }
@@ -429,9 +437,9 @@ public class Segmentation extends AbstractParser {
                         }
                     }
 
-                    // we consider the first token of the line as usual lexical CRF token
+                    // we consider the first token of the line as usual lexical token
                     // and the second token of the line as feature
-                    StringTokenizer st2 = new StringTokenizer(line, " \t");
+                    StringTokenizer st2 = new StringTokenizer(line, " \t\f\u00A0");
                     // alternatively, use a grobid analyser
                     String text = null;
                     String text2 = null;
@@ -443,8 +451,8 @@ public class Segmentation extends AbstractParser {
                     if (text == null)
                         continue;
 
-                    // final sanitisation and filtering
-                    text = text.replaceAll("[ \n]", "");
+                    // final sanitization and filtering
+                    text = text.replaceAll("[ \n\r]", "");
                     text = text.trim();
 
                     if ( (text.length() == 0) ||
@@ -569,10 +577,10 @@ public class Segmentation extends AbstractParser {
                         currentFontSize = newFontSize;
                     }
 
-                    if (token.getBold())
+                    if (token.isBold())
                         features.bold = true;
 
-                    if (token.getItalic())
+                    if (token.isItalic())
                         features.italic = true;
 
                     // HERE horizontal information
@@ -674,7 +682,8 @@ public class Segmentation extends AbstractParser {
 
             String fulltext = //getAllTextFeatured(doc, false);
                     getAllLinesFeatured(doc);
-            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            //List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            List<LayoutToken> tokenizations = doc.getTokenizations();
 
             // we write the full text untagged (but featurized)
             String outPathFulltext = pathFullText + File.separator + 
@@ -748,11 +757,12 @@ public class Segmentation extends AbstractParser {
 
             String fulltext = //getAllTextFeatured(doc, false);
                     getAllLinesFeatured(doc);
-            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            //List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            List<LayoutToken> tokenizations = doc.getTokenizations();
 
             // we write the full text untagged (but featurized)
             String outPathFulltext = pathFullText + File.separator + 
-                PDFFileName.replace(".pdf", ".training.blank");
+                PDFFileName.replaceAll("(?i)\\.pdf$", ".training.blank");
             Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
             writer.write(fulltext + "\n");
             writer.close();
@@ -768,8 +778,8 @@ public class Segmentation extends AbstractParser {
                 // write the TEI file to reflect the extact layout of the text as extracted from the pdf
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                         File.separator + 
-                        PDFFileName.replace(".pdf", ".training.blank.tei.xml")), false), "UTF-8");
-                writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+                        PDFFileName.replaceAll("(?i)\\.pdf$", ".training.blank.tei.xml")), false), "UTF-8");
+                writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"f" + id +
                         "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
 
                 writer.write(fulltext);
@@ -911,9 +921,9 @@ public class Segmentation extends AbstractParser {
                 boolean output;
 
                 output = writeField(buffer, line, s1, lastTag0, s2, "<header>", "<front>", addSpace, 3);
-                /*if (!output) {
-                    output = writeField(buffer, line, s1, lastTag0, s2, "<other>", "<note type=\"other\">", addSpace, 3);
-                }*/
+                if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<other>", "", addSpace, 3);
+                }
                 if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<headnote>", "<note place=\"headnote\">",
                             addSpace, 3);
@@ -941,25 +951,20 @@ public class Segmentation extends AbstractParser {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<cover>", "<titlePage>", addSpace, 3);
                 }
                 if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<toc>", "<div type=\"toc\">", addSpace, 3);
+                }
+                if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<annex>", "<div type=\"annex\">", addSpace, 3);
                 }
                 if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<acknowledgement>", "<div type=\"acknowledgement\">", addSpace, 3);
                 }
-                /*if (!output) {
-                    if (closeParagraph) {
-                        output = writeField(buffer, s1, "", s2, "<reference_marker>", "<label>", addSpace, 3);
-                    } else
-                        output = writeField(buffer, s1, lastTag0, s2, "<reference_marker>", "<label>", addSpace, 3);
-                }*/
-                /*if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<citation_marker>", "<ref type=\"biblio\">",
-                            addSpace, 3);
-                }*/
-                /*if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<figure_marker>", "<ref type=\"figure\">",
-                            addSpace, 3);
-                }*/
+                if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<availability>", "<div type=\"availability\">", addSpace, 3);
+                }
+                if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<funding>", "<div type=\"funding\">", addSpace, 3);
+                }
                 lastTag = s1;
 
                 if (!st.hasMoreTokens()) {
@@ -1008,51 +1013,22 @@ public class Segmentation extends AbstractParser {
             // if previous and current tag are the same, we output the token
             if (s1.equals(lastTag0) || s1.equals("I-" + lastTag0)) {
                 buffer.append(line);
-            }
-            /*else if (lastTag0 == null) {
-                   for(int i=0; i<nbIndent; i++) {
-                       buffer.append("\t");
-                   }
-                     buffer.append(outField+s2);
-               }*/
-            /*else if (field.equals("<citation_marker>")) {
-                if (addSpace)
-                    buffer.append(" " + outField + s2);
-                else
-                    buffer.append(outField + s2);
-            } else if (field.equals("<figure_marker>")) {
-                if (addSpace)
-                    buffer.append(" " + outField + s2);
-                else
-                    buffer.append(outField + s2);
-            } else if (field.equals("<reference_marker>")) {
-                if (!lastTag0.equals("<references>") && !lastTag0.equals("<reference_marker>")) {
-                    for (int i = 0; i < nbIndent; i++) {
-                        buffer.append("\t");
-                    }
-                    buffer.append("<bibl>");
-                }
-                if (addSpace)
-                    buffer.append(" " + outField + s2);
-                else
-                    buffer.append(outField + s2);
-            } */
-            else if (lastTag0 == null) {
+            } else if (lastTag0 == null) {
                 // if previous tagname is null, we output the opening xml tag
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
                 buffer.append(outField).append(line);
-            } else if (!lastTag0.equals("<titlePage>")) {
-                // if the previous tagname is not titlePage, we output the opening xml tag
+            } else {
+                // new opening tag, we output the opening xml tag
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
                 buffer.append(outField).append(line);
-            } else {
+            } /*else {
                 // otherwise we continue by ouputting the token
                 buffer.append(line);
-            }
+            }*/
         }
         return result;
     }
@@ -1133,25 +1109,45 @@ public class Segmentation extends AbstractParser {
             // we close the current tag
             if (lastTag0.equals("<header>")) {
                 buffer.append("</front>\n\n");
+                res = true;
             } else if (lastTag0.equals("<body>")) {
                 buffer.append("</body>\n\n");
+                res = true;
             } else if (lastTag0.equals("<headnote>")) {
                 buffer.append("</note>\n\n");
+                res = true;
             } else if (lastTag0.equals("<footnote>")) {
                 buffer.append("</note>\n\n");
+                res = true;
             } else if (lastTag0.equals("<marginnote>")) {
                 buffer.append("</note>\n\n");
+                res = true;
             } else if (lastTag0.equals("<references>")) {
                 buffer.append("</listBibl>\n\n");
                 res = true;
             } else if (lastTag0.equals("<page>")) {
                 buffer.append("</page>\n\n");
+                res = true;
             } else if (lastTag0.equals("<cover>")) {
                 buffer.append("</titlePage>\n\n");
+                res = true;
+            } else if (lastTag0.equals("<toc>")) {
+                buffer.append("</div>\n\n");
+                res = true;
             } else if (lastTag0.equals("<annex>")) {
                 buffer.append("</div>\n\n");
+                res = true;
             } else if (lastTag0.equals("<acknowledgement>")) {
                 buffer.append("</div>\n\n");
+                res = true;
+            } else if (lastTag0.equals("<availability>")) {
+                buffer.append("</div>\n\n");
+                res = true;
+            } else if (lastTag0.equals("<funding>")) {
+                buffer.append("</div>\n\n");
+                res = true;
+            } else if (lastTag0.equals("<other>")) {
+                buffer.append("\n\n");
             } else {
                 res = false;
             }

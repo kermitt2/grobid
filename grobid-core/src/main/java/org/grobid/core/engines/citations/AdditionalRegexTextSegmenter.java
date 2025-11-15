@@ -13,15 +13,16 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 /**
- * Date: 8/27/13
+ *  DEPRECATED ! 
+ *
+ *  A machine learning model is used now to segment references, see org.grobid.core.engines.ReferenceSegmenterParser
+ * 
  */
 public class AdditionalRegexTextSegmenter {
     public static final Logger LOGGER = LoggerFactory.getLogger(AdditionalRegexTextSegmenter.class.getName());
     private final static Pattern BRACKET_NUMBER_LOOKUP_PATTERN = Pattern.compile("(?s).{0,15}\\[\\d\\] .{10,701}\\n\\[\\d+\\] .*");
     private final static Pattern BULLET_NUMBER_LOOKUP_PATTERN = Pattern.compile("(?s).{0,10}1\\. .{10,701}\\n[\\s0]*2\\. .*");
-
 
     private final static Pattern BRACKET_SPLIT_PATTERN = Pattern.compile("\\[(\\d+)\\] ");
     private final static Pattern BULLET_SPLIT_PATTERN = Pattern.compile("\\n(\\d+)\\. ");
@@ -44,7 +45,6 @@ public class AdditionalRegexTextSegmenter {
         if (referencesText == null || referencesText.isEmpty()) {
             return Collections.emptyList();
         }
-
 
         Matcher brokenBracketMatcher = BROKEN_RACKETS_PATTERN.matcher(referencesText);
         if (brokenBracketMatcher.find()) {
@@ -233,11 +233,4 @@ public class AdditionalRegexTextSegmenter {
         return firstLetter - previousFirstLetter <= maxGapsize;
     }
 
-    public static void main(String[] args) throws IOException {
-        String t = FileUtils.readFileToString(new File("/tmp/text.txt"), "UTF-8");
-        System.out.println(t.length());
-        Pattern p = Pattern.compile("(?s).{0,10}1\\. .{10,100}\\n[\\s0]*2\\. .*");
-        p.matcher(t).find();
-
-    }
 }

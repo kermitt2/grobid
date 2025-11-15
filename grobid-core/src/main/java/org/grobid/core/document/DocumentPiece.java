@@ -1,9 +1,5 @@
 package org.grobid.core.document;
 
-/**
- * User: zholudev
- * Date: 4/1/14
- */
 public class DocumentPiece implements Comparable<DocumentPiece>{
     //for easier access make them final, but public
     private final DocumentPointer a;
