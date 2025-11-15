@@ -351,6 +351,14 @@ grobid:
         #architecture: "bert"
         #transformer: "allenai/scibert_scivocab_cased"
 
+    - name: "monograph"
+      engine: "wapiti"
+      wapiti:
+        epsilon: 0.0000001
+        window: 50
+        nbMaxIterations: 2000
+
+
   # for **service only**: how to load the models, 
   # false -> models are loaded when needed, avoiding putting in memory useless models (only in case of CRF) but slow down 
   #          significantly the service at first call
