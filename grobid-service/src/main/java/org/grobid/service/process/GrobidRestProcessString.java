@@ -3,6 +3,8 @@ package org.grobid.service.process;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.inject.Inject;
@@ -11,6 +13,7 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 
 import com.google.inject.Singleton;
+import org.apache.commons.collections4.CollectionUtils;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.PatentItem;
@@ -319,9 +322,12 @@ public class GrobidRestProcessString {
 		Engine engine = null;
 		try {
 			engine = Engine.getEngine(true);
-			List<BiblioItem> biblioItems = engine.processRawReferences(citations, config.getConsolidateCitations());		
+			List<BiblioItem> biblioItems = engine.processRawReferences(citations, config.getConsolidateCitations());
 
-			if (biblioItems == null || biblioItems.size() == 0) {
+			//Filter out null elements
+			biblioItems = biblioItems.stream().filter(Objects::nonNull).collect(Collectors.toList());
+
+			if (CollectionUtils.isEmpty(biblioItems)) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else if (expectedResponseType == ExpectedResponseType.BIBTEX) {
 				StringBuilder responseContent = new StringBuilder();
