@@ -130,6 +130,9 @@ public class SentenceUtilities {
      * @return list of offset positions for the identified sentence, relative to the input text
      */
     public List<OffsetPosition> runSentenceDetection(String text, List<OffsetPosition> forbidden, List<LayoutToken> textLayoutTokens, Language lang) {
+        
+        //String text2 = LayoutTokensUtil.toText(textLayoutTokens);
+        
         if (text == null)
             return null;
         try {
@@ -174,15 +177,18 @@ public class SentenceUtilities {
                 finalSentencePositions.get(currentSentenceIndex).end);
             boolean moved = false;
 
+            StringBuilder accumulator = new StringBuilder();
+
             // iterate on layout tokens in sync with sentences
             for(int i=0; i<textLayoutTokens.size(); i++) {
                 LayoutToken token = textLayoutTokens.get(i);
+                accumulator.append(token);
                 if (token.getText() == null || token.getText().length() == 0) 
                     continue;
 
-                if (this.toSkipToken(token.getText()))
+                if (toSkipToken(token.getText()))
                     continue;
-
+                //Checking whether the text contains the entire first chunk/sentence
                 int newPos = sentenceChunk.indexOf(token.getText(), pos);
 
                 if (newPos != -1) {
@@ -206,12 +212,13 @@ public class SentenceUtilities {
                         if (finalSentencePositions.get(currentSentenceIndex).end + nextToken.getText().length() + buffer >= text.length())
                             break;
 
-                        if (this.toSkipTokenNoHyphen(nextToken.getText())) {
+                        if (toSkipTokenNoHyphen(nextToken.getText())) {
                             buffer += nextToken.getText().length();
                             continue;
                         }
 
-                        if (this.isValidSuperScriptNumericalReferenceMarker(nextToken)) {
+                        if (isValidSuperScriptNumericalReferenceMarker(nextToken)
+                            && isNextTokenFallingIntoAForbiddenInterval(accumulator.length() + j, forbidden)) {
                             pushedEnd += buffer + nextToken.getText().length();
                             buffer = 0;
                         } else 
@@ -266,6 +273,13 @@ public class SentenceUtilities {
         }
     }
 
+  
+    private static boolean isNextTokenFallingIntoAForbiddenInterval(int currentOffset, List<OffsetPosition> forbidden) {
+        return forbidden
+            .stream().anyMatch(o -> currentOffset >= o.start && currentOffset < o.end);
+    }
+  
+  
     public static List<OffsetPosition> correctSentencePositions(List<OffsetPosition> sentencePositions, List<OffsetPosition> forbiddenPositions) {
         List<OffsetPosition> finalSentencePositions = new ArrayList<>();
         int forbiddenIndex = 0;
@@ -311,7 +325,7 @@ public class SentenceUtilities {
 
 
     /**
-     * Return true if the token is a valid numerical reference markers ([0-9,())\-\]\[) in supercript. 
+     * Return true if the token is a valid numerical reference markers ([0-9,())\-\]\[) in superscript.
      */
     private static boolean isValidSuperScriptNumericalReferenceMarker(LayoutToken token) {
 
