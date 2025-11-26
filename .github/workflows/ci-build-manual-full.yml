@@ -18,10 +18,10 @@ jobs:
       with:
         fetch-tags: true
         fetch-depth: 0
-    - name: Set up JDK 17
+    - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
-        java-version: '17.0.10+7'
+        java-version: '21'
         distribution: 'temurin'
         cache: 'gradle'
     - name: Build with Gradle
@@ -44,7 +44,25 @@ jobs:
           image: lfoppiano/grobid
           registry: docker.io
           pushImage: true
-          tags: latest-full, ${{ github.event.inputs.custom_tag}}
+          tags: latest-develop, latest-full, ${{ github.event.inputs.custom_tag}}
           dockerfile: Dockerfile.delft
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+      - name: Docker Image Summary
+        run: |
+          echo "## 🐳 Docker Image Uploaded Successfully" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Image Details:**" >> $GITHUB_STEP_SUMMARY
+          echo "- **Registry:** docker.io" >> $GITHUB_STEP_SUMMARY
+          echo "- **Image:** lfoppiano/grobid" >> $GITHUB_STEP_SUMMARY
+          echo "- **Type:** Full build with DeLFT models" >> $GITHUB_STEP_SUMMARY
+          echo "- **Tags:**" >> $GITHUB_STEP_SUMMARY
+          echo "  - \`latest-develop\`" >> $GITHUB_STEP_SUMMARY
+          echo "  - \`latest-full\`" >> $GITHUB_STEP_SUMMARY
+          echo "  - \`${{ github.event.inputs.custom_tag }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Digest:** \`${{ steps.docker_build.outputs.digest }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Usage:**" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "docker pull lfoppiano/grobid:${{ github.event.inputs.custom_tag }}" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY

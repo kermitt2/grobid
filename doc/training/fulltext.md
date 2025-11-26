@@ -4,7 +4,8 @@
 
 As mentioned elsewhere (TODO:link), there are several models that are used to analyze the contents of a PDF file. One of them is the `fulltext` model which attempts to recognize and struture items appearing in the body text of an article or a publication.  This is different from for example the `segmentation` model which tries to recognize the general sections (title page, front, body, bibliography) and which is applied before the `fulltext` model.
 
-> Note: Whitespace is not important in the XML that Grobid uses. You can add newline characters and spaces to make the XML document more legible.
+!!! tip "Whitespaces and newlines are allowed" 
+    Whitespace is not important in the XML that Grobid uses. You can add newline characters and spaces to make the XML document more legible.
 
 The `fulltext` model attempts to recognize the following objects:
 
@@ -66,8 +67,8 @@ Paragraphs constitute the main bulk of most typical articles or publications and
   are able to induce autophagy in a breast cancer cell line. 3,4<lb/>
 </p>
 ```
-
-> Note: The `<lb/>` (line break) elements are there because they have been recognized as such in the PDF in the text flow. However, the fact that they are located within or outside a tagged paragraph or section title has no impact. Just be sure NOT to modify the order of the text flow and `<lb/>` as mentionned [here](General-principles.md#correcting-pre-annotated-files).
+!!! warn "Avoid modify the text flow, while line breaks can be adjusted"
+    The `<lb/>` (line break) elements are there because they have been recognized as such in the PDF in the text flow. However, the fact that they are located within or outside a tagged paragraph or section title has no impact. Just be sure NOT to modify the order of the text flow and `<lb/>` as mentionned [here](General-principles.md#correcting-pre-annotated-files).
 
 Following the TEI, formulas should be on the same hierarchical level as paragraphs, and not be contained inside paragraphs:
 

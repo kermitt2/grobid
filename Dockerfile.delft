@@ -15,7 +15,7 @@
 # build builder image
 # -------------------
 
-FROM eclipse-temurin:17.0.15_6-jdk AS builder
+FROM eclipse-temurin:21-jdk AS builder
 
 USER root
 
@@ -72,7 +72,7 @@ RUN rm -rf grobid-source
 FROM tensorflow/tensorflow:2.7.0-gpu
 
 # setting locale is likely useless but to be sure
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8
 
 # update NVIDIA Cuda key (following a key rotation in April 2022)
 RUN apt-get install -y wget && \
@@ -119,18 +119,21 @@ ENV JAVA_OPTS=-Xmx4g
 # See tag of builder image in [Dockerfile tag](https://github.com/docker-library/docs/blob/master/eclipse-temurin/README.md#simple-tags) to find JAVA_HOME to copy from builder image.
 COPY --from=builder /opt/java/openjdk ${JAVA_HOME}
 
-# install jep
-RUN pip3 install jep==4.0.3
+# install jep 
+RUN pip3 install jep==4.2.2
 
+# set python version matching TF base image python version
+ENV PYTHON_VERSION=3.8
+# set LD_LIBRARY_PATH accordingly
+ENV LD_LIBRARY_PATH=/usr/local/lib/python${PYTHON_VERSION}/dist-packages/jep:grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep:${LD_LIBRARY_PATH}
 
-ENV LD_LIBRARY_PATH=/usr/local/lib/python3.8/dist-packages/jep:grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep:${LD_LIBRARY_PATH}
 # remove libjep.so because we are providing our own version in the virtual env above
 RUN rm /opt/grobid/grobid-home/lib/lin-64/jep/libjep.so
 
 ARG TARGETARCH
 
 # Add Tini
-ENV TINI_VERSION v0.19.0
+ENV TINI_VERSION=v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-${TARGETARCH} /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-s", "--"]
@@ -147,7 +150,7 @@ RUN python3 preload_embeddings.py --registry ./resources-registry.json &&  \
 RUN mkdir delft && \
     cp ./resources-registry.json delft/
 
-ENV GROBID_SERVICE_OPTS "--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED"
+ENV GROBID_SERVICE_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED"
 
 CMD ["./grobid-service/bin/grobid-service"]
 
