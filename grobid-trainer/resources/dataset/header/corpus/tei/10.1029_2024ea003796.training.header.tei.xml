@@ -1,0 +1,128 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Statistical Methods for Interpreting Spatial and Temporal Heterogeneity of Martian Tropical Water Ice Informed by Properties of Crater Ejecta Types</title>
+      <author>
+        <persName>
+          <forename>Jamie D.</forename>
+          <surname>Riggs</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Michelle R.</forename>
+          <surname>Kirchoff</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T15:41:55.035078Z">12.11.2025 15:41:55</date>
+        <title>grobid.training.header [default]</title>
+        <idno type="fileref">10.1029$1$2024ea003796</idno>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>American Geophysical Union (AGU)</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.1029/2024ea003796</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Jamie D. Riggs, Michelle R. Kirchoff. (2024). Statistical Methods for Interpreting Spatial and Temporal Heterogeneity of Martian Tropical Water Ice Informed by Properties of Crater Ejecta Types. Earth and Space Science, 11(11), None. DOI: 10.1029/2024ea003796</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T15:41:55.035078Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T15:41:55.035078Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+    <change when="2025-11-12T15:48:25.555Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+    <change when="2025-11-12T16:10:02.807Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Insights on the African Upper Mantle From Quasi-Love<lb/> Wave Scattering<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Thomas A. J. Merry 1,2<lb/> and Caroline M. Eakin 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Research School of Earth Sciences, Australian National University,</affiliation>
+	</byline>
+
+	<address>Canberra, ACT, Australia,</address>
+
+	<byline>
+	<affiliation>2 Now at Bullard<lb/> Laboratories, Department of Earth Sciences, University of Cambridge,</affiliation>
+	</byline>
+
+	<address>Cambridge, UK<lb/></address>
+
+	Abstract
+	<div type="abstract">The African upper mantle is diverse, featuring several cratonic roots, active and magmatic<lb/> continental rifting, abundant intra-plate volcanism, and several oceanic hotspots offshore. Relatively small-<lb/>scale mantle convection processes, some possibly related to lithospheric thickness variations, have been<lb/> proposed to account for patterns of volcanism and topography. A key constraint on such features and<lb/> processes can be found via seismic anisotropy, but limited coverage of seismograph stations across the<lb/> continent has resulted in sparse observations. Quasi-Love waves, produced by scattering of Love to Rayleigh<lb/> energy at lateral gradients in upper mantle seismic anisotropy, can provide information about seismic<lb/> anisotropy well away from seismograph stations. We catalog 525 observations of Quasi-Love waves across<lb/> the region and back-project to scattering points, revealing locations of lateral gradients in upper mantle<lb/> seismic anisotropy. Quasi-Love wave scattering occurs at craton edges, likely due to the contrast between<lb/> lithospheric and asthenospheric anisotropy, and close to ancient orogenic belts, indicating changes in<lb/> fossilized lithospheric anisotropy from past collisional events. Scattering surrounding the proposed Al-Kufrah<lb/> cratonic remnant in north-east Africa supports its existence as cratonic lithosphere. Scattering also occurs<lb/> below thin lithosphere, suggesting deviations in asthenospheric flow patterns (such as localized upwellings),<lb/> notably beneath the East African Rift, oceanic hotspot tracks, and the Cameroon Volcanic Line. Quasi-Love<lb/> scattering is abundant in the Indian Ocean and beneath Madagascar, consistent with small-scale dynamic<lb/> processes in the asthenosphere that likely relate to the complex rifting history of this ocean basin and the<lb/> dispersed micro-continents within.<lb/></div>
+
+	Plain Language Summary
+	<div type="abstract">Deformation of the Earth&apos;s mantle, through convection or plate tectonics,<lb/> results in alignment of minerals that can be measured by the directional dependence of seismic velocities<lb/> (seismic anisotropy). Seismic anisotropy is commonly measured directly below deployed seismograph stations,<lb/> meaning observations are sparse where seismograph deployments are sparse, which is the case in much of<lb/> Africa and the oceanic realm. We use observations of a type of seismic wave known as known as a Quasi-Love<lb/> wave to map lateral variations in seismic anisotropy well away from seismograph stations, to find evidence for<lb/> past and current deformation in the African upper mantle. We find lateral gradients in seismic anisotropy where<lb/> the plate changes from thin to thick, implying differences in anisotropy between the stiff plates and the<lb/> convecting mantle. Evidence for abundant gradients in seismic anisotropy in regions where the plate is<lb/> uniformly thin, such as below the western Indian Ocean and Madagascar, implies variations in the flow-field of<lb/> the convecting mantle, indicating relatively small-scale convection patterns.<lb/></div>
+
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<idno>10.1029/2023GC011385<lb/></idno>
+
+	<div type="abstract">Key Points:<lb/>• 525 Quasi-Love waves are cataloged,<lb/> related to lateral gradients in upper<lb/> mantle seismic anisotropy in and<lb/> around Africa<lb/> • Many are associated with craton edges,<lb/> including that of the proposed Al-<lb/>Kufrah cratonic remnant<lb/> • Small-scale asthenospheric convection<lb/> is inferred beneath hotspot tracks and<lb/> much of the western Indian Ocean<lb/></div>
+
+	Supporting Information:<lb/> Supporting Information may be found in<lb/> the online version of this article.<lb/> Correspondence to:<lb/>
+	<byline>
+	<docAuthor>T. A. J. Merry,<lb/></docAuthor>
+	</byline>
+
+	<email>tm502@cam.ac.uk<lb/></email>
+
+	Citation:<lb/>
+	<reference>Merry, T. A. J., &amp; Eakin, C. M. (2024).<lb/> Insights on the African upper mantle from<lb/> Quasi-Love wave scattering.<lb/> Geochemistry, Geophysics, Geosystems,<lb/> 25, e2023GC011385.</reference>
+
+	<idno>https://doi.org/10.<lb/> 1029/2023GC011385<lb/></idno>
+
+	<note type="submission">Received 30 NOV 2023<lb/> Accepted 15 MAR 2024<lb/></note>
+
+	Author Contributions:<lb/> 
+	<note type="contribution">Conceptualization: Caroline M. Eakin<lb/> Formal analysis: Thomas A. J. Merry<lb/> Investigation: Thomas A. J. Merry<lb/> Methodology: Thomas A. J. Merry,<lb/> Caroline M. Eakin<lb/> Supervision: Caroline M. Eakin<lb/> Visualization: Thomas A. J. Merry<lb/> Writing -original draft: Thomas<lb/> A. J. Merry<lb/> Writing -review &amp; editing: Caroline<lb/> M. Eakin<lb/></note>
+
+	<note type="copyright">© 2024 The Authors. Geochemistry,<lb/> Geophysics, Geosystems published by<lb/> Wiley Periodicals LLC on behalf of<lb/> American Geophysical Union.<lb/> This is an open access article under the<lb/> terms of the Creative Commons<lb/> Attribution License, which permits use,<lb/> distribution and reproduction in any<lb/> medium, provided the original work is<lb/> properly cited.<lb/></note>
+
+	<publisher>MERRY AND EAKIN<lb/></publisher>
+
+	<page>1 of 23</page>
+		</front>
+	</text>
+
+</TEI>

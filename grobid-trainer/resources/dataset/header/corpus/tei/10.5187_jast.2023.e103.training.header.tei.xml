@@ -1,0 +1,316 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Complete genome sequence of Enterococcus faecium
+                    strain AK_C_05 with potential characteristics applicable in livestock
+                    industry</title>
+      <author>
+        <persName>
+          <forename>Hyunok</forename>
+          <surname>Doo</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Jin Ho</forename>
+          <surname>Cho</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Minho</forename>
+          <surname>Song</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Eun Sol</forename>
+          <surname>Kim</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Sheena</forename>
+          <surname>Kim</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Gi Beom</forename>
+          <surname>Keum</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Jinok</forename>
+          <surname>Kwak</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Sriniwas</forename>
+          <surname>Pandey</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Sumin</forename>
+          <surname>Ryu</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Yejin</forename>
+          <surname>Choi</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Juyoun</forename>
+          <surname>Kang</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Hyeun Bum</forename>
+          <surname>Kim</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Ju-Hoon</forename>
+          <surname>Lee</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T17:22:41.361049Z">12.11.2025 17:22:41</date>
+        <title>grobid.training.header [default]</title>
+        <idno type="fileref">10.5187$1$jast.2023.e103</idno>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>Korean Society of Animal Science and Technology</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.5187/jast.2023.e103</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Hyunok Doo, Jin Ho Cho, Minho Song, Eun Sol Kim, Sheena Kim, Gi Beom Keum, Jinok Kwak, Sriniwas Pandey, Sumin Ryu, Yejin Choi, Juyoun Kang, Hyeun Bum Kim, Ju-Hoon Lee. (2024). Complete genome sequence of Enterococcus faecium
+                    strain AK_C_05 with potential characteristics applicable in livestock
+                    industry. Journal of Animal Science and Technology, 66(2), 438-441. DOI: 10.5187/jast.2023.e103</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T17:22:41.361049Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T17:22:41.361049Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+    <change when="2025-11-12T17:30:54.314Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<title level="j">JAST (Journal of Animal Science and Technology)</title>
+          
+    TITLE PAGE<lb/> Upload this completed form to website with submission<lb/> ARTICLE INFORMATION<lb/> Fill in information in each box below<lb/> Article Type<lb/>
+
+    <note type="doctype">Research article<lb/></note>
+
+    Article Title (within 20 words without abbreviations)
+          
+	<docTitle>
+        <titlePart>Comparison Study between Single Enzyme and Multienzyme<lb/> Complex in Distiller&apos;s Dred Grains with Soluble Supplemented Diet in<lb/> Broiler Chicken<lb/></titlePart>
+    </docTitle>
+
+	Running Title (within 10 words)<lb/> Comparison between single enzyme and multienzyme complex in<lb/> broiler chicken<lb/> Author<lb/>
+	<byline>
+	<docAuthor>Min-Jin Kwak 1# , Dong-Jin Ha 2# , Min Young Park 3 , Ju Young Eor 1 ,<lb/> Kwang-Youn Whang 2 , and Younghoon Kim 1*<lb/></docAuthor>
+	</byline>
+
+    Affiliation<lb/> 
+	<byline>
+	<affiliation>1 Department of Agricultural Biotechnology and Research Institute of<lb/> Agriculture and Life Science, Seoul National University,</affiliation>
+	</byline>
+
+	<address>Seoul 08826,<lb/> Republic of Korea<lb/></address>
+
+	<byline>
+	<affiliation>2 Division of Biotechnology, College of Life Science and<lb/> Biotechnology, Korea University,</affiliation>
+	</byline>
+
+	<address>Seoul 02841, Republic of Korea<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Basic Science and Craniofacial Biology, New York<lb/> University College of Dentistry,</affiliation>
+	</byline>
+
+	<address>New York 10012, USA<lb/></address>
+
+	# These authors contributed equally to this work.<lb/> ORCID (for more information, please visit<lb/> https://orcid.org)<lb/> 
+          
+          
+    <byline>
+	<docAuthor>Min-Jin Kwak</docAuthor>
+    </byline>
+    (
+    <idno>https://orcid.org/0000-0001-9832-3251</idno>
+    )<lb/>
+
+    <byline>
+    <docAuthor>Dong-Jin Ha</docAuthor>
+    </byline>
+    (
+    <idno>https://orcid.org/0000-0002-3997-1600</idno>
+    )<lb/>
+      
+    <byline>
+	<docAuthor>Min-Young Park</docAuthor>
+    </byline>
+          
+          
+          (
+          
+          <idno>https://orcid.org/0000-0003-1438-9515</idno>
+          
+          )<lb/> 
+          
+          <byline>
+	<docAuthor>Ju Young Eor</docAuthor>
+    </byline>
+          
+          (
+          
+          <idno>https://orcid.org/0000-0002-3764-3339</idno>
+          
+          )<lb/> 
+      
+      <byline>
+	<docAuthor>Kwang-Youn Whang</docAuthor>
+    </byline>
+           (
+          
+          <idno>https://orcid.org/0000-0002-0414-7611</idno>
+          
+          )<lb/> 
+      
+      <byline>
+	<docAuthor>Younghoon Kim</docAuthor>
+    </byline>
+           (
+          
+          <idno>https://orcid.org/0000-0001-6769-0657</idno>
+          
+          )<lb/> 
+      
+      
+      Competing interests<lb/>
+        <note type="conflict">No potential conflict of interest relevant to this article was reported.<lb/></note>
+      
+      Funding sources<lb/>State funding sources (grants, funding sources,<lb/> equipment, and supplies).
+          
+          Include name and number of<lb/> grant if available.<lb/> Not applicable<lb/> 
+      Acknowledgments<lb/> 
+          
+          <note type="funding">This research was supported by a Korea University Grant and CTC<lb/> BIO Inc. and by a National Research Foundation of Korea Grant<lb/> funded by the Korean government (MEST) (NRF-<lb/>2021R1A2C3011051 to Y.K.<lb/></note>
+      
+      Availability of data and material<lb/>
+          <note type="availability">Upon reasonable request, the datasets of this study can be available<lb/> from the corresponding author.<lb/></note>
+
+	Authors&apos; contributions<lb/> Please specify the authors&apos; role using this form.<lb/>
+      <note type="contribution">Conceptualization: Kwak MJ, Ha DJ, Whang KY<lb/> Data curation: Kwak MJ, Ha DJ, Park MY<lb/> Formal analysis: Kwak MJ, Park MY<lb/> Methodology: Kim Y, Whang KY<lb/> Software: Kwak MJ, Eor JY, Kim, Y<lb/> Validation: Park MY, Kim Y, Whang KY<lb/> Investigation: Kwak MJ, Park MY<lb/> Writing -original draft: Kwak MJ, Ha DJ, Eor JY<lb/> Writing -review &amp; editing: Kwak MJ, Eor JY, Whang KY, Kim Y<lb/></note>
+
+	Ethics approval and consent to participate<lb/> The project underwent proper ethical standards and the experiments<lb/> were approved by the Institutional Animal Care and Use Committee<lb/> of Korea University, Seoul, Republic of Korea (KU-2021-0018).<lb/>
+
+	CORRESPONDING AUTHOR CONTACT INFORMATION 5<lb/> A C<lb/> C<lb/> E P T E D<lb/> For the corresponding author (responsible for<lb/> correspondence, proofreading, and reprints)<lb/> Fill in information in each box below<lb/> First name, middle initial, last name<lb/> 
+          
+    <byline>
+	<docAuthor>Younghoon Kim<lb/></docAuthor>
+    </byline>
+          
+          Email address -this is where your proofs will be sent<lb/>
+	<email>ykeys2584@snu.ac.kr<lb/></email>
+
+	Secondary Email address<lb/>
+	<email>ykeys2584@gmail.com<lb/></email>
+
+            Address<lb/> 
+	<byline>
+	<affiliation>Department of Agricultural Biotechnology and Research Institute of<lb/> Agriculture and Life Science, Seoul National University,</affiliation>
+	</byline>
+
+	<address>Seoul 08826,<lb/> Korea<lb/></address>
+
+	Cell phone number<lb/> 
+          
+        <phone>+82-10-4135-2584<lb/></phone>
+          
+          Office phone number<lb/> 
+          
+          <phone>+82-2-880-4808<lb/></phone>
+          
+          Fax number<lb/> +82-2-880-2271<lb/> A C<lb/> C<lb/> E P T E D<lb/> Running title: Comparison between single enzyme and multienzyme complex in broiler chicken<lb/>
+	<docTitle>
+	<titlePart>Comparison Study between Single Enzyme and Multienzyme Complex in<lb/> Distiller&apos;s Dred Grains with Soluble Supplemented Diet in Broiler Chicken<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Min-Jin Kwak a , Dong-Jin Ha b , Min Young Park c , Ju Young Eor a , Kwang-Youn Whang b , and<lb/> Younghoon Kim a*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Agricultural Biotechnology and Research Institute of Agriculture and Life<lb/> Science, Seoul National University,</affiliation>
+	</byline>
+
+	<address>Seoul 08826, Republic of Korea<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Biotechnology, College of Life Science and Biotechnology, Korea University,<lb/></affiliation>
+	</byline>
+
+	<address>Seoul 02841, Republic of Korea<lb/></address>
+
+	<byline>
+	<affiliation>c Department of Basic Science and Craniofacial Biology, New York University College of<lb/> Dentistry,</affiliation>
+	</byline>
+
+	<address>New York 10012, USA<lb/></address>
+
+	*To whom correspondence should be addressed:
+	<email>ykeys2584@snu.ac.kr<lb/></email>
+
+	A C<lb/> C<lb/> E P T E D ABSTRACT<lb/>
+	<div type="abstract">Upregulation of the nutritional value of feed is the major target of various studies in<lb/> the livestock industry, and dietary enzyme supplementation could aid in digesting the<lb/> nondegrading nutrients of grains in feed ingredients. Dried distillers&apos; grains with solubles<lb/> (DDGS) is a byproduct of the fermentation process in the beverage industry and can be used<lb/> as a large supply source of fiber in feed. Therefore, we conducted an experiment with male<lb/> broiler chickens to investigate the effect of various types of enzymes on DDGS and compare<lb/> the efficacy of single enzyme and multienzyme complexes on growth performance and gut<lb/> environments in broiler chickens. We used 420 1-day-old broiler chickens (Ross 308), and they<lb/> were allotted into 4 dietary treatments with seven replications (CON, corn-SBM diet; NC,<lb/> DDGS supplemented diet; SE, 0.05 % of mannanase supplemented DDGS-based diet; MC,<lb/> 0.10 % of multienzyme complex (mannanase and xylanase, glucanase) supplemented DDGS-<lb/>based diet. The dietary exogenous enzyme in the DDGS-supplemented diet could improve<lb/> growth performance as much as the growth of the control group, and digestibility of dry matter,<lb/> crude protein, and gross energy were significantly increased by enzyme addition in groups of<lb/> chicks fed DDGS-supplementation diet. Moreover, the populations of pathogenic bacteria,<lb/> coliforms, and Bacteroidetes were significantly decreased by enzyme supplementation, which<lb/> might lead to improved gut mucus-secreting cells and inflammatory cytokines in the jejunum.<lb/> Collectively, dietary single enzyme and multienzyme complexes could improve gut<lb/> environments, including intestinal immune responses and gut microbial population, and lead<lb/> to improvement of growth performance in broiler chickens.<lb/></div>
+
+	Keywords:
+	<keyword>enzyme, multienzyme complex, growth performance, nutrient digestibility, gut<lb/> environment, broiler chicken.<lb/></keyword>
+
+	A C<lb/> C<lb/> E P T E D
+		</front>
+	</text>
+
+</TEI>

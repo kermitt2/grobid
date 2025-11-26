@@ -1,0 +1,126 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title level="a">Unknown Title</title>
+      </titleStmt>
+      <editionStmt>
+        <edition>
+          <date when="2025-11-13T15:13:23.386530Z">13.11.2025 15:13:23</date>
+          <title>grobid.training.header [default]</title>
+          <idno type="fileref">NEJMoa1000678</idno>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+        <date type="publication"/>
+        <idno type="DOI"/>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>. (). Unknown Title. , (), . DOI: None</bibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <appInfo>
+        <application version="1.0" ident="pdf-tei-editor" type="editor">
+          <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+        </application>
+        <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-13T15:13:23.386530Z" type="extractor">
+          <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+          <label type="revision">4ae14a7</label>
+          <label type="flavor">default</label>
+          <label type="variant-id">grobid.training.header</label>
+          <ref target="https://github.com/kermitt2/grobid"/>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <revisionDesc>
+      <change when="2025-11-13T15:13:23.386530Z" status="draft">
+        <desc>Generated with createTraining API</desc>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<title level="j">T h e ne w e ngl a nd jou r na l o f m e dic i ne<lb/></title>
+
+	<meeting>n engl j med 363;8 nejm.org august 19, 2010</meeting>
+
+	<page>733<lb/></page>
+	<note type="doctype">original article<lb/></note>
+
+	<docTitle>
+	<titlePart>Early Palliative Care for Patients with<lb/> Metastatic Non-Small-Cell Lung Cancer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jennifer S. Temel, M.D., Joseph A. Greer, Ph.D., Alona Muzikansky, M.A.,<lb/> Emily R. Gallagher, R.N., Sonal Admane, M.B., B.S., M.P.H.,<lb/> Vicki A. Jackson, M.D., M.P.H., Constance M. Dahlin, A.P.N.,<lb/> Craig D. Blinderman, M.D., Juliet Jacobsen, M.D., William F. Pirl, M.D., M.P.H.,<lb/> J. Andrew Billings, M.D., and Thomas J. Lynch, M.D.<lb/></docAuthor>
+	</byline>
+
+	From 
+    <byline>
+	<affiliation>Massachusetts General Hospital,<lb/></affiliation>
+	</byline>
+
+	<address>Boston</address>
+
+	(J.S.T., J.A.G., A.M., E.R.G., V.A.J.,<lb/> C.M.D., J.J., W.F.P., J.A.B.); 
+
+    <byline>
+	<affiliation>the State Uni-<lb/>versity of New York</affiliation>
+	</byline>
+    , 
+
+    <address>Buffalo</address>
+          
+    (S.A.); 
+          
+    <byline>
+	<affiliation>Adult<lb/> Palliative Medicine, Department of Anes-<lb/>thesiology, Columbia University Medical<lb/> Center,</affiliation>
+	</byline>
+
+	<address>New York</address>
+
+	(C.D.B.); and 
+
+    <byline>
+	<affiliation>Yale Uni-<lb/>versity</affiliation>,
+	</byline>
+          
+    <address>New Haven, CT</address> 
+          
+    (T.J.L.). Address<lb/> reprint requests to 
+          
+    Dr. Temel at
+	<byline>
+	<affiliation>Massa-<lb/>chusetts General Hospital,</affiliation>
+	</byline>
+
+	<address>55 Fruit St.,<lb/> Yawkey 7B, Boston, MA 02114</address>
+          
+    , or at<lb/>
+
+	<email>jtemel@partners.org</email>
+
+	.<lb/>
+	<reference>N Engl J Med 2010;363:733-42.<lb/></reference>
+
+	<note type="copyright">Copyright © 2010 Massachusetts Medical Society.<lb/></note>
+
+    A bs tr ac t 
+	<div type="abstract">Background<lb/> Patients with metastatic non-small-cell lung cancer have a substantial symptom<lb/> burden and may receive aggressive care at the end of life. We examined the effect<lb/> of introducing palliative care early after diagnosis on patient-reported outcomes<lb/> and end-of-life care among ambulatory patients with newly diagnosed disease. Methods<lb/> We randomly assigned patients with newly diagnosed metastatic non-small-cell<lb/> lung cancer to receive either early palliative care integrated with standard onco-<lb/>logic care or standard oncologic care alone. Quality of life and mood were assessed<lb/> at baseline and at 12 weeks with the use of the Functional Assessment of Cancer<lb/> Therapy-Lung (FACT-L) scale and the Hospital Anxiety and Depression Scale, re-<lb/>spectively. The primary outcome was the change in the quality of life at 12 weeks.<lb/> Data on end-of-life care were collected from electronic medical records. Results<lb/> Of the 151 patients who underwent randomization, 27 died by 12 weeks and 107<lb/> (86% of the remaining patients) completed assessments. Patients assigned to early<lb/> palliative care had a better quality of life than did patients assigned to standard<lb/> care (mean score on the FACT-L scale [in which scores range from 0 to 136, with<lb/> higher scores indicating better quality of life], 98.0 vs. 91.5; P = 0.03). In addition,<lb/> fewer patients in the palliative care group than in the standard care group had<lb/> depressive symptoms (16% vs. 38%, P = 0.01). Despite the fact that fewer patients in<lb/> the early palliative care group than in the standard care group received aggressive<lb/> end-of-life care (33% vs. 54%, P = 0.05), median survival was longer among patients<lb/> receiving early palliative care (11.6 months vs. 8.9 months, P = 0.02). Conclusions<lb/> Among patients with metastatic non-small-cell lung cancer, early palliative care led<lb/> to significant improvements in both quality of life and mood. As compared with<lb/> patients receiving standard care, patients receiving early palliative care had less<lb/> aggressive care at the end of life but longer survival. (Funded by an American<lb/> Society of Clinical Oncology Career Development Award and philanthropic gifts;<lb/> ClinicalTrials.gov number, NCT01038271.)<lb/></div>
+
+	<note type="copyright">The New England Journal of Medicine is produced by NEJM Group, a division of the Massachusetts Medical Society.<lb/> Downloaded from nejm.org on November 22, 2024. For personal use only.<lb/> No other uses without permission. Copyright © 2010 Massachusetts Medical Society. All rights reserved.<lb/></note>
+          
+    The New England Journal of Medicine is produced by NEJM Group, a division of the Massachusetts Medical Society.<lb/> Downloaded from nejm.org on November 22, 2024. For personal use only.<lb/> No other uses without permission. Copyright © 2010 Massachusetts Medical Society. All rights reserved.<lb/> Copyright © 2010 Massachusetts Medical Society.<lb/>
+
+	The New England Journal of Medicine is produced by NEJM Group, a division of the Massachusetts Medical Society.<lb/> Downloaded from nejm.org on November 22, 2024. For personal use only.<lb/> No other uses without permission. Copyright © 2010 Massachusetts Medical Society. All rights reserved. 
+
+		</front>
+	</text>
+
+</TEI>

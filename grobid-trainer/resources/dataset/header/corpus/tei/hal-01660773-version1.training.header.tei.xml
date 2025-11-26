@@ -1,0 +1,91 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title level="a">Unknown Title</title>
+      </titleStmt>
+      <editionStmt>
+        <edition>
+          <date when="2025-11-13T15:10:19.435379Z">13.11.2025 15:10:19</date>
+          <title>grobid.training.header [default]</title>
+          <idno type="fileref">hal-01660773-version1</idno>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+        <date type="publication"/>
+        <idno type="DOI"/>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>. (). Unknown Title. , (), . DOI: None</bibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <appInfo>
+        <application version="1.0" ident="pdf-tei-editor" type="editor">
+          <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+        </application>
+        <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-13T15:10:19.435379Z" type="extractor">
+          <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+          <label type="revision">4ae14a7</label>
+          <label type="flavor">default</label>
+          <label type="variant-id">grobid.training.header</label>
+          <ref target="https://github.com/kermitt2/grobid"/>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <revisionDesc>
+      <change when="2025-11-13T15:10:19.435379Z" status="draft">
+        <desc>Generated with createTraining API</desc>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Optimal discrete slicing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>MARC ALEXA<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Technische Universit ät Berlin<lb/></affiliation>
+	</byline>
+
+    and<lb/> 
+          
+    <byline>
+	<docAuthor>KRISTIAN HILDEBRAND<lb/> </docAuthor>
+	</byline>  
+
+    <byline>
+	<affiliation>Beuth Hochschule f ür Technik Berlin<lb/></affiliation>
+	</byline>
+          
+	and<lb/>
+	<byline>
+	<docAuthor>SYLVAIN LEFEBVRE</docAuthor>
+	</byline>
+
+    <byline>
+	<affiliation>INRIA<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Slicing is the procedure necessary to prepare a shape for layered manufactu-<lb/>ring. There are degrees of freedom in this process, such as the starting point<lb/> of the slicing sequence and the thickness of each slice. The choice of these<lb/> parameters influences the manufacturing process and its result: the number<lb/> of slices significantly affects the time needed for manufacturing, while their<lb/> thickness affects the error. Assuming a discrete setting, we measure the er-<lb/>ror as the number of voxels that are incorrectly assigned due to slicing. We<lb/> provide an algorithm that generates, for a given set of available slice heig-<lb/>hts and a shape, a slicing that is provably optimal. By optimal we mean<lb/> that the algorithm generates sequences with minimal error for any possible<lb/> number of slices. The algorithm is fast and flexible, i.e. it can accommodate<lb/> a user driven importance modulation of the error function and allows the<lb/> interactive exploration of the desired quality/time tradeoff. We demonstrate<lb/> the practical importance of our optimization on several 3D-printed results.<lb/></div>
+
+	Categories and Subject Descriptors:
+	<keyword>I.3.5 [Computer Graphics]: Compu-<lb/>tational Geometry and Object Modeling-Curve, surface, solid, and object representations<lb/></keyword>
+
+	General Terms: <keyword>Algortihms<lb/></keyword> Additional Key Words and Phrases:
+	<keyword>computer numerical control, direct<lb/> digital manufacturing, additive manufacturing, slicing, dynamic program-ming</keyword>
+
+		</front>
+	</text>
+
+</TEI>

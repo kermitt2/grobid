@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Chan</forename>
+								 <middlename>Soo</middlename>
+								 <surname>Kim</surname>
+								 <marker>a,b,1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Junho</forename>
+								 <surname>Jang</surname>
+								 <marker>a, 1</marker> ,
+							</persName>
+							<persName>
+								 <forename>Hyeon-Gyun</forename>
+								 <surname>Im</surname>
+								 <marker>a</marker> ,
+							</persName>
+							<persName>
+								 <forename>Seogyoung</forename>
+								 <surname>Yoon</surname>
+								 <marker>b,**</marker> ,
+							</persName>
+							<persName>
+								 <forename>Dong</forename>
+								 <middlename>Jun</middlename>
+								 <surname>Kang</surname>
+								 <marker>a, *</marker>
+							</persName>
+							A R T I C L E I N F O
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -1,0 +1,163 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Research data in paleobotany: petrographic thin sections fossil wood dataset</title>
+      <author>
+        <persName>
+          <forename>Alexandre Ribas</forename>
+          <surname>Semeler</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Margot</forename>
+          <surname>Guerra-Sommer</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T16:58:00.467559Z">12.11.2025 16:58:00</date>
+        <title>grobid.training.header [default]</title>
+        <idno type="fileref">10.5007$1$1518-2924.2024.e95688</idno>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>Universidade Federal de Santa Catarina (UFSC)</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.5007/1518-2924.2024.e95688</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Alexandre Ribas Semeler, Margot Guerra-Sommer. (2024). Research data in paleobotany: petrographic thin sections fossil wood dataset. Encontros Bibli: revista eletrônica de biblioteconomia e ciência da informação, 29(None), 01-12. DOI: 10.5007/1518-2924.2024.e95688</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T16:58:00.467559Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T16:58:00.467559Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+    <change when="2025-11-12T17:10:48.300Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="pt">
+		<front>
+<lb/>
+	<reference>Encontros Bibli, Florianópolis, v. 29, 2024: e95688<lb/> Universidade Federal de Santa Catarina. ISSN 1518-2924.<lb/></reference>
+
+	<idno>DOI: https://doi.org/10.5007/1518-2924.2024.e95688<lb/></idno>/EN
+
+	<note type="doctype">Data Paper<lb/></note>
+
+	<docTitle>
+	<titlePart>RESEARCH DATA IN PALEOBOTANY: PETROGRAPHIC<lb/> THIN SECTIONS FOSSIL WOOD DATASET<lb/></titlePart>
+	</docTitle>
+
+    <docTitle>
+	<titlePart>Dados de pesquisa em paleobotânica: conjunto de dados petrográficos de lâminas delgadas de<lb/> lenhos fósseis<lb/></titlePart>
+    </docTitle>
+
+	<byline>
+	<docAuthor>Alexandre Ribas Semeler<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universidade Federal do Rio Grande do Sul, Instituto de Geociências<lb/></affiliation>
+	</byline>
+
+	<address>Porto Alegre, RS, Brazil<lb/></address>
+
+	<email>alexandre.semeler@ufrgs.br<lb/></email>
+
+	<idno>https://orcid.org/0000-0002-9517-4593<lb/></idno>
+
+	<byline>
+	<docAuthor>Margot Guerra Sommer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universidade Federal do Rio Grande do Sul,<lb/></affiliation>
+	</byline>
+
+	<address>Porto Alegre, RS, Brazil<lb/></address>
+
+	<email>margot.sommer@ufrgs.br<lb/></email>
+
+	<idno>https://orcid.org/0000-0002-8036-4271<lb/></idno>
+
+	A lista completa com informações dos autores está no final do artigo ABSTRACT<lb/>
+	<div type="abstract">Objective: This study was aimed at analyzing and disseminating the fossil wood collection data stored in the thin sections<lb/> of the paleobotany collection of the Department of Paleontology and Stratigraphy of the Institute of Geosciences at the<lb/> Federal University of Rio Grande do Sul. Thin sections of petrified wood are described. Research data used in geosciences<lb/> specifically seek to develop a model for the use of this type of sheet in paleobotany, enabling visualization of its<lb/> representativeness in studies published over 40 years to obtain the anatomical characteristics of fossil woods and define<lb/> their systematic affinities as a specific typology of research data in geosciences.<lb/> Methods: The methodology involved interviewing a paleobotanical specialist and using different techniques applied in<lb/> metric studies to map scientific production in petrified wood. Thus, a dataset of (20) thin slide sections of petrified fossil<lb/> wood used in &quot;Stressing environmental conditions in the &apos;petrified forest&apos; from the Mata Sequence in the Triassic context<lb/> of the Paraná Basin,&quot; a paper published by the Journal of South American Earth Sciences<lb/> (DOI:10.1016/j.jsames.2023.104415), was used. Depending on the methodology, these thin sections petrified wood can<lb/> reveal systematic paleoclimatic signatures based on the anatomical characteristics of the fossil wood. In addition to this<lb/> case study, which represents a collection of more than (2.000) thousand blades of fossil wood and approximately 40 years<lb/> of research, the paleobotanical collection of the department is reused in methodology classes. The collection comprises a<lb/> database created by research physicists that provides information on anatomical features, systematic affinities,<lb/> paleoclimatic conditions, and paleoenvironmental insights.<lb/></div>
+          
+    Potential for reuse: 
+          
+    <note type="availability">The reuse, registration, storage, identification, and preservation of thin sections as a type of research<lb/> data used in paleobotany aims to improve the methodology associated with the organization of the physical database of<lb/> the institution. The research data and blades of fossil wood are being digitized. They will soon be available under CC BY<lb/> 4.0, according to the sample described in this data paper (DOI Mendeley: 10.17632/b8phfcsync.3). Furthermore, the data<lb/> can be reused in optical and electronic scanning microscopy software.<lb/></note>
+
+	KEYWORDS:
+	<keyword>Petrographic thin sections. Fossil woods. Palaeoxylology. Research data in geosciences. Physical<lb/> database.</keyword>
+
+    RESUMO<lb/> 
+	<div type="abstract">Objetivo: O estudo visa divulgar e analisar a coleção de lenhos fósseis armazenadas no acervo de lâminas delgadas da<lb/> coleção de paleobotânica do Departamento de Paleontologia e Estratigrafia do Instituto de Geociências da Universidade<lb/> Federal do Rio Grande do Sul. Descrevem-se lâminas delgadas de madeira petrificada, enquanto dados de pesquisa<lb/> utilizados para investigação em Geociências, em específico, busca-se compor um modelo para utilização deste tipo de<lb/> lâmina na paleobotânica o que permite visualizar sua representatividade em estudos publicados durante 40 anos. Assim,<lb/> obter-se-á as características anatômicas de laminas de lenhos fósseis com vistas a definir suas afinidades sistemáticas<lb/> como uma tipologia específica de dados de pesquisa em Geociências.<lb/> Métodos: A metodologia envolve entrevista com um especialista em paleobotânica e a utilização de diferentes técnicas<lb/> aplicadas em estudos métricos para mapear a sua produção científica em lenhos fósseis. Nesse sentido, como exemplo<lb/></div>
+
+	<reference>Encontros Bibli, Florianópolis, v. 29, 2024: e95688<lb/> Universidade Federal de Santa Catarina. ISSN 1518-2924.<lb/></reference>
+
+	<idno>DOI: https://doi.org/10.5007/1518-2924.2024.e95688</idno>
+
+    /EN<lb/> 
+          
+    <page>2 de 12<lb/></page>
+
+	<div type="abstract">descrevem-se um conjunto de dados de (20) lâminas delgadas de lenhos fósseis petrificados utilizados no paper Stressing<lb/> environmental conditions in the &quot;petrified forest&quot; from the Mata Sequence in the Triassic context of the Paraná Basin<lb/> publicados pelo periódico Journal of South American Earth Sciences, conforme DOI: 10.1016/j.jsames.2023.104415. A<lb/> metodologia de utilização dessas lâminas no paper permite a identificação de assinaturas paleoclimáticas, com base em<lb/> características anatômicas de lenhos fósseis. Além desse estudo de caso, esse data paper serve para representar uma<lb/> coleção de mais de (2.000) mil lâminas de lenhos fósseis, cerca de 40 anos de pesquisa em paleobotânica que é<lb/> reutilizada em aulas de metodologia e compõem uma base de dados de pesquisa que fornece informações sobre<lb/> características anatômicas, afinidades sistemáticas, condições paleoclimáticas e percepções paleoambientais.<lb/></div> 
+          
+    Potencial de reutilização: 
+          
+    <note type="availability">A reutilização desse conjunto de dados permite o registro, o armazenamento, a identificação<lb/> e a preservação de lâminas delgadas de lenhos fósseis enquanto um tipo de dado de pesquisa em Geociências, também<lb/> objetiva aprimorar a organização de um banco de dados. Esses dados da pesquisa estão sendo digitalizados e em breve<lb/> todos estarão disponíveis sob a licença CC BY 4.0, conforme a amostra descrita nesse data paper. (Mendeley DOI:<lb/> 10.17632/b8phfcsync.3) os quais poderão ser reutilizados por softwares de microscopia óptica e de varredura eletrônica.<lb/></note>
+          
+    PALAVRAS-CHAVE: 
+    <keywords>Lâminas petrográficas. Lenhos fosseis. Paleoxilologia. Dados de pesquisa em geociências. Base<lb/> de dados física.<lb/></keywords>
+          
+    LICENÇA DE USO -uso exclusivo da revista<lb/> 
+          
+    <note type="copyright">Os autores cedem à Encontros Bibli os direitos exclusivos de primeira publicação, com o trabalho simultaneamente<lb/> licenciado sob a Licença Creative Commons Attribution (CC BY) 4.0 International. Estra licença permite que terceiros<lb/> remixem, adaptem e criem a partir do trabalho publicado, atribuindo o devido crédito de autoria e publicação inicial neste<lb/> periódico. Os autores têm autorização para assumir contratos adicionais separadamente, para distribuição não exclusiva<lb/> da versão do trabalho publicada neste periódico (ex.: publicar em repositório institucional, em site pessoal, publicar uma<lb/> tradução, ou como capítulo de livro), com reconhecimento de autoria e publicação inicial neste periódico.<lb/></note>
+
+    PUBLISHER<lb/> 
+	<publisher>Universidade Federal de Santa Catarina. Programa de Pós-graduação em Ciência da Informação. Publicação no Portal<lb/> de Periódicos UFSC.</publisher>
+
+
+	As ideias expressadas neste artigo são de responsabilidade de seus autores, não representando,<lb/> necessariamente, a opinião dos editores ou da universidade.<lb/>
+
+	EDITORES<lb/>
+
+	<editor>Edgar Bisset Alvarez, Ana Clara Cândido, Patrícia Neubert, Genilson Geraldo, Jônatas Edison da Silva,<lb/> Mayara Madeira Trevisol.<lb/></editor>
+
+	HISTÓRICO<lb/>
+	<note type="submission">Recebido em: 09-09-2023 -Aprovado em: 29-01-2024</note>
+          
+    -Publicado em: 
+          <date>23-02-2024</date>
+
+		</front>
+	</text>
+
+</TEI>

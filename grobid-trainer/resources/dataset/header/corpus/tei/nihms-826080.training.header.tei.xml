@@ -1,0 +1,126 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title level="a">Unknown Title</title>
+      </titleStmt>
+      <editionStmt>
+        <edition>
+          <date when="2025-11-13T14:08:53.866558Z">13.11.2025 14:08:53</date>
+          <title>grobid.training.header [default]</title>
+          <idno type="fileref">nihms-826080</idno>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+        <date type="publication"/>
+        <idno type="DOI"/>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>. (). Unknown Title. , (), . DOI: None</bibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <appInfo>
+        <application version="1.0" ident="pdf-tei-editor" type="editor">
+          <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+        </application>
+        <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-13T14:08:53.866558Z" type="extractor">
+          <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+          <label type="revision">4ae14a7</label>
+          <label type="flavor">default</label>
+          <label type="variant-id">grobid.training.header</label>
+          <ref target="https://github.com/kermitt2/grobid"/>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <revisionDesc>
+      <change when="2025-11-13T14:08:53.866558Z" status="draft">
+        <desc>Generated with createTraining API</desc>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>An Online Skin Cancer Risk-Reduction Intervention for Young<lb/> Adults: Mechanisms of Effects<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Carolyn J. Heckman, PhD 1 , Elizabeth A. Handorf, PhD 2 , Susan D. Darlow, PhD 1 , Lee M.<lb/> Ritterband, PhD 3,4 , and Sharon L. Manne, PhD 5<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Cancer Prevention and Control, Fox Chase Cancer Center,</affiliation>
+	</byline>
+
+	<address>Philadelphia, PA<lb/></address>
+
+	<byline>
+	<affiliation>2 Biostatistics, Fox Chase Cancer Center,</affiliation>
+	</byline>
+
+	<address>Philadelphia, PA<lb/></address>
+
+	<byline>
+	<affiliation>3 BeHealth Solutions, LLC,</affiliation>
+	</byline>
+
+	<address>Charlottesville, VA<lb/></address>
+
+	<byline>
+	<affiliation>4 University of Virginia Health System,</affiliation>
+	</byline>
+
+	<address>Charlottesvile, VA<lb/></address>
+
+	<byline>
+	<affiliation>5 Cancer Prevention and Control, Rutgers Cancer Institute of New Jersey,</affiliation>
+	</byline>
+
+	<address>New Brunswick, NJ</address>
+
+	Abstract<lb/>
+	<div type="abstract">Objective-The study&apos;s purpose was to investigate moderator, implementation, and mediator<lb/> variables related to the efficacy of UV4.me, an internet intervention that decreased ultraviolet<lb/> radiation (UV) exposure and increased skin protection behaviors among young adults.<lb/> Methods-Nine-hundred sixty-five 18-25 year olds at risk for skin cancer were recruited<lb/> nationally online. Participants were randomized to an experimental website (UV4.me), a control<lb/> website, or assessment only. Participant characteristics (moderators), engagement with and<lb/> perceptions of interventions (implementation measures), and exposure and protection attitudinal<lb/> variables (mediators) were assessed. Linear regression and mediation analyses were conducted.<lb/> Results-Intervention effects on skin protection were greater for participants with a family<lb/> history of skin cancer (p = 0.01). Intervention effects on UV exposure were greater among recent<lb/> indoor tanners (p = 0.04). Improvements in skin protection (but not UV exposure) were associated<lb/> with perceiving the interventions as satisfying or helpful (ps&lt; .01). The experimental group had<lb/> better outcomes if they completed more modules (ps&lt; .01) or set more behavioral goals (ps&lt; .01).<lb/> Knowledge and exposure decisional balance mediated intervention effects for UV exposure (ps &lt;<lb/> 0.05), and protection decisional balance, self-efficacy, and intentions mediated intervention effects<lb/> for protection (ps &lt; 0.05).<lb/> Conclusions-The experimental intervention was more efficacious for certain high risk groups.<lb/> The more individuals liked and engaged with the interventions (e.g., by setting goals), the better<lb/> their outcomes. Mediation results inform theory about change mechanisms and differed by<lb/> behavioral outcome.</div>
+
+	Keywords<lb/> 
+	<keywords>intervention mechanisms; skin cancer prevention; young adults; online intervention<lb/></keywords>
+			
+	Address correspondence to:
+	<byline>
+	<docAuthor>Carolyn J. Heckman, PhD,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Cancer Prevention and Control Program, Fox Chase Cancer Center,</affiliation>
+	</byline>
+
+	<address>Young<lb/> Pavilion, Room 4163, 333 Cottman Ave., Philadelphia PA 19111.</address>
+
+	<email>carolyn.heckman@fccc.edu</email>
+
+	.<lb/> HHS Public Access<lb/>
+	<note type="doctype">Author manuscript<lb/></note>
+
+	<title level="j">Health Psychol.</title>
+	<note type="doctype">Author manuscript</note>
+
+	; available in PMC
+	<date>2018 March 01</date>
+
+	.<lb/> Published in final edited form as:<lb/>
+	<reference>Health Psychol. 2017 March ; 36(3): 215-225.</reference>
+
+	<idno>doi:10.1037/hea0000420</idno>
+
+	.<lb/>
+	<note type="doctype">Author Manuscript<lb/> Author Manuscript<lb/> Author Manuscript<lb/> Author Manuscript</note>
+
+		</front>
+	</text>
+
+</TEI>

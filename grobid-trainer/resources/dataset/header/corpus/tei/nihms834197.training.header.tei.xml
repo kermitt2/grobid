@@ -1,0 +1,184 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title level="a">Unknown Title</title>
+      </titleStmt>
+      <editionStmt>
+        <edition>
+          <date when="2025-11-13T15:21:01.983137Z">13.11.2025 15:21:01</date>
+          <title>grobid.training.header [default]</title>
+          <idno type="fileref">nihms834197</idno>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+        <date type="publication"/>
+        <idno type="DOI"/>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>. (). Unknown Title. , (), . DOI: None</bibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <appInfo>
+        <application version="1.0" ident="pdf-tei-editor" type="editor">
+          <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+        </application>
+        <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-13T15:21:01.983137Z" type="extractor">
+          <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+          <label type="revision">4ae14a7</label>
+          <label type="flavor">default</label>
+          <label type="variant-id">grobid.training.header</label>
+          <ref target="https://github.com/kermitt2/grobid"/>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <revisionDesc>
+      <change when="2025-11-13T15:21:01.983137Z" status="draft">
+        <desc>Generated with createTraining API</desc>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Moderators of Parent Training for Disruptive Behaviors in Young<lb/> Children with Autism Spectrum Disorder<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Luc Lecavalier (a),<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Nisonger Center and Department of Psychology, Ohio State University; Professor of Psychology<lb/> and Psychiatry,</affiliation>
+	</byline>
+
+	<address>371D McCampbell Hall, 1581 Dodd Dr. Columbus, Oh 43210, 614-685-8722 (T),<lb/> 614-685-9701 (F)<lb/></address>
+
+	<byline>
+	<docAuthor>Tristram Smith (b),<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Rochester Medical Center; Associate Professor of pediatrics at the University of<lb/> Rochester Medical Center (URMC), University of Rochester Medical Center School of Medicine<lb/> and Dentistry</affiliation>
+	</byline>
+
+	<address>601 Elmwood Ave, Box 671 Rochester, NY 14642. (585) 276-3000<lb/></address>
+
+	<byline>
+	<docAuthor>Cynthia Johnson (c),<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Clinical and Health Psychology, Associate Professor. </affiliation>
+	</byline>
+
+	<address>1225 Center Dr., Room 3130<lb/> PO Box 100165 Gainesville, FL 32610-0165, (352) 273-5410 (T)<lb/></address>
+
+	<byline>
+	<docAuthor>Karen Bearss (d),<lb/></docAuthor>
+	</byline>
+
+	Assistant Professor,
+	<byline>
+	<affiliation>Department of Pediatrics and Marcus Autism Center, Marcus Autism Center<lb/></affiliation>
+	</byline>
+
+	<address>1920 Briarcliff Road Atlanta, GA 30329-4010, 404-</address>
+
+	<docTitle>
+	<titlePart>785-9544 (T), 404-785-9063 (F)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Naomi Swiezy (e),<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Associate Professor of Clinical Psychology Department of Psychiatry, Indiana University Riley<lb/> Hospital for Children </affiliation>
+	</byline>
+
+	<address>705 Riley Hospital Drive Indianapolis, IN, 46202, (317) 274-3935 (T) (317)<lb/> 274-3885 (F)<lb/></address>
+
+	<byline>
+	<docAuthor>Michael G. Aman (f),<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Ohio State University; Director of Research Professor of Psychology &amp; Psychiatry,</affiliation>
+	</byline>
+
+	<address>1581 Dodd Dr.<lb/> Columbus, Oh 43210, 614-688-4196 (T), 614-685-9701 (F)<lb/></address>
+
+	<byline>
+	<affiliation>Denis G. Sukhodolsky (g),<lb/> Assistant Professor, Yale Child Study Center, Yale Child Study Center</affiliation>
+	</byline> 
+			
+	<address>PO Box 207900 230 South<lb/> Frontage Road New Haven, CT 06520-7900, 203-785-6446 (T)<lb/></address> 
+			
+	<byline>
+	<affiliation>Yanhong Deng (h),<lb/> Statistician Yale Center for Analytical Sciences</affiliation>
+	</byline>, 
+			
+	<address>300 George Street Suite 555 New Haven, CT<lb/> 06511, 203-737-5946 (T)<lb/></address>
+
+	Conflict of Interest<lb/>
+			
+	<note type="conflict">Author (d) serves as a consultant for The Autism Foundation. Author (j) serves as a consultant for the following research<lb/> organizations: Neuren, Coronado, Roche and Supurnus Pharmaceuticals. Additionally, author (j) receives royalties from Oxford and<lb/> Guilford Press and receives research funds from The Marcus Foundation. Author (f) has received a research grant from The Autism<lb/> Treatment Network (#UA3MC11054). Author (f) served as a consultant, served on the advisory board and participated in investigator<lb/> training for: Cogstate, Inc., Confluence Pharmaceutica; Cogstate Clinical Trials, Ltd., Coronado Biosciences, Forest Research,<lb/> Hoffman-La Roche, Lumos Pharma, Medavante, Inc., Novarti&apos;s, Pfizer, Prophase LLC and Supernus Pharmaceuticals. Author (b) has<lb/> received research grants from HRSA, NIH, NIMH, Autism Speaks, U.S. Department of Education, NIH/UCLA and AIR-B/HRSA.<lb/>All other authors have declared that they have no conflict of interest.<lb/></note>
+
+	 Trial Registration: Clinicaltrials.gov #NCT01233414 http://clinicaltrials.gov/show/NCT01233414<lb/>
+
+	HHS Public Access<lb/>
+	<note type="doctype">Author manuscript<lb/></note>
+
+	J Abnorm Child Psychol.
+	<note type="doctype">Author manuscript</note>
+
+	; available in PMC
+	<date>2018 August 01</date>.<lb/>
+
+	Published in final edited form as:<lb/>
+	<reference>J Abnorm Child Psychol. 2017 August ; 45(6): 1235-1245.</reference>
+
+	<idno>doi:10.1007/s10802-016-0233-x.<lb/></idno>
+
+	<note type="doctype">Author Manuscript<lb/> Author Manuscript<lb/> Author Manuscript<lb/> Author Manuscript<lb/></note>
+
+	<byline>
+	<docAuthor>James Dziura (i)</docAuthor>
+	</byline>
+	, and<lb/> 
+			
+	<byline>
+	<affiliation>Associate Professor of Emergency Medicine, of Medicine (Endocrinology) and of Public Health<lb/> (Biostatistics)</affiliation>
+	</byline>
+			
+	, 
+			
+	<address>300 George Street, Ste 555 New Haven, CT 06511, (203)-737-4468 (T),<lb/> (203)-785-4580 (F)<lb/></address>
+
+	<byline>
+	<docAuthor>Lawrence Scahill (j)<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Professor of Pediatrics at Emory University and Director of Clinical Trials at the Marcus Autism<lb/> Center, Marcus Autism Center </affiliation>
+	</byline>
+
+	<address>1920 Briarcliff Road Atlanta, GA 30329-4010 404-785-9544 (T),<lb/> 404-785-9063 (F)</address>
+
+	Abstract<lb/>
+	<div type="abstract">We conducted a 6 month, randomized trial of parent training (PT) versus a parent education<lb/> program (PEP) in 180 young children (158 boys, 22 girls), ages 3-7 years, with autism spectrum<lb/> disorder (ASD). PT was superior to PEP in decreasing disruptive and noncompliant behaviors. In<lb/> the current study, we assess moderators of treatment response in this trial. Thirteen clinical and<lb/> demographic variables were evaluated as potential moderators of three outcome variables: the<lb/> Aberrant Behavior Checklist-Irritability subscale (ABC-I), Home Situations Questionnaire (HSQ),<lb/> and Clinical Global Impressions-Improvement Scale (CGI-I). We used an intent-to-treat model<lb/> and random effects regression. Neither IQ nor ASD severity moderated outcome on the selected<lb/> outcome measures. Severity of Attention Deficit Hyperactivity Disorder (ADHD) and anxiety<lb/> moderated outcomes on the ABC-I and HSQ. For instance, there was a 6.6 point difference on the<lb/> ABC-I between high and low ADHD groups (p = .05) and a 5.3 point difference between high and<lb/> low Anxiety groups (p = .04). Oppositional defiant disorder symptoms and household income<lb/> moderated outcomes on the HSQ. None of the baseline variables moderated outcome on the CGI-<lb/>I. That IQ and ASD symptom severity did not moderate outcome suggests that PT is likely to<lb/> benefit a wide range of children with ASD and disruptive behavior.</div>
+
+	Keywords<lb/>
+	<keyword>Autism spectrum disorder; parent training; moderator; ADHD; anxiety</keyword>
+
+		</front>
+	</text>
+
+</TEI>

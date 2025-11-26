@@ -48,6 +48,8 @@ public class SegmentationLabels extends TaggingLabels{
     public static final TaggingLabel ACKNOWLEDGEMENT = new TaggingLabelImpl(GrobidModels.SEGMENTATION, ACKNOWLEDGEMENT_LABEL);
 
     public static final TaggingLabel AVAILABILITY = new TaggingLabelImpl(GrobidModels.SEGMENTATION, AVAILABILITY_LABEL);
+    public static final TaggingLabel CONFLICT_OF_INTEREST = new TaggingLabelImpl(GrobidModels.SEGMENTATION, CONFLICT_OF_INTEREST_LABEL);
+    public static final TaggingLabel AUTHOR_CONTRIBUTION = new TaggingLabelImpl(GrobidModels.SEGMENTATION, AUTHOR_CONTRIBUTION_LABEL);
     public static final TaggingLabel FUNDING = new TaggingLabelImpl(GrobidModels.SEGMENTATION, FUNDING_LABEL);
     public static final TaggingLabel TOC = new TaggingLabelImpl(GrobidModels.SEGMENTATION, TOC_LABEL);
 
@@ -65,6 +67,8 @@ public class SegmentationLabels extends TaggingLabels{
         register(AVAILABILITY);
         register(FUNDING);
         register(TOC);
+        register(CONFLICT_OF_INTEREST);
+        register(AUTHOR_CONTRIBUTION);
     }
 
 }

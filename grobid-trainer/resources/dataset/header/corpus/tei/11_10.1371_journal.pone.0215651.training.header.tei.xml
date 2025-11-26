@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="11_10.1371_journal.pone.0215651"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Simulating beach and dune evolution at<lb/> decadal to centennial scale under rising sea levels<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Caroline Hallin ID *, Magnus Larson, Hans Hanson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Water Resources Engineering, Lund University</affiliation>,
+	</byline>
+
+	<address>Lund, Sweden<lb/></address>
+
+	*
+	<email>caroline.hallin@tvrl.lth.se</email>
+
+	Abstract<lb/>
+	<div type="abstract">A numerical model for simulating beach-dune evolution at decadal to centennial time scales<lb/> is developed. The work builds on an existing semi-empirical cross-shore model, the CS-<lb/>model, to which the effect of sea level rise is added and the routines for aeolian transport and<lb/> morphological dune evolution are improved. The model development is based on established<lb/> conceptual models from the literature, which are translated into mathematical formulations<lb/> and solved numerically. The capability of the proposed model is demonstrated through a<lb/> case study at A ¨ngelholm Beach, Sweden. The model is calibrated and validated against a<lb/> seven-year long data set on morphological evolution and sediment grain-size samples.<lb/> Beach and dune evolution is then simulated from 2018 to 2100 for a range of sea level rise<lb/> scenarios. The model results are promising, and suggest that the model has potential to be<lb/> used for long-term assessment of climate change impact on beaches and dunes.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0215651 April 19, 2019<lb/></reference>
+
+	<page>1 / 30<lb/></page> a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Hallin C, Larson M, Hanson H (2019)<lb/> Simulating beach and dune evolution at decadal to<lb/> centennial scale under rising sea levels. PLoS ONE<lb/> 14(4): e0215651.</reference>
+
+	<idno>https://doi.org/10.1371/journal.<lb/> pone.0215651<lb/></idno>
+
+	Editor:
+	<editor>João Miguel Dias</editor>,
+
+	<byline>
+	<affiliation>Universidade de Aveiro</affiliation>,
+	</byline>
+
+	<address>PORTUGAL<lb/></address>
+
+	<note type="submission">Received: October 10, 2018<lb/> Accepted: April 7, 2019<lb/></note>
+
+	Published:
+	<date>April 19, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Hallin et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+	Data Availability Statement:
+
+	<note type="availability">The wind and water<lb/> level data is open access provided by the Swedish<lb/> Meteorological and Hydrological Institute, SMHI,<lb/> through www.smhi.se. The grain size data is<lb/> available through an FTP server with address www.<lb/> tvrl.se/caf/ftp/Sieved_grain_size_samples.xlsx.<lb/> Model code, input and results files will not be<lb/> provided open access but can be made available<lb/> upon request. Contact Caroline Hallin at Lund<lb/> University, Sweden, at caroline.hallin@tvrl.lth.se.<lb/> Topographic and bathymetric data cannot be<lb/> shared publicly because it has not been collected<lb/> by the authors and is not open access. The<lb/> topographic data are available from A ¨ngelholm<lb/> municipality. Requests to access the data should<lb/> be sent to info@engelholm.se. The bathymetric<lb/> data is owned by the Swedish Geological Survey<lb/> (SGU) and can only be accessed by researchers<lb/> who meet the criteria for access to this confidential<lb/> data. For more information on how to access the<lb/> bathymetric data, contact kundservice@sgu.se.<lb/> Since the authors are not in possession of the<lb/> topographic and bathymetric data, we cannot<lb/> guarantee that the organizations who own this data<lb/> will make it available to other researchers.<lb/> However, the observed volumetric changes that are<lb/> presented in the manuscript are sufficient for<lb/> calibration and validation of the model.<lb/></note>
+
+	Funding:
+	<note type="funding">The authors received no specific funding<lb/> for this work.<lb/></note>
+
+	Competing interests:
+	<note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
+		</front>
+	</text>
+</tei>

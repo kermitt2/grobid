@@ -1,0 +1,88 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title level="a">Unknown Title</title>
+      </titleStmt>
+      <editionStmt>
+        <edition>
+          <date when="2025-11-13T17:23:49.390080Z">13.11.2025 17:23:49</date>
+          <title>grobid.training.header [default]</title>
+          <idno type="fileref">file_1</idno>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+        <date type="publication"/>
+        <idno type="DOI"/>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>. (). Unknown Title. , (), . DOI: None</bibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <appInfo>
+        <application version="1.0" ident="pdf-tei-editor" type="editor">
+          <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+        </application>
+        <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-13T17:23:49.390080Z" type="extractor">
+          <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+          <label type="revision">4ae14a7</label>
+          <label type="flavor">default</label>
+          <label type="variant-id">grobid.training.header</label>
+          <ref target="https://github.com/kermitt2/grobid"/>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <revisionDesc>
+      <change when="2025-11-13T17:23:49.390080Z" status="draft">
+        <desc>Generated with createTraining API</desc>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>CONTEXTUAL LEARNING ON THE SUBJECT OF<lb/> ISLAMIC RELIGIOUS EDUCATION IN STRENGTHENING STUDENTS&apos;<lb/> PRAYER MOTIVATION AND CHARACTER<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wahyu Bagja Sulfemi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut Teknologi dan Bisnis Visi Nusantara,</affiliation>
+	</byline>
+
+	<address>Indonesia<lb/></address>
+
+	Email:
+	<email>wahyubagja@gmail.com</email>
+
+	<byline>
+	<docAuthor>Arsyad<lb/></docAuthor>
+	</byline>
+          
+	<byline>
+	<affiliation>Institut Teknologi dan Bisnis Visi Nusantara,</affiliation>
+	</byline>
+
+	<address>Indonesia<lb/></address>
+
+	Email:
+	<email>arsyaddjamaluddin@gmail.com<lb/></email>
+
+	ABSTRACT<lb/>
+	<div type="abstract">All 7th grade students from all three public middle schools in the<lb/> Leuwiliang Subdistrict-1 Leuwiliang State Middle School, 2 Junior<lb/> High School, and Leuwiliang 3 Public Middle School-were enrolled in<lb/> the study, which was carried out at the Leuwiliang Sub-District Middle<lb/> School in Bogor Regency. Using random sampling techniques, 40<lb/> participants made up the 10% of the samples that were taken. In order to<lb/> test hypotheses stating whether or not there is a relationship between<lb/> independent variables (X1) and (X2) and dependent variables (Y), a<lb/> descriptive method that is systematic, factual, accurate descriptive of<lb/> facts and the relationship between the phenomena investigated is used.<lb/> referring to the regression test&apos;s findings. The contextual learning<lb/> approach has an impact on PAI in terms of helping students develop<lb/> their character. Contextual learning techniques have an impact on<lb/> pupils&apos; character development and motivation to pray, according to<lb/> Islamic education educators. Islamic education in schools is taught using<lb/> a contextual method that imparts knowledge, appreciation, and<lb/> encourages pupils to practice and relate it with daily life because they<lb/> experience the benefits and wisdom in it.<lb/></div>
+
+	Keywords:
+	<keyword>prayer, character, contextual learning, religious education</keyword>
+
+		</front>
+	</text>
+
+</TEI>
