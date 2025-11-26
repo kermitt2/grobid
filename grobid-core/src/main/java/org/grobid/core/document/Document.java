@@ -11,6 +11,7 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.SortedSetMultimap;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.analyzers.Analyzer;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.*;
@@ -636,7 +637,7 @@ public class Document implements Serializable {
     }
 
     /*
-     * Try to match a DOI in the first page, independently from any preliminar
+     * Try to match a DOI in the first page, independently of any preliminary
      * segmentation. This can be useful for improving the chance to find a DOI
      * in headers or footnotes.
      */
@@ -645,11 +646,11 @@ public class Document implements Serializable {
         List<Page> pages = getPages();
         int p = 0;
         for (Page page : pages) {
-            if ((page.getBlocks() != null) && (page.getBlocks().size() > 0)) {
+            if (CollectionUtils.isNotEmpty(page.getBlocks())) {
                 for (int blockIndex = 0; blockIndex < page.getBlocks().size(); blockIndex++) {
                     Block block = page.getBlocks().get(blockIndex);
                     String localText = block.getText();
-                    if ((localText != null) && (localText.length() > 0)) {
+                    if (StringUtils.isNotBlank(localText)) {
                         localText = localText.trim();
                         Matcher DOIMatcher = TextUtilities.DOIPattern.matcher(localText);
                         while (DOIMatcher.find()) {
