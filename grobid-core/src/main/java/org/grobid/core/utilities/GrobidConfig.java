@@ -3,7 +3,7 @@ package org.grobid.core.utilities;
 import java.util.List;
 
 /**
- * This class is a bean for the YAML configuation of the GROBID instance.  
+ * This class is a bean for the YAML configuration of the GROBID instance.
  *
  */
 public class GrobidConfig {
