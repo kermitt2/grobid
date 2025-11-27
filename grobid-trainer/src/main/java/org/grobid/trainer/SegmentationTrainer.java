@@ -8,6 +8,7 @@ import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.trainer.sax.TEISegmentationArticleLightRefSaxParser;
 import org.grobid.trainer.sax.TEISegmentationArticleLightSaxParser;
 import org.grobid.trainer.sax.TEISegmentationSaxParser;
+import org.grobid.trainer.sax.TEISegmentationThesisRefSaxParser;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -123,6 +124,8 @@ public class SegmentationTrainer extends AbstractTrainer {
                     parser = new TEISegmentationArticleLightSaxParser();
                 } else if (flavor == Flavor.ARTICLE_LIGHT_WITH_REFERENCES) {
                     parser = new TEISegmentationArticleLightRefSaxParser();
+                } else if (flavor == Flavor.THESIS_REFERENCES) {
+                    parser = new TEISegmentationThesisRefSaxParser();
                 } else {
                     parser = new TEISegmentationSaxParser();
                 }

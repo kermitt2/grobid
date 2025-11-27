@@ -513,6 +513,7 @@ project(":grobid-trainer") {
         "train_segmentation_article_light"    : ["org.grobid.trainer.SegmentationTrainer", "article/light"],
         "train_segmentation_article_light_ref": ["org.grobid.trainer.SegmentationTrainer", "article/light-ref"],
         "train_segmentation_ietf"             : ["org.grobid.trainer.SegmentationTrainer", "sdo/ietf"],
+        "train_segmentation_thesis_refs"      : ["org.grobid.trainer.SegmentationTrainer", "thesis/refs"],
         "train_fulltext"                      : ["org.grobid.trainer.FulltextTrainer", ""],
         "train_fulltext_article_light"        : ["org.grobid.trainer.FulltextTrainer", "article/light"],
         "train_fulltext_article_light_ref"    : ["org.grobid.trainer.FulltextTrainer", "article/light-ref"],
