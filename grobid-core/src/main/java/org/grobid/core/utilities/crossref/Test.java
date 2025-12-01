@@ -129,12 +129,12 @@ public class Test {
 	    	for (int i=0 ; i<DOIs.length ; i++) {
 	    		String doi = DOIs[i];
 	    		final int id = i;
-	    		Map<String, String> arguments = new HashMap<String,String>();
+	    		Map<String, String> arguments = new HashMap<>();
 	    		arguments.put("doi", doi);
 	    		// ASYNCHRONOUS TEST (50 first requests)
 	    		if (i < 90) {
 	    		
-		    		client.<BiblioItem>pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>() {
+		    		client.pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<>() {
 		    			
 		    			@Override
 		    			public void onSuccess(List<BiblioItem> results) {
@@ -154,8 +154,8 @@ public class Test {
 	    		// SYNCHRONOUS TEST (10 last requests)
 	    		else {
 	    			
-	    			CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<BiblioItem>();
-	    			client.<BiblioItem>pushRequest("works", arguments, workDeserializer, threadId, requestListener);
+	    			CrossrefRequestListener<BiblioItem> requestListener = new CrossrefRequestListener<>();
+	    			client.pushRequest("works", arguments, workDeserializer, threadId, requestListener);
 	    			
 	    			synchronized (requestListener) {
 				        try {
