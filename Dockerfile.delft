@@ -15,7 +15,7 @@
 # build builder image
 # -------------------
 
-FROM openjdk:17-jdk-slim as builder
+FROM eclipse-temurin:17.0.15_6-jdk as builder
 
 USER root
 
