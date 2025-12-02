@@ -1,0 +1,44 @@
+name: Pull, retag and push Docker image
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_image:
+        description: 'Source image repository (e.g. lfoppiano/grobid)'
+        required: true
+        default: 'lfoppiano/grobid'
+      source_tag:
+        description: 'Source image tag'
+        required: true
+        default: 'latest-crf'
+      target_image:
+        description: 'Target image repository (e.g. grobid/grobid)'
+        required: true
+        default: 'grobid/grobid'
+      target_tag:
+        description: 'Target image tag'
+        required: true
+        default: 'latest-crf'
+
+jobs:
+  retag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Pull, retag and push
+        run: |
+          SRC="${{ github.event.inputs.source_image }}:${{ github.event.inputs.source_tag }}"
+          DST="${{ github.event.inputs.target_image }}:${{ github.event.inputs.target_tag }}"
+          echo "Pulling $SRC"
+          docker pull "$SRC"
+          echo "Tagging $SRC -> $DST"
+          docker tag "$SRC" "$DST"
+          echo "Pushing $DST"
+          docker push "$DST"
+          # optional cleanup
+          docker rmi "$SRC" "$DST" || true
