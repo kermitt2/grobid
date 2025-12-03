@@ -55,8 +55,10 @@ public class TextUtilities {
     static public final Pattern ORCIDPattern = Pattern.compile(ORCIDRegex);
 
     // the magical DOI regular expression...
+    // This pattern matches a DOI beginning with 10.<registrant>/<suffix> and ensures the final character is not a
+    // trailing quote or punctuation like ", ', comma, semicolon, period, colon, etc. Internal periods are allowed.
     static public final Pattern DOIPattern = Pattern
-        .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");
+        .compile("(10\\.\\d{4,5}/\\S+[^\\s\"'“”‘’`,.;:!?\\)\\]\\}>])");
 
     // a regular expression for arXiv identifiers
     // see https://arxiv.org/help/arxiv_identifier and https://arxiv.org/help/arxiv_identifier_for_services
@@ -84,7 +86,7 @@ public class TextUtilities {
     // TODO: maybe find a better regex (better == more robust, not more "standard")
     static public final Pattern emailPattern = Pattern.compile("\\w+((\\.|-|_|,)\\w+)?\\s?((\\.|-|_|,)\\w+)?\\s?@\\s?\\w+(\\s?(\\.|-)\\s?\\w+)+");
     // variant: \w+(\s?(\.|-|_|,)\w+)?(\s?(\.|-|_|,)\w+)?\s?@\s?\w+(\s?(\.|\-)\s?\w+)+
-    
+
     /**
      * Replace numbers in the string by a dummy character for string distance evaluations
      *
