@@ -80,6 +80,7 @@ public enum GrobidModels implements GrobidModel {
         BLANK("blank"),
         ARTICLE_LIGHT("article/light"),
         ARTICLE_LIGHT_WITH_REFERENCES("article/light-ref"),
+        ARTICLE_DH_LAW_FOOTNOTES("article/dh-law-footnotes"),
         _3GPP("sdo/3gpp"),
         IETF("sdo/ietf");
 
@@ -171,7 +172,8 @@ public enum GrobidModels implements GrobidModel {
         } else {
             GrobidModel grobidModel = modelFor(model.toString() + "/" + flavor.getLabel().toLowerCase());
             if (!Files.exists(Paths.get(grobidModel.getModelPath()))) {
-                LOGGER.info("The requested model flavor " + flavor.getLabel() + " model is not available. Defaulting to the standard model. ");
+                LOGGER.info("The requested model flavor " + flavor.getLabel() + " model is not available. " +
+                    "Defaulting to the standard model. ");
                 return model;
             } else {
                 return grobidModel;
