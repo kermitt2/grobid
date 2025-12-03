@@ -7,9 +7,11 @@ import org.grobid.core.main.LibraryLoader;
 import org.junit.*;
 
 import java.util.List;
+import java.util.Arrays;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -101,5 +103,27 @@ public class TestCitationParser extends EngineTest {
             is(1997));
         assertNotNull(resCitation.getFullAuthors());
 
+    }
+
+    @Test
+    public void testCitationParser6_withoutConsolidation() throws Exception {
+        // test handling of empty or whitespace-only citation strings
+
+        String empty_citation = "";
+        BiblioItem resEmptyCitation = engine.processRawReference(empty_citation, 0);
+        assertNull(resEmptyCitation);
+
+        // these are non-breaking whitespace unicode characters
+        String nbsp_citation = "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0";
+        BiblioItem resNBSPCitation = engine.processRawReference(nbsp_citation, 0);
+        assertNull(resEmptyCitation);
+
+        List<String> all_whitespace_citations = Arrays.asList("", "\t", "  ", "\u00a0\u00a0\u00a0\u00a0\u00a0");
+        List<BiblioItem> resAllWhitespaceCitationList = engine.processRawReferences(all_whitespace_citations, 0);
+        assertThat(resAllWhitespaceCitationList.size(), is(0));
+
+        List<String> partial_whitespace_citations = Arrays.asList("", "\t", "  ", "\u00a0\u00a0\u00a0\u00a0\u00a0", "blah");
+        List<BiblioItem> resPartialCitationList = engine.processRawReferences(partial_whitespace_citations, 0);
+        assertThat(resPartialCitationList.size(), is(1));
     }
 }
