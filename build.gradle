@@ -210,7 +210,7 @@ subprojects {
 
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED",
-                "--add-opens", "java.base/java.io=ALL-UNNAMED", 
+                "--add-opens", "java.base/java.io=ALL-UNNAMED",
                 "--add-opens", "java.xml/jdk.xml.internal=ALL-UNNAMED",
                 // PowerMock compatibility with Java 21 - TODO: Replace PowerMock with Mockito/JUnit Jupiter
                 "--add-opens", "java.base/java.lang=ALL-UNNAMED",
@@ -526,8 +526,14 @@ project(":grobid-trainer") {
             libraries = "${file("../grobid-home/lib/mac-64").absolutePath}"
         }
     } else if (Os.isFamily(Os.FAMILY_UNIX)) {
-        libraries = "${file("../grobid-home/lib/lin-64/jep").absolutePath}:" +
+        if (Os.OS_ARCH.equals("aarch64")) {
+            libraries = "${file("../grobid-home/lib/lin_arm-64/jep").absolutePath}:" +
+            "${file("../grobid-home/lib/lin_arm-64").absolutePath}:"
+        } else {
+            libraries = "${file("../grobid-home/lib/lin-64/jep").absolutePath}:" +
             "${file("../grobid-home/lib/lin-64").absolutePath}:"
+        }
+
     } else {
         throw new RuntimeException("Unsupported platform!")
     }
@@ -656,8 +662,9 @@ tasks.register("codeCoverageReport", JacocoReport) {
     // HTML -> for manual check
     reports {
         xml.required = true
-        html.required = true
         csv.required = true
+        html.outputLocation = layout.buildDirectory.dir("jacocoHtml")
+        html.required = true
     }
 
 }

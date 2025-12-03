@@ -132,6 +132,24 @@ Access the service:
 
 Grobid web services are then available as described in the [service documentation](Grobid-service.md).
 
+### ARM64
+
+Since version 0.8.1 the CRF-only image is available for both x86_64 and arm64. 
+The `lfoppiano/grobid:{latest_grobid_version}` support both architectures by default. 
+
+To run it on arm64, use the following command:
+
+```bash
+docker run --ulimit core=0 --platform linux/amd64 --init -p 8070:8070 --name grobid lfoppiano/grobid:{latest_grobid_version}
+```
+
+As discussed [here](https://github.com/kermitt2/grobid/issues/1119#issuecomment-2362204879), it is mandatory to provide the parameter `--platform linux/amd64` to force the usage of amd64 architecture and avoid the raising of the rosetta error: 
+
+```
+rosetta error: failed to open elf at /lib64/ld-linux-x86-64.so.2
+```
+
+**NOTE**: The arm64 image has been tested only on `macOs` (not linux `arm64`).
 
 ## Configure using the yaml config file
 
