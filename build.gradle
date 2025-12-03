@@ -104,7 +104,7 @@ subprojects {
         publications {
             mavenJava(MavenPublication) {
                 from components.java
-                //artifact jar 
+                //artifact jar
             }
         }
         repositories {
@@ -185,6 +185,11 @@ subprojects {
         implementation "com.fasterxml.jackson.core:jackson-databind:2.14.3"
         implementation "com.fasterxml.jackson.module:jackson-module-afterburner:2.14.3"
         implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.3"
+
+        implementation 'org.apache.xmlgraphics:batik-anim:1.19'
+        implementation 'org.apache.xmlgraphics:batik-bridge:1.19'
+        implementation 'org.apache.xmlgraphics:batik-svg-dom:1.19'
+        implementation 'org.apache.xmlgraphics:batik-dom:1.19'
     }
 
     tasks.register('sourceJar', Jar) {
@@ -258,6 +263,11 @@ project("grobid-core") {
         implementation 'black.ninia:jep:4.0.3'
         implementation 'org.apache.opennlp:opennlp-tools:1.9.4'
         implementation group: 'org.jruby', name: 'jruby-complete', version: '9.4.12.1'
+
+        implementation 'org.apache.xmlgraphics:batik-anim:1.14'
+        implementation 'org.apache.xmlgraphics:batik-bridge:1.14'
+        implementation 'org.apache.xmlgraphics:batik-svg-dom:1.14'
+        implementation 'org.apache.xmlgraphics:batik-dom:1.14'
 
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
     }
@@ -376,17 +386,17 @@ project(":grobid-service") {
         //Dropwizard
         implementation 'ru.vyarus:dropwizard-guicey:7.0.2'
 
-        implementation 'io.dropwizard:dropwizard-bom:4.0.13'
-        implementation 'io.dropwizard:dropwizard-core:4.0.13'
-        implementation 'io.dropwizard:dropwizard-assets:4.0.13'
-        implementation 'io.dropwizard:dropwizard-testing:4.0.13'
-        implementation 'io.dropwizard.modules:dropwizard-testing-junit4:4.0.13'
-        implementation 'io.dropwizard:dropwizard-forms:4.0.13'
-        implementation 'io.dropwizard:dropwizard-client:4.0.13'
-        implementation 'io.dropwizard:dropwizard-auth:4.0.13'
+        implementation platform('io.dropwizard:dropwizard-bom:4.0.14')
+        implementation 'io.dropwizard:dropwizard-core:4.0.14'
+        implementation 'io.dropwizard:dropwizard-assets:4.0.14'
+        implementation 'io.dropwizard:dropwizard-testing:4.0.14'
+        implementation 'io.dropwizard.modules:dropwizard-testing-junit4:4.0.14'
+        implementation 'io.dropwizard:dropwizard-forms:4.0.14'
+        implementation 'io.dropwizard:dropwizard-client:4.0.14'
+        implementation 'io.dropwizard:dropwizard-auth:4.0.14'
         implementation 'io.dropwizard.metrics:metrics-core:4.2.30'
         implementation 'io.dropwizard.metrics:metrics-servlets:4.2.30'
-        implementation 'io.dropwizard:dropwizard-json-logging:4.0.13'
+        implementation 'io.dropwizard:dropwizard-json-logging:4.0.14'
 
         implementation "org.apache.pdfbox:pdfbox:2.0.33"
         implementation "javax.activation:activation:1.1.1"
