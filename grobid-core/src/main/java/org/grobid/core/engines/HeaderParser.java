@@ -127,8 +127,14 @@ public class HeaderParser extends AbstractParser {
                 String res = null;
                 if (StringUtils.isNotBlank(header)) {
                     res = label(header);
+
+                    if (GrobidProperties.getGrobidEngineName("header").equals("delft")) {
+                        res = LabelUtils.postProcessFulltextCorrectSequencesWithoutInitialToken(res);
+                    }
                     resHeader = resultExtraction(res, headerTokenization, resHeader);
                 }
+
+
 
                 // language identification
                 StringBuilder contentSample = new StringBuilder();
