@@ -72,7 +72,8 @@
 	Funding:
 	<note type="funding">The authors received no specific funding<lb/> for this work.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.
+	Competing interests:
+    <note type="conflict">The authors have declared<lb/> that no competing interests exist.</note>
 		</front>
 	</text>
 </tei>

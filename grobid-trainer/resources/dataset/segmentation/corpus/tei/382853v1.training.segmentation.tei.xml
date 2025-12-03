@@ -179,7 +179,7 @@
 
 			<page>29 <lb/></page>
 
-			<div type="annex">Author contributions <lb/>MGu and AH performed most experiments; AP, JC, JHL, BD, CHE and DGR performed <lb/>additional experiments; MGu, MGi and MT performed data analysis; SRC and DGR <lb/>provided intellectual input; MT, AH and MGu designed experiments; MT, AH and MGu <lb/>wrote the paper with contributions of all authors. <lb/></div>
+			<div type="contribution">Author contributions <lb/>MGu and AH performed most experiments; AP, JC, JHL, BD, CHE and DGR performed <lb/>additional experiments; MGu, MGi and MT performed data analysis; SRC and DGR <lb/>provided intellectual input; MT, AH and MGu designed experiments; MT, AH and MGu <lb/>wrote the paper with contributions of all authors. <lb/></div>
 
 			<div type="acknowledgement">Acknowledgements: <lb/>We would like to thank the DNA cloning, Protein Production, Antibody <lb/>Production, DNA sequencing facility, tissue culture and mass spectrometry teams of <lb/>the MRC Protein Phosphorylation and Ubiquitylation Unit for their support. We would <lb/>like to thank Rosemary Clarke for help with flow cytometry analyses, Sir Philip Cohen <lb/>for providing reagents, Siamon Gordon for kindly providing MSR1 KO mice, Natalia <lb/> Shpiro for synthesis of sodium 3-[(2-methyl-2-undecyl-1,3-dioxolan-4-yl)methoxy]-1-<lb/>propanesulfonate and Carol Clacher, Laura Frew and Gail Gilmour in Transgenic <lb/>Services for collection of murine femurs. This work was funded by Medical Research <lb/>Council UK (MC_UU_12016/5) and the pharmaceutical companies supporting the <lb/>Division of Signal Transduction Therapy (DSTT) (Boehringer-Ingelheim, <lb/>GlaxoSmithKline and Merck KGaA). We would like to acknowledge Dundee Imaging <lb/>Facility which is supported by the &apos;Wellcome Trust Technology Platform&apos; award <lb/>[097945/B/11/Z] and the &apos;MRC Next Generation Optical Microscopy&apos; award <lb/>[MR/K015869/1]. The School of Life Sciences Data Analysis Group and the Flow <lb/>Cytometry Facility are funded by Wellcome Trust grants 097945/Z/11/Z and <lb/>081867/Z/06/Z, respectively. <lb/></div>
 
@@ -225,23 +225,23 @@
 
 			<page>2 <lb/></page>
 
-			<note place="footnote">Guo &amp; Härtlova et al, MSR1 in alternatively activated macrophages -Figures <lb/></note>
+			<note place="headnote">Guo &amp; Härtlova et al, MSR1 in alternatively activated macrophages -Figures <lb/></note>
 
 			<page>3 <lb/></page>
 
-			<note place="footnote">Guo &amp; Härtlova et al, MSR1 in alternatively activated macrophages -Figures <lb/></note>
+			<note place="headnote">Guo &amp; Härtlova et al, MSR1 in alternatively activated macrophages -Figures <lb/></note>
 
 			<page>4 <lb/></page>
 
-			<note place="footnote">Guo &amp; Härtlova et al, MSR1 in alternatively activated macrophages -Figures <lb/></note>
+			<note place="headnote">Guo &amp; Härtlova et al, MSR1 in alternatively activated macrophages -Figures <lb/></note>
 
 			<page>5 <lb/></page>
 
-			<note place="footnote">Guo &amp; Härtlova et al, MSR1 in alternatively activated macrophages -Figures <lb/></note>
+			<note place="headnote">Guo &amp; Härtlova et al, MSR1 in alternatively activated macrophages -Figures <lb/></note>
 
 			<page>6 <lb/></page>
 
-			<note place="footnote">Guo &amp; Härtlova et al, MSR1 in alternatively activated macrophages -Figures </note>
+			<note place="headnote">Guo &amp; Härtlova et al, MSR1 in alternatively activated macrophages -Figures </note>
 
 
 	</text>

@@ -15,9 +15,9 @@
 
 			<div type="availability">Data accessibility statement. <lb/>All data were downloaded from Paleobiology Database (https://paleobiodb.org/#/). A copy of the <lb/>download will be made available on the authors&apos; website together with the necessary code for <lb/>reproducing the results. <lb/></div>
 
-			<div type="annex">Competing interests statement. <lb/>The authors declare no competing interests. <lb/></div>
+			<div type="conflict">Competing interests statement. <lb/>The authors declare no competing interests. <lb/></div>
 
-			<div type="annex">Authors&apos; contributions <lb/>JS conceived the study, performed the analysis and wrote the manuscript with substantial contributions to writing <lb/>and interpretation by LHL. Both authors gave final approval for publication. <lb/></div>
+			<div type="contribution">Authors&apos; contributions <lb/>JS conceived the study, performed the analysis and wrote the manuscript with substantial contributions to writing <lb/>and interpretation by LHL. Both authors gave final approval for publication. <lb/></div>
 
 			<div type="acknowledgement">Acknowledgements: <lb/>Kjetil Lysne Voje is acknowledged for fruitful discussions surrounding the initial idea, and Fakutsi is <lb/>recognized for inspiration. This work would not be possible without vertebrate paleontologists who <lb/>contributed primary data and the authorizers and enterers of the PaleoDB who compiled these primary <lb/>data. Major contributors to the downloaded PaleoDB data are Matthew Carrano (59,8%), John Alroy <lb/>(13,9%), Mark Uhen (8,9%), Anna Behrensmeyer (4,6) and Philip Mannion (3,1%). This is PaleoDB <lb/>Publication XXX. <lb/></div>
 

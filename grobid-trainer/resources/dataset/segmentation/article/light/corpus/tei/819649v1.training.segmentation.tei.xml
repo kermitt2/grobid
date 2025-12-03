@@ -68,8 +68,9 @@
 
 			<div type="availability">Availability of data and software <lb/>All data analyzed during this study are included in the supplementary information of <lb/>Simeonov et al. (Supplementary Table 1) 9 . MAUDE is available as an R package on <lb/>GitHub (https://github.com/Carldeboer/MAUDE). <lb/></div>
 
-			<div type="annex">Authors&apos; contributions <lb/>CGD conceived of and implemented the algorithms with help from JPR. CGD drafted the <lb/>manuscript, with input from JPR, AR, and NH. All authors read and approved the final <lb/>manuscript. <lb/></div>
+			<div type="contribution">Authors&apos; contributions <lb/>CGD conceived of and implemented the algorithms with help from JPR. CGD drafted the <lb/>manuscript, with input from JPR, AR, and NH. All authors read and approved the final <lb/>manuscript. <lb/></div>
 
+            <!-- CHECK COI -->
 			<div type="acknowledgement">Acknowledgements <lb/>We thank Benjamin Doughty and Charles Fulco for helpful discussions. <lb/>CGD was supported by a Fellowship from the Canadian Institutes for Health Research <lb/>and the NIH (K99-HG009920-01). JPR is funded by NIH 5 F32 AI129249. Work was <lb/>supported by the Klarman Cell Observatory and HHMI (AR), the Center for Cell <lb/>Circuits, a Center of Excellence in Genome Science (RM1HG006193), and the NHGRI <lb/>(R01HG008131-01; NH). NH is the David P. Ryan endowed chair, and thanks Sandra, <lb/>Sarah and Arthur Irving for support. <lb/>AR is an equity holder and founder of Celsius Therapeutics and an SAB member of <lb/>ThermoFisher Scientific, Neogene Therapeutics and Syros Pharmaceuticals. NH is a co-<lb/>founder and equity holder of Neon Therapeutics. All other authors declare no competing <lb/>interests. <lb/></div>
 
 			<page>17 <lb/></page>

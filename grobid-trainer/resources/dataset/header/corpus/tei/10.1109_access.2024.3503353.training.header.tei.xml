@@ -1,0 +1,135 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Combustion Field Prediction and Diagnosis via Spatiotemporal Discrete U-ConvLSTM Model</title>
+      <author>
+        <persName>
+          <forename>Xiaodong</forename>
+          <surname>Huang</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Xiaojian</forename>
+          <surname>Hao</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Baowu</forename>
+          <surname>Pan</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Shaogang</forename>
+          <surname>Chen</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Shenxiang</forename>
+          <surname>Feng</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Pan</forename>
+          <surname>Pei</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T16:13:32.267Z">12/11/2025 16:13:32</date>
+        <title>corrections</title>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>Institute of Electrical and Electronics Engineers (IEEE)</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.1109/JPHOT.2024.3366425</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Xiaodong Huang, Xiaojian Hao, Baowu Pan, Shaogang Chen, Shenxiang Feng, Pan Pei. (2024). Combustion Field Prediction and Diagnosis via Spatiotemporal Discrete U-ConvLSTM Model. IEEE Photonics Journal, 16(2), 1-10. DOI: 10.1109/JPHOT.2024.3366425</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T16:12:04.079766Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T16:12:04.079766Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+<lb/>
+	<reference>IEEE PHOTONICS JOURNAL, VOL. 16, NO. 2, APRIL 2024 6800610<lb/></reference>
+
+	<docTitle>
+	<titlePart>Combustion Field Prediction and Diagnosis via<lb/> Spatiotemporal Discrete U-ConvLSTM Model<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Xiaodong Huang , Xiaojian Hao , Baowu Pan , Shaogang Chen , Shenxiang Feng , and Pan Pei<lb/></docAuthor>
+	</byline>
+
+	Abstract-
+	<div type="abstract">Considering the importance of combustion diagno-<lb/>sis in industrial manufacturing and many fields, efficient, quick,<lb/> and real-time multidimensional reconstruction is necessary and<lb/> indispensable. Hence, focusing on the combustion field dynamic<lb/> and multi-dimensional reconstruction, a modified U-ConvLSTM<lb/> model was proposed to combine with the TDLAS method to resolve<lb/> the real-time reconstruction and short prediction. By dividing the<lb/> combustion field into space and time slices, we used discretized spa-<lb/>tiotemporal slices to complete the 2-D distribution reconstruction<lb/> and then expanded them into higher dimensions. The simulation<lb/> results demonstrate that our design can effectively reconstruct<lb/> different 2-D distributions, achieving a reconstruction error of less<lb/> than 5%. Three-step predictions also performed well, a PSNR no<lb/> less than 30 dB, and an SSIM no less than 0.75. In general, our<lb/> multidimensional combustion field reconstruction method, based<lb/> on the spatiotemporal discretization U-ConvLSTM model, can en-<lb/>hance the accuracy of combustion field reconstruction and provide<lb/> short-term predictions. This work will contribute to closed-loop<lb/> control in industrial fields.<lb/></div>
+
+	Index Terms-
+	<keyword>Tunable diode laser absorption spectroscopy<lb/> (TDLAS), U-model convolutional long short-term memory (U-<lb/>ConvLSTM), combustion site, reconstruction, predicted.<lb/></keyword>
+
+	<note type="submission">Manuscript received 12 December 2023; revised 25 January 2024; accepted<lb/> 13 February 2024</note>. Date of current version <date>1 March 2024</date>.
+
+	<note type="funding">This work was<lb/> supported in part by the National Natural Science Foundation of China under<lb/> Grant 52075504, in part by the Fund for Shanxi 1331 Project Key Subject<lb/> Construction under Grant 1331PKSC, in part by the State Key Laboratory of<lb/> Quantum Optics and Quantum Optics Devices under Grant KF202301, and in<lb/> part by the Shanxi Key Laboratory of Advanced Semiconductor Optoelectronic<lb/> Devices and System Integration under Grant 2023SZKF11.</note>
+
+	(Corresponding<lb/> author:
+	<byline>
+	<docAuthor>Xiaojian Hao</docAuthor>
+	</byline>.)<lb/>
+
+	The authors are with the
+	<byline>
+	<affiliation>State Key Laboratory of Dynamic Measurement<lb/> Technology, North University of China,</affiliation>
+	</byline>
+
+	<address>Taiyuan 030051, China,</address>
+
+	and also with<lb/> the 
+	<byline>
+	<affiliation>Science and Technology on Electronic Test and Measurement Labora-<lb/>tory, North University of China,</affiliation>
+	</byline>
+
+	<address>Taiyuan 030051, China</address>
+
+	(e-mail:
+	<email>haoxiaojian<lb/> @nuc.edu.cn</email>
+
+	).<lb/>
+          <idno>Digital Object Identifier 10.1109/JPHOT.2024.3366425</idno>
+		</front>
+	</text>
+
+</TEI>

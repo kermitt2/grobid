@@ -20,6 +20,7 @@ public class TEISegmentationArticleLightSaxParser extends TEISegmentationSaxPars
     private String upperQname = null;
     private String upperTag = null;
     private List<String> labeled = null; // store line by line the labeled data
+    private boolean inTeiHeader = false; // flag to track when we're inside teiHeader
 
 
     public TEISegmentationArticleLightSaxParser() {
@@ -29,6 +30,9 @@ public class TEISegmentationArticleLightSaxParser extends TEISegmentationSaxPars
     }
 
     public void characters(char[] buffer, int start, int length) {
+        if (this.inTeiHeader) {
+            return;
+        }
         accumulator.append(buffer, start, length);
     }
 
@@ -45,9 +49,19 @@ public class TEISegmentationArticleLightSaxParser extends TEISegmentationSaxPars
         return labeled;
     }
 
-    public void endElement(java.lang.String uri,
-                           java.lang.String localName,
-                           java.lang.String qName) throws SAXException {
+    public void endElement(String uri,
+                           String localName,
+                           String qName) throws SAXException {
+        if (qName.equals("teiHeader")) {
+            inTeiHeader = false;
+            return;
+        }
+
+        if (inTeiHeader) {
+            // Skip processing of all content inside teiHeader
+            return;
+        }
+
         if ((!qName.equals("lb")) && (!qName.equals("pb"))) {
             writeData(qName, currentTag);
         }
@@ -73,12 +87,19 @@ public class TEISegmentationArticleLightSaxParser extends TEISegmentationSaxPars
                              String qName,
                              Attributes atts)
         throws SAXException {
+        if (inTeiHeader) {
+            // Skip processing of all elements inside teiHeader
+            return;
+        }
+
         if (qName.equals("lb")) {
             accumulator.append(" +L+ ");
         } else if (qName.equals("pb")) {
             accumulator.append(" +PAGE+ ");
         } else if (qName.equals("space")) {
             accumulator.append(" ");
+        } else if (qName.equals("teiHeader")) {
+            inTeiHeader = true;
         } else {
             // we have to write first what has been accumulated yet with the upper-level tag
             String text = getText();

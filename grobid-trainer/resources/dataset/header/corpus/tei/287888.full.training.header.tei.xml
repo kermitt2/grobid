@@ -1,0 +1,169 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="287888.full"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Appraising the causal relevance of DNA methylation for risk of lung cancer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Battram T 1,2 *, Richmond RC 1,2 *, Baglietto L 3 † , Haycock P 1,2 † , Perduca V 4 , Bojesen S 5,6,7 , Gaunt TR 1,2 ,<lb/> Hemani G 1,2 , Guida F 8 , Carreras--Torres R 8 , Hung R 9 , Amos CI 10 , Freeman JR 11 , Sandanger TM 12 , Nøst<lb/> TH 13 , Nordestgaard B 5,6,7 , Teschendorff AE 14,15,16 , Polidoro S 17 , Vineis P 17,18 , Severi G 19,20,21,22 , Hodge A 22 ,<lb/> Giles G 21,22 , Grankvist K 23 , Johansson MB 24 , Johansson M 8 , Davey Smith G 1,2$ , Relton CL 1,2$<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1. MRC Integrative Epidemiology Unit, University of Bristol,</affiliation>
+	</byline>
+
+	<address>Bristol, UK<lb/></address>
+
+	<byline>
+	<affiliation>2. Population Health Sciences, Bristol Medical School, University of Bristol,</affiliation>
+	</byline>
+
+	<address>Bristol, UK<lb/></address>
+
+	<byline>
+	<affiliation>3. Department of Clinical and Experimental Medicine, University of Pisa,</affiliation>
+	</byline>
+
+	<address>Pisa, Italy<lb/></address>
+
+	<byline>
+	<affiliation>4. Laboratoire de Mathématiques Appliquées -MAP5 (UMR CNRS 8145), Université Paris Descartes<lb/> 5. Department of Clinical Biochemistry, Herlev and Gentofte Hospital, Copenhagen University<lb/> Hospital,</affiliation>
+	</byline>
+
+	<address>Herlev, Denmark<lb/></address>
+
+	<byline>
+	<affiliation>6. Faculty of Health and Medical Sciences, University of Copenhagen,</affiliation>
+	</byline>
+
+	<address>Copenhagen, Denmark<lb/></address>
+
+	<byline>
+	<affiliation>7. The Copenhagen City Heart Study, Frederiksberg Hospital, Copenhagen University<lb/> Hospital,</affiliation>
+	</byline>
+
+	<address>Copenhagen, Denmark<lb/></address>
+
+	<byline>
+	<affiliation>8. Genetic Epidemiology Division, International Agency for Research on Cancer,</affiliation>
+	</byline>
+
+	<address>Lyon, France<lb/></address>
+
+	<byline>
+	<affiliation>9. Lunenfeld--Tanenbaum Research Institute, Sinai Health System,</affiliation>
+	</byline>
+
+	<address>Toronto, Canada<lb/></address>
+
+	<byline>
+	<affiliation>10. Biomedical Data Science, Geisel School of Medicine, Dartmouth College,</affiliation>
+	</byline>
+
+	<address>Hanover, New Hampshire,<lb/> USA<lb/></address>
+
+	<byline>
+	<affiliation>11. Department of Biostatistics and Epidemiology, University of Massachusetts,</affiliation>
+	</byline>
+
+	<address>Massachusetts, USA<lb/></address>
+
+	<byline>
+	<affiliation>12. Department of Community Medicine, UiT--The Arctic University of Norway,</affiliation>
+	</byline>
+
+	<address>Tromso, Norway<lb/></address>
+
+	<byline>
+	<affiliation>13. Department of Public Health and Nursing, Norwegian University of Science and Technology<lb/> (NTNU),</affiliation>
+	</byline>
+
+	<address>Trondheim, Norway<lb/></address>
+
+	<byline>
+	<affiliation>14. Department of Women&apos;s Cancer, Institute for Women&apos;s Health, University College London,</affiliation>
+	</byline>
+
+	<address>London,<lb/> UK<lb/></address>
+
+	<byline>
+	<affiliation>15. UCL Cancer Institute, University College London,</affiliation>
+	</byline>
+
+	<address>London, UK<lb/></address>
+
+	<byline>
+	<affiliation>16. Chinese Academy of Sciences (CAS) Key Laboratory of Computational Biology, CAS-Max Planck<lb/> Gesellschaft (MPG) Partner Institute for Computational Biology,</affiliation>
+	</byline>
+
+	<address>Shanghai, China<lb/></address>
+
+	<byline>
+	<affiliation>17. Italian Institute for Genomic Medicine,</affiliation>
+	</byline>
+
+	<address>Torino, Italy<lb/></address>
+
+	<byline>
+	<affiliation>18. Department of Epidemiology and Biostatistics, the School of Public Health, Imperial College<lb/> London,</affiliation>
+	</byline>
+
+	<address>London, UK<lb/></address>
+
+	<byline>
+	<affiliation>19. Centre de Recherche en Epidémiologie et Santé des Populations -CESP (UMR INSERM 1018),<lb/> Université Paris--Saclay, Université Paris--Sud,</affiliation>
+	</byline>
+
+	<address>Paris, France<lb/></address>
+
+	<byline>
+		<affiliation>20. Gustave Roussy</affiliation>,
+	</byline>
+
+	<address>Villejuif, France<lb/></address>
+
+	<byline>
+	<affiliation>21. Cancer Epidemiology Centre,</affiliation>
+	</byline>
+
+	<address>Cancer Council Victoria, Melbourne, Australia<lb/></address>
+
+	<byline>
+	<affiliation>22. Centre for Epidemiology and Biostatistics, Melbourne School of Population &amp; Global Health, The<lb/> University of Melbourne,</affiliation>
+	</byline>
+
+	<address>Australia<lb/></address>
+
+	<byline>
+	<affiliation>23. Department of Biobank Research, Umeå University,</affiliation>
+	</byline>
+
+	<address>Sweden<lb/></address>
+
+	<byline>
+	<affiliation>24. Department of Radiation Sciences, Umeå University,</affiliation>
+	</byline>
+
+	<address>Sweden<lb/></address>
+
+	*joint first authors<lb/> † joint second authors<lb/> $ joint last authors<lb/> .<lb/>
+	<note type="copyright">CC-BY-NC-ND 4.0 International license<lb/> available under a<lb/> not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made<lb/> The copyright holder for this preprint (which was<lb/> this version posted March 26, 2018.<lb/></note>
+
+	;<lb/>
+	<idno>https://doi.org/10.1101/287888<lb/></idno>
+
+	doi:<lb/> bioRxiv
+	<note type="doctype">preprint</note>
+
+	Abstract<lb/>
+	<div type="abstract">DNA methylation changes in peripheral blood have been identified in relation to lung cancer risk.<lb/> However, the causal nature of these associations remains to be fully elucidated. Meta--analysis of four<lb/> epigenome--wide association studies (918 cases, 918 controls) revealed differential methylation at 16<lb/> CpG sites (FDR &lt; 0.05) in relation to lung cancer risk. A two--sample Mendelian randomization analysis,<lb/> using genetic instruments for methylation at 14 of the 16 CpG sites, and 29,863 cases and 55,586<lb/> controls from the TRICL--ILCCO lung cancer consortium, was performed to appraise the causal role of<lb/> methylation at these sites on lung cancer. This approach provided little evidence that DNA methylation<lb/> in peripheral blood at the 14 CpG sites play a causal role in lung cancer development, including for<lb/> cg05575921 AHRR, where methylation is strongly associated with lung cancer risk. Further studies are<lb/> needed to investigate the causal role played by DNA methylation in lung tissue.</div>
+
+		</front>
+	</text>
+</tei>

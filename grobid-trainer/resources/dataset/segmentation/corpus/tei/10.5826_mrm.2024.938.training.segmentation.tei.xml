@@ -1,0 +1,157 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Gas exchange abnormalities in Long COVID are driven by the alteration of the vascular component</title>
+      <author>
+        <persName>
+          <forename>Gianluca</forename>
+          <surname>Imeri</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Caterina</forename>
+          <surname>Conti</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Anna</forename>
+          <surname>Caroli</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Alberto</forename>
+          <surname>Arrigoni</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Pietro</forename>
+          <surname>Bonaffini</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Sandro</forename>
+          <surname>Sironi</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Luca</forename>
+          <surname>Novelli</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Federico</forename>
+          <surname>Raimondi</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Greta</forename>
+          <surname>Chiodini</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Simone</forename>
+          <surname>Vargiu</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Fabiano</forename>
+          <surname>Di Marco</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="kazuyo">Kazuyo</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-06T10:11:10.178Z">11/6/2025 10:11:10 AM</date>
+        <title>corrections</title>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>Mattioli1885</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.5826/mrm.2024.938</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Gianluca Imeri, Caterina Conti, Anna Caroli, Alberto Arrigoni, Pietro Bonaffini, Sandro Sironi, Luca Novelli, Federico Raimondi, Greta Chiodini, Simone Vargiu, Fabiano Di Marco. (2024). Gas exchange abnormalities in Long COVID are driven by the alteration of the vascular component. Multidisciplinary Respiratory Medicine, 19(None), None. DOI: 10.5826/mrm.2024.938</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-06T10:10:54.282151Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">eb7768b</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.segmentation</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-06T10:10:54.282151Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+        <front>ABSTRACT <lb/>Original re search artic le <lb/>Ant-waist surgery adversely affects lung function: a cross-sectional study <lb/>Aseel Aburub 1 , Mohammad Z. Darabseh 2* , Rahaf Badran 3 , Ala&apos;a M. Shurrab 4 , <lb/>Anwaar A. Amro 1 , Sean J. Ledger 5 <lb/>1 Department of Physiotherapy, Faculty of Allied Medical Sciences, Applied Science Private University, Amman, Jordan; 2 Department <lb/>of Physiotherapy, School of Rehabilitation Sciences, Th e University of Jordan, Amman, Jordan; 3 Department of Physiotherapy, Faculty <lb/>of Applied Medical Sciences, Middle East University Amman, Jordan; 4 Department of Basic Medical Science, Faculty of Medicine, <lb/>Al-Balqa Applied University, Al salt, Jordan; 5 Physiotherapy, School of Health, Medical and Applied Sciences, CQUniversity, <lb/>Rockhampton, Australia <lb/>Background: Body contouring surgery for the removal of the 11 th and 12 th ribs is undertaken for aesthetic appeal <lb/>in female and transgender populations. Th e potential adverse eff ects of the surgery on lung function and respira-<lb/>tory muscle strength have not been previously studied. Th erefore, this study aimed to determine the eff ects of <lb/>&apos; Ant-waist&apos; surgery on lung function and respiratory muscle strength in individuals who had undergone surgery. <lb/>Methods: Th is was a cross-sectional study with two groups, an Anti-waist group who had undergone surgery and <lb/>an age and gender matched control group. Participants performed lung function tests to determine measurements <lb/>of FEV 1 , FVC, FEV 1 /FVC, PEF, MIP, and MEP. Independent t-tests were performed to determine between-<lb/>group diff erences in outcomes and Pearson&apos;s correlation coeffi cients determined the relationship between lung <lb/>function and respiratory muscle strength, and number of years since surgery. <lb/>Results: Th ere was a signifi cant between-group diff erence in FEV 1 (-0.83; 95%CI -1.30, -0.36; p &lt; 0.001), <lb/>FEV 1 %pred. (-34.91; 95%CI -48.92, -20.90; p &lt; 0.001), FVC%pred. (-22.73; 95%CI -32.84, -12.62; p &lt; 0.001), <lb/>PEF%pred. (-44.18; 95%CI -61.52, -26.84; p &lt; 0.001) and MEP (-68.27; -102.48, -34.07; p &lt; 0.001). Th ere were <lb/>signifi cantly large, negative correlations (r &gt; 0.5) between the number of years after surgery and FEV 1 ( p = 0.002), <lb/>FEV 1 %pred. (p = 0.0001); and PEF%pred. (p = 0.032). <lb/>Conclusions: Th is study has identifi ed that aesthetic surgery for the removal of ribs 11 and 12 had a signifi cant <lb/>adverse eff ect on lung function and respiratory muscle strength in Jordanian females. Th e potential adverse eff ects <lb/>should be carefully explained by surgeons to patients considering the surgery. <lb/>Keywords : respiratory; lung function; Ant-waist surgery; fl oating ribs removal surgery <lb/>Multidisciplinary Respiratory Medicine 2024; volume 19: 984 -doi: 10.5826/mrm.2024.984 <lb/>© Mattioli 1885 <lb/>Correspondence: Mohammad Z. Darabseh, PhD, Department of Physiotherapy, School of Rehabilitation Sciences, Th e University <lb/>of Jordan, Amman, Jordan. Email: darabseh.moh@gmail.com. <lb/>Authors&apos; contributions: AA, MZD contributed to the study conception. MZD, AA and RB designed and prepared the study. RB, <lb/>AAA, and AMS collected the data. SL and AA analysed the data. MZD, AA and SL wrote the fi rst draft of the manuscript. All <lb/>authors commented on previous versions of the manuscript, read, and approved the fi nal manuscript. <lb/>Ethics approval and consent to participate: All procedures performed in studies involving human participants were in accordance <lb/>with the ethical standards of the institutional and/or national research committee and with the 1964 Helsinki declaration and its <lb/>later amendments or comparable ethical standards. (Ethical approval from the Research Ethics Committee at the Faculty of Allied <lb/>Medical Sciences at Applied Science No: AMS-2024-3). Private University (Reference No: AMS-2024-3) was undertaken. Signed <lb/>informed consents were obtained from the participants. <lb/>Consent for publication: Written informed consent was obtained from all individuals participating in the study and all authors in <lb/>this study provided formal consent for publication. <lb/>Availability of data and material: Available upon request . <lb/>Confl ict of interest: Authors declare no competing interests related to this paper. <lb/>Funding: No funding was received to conduct this study. <lb/>Acknowledgement: Th e authors would like to thank the participants of the study for their time and eff orts. <lb/></front>
+
+        <note place="headnote">Multidisciplinary Respiratory Medicine 2024; volume 19: 984 <lb/></note>
+
+        <page>2 <lb/></page>
+
+        <body>Introduction <lb/>Perceptions of physical attraction and beauty may <lb/>be influences by geographical location, ethnicity, cul-<lb/>ture, and demographic factors [1] and social media [2]. <lb/>Consequently, body contouring surgery, a specialised <lb/>field within plastic surgery has undergone significant <lb/>advancements in recent years, influenced by the suc-<lb/>cess of bariatric procedures, pharmacological interven-<lb/>tions for patients experiencing substantial weight loss, <lb/>and the refinement of lipomodelling techniques [3]. <lb/>Numerous invasive and non-invasive procedures have <lb/>been developed to enhance aesthetic appearance, such <lb/>as correction of excess skin laxity and subcutaneous fat, <lb/>which involves techniques such as liposuction and ab-<lb/>dominoplasty [4]. These procedures refine the abdomi-<lb/>nal musculature and reduce waist circumference [3], <lb/>whilst procedures such buttock augmentation involv-<lb/>ing liposuction, lipofilling, and intramuscular silicone <lb/>implant placement are undertaken to achieve optimal <lb/>buttock aesthetics [5]. <lb/>The term &quot;Ant-waist&quot; has gained in popularity to <lb/>describe the ideal waist-to-hip ratio for maximum aes-<lb/>thetic appeal, particularly in women and transgender <lb/>populations, with post-surgical resection of the 11 th <lb/>and 12 th rib (floating ribs) [5, 6]. A waist-to-hip ratio <lb/>ranging from 0.65 to 0.70 has been reported to be the <lb/>most highly attractive [1, 7]. Some individuals strug-<lb/>gle to attain the desired waist-to-hip ratio after ab-<lb/>dominoplasty and buttock augmentation surgeries due <lb/>to inherent bony structures [5], therefore the surgical <lb/>removal of the floating ribs to decrease waist-to-hip <lb/>ratio may be considered [5]. <lb/>The knowledge base related to the efficacy and <lb/>safety of rib resection solely for aesthetic purposes is <lb/>limited [6]. In a case-series report, Verdugo et al. [8], <lb/>reported a low complication rate of two pneumothora-<lb/>ces in 104 patients who had undergone surgery across <lb/>an 8-year period. However, only 10 of these patients <lb/>had undergone exclusive rib removal surgery, with the <lb/>majority undergoing a combination of resection, lipo-<lb/>suction, and abdominoplasty. <lb/>A significant (p&lt;0.01) post-operative decrease in <lb/>forced vital capacity (FVC) has been reported in pa-<lb/>tients who have had multiple ribs removed during tho-<lb/>racic wall resection surgery for tumours [9]. Therefore, it <lb/>is plausible that Ant-waist surgery may lead to respira-<lb/>tory complications due to several factors: 1) the floating <lb/>ribs play a crucial role in protecting vital organs, in-<lb/>cluding the lungs; 2) these ribs facilitate the expansion <lb/>and retraction of the thoracic cavity during breathing <lb/>as they are attachment sites for the external obliques, <lb/>internal oblique, and transversus abdominis muscles <lb/>that stabilise the thoracic cage and spine, 3) removal of <lb/>the floating ribs alters the structural integrity of the rib <lb/>cage, potentially impacting respiratory mechanics, such <lb/>as decreased bucket handle movement [10]. <lb/>Bucket handle movement contributes to the dy-<lb/>namic process of breathing by altering the dimensions <lb/>of the thoracic cavity, allowing for effective ventilation <lb/>of the lungs [10, 11]. During inspiration, bucket han-<lb/>dle movement involves the lower ribs, but particularly <lb/>the floating ribs, moving upwards and outwards, which <lb/>increases the transverse diameter of the thoracic cage, <lb/>effectively expanding the chest cavity laterally. The vol-<lb/>ume of the thoracic cavity increases, creating a negative <lb/>pressure environment which facilitates the intake of air <lb/>into the lungs [10]. Conversely, during expiration, the <lb/>bucket handle movement reverses, with the lower ribs <lb/>moving downwards and inwards, such that the trans-<lb/>verse diameter of the thoracic cage decreases causing <lb/>the chest cavity to contract laterally. The reduction in <lb/>thoracic cavity volume increases the pressure within <lb/>the lungs facilitating the expulsion of air [10, 11]. <lb/>Surgical removal of the floating ribs may alter <lb/>the mechanics of breathing and have an adverse ef-<lb/>fect on lung function. However, there are no published <lb/>research that has assessed lung function or respiratory <lb/>muscle strength in people who have undergone this <lb/>surgery. Therefore, the aim of this study was to assess <lb/>the effects of Ant-waist surgery on lung function and <lb/>respiratory muscle strength. <lb/>Methods <lb/>Study design <lb/>A cross-sectional study with ethical approval <lb/>from the Research Ethics Committee at the Fac-<lb/>ulty of Allied Medical Sciences at Applied Science <lb/>Private University (Reference No: AMS-2024-3) was <lb/></body>
+
+        <note place="headnote">Multidisciplinary Respiratory Medicine 2024; volume 19: 984 <lb/></note>
+
+        <page>3 <lb/></page>
+
+        <body>undertaken. The study included an age and gender <lb/>matched Ant-waist group and control group. <lb/>Recruitment of participants <lb/>Participants in the Ant-waist group were recruited <lb/>through plastic surgery clinics in Jordan. Additionally, <lb/>an invitation to participate in this study was posted on <lb/>social media (e.g. Facebook and Instagram) to enhance <lb/>the recruitment strategy. Due to the limited published <lb/>data on Ant-waist surgery, a power-calculation to de-<lb/>termine sample size was not undertaken. <lb/>Inclusion and exclusion criteria <lb/>Participants in the Ant-waist group were included <lb/>if: 1) they had undergone the surgical removal of the 11 th <lb/>and 12 th ribs; 2) surgery was not less than six months <lb/>before the start of the study; 3) aged 18 years and over. <lb/>Exclusion criteria for both groups included smokers; <lb/>pregnancy; diagnosed cardiac, respiratory, musculo-<lb/>skeletal, or neurological conditions; or the individual <lb/>had undergone any other surgery that might limit their <lb/>exercise capacity or ability to perform spirometry. <lb/>Outcome measures <lb/>Spirometry <lb/>The gold standard lung function test, spirom-<lb/>etry, was assessed using a calibrated spirometer (BTL <lb/>Spirometry, United Kingdom) and in accordance with <lb/>the American Thoracic Society &amp; European Respira-<lb/>tory Society (ATS/ERS) standardised guidelines [12]. <lb/>The best of three consecutive maximal expiratory <lb/>manoeuvres were used to obtain the forced expira-<lb/>tory volume in the first second (FEV 1 ), FVC and the <lb/>FEV 1 /FVC ratio [12]. Results were compared with <lb/>Global Lung Initiative normative multi-ethnic refer-<lb/>ence equations for age 3-95 years [13]. <lb/>Respiratory muscle strength <lb/>Respiratory muscle strength was estimated by <lb/>measuring maximal inspiratory pressure (MIP) and <lb/>maximum expiratory pressure (MEP) using a portable <lb/>mouth pressure device (MicroRPM, Cardinal Health-<lb/>care, UK). Participants were instructed to maximally <lb/>and forcefully exhale after a maximal inhalation ma-<lb/>noeuvre [14, 15]. <lb/>Statistical analysis <lb/>All raw data were digitally retrieved and exported <lb/>into a Microsoft Excel® spreadsheet (Redmond, <lb/>Washington, USA), with FEV 1 and FVC data con-<lb/>verted to percentage predicted (%pred.) using GLI <lb/>2012 Desktop Software for Large Data Sets [16]. <lb/>Data were transferred for statistical analyses using <lb/>IBM ® SPSS ® Statistics 24.0 (Chicago, IL, USA). The <lb/>Shapiro-Wilk Test (p&gt;0.05) was used to assess for <lb/>the normal distribution of data, and comparisons of <lb/>between-group spirometry data were performed using <lb/>independent t-tests [17]. Numerical data are presented <lb/>as mean, standard deviation (SD), and 95% confidence <lb/>intervals (95%CI), with statistical significance estab-<lb/>lished as p≤0.05, unless otherwise stated. To explore <lb/>the correlations, if any, between lung function, res-<lb/>piratory muscle strength, and number of years since <lb/>surgery, bi-variate correlational analysis was conducted <lb/>using the Pearson&apos;s correlation coefficient (r), such that <lb/>r&lt;0.10 was considered a small effect, r&gt;0.10 to r&lt;0.50 <lb/>considered a moderate effect size, and r&gt;0.50 a large <lb/>effect size [18]. <lb/>Results <lb/>A total of twenty-two (n=22) female Jordanian <lb/>participants were recruited, with eleven (n=11) par-<lb/>ticipants allocated to the Ant-waist group and eleven <lb/>(n=11) age and gender matched participants allocated <lb/>to the control group. All data were collected between <lb/>March 2024 -April 2024. Table 1 shows the anthro-<lb/>pometric data of the groups. <lb/>Lung function <lb/>Table 2 shows that there were significant between-<lb/>group differences in FEV 1 , FEV 1 %pred., FVC%pred., <lb/>FEV 1 /FVC and PEF%pred., with the Ant-waist group <lb/>demonstrating the lowest scores. <lb/></body>
+
+        <note place="headnote">Multidisciplinary Respiratory Medicine 2024; volume 19: 984 <lb/></note>
+
+        <page>4 <lb/></page>
+
+        <body>Table 1. Anthropometric results for both groups (n=22). <lb/>Variable <lb/>Ant-waist group <lb/>Control group <lb/>Mean difference (95%CI)* <lb/>p <lb/>Age <lb/>33.27±2.69 <lb/>33.27±2.69 <lb/>1.64 (-2.54, -2.54) <lb/>0.99 <lb/>BMI (kg/m 2 ) <lb/>20.16±1.59 <lb/>22.26±3.12 <lb/>1.39 (-0.24, 4.44) <lb/>0.07 <lb/>Years since surgery <lb/>3.00±1.18 <lb/>-<lb/>*Ant-waist group minus control group. <lb/>Table 2. Differences between Ant-waist group and control group in spirometry results. <lb/>Variable <lb/>Ant-waist group <lb/>Control group <lb/>Mean difference (95%CI)* <lb/>p <lb/>FEV 1 (L) <lb/>2.73±0.50 <lb/>3.56±0.55 <lb/>-0.83 (-1.30, -0.36) <lb/>&lt;0.001** <lb/>FEV 1 %pred. <lb/>69.64±8.42 <lb/>104.55±20.62 <lb/>-34.91 (-48.92, -20.90) <lb/>&lt;0.001* <lb/>FVC (L) <lb/>4.16±0.83 <lb/>4.30±0.59 <lb/>-0.14 (-0.79, 0.50) <lb/>0.65 <lb/>FVC%pred. <lb/>82.64±8.39 <lb/>105.36±13.71 <lb/>-22.73 (-32.84, -12.62) <lb/>&lt;0.001** <lb/>FEV 1 /FVC <lb/>0.67±0.17 <lb/>0.83±0.64 <lb/>-0.15 (-0.27, -0.04) <lb/>0.01** <lb/>PEF (L) <lb/>404.55±120.87 <lb/>478.91±147.12 <lb/>-76.36 (-196.41, 43.68) <lb/>0.20 <lb/>PEF%pred. <lb/>70.73±16.08 <lb/>114.91±22.39 <lb/>-44.18 (-61.52, -26.84) <lb/>&lt;0.001** <lb/>*Ant-waist group minus control group; **statistically significant. <lb/>FEV 1 , forced expiratory volume in one second; FVC, forced vital capacity; PEF, Peak expiratory flow. <lb/>Table 3. Difference in respiratory muscle strength results (mouth pressure) in both groups (n=22). <lb/>Variable <lb/>Ant-waist group <lb/>Control group <lb/>Mean difference (95%CI)* <lb/>p <lb/>MIP (cmH 2 O) <lb/>109.18±25.40 <lb/>104.18±25.40 <lb/>5.00 (-20.52, 30.52) <lb/>0.69 <lb/>MEP (cmH 2 O) <lb/>70.45±11.71 <lb/>191.18±39.52 <lb/>-68.27 (-102.48, -34.07) <lb/>&lt;0.001** <lb/>*Ant-waist group minus control group; **statistically significant. <lb/>MIP, Maximal inspiratory pressure; MEP, Maximal expiratory pressure; cmH 2 O, centimetre of water. <lb/>Respiratory muscles strength <lb/>MIP was slightly higher in the Ant-waist group, <lb/>but this difference was not significant. However, MEP <lb/>was significantly lower (p&lt;0.001) in the Ant-waist <lb/>group, which may suggest greater respiratory muscle <lb/>weakness (Table 3). <lb/>Correlations with years since Ant-waist surgery <lb/>The results of Pearson&apos;s correlation coefficient <lb/>tests (Table 4) showed significant, negative, and large <lb/>effects of number of years post-surgery and FEV 1 <lb/>(p=0.002), FEV 1 %pred. (p=0.0001); and PEF%pred. <lb/>(p=0.032). <lb/>Discussion <lb/>This is the first study that has investigated the ef-<lb/>fects of Ant-waist surgeries on lung function and res-<lb/>piratory muscle strength, and the results showed that <lb/>the surgery had a significant adverse effect on lung <lb/>function and respiratory muscle strength. The study <lb/>also showed that there were significant negative cor-<lb/>relations between lung function and years since sur-<lb/>gery in the Ant-waist group. These results suggest that <lb/>that the negative impact of the surgery progresses with <lb/>time and this impact should be explained to individu-<lb/>als considering this surgery. <lb/>It is difficult to draw comparisons due to the lim-<lb/>ited knowledge bank, however Hatano et al. [19], used <lb/></body>
+
+        <note place="headnote">Multidisciplinary Respiratory Medicine 2024; volume 19: 984 <lb/></note>
+
+        <page>5 <lb/></page>
+
+        <body>Table 4. Correlations between years since surgery and <lb/>respiratory function in the Ant-waist group (n-11). <lb/>Variable <lb/>Years since Ant-waist surgery <lb/>FEV 1 (L) <lb/>r <lb/>-0.921* <lb/>p <lb/>0.0001** <lb/>FEV 1 %pred. <lb/>r <lb/>-0.813* <lb/>p <lb/>0.002** <lb/>FVC (L) <lb/>r <lb/>-0.392 <lb/>p <lb/>0.233 <lb/>FVC%pred. <lb/>r <lb/>-0.443 <lb/>p <lb/>0.172 <lb/>FEV 1 /FVC <lb/>r <lb/>-0.421 <lb/>p <lb/>0.198 <lb/>PEF (L) <lb/>r <lb/>-0.394 <lb/>p <lb/>0.231 <lb/>PEF%pred. <lb/>r <lb/>-0.646* <lb/>p <lb/>0.032** <lb/>MIP (cmH 2 O) r <lb/>-0.067 <lb/>p <lb/>0.844 <lb/>MEP (cmH 2 O) r <lb/>-0.238 <lb/>p <lb/>0.481 <lb/>*Large effect size; **statistically significant. <lb/>FEV 1 , forced expiratory volume in one second; FVC, forced <lb/>vital capacity; PEF, Peak expiratory flow; MIP, Maximal <lb/>inspiratory pressure; MEP, Maximal expiratory pressure; <lb/>cmH 2 O, centimetre of water. <lb/>a three-dimensional computer simulation model to <lb/>evaluate the biomechanical relationship between the <lb/>location of rib defects and loss of respiratory function <lb/>using data from 10 participants commuted tomogra-<lb/>phy scans. Hatano et al. [19], reported that that the <lb/>loss of lung function was greatest in the lateral-inferior <lb/>part of the thorax, where the floating ribs are located. <lb/>The rationale being that during inhalation, the ribs el-<lb/>evate and the external intercostal muscles contract, to <lb/>increase the transverse diameter of the lungs causing <lb/>the bucket handle movement of the ribs [10, 11]. The <lb/>absence of the 11 th and 12 th ribs would likely limit the <lb/>ability to inhale to total inspiratory capacity, as was <lb/>demonstrated in this cross-sectional study, with the <lb/>ant-waist group recording significantly lower FVC. <lb/>In a 25-years retrospective study (1975-2000) <lb/>of chest wall-resections and reconstruction, Mansour <lb/>et al. [20] evaluated the outcomes of 200 patients to <lb/>determine the most common complications of the <lb/>surgeries. Pneumonia (14%), acute respiratory dis-<lb/>tress syndrome (6%), and infection/sepsis (5%) were <lb/>the most common adverse events recorded, with lung <lb/>function impairment resulting from rib defects also re-<lb/>ported. These findings were in contradiction to those <lb/>reported by of Chiu et al. [5], who reported the ef-<lb/>fects of the surgical resection of the floating ribs in <lb/>5 patients (n=3, female; n=2, transgender) had minimal <lb/>impact on lung function and no adverse effects were <lb/>observed. However, given the sample size of this study, <lb/>caution should be applied when comparing the results <lb/>to the larger Mansour et al. [20] study, particularly as <lb/>the Chiu et al. [5] relied on commentary from quali-<lb/>tative patient questionnaires and a survey related to <lb/>dyspnoea, and did not assess lung function or respira-<lb/>tory muscles strength. <lb/>Strengths and limitations <lb/>The strength of this study is that it is the first to <lb/>demonstrate a clear negative relationship between lung <lb/>function and respiratory muscle strength in women <lb/>who have undergone surgical removal of the 11 th and <lb/>12 th ribs. The outcomes of this study may be useful to <lb/>surgeons and other clinicians when discussing the po-<lb/>tential adverse effects of the surgery. However, it is im-<lb/>portant to consider the limitations of this study as the <lb/>sample size was small and limited to Jordanian females <lb/>only, and pre-surgical data related to lung function and <lb/>respiratory muscle function were unavailable. There-<lb/>fore, generalisability to the wider population should be <lb/>judiciously considered. Nevertheless, the results of this <lb/>study would suggest that more research in this area is <lb/>warranted, particularly focussed on determining the <lb/>differences between pre-and post-surgical effects on <lb/>lung function. <lb/>Conclusion <lb/>This study has identified that aesthetic surgery <lb/>for the removal of the floating ribs had an adverse ef-<lb/>fect on lung function and respiratory muscle strength <lb/>in Jordanian females. These findings are important as <lb/></body>
+
+        <note place="headnote">Multidisciplinary Respiratory Medicine 2024; volume 19: 984 <lb/></note>
+
+        <page>6 <lb/></page>
+
+        <listBibl>9. Hayashi T, Sakakura N, Ishimura D, Kozawa E, Yoshida M, <lb/>Sakao Y, et al. Surgical complication and postoperative pul-<lb/>monary function in patients undergoing tumor surgery with <lb/>thoracic wall resection. Oncol Lett 2019;17(3):3446-56. <lb/>10. De Groote A, Wantier M, Cheron G, Estenne M, Paiva M. <lb/>Chest wall motion during tidal breathing. J Appl Physiol <lb/>1997;83(5):1531-7. <lb/>11. Loring SH. Action of human respiratory muscles inferred <lb/>from finite element analysis of rib cage. J Appl Physiol <lb/>(1985). 1992;72(4):1461-5. <lb/>12. Miller MR, Hankinson J, Brusasco V, Burgos F, Casaburi R, <lb/>Coates A, et al. Standardisation of spirometry. Eur Respir <lb/>J 2005;26(2):319-38. <lb/>13. Quanjer PH, Stanojevic S, Cole TJ, Baur X, Hall GL, <lb/>Culver BH, et al. Multi-ethnic reference values for spirom-<lb/>etry for the 3-95-yr age range: the global lung function <lb/>2012 equations. Eur Respir J 2012;40(6):1324-43. <lb/>14. Lofaso F, Nicot F, Lejaille M, Falaize L, Louis A, <lb/>Clement A, et al. Sniff nasal inspiratory pressure: what is the <lb/>optimal number of sniffs? Eur Respir J 2006;27(5):980-2. <lb/>15. Evans JA, Whitelaw WA. The assessment of maximal <lb/>respiratory mouth pressures in adults. Respir Care 2009; <lb/>54(10):1348-59. <lb/>16. Quanjer PH, Stanojevic S, Cole TJ, Stocks S. GLI-2012. <lb/>Desktop software for large data sets. 2013. <lb/>17. Rasch D, Guiard V. The robustness of parametric statistical <lb/>methods. Psychol Sci 2004;46:175-208. <lb/>18. Cohen J. Statistical power analysis for the behavioral <lb/>sciences New York, NY: Routledge Academic; 1995. <lb/>19. Hatano A, Nagasao T, Cho Y, Shimizu Y, Takano N, <lb/>Kaneko T, Kishi K. Relationship between locations of rib <lb/>defects and loss of respiratory function -a biomechanical <lb/>study. Thorac Cardiovasc Surg 2014;62(4):357-62. <lb/>20. Mansour KA, Thourani VH, Losken A, Reeves JG, <lb/>Miller JI, Jr., Carlson GW, Jones GE. Chest wall resections <lb/>and reconstruction: a 25-year experience. Ann Thorac Surg <lb/>2002;73(6):1720-5; discussion 5-6. <lb/></listBibl>
+
+        <body>they may impact the decision-making of individuals <lb/>considering this type of surgery, and the potential ad-<lb/>verse effects should be carefully explained by surgeons. <lb/>Further research is warranted, with a focus on multi-<lb/>centre and multi-national data so that robust compari-<lb/>sons can be made. <lb/></body>
+
+        <listBibl>References <lb/>1. Heidekrueger PI, Sinno S, Tanna N, Szpalski C, Juran S, <lb/>Schmauss D, et al. The ideal buttock size: a sociodemo-<lb/>graphic morphometric evaluation. Plast Reconstr Surg <lb/>2017;140(1):20e-32e. <lb/>2. Hoyos AE, Perez ME, Domínguez-Millán R. Variable <lb/>sculpting in dynamic definition body contouring: <lb/>procedure selection and management algorithm. Aesthet <lb/>Surg J 2021;41(3):318-32. <lb/>3. Almutairi K, Gusenoff JA, Rubin JP. Body contouring. <lb/>Plast Reconst Surg 2016;137(3):586e-602e. <lb/>4. Sadeghi P, Duarte-Bateman D, Ma W, Khalaf R, Fodor R, <lb/>Pieretti G, et al. Post-bariatric plastic surgery: abdomino-<lb/>plasty, the state of the art in body contouring. J Clin Med <lb/>2022;11(15). <lb/>5. Chiu Y-H, Chiu YJ, Lee CC, Wang TH, Lee JL. Ant waist <lb/>surgery: aesthetic removal of floating ribs to decrease the <lb/>waist-hip ratio. P Plast Reconst Surg 2023;11(3):e4852. <lb/>6. Ferreira LM, Ferreira PEN, Bernardes ABS, Dos Anjos GF, <lb/>Cosac OM, Willhelm RO, et al. Aesthetic contouring <lb/>of the chest wall with rib resection. Aesthetic Plast Surg <lb/>2021;45(3):1099-104. <lb/>7. Tovée MJ, Maisey DS, Emery JL, Cornelissen PL. Visual <lb/>cues to female physical attractiveness. Proc R Soc 1999; <lb/>266(15):211-8. <lb/>8. Verdugo JP. Rib removal in body contouring surgery and its <lb/>influence on the waist. SAPS Journal 2022. <lb/></listBibl>
+
+        <front>Received for publication: 21 May 2024 -Accepted for publication: 6 June 2024 <lb/>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). <lb/>©Copyright: the Author(s), 2024 <lb/>Licensee Mattioli 1885, Italy <lb/>Multidisciplinary Respiratory Medicine 2024; 19: 984 <lb/>doi: 10.5826/mrm.2024.984 <lb/>Publisher&apos;s note: all claims expressed in this article are solely those of the authors and do not necessarily represent those of their <lb/>affiliated organizations, or those of the publisher, the editors and the reviewers. Any product that may be evaluated in this article or <lb/>claim that may be made by its manufacturer is not guaranteed or endorsed by the publisher. </front>
+
+
+	</text>
+
+</TEI>

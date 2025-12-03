@@ -54,6 +54,9 @@ public class Segmentation extends AbstractParser {
 		    acknowledgement <acknowledgement>,
 		   	availability <availability>,
 		   	funding <funding>,
+		   	conflict of interest / declaration of interest <conflict>,
+		   	author contribution <contribution>,
+		   	funding <funding>,
             other <other>,
 		    toc <toc> -> not yet used because not yet training data for this
 	*/
@@ -964,6 +967,12 @@ public class Segmentation extends AbstractParser {
                 if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<funding>", "<div type=\"funding\">", addSpace, 3);
                 }
+                if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<conflict>", "<div type=\"conflict\">", addSpace, 3);
+                }
+                if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<contribution>", "<div type=\"contribution\">", addSpace, 3);
+                }
                 lastTag = s1;
 
                 if (!st.hasMoreTokens()) {
@@ -1140,6 +1149,12 @@ public class Segmentation extends AbstractParser {
                 buffer.append("</div>\n\n");
                 res = true;
             } else if (lastTag0.equals("<availability>")) {
+                buffer.append("</div>\n\n");
+                res = true;
+            } else if (lastTag0.equals("<conflict>")) {
+                buffer.append("</div>\n\n");
+                res = true;
+            } else if (lastTag0.equals("<contribution>")) {
                 buffer.append("</div>\n\n");
                 res = true;
             } else if (lastTag0.equals("<funding>")) {

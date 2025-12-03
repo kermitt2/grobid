@@ -1,0 +1,227 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+  <fileDesc>
+    <titleStmt>
+      <title level="a">Coopetition through Multisided Platforms Business Model: A Case Study of FEBRAFAR Value Cycle</title>
+      <author>
+        <persName>
+          <forename>Alvaro Antônio Bueno de</forename>
+          <surname>Camargo</surname>
+        </persName>
+      </author>
+      <author>
+        <persName>
+          <forename>Dimaria Silva e</forename>
+          <surname>Meirelles</surname>
+        </persName>
+      </author>
+      <respStmt>
+        <persName xml:id="lfoppiano">Luca</persName>
+        <resp>Annotator</resp>
+      </respStmt>
+    </titleStmt>
+    <editionStmt>
+      <edition>
+        <date when="2025-11-12T16:33:41.317040Z">12.11.2025 16:33:41</date>
+        <title>grobid.training.header [default]</title>
+        <idno type="fileref">10.1590$1$1807-7692bar2024230099</idno>
+      </edition>
+    </editionStmt>
+    <publicationStmt>
+      <publisher>FapUNIFESP (SciELO)</publisher>
+      <availability>
+        <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+      </availability>
+      <date type="publication">2024</date>
+      <idno type="DOI">10.1590/1807-7692bar2024230099</idno>
+    </publicationStmt>
+    <sourceDesc>
+      <bibl>Alvaro Antônio Bueno de Camargo, Dimaria Silva e Meirelles. (2024). Coopetition through Multisided Platforms Business Model: A Case Study of FEBRAFAR Value Cycle. BAR - Brazilian Administration Review, 21(1), None. DOI: 10.1590/1807-7692bar2024230099</bibl>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <appInfo>
+      <application version="1.0" ident="pdf-tei-editor" type="editor">
+        <ref target="https://github.com/mpilhlt/pdf-tei-editor"/>
+      </application>
+      <application version="0.8.3-SNAPSHOT" ident="GROBID" when="2025-11-12T16:33:41.317040Z" type="extractor">
+        <desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+        <label type="revision">4ae14a7</label>
+        <label type="flavor">default</label>
+        <label type="variant-id">grobid.training.header</label>
+        <ref target="https://github.com/kermitt2/grobid"/>
+      </application>
+    </appInfo>
+  </encodingDesc>
+  <revisionDesc>
+    <change when="2025-11-12T16:33:41.317040Z" status="draft">
+      <desc>Generated with createTraining API</desc>
+    </change>
+    <change when="2025-11-12T16:46:30.023Z" status="draft" who="#lfoppiano">
+      <desc>Corrections</desc>
+    </change>
+  </revisionDesc>
+</teiHeader>
+  <text xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+		<front>
+
+	<page>1<lb/></page>
+	<reference>BAR-Brazilian Administration Review, 21(1), e230099, 2024.<lb/></reference>
+
+	<note type="doctype">Research Article<lb/></note>
+
+	Data Availability:
+	<note type="availability">The authors claim that they do not have authorization to publish the content of the interviews as they contain confidential<lb/> information from the organization studied. BAR -Brazilian Administration Review encourages data sharing but, in compliance with ethical principles, it<lb/> does not demand the disclosure of any means of identifying research subjects.<lb/></note>
+
+	Plagiarism Check: BAR maintains the practice of submitting all documents received to the plagiarism check, using specific tools, e.g.: iThenticate.<lb/> Peer review: is responsible for acknowledging an article&apos;s potential contribution to the frontiers of scholarly knowledge on business or public administration.<lb/> The authors are the ultimate responsible for the consistency of the theoretical references, the accurate report of empirical data, the personal perspectives,<lb/> and the use of copyrighted material. This content was evaluated using the double-blind peer review process. The disclosure of the reviewers&apos; information on<lb/> the first page is made only after concluding the evaluation process, and with the voluntary consent of the respective reviewers.<lb/>
+
+	Copyright:
+	<note type="copyright">The authors retain the copyright relating to their article and grant the journal BAR -Brazilian Administration Review, the right of first publication,<lb/> with the work simultaneously licensed under the Creative Commons Attribution 4.0 International license (CC BY 4.0) The authors also retain their moral rights<lb/> to the article, including the right to be identified as the authors whenever the article is used in any form.<lb/></note>
+
+	Keywords:<lb/>
+	<keyword>coopetition; multisided platform; value<lb/> creation; value configuration;<lb/> value appropriation<lb/></keyword>
+
+	JEL Code:<lb/>
+	<keyword>M10, M21, P13<lb/></keyword>
+
+	<note type="submission">Received:<lb/> August 30, 2023.<lb/> This paper was with the authors for two revisions<lb/> Accepted:<lb/> March 05, 2024.<lb/></note>
+
+	Publication date:<lb/>
+	<date>April 04, 2024.<lb/></date>
+
+	Corresponding author:<lb/>
+	<byline>
+	<docAuthor>Alvaro Antônio Bueno de Camargo<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fundação Getulio Vargas<lb/></affiliation>
+	</byline>
+
+	<address>Praia do Botafogo, CEP 22250-900, Rio de Janeiro, RJ, Brazil<lb/></address>
+
+	Editor-in-Chief:<lb/>
+	<editor>Ivan Lapuente Garrido<lb/></editor>
+	(
+	<byline>
+	<affiliation>Universidade do Vale do Rio dos Sinos,</affiliation>
+	</byline>
+
+	<address>Brazil</address>
+
+	)<lb/> Guest Editors:<lb/>
+	<editor>Jefferson Marlon Monticelli<lb/></editor>
+
+	(
+	<byline>
+	<affiliation>Universidade do Vale do Rio dos Sinos,</affiliation>
+	</byline>
+
+	<address>Brazil<lb/></address>
+	)
+
+	<editor>Emilene Leite<lb/></editor>
+
+	(
+	<byline>
+	<affiliation>Örebro University School of Business,</affiliation>
+	</byline>
+
+	<address>Sweden</address>
+
+	)<lb/>
+
+	<editor>Adriana Fumi Chim Miki<lb/></editor>
+
+	(
+	<byline>
+	<affiliation>Universidade Federal de Campina Grande,</affiliation>
+	</byline>
+
+	<address>Brazil</address>
+
+	)<lb/> Reviewers:<lb/>
+	<byline>
+	<docAuthor>Alexandre Borba da Silveira<lb/></docAuthor>
+	</byline>
+
+	(
+	<byline>
+	<affiliation>Universidade Federal do Paraná,</affiliation>
+	</byline>
+
+	<address>Brazil</address>
+
+	)<lb/>
+
+	and one anonymous reviewer.<lb/> Editorial assistants:<lb/>
+
+	<editor>Eduarda Anastacio and Simone Rafael<lb/></editor>
+
+	(
+	<byline>
+		<affiliation>ANPAD, </affiliation>
+	</byline>
+
+	<address>Maringá, Brazil</address>
+
+	).
+
+	ABSTRACT<lb/>
+	<div type="abstract">Objective: comprehend the challenges and solutions faced by a non-technological<lb/> and non-profit organization, acting within a coopetitive environment, in the construc-<lb/>tion of a multisided platform business model. Method: utilizing a qualitative case study<lb/> approach, we investigated FEBRAFAR, a multisided platform of drugstore retailers, man-<lb/>ufacturers, and service providers. Data collection and analysis was based on the follow-<lb/>ing categories: (a) the methods through which the platform generates value for its di-<lb/>verse customer segments, (b) the intricate contours of its value configuration endeavor,<lb/> and (c) its strategies for value appropriation to ensure both sustainability and growth.<lb/> Results: the challenges in establishing an efficiently functioning multisided platform<lb/> business model included: getting resources; member&apos;s attraction; and resistance to<lb/> adopting best management practices. The solutions contained the development of val-<lb/>ue creation techniques for its varied customer segments by reducing transactional fric-<lb/>tion with customers and suppliers, a comprehensive value configuration process, and<lb/> value appropriation that promote sustainability and growth to these drugstore chains.<lb/> Conclusion: the paper shows how FEBRAFAR got the solution of value creation and<lb/> appropriation of the platform business model by orchestrating the interactions of com-<lb/>peting entities within the stakeholder ecosystem that engage in collaboration. By es-<lb/>tablishing clear rules and interaction protocols, a multisided platform can facilitate co-<lb/>ordination among competing entities, thereby enabling collaborative value co-creation<lb/> for all involved stakeholders. This finding contributes to the broader understanding of<lb/> strategic management in multisided platforms, particularly in non-technology contexts.<lb/></div>
+
+	<docTitle>
+	<titlePart>Coopetition through Multisided Platforms<lb/> Business Model: A Case Study of FEBRAFAR<lb/> Value Cycle<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alvaro Antônio Bueno de Camargo 1 , Dimaria Silva e Meirelles 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Fundação Getulio Vargas, Instituto de Desenvolvimento Educacional,</affiliation>
+	</byline>
+
+	<address>Rio de Janeiro, RJ, Brazil<lb/></address>
+
+	<byline>
+	<affiliation>2 Universidade Presbiteriana Mackenzie,</affiliation>
+	</byline>
+
+	<address>São Paulo, SP, Brazil<lb/></address>
+
+	How to cite:
+	<reference>Camargo, A. A. B., &amp; Meirelles, D. S. (2024). Coopetition through multisided platforms business model: A case study of FEBRAFAR value cycle.<lb/> BAR-Brazilian Administration Review, 21(1), e230099.<lb/></reference>
+
+	<idno>DOI: https://doi.org/10.1590/1807-7692bar2024230099<lb/></idno>
+
+	<note type="doctype">Special issue</note> on: Coopetition Authors<lb/>
+
+	<byline>
+	<docAuthor>Álvaro Antônio Bueno de Camargo<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fundação Getulio Vargas, Instituto de Desenvolvimento Educacional<lb/></affiliation>
+	</byline>
+
+	<address>Praia de Botafogo, 190, CEP 22250-900, Rio de Janeiro, RJ, Brazil<lb/></address>
+
+	<email>camargo.alvaro@gmail.com<lb/></email>
+
+	<byline>
+	<docAuthor>Dimaria Silva e Meirelles<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universidade Presbiteriana Mackenzie<lb/></affiliation>
+	</byline>
+
+	<address>Rua da Consolação, 896, CEP 06696-250, São Paulo, SP, Brazil<lb/></address>
+
+	<email>dmeirelles@gmail.com</email>
+
+		</front>
+	</text>
+
+</TEI>

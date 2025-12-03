@@ -136,9 +136,9 @@
 			
 			<div type="acknowledgement">ACKNOWLEDGMENTS <lb/>We thank the iGE3 Genomics Platform at the University of Geneva for expert technical assistance during <lb/>RNA-seq experiments. This research was supported by the University of Geneva and the Swiss National Sci-<lb/>ence Foundation (grant numbers 31003A_172878 to A.C. and 310030_189153 to I.R.). <lb/></div>
 			
-			<div type="annex">AUTHOR CONTRIBUTIONS <lb/>L.F., J.T., M.B., D.R., C.K., and V.P. acquired and analyzed data. L.F. performed bulk, single-cell, and single-<lb/>nucleus RNA-seq data analysis. J.T. performed bulk RNA-seq data analysis, mouse brain cell database <lb/>mining, and confocal microscopy. D.R. generated the human bulk RNA-seq dataset. M.B. performed <lb/>immunohistochemical staining and epifluorescence microscopy with help from C.K. and V.P. K.E., J.A.L., <lb/>and B.N.L. collected human biopsies. L.F., J.T., M.B., D.R., A.C., and I.R. carried out the conceptualization <lb/>and experimental design. A.C. and I.R. wrote the manuscript with comments from all the other authors. <lb/></div>
+			<div type="contribution">AUTHOR CONTRIBUTIONS <lb/>L.F., J.T., M.B., D.R., C.K., and V.P. acquired and analyzed data. L.F. performed bulk, single-cell, and single-<lb/>nucleus RNA-seq data analysis. J.T. performed bulk RNA-seq data analysis, mouse brain cell database <lb/>mining, and confocal microscopy. D.R. generated the human bulk RNA-seq dataset. M.B. performed <lb/>immunohistochemical staining and epifluorescence microscopy with help from C.K. and V.P. K.E., J.A.L., <lb/>and B.N.L. collected human biopsies. L.F., J.T., M.B., D.R., A.C., and I.R. carried out the conceptualization <lb/>and experimental design. A.C. and I.R. wrote the manuscript with comments from all the other authors. <lb/></div>
 
-			<div type="annex">DECLARATION OF INTERESTS <lb/>The authors declare no competing interests. <lb/></div>
+			<div type="conflict">DECLARATION OF INTERESTS <lb/>The authors declare no competing interests. <lb/></div>
 
 			<front>Received: August 7, 2020 <lb/>Revised: September 25, 2020 <lb/>Accepted: November 18, 2020 <lb/>Published: December 18, 2020 <lb/></front>
 

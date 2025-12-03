@@ -29,6 +29,8 @@ public class TaggingLabels {
 
     public final static String AVAILABILITY_LABEL = "<availability>";
     public final static String FUNDING_LABEL = "<funding>";
+    public final static String CONFLICT_OF_INTEREST_LABEL = "<conflict>";
+    public final static String AUTHOR_CONTRIBUTION_LABEL = "<contribution>";
 
     public static final String CITATION_MARKER_LABEL = "<citation_marker>";
     public static final String TABLE_MARKER_LABEL = "<table_marker>";
@@ -200,6 +202,8 @@ public class TaggingLabels {
     public static final TaggingLabel HEADER_PUBLISHER = new TaggingLabelImpl(GrobidModels.HEADER, PUBLISHER_LABEL);
     public static final TaggingLabel HEADER_JOURNAL = new TaggingLabelImpl(GrobidModels.HEADER, JOURNAL_LABEL);
     public static final TaggingLabel HEADER_AVAILABILITY = new TaggingLabelImpl(GrobidModels.HEADER, AVAILABILITY_LABEL);
+    public static final TaggingLabel HEADER_CONFLICT_OF_INTEREST = new TaggingLabelImpl(GrobidModels.HEADER, CONFLICT_OF_INTEREST_LABEL);
+    public static final TaggingLabel HEADER_AUTHOR_CONTRIBUTION = new TaggingLabelImpl(GrobidModels.HEADER, AUTHOR_CONTRIBUTION_LABEL);
 
     public static final TaggingLabel DATE_YEAR = new TaggingLabelImpl(GrobidModels.DATE, DATE_YEAR_LABEL);
     public static final TaggingLabel DATE_MONTH = new TaggingLabelImpl(GrobidModels.DATE, DATE_MONTH_LABEL);
@@ -354,6 +358,8 @@ public class TaggingLabels {
         register(HEADER_JOURNAL);
         register(HEADER_PAGE);
         register(HEADER_AVAILABILITY);
+        register(HEADER_CONFLICT_OF_INTEREST);
+        register(HEADER_AUTHOR_CONTRIBUTION);
 
         //date
         register(DATE_YEAR);
