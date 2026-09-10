@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
 <listBibl>
-<bibl><author>Smith, J.</author> (<date>2020</date>). <title level="m">Alpha [Computer software]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.1234567</ptr></bibl>
-<bibl><author>Smith, J.</author> (<date>2020</date>). <title level="m">Alpha [Computer software]</title>. <publisher>Zenodo</publisher>.</bibl>
-<bibl><author>Smith, J.</author> (<date>2020</date>). <title level="m">Alpha [Computer software]</title>. <idno type="DOI">doi:10.5281/zenodo.1234567</idno></bibl>
 <bibl><author>Egense, T.</author> (<date>2026</date>). <title level="m">SolrWayback (Version 5.4.1) [Computer software]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.18314399</ptr></bibl>
 <bibl><author>Egense, T. &amp; Eskildsen, T.</author> (<date>2026</date>). <title level="m">SolrWayback (Version 5.4.1) [Computer software]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.18314399</ptr></bibl>
 <bibl><author>Egense, T., Eskildsen, T. &amp; Lauridsen, J.</author> (<date>2026</date>). <title level="m">SolrWayback (Version 5.4.1) [Computer software]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.18314399</ptr></bibl>
 <bibl><author>Egense, T., Eskildsen, T., Lauridsen, J. &amp; O'Brien, B.</author> (<date>2026</date>). <title level="m">SolrWayback (Version 5.4.1) [Computer software]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.18314399</ptr></bibl>
 <bibl><author>Egense, T., Eskildsen, T., Lauridsen, J., O'Brien, B. &amp; Jackson, A.</author> (<date>2026</date>). <title level="m">SolrWayback (Version 5.4.1) [Computer software]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.18314399</ptr></bibl>
 <bibl><author>Egense, T., Eskildsen, T., Lauridsen, J., O'Brien, B., Jackson, A. &amp; Bellony, L.</author> (<date>2026</date>). <title level="m">SolrWayback (Version 5.4.1) [Computer software]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.18314399</ptr></bibl>
-<bibl><author>Jansen, M.</author> (<date>2024</date>). <title level="m">InternetArchiveExtractor (Version 0.0.8) [Python]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.10234567</ptr></bibl>
-<bibl><author>Jansen, M. &amp; Keller, P.</author> (<date>2024</date>). <title level="m">InternetArchiveExtractor (Version 0.0.8) [Python]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.10234567</ptr></bibl>
-<bibl><author>Torres, L.</author> (<date>2022</date>). <title level="m">Global surface temperature anomalies, 1880-2021 [Data set]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.5678901</ptr></bibl>
-<bibl><author>Torres, L. &amp; Bianchi, R.</author> (<date>2022</date>). <title level="m">Global surface temperature anomalies, 1880-2021 [Data set]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.5678901</ptr></bibl>
-<bibl><author>Nakamura, H., Patel, S. &amp; Dubois, C.</author> (<date>2023</date>). <title level="m">River discharge records for the Rhône basin [Dataset]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.7890123</ptr></bibl>
-<bibl><author>Whitfield, D.</author> (<date>2021</date>). <title level="m">audio-align: forced alignment for speech corpora [Computer software]</title>. <ptr type="web">https://github.com/dwhitfield/audio-align</ptr></bibl>
-<bibl><author>Whitfield, D. &amp; Reyes, M.</author> (<date>2021</date>). <title level="m">audio-align: forced alignment for speech corpora [Computer software]</title>. <ptr type="web">https://github.com/dwhitfield/audio-align</ptr></bibl>
-<bibl><author>Lindqvist, A.</author> (<date>2025</date>). <title level="m">Baltic Sea salinity profiles [Dataset]</title> <ptr type="web">https://doi.org/10.5281/zenodo.2233445</ptr></bibl>
-<bibl><author>Park, J.</author> (<date>2024</date>). <title level="m">Neural approaches to speaker diarization [Preprint]</title>. <ptr type="web">https://doi.org/10.48550/arXiv.2024.01234</ptr></bibl>
-<bibl><author>Costa, R.</author> (<date>2019</date>). <title level="m">Historical weather station readings [Machine-readable data file]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.334455</ptr></bibl>
+<bibl><author>Egense, T., Eskildsen, T., Lauridsen, J., O'Brien, B., Jackson, A., Bellony, L. &amp; Thogersen, J.</author> (<date>2026</date>). <title level="m">SolrWayback (Version 5.4.1) [Computer software]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.18314399</ptr></bibl>
+<bibl><author>Egense, T., Eskildsen, T., Lauridsen, J., O'Brien, B., Jackson, A., Bellony, L., Thogersen, J. &amp; Johnston, V. H.</author> (<date>2026</date>). <title level="m">SolrWayback (Version 5.4.1) [Computer software]</title>. <ptr type="web">https://doi.org/10.5281/zenodo.18314399</ptr></bibl>
 </listBibl>
 </tei>
