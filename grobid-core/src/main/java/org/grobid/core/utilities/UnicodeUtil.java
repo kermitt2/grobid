@@ -157,8 +157,7 @@ public class UnicodeUtil {
     // ("威廉·莎士比亚"), exactly the role of U+30FB "・" which TextUtilities.delimiters
     // already treats as a token boundary. Keeping the dot there would glue the two names into
     // one token, so in a CJK context it keeps being normalised to a bullet as before.
-    private static final String MIDDLE_DOT_WORD_CHAR =
-            "[\\p{L}\\p{N}\\p{M}&&[^\\p{IsHan}\\p{IsHiragana}\\p{IsKatakana}\\p{IsHangul}]]";
+    private static final String MIDDLE_DOT_WORD_CHAR = "[\\p{L}\\p{N}\\p{M}&&[^\\p{IsHan}\\p{IsHiragana}\\p{IsKatakana}\\p{IsHangul}]]";
     private static final Pattern MIDDLE_DOT_BULLET_PATTERN = Pattern.compile(
             "(?<!" + MIDDLE_DOT_WORD_CHAR + ")\\u00B7|\\u00B7(?!" + MIDDLE_DOT_WORD_CHAR + ")");
 
