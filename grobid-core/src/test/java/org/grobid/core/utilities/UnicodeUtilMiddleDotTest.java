@@ -44,6 +44,43 @@ public class UnicodeUtilMiddleDotTest {
         assertThat(UnicodeUtil.normaliseText("a·b"), is("a·b"));
     }
 
+    /** Units and scientific notation are the most frequent intra-token use in English papers. */
+    @Test
+    public void normaliseText_middleDotInUnitsAndNotation_shouldBePreserved() {
+        assertThat(UnicodeUtil.normaliseText("Pa·s"), is("Pa·s"));
+        assertThat(UnicodeUtil.normaliseText("Ω·cm"), is("Ω·cm"));
+        assertThat(UnicodeUtil.normaliseText("kJ·mol-1"), is("kJ·mol-1"));
+        assertThat(UnicodeUtil.normaliseText("68.6·10"), is("68.6·10"));
+        assertThat(UnicodeUtil.normaliseText("FD·YAG"), is("FD·YAG"));
+    }
+
+    /** A decomposed accented letter (base letter + combining mark) still counts as a word character. */
+    @Test
+    public void normaliseText_middleDotAfterCombiningMark_shouldBePreserved() {
+        // "à·b" with U+0300 COMBINING GRAVE ACCENT rather than the precomposed U+00E0
+        assertThat(UnicodeUtil.normaliseText("a\u0300·b"), is("a\u0300·b"));
+    }
+
+    /**
+     * Between CJK characters the interpunct is a word separator (transliterated names),
+     * the same role as U+30FB which is already a delimiter, so it must still become a bullet.
+     */
+    @Test
+    public void normaliseText_middleDotBetweenCjkCharacters_shouldBecomeBullet() {
+        assertThat(UnicodeUtil.normaliseText("威廉·莎士比亚"), is("威廉•莎士比亚"));
+        assertThat(UnicodeUtil.normaliseText("ジョン·スミス"), is("ジョン•スミス"));
+        assertThat(UnicodeUtil.normaliseText("김·이"), is("김•이"));
+        // mixed: one CJK neighbour is enough to make it a separator
+        assertThat(UnicodeUtil.normaliseText("abc·漢字"), is("abc•漢字"));
+    }
+
+    /** Runs of middle dots (ellipsis, "H···O" contacts) are never intra-word: every dot is a bullet. */
+    @Test
+    public void normaliseText_runOfMiddleDots_shouldAllBecomeBullets() {
+        assertThat(UnicodeUtil.normaliseText("S···C"), is("S•••C"));
+        assertThat(UnicodeUtil.normaliseText("1 · · · n"), is("1 • • • n"));
+    }
+
     /** The precomposed form U+0140 LATIN SMALL LETTER L WITH MIDDLE DOT is not a bullet either. */
     @Test
     public void normaliseText_precomposedLWithMiddleDot_shouldBePreserved() {

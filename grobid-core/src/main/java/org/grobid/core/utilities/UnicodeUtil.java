@@ -150,8 +150,17 @@ public class UnicodeUtil {
     // TextUtilities.delimiters while U+00B7 is not, additionally splits the word into
     // three tokens ("intel", "•", "ligència"), degrading every downstream model.
     // So only treat a middle dot as a bullet when it is not between two word characters.
-    private static final Pattern MIDDLE_DOT_BULLET_PATTERN = Pattern
-            .compile("(?<![\\p{L}\\p{N}])\\u00B7|\\u00B7(?![\\p{L}\\p{N}])");
+    //
+    // "Word character" here means a letter, digit or combining mark of any script *except*
+    // CJK (Han, Hiragana, Katakana, Hangul). In Chinese and Japanese an interpunct between
+    // two ideographs is a word separator, e.g. between the parts of a transliterated name
+    // ("威廉·莎士比亚"), exactly the role of U+30FB "・" which TextUtilities.delimiters
+    // already treats as a token boundary. Keeping the dot there would glue the two names into
+    // one token, so in a CJK context it keeps being normalised to a bullet as before.
+    private static final String MIDDLE_DOT_WORD_CHAR =
+            "[\\p{L}\\p{N}\\p{M}&&[^\\p{IsHan}\\p{IsHiragana}\\p{IsKatakana}\\p{IsHangul}]]";
+    private static final Pattern MIDDLE_DOT_BULLET_PATTERN = Pattern.compile(
+            "(?<!" + MIDDLE_DOT_WORD_CHAR + ")\\u00B7|\\u00B7(?!" + MIDDLE_DOT_WORD_CHAR + ")");
 
     // opening parenthesis
     public static String open_parenthesis = "["
