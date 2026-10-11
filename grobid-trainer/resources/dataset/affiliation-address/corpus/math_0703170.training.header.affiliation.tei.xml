@@ -23,7 +23,7 @@
 							<orgName type="laboratory">BiBoS</orgName>;
 						</affiliation>
 						<affiliation>
-							<orgName type="laboratory">CERFIM</orgName> (Locarno);
+							<orgName type="laboratory">CERFIM</orgName> (<address><settlement>Locarno</settlement></address>);
 						</affiliation>
 						<affiliation>
 							<orgName type="department">Acc. Arch.</orgName> (<orgName type="institution">USI</orgName>),
