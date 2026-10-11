@@ -58,13 +58,6 @@
 							</address>
 						</affiliation>
 						<affiliation>
-							<marker>7</marker>
-							<orgName type="laboratory">Statistical Genomics</orgName>,
-							<orgName type="department">Dept of Genetics</orgName>,
-							<!-- check: "Washington" is most likely the truncated institution name (Washington Univ, St. Louis, host of the Division of Statistical Genomics) rather than a city; retagged institution -->
-							<orgName type="institution">Washington</orgName>
-						</affiliation>						
-						<affiliation>
 							<marker>9</marker>
 							<orgName type="department">Genetic Epidemiology</orgName>,
 							<orgName type="department">Dept of Med Genetics, Molecular &amp; Clin Pharmacology</orgName>,
