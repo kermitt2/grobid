@@ -9,9 +9,8 @@
 
 						<affiliation>
 							<marker>a</marker>
-							<!-- check: truncated organisation name (probably Birmingham and Solihull Mental Health NHS Foundation Trust); retyped institution -->
-							<orgName type="institution">Birmingham and Solihull</orgName>,
 							<address>
+								<settlement>Birmingham</settlement> and <settlement>Solihull</settlement>,
 								<region>West Midlands</region>,
 								<country>United Kingdom</country>
 							</address>
