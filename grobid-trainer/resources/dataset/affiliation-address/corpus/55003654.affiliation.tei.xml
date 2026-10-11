@@ -9,8 +9,8 @@
 
 						<affiliation>
 							<marker>a</marker>
-							<orgName type="department">Birmingham and Solihull</orgName>,
 							<address>
+								<settlement>Birmingham</settlement> and <settlement>Solihull</settlement>,
 								<region>West Midlands</region>,
 								<country>United Kingdom</country>
 							</address>
