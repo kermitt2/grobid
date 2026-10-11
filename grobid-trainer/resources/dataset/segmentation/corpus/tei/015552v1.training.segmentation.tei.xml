@@ -40,7 +40,7 @@
 
 			<div type="conflict">Competing Interests NJL is a member of the MinION Access Programme (MAP) and has received free-<lb/>of-charge reagents for nanopore sequencing presented in this study. JQ has received travel and accommo-<lb/>dation expenses to speak at an Oxford Nanopore-organised symposium. NJL and JQ have ongoing research <lb/>collaborations with Oxford Nanopore but do not receive financial compensation for this. <lb/></div>
 
-			<div type="annex">Correspondence Correspondence and requests for materials should be addressed to JTS (email: Jared.Simpson@oicr.on.ca <lb/></div>
+			<front>Correspondence Correspondence and requests for materials should be addressed to JTS (email: Jared.Simpson@oicr.on.ca <lb/></front>
 
 			<page>8 <lb/></page>
 
@@ -60,7 +60,11 @@
 
 			<page>12 <lb/></page>
 
-			<div type="annex">Coverage analysis <lb/>The GC plot was constructed from the assembly using a Python script using Biopython averaging <lb/>GC-content over 1000 base 20 . <lb/>QUAST Analysis <lb/>The circularised contig was analysed by QUAST 2.3 14 which was run with default parameters and <lb/>supplying the NC 000913.3 reference genome as the comparator. <lb/>Mauve Analysis <lb/>The circularised contig was analysed by running the progressiveMauve package on the command-<lb/>line with option --collinear and visualised in the Mauve Genome Viewer. 21 . <lb/>5-mer Analysis <lb/>To explore over and under-representation of 5-mers, we wrote a program to count the number of <lb/>occurrences of the 1024 different 5-mers in a set of sequences. This program counts 5-mers on the <lb/>forward and reverse strands independently. The analysis used the counts for the forward strand of <lb/>the reference and the forward strand of the largest contig of our assembly. We plotted the results <lb/>13 <lb/>using R and the ggplot2 library. <lb/></div>
+			<div type="annex">Coverage analysis <lb/>The GC plot was constructed from the assembly using a Python script using Biopython averaging <lb/>GC-content over 1000 base 20 . <lb/>QUAST Analysis <lb/>The circularised contig was analysed by QUAST 2.3 14 which was run with default parameters and <lb/>supplying the NC 000913.3 reference genome as the comparator. <lb/>Mauve Analysis <lb/>The circularised contig was analysed by running the progressiveMauve package on the command-<lb/>line with option --collinear and visualised in the Mauve Genome Viewer. 21 . <lb/>5-mer Analysis <lb/>To explore over and under-representation of 5-mers, we wrote a program to count the number of <lb/>occurrences of the 1024 different 5-mers in a set of sequences. This program counts 5-mers on the <lb/>forward and reverse strands independently. The analysis used the counts for the forward strand of <lb/>the reference and the forward strand of the largest contig of our assembly. We plotted the results <lb/></div>
+
+			<page>13 <lb/></page>
+
+			<div type="annex">using R and the ggplot2 library. <lb/></div>
 
 			<page>14 <lb/></page>
 
