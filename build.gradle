@@ -343,7 +343,7 @@ project("grobid-core") {
         implementation 'org.slf4j:slf4j-api:2.0.19'
         implementation 'ch.qos.logback:logback-classic:1.5.38'
 
-        implementation "org.apache.pdfbox:pdfbox:2.0.36"
+        implementation "org.apache.pdfbox:pdfbox:2.0.37"
 
         api "xerces:xercesImpl:2.12.2"
         // jsonic has no direct GROBID usage, but the bundled langdetect localLib (the default
@@ -530,7 +530,7 @@ project(":grobid-service") {
             }
         }
 
-        implementation "org.apache.pdfbox:pdfbox:2.0.36"
+        implementation "org.apache.pdfbox:pdfbox:2.0.37"
         implementation "io.prometheus:simpleclient_dropwizard:0.16.0"
         implementation "io.prometheus:simpleclient_servlet_jakarta:0.16.0"
         implementation "io.prometheus:simpleclient_hotspot:0.16.0"
