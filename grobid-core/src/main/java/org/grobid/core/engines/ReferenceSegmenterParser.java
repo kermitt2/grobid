@@ -206,7 +206,12 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
                 String fullRes = label(allVectors);
 
                 // segment this result to get back the input chunk alignment (with extra 500 overlapping lines)
-                String[] fullResLines = fullRes.split("\n");
+                String[] fullResLines = fullRes == null ? new String[0] : fullRes.split("\n");
+                int expectedLines = featureVectorPieces.stream().mapToInt(List::size).sum();
+                if (fullResLines.length < expectedLines) {
+                    throw new GrobidException("The labelling of the reference section returned " +
+                        fullResLines.length + " lines for " + expectedLines + " input lines.");
+                }
                 int pos = 0;
                 for (List<String> featureVectorPiece : featureVectorPieces) {
                     StringBuilder localRes = new StringBuilder();
