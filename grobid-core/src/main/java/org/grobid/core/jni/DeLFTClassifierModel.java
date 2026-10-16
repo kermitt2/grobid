@@ -157,10 +157,8 @@ public class DeLFTClassifierModel {
 
                 results = (String) objectResult;
 
-            } catch (JepException e) {
-                LOGGER.error("DeLFT model classification via JEP failed", e);
-            } catch (IOException e) {
-                LOGGER.error("DeLFT model classification failed", e);
+            } catch (JepException | IOException e) {
+                throw new GrobidException("DeLFT model " + this.modelName + " classification failed", e);
             } finally {
                 // No need to close the JEP instance here as it's managed by the pool
                 // and will be reused for other tasks
@@ -187,9 +185,12 @@ public class DeLFTClassifierModel {
         try {
             result = JEPThreadPoolClassifier.getInstance().call(new ClassificationTask(this.modelName, data));
         } catch (InterruptedException e) {
-            LOGGER.error("DeLFT model " + this.modelName + " classification interrupted", e);
+            Thread.currentThread().interrupt();
+            throw new GrobidException("DeLFT model " + this.modelName + " classification interrupted", e);
         } catch (ExecutionException e) {
-            LOGGER.error("DeLFT model " + this.modelName + " classification failed", e);
+            if (e.getCause() instanceof GrobidException)
+                throw (GrobidException) e.getCause();
+            throw new GrobidException("DeLFT model " + this.modelName + " classification failed", e.getCause());
         }
         return result;
     }
