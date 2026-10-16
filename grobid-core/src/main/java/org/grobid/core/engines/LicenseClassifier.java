@@ -78,10 +78,7 @@ public class LicenseClassifier {
             return null;
         List<String> texts = new ArrayList<>();
         texts.add(text);
-        List<CopyrightsLicense> results = classify(texts);
-        if (CollectionUtils.isEmpty(results))
-            return null;
-        return results.get(0);
+        return classify(texts).get(0);
     }
 
     /**
@@ -102,13 +99,6 @@ public class LicenseClassifier {
 
     protected static List<CopyrightsLicense> extractResults(String copyrightOwnerAsJson, String licencesAsJson) {
         List<CopyrightsLicense> results = new ArrayList<>();
-
-        // a failed DeLFT classification gives no result: no copyrights/license
-        // rather than failing the whole document
-        if (copyrightOwnerAsJson == null || licencesAsJson == null) {
-            LOGGER.warn("Copyrights/license classification failed, no copyrights/license identified");
-            return results;
-        }
 
         // set resulting context classes to entity mentions
         try {

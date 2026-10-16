@@ -261,10 +261,4 @@ public class LicenseClassifierTest {
         assertThat(copyrightsLicenses.get(0).getCopyrightsOwnerProb(), is(0.005560279358178377));
     }
 
-    @Test
-    public void testExtractResults_failedClassification_shouldReturnEmpty() {
-        assertThat(LicenseClassifier.extractResults(null, "{}"), hasSize(0));
-        assertThat(LicenseClassifier.extractResults("{}", null), hasSize(0));
-    }
-
 }
