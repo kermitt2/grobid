@@ -126,10 +126,10 @@ RUN mkdir -p /data \
     && ln -s /data ./data
 
 # install DeLFT (PyTorch backend) + torch.
-# Pinned to a delft commit until the next PyPI release (1.0.2) is published; this
-# one is "chore: retrain with embeddings" (model configs re-enable glove-840B word
-# embeddings), on top of the merge of "Improve pytorch performances" (#230) and the
-# padded-token masking fixes (#231-#234).
+# Pinned to a delft commit until the next PyPI release (1.2.0) is published; this
+# one is the dev branch's "models: re-train models", which saves the weights as
+# model.safetensors and names each model directory with its embeddings suffix
+# (e.g. header-BidLSTM_CRF_FEATURES-glove_840B).
 #
 # A commit SHA rather than a branch name, for provenance: the Dockerfile alone then
 # says which delft is in a given image, which a branch name cannot. Bump it to move.
@@ -144,7 +144,7 @@ RUN mkdir -p /data \
 # On amd64 we pull the CUDA 12.8 build via the [gpu] extra and the PyTorch index.
 # On arm64 we take the default (CPU) torch wheel from PyPI.
 # torch / transformers / pytorch-crf come in transitively; no tensorflow / tf_keras.
-ARG DELFT_REF=682f3e21cf1668d7e8f92959a89004b3071f4aa0
+ARG DELFT_REF=137f59c3c1cb97055205831e2f499a5af75e06fa
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
     pip3 install --no-cache-dir "delft[gpu] @ git+https://github.com/kermitt2/delft.git@${DELFT_REF}" \
       --extra-index-url https://download.pytorch.org/whl/cu128; \
