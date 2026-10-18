@@ -15,7 +15,7 @@
 # build builder image
 # -------------------
 
-FROM eclipse-temurin:21.0.11_10-jdk-noble AS builder
+FROM eclipse-temurin:21.0.12.1_1-jdk-noble AS builder
 
 USER root
 
@@ -80,13 +80,13 @@ RUN rm -rf grobid-source
 
 # Same image the builder starts from, so it costs no extra pull, but -- unlike `builder` --
 # its content does not move with the grobid source, which keeps the JEP layer cacheable.
-FROM eclipse-temurin:21.0.11_10-jdk-noble AS jdk
+FROM eclipse-temurin:21.0.12.1_1-jdk-noble AS jdk
 
 # -------------------
 # build runtime image
 # -------------------
 
-FROM eclipse-temurin:21.0.11_10-jre-noble
+FROM eclipse-temurin:21.0.12.1_1-jre-noble
 
 # setting locale is likely useless but to be sure
 ENV LANG=C.UTF-8
@@ -157,7 +157,7 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
 # Mounted from the `jdk` stage rather than from `builder`, so this layer does not depend on
 # a stage that is rebuilt on every commit.
 RUN --mount=from=jdk,source=/opt/java/openjdk,target=/opt/java/openjdk-jdk \
-    JAVA_HOME=/opt/java/openjdk-jdk pip3 install --no-cache-dir jep==4.3.1
+    JAVA_HOME=/opt/java/openjdk-jdk pip3 install --no-cache-dir jep==4.3.2
 
 # preload embeddings, for GROBID all the RNN models use glove-840B (default for the script), ELMo is currently not loaded
 # to be done: mechanism to download GROBID fine-tuned models based on SciBERT if selected (but not good enough for the moment)
