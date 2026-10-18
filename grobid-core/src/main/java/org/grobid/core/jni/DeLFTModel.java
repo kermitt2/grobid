@@ -89,9 +89,8 @@ public class DeLFTModel {
                 } else {
                     File modelDir = GrobidProperties.getDelftModelDirectory(fullModelName, this.architecture);
                     if (modelDir == null) {
-                        throw new GrobidException("No DeLFT model " + fullModelName + " with architecture "
-                                + this.architecture + " and embeddings suffix "
-                                + GrobidProperties.getDelftEmbeddingsSuffix(fullModelName)
+                        throw new GrobidException("No DeLFT model "
+                                + GrobidProperties.getDelftModelDirectoryName(fullModelName, this.architecture)
                                 + " under " + modelPath.getAbsolutePath());
                     }
                     fullModelName = modelDir.getName();
@@ -429,15 +428,18 @@ public class DeLFTModel {
             if (GrobidProperties.getInstance().useELMo(modelName) && modelName.toLowerCase().indexOf("bert") == -1) {
                 throw new GrobidException("ELMo is not supported by DeLFT anymore, disable useELMo for " + modelName);
             }
-            // without --embedding, DeLFT trains a model without word embeddings; the suffix
-            // names the output directory as getDelftModelDirectory() expects it
+            // without --embedding, DeLFT trains a model without word embeddings
             String embeddingsName = GrobidProperties.getDelftEmbeddingsName(modelName);
             if (StringUtils.isNotBlank(embeddingsName)) {
                 command.add("--embedding");
                 command.add(embeddingsName);
             }
-            command.add("--suffix");
-            command.add(GrobidProperties.getDelftEmbeddingsSuffix(modelName));
+            // names the output directory as getDelftModelDirectory() expects it
+            String suffix = GrobidProperties.getDelftSuffix(modelName);
+            if (suffix != null) {
+                command.add("--suffix");
+                command.add(suffix);
+            }
             if (GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(modelName) != -1) {
                 command.add("--max-sequence-length");
                 command.add(

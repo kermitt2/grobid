@@ -208,7 +208,7 @@ public enum GrobidModels implements GrobidModel {
      *
      * The check is engine-aware because Wapiti and DeLFT use different on-disk layouts:
      *   - Wapiti:  <home>/models/<flavor-folder>/model.wapiti          (a file, slash-separated path)
-     *   - DeLFT:   <home>/models/<hyphenated-name>-<architecture>-<embeddings suffix>/
+     *   - DeLFT:   <home>/models/<hyphenated-name>-<architecture>[-<suffix>]/
      *              (a directory, hyphenated name; see GrobidProperties.getDelftModelDirectory)
      *
      * Both engine and DeLFT architecture are resolved against the flavored model itself.

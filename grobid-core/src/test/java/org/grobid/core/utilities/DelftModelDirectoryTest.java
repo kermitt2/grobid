@@ -20,9 +20,10 @@ import static org.junit.Assert.assertThat;
 
 import java.io.File;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import org.grobid.core.exceptions.GrobidPropertyException;
 
 public class DelftModelDirectoryTest {
 
@@ -31,33 +32,51 @@ public class DelftModelDirectoryTest {
         GrobidProperties.getInstance();
     }
 
-    private static GrobidConfig.ModelParameters delftModel(String name, String embeddingsName) {
+    private static GrobidConfig.ModelParameters delftModel(String name, String suffix) {
         GrobidConfig.ModelParameters modelParameters = new GrobidConfig.ModelParameters();
         modelParameters.name = name;
         modelParameters.engine = "delft";
         modelParameters.delft = new GrobidConfig.DelftModelParameters();
         modelParameters.delft.architecture = "BidLSTM_CRF_FEATURES";
-        modelParameters.delft.embeddings_name = embeddingsName;
+        modelParameters.delft.suffix = suffix;
         return modelParameters;
     }
 
     @Test
-    public void testEmbeddingsSuffix_default_shouldBeGlove() {
-        assertThat(GrobidProperties.getDelftEmbeddingsSuffix("header"), is("glove_840B"));
+    public void testSuffix_shippedModel() {
+        assertThat(GrobidProperties.getDelftSuffix("header"), is("glove_840B"));
     }
 
     @Test
-    public void testEmbeddingsSuffix_flavor_shouldInheritFromBase() {
-        assertThat(GrobidProperties.getDelftEmbeddingsSuffix("header-article-light"), is("glove_840B"));
+    public void testSuffix_flavor_shouldInheritFromBase() {
+        assertThat(GrobidProperties.getDelftSuffix("header-article-light"), is("glove_840B"));
     }
 
     @Test
-    public void testEmbeddingsSuffix_noEmbeddings() {
+    public void testSuffix_notSet_shouldGiveDirectoryWithoutSuffix() {
         GrobidProperties.addModel(delftModel("suffix-test-null", null));
         GrobidProperties.addModel(delftModel("suffix-test-empty", ""));
 
-        assertThat(GrobidProperties.getDelftEmbeddingsSuffix("suffix-test-null"), is("no_embeddings"));
-        assertThat(GrobidProperties.getDelftEmbeddingsSuffix("suffix-test-empty"), is("no_embeddings"));
+        assertThat(GrobidProperties.getDelftSuffix("suffix-test-null"), is(nullValue()));
+        assertThat(GrobidProperties.getDelftModelDirectoryName("suffix-test-null", "BidLSTM_CRF_FEATURES"),
+                is("suffix-test-null-BidLSTM_CRF_FEATURES"));
+        assertThat(GrobidProperties.getDelftModelDirectoryName("suffix-test-empty", "BidLSTM_CRF_FEATURES"),
+                is("suffix-test-empty-BidLSTM_CRF_FEATURES"));
+    }
+
+    @Test
+    public void testSuffix_set_shouldBeAppended() {
+        GrobidProperties.addModel(delftModel("suffix-test-set", "no_embeddings"));
+
+        assertThat(GrobidProperties.getDelftModelDirectoryName("suffix-test-set", "BidLSTM_CRF_FEATURES"),
+                is("suffix-test-set-BidLSTM_CRF_FEATURES-no_embeddings"));
+    }
+
+    @Test(expected = GrobidPropertyException.class)
+    public void testSuffix_invalid_shouldThrowException() {
+        GrobidProperties.addModel(delftModel("suffix-test-invalid", "glove'); import os; ('"));
+
+        GrobidProperties.getDelftSuffix("suffix-test-invalid");
     }
 
     @Test
@@ -72,22 +91,5 @@ public class DelftModelDirectoryTest {
     public void testModelDirectory_missing_shouldBeNull() {
         assertThat(GrobidProperties.getDelftModelDirectory("header", "BidLSTM_ChainCRF_FEATURES"), is(nullValue()));
         assertThat(GrobidProperties.getDelftModelDirectory("header-article-light", "BidLSTM_CRF_FEATURES"), is(nullValue()));
-    }
-
-    @Test
-    public void testModelDirectory_legacyDirectory_shouldBeUsedWhenSuffixedIsMissing() throws Exception {
-        GrobidProperties.addModel(delftModel("legacy-dir-test", "glove-840B"));
-        File legacyDir = new File(GrobidProperties.getModelPath(), "legacy-dir-test-BidLSTM_CRF_FEATURES");
-        File suffixedDir = new File(GrobidProperties.getModelPath(), "legacy-dir-test-BidLSTM_CRF_FEATURES-glove_840B");
-        try {
-            assertThat(legacyDir.mkdir(), is(true));
-            assertThat(GrobidProperties.getDelftModelDirectory("legacy-dir-test", "BidLSTM_CRF_FEATURES"), is(legacyDir));
-
-            assertThat(suffixedDir.mkdir(), is(true));
-            assertThat(GrobidProperties.getDelftModelDirectory("legacy-dir-test", "BidLSTM_CRF_FEATURES"), is(suffixedDir));
-        } finally {
-            FileUtils.deleteQuietly(legacyDir);
-            FileUtils.deleteQuietly(suffixedDir);
-        }
     }
 }

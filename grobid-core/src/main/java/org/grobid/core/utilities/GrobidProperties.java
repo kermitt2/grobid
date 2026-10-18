@@ -953,34 +953,45 @@ public class GrobidProperties {
     }
 
     /**
-     * Suffix of the directory of a DeLFT model, which tells the embeddings it was trained
-     * with: "glove_840B" for glove-840B, "no_embeddings" when it uses none.
+     * Suffix of the directory of a DeLFT model (delft.suffix), the one given to DeLFT with
+     * --suffix when the model was trained, e.g. "glove_840B"; null when there is none.
      */
-    public static String getDelftEmbeddingsSuffix(final String modelName) {
-        String embeddingsName = getDelftEmbeddingsName(modelName);
-        if (StringUtils.isBlank(embeddingsName))
-            return "no_embeddings";
-        return embeddingsName.replaceAll("[^A-Za-z0-9.]", "_");
+    public static String getDelftSuffix(final String modelName) {
+        // Field-level prefix-fallback, as for the architecture.
+        String name = modelName;
+        while (name != null) {
+            ModelParameters param = modelMap.get(name);
+            if (param != null
+                    && param.delft != null
+                    && StringUtils.isNotBlank(param.delft.suffix)) {
+                String suffix = param.delft.suffix;
+                // same rule as DeLFT, and the suffix ends up in a python string literal
+                if (!suffix.matches("[A-Za-z0-9][A-Za-z0-9._-]*"))
+                    throw new GrobidPropertyException("Invalid DeLFT suffix '" + suffix + "' for model " + name);
+                return suffix;
+            }
+            int ind = name.lastIndexOf("-");
+            name = (ind == -1) ? null : name.substring(0, ind);
+        }
+        return null;
     }
 
     /**
-     * Directory, under the models path, of the DeLFT model, or null when there is none.
-     *
-     * DeLFT names it <model>-<architecture>-<embeddings suffix>, e.g.
-     * header-BidLSTM_CRF_FEATURES-glove_840B. A directory without the suffix, the layout
-     * before DeLFT 1.2, is used when the suffixed one does not exist.
+     * Name of the directory of a DeLFT model: <model>-<architecture>[-<suffix>], e.g.
+     * header-BidLSTM_CRF_FEATURES-glove_840B.
+     */
+    public static String getDelftModelDirectoryName(final String modelName, final String architecture) {
+        String dirName = (architecture == null) ? modelName : modelName + "-" + architecture;
+        String suffix = getDelftSuffix(modelName);
+        return (suffix == null) ? dirName : dirName + "-" + suffix;
+    }
+
+    /**
+     * Directory, under the models path, of the DeLFT model, or null when it does not exist.
      */
     public static File getDelftModelDirectory(final String modelName, final String architecture) {
-        String baseName = (architecture == null) ? modelName : modelName + "-" + architecture;
-        File modelDir = new File(getModelPath(), baseName + "-" + getDelftEmbeddingsSuffix(modelName));
-        if (modelDir.isDirectory())
-            return modelDir;
-        File legacyModelDir = new File(getModelPath(), baseName);
-        if (legacyModelDir.isDirectory()) {
-            LOGGER.warn("DeLFT model " + modelDir.getName() + " not found, using " + legacyModelDir.getName());
-            return legacyModelDir;
-        }
-        return null;
+        File modelDir = new File(getModelPath(), getDelftModelDirectoryName(modelName, architecture));
+        return modelDir.isDirectory() ? modelDir : null;
     }
 
     public static String getDelftTranformer(final String modelName) {

@@ -84,8 +84,8 @@ grobid:
     # for feature-engineered CRF, use "wapiti" and possible training parameters are window, epsilon and nbMaxIterations
     # for Deep Learning, use "delft" and select the target DL architecture (see DeLFT library), the training
     # parameters then depends on this selected DL architecture
-    # a DeLFT model is loaded from models/<name>-<architecture>-<embeddings suffix>, the suffix
-    # following delft.embeddings_name (default "glove-840B" -> "glove_840B", "" -> "no_embeddings")
+    # a DeLFT model is loaded from models/<name>-<architecture>[-<suffix>], delft.suffix being the
+    # --suffix given to DeLFT at training (the shipped models are trained with glove-840B, "glove_840B")
 
     - name: "segmentation"
       # at this time, must always be CRF wapiti, the input sequence size is too large for a Deep Learning implementation
@@ -99,6 +99,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        suffix: "glove_840B"
         runtime:
           # parameters used at runtime/prediction
           max_sequence_length: 3000
@@ -144,6 +145,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        suffix: "glove_840B"
         #transformer: "allenai/scibert_scivocab_cased"
         runtime:
           # parameters used at runtime/prediction
@@ -197,6 +199,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        suffix: "glove_840B"
         runtime:
           # parameters used at runtime/prediction (for this model, use same max_sequence_length as training)
           max_sequence_length: 3000
@@ -212,6 +215,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        suffix: "glove_840B"
 
     - name: "name-citation"
       engine: "wapiti"
@@ -219,6 +223,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        suffix: "glove_840B"
 
     - name: "date"
       engine: "wapiti"
@@ -226,6 +231,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        suffix: "glove_840B"
 
     - name: "figure"
       engine: "wapiti"
@@ -237,6 +243,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        suffix: "glove_840B"
 
     - name: "table"
       engine: "wapiti"
@@ -248,6 +255,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        suffix: "glove_840B"
 
     - name: "affiliation-address"
       #engine: "wapiti"
@@ -255,6 +263,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        suffix: "glove_840B"
 
     - name: "citation"
       #engine: "wapiti"
@@ -267,6 +276,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        suffix: "glove_840B"
         #architecture: "BERT_CRF"
         #transformer: "michiyasunaga/LinkBERT-base"
         runtime:
@@ -310,6 +320,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        suffix: "glove_840B"
         #architecture: "BERT_CRF"
         #transformer: "michiyasunaga/LinkBERT-base"
         runtime:
