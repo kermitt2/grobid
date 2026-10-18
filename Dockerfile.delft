@@ -142,14 +142,20 @@ RUN mkdir -p /data \
 # delft-*.dist-info/direct_url.json (PEP 610). That is the authoritative check.
 #
 # On amd64 we pull the CUDA 12.8 build via the [gpu] extra and the PyTorch index.
-# On arm64 we take the default (CPU) torch wheel from PyPI.
+# On arm64 we take the CPU build from the PyTorch index. The default torch wheel on PyPI is
+# a CUDA build on all of Linux, aarch64 included, and would pull several GB of
+# cuda-toolkit / cudnn / nccl / triton wheels that no CPU host can use. 2.11.0+cpu still
+# satisfies delft's torch==2.11.0 and sorts above 2.11.0, so pip picks it; the check at the
+# end fails the build if a CUDA torch was resolved anyway.
 # torch / transformers / pytorch-crf come in transitively; no tensorflow / tf_keras.
 ARG DELFT_REF=137f59c3c1cb97055205831e2f499a5af75e06fa
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
     pip3 install --no-cache-dir "delft[gpu] @ git+https://github.com/kermitt2/delft.git@${DELFT_REF}" \
       --extra-index-url https://download.pytorch.org/whl/cu128; \
     else \
-    pip3 install --no-cache-dir "delft @ git+https://github.com/kermitt2/delft.git@${DELFT_REF}"; \
+    pip3 install --no-cache-dir "delft @ git+https://github.com/kermitt2/delft.git@${DELFT_REF}" \
+      --extra-index-url https://download.pytorch.org/whl/cpu && \
+    python3 -c "import torch; assert torch.version.cuda is None, torch.__version__"; \
     fi
 
 # Build JEP with temporary access to full JDK (needs javac + JNI headers).
