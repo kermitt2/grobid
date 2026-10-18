@@ -58,9 +58,11 @@ public class DelftModelDirectoryTest {
         GrobidProperties.addModel(delftModel("suffix-test-empty", ""));
 
         assertThat(GrobidProperties.getDelftSuffix("suffix-test-null"), is(nullValue()));
-        assertThat(GrobidProperties.getDelftModelDirectoryName("suffix-test-null", "BidLSTM_CRF_FEATURES"),
+        assertThat(
+                GrobidProperties.getDelftModelDirectoryName("suffix-test-null", "BidLSTM_CRF_FEATURES"),
                 is("suffix-test-null-BidLSTM_CRF_FEATURES"));
-        assertThat(GrobidProperties.getDelftModelDirectoryName("suffix-test-empty", "BidLSTM_CRF_FEATURES"),
+        assertThat(
+                GrobidProperties.getDelftModelDirectoryName("suffix-test-empty", "BidLSTM_CRF_FEATURES"),
                 is("suffix-test-empty-BidLSTM_CRF_FEATURES"));
     }
 
@@ -68,7 +70,8 @@ public class DelftModelDirectoryTest {
     public void testSuffix_set_shouldBeAppended() {
         GrobidProperties.addModel(delftModel("suffix-test-set", "no_embeddings"));
 
-        assertThat(GrobidProperties.getDelftModelDirectoryName("suffix-test-set", "BidLSTM_CRF_FEATURES"),
+        assertThat(
+                GrobidProperties.getDelftModelDirectoryName("suffix-test-set", "BidLSTM_CRF_FEATURES"),
                 is("suffix-test-set-BidLSTM_CRF_FEATURES-no_embeddings"));
     }
 
@@ -90,6 +93,8 @@ public class DelftModelDirectoryTest {
     @Test
     public void testModelDirectory_missing_shouldBeNull() {
         assertThat(GrobidProperties.getDelftModelDirectory("header", "BidLSTM_ChainCRF_FEATURES"), is(nullValue()));
-        assertThat(GrobidProperties.getDelftModelDirectory("header-article-light", "BidLSTM_CRF_FEATURES"), is(nullValue()));
+        assertThat(
+                GrobidProperties.getDelftModelDirectory("header-article-light", "BidLSTM_CRF_FEATURES"),
+                is(nullValue()));
     }
 }

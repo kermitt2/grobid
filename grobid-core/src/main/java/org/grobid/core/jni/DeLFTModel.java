@@ -91,7 +91,8 @@ public class DeLFTModel {
                     if (modelDir == null) {
                         throw new GrobidException("No DeLFT model "
                                 + GrobidProperties.getDelftModelDirectoryName(fullModelName, this.architecture)
-                                + " under " + modelPath.getAbsolutePath());
+                                + " under "
+                                + modelPath.getAbsolutePath());
                     }
                     fullModelName = modelDir.getName();
                 }

@@ -948,7 +948,8 @@ public class GrobidProperties {
             int ind = name.lastIndexOf("-");
             name = (ind == -1) ? null : name.substring(0, ind);
         }
-        LOGGER.debug("No DeLFT configuration for model " + modelName + " or any ancestor, using the default embeddings");
+        LOGGER.debug(
+                "No DeLFT configuration for model " + modelName + " or any ancestor, using the default embeddings");
         return new DelftModelParameters().embeddings_name;
     }
 
