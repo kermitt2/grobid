@@ -92,6 +92,8 @@ grobid:
     # for feature-engineered CRF, use "wapiti" and possible training parameters are window, epsilon and nbMaxIterations
     # for Deep Learning, use "delft" and select the target DL architecture (see DeLFT library), the training
     # parameters then depends on this selected DL architecture
+    # a DeLFT model is loaded from models/<name>-<architecture>-<embeddings suffix>, the suffix
+    # following delft.embeddings_name (default "glove-840B" -> "glove_840B", "" -> "no_embeddings")
     #
     # Flavor inheritance
     # ------------------
@@ -264,7 +266,7 @@ grobid:
         window: 20
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF"
+        architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "table"
       engine: "wapiti"
@@ -275,7 +277,7 @@ grobid:
         window: 20
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF"
+        architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "affiliation-address"
       #engine: "wapiti"

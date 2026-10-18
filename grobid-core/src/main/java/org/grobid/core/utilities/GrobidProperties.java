@@ -936,17 +936,51 @@ public class GrobidProperties {
     }
 
     public static String getDelftEmbeddingsName(final String modelName) {
-        ModelParameters param = getGrobidModelParameters(modelName);
-        if (param == null) {
-            LOGGER.debug("No configuration parameter defined for model " + modelName);
-            return null;
+        // Field-level prefix-fallback, as for the architecture: a flavor entry without a
+        // `delft` section inherits the embeddings from the closest ancestor that has one.
+        // An explicit empty/null `embeddings_name` means a model without word embeddings.
+        String name = modelName;
+        while (name != null) {
+            ModelParameters param = modelMap.get(name);
+            if (param != null && param.delft != null) {
+                return param.delft.embeddings_name;
+            }
+            int ind = name.lastIndexOf("-");
+            name = (ind == -1) ? null : name.substring(0, ind);
         }
-        DelftModelParameters delftParam = param.delft;
-        if (delftParam == null) {
-            LOGGER.debug("No configuration parameter defined for DeLFT engine for model " + modelName);
-            return null;
+        LOGGER.debug("No DeLFT configuration for model " + modelName + " or any ancestor, using the default embeddings");
+        return new DelftModelParameters().embeddings_name;
+    }
+
+    /**
+     * Suffix of the directory of a DeLFT model, which tells the embeddings it was trained
+     * with: "glove_840B" for glove-840B, "no_embeddings" when it uses none.
+     */
+    public static String getDelftEmbeddingsSuffix(final String modelName) {
+        String embeddingsName = getDelftEmbeddingsName(modelName);
+        if (StringUtils.isBlank(embeddingsName))
+            return "no_embeddings";
+        return embeddingsName.replaceAll("[^A-Za-z0-9.]", "_");
+    }
+
+    /**
+     * Directory, under the models path, of the DeLFT model, or null when there is none.
+     *
+     * DeLFT names it <model>-<architecture>-<embeddings suffix>, e.g.
+     * header-BidLSTM_CRF_FEATURES-glove_840B. A directory without the suffix, the layout
+     * before DeLFT 1.2, is used when the suffixed one does not exist.
+     */
+    public static File getDelftModelDirectory(final String modelName, final String architecture) {
+        String baseName = (architecture == null) ? modelName : modelName + "-" + architecture;
+        File modelDir = new File(getModelPath(), baseName + "-" + getDelftEmbeddingsSuffix(modelName));
+        if (modelDir.isDirectory())
+            return modelDir;
+        File legacyModelDir = new File(getModelPath(), baseName);
+        if (legacyModelDir.isDirectory()) {
+            LOGGER.warn("DeLFT model " + modelDir.getName() + " not found, using " + legacyModelDir.getName());
+            return legacyModelDir;
         }
-        return param.delft.embeddings_name;
+        return null;
     }
 
     public static String getDelftTranformer(final String modelName) {
