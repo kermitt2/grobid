@@ -344,15 +344,24 @@ public class SegmentationTrainer extends AbstractTrainer {
                 // blank lines (e.g. at the end of the raw file) carry no features: not counted as raw lines,
                 // but those written with the previous label are reported
                 blankLines++;
-                if (outcome == LineOutcome.PREVIOUS_LABEL) blankWritten++;
+                if (outcome == LineOutcome.PREVIOUS_LABEL)
+                    blankWritten++;
                 return;
             }
             rawLines++;
             switch (outcome) {
-                case MATCHED: matched++; break;
-                case PREVIOUS_LABEL: previousLabel++; break;
-                case NO_LABEL: noLabel++; break;
-                case END_OF_TEI: endOfTei++; break;
+                case MATCHED :
+                    matched++;
+                    break;
+                case PREVIOUS_LABEL :
+                    previousLabel++;
+                    break;
+                case NO_LABEL :
+                    noLabel++;
+                    break;
+                case END_OF_TEI :
+                    endOfTei++;
+                    break;
             }
         }
 
@@ -370,14 +379,30 @@ public class SegmentationTrainer extends AbstractTrainer {
 
         @Override
         public String toString() {
-            return String.format(Locale.ROOT,
-                "%s / %s: raw lines %d, written %d, aligned %d (labelled from the TEI %d, previous label %d), " +
-                    "not aligned %d (no previous label %d, end of the TEI %d, not read after abandoning at line %d: %d), " +
-                    "TEI lines %d, skipped %d, not reached %d, blank raw lines %d (written %d)",
-                name, discarded ? "DISCARDED" : fullyAligned() ? "aligned" : "partially aligned",
-                totalRawLines(), written(), matched + previousLabel, matched, previousLabel,
-                noLabel + endOfTei + notRead, noLabel, endOfTei, abandonedAtLine, notRead,
-                teiLines, teiLinesSkipped, teiLinesNotReached, blankLines, blankWritten);
+            return String.format(
+                    Locale.ROOT,
+                    "%s / %s: raw lines %d, written %d, aligned %d (labelled from the TEI %d, previous label %d), "
+                            +
+                            "not aligned %d (no previous label %d, end of the TEI %d, not read after abandoning at line %d: %d), "
+                            +
+                            "TEI lines %d, skipped %d, not reached %d, blank raw lines %d (written %d)",
+                    name,
+                    discarded ? "DISCARDED" : fullyAligned() ? "aligned" : "partially aligned",
+                    totalRawLines(),
+                    written(),
+                    matched + previousLabel,
+                    matched,
+                    previousLabel,
+                    noLabel + endOfTei + notRead,
+                    noLabel,
+                    endOfTei,
+                    abandonedAtLine,
+                    notRead,
+                    teiLines,
+                    teiLinesSkipped,
+                    teiLinesNotReached,
+                    blankLines,
+                    blankWritten);
         }
     }
 
@@ -399,7 +424,7 @@ public class SegmentationTrainer extends AbstractTrainer {
 
         String summary() {
             long raw = 0, written = 0, matched = 0, previousLabel = 0, noLabel = 0, endOfTei = 0,
-                discardedLines = 0, tei = 0, teiSkipped = 0, teiNotReached = 0, blank = 0, blankWritten = 0;
+                    discardedLines = 0, tei = 0, teiSkipped = 0, teiNotReached = 0, blank = 0, blankWritten = 0;
             int discarded = 0, abandoned = 0, aligned = 0;
             for (DocAlignment d : docs) {
                 raw += d.totalRawLines();
@@ -408,7 +433,8 @@ public class SegmentationTrainer extends AbstractTrainer {
                 blankWritten += d.discarded ? 0 : d.blankWritten;
                 if (d.discarded) {
                     discarded++;
-                    if (d.abandonedAtLine > 0) abandoned++;
+                    if (d.abandonedAtLine > 0)
+                        abandoned++;
                     discardedLines += d.totalRawLines();
                     continue;
                 }
@@ -419,27 +445,88 @@ public class SegmentationTrainer extends AbstractTrainer {
                 endOfTei += d.endOfTei;
                 teiSkipped += d.teiLinesSkipped;
                 teiNotReached += d.teiLinesNotReached;
-                if (d.fullyAligned()) aligned++;
+                if (d.fullyAligned())
+                    aligned++;
             }
             int used = docs.size() - discarded;
 
             StringBuilder sb = new StringBuilder();
-            sb.append("\n===== Segmentation training data: alignment of the raw files (features) with the TEI files (labels) =====\n");
-            sb.append(String.format(Locale.ROOT, "TEI files: %d, raw file missing: %d, failed: %d%n",
-                docs.size() + missingRaw.size() + failed.size(), missingRaw.size(), failed.size()));
-            sb.append(String.format(Locale.ROOT, "documents used: %d (fully aligned: %d, partially aligned: %d)%n", used, aligned, used - aligned));
-            sb.append(String.format(Locale.ROOT, "documents discarded: %d (alignment abandoned after more than 20 consecutive unsynchronized lines: %d, " +
-                "ending with 10 to 20 unsynchronized lines: %d)%n", discarded, abandoned, discarded - abandoned));
+            sb.append(
+                    "\n===== Segmentation training data: alignment of the raw files (features) with the TEI files (labels) =====\n");
+            sb.append(
+                    String.format(
+                            Locale.ROOT,
+                            "TEI files: %d, raw file missing: %d, failed: %d%n",
+                            docs.size() + missingRaw.size() + failed.size(),
+                            missingRaw.size(),
+                            failed.size()));
+            sb.append(
+                    String.format(
+                            Locale.ROOT,
+                            "documents used: %d (fully aligned: %d, partially aligned: %d)%n",
+                            used,
+                            aligned,
+                            used - aligned));
+            sb.append(
+                    String.format(
+                            Locale.ROOT,
+                            "documents discarded: %d (alignment abandoned after more than 20 consecutive unsynchronized lines: %d, "
+                                    +
+                                    "ending with 10 to 20 unsynchronized lines: %d)%n",
+                            discarded,
+                            abandoned,
+                            discarded - abandoned));
             sb.append(String.format(Locale.ROOT, "raw lines: %d%n", raw));
-            sb.append(String.format(Locale.ROOT, "  written to the training data: %d (%s)%n", written, pct(written, raw)));
-            sb.append(String.format(Locale.ROOT, "    labelled from the TEI:       %d (%s)%n", matched, pct(matched, raw)));
-            sb.append(String.format(Locale.ROOT, "    given the previous label:    %d (%s)%n", previousLabel, pct(previousLabel, raw)));
+            sb.append(
+                    String.format(
+                            Locale.ROOT,
+                            "  written to the training data: %d (%s)%n",
+                            written,
+                            pct(written, raw)));
+            sb.append(
+                    String.format(
+                            Locale.ROOT,
+                            "    labelled from the TEI:       %d (%s)%n",
+                            matched,
+                            pct(matched, raw)));
+            sb.append(
+                    String.format(
+                            Locale.ROOT,
+                            "    given the previous label:    %d (%s)%n",
+                            previousLabel,
+                            pct(previousLabel, raw)));
             sb.append(String.format(Locale.ROOT, "  not written: %d (%s)%n", raw - written, pct(raw - written, raw)));
-            sb.append(String.format(Locale.ROOT, "    no previous label:           %d (%s)%n", noLabel, pct(noLabel, raw)));
-            sb.append(String.format(Locale.ROOT, "    end of the TEI reached:      %d (%s)%n", endOfTei, pct(endOfTei, raw)));
-            sb.append(String.format(Locale.ROOT, "    in discarded documents:      %d (%s)%n", discardedLines, pct(discardedLines, raw)));
-            sb.append(String.format(Locale.ROOT, "TEI lines: %d, in used documents skipped: %d, not reached: %d%n", tei, teiSkipped, teiNotReached));
-            sb.append(String.format(Locale.ROOT, "blank raw lines (not counted above): %d, written with the previous label: %d%n", blank, blankWritten));
+            sb.append(
+                    String.format(
+                            Locale.ROOT,
+                            "    no previous label:           %d (%s)%n",
+                            noLabel,
+                            pct(noLabel, raw)));
+            sb.append(
+                    String.format(
+                            Locale.ROOT,
+                            "    end of the TEI reached:      %d (%s)%n",
+                            endOfTei,
+                            pct(endOfTei, raw)));
+            sb.append(
+                    String.format(
+                            Locale.ROOT,
+                            "    in discarded documents:      %d (%s)%n",
+                            discardedLines,
+                            pct(discardedLines, raw)));
+            sb.append(
+                    String.format(
+                            Locale.ROOT,
+                            "TEI lines: %d, in used documents skipped: %d, not reached: %d%n",
+                            tei,
+                            teiSkipped,
+                            teiNotReached));
+            sb.append(
+                    String.format(
+                            Locale.ROOT,
+                            "blank raw lines (not counted above): %d, written with the previous label: %d%n",
+                            blank,
+                            blankWritten));
 
             if (!missingRaw.isEmpty()) {
                 sb.append("raw file missing: ").append(String.join(", ", missingRaw)).append("\n");
@@ -449,18 +536,33 @@ public class SegmentationTrainer extends AbstractTrainer {
             }
             List<DocAlignment> lossy = new ArrayList<>();
             for (DocAlignment d : docs) {
-                if (!d.fullyAligned()) lossy.add(d);
+                if (!d.fullyAligned())
+                    lossy.add(d);
             }
-            lossy.sort(Comparator.comparingDouble((DocAlignment d) -> (double) d.written() / Math.max(d.totalRawLines(), 1))
-                .thenComparing(d -> d.name));
+            lossy.sort(
+                    Comparator
+                            .comparingDouble((DocAlignment d) -> (double) d.written() / Math.max(d.totalRawLines(), 1))
+                            .thenComparing(d -> d.name));
             int top = Math.min(lossy.size(), 30);
             if (top > 0) {
-                sb.append(String.format(Locale.ROOT, "documents with the lowest share of raw lines written (%d of %d not fully aligned):%n", top, lossy.size()));
+                sb.append(
+                        String.format(
+                                Locale.ROOT,
+                                "documents with the lowest share of raw lines written (%d of %d not fully aligned):%n",
+                                top,
+                                lossy.size()));
                 for (int i = 0; i < top; i++) {
                     DocAlignment d = lossy.get(i);
-                    sb.append(String.format(Locale.ROOT, "  %-70s %s written %d / %d raw lines (%s), previous label %d%n",
-                        d.name, d.discarded ? "DISCARDED" : "         ", d.written(), d.totalRawLines(),
-                        pct(d.written(), d.totalRawLines()), d.previousLabel));
+                    sb.append(
+                            String.format(
+                                    Locale.ROOT,
+                                    "  %-70s %s written %d / %d raw lines (%s), previous label %d%n",
+                                    d.name,
+                                    d.discarded ? "DISCARDED" : "         ",
+                                    d.written(),
+                                    d.totalRawLines(),
+                                    pct(d.written(), d.totalRawLines()),
+                                    d.previousLabel));
                 }
             }
             sb.append("=====\n");
