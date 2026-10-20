@@ -48,6 +48,12 @@ public class FieldSpecification {
      */
     public static final String BASE_FIELD_NAME = "base";
 
+    public static final String HEADER_DOI_REPORT_NOTE = "\nNote: the header \"doi\" field above is "
+            + "not produced by the header model: it is the single DOI found by pattern matching in "
+            + "the first pages of the document, possibly completed or corrected by the header "
+            + "consolidation. It is matched exactly after identifier normalization, and is not "
+            + "taken into account in the instance-level results.\n";
+
     public String fieldName = null;
 
     public List<String> nlmPath = new ArrayList<String>();
@@ -73,6 +79,12 @@ public class FieldSpecification {
 
     /** Optional explanatory note appended to the report when this field is evaluated. */
     public String reportNote = null;
+
+    /**
+     * When true, this field is scored at field level only: a mismatch on it does not make the
+     * whole instance (e.g. a complete header) count as wrong in the instance-level results.
+     */
+    public boolean excludedFromInstanceScore = false;
 
     // ------------------------------------------------------------------
     // builders
@@ -126,6 +138,11 @@ public class FieldSpecification {
 
     private FieldSpecification note(String note) {
         this.reportNote = note;
+        return this;
+    }
+
+    private FieldSpecification excludedFromInstance() {
+        this.excludedFromInstanceScore = true;
         return this;
     }
 
@@ -214,11 +231,16 @@ public class FieldSpecification {
                         .grobid("//profileDesc/textClass/keywords//text()")
                         .nlm("/article/front/article-meta/kwd-group/kwd/text()"));
 
+        // the header model has no DOI label: the DOI comes from a pattern match over the first
+        // pages and from header consolidation, so it is kept out of the instance-level results
+        // to keep them comparable with the benchmarks published before it was evaluated
         register(
                 catalogue,
                 field("doi")
                         .grobid("//sourceDesc/biblStruct/idno[@type=\"DOI\"]/text()")
-                        .nlm("/article/front/article-meta/article-id[@pub-id-type=\"doi\"]/text()"));
+                        .nlm("/article/front/article-meta/article-id[@pub-id-type=\"doi\"]/text()")
+                        .excludedFromInstance()
+                        .note(HEADER_DOI_REPORT_NOTE));
 
         return catalogue;
     }

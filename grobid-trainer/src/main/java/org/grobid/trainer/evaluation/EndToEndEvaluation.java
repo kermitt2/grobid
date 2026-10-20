@@ -1077,6 +1077,13 @@ public class EndToEndEvaluation {
 
                             String fieldName = field.fieldName;
 
+                            // instance-level flags before this field, restored afterwards if the
+                            // field is not part of the instance-level results
+                            boolean allGoodStrictBefore = allGoodStrict;
+                            boolean allGoodSoftBefore = allGoodSoft;
+                            boolean allGoodLevenshteinBefore = allGoodLevenshtein;
+                            boolean allGoodRatcliffObershelpBefore = allGoodRatcliffObershelp;
+
                             List<String> grobidResults = new ArrayList<>();
                             for (String path : field.grobidPath) {
                                 NodeList nodeList = (NodeList) xp.compile(path)
@@ -1092,6 +1099,9 @@ public class EndToEndEvaluation {
                                     grobidResult += " " + res;
                                 // basic normalisation
                                 grobidResult = basicNormalization(grobidResult);
+                                if (fieldName.equals("doi")) {
+                                    grobidResult = identifierNormalization(grobidResult);
+                                }
                                 //System.out.println("Grobid: " + fieldName + ":\t" + grobidResult);
                                 grobidResults = new ArrayList<>();
                                 grobidResults.add(grobidResult);
@@ -1135,6 +1145,9 @@ public class EndToEndEvaluation {
                                     goldResult += " " + res;
                                 // basic normalisation
                                 goldResult = basicNormalization(goldResult);
+                                if (fieldName.equals("doi")) {
+                                    goldResult = identifierNormalization(goldResult);
+                                }
                                 if (fieldName.equals("abstract")) {
                                     // some additional cleaning for abstract is required, because PMC and bioRxiv
                                     // tends to put the useless abstract title "Abstract" together with the abstract
@@ -1259,6 +1272,13 @@ public class EndToEndEvaluation {
                                     }
                                 }
                                 g++;
+                            }
+
+                            if (field.excludedFromInstanceScore) {
+                                allGoodStrict = allGoodStrictBefore;
+                                allGoodSoft = allGoodSoftBefore;
+                                allGoodLevenshtein = allGoodLevenshteinBefore;
+                                allGoodRatcliffObershelp = allGoodRatcliffObershelpBefore;
                             }
                             p++;
                         }

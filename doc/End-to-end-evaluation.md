@@ -234,9 +234,11 @@ A model flavor evaluates a different document shape from the full model, so it e
 
 | Flavor (`-l` / `-Pflavor`) | header | full text | citations |
 |---|---|---|---|
-| *(none — the full model)* | `title`, `authors`, `first_author`, `affiliation_linked`, `abstract`, `keywords` | all structures | all fields |
-| `article/light` | `title`, `authors`, `first_author` | *not evaluated* | *not evaluated* |
-| `article/light-ref` | `title`, `authors`, `first_author` | *not evaluated* | all fields |
+| *(none — the full model)* | `title`, `authors`, `first_author`, `affiliation_linked`, `abstract`, `keywords`, `doi` | all structures | all fields |
+| `article/light` | `title`, `authors`, `first_author`, `doi` | *not evaluated* | *not evaluated* |
+| `article/light-ref` | `title`, `authors`, `first_author`, `doi` | *not evaluated* | all fields |
+
+The header `doi` is not a label of the header model: it is the single DOI found by pattern matching in the first pages of the document, possibly completed or corrected by the header consolidation, so it is evaluated for every flavor. It is matched exactly after identifier normalization (case, `doi:` prefix), and it is scored at field level only: it is not taken into account in the header instance-level results, which stay comparable with the benchmarks published before it was evaluated.
 
 The remaining flavors (`blank`, `sdo/3gpp`, `sdo/ietf`) are **not supported** by the end-to-end evaluation — there is no JATS/TEI gold corpus of that document shape — and are rejected with an explicit error rather than silently producing an empty report.
 

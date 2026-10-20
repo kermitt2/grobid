@@ -69,7 +69,8 @@ public class EvaluationFieldSelection {
             "first_author",
             LinkedAffiliationEvaluator.AFFILIATION_LINKED_LABEL,
             "abstract",
-            "keywords");
+            "keywords",
+            "doi");
 
     private static final List<String> DEFAULT_FULLTEXT = Arrays.asList(
             "section_title",
@@ -100,9 +101,10 @@ public class EvaluationFieldSelection {
     /**
      * The light flavors keep only the bibliographic core of the header. In particular they do not
      * evaluate affiliations: the light models target documents where author affiliations are not
-     * the object of the extraction.
+     * the object of the extraction. The DOI is kept, as its extraction does not depend on the
+     * flavor of the header model.
      */
-    private static final List<String> LIGHT_HEADER = Arrays.asList("title", "authors", "first_author");
+    private static final List<String> LIGHT_HEADER = Arrays.asList("title", "authors", "first_author", "doi");
 
     private static final EvaluationFieldSelection DEFAULT = new EvaluationFieldSelection(
             DEFAULT_HEADER, DEFAULT_FULLTEXT, DEFAULT_CITATIONS);
