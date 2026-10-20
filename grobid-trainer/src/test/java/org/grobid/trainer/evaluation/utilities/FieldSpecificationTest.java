@@ -209,7 +209,6 @@ public class FieldSpecificationTest {
                     is(field.fieldName.equals("doi")));
         }
         FieldSpecification doi = FieldSpecification.headerFields(Arrays.asList("doi")).get(0);
-        assertThat(doi.reportNote, is(FieldSpecification.HEADER_DOI_REPORT_NOTE));
         assertThat(doi.isTextual, is(false));
     }
 

@@ -48,13 +48,6 @@ public class FieldSpecification {
      */
     public static final String BASE_FIELD_NAME = "base";
 
-    public static final String HEADER_DOI_REPORT_NOTE = "\nNote: the header \"doi\" field above is "
-            + "the DOI found in an <idno> extracted by the header model, replaced by the DOI found by "
-            + "pattern matching in the first pages of the document when there is exactly one, and "
-            + "possibly completed or corrected by the header consolidation. It is matched exactly "
-            + "after identifier normalization, and is not taken into account in the instance-level "
-            + "results.\n";
-
     public String fieldName = null;
 
     public List<String> nlmPath = new ArrayList<String>();
@@ -239,8 +232,7 @@ public class FieldSpecification {
                 field("doi")
                         .grobid("//sourceDesc/biblStruct/idno[@type=\"DOI\"]/text()")
                         .nlm("/article/front/article-meta/article-id[@pub-id-type=\"doi\"]/text()")
-                        .excludedFromInstance()
-                        .note(HEADER_DOI_REPORT_NOTE));
+                        .excludedFromInstance());
 
         return catalogue;
     }
