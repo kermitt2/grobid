@@ -262,7 +262,7 @@ The workflow `.github/workflows/evaluation.yml` (_End-to-end evaluation_) runs t
 
 * manually, from the _Actions_ tab (_Run workflow_) or with `gh workflow run evaluation.yml --ref my-branch -f profile=delft`, on any branch,
 
-* on a pull request, by adding the label `evaluation:crf` or `evaluation:delft`, or `evaluation:crf-noconsolidation` or `evaluation:delft-noconsolidation` to run [without consolidation](#without-consolidation-1). Pushing new commits does not start a new run, a run over the full corpora being too long for that: remove and re-add the label to evaluate a newer commit.
+* on a pull request, by adding the label `evaluation:crf` or `evaluation:delft`, or `evaluation:crf-noconsolidation` or `evaluation:delft-noconsolidation` to run [without consolidation](#consolidation-and-biblio-glutton). Pushing new commits does not start a new run, a run over the full corpora being too long for that: remove and re-add the label to evaluate a newer commit.
 
 On a pull request, the corpora are selected with labels too:
 
@@ -293,7 +293,7 @@ The runners have 4 CPU, no GPU, and stop a job after 6 hours, so each corpus is 
 
 3. `report` — the reports are compared with those of the latest successful run of the workflow on the default branch with the same profile and flavor. The comparison is written to the run summary and, for a pull request, posted as a comment. The reports are also kept as the artifact `evaluation-reports-<profile>` for 90 days: this artifact is the baseline of the later runs, so **run the workflow on the default branch to set or refresh the baseline**. Without a baseline, the scores are reported without deltas.
 
-#### Without consolidation
+#### Consolidation and biblio-glutton
 
 By default, the header is consolidated with biblio-glutton, which must then be reachable from the runners: the run stops at the pre-flight check otherwise. The instance is the one set in `grobid-evaluation.yaml`, unless the repository variable `GROBID_EVAL_GLUTTON_URL` gives another one.
 

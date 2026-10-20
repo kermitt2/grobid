@@ -98,7 +98,8 @@ public class EvaluationConfigCheck {
             System.out.println(
                     "[OK] grobid.yaml is correctly configured for end-to-end evaluation "
                             + (skipConsolidation ? "without consolidation " : "")
-                            + "(" + (skipConsolidation ? "" : "biblio-glutton reachable, ")
+                            + "("
+                            + (skipConsolidation ? "" : "biblio-glutton reachable, ")
                             + "DeLFT models enabled).");
             System.exit(0);
         }
