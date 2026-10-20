@@ -218,8 +218,9 @@ public class FieldSpecificationTest {
         assertThat(
                 EvaluationNormalization.identifierNormalization(
                         EvaluationNormalization.basicNormalization(" DOI: 10.1371/journal.PONE.0012345 ")),
-                is(EvaluationNormalization.identifierNormalization(
-                        EvaluationNormalization.basicNormalization("10.1371/journal.pone.0012345"))));
+                is(
+                        EvaluationNormalization.identifierNormalization(
+                                EvaluationNormalization.basicNormalization("10.1371/journal.pone.0012345"))));
     }
 
     @Test(expected = GrobidException.class)

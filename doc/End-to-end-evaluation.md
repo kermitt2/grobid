@@ -238,7 +238,7 @@ A model flavor evaluates a different document shape from the full model, so it e
 | `article/light` | `title`, `authors`, `first_author` | *not evaluated* | *not evaluated* |
 | `article/light-ref` | `title`, `authors`, `first_author` | *not evaluated* | all fields |
 
-The header `doi` is not a label of the header model: it is the single DOI found by pattern matching in the first pages of the document, possibly completed or corrected by the header consolidation. It is evaluated for the full model only. It is matched exactly after identifier normalization (case, `doi:` prefix), and it is scored at field level only: it is not taken into account in the header instance-level results, which stay comparable with the benchmarks published before it was evaluated.
+The header `doi` is evaluated for the full model only, at field level only (see [Evaluation results](#evaluation-results) and [Header DOI](#header-doi)).
 
 The remaining flavors (`blank`, `sdo/3gpp`, `sdo/ietf`) are **not supported** by the end-to-end evaluation — there is no JATS/TEI gold corpus of that document shape — and are rejected with an explicit error rather than silently producing an empty report.
 
@@ -247,6 +247,8 @@ To evaluate a field that is in the catalogue but currently selected by no flavor
 ## Evaluation results
 
 The evaluation provides precision, recall and F1-score for the different fields in the header and bibliographical references. In addition, the scores are also computed at *instance* level, which means at the level of a complete header or complete citation.
+
+The header `doi` is the exception: it is scored at field level only, and a header with a missing or wrong DOI can still count as correct at instance level. The header instance-level results therefore stay comparable with the benchmarks published before the DOI was evaluated. The micro and macro averages of the header fields do include the DOI.
 
 An experimental evaluation for the structures of the full text body is also proposed. This is not reliable in the current state, because most of the annotations of the full texts in PubMed Central are not uniform. For instance, the numbering of the section header is sometime included in the section header annotation, sometime not. The PubMed Central annotations will need to be standardized as a pre-process for a meaningful evaluation, which is a task planned in the next releases.
 
@@ -264,6 +266,8 @@ The evaluation covers four different string matching techniques for textual fiel
 * [__Ratcliff/Obershelp similarity__](http://xlinux.nist.gov/dads/HTML/ratcliffObershelp.html)
 
 These matching variants only apply to textual fields, not numerical and dates fields (such as volume, issue, dates, pages).
+
+The header `doi` is compared as an identifier: both values are lower-cased and stripped of a `doi:` prefix, then matched exactly, so the four techniques give the same score.
 
 
 
@@ -361,6 +365,14 @@ How each annotation connects to that — the XML edit and the field-removal are 
 - **PLOS** *disambiguates*: PLOS overloads `fn-type="con"`; conflicts already match `//fn[@fn-type="conflict"]` (scored), and `type="contribution"` is added to the contribution footnotes to match `//fn[@type="contribution"]` — but since `contribution_stmt` is removed for PLOS, only conflicts are scored.
 - **eLife**: ignored.
 - **PMC**: ignored.
+
+### Header DOI
+
+The header model has no DOI label. The header `doi` evaluated here is the DOI found by pattern matching in the blocks of the first pages of the document, kept only when exactly one DOI is found there, and possibly completed or corrected by the header consolidation, which the evaluation enables. Its score therefore measures this pattern matching together with the consolidation service, not the header model:
+
+* a document showing several DOIs on its first pages (for instance in a reference list or a "how to cite" box) gets no DOI from the pattern matching, which lowers recall unless the consolidation finds it,
+
+* the pattern can capture trailing characters glued to the DOI in the PDF text (e.g. `10.1152/ajpheart.00875.2009.-`), or a DOI that belongs to another work cited on the first pages, which counts as a wrong value.
 
 ### Character encoding and glyphs
 
