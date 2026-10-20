@@ -7,7 +7,11 @@ name: End-to-end evaluation
 # - on a pull request, by adding the label `evaluation:crf` or `evaluation:delft`, or
 #   `evaluation:crf-noconsolidation` / `evaluation:delft-noconsolidation` to run without
 #   consolidation, so without biblio-glutton.
-#   Remove and re-add the label to evaluate a newer commit: a run over the full corpora
+#   The corpora are selected with the labels `corpus:all`, `corpus:pubmed`, `corpus:biorxiv`,
+#   `corpus:plos` and `corpus:elife`: adding an `evaluation:*` label evaluates the corpora
+#   labelled on the pull request (all of them if none is), and adding a `corpus:*` label to
+#   a pull request that has an `evaluation:*` label evaluates that corpus.
+#   Remove and re-add a label to evaluate a newer commit: a run over the full corpora
 #   is too long to be repeated on every push.
 #
 # Each corpus is split into shards processed in parallel (`predict`), the TEI they produce
@@ -62,7 +66,12 @@ env:
 
 jobs:
   setup:
-    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.label.name, 'evaluation:')
+    # a corpus:* label only starts a run once the pull request has an evaluation:* label
+    if: >-
+      github.event_name == 'workflow_dispatch'
+      || startsWith(github.event.label.name, 'evaluation:')
+      || (startsWith(github.event.label.name, 'corpus:')
+          && contains(toJson(github.event.pull_request.labels.*.name), '"evaluation:'))
     runs-on: ubuntu-latest
     outputs:
       profile: ${{ steps.resolve.outputs.profile }}
@@ -76,29 +85,62 @@ jobs:
         id: resolve
         env:
           LABEL: ${{ github.event.label.name }}
+          PR_LABELS: ${{ toJson(github.event.pull_request.labels.*.name) }}
           INPUT_PROFILE: ${{ inputs.profile }}
           INPUT_DATASETS: ${{ inputs.datasets }}
           INPUT_FLAVOR: ${{ inputs.flavor }}
           INPUT_CONSOLIDATION: ${{ inputs.consolidation }}
           INPUT_SHARDS: ${{ inputs.shards }}
         run: |
+          # corpus:* label -> corpus directory in the dataset
+          corpus_dataset() {
+            case "$1" in
+              all) echo all ;;
+              pubmed) echo PMC_sample_1943 ;;
+              biorxiv) echo biorxiv-10k-test-2000 ;;
+              plos) echo PLOS_1000 ;;
+              elife) echo eLife_984 ;;
+              *) echo "::error::Unknown corpus label 'corpus:$1': use corpus:all, corpus:pubmed, corpus:biorxiv, corpus:plos or corpus:elife" >&2; return 1 ;;
+            esac
+          }
+
           if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
-            PROFILE="${LABEL#evaluation:}"
+            if [[ "${LABEL}" == corpus:* ]]; then
+              # the profile is the one of the evaluation:* label of the pull request
+              mapfile -t EVALUATION_LABELS < <(jq -r '.[] | select(startswith("evaluation:"))' <<< "${PR_LABELS}")
+              if [ "${#EVALUATION_LABELS[@]}" -ne 1 ]; then
+                echo "::error::Adding ${LABEL} runs the evaluation of the evaluation:* label of the pull request, but it has ${#EVALUATION_LABELS[@]}: ${EVALUATION_LABELS[*]}. Keep only one."
+                exit 1
+              fi
+              EVALUATION_LABEL="${EVALUATION_LABELS[0]}"
+              CORPORA=("${LABEL#corpus:}")
+            else
+              # the corpora are the corpus:* labels of the pull request, all of them if none
+              EVALUATION_LABEL="${LABEL}"
+              mapfile -t CORPORA < <(jq -r '.[] | select(startswith("corpus:")) | ltrimstr("corpus:")' <<< "${PR_LABELS}")
+              [ "${#CORPORA[@]}" -eq 0 ] && CORPORA=(all)
+            fi
+            SELECTED=()
+            for corpus in "${CORPORA[@]}"; do
+              SELECTED+=("$(corpus_dataset "${corpus}")")
+            done
+
+            PROFILE="${EVALUATION_LABEL#evaluation:}"
             CONSOLIDATION=glutton
             if [ "${PROFILE%-noconsolidation}" != "${PROFILE}" ]; then
               PROFILE="${PROFILE%-noconsolidation}"
               CONSOLIDATION=none
             fi
-            DATASETS=all
             FLAVOR=none
             SHARDS=""
           else
             PROFILE="${INPUT_PROFILE}"
             CONSOLIDATION="${INPUT_CONSOLIDATION}"
-            DATASETS="${INPUT_DATASETS}"
+            SELECTED=("${INPUT_DATASETS}")
             FLAVOR="${INPUT_FLAVOR}"
             SHARDS="${INPUT_SHARDS}"
           fi
+          SELECTED_JSON=$(printf '%s\n' "${SELECTED[@]}" | jq -Rsc 'split("\n") | map(select(. != ""))')
 
           case "${PROFILE}" in
             crf|delft) ;;
@@ -126,11 +168,11 @@ jobs:
           # runs without consolidation get their own artifacts, and so their own baseline
           [ "${CONSOLIDATION}" = "none" ] && SUFFIX="${SUFFIX}-noconsolidation"
 
-          DATASETS_JSON=$(jq -c --arg selected "${DATASETS}" \
-            'keys_unsorted | map(select($selected == "all" or . == $selected))' <<< "${DEFAULT_SHARDS}")
-          SHARDS_JSON=$(jq -c --arg selected "${DATASETS}" --arg shards "${SHARDS}" '
+          DATASETS_JSON=$(jq -c --argjson selected "${SELECTED_JSON}" \
+            'keys_unsorted | map(select(. as $dataset | $selected | index("all") or index($dataset)))' <<< "${DEFAULT_SHARDS}")
+          SHARDS_JSON=$(jq -c --argjson selected "${SELECTED_JSON}" --arg shards "${SHARDS}" '
             to_entries
-            | map(select($selected == "all" or .key == $selected))
+            | map(select(.key as $dataset | $selected | index("all") or index($dataset)))
             | map(.key as $dataset | (if $shards == "" then .value else ($shards | tonumber) end) as $count
                   | range($count) | {dataset: $dataset, shard: ., shards: $count})' <<< "${DEFAULT_SHARDS}")
 

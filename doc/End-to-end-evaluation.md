@@ -264,6 +264,18 @@ The workflow `.github/workflows/evaluation.yml` (_End-to-end evaluation_) runs t
 
 * on a pull request, by adding the label `evaluation:crf` or `evaluation:delft`, or `evaluation:crf-noconsolidation` or `evaluation:delft-noconsolidation` to run [without consolidation](#without-consolidation-1). Pushing new commits does not start a new run, a run over the full corpora being too long for that: remove and re-add the label to evaluate a newer commit.
 
+On a pull request, the corpora are selected with labels too:
+
+| Label | Corpus |
+|---|---|
+| `corpus:all` | all of them |
+| `corpus:pubmed` | `PMC_sample_1943` |
+| `corpus:biorxiv` | `biorxiv-10k-test-2000` |
+| `corpus:plos` | `PLOS_1000` |
+| `corpus:elife` | `eLife_984` |
+
+Adding an `evaluation:*` label evaluates the corpora labelled on the pull request, or all of them if none is. Adding a `corpus:*` label to a pull request that already has an `evaluation:*` label evaluates that corpus alone, with the profile of that label (the pull request must then have only one `evaluation:*` label). A `corpus:*` label added before any `evaluation:*` label starts nothing: it only selects the corpora of the next run.
+
 Two profiles are available:
 
 | Profile | Configuration | Comparable to the published benchmarks |
