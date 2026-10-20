@@ -368,11 +368,15 @@ How each annotation connects to that — the XML edit and the field-removal are 
 
 ### Header DOI
 
-The header model has no DOI label. The header `doi` evaluated here is the DOI found by pattern matching in the blocks of the first pages of the document, kept only when exactly one DOI is found there, and possibly completed or corrected by the header consolidation, which the evaluation enables. Its score therefore measures this pattern matching together with the consolidation service, not the header model:
+The header `doi` evaluated here is produced in three steps, each of which can change it:
 
-* a document showing several DOIs on its first pages (for instance in a reference list or a "how to cite" box) gets no DOI from the pattern matching, which lowers recall unless the consolidation finds it,
+1. the header model extracts the strong identifiers of the document as `<idno>` (see the [header annotation guidelines](training/header.md#strong-identifiers)), and an `<idno>` matching the DOI pattern becomes the DOI, without its `doi:` or `https://doi.org/` prefix,
 
-* the pattern can capture trailing characters glued to the DOI in the PDF text (e.g. `10.1152/ajpheart.00875.2009.-`), or a DOI that belongs to another work cited on the first pages, which counts as a wrong value.
+2. the blocks of the first pages of the document are then matched against the DOI pattern: when exactly one DOI is found there, it replaces the DOI from the header model,
+
+3. the header consolidation, which the evaluation enables, can complete or correct the DOI.
+
+Its score therefore measures the header model together with this pattern matching and the consolidation service. In particular, the pattern can capture trailing characters glued to the DOI in the PDF text (e.g. `10.1152/ajpheart.00875.2009.-`), or a DOI that belongs to another work cited on the first pages, which counts as a wrong value.
 
 ### Character encoding and glyphs
 
