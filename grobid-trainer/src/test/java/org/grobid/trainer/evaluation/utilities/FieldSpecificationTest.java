@@ -129,7 +129,7 @@ public class FieldSpecificationTest {
     /** The light flavors keep only the bibliographic core, and evaluate no affiliations. */
     @Test
     public void testLightFlavors_haveReducedHeaderAndNoAffiliation() {
-        List<String> expectedHeader = Arrays.asList("title", "authors", "first_author", "doi");
+        List<String> expectedHeader = Arrays.asList("title", "authors", "first_author");
 
         EvaluationFieldSelection light = EvaluationFieldSelection.forFlavor(GrobidModels.Flavor.ARTICLE_LIGHT);
         assertThat(light.getHeaderFieldNames(), is(expectedHeader));
