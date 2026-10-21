@@ -256,48 +256,9 @@ jobs:
           } >> "$GITHUB_OUTPUT"
           echo "::notice::Evaluation profile: ${PROFILE}, flavor: '${FLAVOR}', consolidation: ${CONSOLIDATION}, datasets: ${DATASETS_JSON}"
 
-  # The Deep Learning models read their word embeddings from an lmdb database that takes
-  # a 2GB download and several minutes to build: it is built once and shared through the cache.
-  embeddings:
-    needs: [ setup ]
-    if: needs.setup.outputs.evaluate == 'true' && needs.setup.outputs.profile == 'delft'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - name: Look up the embeddings cache
-        id: cache
-        uses: actions/cache@v6
-        with:
-          path: ${{ env.DELFT_HOME }}/data/db
-          key: delft-embeddings-${{ hashFiles('grobid-home/config/resources-registry.json', 'grobid-home/scripts/preload_embeddings.py') }}
-          lookup-only: true
-      - name: Create more disk space
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost "$AGENT_TOOLSDIRECTORY"
-      - name: Set up Python
-        if: steps.cache.outputs.cache-hit != 'true'
-        uses: actions/setup-python@v7
-        with:
-          python-version: '3.11'
-      - name: Build the embeddings database
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          .github/scripts/evaluation/install_delft.sh "${EVAL_VENV}"
-          # the download directory of the registry: preload_embeddings.py only creates it
-          # when its parent exists
-          mkdir -p "${DELFT_HOME}/data/download"
-          cp grobid-home/config/resources-registry.json "${DELFT_HOME}/"
-          cd "${DELFT_HOME}"
-          "${EVAL_VENV}/bin/python" "${GITHUB_WORKSPACE}/grobid-home/scripts/preload_embeddings.py" \
-            --registry ./resources-registry.json
-          du -sh data/db/*
-
   predict:
-    needs: [ setup, embeddings ]
-    # always(): `embeddings` is skipped for the crf profile, which would skip this job too
-    if: >-
-      always() && needs.setup.result == 'success' && needs.setup.outputs.evaluate == 'true'
-      && (needs.embeddings.result == 'success' || needs.embeddings.result == 'skipped')
+    needs: [ setup ]
+    if: needs.setup.outputs.evaluate == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 355
     name: predict (${{ matrix.dataset }}, ${{ matrix.shard }})
@@ -315,7 +276,7 @@ jobs:
     steps:
       - name: Create more disk space
         if: env.PROFILE == 'delft'
-        run: sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost
+        run: sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost "$AGENT_TOOLSDIRECTORY"
       - uses: actions/checkout@v7
       - name: Set up JDK
         uses: actions/setup-java@v6.1.0
@@ -343,13 +304,19 @@ jobs:
           # libpython is not part of a virtual environment: JEP needs the one of the base interpreter
           LIBDIR=$(python -c 'import sysconfig; print(sysconfig.get_config_var("LIBDIR"))')
           echo "LD_LIBRARY_PATH=${LIBDIR}${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}" >> "$GITHUB_ENV"
-      - name: Restore the embeddings database
+      # The Deep Learning models read their word embeddings from an lmdb database: a 2GB
+      # download and about two minutes to build, less than a cache would save.
+      - name: Build the embeddings database
         if: env.PROFILE == 'delft'
-        uses: actions/cache/restore@v6
-        with:
-          path: ${{ env.DELFT_HOME }}/data/db
-          key: delft-embeddings-${{ hashFiles('grobid-home/config/resources-registry.json', 'grobid-home/scripts/preload_embeddings.py') }}
-          fail-on-cache-miss: true
+        working-directory: ${{ env.DELFT_HOME }}
+        run: |
+          # the download directory of the registry: preload_embeddings.py only creates it
+          # when its parent exists
+          mkdir -p data/download
+          "${EVAL_VENV}/bin/python" "${GITHUB_WORKSPACE}/grobid-home/scripts/preload_embeddings.py" \
+            --registry ./resources-registry.json
+          # preload_embeddings.py exits 0 when it fails
+          du -sh data/db/*
 
       - name: Download the corpus shard
         env:
