@@ -74,31 +74,37 @@ def rate_limit_reset(error):
     return int(retry_after) if retry_after.isdigit() else 60
 
 
-def download(repo, revision, path, output, deadline, attempts=5):
-    """Download a file, waiting for the rate limits to reset until `deadline` (time.monotonic())."""
+def with_retries(what, call, deadline, attempts=5):
+    """Return call(), waiting for the rate limits to reset until `deadline` (time.monotonic())."""
     attempt = 0
     while True:
         try:
-            return hf_hub_download(
-                repo, path, repo_type="dataset", revision=revision, local_dir=output
-            )
+            return call()
         except Exception as e:
             reset = rate_limit_reset(e)
             if reset is not None:
-                # the limit is shared with the other downloads: they all wait for the same reset,
+                # the limit is shared with the other requests: they all wait for the same reset,
                 # spread over a few seconds so as not to hit it again together
                 delay = reset + random.uniform(1, 10)
                 if time.monotonic() + delay > deadline:
                     raise
-                print(f"Rate limited on {path}, retrying in {delay:.0f}s", file=sys.stderr)
+                print(f"Rate limited on {what}, retrying in {delay:.0f}s", file=sys.stderr)
             else:
                 # network errors
                 attempt += 1
                 if attempt == attempts:
                     raise
                 delay = 5 * 2 ** (attempt - 1)
-                print(f"Download of {path} failed ({e}), retrying in {delay}s", file=sys.stderr)
+                print(f"{what} failed ({e}), retrying in {delay}s", file=sys.stderr)
             time.sleep(delay)
+
+
+def download(repo, revision, path, output, deadline):
+    return with_retries(
+        f"download of {path}",
+        lambda: hf_hub_download(repo, path, repo_type="dataset", revision=revision, local_dir=output),
+        deadline,
+    )
 
 
 def main():
@@ -122,7 +128,10 @@ def main():
         parser.error(f"--shard must be in [0, {args.shards}), got {args.shard}")
 
     api = HfApi()
-    articles = list_articles(api, args.repo, args.revision, args.dataset)
+    deadline = time.monotonic() + RATE_LIMIT_WAIT
+    articles = with_retries(
+        f"listing of {args.dataset}", lambda: list_articles(api, args.repo, args.revision, args.dataset), deadline
+    )
     if not articles:
         sys.exit(f"No article found under {args.dataset} in {args.repo}@{args.revision}")
 
@@ -140,7 +149,6 @@ def main():
         f"{len(selected)} of {len(articles)} articles, {len(files)} files"
     )
 
-    deadline = time.monotonic() + RATE_LIMIT_WAIT
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
         list(executor.map(lambda path: download(args.repo, args.revision, path, args.output, deadline), files))
 
