@@ -1849,6 +1849,11 @@ public class EndToEndEvaluation {
             removeFieldsFromEvaluation(Arrays.asList("contribution_stmt", "conflict_stmt"), fulltextFields);
         }
 
+        if (StringUtils.containsIgnoreCase(xmlInputPath, "biorxiv")) {
+            // the DOI is present in the bioRxiv XML, but the preprint PDFs do not print it !
+            removeFieldsFromEvaluation(Arrays.asList("doi"), headerFields);
+        }
+
         if (StringUtils.containsIgnoreCase(xmlInputPath, "pmc")) {
             // remove availability and funding statements from PMC (not covered, and it would make metrics not comparable over time)
             removeFieldsFromEvaluation(
