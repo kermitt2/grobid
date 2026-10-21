@@ -80,7 +80,12 @@ env:
   EVAL_DATASET_REPO: sciencialab/grobid-evaluation
   # branch, tag or commit of the dataset; pin it to keep runs comparable across dataset updates
   EVAL_DATASET_REVISION: main
+  # DeLFT and JEP, which GROBID runs the Deep Learning models with
   EVAL_VENV: /home/runner/eval-venv
+  # the scripts of .github/scripts/evaluation, apart from DeLFT: its dependencies downgrade
+  # huggingface_hub to a version that makes one Hub API request per file it downloads,
+  # which exhausts the rate limits of Hugging Face
+  TOOLS_VENV: /home/runner/tools-venv
   DELFT_HOME: /home/runner/delft
 
 jobs:
@@ -290,8 +295,8 @@ jobs:
           python-version: '3.11'
       - name: Install the evaluation tools
         run: |
-          python -m venv "${EVAL_VENV}"
-          "${EVAL_VENV}/bin/pip" install --no-cache-dir huggingface_hub pyyaml
+          python -m venv "${TOOLS_VENV}"
+          "${TOOLS_VENV}/bin/pip" install --no-cache-dir huggingface_hub==2.2.0 pyyaml
 
       - name: Install DeLFT
         if: env.PROFILE == 'delft'
@@ -323,7 +328,7 @@ jobs:
           # optional: only raises the Hugging Face rate limits; absent on fork pull requests
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          "${EVAL_VENV}/bin/python" .github/scripts/evaluation/fetch_dataset.py \
+          "${TOOLS_VENV}/bin/python" .github/scripts/evaluation/fetch_dataset.py \
             --repo "${EVAL_DATASET_REPO}" --revision "${EVAL_DATASET_REVISION}" \
             --dataset "${DATASET}" --shard "${SHARD}" --shards "${SHARDS}" --output data
 
@@ -336,7 +341,7 @@ jobs:
           ARGS=(--profile "${PROFILE}" --consolidation "${CONSOLIDATION}")
           [ "${CONSOLIDATION}" = "glutton" ] && [ -n "${GLUTTON_URL}" ] && ARGS+=(--glutton-url "${GLUTTON_URL}")
           [ "${PROFILE}" = "delft" ] && ARGS+=(--delft-install "${DELFT_HOME}")
-          "${EVAL_VENV}/bin/python" .github/scripts/evaluation/configure_grobid.py "${ARGS[@]}"
+          "${TOOLS_VENV}/bin/python" .github/scripts/evaluation/configure_grobid.py "${ARGS[@]}"
 
       # A run that should consolidate but cannot completes and scores lower, which reads as
       # a regression: refuse to start instead. The crf profile is checked in warn mode since
