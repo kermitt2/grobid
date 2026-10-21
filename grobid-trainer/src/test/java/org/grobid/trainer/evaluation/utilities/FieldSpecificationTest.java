@@ -195,19 +195,9 @@ public class FieldSpecificationTest {
         }
     }
 
-    /**
-     * The header DOI is scored at field level only, so that the header instance-level results
-     * stay comparable with the benchmarks published before it was evaluated.
-     */
+    /** The header DOI is an identifier, matched exactly rather than as text. */
     @Test
-    public void testHeaderDoi_isExcludedFromInstanceScore() {
-        for (FieldSpecification field : FieldSpecification.headerFields(
-                EvaluationFieldSelection.forFlavor(null).getHeaderFieldNames())) {
-            assertThat(
-                    "unexpected instance-level exclusion of " + field.fieldName,
-                    field.excludedFromInstanceScore,
-                    is(field.fieldName.equals("doi")));
-        }
+    public void testHeaderDoi_isNotTextual() {
         FieldSpecification doi = FieldSpecification.headerFields(Arrays.asList("doi")).get(0);
         assertThat(doi.isTextual, is(false));
     }

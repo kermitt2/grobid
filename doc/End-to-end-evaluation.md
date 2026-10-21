@@ -238,7 +238,7 @@ A model flavor evaluates a different document shape from the full model, so it e
 | `article/light` | `title`, `authors`, `first_author` | *not evaluated* | *not evaluated* |
 | `article/light-ref` | `title`, `authors`, `first_author` | *not evaluated* | all fields |
 
-The header `doi` is evaluated for the full model only, at field level only (see [Evaluation results](#evaluation-results) and [Header DOI](#header-doi)).
+The header `doi` is evaluated for the full model only (see [Header DOI](#header-doi)).
 
 The remaining flavors (`blank`, `sdo/3gpp`, `sdo/ietf`) are **not supported** by the end-to-end evaluation — there is no JATS/TEI gold corpus of that document shape — and are rejected with an explicit error rather than silently producing an empty report.
 
@@ -248,7 +248,7 @@ To evaluate a field that is in the catalogue but currently selected by no flavor
 
 The evaluation provides precision, recall and F1-score for the different fields in the header and bibliographical references. In addition, the scores are also computed at *instance* level, which means at the level of a complete header or complete citation.
 
-The header `doi` is the exception: it is scored at field level only, and a header with a missing or wrong DOI can still count as correct at instance level. The header instance-level results therefore stay comparable with the benchmarks published before the DOI was evaluated. The micro and macro averages of the header fields do include the DOI.
+The header `doi` is part of the header instance-level results: a header with a missing or wrong DOI counts as wrong at instance level. Header instance-level results are therefore not comparable with the benchmarks published before the DOI was evaluated.
 
 An experimental evaluation for the structures of the full text body is also proposed. This is not reliable in the current state, because most of the annotations of the full texts in PubMed Central are not uniform. For instance, the numbering of the section header is sometime included in the section header annotation, sometime not. The PubMed Central annotations will need to be standardized as a pre-process for a meaningful evaluation, which is a task planned in the next releases.
 

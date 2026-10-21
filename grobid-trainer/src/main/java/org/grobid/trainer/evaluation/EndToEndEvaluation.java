@@ -1077,13 +1077,6 @@ public class EndToEndEvaluation {
 
                             String fieldName = field.fieldName;
 
-                            // instance-level flags before this field, restored afterwards if the
-                            // field is not part of the instance-level results
-                            boolean allGoodStrictBefore = allGoodStrict;
-                            boolean allGoodSoftBefore = allGoodSoft;
-                            boolean allGoodLevenshteinBefore = allGoodLevenshtein;
-                            boolean allGoodRatcliffObershelpBefore = allGoodRatcliffObershelp;
-
                             List<String> grobidResults = new ArrayList<>();
                             for (String path : field.grobidPath) {
                                 NodeList nodeList = (NodeList) xp.compile(path)
@@ -1272,13 +1265,6 @@ public class EndToEndEvaluation {
                                     }
                                 }
                                 g++;
-                            }
-
-                            if (field.excludedFromInstanceScore) {
-                                allGoodStrict = allGoodStrictBefore;
-                                allGoodSoft = allGoodSoftBefore;
-                                allGoodLevenshtein = allGoodLevenshteinBefore;
-                                allGoodRatcliffObershelp = allGoodRatcliffObershelpBefore;
                             }
                             p++;
                         }

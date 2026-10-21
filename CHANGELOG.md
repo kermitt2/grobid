@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
-- Header `doi` field in the end-to-end evaluation of the full model, scored at field level only so that the header instance-level results stay comparable with the published benchmarks
+- Header `doi` field in the end-to-end evaluation of the full model. It is part of the header instance-level results, which are therefore not comparable with the benchmarks published before it was evaluated
 
 ## [0.9.1] - 2026-08-04
 

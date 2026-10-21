@@ -74,12 +74,6 @@ public class FieldSpecification {
     /** Optional explanatory note appended to the report when this field is evaluated. */
     public String reportNote = null;
 
-    /**
-     * When true, this field is scored at field level only: a mismatch on it does not make the
-     * whole instance (e.g. a complete header) count as wrong in the instance-level results.
-     */
-    public boolean excludedFromInstanceScore = false;
-
     // ------------------------------------------------------------------
     // builders
     // ------------------------------------------------------------------
@@ -132,11 +126,6 @@ public class FieldSpecification {
 
     private FieldSpecification note(String note) {
         this.reportNote = note;
-        return this;
-    }
-
-    private FieldSpecification excludedFromInstance() {
-        this.excludedFromInstanceScore = true;
         return this;
     }
 
@@ -225,14 +214,11 @@ public class FieldSpecification {
                         .grobid("//profileDesc/textClass/keywords//text()")
                         .nlm("/article/front/article-meta/kwd-group/kwd/text()"));
 
-        // kept out of the instance-level results, to keep them comparable with the benchmarks
-        // published before the header DOI was evaluated
         register(
                 catalogue,
                 field("doi")
                         .grobid("//sourceDesc/biblStruct/idno[@type=\"DOI\"]/text()")
-                        .nlm("/article/front/article-meta/article-id[@pub-id-type=\"doi\"]/text()")
-                        .excludedFromInstance());
+                        .nlm("/article/front/article-meta/article-id[@pub-id-type=\"doi\"]/text()"));
 
         return catalogue;
     }
