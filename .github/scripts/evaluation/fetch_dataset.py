@@ -14,6 +14,8 @@ The files land under <output>/<dataset>/<article>/, the layout `jatsEval` expect
 
 import argparse
 import os
+import random
+import re
 import sys
 import time
 from collections import defaultdict
@@ -22,6 +24,8 @@ from concurrent.futures import ThreadPoolExecutor
 from huggingface_hub import HfApi, hf_hub_download
 
 DEFAULT_REPO = "sciencialab/grobid-evaluation"
+# how long a download waits, in total, for the Hugging Face rate limits to reset
+RATE_LIMIT_WAIT = 60 * 60
 
 
 def is_pdf(name):
@@ -54,17 +58,46 @@ def list_articles(api, repo, revision, dataset):
     return articles
 
 
-def download(repo, revision, path, output, attempts=5):
-    for attempt in range(1, attempts + 1):
+def rate_limit_reset(error):
+    """Seconds until the rate limit of a 429 response resets, None for any other error."""
+    # hf_hub_download raises a 429 on the metadata request as the cause of a LocalEntryNotFoundError
+    while error is not None and getattr(error, "response", None) is None:
+        error = error.__cause__
+    response = getattr(error, "response", None)
+    if response is None or response.status_code != 429:
+        return None
+    # e.g. RateLimit: "resolvers";r=0;t=55
+    match = re.search(r"\bt=(\d+)", response.headers.get("RateLimit", ""))
+    if match:
+        return int(match.group(1))
+    retry_after = response.headers.get("Retry-After", "")
+    return int(retry_after) if retry_after.isdigit() else 60
+
+
+def download(repo, revision, path, output, deadline, attempts=5):
+    """Download a file, waiting for the rate limits to reset until `deadline` (time.monotonic())."""
+    attempt = 0
+    while True:
         try:
             return hf_hub_download(
                 repo, path, repo_type="dataset", revision=revision, local_dir=output
             )
-        except Exception as e:  # network errors and rate limiting are both worth retrying
-            if attempt == attempts:
-                raise
-            delay = 5 * 2 ** (attempt - 1)
-            print(f"Download of {path} failed ({e}), retrying in {delay}s", file=sys.stderr)
+        except Exception as e:
+            reset = rate_limit_reset(e)
+            if reset is not None:
+                # the limit is shared with the other downloads: they all wait for the same reset,
+                # spread over a few seconds so as not to hit it again together
+                delay = reset + random.uniform(1, 10)
+                if time.monotonic() + delay > deadline:
+                    raise
+                print(f"Rate limited on {path}, retrying in {delay:.0f}s", file=sys.stderr)
+            else:
+                # network errors
+                attempt += 1
+                if attempt == attempts:
+                    raise
+                delay = 5 * 2 ** (attempt - 1)
+                print(f"Download of {path} failed ({e}), retrying in {delay}s", file=sys.stderr)
             time.sleep(delay)
 
 
@@ -107,8 +140,9 @@ def main():
         f"{len(selected)} of {len(articles)} articles, {len(files)} files"
     )
 
+    deadline = time.monotonic() + RATE_LIMIT_WAIT
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
-        list(executor.map(lambda path: download(args.repo, args.revision, path, args.output), files))
+        list(executor.map(lambda path: download(args.repo, args.revision, path, args.output, deadline), files))
 
     print(f"Downloaded under {os.path.join(args.output, args.dataset)}")
 

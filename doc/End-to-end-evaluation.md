@@ -289,7 +289,7 @@ The runners have 4 CPU, no GPU, and stop a job after 6 hours, so each corpus is 
 
 1. `predict` — one job per shard downloads its articles from the [Hugging Face dataset](https://huggingface.co/datasets/sciencialab/grobid-evaluation), runs the [pre-flight configuration check](#pre-flight-configuration-check) and processes the PDFs. The shards of a corpus are disjoint and the same on every run.
 
-2. `score` — one job per corpus gathers the TEI of all its shards and runs `jatsEval` with `-Prun=0`, so the report is computed over the whole corpus exactly as by a local run. A corpus is not scored if one of its shards failed.
+2. `score` — one job per corpus gathers the TEI and the gold XML of all its shards and runs `jatsEval` with `-Prun=0`, so the report is computed over the whole corpus exactly as by a local run. A corpus is not scored if one of its shards failed.
 
 3. `report` — the reports are compared with those of the latest successful run of the workflow on the default branch with the same profile, flavor and consolidation. The comparison is written to the run summary and, for a pull request, posted as a comment. The reports are also kept as the artifact `evaluation-reports-<profile>` for 90 days: this artifact is the baseline of the later runs, so **run the workflow on the default branch to set or refresh the baseline**. Without a baseline, the scores are reported without deltas.
 

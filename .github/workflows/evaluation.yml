@@ -381,8 +381,9 @@ jobs:
             --argjson seconds "${SECONDS_SPENT:-0}" \
             '{dataset: $dataset, shard: $shard, pdf: $pdf, tei: $tei, seconds: $seconds}' \
             > "out/stats-${DATASET}-${SHARD}.json"
-          # paths relative to data/, where the score job extracts them over the gold files
-          (cd data && find "${DATASET}" -name '*.fulltext*.tei.xml' -print0) \
+          # the TEI and the gold XML, everything the score job needs: it does not download the
+          # gold XML again, which would double the requests to Hugging Face and their rate limits
+          (cd data && find "${DATASET}" -type f ! -iname '*.pdf' -print0) \
             | tar --null -czf "out/tei-${DATASET}-${SHARD}.tar.gz" -C data -T -
 
       - name: Upload the TEI
@@ -429,20 +430,7 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - uses: gradle/actions/setup-gradle@v6
-      - name: Set up Python
-        uses: actions/setup-python@v7
-        with:
-          python-version: '3.11'
-      - name: Download the gold data
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          python -m venv "${EVAL_VENV}"
-          "${EVAL_VENV}/bin/pip" install --no-cache-dir huggingface_hub
-          "${EVAL_VENV}/bin/python" .github/scripts/evaluation/fetch_dataset.py \
-            --repo "${EVAL_DATASET_REPO}" --revision "${EVAL_DATASET_REVISION}" \
-            --dataset "${DATASET}" --content gold --output data
-      - name: Download the TEI
+      - name: Download the TEI and the gold XML
         uses: actions/download-artifact@v8
         with:
           pattern: tei-${{ needs.setup.outputs.suffix }}-${{ matrix.dataset }}-*
@@ -450,6 +438,7 @@ jobs:
           path: tei
       - name: Score
         run: |
+          mkdir -p data
           for archive in tei/*.tar.gz; do
             tar -xzf "${archive}" -C data
           done
