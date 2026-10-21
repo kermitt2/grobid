@@ -238,8 +238,6 @@ A model flavor evaluates a different document shape from the full model, so it e
 | `article/light` | `title`, `authors`, `first_author` | *not evaluated* | *not evaluated* |
 | `article/light-ref` | `title`, `authors`, `first_author` | *not evaluated* | all fields |
 
-The header `doi` is evaluated for the full model only (see [Header DOI](#header-doi)).
-
 The remaining flavors (`blank`, `sdo/3gpp`, `sdo/ietf`) are **not supported** by the end-to-end evaluation — there is no JATS/TEI gold corpus of that document shape — and are rejected with an explicit error rather than silently producing an empty report.
 
 To evaluate a field that is in the catalogue but currently selected by no flavor (for instance `publisher` on citations, or the flat `affiliations` header field), add its name to the relevant list in `EvaluationFieldSelection`; there is no need to touch `FieldSpecification`.
@@ -247,8 +245,6 @@ To evaluate a field that is in the catalogue but currently selected by no flavor
 ## Evaluation results
 
 The evaluation provides precision, recall and F1-score for the different fields in the header and bibliographical references. In addition, the scores are also computed at *instance* level, which means at the level of a complete header or complete citation.
-
-The header `doi` is part of the header instance-level results: a header with a missing or wrong DOI counts as wrong at instance level. Header instance-level results are therefore not comparable with the benchmarks published before the DOI was evaluated.
 
 An experimental evaluation for the structures of the full text body is also proposed. This is not reliable in the current state, because most of the annotations of the full texts in PubMed Central are not uniform. For instance, the numbering of the section header is sometime included in the section header annotation, sometime not. The PubMed Central annotations will need to be standardized as a pre-process for a meaningful evaluation, which is a task planned in the next releases.
 
@@ -267,7 +263,7 @@ The evaluation covers four different string matching techniques for textual fiel
 
 These matching variants only apply to textual fields, not numerical and dates fields (such as volume, issue, dates, pages).
 
-The header `doi` is compared as an identifier: both values are lower-cased and stripped of a `doi:` prefix, then matched exactly, so the four techniques give the same score.
+The header `doi` is compared as an identifier: both values are lower-cased and stripped of a `doi:` prefix, then matched exactly.
 
 
 
@@ -365,18 +361,6 @@ How each annotation connects to that — the XML edit and the field-removal are 
 - **PLOS** *disambiguates*: PLOS overloads `fn-type="con"`; conflicts already match `//fn[@fn-type="conflict"]` (scored), and `type="contribution"` is added to the contribution footnotes to match `//fn[@type="contribution"]` — but since `contribution_stmt` is removed for PLOS, only conflicts are scored.
 - **eLife**: ignored.
 - **PMC**: ignored.
-
-### Header DOI
-
-The header `doi` evaluated here is produced in three steps, each of which can change it:
-
-1. the header model extracts the strong identifiers of the document as `<idno>` (see the [header annotation guidelines](training/header.md#strong-identifiers)), and an `<idno>` matching the DOI pattern becomes the DOI, without its `doi:` or `https://doi.org/` prefix,
-
-2. the blocks of the first pages of the document are then matched against the DOI pattern: when exactly one DOI is found there, it replaces the DOI from the header model,
-
-3. the header consolidation, which the evaluation enables, can complete or correct the DOI.
-
-Its score therefore measures the header model together with this pattern matching and the consolidation service. In particular, the pattern can capture trailing characters glued to the DOI in the PDF text (e.g. `10.1152/ajpheart.00875.2009.-`), or a DOI that belongs to another work cited on the first pages, which counts as a wrong value.
 
 ### Character encoding and glyphs
 
