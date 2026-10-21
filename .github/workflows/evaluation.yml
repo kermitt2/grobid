@@ -4,13 +4,14 @@ name: End-to-end evaluation
 # against the full gold corpora, and reports the scores next to those of the default branch.
 #
 # - manually (workflow_dispatch), on any branch;
-# - on a pull request, by adding the label `evaluation:crf` or `evaluation:delft`, or
-#   `evaluation:crf-noconsolidation` / `evaluation:delft-noconsolidation` to run without
-#   consolidation, so without biblio-glutton.
+# - on a pull request, by adding the label `evaluation:crf` or `evaluation:delft`.
+#   The runs are without consolidation, so without biblio-glutton, unless the pull request
+#   also has the label `evaluation:glutton`.
 #   The corpora are selected with the labels `corpus:all`, `corpus:pubmed`, `corpus:biorxiv`,
-#   `corpus:plos` and `corpus:elife`: adding an `evaluation:*` label evaluates the corpora
-#   labelled on the pull request (all of them if none is), and adding a `corpus:*` label to
-#   a pull request that has an `evaluation:*` label evaluates that corpus.
+#   `corpus:plos` and `corpus:elife`: adding `evaluation:crf` or `evaluation:delft` evaluates
+#   the corpora labelled on the pull request (all of them if none is), adding a `corpus:*`
+#   label to a pull request that has one of them evaluates that corpus, and adding
+#   `evaluation:glutton` evaluates the labelled corpora again with biblio-glutton.
 #   Remove and re-add a label to evaluate a newer commit: a run over the full corpora
 #   is too long to be repeated on every push.
 #
@@ -37,10 +38,10 @@ on:
         options: [ none, article/light, article/light-ref ]
         default: none
       consolidation:
-        description: 'glutton: header consolidation with biblio-glutton - none: no consolidation, biblio-glutton is not needed'
+        description: 'none: no consolidation, biblio-glutton is not needed - glutton: header consolidation with biblio-glutton'
         type: choice
-        options: [ glutton, none ]
-        default: glutton
+        options: [ none, glutton ]
+        default: none
       shards:
         description: Parallel jobs per corpus (empty = default for the profile)
         type: string
@@ -66,12 +67,16 @@ env:
 
 jobs:
   setup:
-    # a corpus:* label only starts a run once the pull request has an evaluation:* label
+    # a corpus:* or the evaluation:glutton label only starts a run once the pull request
+    # has a profile label (evaluation:crf or evaluation:delft)
     if: >-
       github.event_name == 'workflow_dispatch'
-      || startsWith(github.event.label.name, 'evaluation:')
-      || (startsWith(github.event.label.name, 'corpus:')
-          && contains(toJson(github.event.pull_request.labels.*.name), '"evaluation:'))
+      || (startsWith(github.event.label.name, 'evaluation:')
+          && github.event.label.name != 'evaluation:glutton')
+      || ((startsWith(github.event.label.name, 'corpus:')
+           || github.event.label.name == 'evaluation:glutton')
+          && (contains(toJson(github.event.pull_request.labels.*.name), '"evaluation:crf"')
+              || contains(toJson(github.event.pull_request.labels.*.name), '"evaluation:delft"')))
     runs-on: ubuntu-latest
     outputs:
       profile: ${{ steps.resolve.outputs.profile }}
@@ -105,18 +110,21 @@ jobs:
           }
 
           if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
-            if [[ "${LABEL}" == corpus:* ]]; then
-              # the profile is the one of the evaluation:* label of the pull request
-              mapfile -t EVALUATION_LABELS < <(jq -r '.[] | select(startswith("evaluation:"))' <<< "${PR_LABELS}")
+            if [[ "${LABEL}" == corpus:* || "${LABEL}" == evaluation:glutton ]]; then
+              # the profile is the one of the profile label of the pull request
+              mapfile -t EVALUATION_LABELS < <(jq -r '.[] | select(startswith("evaluation:") and . != "evaluation:glutton")' <<< "${PR_LABELS}")
               if [ "${#EVALUATION_LABELS[@]}" -ne 1 ]; then
-                echo "::error::Adding ${LABEL} runs the evaluation of the evaluation:* label of the pull request, but it has ${#EVALUATION_LABELS[@]}: ${EVALUATION_LABELS[*]}. Keep only one."
+                echo "::error::Adding ${LABEL} runs the evaluation of the profile label of the pull request (evaluation:crf or evaluation:delft), but it has ${#EVALUATION_LABELS[@]}: ${EVALUATION_LABELS[*]}. Keep only one."
                 exit 1
               fi
               EVALUATION_LABEL="${EVALUATION_LABELS[0]}"
+            else
+              EVALUATION_LABEL="${LABEL}"
+            fi
+            if [[ "${LABEL}" == corpus:* ]]; then
               CORPORA=("${LABEL#corpus:}")
             else
               # the corpora are the corpus:* labels of the pull request, all of them if none
-              EVALUATION_LABEL="${LABEL}"
               mapfile -t CORPORA < <(jq -r '.[] | select(startswith("corpus:")) | ltrimstr("corpus:")' <<< "${PR_LABELS}")
               [ "${#CORPORA[@]}" -eq 0 ] && CORPORA=(all)
             fi
@@ -126,10 +134,9 @@ jobs:
             done
 
             PROFILE="${EVALUATION_LABEL#evaluation:}"
-            CONSOLIDATION=glutton
-            if [ "${PROFILE%-noconsolidation}" != "${PROFILE}" ]; then
-              PROFILE="${PROFILE%-noconsolidation}"
-              CONSOLIDATION=none
+            CONSOLIDATION=none
+            if [ "${LABEL}" = "evaluation:glutton" ] || jq -e 'index("evaluation:glutton")' <<< "${PR_LABELS}" > /dev/null; then
+              CONSOLIDATION=glutton
             fi
             FLAVOR=none
             SHARDS=""
@@ -144,7 +151,7 @@ jobs:
 
           case "${PROFILE}" in
             crf|delft) ;;
-            *) echo "::error::Unknown profile '${PROFILE}': use evaluation:crf, evaluation:delft, evaluation:crf-noconsolidation or evaluation:delft-noconsolidation"; exit 1 ;;
+            *) echo "::error::Unknown profile '${PROFILE}': use evaluation:crf or evaluation:delft, with evaluation:glutton to consolidate with biblio-glutton"; exit 1 ;;
           esac
           if [ -n "${SHARDS}" ] && ! [[ "${SHARDS}" =~ ^[1-9][0-9]?$ ]]; then
             echo "::error::shards must be a number between 1 and 99, got '${SHARDS}'"
@@ -165,8 +172,8 @@ jobs:
           else
             SUFFIX="${PROFILE}-${FLAVOR//\//_}"
           fi
-          # runs without consolidation get their own artifacts, and so their own baseline
-          [ "${CONSOLIDATION}" = "none" ] && SUFFIX="${SUFFIX}-noconsolidation"
+          # runs with biblio-glutton get their own artifacts, and so their own baseline
+          [ "${CONSOLIDATION}" = "glutton" ] && SUFFIX="${SUFFIX}-glutton"
 
           DATASETS_JSON=$(jq -c --argjson selected "${SELECTED_JSON}" \
             'keys_unsorted | map(select(. as $dataset | $selected | index("all") or index($dataset)))' <<< "${DEFAULT_SHARDS}")
@@ -309,7 +316,7 @@ jobs:
           ./gradlew --console=plain checkEvalConfig "${ARGS[@]}" | tee check.log
           STATUS=${PIPESTATUS[0]}
           if [ "${CONSOLIDATION}" = "glutton" ] && ! grep -q "Glutton reachable: yes" check.log; then
-            echo "::error::biblio-glutton is not reachable from this runner. Set the repository variable GROBID_EVAL_GLUTTON_URL to a reachable instance, or run without consolidation."
+            echo "::error::biblio-glutton is not reachable from this runner. Set the repository variable GROBID_EVAL_GLUTTON_URL to a reachable instance, or run without consolidation (without the evaluation:glutton label)."
             exit 1
           fi
           exit "${STATUS}"

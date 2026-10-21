@@ -2,16 +2,18 @@
 """
 Write the grobid.yaml used by an end-to-end evaluation run.
 
-    configure_grobid.py --profile crf   --glutton-url http://glutton:8080
+    configure_grobid.py --profile crf
     configure_grobid.py --profile delft --delft-install ~/delft
-    configure_grobid.py --profile crf   --consolidation none
+    configure_grobid.py --profile crf   --consolidation glutton --glutton-url http://glutton:8080
 
 The `delft` profile starts from grobid-evaluation.yaml, the preset behind the published
 benchmarks. The `crf` profile starts from the default grobid.yaml, so every model keeps
-the engine it ships with, and only switches consolidation to biblio-glutton.
+the engine it ships with.
 
-With `--consolidation none`, the consolidation settings of the preset are left as they are:
-the evaluation is then run with `-PconsolidateHeader=0`, which calls no consolidation service.
+By default (`--consolidation none`), the consolidation settings of the preset are left as
+they are: the evaluation is then run with `-PconsolidateHeader=0`, which calls no
+consolidation service. With `--consolidation glutton`, consolidation is switched to
+biblio-glutton.
 
 The file is rewritten without its comments: it is meant for a throw-away checkout.
 """
@@ -30,9 +32,9 @@ def main():
     parser.add_argument("--profile", choices=sorted(PRESETS), required=True)
     parser.add_argument(
         "--consolidation",
-        choices=["glutton", "none"],
-        default="glutton",
-        help="glutton: header consolidation with biblio-glutton; none: the evaluation runs without consolidation",
+        choices=["none", "glutton"],
+        default="none",
+        help="none: the evaluation runs without consolidation; glutton: header consolidation with biblio-glutton",
     )
     parser.add_argument("--glutton-url", help="biblio-glutton base URL (default: the one of grobid-evaluation.yaml)")
     parser.add_argument("--delft-install", help="DeLFT directory, holding resources-registry.json and data/db")
