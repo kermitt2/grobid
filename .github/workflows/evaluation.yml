@@ -535,7 +535,7 @@ jobs:
             echo "- **Consolidation:** \`${CONSOLIDATION}\`"
             echo "- **Commit:** ${HEAD_SHA} ([run](${RUN_URL}/${GITHUB_RUN_ID}))"
             if [ -n "${BASELINE_RUN}" ]; then
-              echo "- **Baseline:** ${BASELINE_SHA} ([run](${RUN_URL}/${BASELINE_RUN})); the deltas in brackets are against it"
+              echo "- **Baseline:** ${BASELINE_SHA} ([run](${RUN_URL}/${BASELINE_RUN})); the F1 and instance-level scores that moved are followed by their delta against it, in brackets"
             else
               echo "- **Baseline:** none available"
             fi
@@ -546,21 +546,23 @@ jobs:
               | "| \(.[0].dataset) | \(map(.pdf) | add) | \(map(.tei) | add) | \(map(.pdf - .tei) | add) | \(map(.seconds) | add | round) |"' \
               stats/*.json
             echo ""
+          } > reports/overview.md
+          {
+            cat reports/overview.md
             python3 .github/scripts/evaluation/compare_reports.py --reports reports --baseline baseline
           } > reports/summary.md
+          cat reports/summary.md >> "$GITHUB_STEP_SUMMARY"
 
-          {
-            cat reports/summary.md
-            for report in reports/report-*.md; do
-              echo "<details>"
-              echo "<summary>Full report: $(basename "${report}" .md | sed 's/^report-//')</summary>"
-              echo ""
-              cat "${report}"
-              echo ""
-              echo "</details>"
-              echo ""
-            done
-          } >> "$GITHUB_STEP_SUMMARY"
+          # a pull request comment holds at most 65536 characters
+          if [ "$(wc -m < reports/summary.md)" -le 65536 ]; then
+            cp reports/summary.md reports/comment.md
+          else
+            echo "::warning::The scores exceed the size of a pull request comment: the comment links to the run summary instead"
+            {
+              cat reports/overview.md
+              echo "The scores are too long for a comment: see the [run summary](${RUN_URL}/${GITHUB_RUN_ID})."
+            } > reports/comment.md
+          fi
 
       # also what later runs download as their baseline
       - name: Upload the reports
@@ -576,4 +578,4 @@ jobs:
       - name: Post the pull request comment
         if: github.event_name == 'pull_request'
         continue-on-error: true
-        run: gh pr comment "${{ github.event.pull_request.number }}" --repo "${GITHUB_REPOSITORY}" --body-file reports/summary.md
+        run: gh pr comment "${{ github.event.pull_request.number }}" --repo "${GITHUB_REPOSITORY}" --body-file reports/comment.md
