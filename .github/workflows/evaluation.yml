@@ -259,7 +259,7 @@ jobs:
             echo "datasets=${DATASETS_JSON}"
             echo "shards=${SHARDS_JSON}"
           } >> "$GITHUB_OUTPUT"
-          echo "::notice::Evaluation profile: ${PROFILE}, flavor: '${FLAVOR}', consolidation: ${CONSOLIDATION}, datasets: ${DATASETS_JSON}"
+          echo "Evaluation profile: ${PROFILE}, flavor: '${FLAVOR}', consolidation: ${CONSOLIDATION}, datasets: ${DATASETS_JSON}"
 
   predict:
     needs: [ setup ]
@@ -289,6 +289,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - uses: gradle/actions/setup-gradle@v6
+        with:
+          # only the summary of the report job is of interest
+          add-job-summary: never
       - name: Set up Python
         uses: actions/setup-python@v7
         with:
@@ -435,6 +438,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - uses: gradle/actions/setup-gradle@v6
+        with:
+          # only the summary of the report job is of interest
+          add-job-summary: never
       - name: Download the TEI and the gold XML
         uses: actions/download-artifact@v8
         with:
@@ -519,7 +525,7 @@ jobs:
               break
             fi
           done < runs.txt
-          [ -d baseline ] || echo "::notice::No baseline found: no successful run of this workflow on ${DEFAULT_BRANCH} with the profile '${PROFILE}', the flavor '${FLAVOR}' and the consolidation '${CONSOLIDATION}'"
+          [ -d baseline ] || echo "No baseline found: no successful run of this workflow on ${DEFAULT_BRANCH} with the profile '${PROFILE}', the flavor '${FLAVOR}' and the consolidation '${CONSOLIDATION}'"
 
       - name: Write the summary
         env:
