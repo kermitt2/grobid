@@ -262,7 +262,7 @@ The workflow `.github/workflows/evaluation.yml` (_End-to-end evaluation_) runs t
 
 * manually, from the _Actions_ tab (_Run workflow_) or with `gh workflow run evaluation.yml --ref my-branch -f profile=delft`, on any branch,
 
-* on a pull request, by adding the label `evaluation:crf` or `evaluation:delft`. The run is [without consolidation](#consolidation-and-biblio-glutton) unless the pull request also has the label `evaluation:glutton`. Pushing new commits does not start a new run, a run over the full corpora being too long for that: remove and re-add the label to evaluate a newer commit.
+* on a pull request, by adding the label `evaluation:crf` or `evaluation:delft`. The run is [without consolidation](#consolidation-and-biblio-glutton) unless the pull request also has the label `evaluation:glutton`. Once the pull request has one of these two labels, each push evaluates it again, with the same labels, and cancels the run still going for an older commit: label the pull request with the corpora to evaluate (see below) to keep these runs short.
 
 On a pull request, the corpora are selected with labels too:
 

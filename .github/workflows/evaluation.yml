@@ -12,8 +12,8 @@ name: End-to-end evaluation
 #   the corpora labelled on the pull request (all of them if none is), adding a `corpus:*`
 #   label to a pull request that has one of them evaluates that corpus, and adding
 #   `evaluation:glutton` evaluates the labelled corpora again with biblio-glutton.
-#   Remove and re-add a label to evaluate a newer commit: a run over the full corpora
-#   is too long to be repeated on every push.
+#   Once the pull request has `evaluation:crf` or `evaluation:delft`, each push evaluates
+#   the labelled corpora again, and cancels the run still going for an older commit.
 #
 # Each corpus is split into shards processed in parallel (`predict`), the TEI they produce
 # is gathered and scored once per corpus (`score`), and the reports are compared with the
@@ -47,10 +47,22 @@ on:
         type: string
         required: false
   pull_request:
-    types: [ labeled ]
+    types: [ labeled, synchronize ]
 
+# One evaluation at a time per pull request: a push, or an evaluation:* or corpus:* label,
+# cancels the run still going. Any other label gets a group of its own, so that it cancels
+# nothing (its run does nothing, the setup job being skipped).
 concurrency:
-  group: evaluation-${{ github.ref }}-${{ github.event.label.name || inputs.profile }}-${{ inputs.flavor }}-${{ inputs.consolidation }}
+  group: >-
+    ${{ (github.event_name == 'workflow_dispatch'
+         && format('evaluation-{0}-{1}-{2}-{3}', github.ref, inputs.profile, inputs.flavor, inputs.consolidation))
+        || ((github.event.action == 'synchronize'
+             || startsWith(github.event.label.name, 'evaluation:')
+             || startsWith(github.event.label.name, 'corpus:'))
+            && (contains(toJson(github.event.pull_request.labels.*.name), '"evaluation:crf"')
+                || contains(toJson(github.event.pull_request.labels.*.name), '"evaluation:delft"'))
+            && format('evaluation-pr-{0}', github.event.pull_request.number))
+        || format('evaluation-ignored-{0}', github.run_id) }}
   cancel-in-progress: true
 
 permissions:
@@ -67,10 +79,13 @@ env:
 
 jobs:
   setup:
-    # a corpus:* or the evaluation:glutton label only starts a run once the pull request
-    # has a profile label (evaluation:crf or evaluation:delft)
+    # a push, a corpus:* or the evaluation:glutton label only starts a run once the pull
+    # request has a profile label (evaluation:crf or evaluation:delft)
     if: >-
       github.event_name == 'workflow_dispatch'
+      || (github.event.action == 'synchronize'
+          && (contains(toJson(github.event.pull_request.labels.*.name), '"evaluation:crf"')
+              || contains(toJson(github.event.pull_request.labels.*.name), '"evaluation:delft"')))
       || (startsWith(github.event.label.name, 'evaluation:')
           && github.event.label.name != 'evaluation:glutton')
       || ((startsWith(github.event.label.name, 'corpus:')
@@ -110,16 +125,17 @@ jobs:
           }
 
           if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
-            if [[ "${LABEL}" == corpus:* || "${LABEL}" == evaluation:glutton ]]; then
-              # the profile is the one of the profile label of the pull request
+            if [[ "${LABEL}" == evaluation:* && "${LABEL}" != evaluation:glutton ]]; then
+              EVALUATION_LABEL="${LABEL}"
+            else
+              # a push, a corpus:* or the evaluation:glutton label: the profile is the one of
+              # the profile label of the pull request
               mapfile -t EVALUATION_LABELS < <(jq -r '.[] | select(startswith("evaluation:") and . != "evaluation:glutton")' <<< "${PR_LABELS}")
               if [ "${#EVALUATION_LABELS[@]}" -ne 1 ]; then
-                echo "::error::Adding ${LABEL} runs the evaluation of the profile label of the pull request (evaluation:crf or evaluation:delft), but it has ${#EVALUATION_LABELS[@]}: ${EVALUATION_LABELS[*]}. Keep only one."
+                echo "::error::The evaluation runs with the profile label of the pull request (evaluation:crf or evaluation:delft), but it has ${#EVALUATION_LABELS[@]}: ${EVALUATION_LABELS[*]}. Keep only one."
                 exit 1
               fi
               EVALUATION_LABEL="${EVALUATION_LABELS[0]}"
-            else
-              EVALUATION_LABEL="${LABEL}"
             fi
             if [[ "${LABEL}" == corpus:* ]]; then
               CORPORA=("${LABEL#corpus:}")
