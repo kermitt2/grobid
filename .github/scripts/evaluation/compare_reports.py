@@ -4,12 +4,13 @@ Render the Markdown reports of an end-to-end evaluation, optionally against a ba
 
     compare_reports.py --reports reports/ [--baseline baseline/] > summary.md
 
-Both directories hold the `report-<dataset>.md` files written by `jatsEval`. Each report is
-rendered as in the benchmark pages (doc/benchmarks/): per section and matching, the
-field-level precision, recall, F1 and support, then the instance-level results and the
-citation contexts. When a baseline is given, every F1 and instance-level score that moved
-is followed by its delta in brackets. A dataset missing from the baseline is rendered
-without deltas.
+Both directories hold the `report-<dataset>.md` files written by `jatsEval`. Each dataset
+gets a summary table, the micro-average F1 of the header, citation and fulltext per
+matching, followed by its full report, collapsed, rendered as in the benchmark pages
+(doc/benchmarks/): per section and matching, the field-level precision, recall, F1 and
+support, then the instance-level results and the citation contexts. When a baseline is
+given, every score that moved is followed by its delta in brackets. A dataset missing
+from the baseline is rendered without deltas.
 """
 
 import argparse
@@ -30,6 +31,9 @@ INSTANCE_MATCHINGS = {
 INSTANCE_LINE = re.compile(r"^Instance-level (recall|precision|f-score):\s*([\d.]+)\s*\((\w+)\)")
 CONTEXT_LINE = re.compile(r"^(Precision|Recall|fscore) citation contexts:\s*([\d.]+)")
 DOCUMENTS_LINE = re.compile(r"^Evaluation on (\d+) random PDF files")
+SECTIONS = ["Header metadata", "Citation metadata", "Fulltext structures"]
+MATCHINGS = ["Strict", "Soft", "Levenshtein", "Ratcliff/Obershelp"]
+MICRO = "all fields (micro avg.)"
 TABLE_HEADER = "| label | precision | recall | f1 | support |\n|---|---|---|---|---|"
 
 
@@ -83,7 +87,7 @@ def scan(path):
 
 
 def parse_report(path):
-    """Return the scores of a report as {key: value}, the value of a table row being its F1."""
+    """Return the scores of a report as {key: value}, the value of a table row being its [precision, recall, f1]."""
     scores = {"documents": None}
     for line, key in scan(path):
         stripped = line.strip()
@@ -91,7 +95,7 @@ def parse_report(path):
             if scores["documents"] is None and (m := DOCUMENTS_LINE.match(stripped)):
                 scores["documents"] = int(m.group(1))
         elif key[0] == "row":
-            scores[key] = table_row(stripped)[2][2]
+            scores[key] = table_row(stripped)[2][:3]
         elif key[0] == "instance":
             scores[key] = float(INSTANCE_LINE.match(stripped).group(2))
         else:
@@ -110,6 +114,25 @@ def number(value):
     return f"{value:g}"
 
 
+def render_summary(report, base, out):
+    """Write the micro-average F1 of each section per matching, with its delta."""
+    out.write("| | " + " | ".join(MATCHINGS) + " |\n")
+    out.write("|---|" + "---|" * len(MATCHINGS) + "\n")
+    for section in SECTIONS:
+        keys = {m: ("row", section, m, "Field-level results", MICRO) for m in MATCHINGS}
+        if not any(key in report for key in keys.values()):
+            continue
+        cells = []
+        for matching, key in keys.items():
+            if key in report:
+                f1 = report[key][2]
+                cells.append(number(f1) + delta(f1, base[key][2] if key in base else None))
+            else:
+                cells.append("—")
+        out.write(f"| {section.split()[0]} | " + " | ".join(cells) + " |\n")
+    out.write("\n")
+
+
 def render_dataset(name, path, report, baseline, out):
     out.write(f"### {name}\n\n")
     if baseline is None:
@@ -121,7 +144,9 @@ def render_dataset(name, path, report, baseline, out):
             "the deltas are over different document sets.\n\n"
         )
     base = baseline or {}
+    render_summary(report, base, out)
 
+    out.write("<details>\n<summary>Full report</summary>\n\n")
     blank = True
     for line, key in scan(path):
         stripped = line.strip()
@@ -150,16 +175,17 @@ def render_dataset(name, path, report, baseline, out):
 
         blank = False
         if key[0] == "row":
-            label, bold, (precision, recall, f1, support) = table_row(stripped)
+            label, bold, values = table_row(stripped)
             mark = "**" if bold else ""
-            cells = [f"{mark}{label}{mark}", f"{mark}{number(precision)}{mark}", f"{mark}{number(recall)}{mark}"]
-            cells.append(f"{mark}{number(f1)}{mark}{delta(f1, base.get(key))}")
-            cells.append(f"{support:g}")
+            base_values = base.get(key, [None] * 3)
+            cells = [f"{mark}{label}{mark}"]
+            cells += [f"{mark}{number(v)}{mark}{delta(v, b)}" for v, b in zip(values[:3], base_values)]
+            cells.append(number(values[3]))
             out.write("| " + " | ".join(cells) + " |\n")
         else:
             value = report[key]
             out.write(line + delta(value, base.get(key)) + "\n")
-    out.write("\n")
+    out.write("\n</details>\n\n")
 
 
 def load_reports(directory):

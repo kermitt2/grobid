@@ -541,7 +541,7 @@ jobs:
             echo "- **Consolidation:** \`${CONSOLIDATION}\`"
             echo "- **Commit:** ${HEAD_SHA} ([run](${RUN_URL}/${GITHUB_RUN_ID}))"
             if [ -n "${BASELINE_RUN}" ]; then
-              echo "- **Baseline:** ${BASELINE_SHA} ([run](${RUN_URL}/${BASELINE_RUN})); the F1 and instance-level scores that moved are followed by their delta against it, in brackets"
+              echo "- **Baseline:** ${BASELINE_SHA} ([run](${RUN_URL}/${BASELINE_RUN})); the scores that moved are followed by their delta against it, in brackets"
             else
               echo "- **Baseline:** none available"
             fi
