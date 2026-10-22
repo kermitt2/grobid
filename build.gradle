@@ -138,7 +138,11 @@ subprojects {
                 'src/main/java/org/grobid/core/analyzers/GrobidFilterDeleteSpaceBetweenSameAlphabet.java',
                 'src/main/java/org/grobid/core/utilities/matching/DiffMatchPatch.java'
             )
-            eclipse().configFile(rootProject.file('eclipse-formatter.xml'))
+            // The formatter is provisioned from an Eclipse mirror: download.eclipse.org fails
+            // to serve the GitHub runners at times ("Failed to provision P2 dependencies").
+            eclipse()
+                .configFile(rootProject.file('eclipse-formatter.xml'))
+                .withP2Mirrors(['https://download.eclipse.org/': 'https://ftp.fau.de/eclipse/'])
             removeUnusedImports()
             importOrder('java', 'javax', '', 'org.grobid')
             licenseHeaderFile(rootProject.file('config/license-header.txt'))
